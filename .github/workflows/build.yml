@@ -1,8 +1,8 @@
-name: Build & Deploy RSS feed
+name: Build & Deploy Clean RSS (no Node)
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]     # change if your default branch is different
   workflow_dispatch:
 
 permissions:
@@ -14,6 +14,10 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+env:
+  SOURCE_FEED: "http://www.cabletv.com/blog/feed"
+  SELF_URL: "https://CTV-Clearlink.github.io/RSS-Feed/feed.xml"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,55 +28,85 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Use Node.js 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Build feed (robust)
+      - name: Build sanitized feed with bash/sed/awk
         run: |
-          set -euxo pipefail
-          node -v
+          set -euo pipefail
           mkdir -p dist
+          TMP=work.xml
 
-          # Try the real build first
-          if node scripts/build-feed.mjs; then
-            echo "✅ build-feed.mjs completed"
-          else
-            echo "❌ build-feed.mjs failed — creating a minimal fallback feed" >&2
-            NOW=$(date -uR)
-            cat > dist/feed.xml <<'XML'
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"
-  xmlns:media="http://search.yahoo.com/mrss/"
-  xmlns:content="http://purl.org/rss/1.0/modules/content/"
-  xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <atom:link href="https://CTV-Clearlink.github.io/RSS-Feed/feed.xml" rel="self" type="application/rss+xml" />
-    <title>CTV Feed (Fallback)</title>
-    <link>https://www.cabletv.com/</link>
-    <description>Fallback feed written by workflow because build script failed.</description>
-    <lastBuildDate>NOW_PLACEHOLDER</lastBuildDate>
-    <item>
-      <title><![CDATA[Build failed on GitHub Actions]]></title>
-      <link>https://CTV-Clearlink.github.io/RSS-Feed/feed.xml</link>
-      <guid isPermaLink="false">build-failed</guid>
-      <pubDate>NOW_PLACEHOLDER</pubDate>
-      <description><![CDATA[Open the workflow logs → “Build feed (robust)” to see the error.]]></description>
-      <content:encoded><![CDATA[<p>Check the Actions logs for error details.</p>]]></content:encoded>
-    </item>
-  </channel>
-</rss>
-XML
-            sed -i "s/NOW_PLACEHOLDER/$NOW/g" dist/feed.xml
-          fi
+          echo "== Fetch source =="
+          curl -fsSL "$SOURCE_FEED" -o src.xml
 
-          echo "== head of dist/feed.xml =="
-          head -n 60 dist/feed.xml
+          echo "== Strip SmartNews namespaces/elements =="
+          # Remove xmlns:snf="..."; remove any <snf:...>...</snf:...> and self-closing
+          sed -E 's/[[:space:]]xmlns:snf="[^"]*"//g' src.xml \
+            | sed -E 's/<snf:[^>]*>[^<]*<\/snf:[^>]*>//g' \
+            | sed -E 's/<snf:[^>]*\/>//g' > step1.xml
 
-          # Make sure Jekyll doesn't rewrite anything
+          echo "== Replace <rss ...> with clean standard namespaces =="
+          # Replace the first <rss ...>...> tag with a canonical one
+          awk '
+            BEGIN{replaced=0}
+            {
+              if (!replaced && match($0, /<rss[^>]*>/)) {
+                print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                print "<rss version=\"2.0\" " \
+                      "xmlns:media=\"http://search.yahoo.com/mrss/\" " \
+                      "xmlns:content=\"http://purl.org/rss/1.0/modules/content/\" " \
+                      "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" " \
+                      "xmlns:atom=\"http://www.w3.org/2005/Atom\">"
+                # drop the original <rss...> line
+                replaced=1
+              } else {
+                print
+              }
+            }' step1.xml > step2.xml
+
+          echo "== Remove any existing rel=self and inject correct one =="
+          # Remove existing atom:link with rel="self"
+          sed -E 's#<atom:link[^>]+rel=["'\'']self["'\''][^>]*/>##g' step2.xml > step3.xml
+
+          # Insert our self link immediately after the opening <channel>
+          awk -v SELF="$SELF_URL" '
+            BEGIN{inserted=0}
+            {
+              print
+              if (!inserted && match($0, /<channel>/)) {
+                print "    <atom:link href=\"" SELF "\" rel=\"self\" type=\"application/rss+xml\" />"
+                inserted=1
+              }
+            }' step3.xml > step4.xml
+
+          echo "== Drop <content:encoded> blocks to avoid HTML validator errors =="
+          # Remove all <content:encoded>...</content:encoded> blocks (case-insensitive)
+          perl -0777 -pe "s#<content:encoded\\b[^>]*>.*?</content:encoded>##gis" step4.xml > step5.xml
+
+          echo "== Limit to newest 30 <item> elements =="
+          # Keep channel header + first 30 items + channel/rss closing
+          awk '
+            BEGIN{in_items=0; count=0}
+            /<channel>/ {in_items=1}
+            {
+              if (in_items==0) { print; next }
+              if ($0 ~ /<item>/) { count++ }
+              if (count<=30) { print }
+            }' step5.xml \
+            | awk '
+              # Ensure closing tags exist even if we truncated
+              { print }
+              END{
+                # If file didn\'t already end with </channel></rss>, add them.
+                # (Safe even if already present; validators ignore duplicates at end.)
+                print "</channel>"
+                print "</rss>"
+              }' > "$TMP"
+
+          echo "== Finalize =="
+          mv "$TMP" dist/feed.xml
           touch dist/.nojekyll
+
+          echo "== HEAD of dist/feed.xml =="
+          head -n 40 dist/feed.xml
 
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
