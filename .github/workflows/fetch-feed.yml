@@ -21,7 +21,21 @@ jobs:
       
       - name: Fetch RSS Feed
         run: |
-          curl -o feed.xml https://www.cabletv.com/feed
+          echo "Fetching feed from https://www.cabletv.com/feed"
+          curl -L -v -o feed.xml https://www.cabletv.com/feed
+          echo "Curl exit code: $?"
+          echo "File size:"
+          ls -lh feed.xml
+          echo "First 50 lines of feed:"
+          head -50 feed.xml
+          
+      - name: Verify feed has content
+        run: |
+          if [ ! -s feed.xml ]; then
+            echo "ERROR: feed.xml is empty!"
+            exit 1
+          fi
+          echo "Feed file has content, proceeding..."
           
       - name: Commit and push feed
         run: |
