@@ -1,4 +1,4 @@
-// scripts/build-feed.mjs — generic RSS builder (validator-clean, no SmartNews tags)
+// scripts/build-feed.mjs — Generic, validator-friendly RSS builder (no custom vendor tags)
 import { mkdirSync, writeFileSync } from "fs";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
@@ -10,63 +10,77 @@ const SOURCE_FEED_URL = "https://www.cabletv.com/feed";
 const OUTPUT_DIR = __dirname + "/../dist";
 const OUTPUT = OUTPUT_DIR + "/feed.xml";
 
-// MUST match the published URL exactly (case-sensitive)
-const FEED_SELF_URL = "https://CTV-Clearlink.github.io/RSS-Feed/feed.xml";
+// MUST match the published URL exactly (case-sensitive!):
+const FEED_SELF_URL = "https://ctv-clearlink.github.io/RSS-Feed/feed.xml";
 
-const UA = "Mozilla/5.0 (compatible; Feed-Builder/3.3; +https://CTV-Clearlink.github.io)";
+const UA = "Mozilla/5.0 (compatible; Feed-Builder/4.0; +https://ctv-clearlink.github.io)";
 
-// Content policy: remove inline links and emit plain text (avoid HTML errors)
+// Emit plain text in description/content:encoded to avoid HTML validator errors
 const FORCE_NO_LINKS = true;
 
-// Size limits to keep validators happy
+// Limits to keep feed small and validators happy
 const ITEM_LIMIT = 30;           // newest N items
 const CONTENT_MAX_CHARS = 8000;  // per-item text cap
 
 // Thumbnails
 const ALLOWED_IMG_EXT = /\.(png|jpe?g|webp|gif)(\?|#|$)/i;
-const DEFAULT_THUMB_URL = "https://i.ibb.co/V0FWL4m9/CTV-Logo.png"; // PNG/JPG recommended
+const DEFAULT_THUMB_URL = "https://i.ibb.co/V0FWL4m9/CTV-Logo.png";
+
+// Allowed namespaces we keep
+const ALLOWED_NS_PREFIXES = ["media","content","dc","atom"];
 /** ---------------------------------------- */
 
 async function main() {
   mkdirSync(OUTPUT_DIR, { recursive: true });
 
   const res = await fetch(SOURCE_FEED_URL, {
-    headers: { Accept: "application/rss+xml", "User-Agent": UA }
+    headers: { Accept: "application/rss+xml, application/xml;q=0.9, */*;q=0.8", "User-Agent": UA }
   });
   if (!res.ok) throw new Error(`Fetch ${SOURCE_FEED_URL} failed: ${res.status} ${res.statusText}`);
 
   let xml = await res.text();
-  if (!xml.includes("<rss")) throw new Error("Origin did not return RSS/XML (no <rss> tag)");
+  if (!/<rss\b/i.test(xml)) throw new Error("Origin did not return RSS/XML (no <rss> tag)");
 
-  // 1) Strip any SmartNews artifacts (generic feed must not include them)
-  xml = xml
-    .replace(/xmlns:snf="[^"]*"/gi, "")
-    .replace(/<snf:logo>[\s\S]*?<\/snf:logo>/gi, "")
-    .replace(/<snf:[^>]+>[\s\S]*?<\/snf:[^>]+>/gi, "");
+  // Normalize XML declaration to a single header
+  xml = xml.replace(/^\uFEFF/, "").replace(/^\s*<\?xml[^>]*\?>\s*/i, "");
+  xml = `<?xml version="1.0" encoding="UTF-8"?>\n` + xml;
 
-  // 2) Normalize the <rss> tag to avoid duplicate attributes
-  //    a) Reduce whatever is there to just "<rss>"
-  xml = xml.replace(/<rss[^>]*>/i, "<rss>");
-  //    b) Replace that with a single clean tag with only standard namespaces
-  xml = xml.replace(
-    /<rss>/i,
-    '<rss version="2.0" ' +
+  // --- Remove undesired namespace declarations on <rss> (keep only allowed) ---
+  xml = xml.replace(/<rss[^>]*>/i, (m) => {
+    // Always rebuild a clean <rss> start tag
+    return (
+      '<rss version="2.0" ' +
       'xmlns:media="http://search.yahoo.com/mrss/" ' +
       'xmlns:content="http://purl.org/rss/1.0/modules/content/" ' +
       'xmlns:dc="http://purl.org/dc/elements/1.1/" ' +
       'xmlns:atom="http://www.w3.org/2005/Atom">'
-  );
+    );
+  });
 
-  // 3) Ensure a correct atom:link rel="self" (exactly once, matching FEED_SELF_URL)
+  // --- Remove any namespaced elements we don't explicitly allow ---
+  // Blocks like <x:foo>...</x:foo>
+  const disallowedBlock = new RegExp(
+    `<(?!${ALLOWED_NS_PREFIXES.join("|")}:)` + `([a-zA-Z0-9_-]+):[^>]+>[\\s\\S]*?<\\/\\1:[^>]+>`,
+    "gi"
+  );
+  xml = xml.replace(disallowedBlock, "");
+  // Self-closing like <x:foo />
+  const disallowedSelf = new RegExp(
+    `<(?!${ALLOWED_NS_PREFIXES.join("|")}:)` + `[a-zA-Z0-9_-]+:[^>]+\\/\\s*>`,
+    "gi"
+  );
+  xml = xml.replace(disallowedSelf, "");
+
+  // Ensure exactly one correct atom:link rel="self"
   xml = xml
-    .replace(/<atom:link[^>]+rel=["']self["'][^>]*\/>\s*/i, "")
-    .replace(/<channel>(?![\s\S]*?<atom:link)/i, `<channel>
+    .replace(/<atom:link[^>]+rel=["']self["'][^>]*\/>\s*/gi, "")
+    .replace(/<channel>(?![\s\S]*?<atom:link[^>]+rel=["']self["'])/i, `<channel>
     <atom:link href="${FEED_SELF_URL}" rel="self" type="application/rss+xml" />`);
 
-  // 4) Limit items early to keep file size small
+  // Limit items early
   xml = limitItems(xml, ITEM_LIMIT);
 
-  // 5) Per-item rewrites (plain-text bodies, thumbnails, author fallback, UTM strip)
+  // Per-item rewrites
   xml = await rewriteItems(xml);
 
   writeFileSync(OUTPUT, xml, "utf8");
@@ -78,22 +92,20 @@ function limitItems(xml, limit) {
   if (items.length <= limit) return xml;
   const keep = items.slice(0, limit).join("\n");
   return xml.replace(/<channel>[\s\S]*?<\/channel>/, (m) => {
-    const header = m.split(/<item>/)[0]; // includes <channel> ... up to first item
+    const header = m.split(/<item>/)[0];
     return header + keep + "\n</channel>";
   });
 }
 
 async function rewriteItems(xmlStr) {
   const items = xmlStr.match(/<item>[\s\S]*?<\/item>/g) || [];
-  console.log(`Processing ${items.length} <item> elements`);
-
   for (const item of items) {
     let out = item;
 
-    // Title cleanup: remove shortcodes, decode pipe, trim; fix dangling "in"
+    // Title → cleaned CDATA
     out = out.replace(/<title>\s*(?:<!\[CDATA\[([\s\S]*?)\]\]>|([^<]*))\s*<\/title>/i, (_m, c, p) => {
       let t = (c ?? p ?? "").trim();
-      t = t.replace(/\[[^\]]]+\]/g, "")
+      t = t.replace(/\[[^\]]+\]/g, "")
            .replace(/&#124;/g, "|")
            .replace(/\s{2,}/g, " ")
            .trim();
@@ -101,13 +113,24 @@ async function rewriteItems(xmlStr) {
       return `<title><![CDATA[${t}]]></title>`;
     });
 
-    // CONTENT: strip junk, remove links, convert to plain text, trim, wrap
+    // DESCRIPTION → plain text CDATA
+    out = out.replace(/<description>[\s\S]*?<\/description>/i, (m) => {
+      const inner = m.replace(/^<description>/i, "").replace(/<\/description>$/i, "");
+      let txt = stripAllTagsPreservingBreaks(unwrapCdata(inner));
+      txt = decodeEntities(txt).trim();
+      if (txt.length > CONTENT_MAX_CHARS) {
+        txt = txt.slice(0, CONTENT_MAX_CHARS).replace(/\s+\S*$/, "") + "…";
+      }
+      return `<description><![CDATA[${txt}]]></description>`;
+    });
+
+    // CONTENT:ENCODED → cleaned, plain-text CDATA
     out = out.replace(
-      /(<content:encoded><!\[CDATA\[)([\s\S]*?)(\]\]><\/content:encoded>)/,
+      /(<content:encoded>\s*<!\[CDATA\[)([\s\S]*?)(\]\]>\s*<\/content:encoded>)/i,
       (_, open, body, close) => {
         body = stripJunk(body);
         if (FORCE_NO_LINKS) body = body.replace(/<a\b[^>]*>(.*?)<\/a>/gis, "$1");
-        body = htmlToText(body); // HTML -> plain text
+        body = htmlToText(body);
         if (body.length > CONTENT_MAX_CHARS) {
           body = body.slice(0, CONTENT_MAX_CHARS).replace(/\s+\S*$/, "") + "…";
         }
@@ -116,8 +139,8 @@ async function rewriteItems(xmlStr) {
       }
     );
 
-    // THUMBNAIL: media/enclosure → page og:image → default
-    if (!/<media:thumbnail\b/.test(out)) {
+    // THUMBNAIL: prefer existing, else og:image, else default
+    if (!/<media:thumbnail\b/i.test(out)) {
       let thumb =
         out.match(/<media:content[^>]+url=["']([^"']+)["']/i)?.[1] ||
         out.match(/<enclosure[^>]+url=["']([^"']+)["']/i)?.[1] ||
@@ -132,7 +155,7 @@ async function rewriteItems(xmlStr) {
               const html = await pageRes.text();
               const og = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)?.[1];
               if (og) thumb = og;
-              out = ensureAuthor(out, html); // also ensure author if missing
+              out = ensureAuthor(out, html); // also try to add author if missing
             }
           } catch {}
         }
@@ -165,7 +188,7 @@ async function rewriteItems(xmlStr) {
     }
 
     // Strip UTM params in <link>
-    out = out.replace(/<link>([^<]+)<\/link>/, (_, u) => `<link>${stripUtm(u)}</link>`);
+    out = out.replace(/<link>([^<]+)<\/link>/i, (_, u) => `<link>${stripUtm(u)}</link>`);
 
     xmlStr = xmlStr.replace(item, out);
   }
@@ -174,15 +197,22 @@ async function rewriteItems(xmlStr) {
 
 /* ---------------- HELPERS ---------------- */
 
-function htmlToText(html) {
-  // Preserve basic line breaks, then strip tags
+function unwrapCdata(s) {
+  const m = s.match(/^\s*<!\[CDATA\[([\s\S]*?)\]\]>\s*$/i);
+  return m ? m[1] : s;
+}
+
+function stripAllTagsPreservingBreaks(html) {
   let out = html
     .replace(/<br\s*\/?>/gi, "\n")
     .replace(/<\/p>/gi, "\n\n")
     .replace(/<\/h[1-6]>/gi, "\n\n");
-  out = out.replace(/<[^>]+>/g, ""); // strip ALL tags
+  return out.replace(/<[^>]+>/g, "");
+}
+
+function htmlToText(html) {
+  let out = stripAllTagsPreservingBreaks(html);
   out = decodeEntities(out);
-  // collapse whitespace
   return out.replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
 }
 
@@ -302,4 +332,4 @@ main().catch(err => {
   process.exit(1);
 });
 
-function escapeXml(s){ return s.replace(/[<>&'"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[c])); }
+function escapeXml(s){ return s.replace(/[<>&'"]/g, c => ({'<':'&lt;','>':'&amp;',"'":'&apos;','"':'&quot;'}[c])); }
