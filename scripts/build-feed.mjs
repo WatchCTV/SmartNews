@@ -1,3 +1,4 @@
+// scripts/build-feed.mjs  — generic RSS builder (no SmartNews tags)
 import { mkdirSync, writeFileSync } from "fs";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
@@ -9,24 +10,21 @@ const SOURCE_FEED_URL = "https://www.cabletv.com/feed";
 const OUTPUT_DIR = __dirname + "/../dist";
 const OUTPUT = OUTPUT_DIR + "/feed.xml";
 
-// This MUST match the final, public, case-sensitive URL of this feed:
+// MUST match the published URL exactly (case-sensitive):
 const FEED_SELF_URL = "https://CTV-Clearlink.github.io/RSS-Feed/feed.xml";
 
-const UA = "Mozilla/5.0 (compatible; Feed-Builder/3.1; +https://CTV-Clearlink.github.io)";
+const UA = "Mozilla/5.0 (compatible; Feed-Builder/3.2; +https://CTV-Clearlink.github.io)";
 
-// Content policy: remove inline links and emit plain text to avoid HTML validator errors
+// Keep bodies but remove inline links, then emit plain text to avoid HTML errors
 const FORCE_NO_LINKS = true;
-const CONTENT_MAX_CHARS = 8000; // trim per item (on text, not HTML)
 
-// Limit item count to keep total file size small
-const ITEM_LIMIT = 30;
+// Limits to keep feed small and validators happy
+const ITEM_LIMIT = 30;           // newest N items
+const CONTENT_MAX_CHARS = 8000;  // per-item text cap
 
 // Thumbnails
 const ALLOWED_IMG_EXT = /\.(png|jpe?g|webp|gif)(\?|#|$)/i;
 const DEFAULT_THUMB_URL = "https://i.ibb.co/V0FWL4m9/CTV-Logo.png"; // PNG/JPG recommended
-
-// SmartNews extras are DISABLED for this generic feed
-const ENABLE_SMARTNEWS_EXTRAS = false;
 /** ---------------------------------------- */
 
 async function main() {
@@ -40,30 +38,32 @@ async function main() {
   let xml = await res.text();
   if (!xml.includes("<rss")) throw new Error("Origin did not return RSS/XML (no <rss> tag)");
 
-  // Ensure namespaces: media + content + dc + atom (NO snf here)
+  // Remove any SmartNews namespace/blocks that might appear in source
+  xml = xml
+    .replace(/xmlns:snf="[^"]*"/gi, "")
+    .replace(/<snf:logo>[\s\S]*?<\/snf:logo>/gi, "")
+    .replace(/<snf:[^>]+>[\s\S]*?<\/snf:[^>]+>/gi, "");
+
+  // Force standard namespaces only on <rss>
   xml = xml.replace(
-    /<rss([^>]*)>/,
-    '<rss$1 version="2.0" ' +
+    /<rss[^>]*>/i,
+    '<rss version="2.0" ' +
       'xmlns:media="http://search.yahoo.com/mrss/" ' +
       'xmlns:content="http://purl.org/rss/1.0/modules/content/" ' +
       'xmlns:dc="http://purl.org/dc/elements/1.1/" ' +
       'xmlns:atom="http://www.w3.org/2005/Atom">'
   );
 
-  // Remove any SmartNews blocks if present in source
+  // Insert a correct atom:link rel="self" (once), matching FEED_SELF_URL exactly
   xml = xml
-    .replace(/xmlns:snf="[^"]*"/gi, "")
-    .replace(/<snf:logo>[\s\S]*?<\/snf:logo>/gi, "")
-    .replace(/<snf:analytics>[\s\S]*?<\/snf:analytics>/gi, "");
-
-  // Insert atom:link rel="self" (exactly once, with exact URL)
-  xml = xml.replace(/<channel>(?![\s\S]*?<atom:link)/i, `<channel>
+    .replace(/<atom:link[^>]+rel=["']self["'][^>]*\/>\s*/i, "")
+    .replace(/<channel>(?![\s\S]*?<atom:link)/i, `<channel>
     <atom:link href="${FEED_SELF_URL}" rel="self" type="application/rss+xml" />`);
 
-  // Limit items to keep overall size small
+  // Limit items early to keep file size small
   xml = limitItems(xml, ITEM_LIMIT);
 
-  // Per-item rewrites (plain-text bodies, thumbnails, author, UTM strip)
+  // Per-item rewrites (plain-text bodies, thumbnails, author fallback, UTM strip)
   xml = await rewriteItems(xml);
 
   writeFileSync(OUTPUT, xml, "utf8");
@@ -98,33 +98,22 @@ async function rewriteItems(xmlStr) {
       return `<title><![CDATA[${t}]]></title>`;
     });
 
-    // CONTENT: transform to plain text (no tags), remove links, trim
+    // CONTENT: strip junk, remove links, convert to plain text, trim, wrap
     out = out.replace(
       /(<content:encoded><!\[CDATA\[)([\s\S]*?)(\]\]><\/content:encoded>)/,
       (_, open, body, close) => {
-        // Optional: remove obvious junk first
         body = stripJunk(body);
-
-        // Remove all anchors but keep inner text
-        if (FORCE_NO_LINKS) {
-          body = body.replace(/<a\b[^>]*>(.*?)<\/a>/gis, "$1");
-        }
-
-        // Convert HTML -> plain text to avoid “Invalid HTML” warnings
-        body = htmlToText(body);
-
-        // Trim by characters on plain text (won't break attributes)
+        if (FORCE_NO_LINKS) body = body.replace(/<a\b[^>]*>(.*?)<\/a>/gis, "$1");
+        body = htmlToText(body); // HTML -> plain text
         if (body.length > CONTENT_MAX_CHARS) {
           body = body.slice(0, CONTENT_MAX_CHARS).replace(/\s+\S*$/, "") + "…";
         }
-
-        // Wrap in a simple paragraph so readers show something tidy
         const safe = escapeCdata(body);
         return open + `<p>${safe}</p>` + close;
       }
     );
 
-    // THUMBNAIL: keep any valid one; else derive; else default
+    // THUMBNAIL: use existing media/enclosure → page og:image → default
     if (!/<media:thumbnail\b/.test(out)) {
       let thumb =
         out.match(/<media:content[^>]+url=["']([^"']+)["']/i)?.[1] ||
@@ -140,7 +129,7 @@ async function rewriteItems(xmlStr) {
               const html = await pageRes.text();
               const og = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)?.[1];
               if (og) thumb = og;
-              out = ensureAuthor(out, html); // also ensure author
+              out = ensureAuthor(out, html); // also ensure author if missing
             }
           } catch {}
         }
@@ -188,14 +177,13 @@ function htmlToText(html) {
     .replace(/<br\s*\/?>/gi, "\n")
     .replace(/<\/p>/gi, "\n\n")
     .replace(/<\/h[1-6]>/gi, "\n\n");
-  out = out.replace(/<[^>]+>/g, "");         // strip ALL tags
+  out = out.replace(/<[^>]+>/g, ""); // strip ALL tags
   out = decodeEntities(out);
   // collapse whitespace
   return out.replace(/[ \t]+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim();
 }
 
 function decodeEntities(s) {
-  // Just a few common ones; validators don't require perfection here
   return s
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
@@ -205,18 +193,17 @@ function decodeEntities(s) {
     .replace(/&gt;/g, ">");
 }
 
-function escapeCdata(s) {
-  // Avoid closing the CDATA by accident
-  return s.replace(/\]\]>/g, "]]&gt;");
-}
+function escapeCdata(s){ return s.replace(/\]\]>/g, "]]&gt;"); }
 
 function ensureAuthor(itemXml, articleHtml) {
   const hasDc = /<dc:creator>[\s\S]*?<\/dc:creator>/i.test(itemXml);
   const hasAuthor = /<author>[\s\S]*?<\/author>/i.test(itemXml);
   if (hasDc || hasAuthor) return itemXml;
 
+  // Try meta name="author"
   let name = articleHtml?.match(/<meta[^>]+name=["']author["'][^>]+content=["']([^"']+)["']/i)?.[1];
 
+  // Fallback: JSON-LD
   if (!name) {
     const ldMatches = articleHtml?.match(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi) || [];
     for (const block of ldMatches) {
@@ -240,13 +227,17 @@ function ensureAuthor(itemXml, articleHtml) {
 function findAuthorName(obj) {
   if (!obj || typeof obj !== "object") return null;
   if (Array.isArray(obj)) {
-    for (const el of obj) { const v = findAuthorName(el); if (v) return v; }
+    for (const el of obj) {
+      const v = findAuthorName(el);
+      if (v) return v;
+    }
   }
   if (obj.author) {
     const a = obj.author;
     if (typeof a === "string") return a;
-    if (Array.isArray(a)) { for (const e of a) if (e && (e.name || typeof e === "string")) return e.name || e; }
-    else if (a.name) return a.name;
+    if (Array.isArray(a)) {
+      for (const e of a) if (e && (e.name || typeof e === "string")) return e.name || e;
+    } else if (a.name) return a.name;
   }
   if (obj["@type"] && /Article/i.test(obj["@type"]) && obj.author) {
     const a = obj.author;
@@ -275,27 +266,6 @@ function stripJunk(html) {
     .replace(/<sup[^>]*>\s*\[?\d+\]?\s*<\/sup>/gi, "");
 }
 
-function removeUnsafeAnchors(html) {
-  return html.replace(
-    /<a\b[^>]*href=["']([^"']*)["'][^>]*>(.*?)<\/a>/gis,
-    (m, href, inner) => (/^(mailto:|tel:|javascript:|#)/i.test(href) ? inner : m)
-  );
-}
-
-function unwrapLowValueAnchors(html) {
-  let out = html.replace(/<(figcaption|caption|small)[^>]*>[\s\S]*?<\/\1>/gi, (m) =>
-    m.replace(/<a\b[^>]*>(.*?)<\/a>/gis, "$1")
-  );
-  out = out.replace(/<(ul|ol|table)[^>]*>[\s\S]*?<\/\1>/gi, (m) =>
-    m.replace(/<a\b[^>]*>(.*?)<\/a>/gis, "$1")
-  );
-  out = out.replace(
-    /<a\b[^>]*>(\s*(read\s*more|continue|view\s*sources?|sources?|references?|back\s*to\s*top)\s*)<\/a>/gi,
-    (_m, inner) => inner
-  );
-  return out;
-}
-
 function stripUtm(u) {
   try {
     const url = new URL(u);
@@ -314,6 +284,7 @@ function sanitizeUrl(u) {
   catch { try { return encodeURI(s); } catch { return null; } }
 }
 
+// MAIN
 main().catch(err => {
   console.error("BUILD FAILED:", err.stack || err.message);
   try {
