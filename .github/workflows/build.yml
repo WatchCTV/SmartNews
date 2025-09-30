@@ -2,10 +2,9 @@ name: Build & Deploy RSS feed
 
 on:
   push:
-    branches: [ main ]         # change if your default branch is different
+    branches: [ main ]
   workflow_dispatch:
 
-# These permissions are required for Pages
 permissions:
   contents: read
   pages: write
@@ -22,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Required for GitHub Pages deployments
+      # REQUIRED for GitHub Pages
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
@@ -36,9 +35,8 @@ jobs:
           set -euxo pipefail
           node -v
           node scripts/build-feed.mjs
-          # ensure dist exists and has feed
           test -f dist/feed.xml
-          # prevent Jekyll munging anything in dist/
+          # keep Jekyll from modifying the artifact
           touch dist/.nojekyll
           echo "== head of dist/feed.xml =="
           head -n 40 dist/feed.xml
