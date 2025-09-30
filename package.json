@@ -1,0 +1,13 @@
+{
+  "name": "rss-feed",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:feed": "node scripts/build-feed.mjs",
+    "build": "npm run build:feed"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
