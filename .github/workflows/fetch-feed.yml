@@ -1,0 +1,31 @@
+name: Fetch RSS Feed
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Runs every 6 hours
+  workflow_dispatch:  # Allows you to manually trigger it
+  push:
+    branches:
+      - main  # Also runs when you push to main
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # Allows the action to commit changes
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Fetch RSS Feed
+        run: |
+          curl -o feed.xml http://www.cabletv.com/blog/feed
+          
+      - name: Commit and push feed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add feed.xml
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update RSS feed $(date '+%Y-%m-%d %H:%M:%S')" && git push)
