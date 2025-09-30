@@ -21,7 +21,7 @@ jobs:
       
       - name: Fetch RSS Feed
         run: |
-          curl -o feed.xml http://www.cabletv.com/blog/feed
+          curl -o feed.xml https://www.cabletv.com/feed
           
       - name: Commit and push feed
         run: |
