@@ -1,4 +1,4 @@
-// scripts/build-feed.mjs — Generic, validator-friendly RSS builder (no custom vendor tags)
+// scripts/build-feed.mjs — Generic, validator-friendly RSS (aggressive namespace & HTML sanitizing)
 import { mkdirSync, writeFileSync } from "fs";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
@@ -13,7 +13,7 @@ const OUTPUT = OUTPUT_DIR + "/feed.xml";
 // MUST match the published URL exactly (case-sensitive!):
 const FEED_SELF_URL = "https://ctv-clearlink.github.io/RSS-Feed/feed.xml";
 
-const UA = "Mozilla/5.0 (compatible; Feed-Builder/4.0; +https://ctv-clearlink.github.io)";
+const UA = "Mozilla/5.0 (compatible; Feed-Builder/4.1; +https://ctv-clearlink.github.io)";
 
 // Emit plain text in description/content:encoded to avoid HTML validator errors
 const FORCE_NO_LINKS = true;
@@ -45,31 +45,34 @@ async function main() {
   xml = xml.replace(/^\uFEFF/, "").replace(/^\s*<\?xml[^>]*\?>\s*/i, "");
   xml = `<?xml version="1.0" encoding="UTF-8"?>\n` + xml;
 
-  // --- Remove undesired namespace declarations on <rss> (keep only allowed) ---
-  xml = xml.replace(/<rss[^>]*>/i, (m) => {
-    // Always rebuild a clean <rss> start tag
-    return (
-      '<rss version="2.0" ' +
+  // --- Brutally remove SmartNews namespace and elements regardless of prefix case/alias ---
+  // Remove any xmlns:* whose value contains the SmartNews URI
+  xml = xml.replace(/\s+xmlns:([a-z0-9_-]+)="([^"]*)"/gi, (m, pfx, uri) => {
+    return /smartnews\.be\/snf/i.test(uri) ? "" : m;
+  });
+  // Remove any elements with prefix "snf:" (blocks and self-closing)
+  xml = xml.replace(/<snf:[^>]*>[\s\S]*?<\/snf:[^>]*>/gi, "");
+  xml = xml.replace(/<snf:[^>]*\/\s*>/gi, "");
+
+  // --- Rebuild the <rss> root cleanly (prevents duplicate attributes & unknown xmlns) ---
+  xml = xml.replace(
+    /<rss[^>]*>/i,
+    '<rss version="2.0" ' +
       'xmlns:media="http://search.yahoo.com/mrss/" ' +
       'xmlns:content="http://purl.org/rss/1.0/modules/content/" ' +
       'xmlns:dc="http://purl.org/dc/elements/1.1/" ' +
       'xmlns:atom="http://www.w3.org/2005/Atom">'
-    );
-  });
+  );
 
-  // --- Remove any namespaced elements we don't explicitly allow ---
-  // Blocks like <x:foo>...</x:foo>
-  const disallowedBlock = new RegExp(
-    `<(?!${ALLOWED_NS_PREFIXES.join("|")}:)` + `([a-zA-Z0-9_-]+):[^>]+>[\\s\\S]*?<\\/\\1:[^>]+>`,
-    "gi"
-  );
-  xml = xml.replace(disallowedBlock, "");
-  // Self-closing like <x:foo />
-  const disallowedSelf = new RegExp(
-    `<(?!${ALLOWED_NS_PREFIXES.join("|")}:)` + `[a-zA-Z0-9_-]+:[^>]+\\/\\s*>`,
-    "gi"
-  );
-  xml = xml.replace(disallowedSelf, "");
+  // --- Remove ANY namespaced elements we do not explicitly allow (robust) ---
+  // 1) Remove full blocks: <x:foo ...>...</x:foo>
+  xml = xml.replace(/<([a-zA-Z0-9_-]+):([a-zA-Z0-9._-]+)(\s[^>]*)?>[\s\S]*?<\/\1:\2\s*>/g, (m, pfx) => {
+    return ALLOWED_NS_PREFIXES.includes(pfx.toLowerCase()) ? m : "";
+  });
+  // 2) Remove self-closing: <x:foo ... />
+  xml = xml.replace(/<([a-zA-Z0-9_-]+):([a-zA-Z0-9._-]+)(\s[^>]*)?\/\s*>/g, (m, pfx) => {
+    return ALLOWED_NS_PREFIXES.includes(pfx.toLowerCase()) ? m : "";
+  });
 
   // Ensure exactly one correct atom:link rel="self"
   xml = xml
@@ -113,31 +116,26 @@ async function rewriteItems(xmlStr) {
       return `<title><![CDATA[${t}]]></title>`;
     });
 
-    // DESCRIPTION → plain text CDATA
-    out = out.replace(/<description>[\s\S]*?<\/description>/i, (m) => {
-      const inner = m.replace(/^<description>/i, "").replace(/<\/description>$/i, "");
+    // DESCRIPTION → unconditional plain text CDATA (handles CDATA or raw HTML)
+    out = replaceBlock(out, "description", (inner) => {
       let txt = stripAllTagsPreservingBreaks(unwrapCdata(inner));
       txt = decodeEntities(txt).trim();
       if (txt.length > CONTENT_MAX_CHARS) {
         txt = txt.slice(0, CONTENT_MAX_CHARS).replace(/\s+\S*$/, "") + "…";
       }
-      return `<description><![CDATA[${txt}]]></description>`;
+      return `<![CDATA[${txt}]]>`;
     });
 
-    // CONTENT:ENCODED → cleaned, plain-text CDATA
-    out = out.replace(
-      /(<content:encoded>\s*<!\[CDATA\[)([\s\S]*?)(\]\]>\s*<\/content:encoded>)/i,
-      (_, open, body, close) => {
-        body = stripJunk(body);
-        if (FORCE_NO_LINKS) body = body.replace(/<a\b[^>]*>(.*?)<\/a>/gis, "$1");
-        body = htmlToText(body);
-        if (body.length > CONTENT_MAX_CHARS) {
-          body = body.slice(0, CONTENT_MAX_CHARS).replace(/\s+\S*$/, "") + "…";
-        }
-        const safe = escapeCdata(body);
-        return open + `<p>${safe}</p>` + close;
+    // CONTENT:ENCODED → unconditional cleaned, plain-text CDATA (handles CDATA or raw)
+    out = replaceBlock(out, "content:encoded", (inner) => {
+      let body = stripJunk(unwrapCdata(inner));
+      if (FORCE_NO_LINKS) body = body.replace(/<a\b[^>]*>(.*?)<\/a>/gis, "$1");
+      body = htmlToText(body);
+      if (body.length > CONTENT_MAX_CHARS) {
+        body = body.slice(0, CONTENT_MAX_CHARS).replace(/\s+\S*$/, "") + "…";
       }
-    );
+      return `<![CDATA[<p>${escapeCdata(body)}</p>]]>`;
+    });
 
     // THUMBNAIL: prefer existing, else og:image, else default
     if (!/<media:thumbnail\b/i.test(out)) {
@@ -196,6 +194,15 @@ async function rewriteItems(xmlStr) {
 }
 
 /* ---------------- HELPERS ---------------- */
+
+// Replace a simple element block with a callback for its inner content.
+// Handles multiple instances by replacing the first one only (RSS uses one).
+function replaceBlock(xml, tagName, fn) {
+  const re = new RegExp(`<${escapeReg(tagName)}\\b[^>]*>([\\s\\S]*?)<\\/${escapeReg(tagName)}\\s*>`, "i");
+  return xml.replace(re, (_m, inner) => `<${tagName}>${fn(inner)}</${tagName}>`);
+}
+
+function escapeReg(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
 
 function unwrapCdata(s) {
   const m = s.match(/^\s*<!\[CDATA\[([\s\S]*?)\]\]>\s*$/i);
