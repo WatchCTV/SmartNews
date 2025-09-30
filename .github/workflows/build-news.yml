@@ -1,4 +1,4 @@
-name: Build SmartNews Feed
+name: Build News Feed
 on:
   schedule:
     - cron: "*/15 * * * *"   # every 15 minutes
