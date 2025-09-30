@@ -1,48 +1,63 @@
-// scripts/build-smartnews.mjs
+// scripts/build-feed.mjs
 import { mkdirSync, writeFileSync } from "fs";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// ---------------- CONFIG ----------------
-const FEED_URL = "https://www.cabletv.com/feed";
-const LOGO_URL = "https://i.ibb.co/sptKgp34/CTV-Feed-Logo.png"; // 700x100 PNG
+/**
+ * ---------------- CONFIG (provider-agnostic) ----------------
+ */
+const SOURCE_FEED_URL = "https://www.cabletv.com/feed";         // your WP RSS
 const OUTPUT_DIR = __dirname + "/../dist";
-const OUTPUT = OUTPUT_DIR + "/feed-smartnews.xml";
-const UA = "Mozilla/5.0 (compatible; SmartNews-Feed-Builder/2.1; +https://CTV-Clearlink.github.io)";
+const OUTPUT = OUTPUT_DIR + "/feed.xml";                         // generic filename
 
-// Remove ALL <a> tags inside content:encoded (keep inner text)
+// Generic UA (no provider names)
+const UA = "Mozilla/5.0 (compatible; Feed-Builder/2.1; +https://CTV-Clearlink.github.io)";
+
+// Keep article bodies but remove all inline links to satisfy strict validators
 const FORCE_NO_LINKS = true;
 
-// Allowed thumbnail extensions
+// Thumbnails: accept common web image types
 const ALLOWED_IMG_EXT = /\.(png|jpe?g|webp|gif)(\?|#|$)/i;
-// ---------------------------------------
+
+// Toggle provider-specific extensions:
+// SmartNews-only extras (namespace + <snf:logo>). Flip to false for a totally clean RSS.
+const ENABLE_SMARTNEWS_EXTRAS = true;
+const SMARTNEWS_LOGO_URL = "https://i.ibb.co/sptKgp34/CTV-Feed-Logo.png"; // 700x100 PNG if ENABLE_SMARTNEWS_EXTRAS
+/**
+ * ------------------------------------------------------------
+ */
 
 async function main() {
   mkdirSync(OUTPUT_DIR, { recursive: true });
 
-  const res = await fetch(FEED_URL, {
+  const res = await fetch(SOURCE_FEED_URL, {
     headers: { Accept: "application/rss+xml", "User-Agent": UA }
   });
-  if (!res.ok) throw new Error(`Fetch ${FEED_URL} failed: ${res.status} ${res.statusText}`);
+  if (!res.ok) throw new Error(`Fetch ${SOURCE_FEED_URL} failed: ${res.status} ${res.statusText}`);
 
   let xml = await res.text();
   if (!xml.includes("<rss")) throw new Error("Origin did not return RSS/XML (no <rss> tag)");
 
-  // Ensure namespaces
-  if (!/xmlns:snf=/.test(xml)) {
+  // Ensure common namespaces; add SmartNews namespace only if enabled
+  if (!/xmlns:media=/.test(xml) || (ENABLE_SMARTNEWS_EXTRAS && !/xmlns:snf=/.test(xml))) {
     xml = xml.replace(
       /<rss([^>]*)>/,
-      '<rss$1 xmlns:snf="http://www.smartnews.be/snf" xmlns:media="http://search.yahoo.com/mrss/">'
+      `<rss$1 xmlns:media="http://search.yahoo.com/mrss/"` +
+        (ENABLE_SMARTNEWS_EXTRAS ? ` xmlns:snf="http://www.smartnews.be/snf"` : "") +
+        `>`
     );
   }
 
-  // Inject channel logo if missing
-  if (!/<snf:logo>/.test(xml)) {
+  // Inject SmartNews logo ONLY if that mode is on and logo is missing
+  if (ENABLE_SMARTNEWS_EXTRAS && !/<snf:logo>/.test(xml)) {
     xml = xml.replace("<channel>", `<channel>
-    <snf:logo><url>${LOGO_URL}</url></snf:logo>`);
+    <snf:logo><url>${SMARTNEWS_LOGO_URL}</url></snf:logo>`);
   }
+
+  // Remove any existing snf:analytics (optional & often flagged if malformed)
+  xml = xml.replace(/<snf:analytics>[\s\S]*?<\/snf:analytics>/gi, "");
 
   // Per-item rewrites
   xml = await rewriteItems(xml);
@@ -58,34 +73,33 @@ async function rewriteItems(xmlStr) {
   for (const item of items) {
     let out = item;
 
-    // Title cleanup: remove shortcodes, decode pipe, trim; fix dangling "in"
+    // Title cleanup: remove [shortcodes], fix pipes, trim; fix dangling "in"
     out = out.replace(/<title>\s*(?:<!\[CDATA\[([\s\S]*?)\]\]>|([^<]*))\s*<\/title>/i, (_m, cdata, plain) => {
       let t = (cdata ?? plain ?? "").trim();
-      t = t.replace(/\[[^\]]+\]/g, "") // remove [shortcodes]
+      t = t.replace(/\[[^\]]+\]/g, "")      // remove [shortcodes]
            .replace(/&#124;/g, "|")
            .replace(/\s{2,}/g, " ")
            .trim();
-      if (/\bin\s*$/i.test(t)) t += new Date().getFullYear(); // e.g., "in"
+      if (/\bin\s*$/i.test(t)) t += new Date().getFullYear(); // e.g., trailing "in "
       return `<title><![CDATA[${t}]]></title>`;
     });
 
-    // Remove any existing (possibly invalid) analytics blocks (optional in SN)
+    // Strip provider-optional analytics blocks if present
     out = out.replace(/<snf:analytics>[\s\S]*?<\/snf:analytics>/gi, "");
 
-    // Content cleanup + NO LINKS policy
+    // Content: clean + remove all <a> tags (keep inner text)
     out = out.replace(
       /(<content:encoded><!\[CDATA\[)([\s\S]*?)(\]\]><\/content:encoded>)/,
       (_, open, body, close) => {
         body = stripJunk(body);
         body = unwrapLowValueAnchors(body);
-        body = removeUnsafeAnchors(body); // unwrap mailto/tel/js/hash
+        body = removeUnsafeAnchors(body);
 
-        // Remove EVERY <a>…</a>, keep inner text
         if (FORCE_NO_LINKS) {
           body = body.replace(/<a\b[^>]*>(.*?)<\/a>/gis, "$1");
         }
 
-        // Always unwrap anchors inside headings (belt & suspenders)
+        // Also unwrap anchors inside headings (extra safety)
         body = body.replace(/<(h1|h2|h3|h4|h5|h6)[^>]*>[\s\S]*?<\/\1>/gi, m =>
           m.replace(/<a\b[^>]*>(.*?)<\/a>/gis, "$1")
         );
@@ -94,7 +108,7 @@ async function rewriteItems(xmlStr) {
       }
     );
 
-    // Ensure/sanitize media:thumbnail
+    // Ensure/sanitize <media:thumbnail>
     if (!/<media:thumbnail\b/.test(out)) {
       const link = (out.match(/<link>([^<]+)<\/link>/)?.[1] || "").split("?")[0];
       if (link) {
@@ -139,7 +153,7 @@ async function rewriteItems(xmlStr) {
   return xmlStr;
 }
 
-// ---------------- HELPERS ----------------
+/* ---------------- HELPERS ---------------- */
 
 function ensureAuthor(itemXml, articleHtml) {
   const hasDc = /<dc:creator>[\s\S]*?<\/dc:creator>/i.test(itemXml);
@@ -258,7 +272,7 @@ function sanitizeUrl(u) {
   catch { try { return encodeURI(s); } catch { return null; } }
 }
 
-// --------------- MAIN -------------------
+// MAIN
 main().catch(err => {
   console.error("BUILD FAILED:", err.stack || err.message);
   try {
