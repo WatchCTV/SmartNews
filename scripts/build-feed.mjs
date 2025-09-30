@@ -8,11 +8,11 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /** ---------------- CONFIG ---------------- */
-const SOURCE_FEED_URL = "http://www.cabletv.com/blog/feed"; // your source
-const OUTPUT_DIR = resolve(__dirname, "..", "dist");
-const OUTPUT = resolve(OUTPUT_DIR, "feed.xml");
+const SOURCE_FEED_URL = "http://www.cabletv.com/blog/feed"; // exactly this
+const OUTPUT_DIR = new URL("../dist", import.meta.url).pathname || __dirname + "/../dist"; // or your existing resolve()
+const OUTPUT = /* path to */ OUTPUT_DIR + "/feed.xml";
 
-// MUST match the final, public URL exactly (case-sensitive!)
+// MUST match your live URL, case-sensitive:
 const FEED_SELF_URL = "https://CTV-Clearlink.github.io/RSS-Feed/feed.xml";
 
 // Limits
