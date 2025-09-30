@@ -2,7 +2,7 @@ name: Build & Deploy RSS feed
 
 on:
   push:
-    branches: [ main ]   # ← change if your default branch is different
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -14,6 +14,11 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+env:
+  # Adjust if you changed the script
+  FEED_PATH: dist/feed.xml
+  SOURCE_FEED_URL: http://www.cabletv.com/blog/feed
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,16 +26,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Show repo tree
+        run: |
+          echo "== repo tree =="
+          ls -la
+          echo "== scripts/ =="
+          ls -la scripts || true
+          echo "== package.json =="
+          cat package.json || true
+
       - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Build sanitized feed
+      - name: Sanity check source feed
         run: |
+          echo "== HEAD of $SOURCE_FEED_URL =="
+          curl -fsSL "$SOURCE_FEED_URL" | head -n 40 || true
+
+      - name: Build sanitized feed (verbose)
+        run: |
+          set -euxo pipefail
           node -v
-          npm run build || node scripts/build-feed.mjs
-          test -f dist/feed.xml || (echo "dist/feed.xml not found" && exit 1)
+          # Prefer running the script directly; if you later keep the npm script, either works.
+          node scripts/build-feed.mjs
+          echo "== head of output =="
+          head -n 40 "$FEED_PATH"
+          echo "== grep for snf or smartnews =="
+          (grep -nE 'xmlns:snf|<snf:|smartnews\.be' "$FEED_PATH" && exit 2) || true
+          test -f "$FEED_PATH"
 
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
