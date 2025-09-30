@@ -9,7 +9,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /** ---------------- CONFIG ---------------- */
 const SOURCE_FEED_URL = "http://www.cabletv.com/blog/feed";
-const FEED_SELF_URL = "https://CTV-Clearlink.github.io/RSS-Feed/feed.xml"; // case-sensitive
+const FEED_SELF_URL   = "https://CTV-Clearlink.github.io/RSS-Feed/feed.xml"; // case-sensitive
 const OUTPUT = /* path to */ OUTPUT_DIR + "/feed.xml";
 
 // MUST match your live URL, case-sensitive:
