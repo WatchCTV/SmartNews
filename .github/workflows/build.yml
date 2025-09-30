@@ -1,4 +1,4 @@
-name: Build & Deploy RSS feed
+name: Debug RSS build (no deploy)
 
 on:
   push:
@@ -7,12 +7,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
 
 jobs:
   build:
@@ -21,29 +15,33 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Show repo tree
+        run: |
+          echo "== repo tree (root) =="
+          ls -la
+          echo "== scripts =="
+          ls -la scripts || true
+          echo "== package.json =="
+          cat package.json || true
+
       - name: Use Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Build sanitized feed
+      - name: Build feed (verbose)
         run: |
+          set -euxo pipefail
           node -v
-          npm run build:debug
-          test -f dist/feed.xml
+          # Run your script directly (avoids npm script surprises)
+          node scripts/build-feed.mjs
+          echo "== dist listing =="
+          ls -la dist || true
+          echo "== head of dist/feed.xml (or diagnostic) =="
+          head -n 80 dist/feed.xml || true
 
-      - name: Upload artifact for Pages
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
         with:
+          name: dist
           path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
