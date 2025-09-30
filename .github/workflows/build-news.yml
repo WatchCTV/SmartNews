@@ -1,13 +1,17 @@
 name: Build News Feed
 on:
   schedule:
-    - cron: "*/15 * * * *"   # every 15 minutes
+    - cron: "*/15 * * * *"   # every 15 minutes (UTC)
   workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -39,5 +43,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      pages: write
+      id-token: write
     steps:
       - uses: actions/deploy-pages@v4
