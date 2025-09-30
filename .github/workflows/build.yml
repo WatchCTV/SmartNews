@@ -1,9 +1,8 @@
-name: Build & Deploy Clean RSS (no Node)
+name: Clean RSS → GitHub Pages (no Node)
 
 on:
-  push:
-    branches: [ main ]     # change if your default branch is different
-  workflow_dispatch:
+  push:                # run on any branch so we don't miss your default
+  workflow_dispatch:   # manual "Run workflow" button
 
 permissions:
   contents: read
@@ -25,88 +24,42 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Required for Pages
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Build sanitized feed with bash/sed/awk
+      - name: Build cleaned feed (bash + perl only)
         run: |
           set -euo pipefail
           mkdir -p dist
-          TMP=work.xml
 
-          echo "== Fetch source =="
-          curl -fsSL "$SOURCE_FEED" -o src.xml
+          echo "== fetch source =="
+          UA='Mozilla/5.0 (compatible; CleanFeed/1.0)'
+          curl -fsSL -A "$UA" -H 'Accept: application/rss+xml, application/xml;q=0.9, */*;q=0.8' "$SOURCE_FEED" -o src.xml
 
-          echo "== Strip SmartNews namespaces/elements =="
-          # Remove xmlns:snf="..."; remove any <snf:...>...</snf:...> and self-closing
-          sed -E 's/[[:space:]]xmlns:snf="[^"]*"//g' src.xml \
-            | sed -E 's/<snf:[^>]*>[^<]*<\/snf:[^>]*>//g' \
-            | sed -E 's/<snf:[^>]*\/>//g' > step1.xml
+          # normalize newlines
+          tr -d '\r' < src.xml > work.xml
 
-          echo "== Replace <rss ...> with clean standard namespaces =="
-          # Replace the first <rss ...>...> tag with a canonical one
-          awk '
-            BEGIN{replaced=0}
-            {
-              if (!replaced && match($0, /<rss[^>]*>/)) {
-                print "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-                print "<rss version=\"2.0\" " \
-                      "xmlns:media=\"http://search.yahoo.com/mrss/\" " \
-                      "xmlns:content=\"http://purl.org/rss/1.0/modules/content/\" " \
-                      "xmlns:dc=\"http://purl.org/dc/elements/1.1/\" " \
-                      "xmlns:atom=\"http://www.w3.org/2005/Atom\">"
-                # drop the original <rss...> line
-                replaced=1
-              } else {
-                print
-              }
-            }' step1.xml > step2.xml
+          echo "== sanitize =="
+          # 1) remove SmartNews namespace + elements (multi-line safe)
+          perl -0777 -pe 's/\s+xmlns:snf="[^"]*"//gi' work.xml \
+          | perl -0777 -pe 's#<snf:[^>]+>.*?</snf:[^>]+>##gis' \
+          | perl -0777 -pe 's#<snf:[^>]*/>##gis' \
+          # 2) normalize <rss ...> to standard namespaces only
+          | perl -0777 -pe 's#<\?xml[^>]*\?>\s*<rss[^>]*>#<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"\n  xmlns:media="http://search.yahoo.com/mrss/"\n  xmlns:content="http://purl.org/rss/1.0/modules/content/"\n  xmlns:dc="http://purl.org/dc/elements/1.1/"\n  xmlns:atom="http://www.w3.org/2005/Atom">#is' \
+          # 3) remove any existing rel=self
+          | perl -0777 -pe 's#<atom:link[^>]+rel=(?:"|\')self(?:"|\')[^>]*/>\s*##is' \
+          # 4) inject our exact rel=self after <channel>
+          | perl -0777 -pe "s#(<channel[^>]*>)#\$1\n    <atom:link href=\"$ENV{SELF_URL}\" rel=\"self\" type=\"application/rss+xml\" />#i" \
+          # 5) drop all <content:encoded> blocks (validator HTML issues)
+          | perl -0777 -pe 's#<content:encoded\b[^>]*>.*?</content:encoded>##gis' \
+          > dist/feed.xml
 
-          echo "== Remove any existing rel=self and inject correct one =="
-          # Remove existing atom:link with rel="self"
-          sed -E 's#<atom:link[^>]+rel=["'\'']self["'\''][^>]*/>##g' step2.xml > step3.xml
+          echo "== head of output =="
+          head -n 40 dist/feed.xml || true
 
-          # Insert our self link immediately after the opening <channel>
-          awk -v SELF="$SELF_URL" '
-            BEGIN{inserted=0}
-            {
-              print
-              if (!inserted && match($0, /<channel>/)) {
-                print "    <atom:link href=\"" SELF "\" rel=\"self\" type=\"application/rss+xml\" />"
-                inserted=1
-              }
-            }' step3.xml > step4.xml
-
-          echo "== Drop <content:encoded> blocks to avoid HTML validator errors =="
-          # Remove all <content:encoded>...</content:encoded> blocks (case-insensitive)
-          perl -0777 -pe "s#<content:encoded\\b[^>]*>.*?</content:encoded>##gis" step4.xml > step5.xml
-
-          echo "== Limit to newest 30 <item> elements =="
-          # Keep channel header + first 30 items + channel/rss closing
-          awk '
-            BEGIN{in_items=0; count=0}
-            /<channel>/ {in_items=1}
-            {
-              if (in_items==0) { print; next }
-              if ($0 ~ /<item>/) { count++ }
-              if (count<=30) { print }
-            }' step5.xml \
-            | awk '
-              # Ensure closing tags exist even if we truncated
-              { print }
-              END{
-                # If file didn\'t already end with </channel></rss>, add them.
-                # (Safe even if already present; validators ignore duplicates at end.)
-                print "</channel>"
-                print "</rss>"
-              }' > "$TMP"
-
-          echo "== Finalize =="
-          mv "$TMP" dist/feed.xml
+          # prevent Jekyll mangling
           touch dist/.nojekyll
-
-          echo "== HEAD of dist/feed.xml =="
-          head -n 40 dist/feed.xml
 
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
