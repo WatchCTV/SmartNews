@@ -1,33 +1,32 @@
-// scripts/build-feed.mjs
+// scripts/build-feed.mjs (provider-agnostic)
 import { mkdirSync, writeFileSync } from "fs";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-/**
- * ---------------- CONFIG (provider-agnostic) ----------------
- */
-const SOURCE_FEED_URL = "https://www.cabletv.com/feed";         // your WP RSS
+/** ---------------- CONFIG ---------------- */
+const SOURCE_FEED_URL = "https://www.cabletv.com/feed";
 const OUTPUT_DIR = __dirname + "/../dist";
-const OUTPUT = OUTPUT_DIR + "/feed.xml";                         // generic filename
+const OUTPUT = OUTPUT_DIR + "/feed.xml";
 
-// Generic UA (no provider names)
-const UA = "Mozilla/5.0 (compatible; Feed-Builder/2.1; +https://CTV-Clearlink.github.io)";
+const UA = "Mozilla/5.0 (compatible; Feed-Builder/3.0; +https://CTV-Clearlink.github.io)";
 
 // Keep article bodies but remove all inline links to satisfy strict validators
 const FORCE_NO_LINKS = true;
 
-// Thumbnails: accept common web image types
-const ALLOWED_IMG_EXT = /\.(png|jpe?g|webp|gif)(\?|#|$)/i;
+// Hard limits to avoid “Too large content size”
+const ITEM_LIMIT = 30;          // include only the newest N items
+const CONTENT_MAX_CHARS = 8000; // trim content:encoded to this length (per item)
 
-// Toggle provider-specific extensions:
-// SmartNews-only extras (namespace + <snf:logo>). Flip to false for a totally clean RSS.
+// Thumbnail policy
+const ALLOWED_IMG_EXT = /\.(png|jpe?g|webp|gif)(\?|#|$)/i;
+const DEFAULT_THUMB_URL = "https://www.cabletv.com/app/themes/bifrost-child/dist/images/brands/logo-generic-horz-outline.svg"; // replace with a PNG/JPG if you prefer
+
+// Optional SmartNews extensions (leave true while validating there)
 const ENABLE_SMARTNEWS_EXTRAS = true;
-const SMARTNEWS_LOGO_URL = "https://i.ibb.co/sptKgp34/CTV-Feed-Logo.png"; // 700x100 PNG if ENABLE_SMARTNEWS_EXTRAS
-/**
- * ------------------------------------------------------------
- */
+const SMARTNEWS_LOGO_URL = "https://i.ibb.co/sptKgp34/CTV-Feed-Logo.png"; // 700x100 PNG
+/** ---------------------------------------- */
 
 async function main() {
   mkdirSync(OUTPUT_DIR, { recursive: true });
@@ -40,13 +39,13 @@ async function main() {
   let xml = await res.text();
   if (!xml.includes("<rss")) throw new Error("Origin did not return RSS/XML (no <rss> tag)");
 
-  // Ensure common namespaces; add SmartNews namespace only if enabled
+  // Ensure namespaces (media always; snf only if enabled)
   if (!/xmlns:media=/.test(xml) || (ENABLE_SMARTNEWS_EXTRAS && !/xmlns:snf=/.test(xml))) {
     xml = xml.replace(
       /<rss([^>]*)>/,
       `<rss$1 xmlns:media="http://search.yahoo.com/mrss/"` +
         (ENABLE_SMARTNEWS_EXTRAS ? ` xmlns:snf="http://www.smartnews.be/snf"` : "") +
-        `>`
+      `>`
     );
   }
 
@@ -56,78 +55,107 @@ async function main() {
     <snf:logo><url>${SMARTNEWS_LOGO_URL}</url></snf:logo>`);
   }
 
-  // Remove any existing snf:analytics (optional & often flagged if malformed)
+  // Strip any existing snf:analytics (optional & can be flagged if malformed)
   xml = xml.replace(/<snf:analytics>[\s\S]*?<\/snf:analytics>/gi, "");
 
-  // Per-item rewrites
+  // Limit item count early to keep the file small
+  xml = limitItems(xml, ITEM_LIMIT);
+
+  // Per-item rewrites (content trimming, thumbnails, authors, UTM strip)
   xml = await rewriteItems(xml);
 
   writeFileSync(OUTPUT, xml, "utf8");
   console.log("Wrote", OUTPUT);
 }
 
+function limitItems(xml, limit) {
+  const items = xml.match(/<item>[\s\S]*?<\/item>/g) || [];
+  if (items.length <= limit) return xml;
+  const keep = items.slice(0, limit).join("\n");
+  return xml.replace(/<channel>[\s\S]*?<\/channel>/, (m) => {
+    const before = m.split(/<item>/)[0]; // header up to first item (still contains <channel>)
+    return before + keep + "\n</channel>";
+  });
+}
+
 async function rewriteItems(xmlStr) {
-  const items = xmlStr.match(/<item>[\s\S]*?<\/item>/g) || [];
-  console.log(`Found ${items.length} <item> elements`);
+  let items = xmlStr.match(/<item>[\s\S]*?<\/item>/g) || [];
+  console.log(`Processing ${items.length} <item> elements`);
 
   for (const item of items) {
     let out = item;
 
-    // Title cleanup: remove [shortcodes], fix pipes, trim; fix dangling "in"
+    // Title cleanup: remove [shortcodes], decode pipe, trim; fix dangling "in"
     out = out.replace(/<title>\s*(?:<!\[CDATA\[([\s\S]*?)\]\]>|([^<]*))\s*<\/title>/i, (_m, cdata, plain) => {
       let t = (cdata ?? plain ?? "").trim();
-      t = t.replace(/\[[^\]]+\]/g, "")      // remove [shortcodes]
+      t = t.replace(/\[[^\]]+\]/g, "") // remove shortcodes like [current_date …]
            .replace(/&#124;/g, "|")
            .replace(/\s{2,}/g, " ")
            .trim();
-      if (/\bin\s*$/i.test(t)) t += new Date().getFullYear(); // e.g., trailing "in "
+      if (/\bin\s*$/i.test(t)) t += new Date().getFullYear();
       return `<title><![CDATA[${t}]]></title>`;
     });
 
-    // Strip provider-optional analytics blocks if present
+    // Remove any existing (possibly invalid) analytics blocks
     out = out.replace(/<snf:analytics>[\s\S]*?<\/snf:analytics>/gi, "");
 
-    // Content: clean + remove all <a> tags (keep inner text)
+    // CONTENT: clean, remove links, and TRIM length to avoid oversized feed
     out = out.replace(
       /(<content:encoded><!\[CDATA\[)([\s\S]*?)(\]\]><\/content:encoded>)/,
       (_, open, body, close) => {
         body = stripJunk(body);
         body = unwrapLowValueAnchors(body);
         body = removeUnsafeAnchors(body);
-
         if (FORCE_NO_LINKS) {
           body = body.replace(/<a\b[^>]*>(.*?)<\/a>/gis, "$1");
         }
-
+        // Trim content to max chars (works fine in CDATA)
+        if (body.length > CONTENT_MAX_CHARS) {
+          body = body.slice(0, CONTENT_MAX_CHARS) + "…";
+        }
         // Also unwrap anchors inside headings (extra safety)
         body = body.replace(/<(h1|h2|h3|h4|h5|h6)[^>]*>[\s\S]*?<\/\1>/gi, m =>
           m.replace(/<a\b[^>]*>(.*?)<\/a>/gis, "$1")
         );
-
         return open + body + close;
       }
     );
 
-    // Ensure/sanitize <media:thumbnail>
+    // THUMBNAIL: prefer existing; else derive from page; else RSS media/enclosure; else default
     if (!/<media:thumbnail\b/.test(out)) {
-      const link = (out.match(/<link>([^<]+)<\/link>/)?.[1] || "").split("?")[0];
-      if (link) {
-        try {
-          const pageRes = await fetch(link, { headers: { Accept: "text/html", "User-Agent": UA } });
-          if (pageRes.ok) {
-            const html = await pageRes.text();
-            const rawOg = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)?.[1];
-            const thumb = sanitizeUrl(rawOg);
-            if (thumb && ALLOWED_IMG_EXT.test(thumb)) {
-              out = out.replace("</item>", `<media:thumbnail url="${thumb}" /></item>`);
+      let thumb = null;
+
+      // 1) RSS media:content or enclosure in item
+      thumb = thumb || out.match(/<media:content[^>]+url=["']([^"']+)["']/i)?.[1] || null;
+      thumb = thumb || out.match(/<enclosure[^>]+url=["']([^"']+)["']/i)?.[1] || null;
+
+      // 2) Fetch article page, read og:image
+      if (!thumb) {
+        const link = (out.match(/<link>([^<]+)<\/link>/)?.[1] || "").split("?")[0];
+        if (link) {
+          try {
+            const pageRes = await fetch(link, { headers: { Accept: "text/html", "User-Agent": UA } });
+            if (pageRes.ok) {
+              const html = await pageRes.text();
+              const og = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)?.[1];
+              if (og) thumb = og;
+              // Also ensure author if missing
+              out = ensureAuthor(out, html);
             }
-            // Ensure author if missing
-            out = ensureAuthor(out, html);
-          }
-        } catch { /* ignore per-item */ }
+          } catch {}
+        }
+      }
+
+      // 3) Fallback default
+      if (!thumb) thumb = DEFAULT_THUMB_URL;
+
+      // sanitize + ensure allowed extension (or skip if not acceptable)
+      const s = sanitizeUrl(thumb);
+      if (s && ALLOWED_IMG_EXT.test(s)) {
+        out = out.replace("</item>", `<media:thumbnail url="${s}" /></item>`);
       }
     } else {
-      // sanitize existing thumbnail URL
+      // sanitize provided thumbnail URL
       out = out.replace(/<media:thumbnail[^>]+url=["']([^"']+)["'][^>]*\/>/i, (m, u) => {
         const s = sanitizeUrl(u);
         return (s && ALLOWED_IMG_EXT.test(s)) ? `<media:thumbnail url="${s}" />` : "";
@@ -148,6 +176,7 @@ async function rewriteItems(xmlStr) {
     // Strip UTM params in <link>
     out = out.replace(/<link>([^<]+)<\/link>/, (_, u) => `<link>${stripUtm(u)}</link>`);
 
+    // Replace in the global XML
     xmlStr = xmlStr.replace(item, out);
   }
   return xmlStr;
@@ -272,7 +301,6 @@ function sanitizeUrl(u) {
   catch { try { return encodeURI(s); } catch { return null; } }
 }
 
-// MAIN
 main().catch(err => {
   console.error("BUILD FAILED:", err.stack || err.message);
   try {
