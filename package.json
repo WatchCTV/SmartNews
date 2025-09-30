@@ -3,11 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "build:feed": "node scripts/build-feed.mjs",
-    "build": "npm run build:feed"
-  },
   "engines": {
     "node": ">=18"
-  }
+  },
+  "scripts": {
+    "build:feed": "node scripts/build-feed.mjs",
+
+    "check:self": "grep -nE '<atom:link[^>]+rel=[\"\\']self[\"\\'][^>]+href=[\"\\']https://CTV-Clearlink.github.io/RSS-Feed/feed.xml[\"\\']' dist/feed.xml",
+    "check:snf": "(! grep -nE 'xmlns:snf|<snf:|smartnews\\.be' dist/feed.xml)",
+    "check:exists": "test -f dist/feed.xml",
+    "print:head": "head -n 40 dist/feed.xml || true",
+
+    "verify": "npm run check:exists && npm run check:self && npm run check:snf",
+    "build": "npm run build:feed && npm run print:head && npm run verify",
+
+    "debug:source-head": "curl -fsSL 'http://www.cabletv.com/blog/feed' | head -n 40 || true"
+  },
+  "packageManager": "npm@10"
 }
