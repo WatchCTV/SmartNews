@@ -1,0 +1,43 @@
+name: Build SmartNews Feed
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # every 15 minutes
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Node info
+        run: |
+          node -v
+          npm -v
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check source RSS reachability
+        run: |
+          curl -I -A "Mozilla/5.0 (compatible; SmartNews-Feed-Builder/1.0)" https://www.cabletv.com/feed || true
+
+      - name: Build SmartNews feed
+        run: node scripts/build-smartnews.mjs
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/deploy-pages@v4
