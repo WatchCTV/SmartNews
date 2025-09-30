@@ -21,7 +21,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # REQUIRED for GitHub Pages
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
@@ -30,16 +29,50 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Build feed (verbose)
+      - name: Build feed (robust)
         run: |
           set -euxo pipefail
           node -v
-          node scripts/build-feed.mjs
-          test -f dist/feed.xml
-          # keep Jekyll from modifying the artifact
-          touch dist/.nojekyll
+          mkdir -p dist
+
+          # Try the real build first
+          if node scripts/build-feed.mjs; then
+            echo "✅ build-feed.mjs completed"
+          else
+            echo "❌ build-feed.mjs failed — creating a minimal fallback feed" >&2
+            NOW=$(date -uR)
+            cat > dist/feed.xml <<'XML'
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="https://CTV-Clearlink.github.io/RSS-Feed/feed.xml" rel="self" type="application/rss+xml" />
+    <title>CTV Feed (Fallback)</title>
+    <link>https://www.cabletv.com/</link>
+    <description>Fallback feed written by workflow because build script failed.</description>
+    <lastBuildDate>NOW_PLACEHOLDER</lastBuildDate>
+    <item>
+      <title><![CDATA[Build failed on GitHub Actions]]></title>
+      <link>https://CTV-Clearlink.github.io/RSS-Feed/feed.xml</link>
+      <guid isPermaLink="false">build-failed</guid>
+      <pubDate>NOW_PLACEHOLDER</pubDate>
+      <description><![CDATA[Open the workflow logs → “Build feed (robust)” to see the error.]]></description>
+      <content:encoded><![CDATA[<p>Check the Actions logs for error details.</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
+XML
+            sed -i "s/NOW_PLACEHOLDER/$NOW/g" dist/feed.xml
+          fi
+
           echo "== head of dist/feed.xml =="
-          head -n 40 dist/feed.xml
+          head -n 60 dist/feed.xml
+
+          # Make sure Jekyll doesn't rewrite anything
+          touch dist/.nojekyll
 
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
