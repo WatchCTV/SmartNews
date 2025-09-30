@@ -1,4 +1,4 @@
-// scripts/build-feed.mjs  — generic RSS builder (no SmartNews tags)
+// scripts/build-feed.mjs — generic RSS builder (validator-clean, no SmartNews tags)
 import { mkdirSync, writeFileSync } from "fs";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
@@ -10,15 +10,15 @@ const SOURCE_FEED_URL = "https://www.cabletv.com/feed";
 const OUTPUT_DIR = __dirname + "/../dist";
 const OUTPUT = OUTPUT_DIR + "/feed.xml";
 
-// MUST match the published URL exactly (case-sensitive):
+// MUST match the published URL exactly (case-sensitive)
 const FEED_SELF_URL = "https://CTV-Clearlink.github.io/RSS-Feed/feed.xml";
 
-const UA = "Mozilla/5.0 (compatible; Feed-Builder/3.2; +https://CTV-Clearlink.github.io)";
+const UA = "Mozilla/5.0 (compatible; Feed-Builder/3.3; +https://CTV-Clearlink.github.io)";
 
-// Keep bodies but remove inline links, then emit plain text to avoid HTML errors
+// Content policy: remove inline links and emit plain text (avoid HTML errors)
 const FORCE_NO_LINKS = true;
 
-// Limits to keep feed small and validators happy
+// Size limits to keep validators happy
 const ITEM_LIMIT = 30;           // newest N items
 const CONTENT_MAX_CHARS = 8000;  // per-item text cap
 
@@ -38,15 +38,18 @@ async function main() {
   let xml = await res.text();
   if (!xml.includes("<rss")) throw new Error("Origin did not return RSS/XML (no <rss> tag)");
 
-  // Remove any SmartNews namespace/blocks that might appear in source
+  // 1) Strip any SmartNews artifacts (generic feed must not include them)
   xml = xml
     .replace(/xmlns:snf="[^"]*"/gi, "")
     .replace(/<snf:logo>[\s\S]*?<\/snf:logo>/gi, "")
     .replace(/<snf:[^>]+>[\s\S]*?<\/snf:[^>]+>/gi, "");
 
-  // Force standard namespaces only on <rss>
+  // 2) Normalize the <rss> tag to avoid duplicate attributes
+  //    a) Reduce whatever is there to just "<rss>"
+  xml = xml.replace(/<rss[^>]*>/i, "<rss>");
+  //    b) Replace that with a single clean tag with only standard namespaces
   xml = xml.replace(
-    /<rss[^>]*>/i,
+    /<rss>/i,
     '<rss version="2.0" ' +
       'xmlns:media="http://search.yahoo.com/mrss/" ' +
       'xmlns:content="http://purl.org/rss/1.0/modules/content/" ' +
@@ -54,16 +57,16 @@ async function main() {
       'xmlns:atom="http://www.w3.org/2005/Atom">'
   );
 
-  // Insert a correct atom:link rel="self" (once), matching FEED_SELF_URL exactly
+  // 3) Ensure a correct atom:link rel="self" (exactly once, matching FEED_SELF_URL)
   xml = xml
     .replace(/<atom:link[^>]+rel=["']self["'][^>]*\/>\s*/i, "")
     .replace(/<channel>(?![\s\S]*?<atom:link)/i, `<channel>
     <atom:link href="${FEED_SELF_URL}" rel="self" type="application/rss+xml" />`);
 
-  // Limit items early to keep file size small
+  // 4) Limit items early to keep file size small
   xml = limitItems(xml, ITEM_LIMIT);
 
-  // Per-item rewrites (plain-text bodies, thumbnails, author fallback, UTM strip)
+  // 5) Per-item rewrites (plain-text bodies, thumbnails, author fallback, UTM strip)
   xml = await rewriteItems(xml);
 
   writeFileSync(OUTPUT, xml, "utf8");
@@ -90,7 +93,7 @@ async function rewriteItems(xmlStr) {
     // Title cleanup: remove shortcodes, decode pipe, trim; fix dangling "in"
     out = out.replace(/<title>\s*(?:<!\[CDATA\[([\s\S]*?)\]\]>|([^<]*))\s*<\/title>/i, (_m, c, p) => {
       let t = (c ?? p ?? "").trim();
-      t = t.replace(/\[[^\]]+\]/g, "")
+      t = t.replace(/\[[^\]]]+\]/g, "")
            .replace(/&#124;/g, "|")
            .replace(/\s{2,}/g, " ")
            .trim();
@@ -113,7 +116,7 @@ async function rewriteItems(xmlStr) {
       }
     );
 
-    // THUMBNAIL: use existing media/enclosure → page og:image → default
+    // THUMBNAIL: media/enclosure → page og:image → default
     if (!/<media:thumbnail\b/.test(out)) {
       let thumb =
         out.match(/<media:content[^>]+url=["']([^"']+)["']/i)?.[1] ||
@@ -299,4 +302,4 @@ main().catch(err => {
   process.exit(1);
 });
 
-function escapeXml(s){ return s.replace(/[<>&'"]/g, c => ({'<':'&lt;','>':'&amp;',"'":'&apos;','"':'&quot;'}[c])); }
+function escapeXml(s){ return s.replace(/[<>&'"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[c])); }
