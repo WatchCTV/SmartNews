@@ -1,4 +1,4 @@
-name: Build News Feed
+name: Build RSS Feed
 on:
   schedule:
     - cron: "*/15 * * * *"   # every 15 minutes (UTC)
@@ -30,10 +30,10 @@ jobs:
 
       - name: Check source RSS reachability
         run: |
-          curl -I -A "Mozilla/5.0 (compatible; SmartNews-Feed-Builder/1.0)" https://www.cabletv.com/feed || true
+          curl -I -A "Mozilla/5.0 (compatible; Feed-Builder/2.1; +https://CTV-Clearlink.github.io)" https://www.cabletv.com/feed || true
 
-      - name: Build SmartNews feed
-        run: node scripts/build-smartnews.mjs
+      - name: Build feed
+        run: node scripts/build-feed.mjs
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
