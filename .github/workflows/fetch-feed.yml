@@ -99,14 +99,14 @@ jobs:
                   logo_url = etree.SubElement(snf_logo, 'url')
                   logo_url.text = 'https://i.ibb.co/Y6Z731Z/RSS-Logo-Header.png'
                   logo_added = True
-                  print("✓ Added snf:logo with <url> subelement after description")
+                  print("✓ Added snf:logo with <url> subelement")
           
-          # If we didn't add logo yet, add it before first item
+          # If we didn't add logo yet, add it now
           if not logo_added:
               snf_logo = etree.SubElement(new_channel, '{http://www.smartnews.be/snf}logo')
               logo_url = etree.SubElement(snf_logo, 'url')
               logo_url.text = 'https://i.ibb.co/Y6Z731Z/RSS-Logo-Header.png'
-              print("✓ Added snf:logo with <url> subelement at channel level")
+              print("✓ Added snf:logo as fallback")
           
           # Process items
           items = channel.findall('item')
@@ -122,7 +122,7 @@ jobs:
                   tag_name = etree.QName(elem.tag).localname
                   namespace = etree.QName(elem.tag).namespace
                   
-                  # Handle content:encoded specially - reduce links
+                  # Handle content:encoded specially
                   if namespace == 'http://purl.org/rss/1.0/modules/content/' and tag_name == 'encoded':
                       content_text = elem.text
                       
@@ -132,13 +132,13 @@ jobs:
                           links = soup.find_all('a')
                           if len(links) > 3:
                               for link in links[3:]:
-                                  link.unwrap()  # Remove link but keep text
+                                  link.unwrap()
                           
                           cleaned_content = str(soup)
                           
-                          # Create new content:encoded
+                          # Create new content:encoded - DON'T add text yet, we'll do CDATA later
                           new_content = etree.SubElement(new_item, '{http://purl.org/rss/1.0/modules/content/}encoded')
-                          new_content.text = cleaned_content
+                          new_content.text = '###CDATA_PLACEHOLDER###' + cleaned_content + '###CDATA_END###'
                           
                           # Extract and add thumbnail
                           img_match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', cleaned_content)
@@ -168,7 +168,7 @@ jobs:
                   text_content = re.sub(r'<[^>]+>', '', content_text)
                   description.text = text_content.strip()[:200] + '...'
           
-          # Convert to string with proper CDATA handling
+          # Convert to string
           xml_string = etree.tostring(new_rss, 
                                       pretty_print=True, 
                                       xml_declaration=True, 
@@ -177,9 +177,9 @@ jobs:
           
           xml_string = xml_string.decode('utf-8')
           
-          # Ensure CDATA sections
+          # Replace placeholders with proper CDATA
           xml_string = re.sub(
-              r'<content:encoded>(.*?)</content:encoded>',
+              r'<content:encoded>###CDATA_PLACEHOLDER###(.*?)###CDATA_END###</content:encoded>',
               lambda m: f'<content:encoded><![CDATA[{m.group(1)}]]></content:encoded>',
               xml_string,
               flags=re.DOTALL
@@ -196,8 +196,14 @@ jobs:
               f.write(xml_string)
           
           print("Feed cleaned successfully!")
+          print("Check the feed for: <snf:logo><url>...")
           EOF
       
+      - name: Verify logo in feed
+        run: |
+          echo "Checking if logo exists in feed..."
+          grep -o '<snf:logo>.*</snf:logo>' feed.xml | head -5 || echo "Logo not found"
+          
       - name: Check for changes
         id: changes
         run: |
