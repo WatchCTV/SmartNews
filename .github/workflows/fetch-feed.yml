@@ -36,7 +36,7 @@ jobs:
           from bs4 import BeautifulSoup
           from datetime import datetime
           import re
-          from urllib.parse import quote
+          from urllib.parse import quote, urljoin
 
           # Fetch the original feed
           print("Fetching original feed...")
@@ -47,9 +47,9 @@ jobs:
           root = etree.fromstring(response.content)
           channel = root.find('channel')
           
-          # Get all items and limit to 8 to keep under 1MB
+          # Get all items and limit to 8
           items = channel.findall('item')[:8]
-          print(f"Processing {len(items)} items (limited from original)")
+          print(f"Processing {len(items)} items")
           
           # Define namespace map
           nsmap = {
@@ -103,25 +103,28 @@ jobs:
           cdata_count = 0
           thumbnail_count = 0
           
-          for item in items:
+          for idx, item in enumerate(items):
               xml_parts.append('<item>')
               
               content_html = None
-              has_thumbnail = False
               
+              # First pass - collect all elements and find content
               for elem in item:
                   tag_name = etree.QName(elem.tag).localname if '}' in elem.tag else elem.tag
                   namespace = etree.QName(elem.tag).namespace if '}' in elem.tag else None
                   
-                  # Skip existing media:thumbnail
+                  # Capture content:encoded for thumbnail extraction
+                  if namespace == 'http://purl.org/rss/1.0/modules/content/' and tag_name == 'encoded':
+                      content_html = elem.text or ''
+                  
+                  # Skip existing media:thumbnail - we'll add our own
                   if namespace == 'http://search.yahoo.com/mrss/' and tag_name == 'thumbnail':
                       continue
                   
                   # Handle content:encoded with CDATA
                   if namespace == 'http://purl.org/rss/1.0/modules/content/' and tag_name == 'encoded':
-                      content_html = elem.text or ''
                       if content_html:
-                          # Clean up links - remove excessive links
+                          # Clean up links
                           soup = BeautifulSoup(content_html, 'html.parser')
                           links = soup.find_all('a')
                           if len(links) > 3:
@@ -137,34 +140,59 @@ jobs:
                       elem_str = etree.tostring(elem, encoding='unicode', method='xml')
                       xml_parts.append(elem_str)
               
-              # Add thumbnail AFTER all other elements
+              # Extract and add thumbnail - try very hard to find an image
+              img_url = None
+              
               if content_html:
-                  # Try multiple methods to find image
-                  img_url = None
+                  print(f"\nItem {idx + 1} - Looking for thumbnail...")
                   
-                  # Method 1: Look for img tag
+                  # Parse HTML
                   soup = BeautifulSoup(content_html, 'html.parser')
+                  
+                  # Method 1: Find first img tag
                   img_tag = soup.find('img')
-                  if img_tag and img_tag.get('src'):
-                      img_url = img_tag.get('src')
+                  if img_tag:
+                      img_url = img_tag.get('src') or img_tag.get('data-src') or img_tag.get('data-lazy-src')
+                      if img_url:
+                          print(f"  Found via img tag: {img_url[:60]}...")
                   
-                  # Method 2: Regex fallback
+                  # Method 2: Regex search for any image URL
                   if not img_url:
-                      img_match = re.search(r'src=["\']([^"\']+\.(?:jpg|jpeg|png|gif|webp))["\']', content_html, re.IGNORECASE)
-                      if img_match:
-                          img_url = img_match.group(1)
+                      patterns = [
+                          r'src=["\']([^"\']+\.(?:jpg|jpeg|png|gif|webp)[^"\']*)["\']',
+                          r'data-src=["\']([^"\']+\.(?:jpg|jpeg|png|gif|webp)[^"\']*)["\']',
+                          r'(https?://[^\s<>"]+\.(?:jpg|jpeg|png|gif|webp))',
+                      ]
+                      for pattern in patterns:
+                          match = re.search(pattern, content_html, re.IGNORECASE)
+                          if match:
+                              img_url = match.group(1)
+                              print(f"  Found via regex: {img_url[:60]}...")
+                              break
                   
+                  # Clean and normalize the URL
                   if img_url:
-                      # Clean up the URL
                       img_url = img_url.strip()
+                      # Remove any query parameters that might break the URL
+                      if '?' in img_url:
+                          img_url = img_url.split('?')[0]
+                      
+                      # Make absolute URL
                       if img_url.startswith('//'):
                           img_url = 'https:' + img_url
                       elif img_url.startswith('/'):
                           img_url = 'https://www.cabletv.com' + img_url
+                      elif not img_url.startswith('http'):
+                          img_url = 'https://www.cabletv.com/' + img_url
+                      
+                      # Escape XML special characters in URL
+                      img_url = img_url.replace('&', '&amp;')
                       
                       xml_parts.append(f'<media:thumbnail url="{img_url}"/>')
                       thumbnail_count += 1
-                      has_thumbnail = True
+                      print(f"  ✓ Added thumbnail: {img_url[:60]}...")
+                  else:
+                      print(f"  ✗ No thumbnail found")
               
               # Ensure required fields
               if not item.find('dc:creator', nsmap):
@@ -177,7 +205,6 @@ jobs:
               if not item.find('description') and content_html:
                   text = re.sub(r'<[^>]+>', '', content_html)
                   text = text.strip()[:200] + '...'
-                  # Escape XML special characters
                   text = text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
                   xml_parts.append(f'<description>{text}</description>')
               
@@ -199,8 +226,8 @@ jobs:
           with open('feed.xml', 'w', encoding='utf-8') as f:
               f.write(xml_string)
           
-          print(f"✓ Feed created with {cdata_count} CDATA sections")
-          print(f"✓ Added {thumbnail_count} thumbnails")
+          print(f"\n✓ Feed created with {cdata_count} CDATA sections")
+          print(f"✓ Added {thumbnail_count}/{len(items)} thumbnails")
           print(f"✓ Output size: {len(xml_string):,} bytes ({len(xml_string)/1024/1024:.2f} MB)")
           EOF
       
@@ -210,10 +237,13 @@ jobs:
           ls -lh feed.xml
           echo ""
           echo "CDATA count:"
-          grep -c "CDATA" feed.xml
+          grep -c "CDATA" feed.xml || echo "0"
           echo ""
           echo "Thumbnail count:"
-          grep -c "media:thumbnail" feed.xml
+          grep -c "media:thumbnail" feed.xml || echo "0"
+          echo ""
+          echo "Sample thumbnails:"
+          grep "media:thumbnail" feed.xml | head -3
           
       - name: Check for changes
         id: changes
