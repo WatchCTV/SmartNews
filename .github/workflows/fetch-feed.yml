@@ -36,7 +36,7 @@ jobs:
           from bs4 import BeautifulSoup
           from datetime import datetime
           import re
-          from urllib.parse import quote, urljoin
+          from urllib.parse import quote
 
           # Fetch the original feed
           print("Fetching original feed...")
@@ -66,6 +66,9 @@ jobs:
           # Register all namespaces
           for prefix, uri in nsmap.items():
               etree.register_namespace(prefix, uri)
+          
+          # Fallback thumbnail for items without images
+          fallback_thumbnail = 'https://ctv-clearlink.github.io/RSS-Feed/CableTV.com%20RSS%20Logo%20Header.png'
           
           # Build the XML as a string manually
           xml_parts = []
@@ -102,6 +105,7 @@ jobs:
           # Process each item
           cdata_count = 0
           thumbnail_count = 0
+          fallback_count = 0
           
           for idx, item in enumerate(items):
               title_elem = item.find('title')
@@ -121,9 +125,6 @@ jobs:
                   
                   if namespace == 'http://purl.org/rss/1.0/modules/content/' and tag_name == 'encoded':
                       original_content = elem.text or ''
-                      print(f"Content length: {len(original_content)} chars")
-                      if original_content:
-                          print(f"First 200 chars: {original_content[:200]}")
               
               # Second pass - process and add elements
               for elem in item:
@@ -132,7 +133,6 @@ jobs:
                   
                   # Skip existing media:thumbnail
                   if namespace == 'http://search.yahoo.com/mrss/' and tag_name == 'thumbnail':
-                      print("Skipping existing thumbnail")
                       continue
                   
                   # Handle content:encoded with CDATA
@@ -163,7 +163,6 @@ jobs:
                   
                   # Find ALL img tags
                   all_imgs = soup.find_all('img')
-                  print(f"Found {len(all_imgs)} img tags")
                   
                   if all_imgs:
                       # Get first image
@@ -171,8 +170,6 @@ jobs:
                       img_url = first_img.get('src') or first_img.get('data-src')
                       
                       if img_url:
-                          print(f"Image URL from tag: {img_url}")
-                          
                           # Clean and normalize
                           img_url = img_url.strip()
                           
@@ -189,20 +186,20 @@ jobs:
                           
                           xml_parts.append(f'<media:thumbnail url="{img_url}"/>')
                           thumbnail_count += 1
-                          print(f"✓ Added thumbnail: {img_url}")
-                      else:
-                          print("✗ img tag has no src or data-src")
-                  else:
-                      print("✗ No img tags found in content")
-              else:
-                  print("✗ No content_html available")
+                          print(f"✓ Added thumbnail from content")
+              
+              # If no thumbnail found, use fallback
+              if not img_url:
+                  xml_parts.append(f'<media:thumbnail url="{fallback_thumbnail}"/>')
+                  fallback_count += 1
+                  print(f"✓ Added fallback thumbnail (no image in content)")
               
               # Ensure required fields
               if not item.find('dc:creator', nsmap):
                   xml_parts.append('<dc:creator>CableTV.com</dc:creator>')
               
               if not item.find('pubDate'):
-                  pubdate = datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S +0000')
+                  pubdate = datetime.now(datetime.UTC).strftime('%a, %d %b %Y %H:%M:%S +0000')
                   xml_parts.append(f'<pubDate>{pubdate}</pubDate>')
               
               if not item.find('description') and content_html:
@@ -230,7 +227,7 @@ jobs:
               f.write(xml_string)
           
           print(f"\n✓ Feed created with {cdata_count} CDATA sections")
-          print(f"✓ Added {thumbnail_count}/{len(items)} thumbnails")
+          print(f"✓ Added {thumbnail_count} original + {fallback_count} fallback = {thumbnail_count + fallback_count}/{len(items)} total thumbnails")
           print(f"✓ Output size: {len(xml_string):,} bytes ({len(xml_string)/1024/1024:.2f} MB)")
           EOF
       
@@ -239,11 +236,11 @@ jobs:
           echo "Feed size:"
           ls -lh feed.xml
           echo ""
-          echo "CDATA count:"
-          grep -c "CDATA" feed.xml || echo "0"
-          echo ""
           echo "Thumbnail count:"
           grep -c "media:thumbnail" feed.xml || echo "0"
+          echo ""
+          echo "All items have thumbnails:"
+          grep -c "<item>" feed.xml
           echo ""
           echo "Sample thumbnails:"
           grep "media:thumbnail" feed.xml | head -3
