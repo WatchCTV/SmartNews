@@ -4,7 +4,7 @@
 	<atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://ctv-clearlink.github.io/RSS-Feed/feed.xml" rel="self" type="application/rss+xml"/>
 	<link>https://www.cabletv.com/</link>
 	<description>TV Tech and Entertainment</description>
-	<snf:logo xmlns:snf="http://www.smartnews.be/snf"><url>https://ctv-clearlink.github.io/RSS-Feed/CableTV.com%20RSS%20Logo%20Header.png</url></snf:logo><lastBuildDate>Wed, 01 Oct 2025 16:03:38 +0000</lastBuildDate>
+	<snf:logo xmlns:snf="http://www.smartnews.be/snf"><url>https://ctv-clearlink.github.io/RSS-Feed/CableTV.com%20RSS%20Logo%20Header.png</url></snf:logo><lastBuildDate>Wed, 01 Oct 2025 16:30:03 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod xmlns:sy="http://purl.org/rss/1.0/modules/syndication/">
 	hourly	</sy:updatePeriod>
@@ -19,7 +19,43 @@
 	<width>32</width>
 	<height>32</height>
 </image> 
-	<item><title>How To Stream Music Festivals in 2025</title>
+	<item><title>How To Watch the 2025 Cincinnati Reds Season</title>
+		<link>https://www.cabletv.com/sports/watch-cincinnati-reds</link>
+		
+		<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">David Vick</dc:creator>
+		<pubDate>Wed, 01 Oct 2025 16:29:23 +0000</pubDate>
+				<category>Entertainment</category>
+		<category>Sports MLB</category>
+		<guid isPermaLink="false">https://www.cabletv.com/?p=252096</guid>
+
+					<description>&lt;p&gt;And this one belongs to the Reds! Find out how to watch Cincinnati Reds baseball all year long. Our viewing guide features their TV schedule and channel lineup.&lt;/p&gt;
+&lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-cincinnati-reds"&gt;How To Watch the 2025 Cincinnati Reds Season&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
+</description>
+										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER0</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2025/01/Fubo-2023-logo.webp"/></item><item><title>How To Watch the Milwaukee Brewers in 2025</title>
+		<link>https://www.cabletv.com/sports/watch-milwaukee-brewers</link>
+		
+		<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Taylor Kujawa</dc:creator>
+		<pubDate>Wed, 01 Oct 2025 16:13:42 +0000</pubDate>
+				<category>Entertainment</category>
+		<category>Sports MLB</category>
+		<guid isPermaLink="false">https://www.cabletv.com/?p=139543</guid>
+
+					<description>&lt;p&gt;The Milwaukee Brewers return for this MLB season looking to build on last year’s National League Central triumph. Fortunately, you can watch all Brewers games live with the right channels in your TV roster.&lt;/p&gt;
+&lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-milwaukee-brewers"&gt;How To Watch the Milwaukee Brewers in 2025&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
+</description>
+										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER1</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/04/CTV_Logo-CTV-Sports-150x150.png"/></item><item><title>How To Watch Upcoming Sports Events on TV</title>
+		<link>https://www.cabletv.com/sports/watch-upcoming-sports-events</link>
+		
+		<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Taylor Kujawa</dc:creator>
+		<pubDate>Wed, 01 Oct 2025 16:13:20 +0000</pubDate>
+				<category>Entertainment</category>
+		<category>Sports Other</category>
+		<guid isPermaLink="false">https://www.cabletv.com/?p=116944</guid>
+
+					<description>&lt;p&gt;Experience the thrills and chills of every major sports event in 2025 with our regularly-updated TV sports schedule.&lt;/p&gt;
+&lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-upcoming-sports-events"&gt;How To Watch Upcoming Sports Events on TV&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
+</description>
+										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER2</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/04/CTV_Logo-CTV-Sports-150x150.png"/></item><item><title>How To Stream Music Festivals in 2025</title>
 		<link>https://www.cabletv.com/entertainment/stream-music-festivals</link>
 		
 		<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Taylor Kujawa</dc:creator>
@@ -31,7 +67,7 @@
 					<description>&lt;p&gt;Bring the concert to your living room! We’ve compiled a guide to the year’s biggest music festivals available to stream online.&lt;/p&gt;
 &lt;p&gt;The post &lt;a href="https://www.cabletv.com/entertainment/stream-music-festivals"&gt;How To Stream Music Festivals in 2025&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
 </description>
-										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER0</content:encoded></item><item><title>How To Watch the 2025 Philadelphia Phillies Season</title>
+										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER3</content:encoded></item><item><title>How To Watch the 2025 Philadelphia Phillies Season</title>
 		<link>https://www.cabletv.com/sports/watch-philadelphia-phillies</link>
 		
 		<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">David Vick</dc:creator>
@@ -43,7 +79,7 @@
 					<description>&lt;p&gt;Is this the year the Phillies win another World Series? Stay tuned with our viewing guide, featuring the complete TV schedule, channel listings, and streaming options.&lt;/p&gt;
 &lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-philadelphia-phillies"&gt;How To Watch the 2025 Philadelphia Phillies Season&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
 </description>
-										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER1</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2020/01/Phillies-TV.webp"/></item><item><title>How To Watch the 2025 Phoenix Mercury Season</title>
+										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER4</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2020/01/Phillies-TV.webp"/></item><item><title>How To Watch the 2025 Phoenix Mercury Season</title>
 		<link>https://www.cabletv.com/sports/watch-phoenix-mercury</link>
 		
 		<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Elizabeth Finn</dc:creator>
@@ -55,7 +91,7 @@
 					<description>&lt;p&gt;The Phoenix Mercury’s gritty return to playoff contention in 2024 has fans buzzing for the 2025 season. Here’s how you can watch every game as they look to make an even deeper run.&lt;/p&gt;
 &lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-phoenix-mercury"&gt;How To Watch the 2025 Phoenix Mercury Season&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
 </description>
-										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER2</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2025/01/Fubo-2023-logo.webp"/></item><item><title>NFL Schedule This Week: Your TV Guide to Every Week 5 Game</title>
+										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER5</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2025/01/Fubo-2023-logo.webp"/></item><item><title>NFL Schedule This Week: Your TV Guide to Every Week 5 Game</title>
 		<link>https://www.cabletv.com/sports/nfl-schedule-this-week</link>
 		
 		<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Taylor Kujawa</dc:creator>
@@ -67,7 +103,7 @@
 					<description>&lt;p&gt;Get ready for game day with our NFL TV schedule guide. We update this page weekly during the NFL regular season, so you can easily find kick-off times and channel listings for the week’s biggest matchups.&lt;/p&gt;
 &lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/nfl-schedule-this-week"&gt;NFL Schedule This Week: Your TV Guide to Every Week 5 Game&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
 </description>
-										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER3</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/04/CTV_Logo-CTV-Sports-150x150.png"/></item><item><title>How To Watch the 2025 Las Vegas Aces Season</title>
+										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER6</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/04/CTV_Logo-CTV-Sports-150x150.png"/></item><item><title>How To Watch the 2025 Las Vegas Aces Season</title>
 		<link>https://www.cabletv.com/sports/watch-las-vegas-aces</link>
 		
 		<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Elizabeth Finn</dc:creator>
@@ -79,7 +115,7 @@
 					<description>&lt;p&gt;Don’t miss a minute of Las Vegas Aces basketball this season. Get the complete 2025 TV schedule, channel listings, and how to watch every game.&lt;/p&gt;
 &lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-las-vegas-aces"&gt;How To Watch the 2025 Las Vegas Aces Season&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
 </description>
-										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER4</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/04/CTV_Logo-CTV-Sports-150x150.png"/></item><item><title>How To Watch the 2025 WNBA Playoffs</title>
+										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER7</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/04/CTV_Logo-CTV-Sports-150x150.png"/></item><item><title>How To Watch the 2025 WNBA Playoffs</title>
 		<link>https://www.cabletv.com/sports/watch-wnba-playoffs</link>
 		
 		<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Eric Chiu</dc:creator>
@@ -91,7 +127,7 @@
 					<description>&lt;p&gt;Who will win it all in the WNBA this year? Get ready to watch the WNBA Playoffs when the postseason tips off this fall.&lt;/p&gt;
 &lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-wnba-playoffs"&gt;How To Watch the 2025 WNBA Playoffs&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
 </description>
-										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER5</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2025/06/ESPN-DTC-Logo.webp"/></item><item><title>New Anime Simulcasts Fall 2025: Crunchyroll, Hulu, and More</title>
+										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER8</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2025/06/ESPN-DTC-Logo.webp"/></item><item><title>New Anime Simulcasts Fall 2025: Crunchyroll, Hulu, and More</title>
 		<link>https://www.cabletv.com/anime/upcoming-anime-simulcasts</link>
 		
 		<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Olivia Bono</dc:creator>
@@ -103,41 +139,5 @@
 					<description>&lt;p&gt;It’s time for the Fall 2025 anime season—find your next obsession with our guide to this season’s hottest new and returning titles.&lt;/p&gt;
 &lt;p&gt;The post &lt;a href="https://www.cabletv.com/anime/upcoming-anime-simulcasts"&gt;New Anime Simulcasts Fall 2025: Crunchyroll, Hulu, and More&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
 </description>
-										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER6</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/08/crunchyroll.png"/></item><item><title>Best Streaming TV Deals and Discounts for [current_date format="mm yy"]</title>
-		<link>https://www.cabletv.com/blog/best-streaming-tv-deals</link>
-		
-		<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Bill Frost</dc:creator>
-		<pubDate>Wed, 01 Oct 2025 13:45:56 +0000</pubDate>
-				<category>Best Of</category>
-		<category>Streaming Deals</category>
-		<guid isPermaLink="false">https://dev-ctv-redrock.pantheonsite.io/?p=69504</guid>
-
-					<description>&lt;p&gt;One of the bigger selling points of streaming TV is that it’s usually less expensive than cable or satellite . . . OK, it’s the biggest selling point. We’re not cheap; we’re “dollar-conscious.” But there’s always a new way to save a few bucks, even in the streamverse. &lt;/p&gt;
-&lt;p&gt;The post &lt;a href="https://www.cabletv.com/blog/best-streaming-tv-deals"&gt;Best Streaming TV Deals and Discounts for [current_date format=&amp;quot;mm yy&amp;quot;]&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
-</description>
-										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER7</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/05/DisneyPlus.svg"/></item><item><title>31 Days of Halloween: The Ultimate Horror Streaming Guide</title>
-		<link>https://www.cabletv.com/horror/31-days-of-halloween</link>
-		
-		<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Randy Harward</dc:creator>
-		<pubDate>Wed, 01 Oct 2025 04:11:42 +0000</pubDate>
-				<category>Entertainment</category>
-		<category>Entertainment Horror</category>
-		<guid isPermaLink="false">https://www.cabletv.com/?p=256508</guid>
-
-					<description>&lt;p&gt;The nightmare of choice paralysis can waste a lot of your time as you decide what to watch in October. Knowing in advance what’s available to watch, and on which streaming services, helps. That’s a lot of research, though. Who has that kinda time? I do.&lt;/p&gt;
-&lt;p&gt;The post &lt;a href="https://www.cabletv.com/horror/31-days-of-halloween"&gt;31 Days of Halloween: The Ultimate Horror Streaming Guide&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
-</description>
-										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER8</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2025/09/31-Days-of-Halloween-landing-page.webp"/></item><item><title>31 Days of Horror Movies on Shudder</title>
-		<link>https://www.cabletv.com/horror/horror-movies-on-shudder</link>
-		
-		<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Randy Harward</dc:creator>
-		<pubDate>Wed, 01 Oct 2025 04:10:05 +0000</pubDate>
-				<category>Entertainment</category>
-		<category>Entertainment Horror</category>
-		<guid isPermaLink="false">https://www.cabletv.com/?p=256515</guid>
-
-					<description>&lt;p&gt;It’s hard to beat Shudder. Curated by and for horror fans, the streaming service has 720+ horror films and 55+ horror series. It’s the largest horror-centric streaming library I’ve encountered, and so far the best.&lt;/p&gt;
-&lt;p&gt;The post &lt;a href="https://www.cabletv.com/horror/horror-movies-on-shudder"&gt;31 Days of Horror Movies on Shudder&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
-</description>
-										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER9</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2025/09/Artboard-21-1-300x100.webp"/></item></channel>
+										<content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/">CDATAPLACEHOLDER9</content:encoded><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/08/crunchyroll.png"/></item></channel>
 </rss>
