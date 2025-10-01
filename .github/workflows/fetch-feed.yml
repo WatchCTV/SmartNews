@@ -34,7 +34,7 @@ jobs:
           import requests
           from lxml import etree
           from bs4 import BeautifulSoup
-          from datetime import datetime
+          from datetime import datetime, timezone
           import re
           from urllib.parse import quote
 
@@ -192,17 +192,17 @@ jobs:
               if not img_url:
                   xml_parts.append(f'<media:thumbnail url="{fallback_thumbnail}"/>')
                   fallback_count += 1
-                  print(f"✓ Added fallback thumbnail (no image in content)")
+                  print(f"✓ Added fallback thumbnail")
               
               # Ensure required fields
-              if not item.find('dc:creator', nsmap):
+              if item.find('dc:creator', nsmap) is None:
                   xml_parts.append('<dc:creator>CableTV.com</dc:creator>')
               
-              if not item.find('pubDate'):
-                  pubdate = datetime.now(datetime.UTC).strftime('%a, %d %b %Y %H:%M:%S +0000')
+              if item.find('pubDate') is None:
+                  pubdate = datetime.now(timezone.utc).strftime('%a, %d %b %Y %H:%M:%S +0000')
                   xml_parts.append(f'<pubDate>{pubdate}</pubDate>')
               
-              if not item.find('description') and content_html:
+              if item.find('description') is None and content_html:
                   text = re.sub(r'<[^>]+>', '', content_html)
                   text = text.strip()[:200] + '...'
                   text = text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
@@ -239,11 +239,8 @@ jobs:
           echo "Thumbnail count:"
           grep -c "media:thumbnail" feed.xml || echo "0"
           echo ""
-          echo "All items have thumbnails:"
+          echo "Item count:"
           grep -c "<item>" feed.xml
-          echo ""
-          echo "Sample thumbnails:"
-          grep "media:thumbnail" feed.xml | head -3
           
       - name: Check for changes
         id: changes
