@@ -42,8 +42,9 @@ jobs:
           print("Fetching original feed...")
           response = requests.get('https://www.cabletv.com/feed')
           
-          # Parse the XML
-          root = etree.fromstring(response.content)
+          # Parse the XML - IMPORTANT: strip_cdata=False to preserve CDATA
+          parser = etree.XMLParser(strip_cdata=False)
+          root = etree.fromstring(response.content, parser)
           
           # Get the channel element
           channel = root.find('channel')
@@ -100,7 +101,6 @@ jobs:
               
               # Add logo with proper structure right after description
               if tag_name == 'description' and not logo_added:
-                  # Create snf:logo with nested url element
                   snf_logo = etree.SubElement(new_channel, '{http://www.smartnews.be/snf}logo')
                   logo_url_elem = etree.SubElement(snf_logo, 'url')
                   logo_url_elem.text = logo_full_url
@@ -122,14 +122,13 @@ jobs:
               new_item = etree.SubElement(new_channel, 'item')
               
               content_text = None
-              content_index = 0
               
               # Copy all elements from old item
               for elem in old_item:
                   tag_name = etree.QName(elem.tag).localname
                   namespace = etree.QName(elem.tag).namespace
                   
-                  # Handle content:encoded specially
+                  # Handle content:encoded specially with CDATA
                   if namespace == 'http://purl.org/rss/1.0/modules/content/' and tag_name == 'encoded':
                       content_text = elem.text
                       
@@ -143,11 +142,10 @@ jobs:
                           
                           cleaned_content = str(soup)
                           
-                          # Create new content:encoded with unique placeholder
+                          # Create content:encoded with CDATA using lxml's CDATA function
                           new_content = etree.SubElement(new_item, '{http://purl.org/rss/1.0/modules/content/}encoded')
-                          placeholder = f'###CDATA{content_index}START###' + cleaned_content + f'###CDATA{content_index}END###'
-                          new_content.text = placeholder
-                          content_index += 1
+                          # Use lxml's built-in CDATA wrapper
+                          new_content.text = etree.CDATA(cleaned_content)
                           
                           # Extract and add thumbnail
                           img_match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', cleaned_content)
@@ -177,22 +175,14 @@ jobs:
                   text_content = re.sub(r'<[^>]+>', '', content_text)
                   description.text = text_content.strip()[:200] + '...'
           
-          # Convert to string
+          # Convert to string - this will properly handle CDATA
           xml_string = etree.tostring(new_rss, 
                                       pretty_print=True, 
                                       xml_declaration=True, 
                                       encoding='UTF-8',
-                                      method='xml')
+                                      method='c14n')  # Use c14n method for proper CDATA handling
           
           xml_string = xml_string.decode('utf-8')
-          
-          # Replace ALL placeholders with proper CDATA
-          xml_string = re.sub(
-              r'<content:encoded>###CDATA\d+START###(.*?)###CDATA\d+END###</content:encoded>',
-              lambda m: f'<content:encoded><![CDATA[{m.group(1)}]]></content:encoded>',
-              xml_string,
-              flags=re.DOTALL
-          )
           
           # Fix atom:link self-reference
           xml_string = xml_string.replace(
@@ -204,7 +194,7 @@ jobs:
           with open('feed.xml', 'w', encoding='utf-8') as f:
               f.write(xml_string)
           
-          print("Feed cleaned successfully!")
+          print("Feed cleaned successfully with proper CDATA sections!")
           EOF
       
       - name: Check for changes
