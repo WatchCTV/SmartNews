@@ -47,9 +47,9 @@ jobs:
           root = etree.fromstring(response.content)
           channel = root.find('channel')
           
-          # Get all items first
-          items = channel.findall('item')
-          print(f"Found {len(items)} items in original feed")
+          # Get all items and limit to 8 to keep under 1MB
+          items = channel.findall('item')[:8]
+          print(f"Processing {len(items)} items (limited from original)")
           
           # Define namespace map
           nsmap = {
@@ -67,7 +67,7 @@ jobs:
           for prefix, uri in nsmap.items():
               etree.register_namespace(prefix, uri)
           
-          # Build the XML as a string manually for better CDATA control
+          # Build the XML as a string manually
           xml_parts = []
           xml_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
           xml_parts.append('<rss version="2.0"')
@@ -89,7 +89,6 @@ jobs:
               if 'logo' in tag.lower():
                   continue
               
-              # Serialize the element
               elem_str = etree.tostring(elem, encoding='unicode', method='xml')
               xml_parts.append(elem_str)
               
@@ -102,20 +101,27 @@ jobs:
           
           # Process each item
           cdata_count = 0
+          thumbnail_count = 0
+          
           for item in items:
               xml_parts.append('<item>')
               
               content_html = None
+              has_thumbnail = False
               
               for elem in item:
                   tag_name = etree.QName(elem.tag).localname if '}' in elem.tag else elem.tag
                   namespace = etree.QName(elem.tag).namespace if '}' in elem.tag else None
                   
+                  # Skip existing media:thumbnail
+                  if namespace == 'http://search.yahoo.com/mrss/' and tag_name == 'thumbnail':
+                      continue
+                  
                   # Handle content:encoded with CDATA
                   if namespace == 'http://purl.org/rss/1.0/modules/content/' and tag_name == 'encoded':
                       content_html = elem.text or ''
                       if content_html:
-                          # Clean up links
+                          # Clean up links - remove excessive links
                           soup = BeautifulSoup(content_html, 'html.parser')
                           links = soup.find_all('a')
                           if len(links) > 3:
@@ -126,16 +132,39 @@ jobs:
                           # Add with CDATA
                           xml_parts.append(f'<content:encoded><![CDATA[{content_html}]]></content:encoded>')
                           cdata_count += 1
-                          
-                          # Add thumbnail
-                          img_match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', content_html)
-                          if img_match:
-                              img_url = img_match.group(1)
-                              xml_parts.append(f'<media:thumbnail url="{img_url}"/>')
                   else:
                       # Serialize other elements normally
                       elem_str = etree.tostring(elem, encoding='unicode', method='xml')
                       xml_parts.append(elem_str)
+              
+              # Add thumbnail AFTER all other elements
+              if content_html:
+                  # Try multiple methods to find image
+                  img_url = None
+                  
+                  # Method 1: Look for img tag
+                  soup = BeautifulSoup(content_html, 'html.parser')
+                  img_tag = soup.find('img')
+                  if img_tag and img_tag.get('src'):
+                      img_url = img_tag.get('src')
+                  
+                  # Method 2: Regex fallback
+                  if not img_url:
+                      img_match = re.search(r'src=["\']([^"\']+\.(?:jpg|jpeg|png|gif|webp))["\']', content_html, re.IGNORECASE)
+                      if img_match:
+                          img_url = img_match.group(1)
+                  
+                  if img_url:
+                      # Clean up the URL
+                      img_url = img_url.strip()
+                      if img_url.startswith('//'):
+                          img_url = 'https:' + img_url
+                      elif img_url.startswith('/'):
+                          img_url = 'https://www.cabletv.com' + img_url
+                      
+                      xml_parts.append(f'<media:thumbnail url="{img_url}"/>')
+                      thumbnail_count += 1
+                      has_thumbnail = True
               
               # Ensure required fields
               if not item.find('dc:creator', nsmap):
@@ -148,6 +177,8 @@ jobs:
               if not item.find('description') and content_html:
                   text = re.sub(r'<[^>]+>', '', content_html)
                   text = text.strip()[:200] + '...'
+                  # Escape XML special characters
+                  text = text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
                   xml_parts.append(f'<description>{text}</description>')
               
               xml_parts.append('</item>')
@@ -169,7 +200,8 @@ jobs:
               f.write(xml_string)
           
           print(f"✓ Feed created with {cdata_count} CDATA sections")
-          print(f"✓ Output size: {len(xml_string)} bytes")
+          print(f"✓ Added {thumbnail_count} thumbnails")
+          print(f"✓ Output size: {len(xml_string):,} bytes ({len(xml_string)/1024/1024:.2f} MB)")
           EOF
       
       - name: Verify feed
@@ -180,8 +212,8 @@ jobs:
           echo "CDATA count:"
           grep -c "CDATA" feed.xml
           echo ""
-          echo "First content:encoded element:"
-          grep -m 1 "content:encoded" feed.xml
+          echo "Thumbnail count:"
+          grep -c "media:thumbnail" feed.xml
           
       - name: Check for changes
         id: changes
