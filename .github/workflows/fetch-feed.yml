@@ -104,28 +104,42 @@ jobs:
           thumbnail_count = 0
           
           for idx, item in enumerate(items):
+              title_elem = item.find('title')
+              title_text = title_elem.text if title_elem is not None else 'Unknown'
+              print(f"\n--- Item {idx + 1}: {title_text[:50]} ---")
+              
               xml_parts.append('<item>')
               
+              # Store content_html separately before processing
               content_html = None
+              original_content = None
               
-              # First pass - collect all elements and find content
+              # First pass - find content:encoded
               for elem in item:
                   tag_name = etree.QName(elem.tag).localname if '}' in elem.tag else elem.tag
                   namespace = etree.QName(elem.tag).namespace if '}' in elem.tag else None
                   
-                  # Capture content:encoded for thumbnail extraction
                   if namespace == 'http://purl.org/rss/1.0/modules/content/' and tag_name == 'encoded':
-                      content_html = elem.text or ''
+                      original_content = elem.text or ''
+                      print(f"Content length: {len(original_content)} chars")
+                      if original_content:
+                          print(f"First 200 chars: {original_content[:200]}")
+              
+              # Second pass - process and add elements
+              for elem in item:
+                  tag_name = etree.QName(elem.tag).localname if '}' in elem.tag else elem.tag
+                  namespace = etree.QName(elem.tag).namespace if '}' in elem.tag else None
                   
-                  # Skip existing media:thumbnail - we'll add our own
+                  # Skip existing media:thumbnail
                   if namespace == 'http://search.yahoo.com/mrss/' and tag_name == 'thumbnail':
+                      print("Skipping existing thumbnail")
                       continue
                   
                   # Handle content:encoded with CDATA
                   if namespace == 'http://purl.org/rss/1.0/modules/content/' and tag_name == 'encoded':
-                      if content_html:
+                      if original_content:
                           # Clean up links
-                          soup = BeautifulSoup(content_html, 'html.parser')
+                          soup = BeautifulSoup(original_content, 'html.parser')
                           links = soup.find_all('a')
                           if len(links) > 3:
                               for link in links[3:]:
@@ -140,59 +154,48 @@ jobs:
                       elem_str = etree.tostring(elem, encoding='unicode', method='xml')
                       xml_parts.append(elem_str)
               
-              # Extract and add thumbnail - try very hard to find an image
+              # NOW extract thumbnail from the original content
               img_url = None
               
-              if content_html:
-                  print(f"\nItem {idx + 1} - Looking for thumbnail...")
+              if original_content:
+                  # Parse original HTML
+                  soup = BeautifulSoup(original_content, 'html.parser')
                   
-                  # Parse HTML
-                  soup = BeautifulSoup(content_html, 'html.parser')
+                  # Find ALL img tags
+                  all_imgs = soup.find_all('img')
+                  print(f"Found {len(all_imgs)} img tags")
                   
-                  # Method 1: Find first img tag
-                  img_tag = soup.find('img')
-                  if img_tag:
-                      img_url = img_tag.get('src') or img_tag.get('data-src') or img_tag.get('data-lazy-src')
+                  if all_imgs:
+                      # Get first image
+                      first_img = all_imgs[0]
+                      img_url = first_img.get('src') or first_img.get('data-src')
+                      
                       if img_url:
-                          print(f"  Found via img tag: {img_url[:60]}...")
-                  
-                  # Method 2: Regex search for any image URL
-                  if not img_url:
-                      patterns = [
-                          r'src=["\']([^"\']+\.(?:jpg|jpeg|png|gif|webp)[^"\']*)["\']',
-                          r'data-src=["\']([^"\']+\.(?:jpg|jpeg|png|gif|webp)[^"\']*)["\']',
-                          r'(https?://[^\s<>"]+\.(?:jpg|jpeg|png|gif|webp))',
-                      ]
-                      for pattern in patterns:
-                          match = re.search(pattern, content_html, re.IGNORECASE)
-                          if match:
-                              img_url = match.group(1)
-                              print(f"  Found via regex: {img_url[:60]}...")
-                              break
-                  
-                  # Clean and normalize the URL
-                  if img_url:
-                      img_url = img_url.strip()
-                      # Remove any query parameters that might break the URL
-                      if '?' in img_url:
-                          img_url = img_url.split('?')[0]
-                      
-                      # Make absolute URL
-                      if img_url.startswith('//'):
-                          img_url = 'https:' + img_url
-                      elif img_url.startswith('/'):
-                          img_url = 'https://www.cabletv.com' + img_url
-                      elif not img_url.startswith('http'):
-                          img_url = 'https://www.cabletv.com/' + img_url
-                      
-                      # Escape XML special characters in URL
-                      img_url = img_url.replace('&', '&amp;')
-                      
-                      xml_parts.append(f'<media:thumbnail url="{img_url}"/>')
-                      thumbnail_count += 1
-                      print(f"  ✓ Added thumbnail: {img_url[:60]}...")
+                          print(f"Image URL from tag: {img_url}")
+                          
+                          # Clean and normalize
+                          img_url = img_url.strip()
+                          
+                          # Make absolute URL
+                          if img_url.startswith('//'):
+                              img_url = 'https:' + img_url
+                          elif img_url.startswith('/'):
+                              img_url = 'https://www.cabletv.com' + img_url
+                          elif not img_url.startswith('http'):
+                              img_url = 'https://www.cabletv.com/' + img_url
+                          
+                          # Escape XML
+                          img_url = img_url.replace('&', '&amp;')
+                          
+                          xml_parts.append(f'<media:thumbnail url="{img_url}"/>')
+                          thumbnail_count += 1
+                          print(f"✓ Added thumbnail: {img_url}")
+                      else:
+                          print("✗ img tag has no src or data-src")
                   else:
-                      print(f"  ✗ No thumbnail found")
+                      print("✗ No img tags found in content")
+              else:
+                  print("✗ No content_html available")
               
               # Ensure required fields
               if not item.find('dc:creator', nsmap):
