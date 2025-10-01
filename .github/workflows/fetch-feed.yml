@@ -175,12 +175,12 @@ jobs:
                   text_content = re.sub(r'<[^>]+>', '', content_text)
                   description.text = text_content.strip()[:200] + '...'
           
-          # Convert to string - this will properly handle CDATA
+          # Convert to string - use xml method which supports CDATA
           xml_string = etree.tostring(new_rss, 
                                       pretty_print=True, 
                                       xml_declaration=True, 
                                       encoding='UTF-8',
-                                      method='c14n')  # Use c14n method for proper CDATA handling
+                                      method='xml')
           
           xml_string = xml_string.decode('utf-8')
           
