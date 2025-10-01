@@ -36,6 +36,7 @@ jobs:
           from bs4 import BeautifulSoup
           from datetime import datetime
           import re
+          from urllib.parse import quote
 
           # Fetch the original feed
           print("Fetching original feed...")
@@ -79,6 +80,11 @@ jobs:
           new_rss = etree.Element('rss', rss_attribs)
           new_channel = etree.SubElement(new_rss, 'channel')
           
+          # URL encode the filename with spaces
+          logo_filename = 'CableTV.com RSS Logo Header.png'
+          logo_url_path = quote(logo_filename)
+          logo_full_url = f'https://ctv-clearlink.github.io/RSS-Feed/{logo_url_path}'
+          
           # Copy channel metadata elements in order
           logo_added = False
           for elem in channel:
@@ -96,17 +102,17 @@ jobs:
               if tag_name == 'description' and not logo_added:
                   # Create snf:logo with nested url element
                   snf_logo = etree.SubElement(new_channel, '{http://www.smartnews.be/snf}logo')
-                  logo_url = etree.SubElement(snf_logo, 'url')
-                  logo_url.text = 'https://i.ibb.co/Y6Z731Z/RSS-Logo-Header.png'
+                  logo_url_elem = etree.SubElement(snf_logo, 'url')
+                  logo_url_elem.text = logo_full_url
                   logo_added = True
-                  print("✓ Added snf:logo with <url> subelement")
+                  print(f"✓ Added snf:logo: {logo_full_url}")
           
           # If we didn't add logo yet, add it now
           if not logo_added:
               snf_logo = etree.SubElement(new_channel, '{http://www.smartnews.be/snf}logo')
-              logo_url = etree.SubElement(snf_logo, 'url')
-              logo_url.text = 'https://i.ibb.co/Y6Z731Z/RSS-Logo-Header.png'
-              print("✓ Added snf:logo as fallback")
+              logo_url_elem = etree.SubElement(snf_logo, 'url')
+              logo_url_elem.text = logo_full_url
+              print(f"✓ Added snf:logo as fallback: {logo_full_url}")
           
           # Process items
           items = channel.findall('item')
@@ -116,6 +122,7 @@ jobs:
               new_item = etree.SubElement(new_channel, 'item')
               
               content_text = None
+              content_index = 0
               
               # Copy all elements from old item
               for elem in old_item:
@@ -136,9 +143,11 @@ jobs:
                           
                           cleaned_content = str(soup)
                           
-                          # Create new content:encoded - DON'T add text yet, we'll do CDATA later
+                          # Create new content:encoded with unique placeholder
                           new_content = etree.SubElement(new_item, '{http://purl.org/rss/1.0/modules/content/}encoded')
-                          new_content.text = '###CDATA_PLACEHOLDER###' + cleaned_content + '###CDATA_END###'
+                          placeholder = f'###CDATA{content_index}START###' + cleaned_content + f'###CDATA{content_index}END###'
+                          new_content.text = placeholder
+                          content_index += 1
                           
                           # Extract and add thumbnail
                           img_match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', cleaned_content)
@@ -177,9 +186,9 @@ jobs:
           
           xml_string = xml_string.decode('utf-8')
           
-          # Replace placeholders with proper CDATA
+          # Replace ALL placeholders with proper CDATA
           xml_string = re.sub(
-              r'<content:encoded>###CDATA_PLACEHOLDER###(.*?)###CDATA_END###</content:encoded>',
+              r'<content:encoded>###CDATA\d+START###(.*?)###CDATA\d+END###</content:encoded>',
               lambda m: f'<content:encoded><![CDATA[{m.group(1)}]]></content:encoded>',
               xml_string,
               flags=re.DOTALL
@@ -196,14 +205,8 @@ jobs:
               f.write(xml_string)
           
           print("Feed cleaned successfully!")
-          print("Check the feed for: <snf:logo><url>...")
           EOF
       
-      - name: Verify logo in feed
-        run: |
-          echo "Checking if logo exists in feed..."
-          grep -o '<snf:logo>.*</snf:logo>' feed.xml | head -5 || echo "Logo not found"
-          
       - name: Check for changes
         id: changes
         run: |
