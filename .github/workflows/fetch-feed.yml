@@ -42,7 +42,7 @@ jobs:
           original_content = response.content
 
           # Parse with lxml for manipulation
-          parser = etree.XMLParser(remove_blank_text=True, recover=True)
+          parser = etree.XMLParser(remove_blank_text=True, recover=True, strip_cdata=False)
           tree = etree.fromstring(original_content, parser)
 
           # Define namespaces
@@ -62,13 +62,19 @@ jobs:
           channel = tree.find('.//channel')
           if channel is not None:
               # Remove existing snf:logo if present
-              existing_logo = channel.find('snf:logo', namespaces)
-              if existing_logo is not None:
+              for existing_logo in channel.findall('snf:logo', namespaces):
                   channel.remove(existing_logo)
               
-              # Add new logo
-              logo = etree.SubElement(channel, '{http://www.smartnews.be/snf}logo')
-              logo.text = 'https://i.ibb.co/V0FWL4m9/CTV-Logo.png'
+              # Add new logo as first child after title/link/description
+              title = channel.find('title')
+              if title is not None:
+                  title_index = list(channel).index(title)
+                  logo = etree.Element('{http://www.smartnews.be/snf}logo')
+                  logo.text = 'https://i.ibb.co/V0FWL4m9/CTV-Logo.png'
+                  channel.insert(title_index + 1, logo)
+              else:
+                  logo = etree.SubElement(channel, '{http://www.smartnews.be/snf}logo')
+                  logo.text = 'https://i.ibb.co/V0FWL4m9/CTV-Logo.png'
 
           # Process each item
           items = tree.findall('.//item')
@@ -77,20 +83,31 @@ jobs:
           for item in items:
               # Extract featured image from content:encoded
               content_encoded = item.find('content:encoded', namespaces)
-              if content_encoded is not None and content_encoded.text:
-                  # Look for img src in content
-                  img_match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', content_encoded.text)
-                  if img_match:
-                      img_url = img_match.group(1)
+              if content_encoded is not None:
+                  # Get the content (whether it's CDATA or text)
+                  content_text = content_encoded.text
+                  
+                  if content_text:
+                      # Look for img src in content
+                      img_match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', content_text)
+                      if img_match:
+                          img_url = img_match.group(1)
+                          
+                          # Remove existing media:thumbnail if present
+                          for existing_thumb in item.findall('media:thumbnail', namespaces):
+                              item.remove(existing_thumb)
+                          
+                          # Add media:thumbnail
+                          thumbnail = etree.SubElement(item, '{http://search.yahoo.com/mrss/}thumbnail')
+                          thumbnail.set('url', img_url)
                       
-                      # Remove existing media:thumbnail if present
-                      existing_thumb = item.find('media:thumbnail', namespaces)
-                      if existing_thumb is not None:
-                          item.remove(existing_thumb)
+                      # Ensure content:encoded is wrapped in CDATA
+                      # Remove old content:encoded
+                      item.remove(content_encoded)
                       
-                      # Add media:thumbnail
-                      thumbnail = etree.SubElement(item, '{http://search.yahoo.com/mrss/}thumbnail')
-                      thumbnail.set('url', img_url)
+                      # Create new content:encoded with CDATA
+                      new_content = etree.SubElement(item, '{http://purl.org/rss/1.0/modules/content/}encoded')
+                      new_content.text = etree.CDATA(content_text)
 
               # Ensure dc:creator (author) is present
               creator = item.find('dc:creator', namespaces)
@@ -111,8 +128,8 @@ jobs:
               if description is None or not description.text:
                   if description is None:
                       description = etree.SubElement(item, 'description')
-                  if content_encoded is not None and content_encoded.text:
-                      text_content = re.sub(r'<[^>]+>', '', content_encoded.text)
+                  if content_encoded is not None and content_text:
+                      text_content = re.sub(r'<[^>]+>', '', content_text)
                       text_content = text_content.strip()[:200] + '...'
                       description.text = text_content
 
