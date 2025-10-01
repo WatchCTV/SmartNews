@@ -74,6 +74,9 @@ jobs:
           xml_parts.append(' xmlns:snf="http://www.smartnews.be/snf">')
           xml_parts.append('<channel>')
           
+          # Track if we added logo
+          logo_added = False
+          
           # Add channel metadata
           for elem in channel:
               if elem.tag == 'item':
@@ -81,9 +84,19 @@ jobs:
               if 'logo' not in elem.tag.lower():
                   xml_parts.append(etree.tostring(elem, encoding='unicode', method='xml'))
               
-              if elem.tag == 'description':
+              # Add logo right after description element
+              if elem.tag == 'description' and not logo_added:
                   logo_url = f'https://ctv-clearlink.github.io/RSS-Feed/{quote("CableTV.com RSS Logo Header.png")}'
-                  xml_parts.append(f'<snf:logo>{logo_url}</snf:logo>')
+                  # Use the nested <url> format that SmartNews expects
+                  xml_parts.append(f'<snf:logo><url>{logo_url}</url></snf:logo>')
+                  logo_added = True
+                  print(f"✓ Added logo: {logo_url}")
+          
+          # If we didn't add logo yet (no description found), add it now
+          if not logo_added:
+              logo_url = f'https://ctv-clearlink.github.io/RSS-Feed/{quote("CableTV.com RSS Logo Header.png")}'
+              xml_parts.append(f'<snf:logo><url>{logo_url}</url></snf:logo>')
+              print(f"✓ Added logo (fallback): {logo_url}")
           
           cdata_count = 0
           
@@ -115,35 +128,27 @@ jobs:
                   article_matches = re.findall(r'<meta[^>]+property=["\']article:image["\'][^>]+content=["\']([^"\']+)["\']', html, re.IGNORECASE)
                   candidates.extend(article_matches)
                   
-                  print(f"    Found {len(candidates)} image candidates")
-                  
                   # Filter out logos and small images
                   for img_url in candidates:
                       filename = img_url.lower().split('/')[-1]
-                      print(f"      Checking: {filename}")
                       
                       # Skip logos
                       if 'logo' in filename or 'icon' in filename:
-                          print(f"        ✗ Skipped (logo/icon)")
                           continue
                       
                       # Skip tiny images
                       if any(size in img_url.lower() for size in ['150x150', '100x100', '50x50']):
-                          print(f"        ✗ Skipped (tiny)")
                           continue
                       
                       # Prefer images with "watch-" prefix or .webp
                       if 'watch-' in filename or filename.endswith('.webp'):
-                          print(f"        ✓ Selected (featured image pattern)")
                           return img_url
                       
                       # Otherwise, take first non-logo image
-                      print(f"        ✓ Selected (first valid)")
                       return img_url
                   
                   # If all filtered out, return first candidate anyway
                   if candidates:
-                      print(f"      Using first candidate despite filters")
                       return candidates[0]
                   
                   return None
@@ -154,8 +159,7 @@ jobs:
           
           for idx, item in enumerate(items):
               title_text = item.find('title').text if item.find('title') is not None else 'Unknown'
-              print(f"\n{'='*60}")
-              print(f"Item {idx+1}: {title_text[:50]}")
+              print(f"\nItem {idx+1}: {title_text[:50]}")
               
               xml_parts.append('<item>')
               
@@ -205,15 +209,11 @@ jobs:
               # FETCH THE FEATURED IMAGE FROM THE ARTICLE PAGE
               featured_image = None
               if article_link:
-                  print(f"  Fetching from: {article_link}")
                   featured_image = fetch_featured_image(article_link)
-                  if featured_image:
-                      print(f"  → Final selection: {featured_image.split('/')[-1]}")
               
               # Use featured image or fallback
               if not featured_image:
                   featured_image = fallback_thumbnail
-                  print(f"  → Using fallback")
               
               # Sanitize URL
               if not featured_image.startswith('http'):
@@ -233,10 +233,14 @@ jobs:
           with open('feed.xml', 'w', encoding='utf-8') as f:
               f.write(xml_string)
           
-          print(f"\n{'='*60}")
-          print(f"✓ Feed created with {cdata_count} CDATA sections")
+          print(f"\n✓ Feed created with {cdata_count} CDATA sections")
           print(f"✓ Output size: {len(xml_string):,} bytes")
           EOF
+      
+      - name: Verify logo in feed
+        run: |
+          echo "Checking for logo..."
+          grep -o '<snf:logo>.*</snf:logo>' feed.xml || echo "Logo not found in feed!"
       
       - name: Check for changes
         id: changes
