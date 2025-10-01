@@ -2,40 +2,33 @@ name: Fetch RSS Feed
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Runs every 6 hours
-  workflow_dispatch:  # Allows you to manually trigger it
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
   push:
     branches:
-      - main  # Also runs when you push to main
+      - main
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
     
     permissions:
-      contents: write  # Allows the action to commit changes
+      contents: write
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
       
-      - name: Fetch RSS Feed
+      - name: Fetch and Fix RSS Feed
         run: |
-          echo "Fetching feed from https://www.cabletv.com/feed"
-          curl -L -v -o feed.xml https://www.cabletv.com/feed
-          echo "Curl exit code: $?"
-          echo "File size:"
-          ls -lh feed.xml
-          echo "First 50 lines of feed:"
-          head -50 feed.xml
+          echo "Fetching feed..."
+          curl -L -o feed.xml https://www.cabletv.com/feed
           
-      - name: Verify feed has content
-        run: |
-          if [ ! -s feed.xml ]; then
-            echo "ERROR: feed.xml is empty!"
-            exit 1
-          fi
-          echo "Feed file has content, proceeding..."
+          # Fix self-reference URL
+          sed -i 's|https://www.cabletv.com/feed|https://ctv-clearlink.github.io/RSS-Feed/feed.xml|g' feed.xml
+          
+          echo "Feed fetched and fixed"
+          ls -lh feed.xml
           
       - name: Commit and push feed
         run: |
