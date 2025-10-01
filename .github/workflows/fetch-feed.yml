@@ -47,7 +47,7 @@ jobs:
           # Get the channel element
           channel = root.find('channel')
           
-          # Define namespace map - snf MUST be at root level
+          # Define namespace map
           nsmap = {
               'content': 'http://purl.org/rss/1.0/modules/content/',
               'wfw': 'http://wellformedweb.org/CommentAPI/',
@@ -80,7 +80,7 @@ jobs:
           new_channel = etree.SubElement(new_rss, 'channel')
           
           # Copy channel metadata elements in order
-          elements_added = []
+          logo_added = False
           for elem in channel:
               if elem.tag == 'item':
                   break
@@ -91,19 +91,22 @@ jobs:
                   continue
                   
               new_channel.append(elem)
-              elements_added.append(tag_name)
               
-              # Add logo right after description
-              if tag_name == 'description':
+              # Add logo with proper structure right after description
+              if tag_name == 'description' and not logo_added:
+                  # Create snf:logo with nested url element
                   snf_logo = etree.SubElement(new_channel, '{http://www.smartnews.be/snf}logo')
-                  snf_logo.text = 'https://i.ibb.co/Y6Z731Z/RSS-Logo-Header.png'
-                  print("✓ Added snf:logo after description")
+                  logo_url = etree.SubElement(snf_logo, 'url')
+                  logo_url.text = 'https://i.ibb.co/Y6Z731Z/RSS-Logo-Header.png'
+                  logo_added = True
+                  print("✓ Added snf:logo with <url> subelement after description")
           
-          # If description wasn't found, add logo after title
-          if 'description' not in elements_added:
+          # If we didn't add logo yet, add it before first item
+          if not logo_added:
               snf_logo = etree.SubElement(new_channel, '{http://www.smartnews.be/snf}logo')
-              snf_logo.text = 'https://i.ibb.co/Y6Z731Z/RSS-Logo-Header.png'
-              print("✓ Added snf:logo after title")
+              logo_url = etree.SubElement(snf_logo, 'url')
+              logo_url.text = 'https://i.ibb.co/Y6Z731Z/RSS-Logo-Header.png'
+              print("✓ Added snf:logo with <url> subelement at channel level")
           
           # Process items
           items = channel.findall('item')
