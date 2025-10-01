@@ -26,7 +26,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          pip install lxml requests
+          pip install lxml requests beautifulsoup4
       
       - name: Fetch and Clean RSS Feed
         run: |
@@ -39,111 +39,129 @@ jobs:
           # Fetch the original feed
           print("Fetching original feed...")
           response = requests.get('https://www.cabletv.com/feed')
-          original_content = response.content
-
-          # Parse with lxml for manipulation
-          parser = etree.XMLParser(remove_blank_text=True, recover=True, strip_cdata=False)
-          tree = etree.fromstring(original_content, parser)
-
-          # Define namespaces
-          namespaces = {
+          
+          # Parse the XML
+          root = etree.fromstring(response.content)
+          
+          # Get the channel element
+          channel = root.find('channel')
+          
+          # Define namespace map
+          nsmap = {
               'content': 'http://purl.org/rss/1.0/modules/content/',
+              'wfw': 'http://wellformedweb.org/CommentAPI/',
               'dc': 'http://purl.org/dc/elements/1.1/',
+              'atom': 'http://www.w3.org/2005/Atom',
+              'sy': 'http://purl.org/rss/1.0/modules/syndication/',
+              'slash': 'http://purl.org/rss/1.0/modules/slash/',
               'media': 'http://search.yahoo.com/mrss/',
-              'snf': 'http://www.smartnews.be/snf',
-              'atom': 'http://www.w3.org/2005/Atom'
+              'snf': 'http://www.smartnews.be/snf'
           }
-
-          # Register namespaces
-          for prefix, uri in namespaces.items():
+          
+          # Register all namespaces
+          for prefix, uri in nsmap.items():
               etree.register_namespace(prefix, uri)
-
-          # Add channel logo
-          channel = tree.find('.//channel')
-          if channel is not None:
-              # Remove existing snf:logo if present
-              for existing_logo in channel.findall('snf:logo', namespaces):
-                  channel.remove(existing_logo)
-              
-              # Add new logo as first child after title/link/description
-              title = channel.find('title')
-              if title is not None:
-                  title_index = list(channel).index(title)
-                  logo = etree.Element('{http://www.smartnews.be/snf}logo')
-                  logo.text = 'https://i.ibb.co/V0FWL4m9/CTV-Logo.png'
-                  channel.insert(title_index + 1, logo)
-              else:
-                  logo = etree.SubElement(channel, '{http://www.smartnews.be/snf}logo')
-                  logo.text = 'https://i.ibb.co/V0FWL4m9/CTV-Logo.png'
-
-          # Process each item
-          items = tree.findall('.//item')
+          
+          # Create new RSS document
+          new_rss = etree.Element('rss', version='2.0', nsmap=nsmap)
+          new_channel = etree.SubElement(new_rss, 'channel')
+          
+          # Copy channel metadata
+          for elem in channel:
+              if elem.tag == 'item':
+                  break
+              if 'logo' not in elem.tag.lower():  # Skip any existing logo
+                  new_channel.append(elem)
+          
+          # Add SNF logo right after the channel description
+          snf_logo = etree.SubElement(new_channel, '{http://www.smartnews.be/snf}logo')
+          snf_logo.text = 'https://i.ibb.co/Y6Z731Z/RSS-Logo-Header.png'
+          
+          # Process items
+          items = channel.findall('item')
           print(f"Processing {len(items)} items...")
-
-          for item in items:
-              # Extract featured image from content:encoded
-              content_encoded = item.find('content:encoded', namespaces)
-              if content_encoded is not None:
-                  # Get the content (whether it's CDATA or text)
-                  content_text = content_encoded.text
+          
+          for old_item in items:
+              new_item = etree.SubElement(new_channel, 'item')
+              
+              # Track if we found content:encoded
+              found_content_encoded = False
+              content_text = None
+              
+              # Copy all elements from old item
+              for elem in old_item:
+                  tag_name = etree.QName(elem.tag).localname
+                  namespace = etree.QName(elem.tag).namespace
                   
-                  if content_text:
-                      # Look for img src in content
-                      img_match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', content_text)
-                      if img_match:
-                          img_url = img_match.group(1)
-                          
-                          # Remove existing media:thumbnail if present
-                          for existing_thumb in item.findall('media:thumbnail', namespaces):
-                              item.remove(existing_thumb)
-                          
-                          # Add media:thumbnail
-                          thumbnail = etree.SubElement(item, '{http://search.yahoo.com/mrss/}thumbnail')
-                          thumbnail.set('url', img_url)
+                  # Handle content:encoded specially
+                  if namespace == 'http://purl.org/rss/1.0/modules/content/' and tag_name == 'encoded':
+                      found_content_encoded = True
+                      content_text = elem.text
                       
-                      # Ensure content:encoded is wrapped in CDATA
-                      # Remove old content:encoded
-                      item.remove(content_encoded)
+                      # Create new content:encoded with proper CDATA
+                      new_content = etree.SubElement(new_item, '{http://purl.org/rss/1.0/modules/content/}encoded')
+                      # Don't set text directly, we'll write CDATA manually later
+                      new_content.text = content_text
                       
-                      # Create new content:encoded with CDATA
-                      new_content = etree.SubElement(item, '{http://purl.org/rss/1.0/modules/content/}encoded')
-                      new_content.text = etree.CDATA(content_text)
-
-              # Ensure dc:creator (author) is present
-              creator = item.find('dc:creator', namespaces)
-              if creator is None or not creator.text:
-                  if creator is None:
-                      creator = etree.SubElement(item, '{http://purl.org/dc/elements/1.1/}creator')
+                      # Extract and add thumbnail
+                      if content_text:
+                          img_match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', content_text)
+                          if img_match:
+                              img_url = img_match.group(1)
+                              thumbnail = etree.SubElement(new_item, '{http://search.yahoo.com/mrss/}thumbnail')
+                              thumbnail.set('url', img_url)
+                  else:
+                      # Copy other elements as-is
+                      new_elem = etree.SubElement(new_item, elem.tag, elem.attrib)
+                      new_elem.text = elem.text
+                      new_elem.tail = elem.tail
+                      for child in elem:
+                          new_elem.append(child)
+              
+              # Ensure required fields exist
+              if new_item.find('dc:creator', nsmap) is None:
+                  creator = etree.SubElement(new_item, '{http://purl.org/dc/elements/1.1/}creator')
                   creator.text = 'CableTV.com'
-
-              # Ensure pubDate is present
-              pubdate = item.find('pubDate')
-              if pubdate is None or not pubdate.text:
-                  if pubdate is None:
-                      pubdate = etree.SubElement(item, 'pubDate')
+              
+              if new_item.find('pubDate') is None:
+                  pubdate = etree.SubElement(new_item, 'pubDate')
                   pubdate.text = datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S +0000')
-
-              # Ensure description is present
-              description = item.find('description')
-              if description is None or not description.text:
-                  if description is None:
-                      description = etree.SubElement(item, 'description')
-                  if content_encoded is not None and content_text:
-                      text_content = re.sub(r'<[^>]+>', '', content_text)
-                      text_content = text_content.strip()[:200] + '...'
-                      description.text = text_content
-
-          # Fix self-reference
-          atom_link = tree.find('.//channel/atom:link[@rel="self"]', namespaces)
-          if atom_link is not None:
-              atom_link.set('href', 'https://ctv-clearlink.github.io/RSS-Feed/feed.xml')
-
-          # Write cleaned feed
-          output = etree.tostring(tree, pretty_print=True, xml_declaration=True, encoding='UTF-8')
-          with open('feed.xml', 'wb') as f:
-              f.write(output)
-
+              
+              if new_item.find('description') is None and content_text:
+                  description = etree.SubElement(new_item, 'description')
+                  text_content = re.sub(r'<[^>]+>', '', content_text)
+                  description.text = text_content.strip()[:200] + '...'
+          
+          # Convert to string with proper CDATA handling
+          xml_string = etree.tostring(new_rss, 
+                                      pretty_print=True, 
+                                      xml_declaration=True, 
+                                      encoding='UTF-8',
+                                      method='xml')
+          
+          # Manually ensure CDATA sections are properly formatted
+          xml_string = xml_string.decode('utf-8')
+          
+          # Fix content:encoded to use CDATA if it doesn't already
+          xml_string = re.sub(
+              r'<content:encoded>(.*?)</content:encoded>',
+              lambda m: f'<content:encoded><![CDATA[{m.group(1)}]]></content:encoded>',
+              xml_string,
+              flags=re.DOTALL
+          )
+          
+          # Fix atom:link self-reference
+          xml_string = xml_string.replace(
+              'https://www.cabletv.com/feed',
+              'https://ctv-clearlink.github.io/RSS-Feed/feed.xml'
+          )
+          
+          # Write to file
+          with open('feed.xml', 'w', encoding='utf-8') as f:
+              f.write(xml_string)
+          
           print("Feed cleaned successfully!")
+          print(f"Logo added: https://i.ibb.co/Y6Z731Z/RSS-Logo-Header.png")
           EOF
       
       - name: Check for changes
