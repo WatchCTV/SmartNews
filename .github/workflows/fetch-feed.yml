@@ -98,7 +98,8 @@ jobs:
               if elem.tag == 'description':
                   logo_filename = 'CableTV.com RSS Logo Header.png'
                   logo_url = f'https://ctv-clearlink.github.io/RSS-Feed/{quote(logo_filename)}'
-                  xml_parts.append(f'<snf:logo><url>{logo_url}</url></snf:logo>')
+                  # Don't use <url> tag - just put the URL as text content
+                  xml_parts.append(f'<snf:logo>{logo_url}</snf:logo>')
           
           # Process items
           cdata_count = 0
@@ -108,44 +109,56 @@ jobs:
               """Score an image based on likelihood of being featured image"""
               score = 0
               src_lower = src.lower()
+              filename = src_lower.split('/')[-1]
+              
+              # CRITICAL: Exclude CTV logos and small images FIRST
+              if 'ctv' in filename and 'logo' in filename:
+                  return -100000  # Massive penalty for CTV logos
+              
+              if '150x150' in src_lower or '100x100' in src_lower:
+                  return -100000  # Massive penalty for tiny images
               
               # HIGHEST PRIORITY: Images with "watch-" prefix (featured images)
-              if 'watch-' in src_lower:
-                  score += 1000
+              if 'watch-' in filename:
+                  score += 10000
               
-              # High priority: .webp files (modern featured images)
-              if src_lower.endswith('.webp'):
-                  score += 500
+              # Very high priority: .webp files over 500px
+              if filename.endswith('.webp'):
+                  score += 5000
               
               # Heavily penalize logos and icons
-              if any(x in src_lower for x in ['logo', 'icon', 'avatar', 'badge']):
-                  score -= 10000
+              if 'logo' in src_lower or 'icon' in src_lower:
+                  return -100000
               
-              # Penalize very small images
+              # Penalize service provider logos
+              if any(x in src_lower for x in ['fubo', 'hulu', 'directv', 'sling', 'youtube-tv']):
+                  score -= 50000
+              
+              # Check image dimensions
               size_match = re.search(r'(\d+)x(\d+)', src)
               if size_match:
                   width = int(size_match.group(1))
                   height = int(size_match.group(2))
                   
-                  if width < 200 or height < 200:
-                      score -= 5000
-                  elif width >= 600:
-                      score += width + height  # Favor larger images
+                  if width < 300 or height < 200:
+                      return -100000
+                  elif width >= 600 and height >= 400:
+                      score += (width + height) * 2  # Big bonus for large images
               
-              # Prefer images earlier in content
-              score -= position * 10
+              # Slight preference for images earlier in content
+              score -= position * 5
               
               # Look for common featured image patterns
-              if any(x in src_lower for x in ['featured', 'hero', 'banner', 'main']):
-                  score += 300
+              if any(x in src_lower for x in ['featured', 'hero', 'banner']):
+                  score += 3000
               
               # Prefer team/sports related images
-              if any(x in src_lower for x in ['reds', 'phillies', 'mercury', 'nfl', 'mlb', 'nba', 'nhl']):
-                  score += 200
+              if any(x in filename for x in ['reds', 'phillies', 'mercury', 'brewers', 'nfl', 'mlb', 'premier']):
+                  score += 2000
               
               return score
           
-          def find_best_image(html_content):
+          def find_best_image(html_content, title=''):
               """Find the best featured image from HTML content"""
               soup = BeautifulSoup(html_content, 'html.parser')
               all_imgs = soup.find_all('img')
@@ -153,25 +166,36 @@ jobs:
               if not all_imgs:
                   return None
               
+              print(f"  Found {len(all_imgs)} images, scoring each...")
+              
               # Score all images
               scored_images = []
               for position, img in enumerate(all_imgs):
                   src = img.get('src') or img.get('data-src', '')
                   if src:
                       score = score_image(src, position)
-                      scored_images.append((score, src))
+                      scored_images.append((score, src, position))
+                      
+                      # Debug top images
+                      if position < 5:
+                          filename = src.split('/')[-1][:50]
+                          print(f"    [{position}] Score: {score:>8} - {filename}")
               
               if not scored_images:
                   return None
               
               # Return highest scoring image
-              scored_images.sort(reverse=True)
-              return scored_images[0][1]
+              scored_images.sort(reverse=True, key=lambda x: x[0])
+              best = scored_images[0]
+              print(f"  → Best: {best[1].split('/')[-1]} (score: {best[0]})")
+              
+              return best[1]
           
           for idx, item in enumerate(items):
               title_elem = item.find('title')
               title_text = title_elem.text if title_elem is not None else 'Unknown'
-              print(f"\nItem {idx + 1}: {title_text[:50]}")
+              print(f"\n{'='*60}")
+              print(f"Item {idx + 1}: {title_text[:50]}")
               
               xml_parts.append('<item>')
               
@@ -228,7 +252,7 @@ jobs:
               # Find and add BEST thumbnail
               img_url = None
               if original_content:
-                  img_url = find_best_image(original_content)
+                  img_url = find_best_image(original_content, title_text)
                   
                   if img_url:
                       img_url = img_url.strip()
@@ -241,7 +265,6 @@ jobs:
                           img_url = 'https://www.cabletv.com/' + img_url
                       
                       img_url = img_url.replace('&', '&amp;')
-                      print(f"  ✓ Selected: {img_url.split('/')[-1]}")
                   else:
                       print(f"  ! No image found, using fallback")
                       img_url = fallback_thumbnail
@@ -266,7 +289,8 @@ jobs:
           with open('feed.xml', 'w', encoding='utf-8') as f:
               f.write(xml_string)
           
-          print(f"\n✓ Feed created with {cdata_count} CDATA sections")
+          print(f"\n{'='*60}")
+          print(f"✓ Feed created with {cdata_count} CDATA sections")
           print(f"✓ Added {thumbnail_count}/{len(items)} thumbnails")
           print(f"✓ Output size: {len(xml_string):,} bytes ({len(xml_string)/1024/1024:.2f} MB)")
           EOF
