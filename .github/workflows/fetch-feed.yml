@@ -4,9 +4,6 @@ on:
   schedule:
     - cron: '0 */6 * * *'
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   fetch:
@@ -18,6 +15,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -26,12 +26,11 @@ jobs:
       
       - name: Install dependencies
         run: |
-          pip install feedparser lxml requests
+          pip install lxml requests
       
       - name: Fetch and Clean RSS Feed
         run: |
           python3 << 'EOF'
-          import feedparser
           import requests
           from lxml import etree
           from datetime import datetime
@@ -51,7 +50,8 @@ jobs:
               'content': 'http://purl.org/rss/1.0/modules/content/',
               'dc': 'http://purl.org/dc/elements/1.1/',
               'media': 'http://search.yahoo.com/mrss/',
-              'snf': 'http://www.smartnews.be/snf'
+              'snf': 'http://www.smartnews.be/snf',
+              'atom': 'http://www.w3.org/2005/Atom'
           }
 
           # Register namespaces
@@ -104,7 +104,6 @@ jobs:
               if pubdate is None or not pubdate.text:
                   if pubdate is None:
                       pubdate = etree.SubElement(item, 'pubDate')
-                  # Use current date as fallback
                   pubdate.text = datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S +0000')
 
               # Ensure description is present
@@ -112,15 +111,13 @@ jobs:
               if description is None or not description.text:
                   if description is None:
                       description = etree.SubElement(item, 'description')
-                  # Extract from content if available
                   if content_encoded is not None and content_encoded.text:
-                      # Strip HTML and get first 200 chars
                       text_content = re.sub(r'<[^>]+>', '', content_encoded.text)
                       text_content = text_content.strip()[:200] + '...'
                       description.text = text_content
 
           # Fix self-reference
-          atom_link = tree.find('.//channel/atom:link[@rel="self"]', {'atom': 'http://www.w3.org/2005/Atom'})
+          atom_link = tree.find('.//channel/atom:link[@rel="self"]', namespaces)
           if atom_link is not None:
               atom_link.set('href', 'https://ctv-clearlink.github.io/RSS-Feed/feed.xml')
 
@@ -132,10 +129,17 @@ jobs:
           print("Feed cleaned successfully!")
           EOF
       
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet feed.xml || echo "changed=true" >> $GITHUB_OUTPUT
+      
       - name: Commit and push feed
+        if: steps.changes.outputs.changed == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git pull --rebase origin main
           git add feed.xml
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update RSS feed $(date '+%Y-%m-%d %H:%M:%S')" && git push)
+          git commit -m "Update RSS feed $(date '+%Y-%m-%d %H:%M:%S')"
+          git pull --rebase origin main
+          git push origin main
