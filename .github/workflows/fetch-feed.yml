@@ -104,52 +104,69 @@ jobs:
           cdata_count = 0
           thumbnail_count = 0
           
+          def score_image(src, position):
+              """Score an image based on likelihood of being featured image"""
+              score = 0
+              src_lower = src.lower()
+              
+              # HIGHEST PRIORITY: Images with "watch-" prefix (featured images)
+              if 'watch-' in src_lower:
+                  score += 1000
+              
+              # High priority: .webp files (modern featured images)
+              if src_lower.endswith('.webp'):
+                  score += 500
+              
+              # Heavily penalize logos and icons
+              if any(x in src_lower for x in ['logo', 'icon', 'avatar', 'badge']):
+                  score -= 10000
+              
+              # Penalize very small images
+              size_match = re.search(r'(\d+)x(\d+)', src)
+              if size_match:
+                  width = int(size_match.group(1))
+                  height = int(size_match.group(2))
+                  
+                  if width < 200 or height < 200:
+                      score -= 5000
+                  elif width >= 600:
+                      score += width + height  # Favor larger images
+              
+              # Prefer images earlier in content
+              score -= position * 10
+              
+              # Look for common featured image patterns
+              if any(x in src_lower for x in ['featured', 'hero', 'banner', 'main']):
+                  score += 300
+              
+              # Prefer team/sports related images
+              if any(x in src_lower for x in ['reds', 'phillies', 'mercury', 'nfl', 'mlb', 'nba', 'nhl']):
+                  score += 200
+              
+              return score
+          
           def find_best_image(html_content):
               """Find the best featured image from HTML content"""
               soup = BeautifulSoup(html_content, 'html.parser')
-              
-              # Strategy 1: Look for images in hero/featured sections
-              hero_containers = soup.find_all(['div'], class_=re.compile(r'hero|featured|banner|main-image', re.I))
-              for container in hero_containers:
-                  img = container.find('img')
-                  if img and img.get('src'):
-                      return img.get('src')
-              
-              # Strategy 2: Find largest image (featured images are usually bigger)
               all_imgs = soup.find_all('img')
-              best_img = None
-              max_size = 0
               
-              for img in all_imgs:
-                  src = img.get('src', '')
-                  
-                  # Skip small images, logos, icons
-                  if any(x in src.lower() for x in ['logo', 'icon', 'avatar', '150x150', '100x100', '50x50']):
-                      continue
-                  
-                  # Look for size indicators in filename
-                  size_match = re.search(r'(\d+)x(\d+)', src)
-                  if size_match:
-                      width = int(size_match.group(1))
-                      height = int(size_match.group(2))
-                      size = width * height
-                      
-                      # Featured images are typically at least 600x400
-                      if size > max_size and width >= 400:
-                          max_size = size
-                          best_img = src
-                  elif not best_img:
-                      # If no size info, take first non-logo image as fallback
-                      best_img = src
+              if not all_imgs:
+                  return None
               
-              # Strategy 3: If still nothing, get first image that's not tiny
-              if not best_img:
-                  for img in all_imgs:
-                      src = img.get('src', '')
-                      if src and not any(x in src.lower() for x in ['logo', 'icon', '150x150']):
-                          return src
+              # Score all images
+              scored_images = []
+              for position, img in enumerate(all_imgs):
+                  src = img.get('src') or img.get('data-src', '')
+                  if src:
+                      score = score_image(src, position)
+                      scored_images.append((score, src))
               
-              return best_img
+              if not scored_images:
+                  return None
+              
+              # Return highest scoring image
+              scored_images.sort(reverse=True)
+              return scored_images[0][1]
           
           for idx, item in enumerate(items):
               title_elem = item.find('title')
@@ -224,9 +241,9 @@ jobs:
                           img_url = 'https://www.cabletv.com/' + img_url
                       
                       img_url = img_url.replace('&', '&amp;')
-                      print(f"  ✓ Featured image: {img_url.split('/')[-1]}")
+                      print(f"  ✓ Selected: {img_url.split('/')[-1]}")
                   else:
-                      print(f"  ! No suitable image found, using fallback")
+                      print(f"  ! No image found, using fallback")
                       img_url = fallback_thumbnail
               else:
                   img_url = fallback_thumbnail
