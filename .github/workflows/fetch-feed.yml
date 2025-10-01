@@ -60,6 +60,9 @@ jobs:
           
           fallback_thumbnail = 'https://ctv-clearlink.github.io/RSS-Feed/CableTV.com%20RSS%20Logo%20Header.png'
           
+          # Use the EXACT same logo URL format as the working feed
+          logo_url = 'https://ctv-clearlink.github.io/RSS-Feed/CableTV.com%20RSS%20Logo%20Header.png'
+          
           # Build XML
           xml_parts = []
           xml_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
@@ -74,29 +77,16 @@ jobs:
           xml_parts.append(' xmlns:snf="http://www.smartnews.be/snf">')
           xml_parts.append('<channel>')
           
-          # Track if we added logo
-          logo_added = False
+          # Add channel logo FIRST, right after <channel>
+          xml_parts.append(f'<snf:logo><url>{logo_url}</url></snf:logo>')
+          print(f"✓ Added logo at start of channel: {logo_url}")
           
-          # Add channel metadata
+          # Add rest of channel metadata (skip any existing logos)
           for elem in channel:
               if elem.tag == 'item':
                   break
               if 'logo' not in elem.tag.lower():
                   xml_parts.append(etree.tostring(elem, encoding='unicode', method='xml'))
-              
-              # Add logo right after description element
-              if elem.tag == 'description' and not logo_added:
-                  logo_url = f'https://ctv-clearlink.github.io/RSS-Feed/{quote("CableTV.com RSS Logo Header.png")}'
-                  # Use the nested <url> format that SmartNews expects
-                  xml_parts.append(f'<snf:logo><url>{logo_url}</url></snf:logo>')
-                  logo_added = True
-                  print(f"✓ Added logo: {logo_url}")
-          
-          # If we didn't add logo yet (no description found), add it now
-          if not logo_added:
-              logo_url = f'https://ctv-clearlink.github.io/RSS-Feed/{quote("CableTV.com RSS Logo Header.png")}'
-              xml_parts.append(f'<snf:logo><url>{logo_url}</url></snf:logo>')
-              print(f"✓ Added logo (fallback): {logo_url}")
           
           cdata_count = 0
           
@@ -239,8 +229,11 @@ jobs:
       
       - name: Verify logo in feed
         run: |
-          echo "Checking for logo..."
-          grep -o '<snf:logo>.*</snf:logo>' feed.xml || echo "Logo not found in feed!"
+          echo "=== Checking for logo in feed ==="
+          grep '<snf:logo>' feed.xml && echo "✓ Logo found" || echo "✗ Logo NOT found"
+          echo ""
+          echo "=== Logo content ==="
+          grep -A 1 '<snf:logo>' feed.xml || echo "No logo to display"
       
       - name: Check for changes
         id: changes
