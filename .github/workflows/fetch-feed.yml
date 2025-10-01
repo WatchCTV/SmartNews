@@ -87,26 +87,75 @@ jobs:
           
           cdata_count = 0
           
-          def fetch_og_image(article_url):
-              """Fetch the og:image from the article page"""
+          def fetch_featured_image(article_url):
+              """Fetch the featured image from the article page"""
               try:
                   headers = {
                       'User-Agent': 'Mozilla/5.0 (compatible; SmartFeed-Builder/3.0)',
                       'Accept': 'text/html'
                   }
                   response = requests.get(article_url, headers=headers, timeout=10)
-                  if response.ok:
-                      # Look for og:image meta tag
-                      match = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']', response.text, re.IGNORECASE)
-                      if match:
-                          return match.group(1)
+                  if not response.ok:
+                      return None
+                  
+                  html = response.text
+                  
+                  # Try multiple strategies to find the featured image
+                  candidates = []
+                  
+                  # 1. Look for og:image
+                  og_matches = re.findall(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']', html, re.IGNORECASE)
+                  candidates.extend(og_matches)
+                  
+                  # 2. Look for twitter:image
+                  twitter_matches = re.findall(r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)["\']', html, re.IGNORECASE)
+                  candidates.extend(twitter_matches)
+                  
+                  # 3. Look for article:image
+                  article_matches = re.findall(r'<meta[^>]+property=["\']article:image["\'][^>]+content=["\']([^"\']+)["\']', html, re.IGNORECASE)
+                  candidates.extend(article_matches)
+                  
+                  print(f"    Found {len(candidates)} image candidates")
+                  
+                  # Filter out logos and small images
+                  for img_url in candidates:
+                      filename = img_url.lower().split('/')[-1]
+                      print(f"      Checking: {filename}")
+                      
+                      # Skip logos
+                      if 'logo' in filename or 'icon' in filename:
+                          print(f"        ✗ Skipped (logo/icon)")
+                          continue
+                      
+                      # Skip tiny images
+                      if any(size in img_url.lower() for size in ['150x150', '100x100', '50x50']):
+                          print(f"        ✗ Skipped (tiny)")
+                          continue
+                      
+                      # Prefer images with "watch-" prefix or .webp
+                      if 'watch-' in filename or filename.endswith('.webp'):
+                          print(f"        ✓ Selected (featured image pattern)")
+                          return img_url
+                      
+                      # Otherwise, take first non-logo image
+                      print(f"        ✓ Selected (first valid)")
+                      return img_url
+                  
+                  # If all filtered out, return first candidate anyway
+                  if candidates:
+                      print(f"      Using first candidate despite filters")
+                      return candidates[0]
+                  
+                  return None
+                  
               except Exception as e:
-                  print(f"    ! Error fetching {article_url}: {e}")
+                  print(f"    ! Error: {e}")
               return None
           
           for idx, item in enumerate(items):
               title_text = item.find('title').text if item.find('title') is not None else 'Unknown'
-              print(f"\nItem {idx+1}: {title_text[:50]}")
+              print(f"\n{'='*60}")
+              print(f"Item {idx+1}: {title_text[:50]}")
               
               xml_parts.append('<item>')
               
@@ -156,17 +205,15 @@ jobs:
               # FETCH THE FEATURED IMAGE FROM THE ARTICLE PAGE
               featured_image = None
               if article_link:
-                  print(f"  Fetching og:image from: {article_link}")
-                  featured_image = fetch_og_image(article_link)
+                  print(f"  Fetching from: {article_link}")
+                  featured_image = fetch_featured_image(article_link)
                   if featured_image:
-                      print(f"  ✓ Found og:image: {featured_image.split('/')[-1]}")
-                  else:
-                      print(f"  ! No og:image found")
+                      print(f"  → Final selection: {featured_image.split('/')[-1]}")
               
               # Use featured image or fallback
               if not featured_image:
                   featured_image = fallback_thumbnail
-                  print(f"  Using fallback thumbnail")
+                  print(f"  → Using fallback")
               
               # Sanitize URL
               if not featured_image.startswith('http'):
@@ -186,8 +233,9 @@ jobs:
           with open('feed.xml', 'w', encoding='utf-8') as f:
               f.write(xml_string)
           
-          print(f"\n✓ Feed created with {cdata_count} CDATA sections")
-          print(f"✓ Output size: {len(xml_string):,} bytes ({len(xml_string)/1024/1024:.2f} MB)")
+          print(f"\n{'='*60}")
+          print(f"✓ Feed created with {cdata_count} CDATA sections")
+          print(f"✓ Output size: {len(xml_string):,} bytes")
           EOF
       
       - name: Check for changes
