@@ -1,4 +1,4 @@
-name: Fetch RSS Feed
+name: Fetch and Clean RSS Feed
 
 on:
   schedule:
@@ -19,17 +19,119 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       
-      - name: Fetch and Fix RSS Feed
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      
+      - name: Install dependencies
         run: |
-          echo "Fetching feed..."
-          curl -L -o feed.xml https://www.cabletv.com/feed
-          
-          # Fix self-reference URL
-          sed -i 's|https://www.cabletv.com/feed|https://ctv-clearlink.github.io/RSS-Feed/feed.xml|g' feed.xml
-          
-          echo "Feed fetched and fixed"
-          ls -lh feed.xml
-          
+          pip install feedparser lxml requests
+      
+      - name: Fetch and Clean RSS Feed
+        run: |
+          python3 << 'EOF'
+          import feedparser
+          import requests
+          from lxml import etree
+          from datetime import datetime
+          import re
+
+          # Fetch the original feed
+          print("Fetching original feed...")
+          response = requests.get('https://www.cabletv.com/feed')
+          original_content = response.content
+
+          # Parse with lxml for manipulation
+          parser = etree.XMLParser(remove_blank_text=True, recover=True)
+          tree = etree.fromstring(original_content, parser)
+
+          # Define namespaces
+          namespaces = {
+              'content': 'http://purl.org/rss/1.0/modules/content/',
+              'dc': 'http://purl.org/dc/elements/1.1/',
+              'media': 'http://search.yahoo.com/mrss/',
+              'snf': 'http://www.smartnews.be/snf'
+          }
+
+          # Register namespaces
+          for prefix, uri in namespaces.items():
+              etree.register_namespace(prefix, uri)
+
+          # Add channel logo
+          channel = tree.find('.//channel')
+          if channel is not None:
+              # Remove existing snf:logo if present
+              existing_logo = channel.find('snf:logo', namespaces)
+              if existing_logo is not None:
+                  channel.remove(existing_logo)
+              
+              # Add new logo
+              logo = etree.SubElement(channel, '{http://www.smartnews.be/snf}logo')
+              logo.text = 'https://i.ibb.co/V0FWL4m9/CTV-Logo.png'
+
+          # Process each item
+          items = tree.findall('.//item')
+          print(f"Processing {len(items)} items...")
+
+          for item in items:
+              # Extract featured image from content:encoded
+              content_encoded = item.find('content:encoded', namespaces)
+              if content_encoded is not None and content_encoded.text:
+                  # Look for img src in content
+                  img_match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', content_encoded.text)
+                  if img_match:
+                      img_url = img_match.group(1)
+                      
+                      # Remove existing media:thumbnail if present
+                      existing_thumb = item.find('media:thumbnail', namespaces)
+                      if existing_thumb is not None:
+                          item.remove(existing_thumb)
+                      
+                      # Add media:thumbnail
+                      thumbnail = etree.SubElement(item, '{http://search.yahoo.com/mrss/}thumbnail')
+                      thumbnail.set('url', img_url)
+
+              # Ensure dc:creator (author) is present
+              creator = item.find('dc:creator', namespaces)
+              if creator is None or not creator.text:
+                  if creator is None:
+                      creator = etree.SubElement(item, '{http://purl.org/dc/elements/1.1/}creator')
+                  creator.text = 'CableTV.com'
+
+              # Ensure pubDate is present
+              pubdate = item.find('pubDate')
+              if pubdate is None or not pubdate.text:
+                  if pubdate is None:
+                      pubdate = etree.SubElement(item, 'pubDate')
+                  # Use current date as fallback
+                  pubdate.text = datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S +0000')
+
+              # Ensure description is present
+              description = item.find('description')
+              if description is None or not description.text:
+                  if description is None:
+                      description = etree.SubElement(item, 'description')
+                  # Extract from content if available
+                  if content_encoded is not None and content_encoded.text:
+                      # Strip HTML and get first 200 chars
+                      text_content = re.sub(r'<[^>]+>', '', content_encoded.text)
+                      text_content = text_content.strip()[:200] + '...'
+                      description.text = text_content
+
+          # Fix self-reference
+          atom_link = tree.find('.//channel/atom:link[@rel="self"]', {'atom': 'http://www.w3.org/2005/Atom'})
+          if atom_link is not None:
+              atom_link.set('href', 'https://ctv-clearlink.github.io/RSS-Feed/feed.xml')
+
+          # Write cleaned feed
+          output = etree.tostring(tree, pretty_print=True, xml_declaration=True, encoding='UTF-8')
+          with open('feed.xml', 'wb') as f:
+              f.write(output)
+
+          print("Feed cleaned successfully!")
+          EOF
+      
       - name: Commit and push feed
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
