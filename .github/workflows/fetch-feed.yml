@@ -2,32 +2,33 @@ name: Fetch and Clean RSS Feed
 
 on:
   schedule:
+    # Run every 6 hours
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: write
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      
+
       - name: Install dependencies
         run: |
           pip install lxml requests beautifulsoup4
-      
+
       - name: Fetch and Clean RSS Feed
         run: |
           python3 << 'EOF'
@@ -36,14 +37,14 @@ jobs:
           from bs4 import BeautifulSoup
           from datetime import datetime, timezone
           import re
-          from urllib.parse import quote
 
           print("Fetching original feed...")
-          response = requests.get('https://www.cabletv.com/feed')
+          # Updated source feed URL
+          response = requests.get('https://rss.app/feeds/PnXLTXpDQSdLv1cb.xml')
           root = etree.fromstring(response.content)
           channel = root.find('channel')
           items = channel.findall('item')[:8]
-          
+
           nsmap = {
               'content': 'http://purl.org/rss/1.0/modules/content/',
               'wfw': 'http://wellformedweb.org/CommentAPI/',
@@ -54,16 +55,13 @@ jobs:
               'media': 'http://search.yahoo.com/mrss/',
               'snf': 'http://www.smartnews.be/snf'
           }
-          
+
           for prefix, uri in nsmap.items():
               etree.register_namespace(prefix, uri)
-          
+
           fallback_thumbnail = 'https://ctv-clearlink.github.io/RSS-Feed/CableTV.com%20RSS%20Logo%20Header.png'
-          
-          # Use the EXACT same logo URL format as the working feed
           logo_url = 'https://ctv-clearlink.github.io/RSS-Feed/CableTV.com%20RSS%20Logo%20Header.png'
-          
-          # Build XML
+
           xml_parts = []
           xml_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
           xml_parts.append('<rss version="2.0"')
@@ -76,20 +74,20 @@ jobs:
           xml_parts.append(' xmlns:media="http://search.yahoo.com/mrss/"')
           xml_parts.append(' xmlns:snf="http://www.smartnews.be/snf">')
           xml_parts.append('<channel>')
-          
-          # Add channel logo FIRST, right after <channel>
+
+          # Insert SmartNews logo as required
           xml_parts.append(f'<snf:logo><url>{logo_url}</url></snf:logo>')
           print(f"✓ Added logo at start of channel: {logo_url}")
-          
-          # Add rest of channel metadata (skip any existing logos)
+
+          # Copy channel metadata, skipping any logo tags
           for elem in channel:
               if elem.tag == 'item':
                   break
               if 'logo' not in elem.tag.lower():
                   xml_parts.append(etree.tostring(elem, encoding='unicode', method='xml'))
-          
+
           cdata_count = 0
-          
+
           def fetch_featured_image(article_url):
               """Fetch the featured image from the article page"""
               try:
@@ -100,82 +98,61 @@ jobs:
                   response = requests.get(article_url, headers=headers, timeout=10)
                   if not response.ok:
                       return None
-                  
+
                   html = response.text
-                  
-                  # Try multiple strategies to find the featured image
                   candidates = []
-                  
-                  # 1. Look for og:image
+                  # og:image
                   og_matches = re.findall(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']', html, re.IGNORECASE)
                   candidates.extend(og_matches)
-                  
-                  # 2. Look for twitter:image
+                  # twitter:image
                   twitter_matches = re.findall(r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)["\']', html, re.IGNORECASE)
                   candidates.extend(twitter_matches)
-                  
-                  # 3. Look for article:image
+                  # article:image
                   article_matches = re.findall(r'<meta[^>]+property=["\']article:image["\'][^>]+content=["\']([^"\']+)["\']', html, re.IGNORECASE)
                   candidates.extend(article_matches)
-                  
-                  # Filter out logos and small images
+
                   for img_url in candidates:
                       filename = img_url.lower().split('/')[-1]
-                      
-                      # Skip logos
                       if 'logo' in filename or 'icon' in filename:
                           continue
-                      
-                      # Skip tiny images
                       if any(size in img_url.lower() for size in ['150x150', '100x100', '50x50']):
                           continue
-                      
-                      # Prefer images with "watch-" prefix or .webp
                       if 'watch-' in filename or filename.endswith('.webp'):
                           return img_url
-                      
-                      # Otherwise, take first non-logo image
                       return img_url
-                  
-                  # If all filtered out, return first candidate anyway
+
                   if candidates:
                       return candidates[0]
-                  
                   return None
-                  
               except Exception as e:
                   print(f"    ! Error: {e}")
               return None
-          
+
           for idx, item in enumerate(items):
               title_text = item.find('title').text if item.find('title') is not None else 'Unknown'
               print(f"\nItem {idx+1}: {title_text[:50]}")
-              
+
               xml_parts.append('<item>')
-              
+
               original_content = None
               article_link = None
-              
-              # Get link and content
+
+              # Extract link and content:encoded
               for elem in item:
                   if elem.tag == 'link':
                       article_link = elem.text.split('?')[0] if elem.text else None
-                  
                   tag_name = etree.QName(elem.tag).localname if '}' in elem.tag else elem.tag
                   namespace = etree.QName(elem.tag).namespace if '}' in elem.tag else None
-                  
                   if namespace == 'http://purl.org/rss/1.0/modules/content/' and tag_name == 'encoded':
                       original_content = elem.text or ''
-              
-              # Process all elements EXCEPT media:thumbnail
+
+              # Copy elements, handling content:encoded specially and skipping existing thumbnails
               for elem in item:
                   tag_name = etree.QName(elem.tag).localname if '}' in elem.tag else elem.tag
                   namespace = etree.QName(elem.tag).namespace if '}' in elem.tag else None
-                  
-                  # Skip existing thumbnails
+
                   if namespace == 'http://search.yahoo.com/mrss/':
-                      continue
-                  
+                      continue  # skip existing media:thumbnail
                   if namespace == 'http://purl.org/rss/1.0/modules/content/' and tag_name == 'encoded':
                       if original_content:
                           soup = BeautifulSoup(original_content, 'html.parser')
@@ -188,45 +165,46 @@ jobs:
                           cdata_count += 1
                   else:
                       xml_parts.append(etree.tostring(elem, encoding='unicode', method='xml'))
-              
-              # Add required fields
+
+              # Add missing dc:creator
               if item.find('dc:creator', nsmap) is None:
                   xml_parts.append('<dc:creator>CableTV.com</dc:creator>')
-              
+              # Add missing pubDate
               if item.find('pubDate') is None:
                   xml_parts.append(f'<pubDate>{datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")}</pubDate>')
-              
-              # FETCH THE FEATURED IMAGE FROM THE ARTICLE PAGE
+
+              # Fetch featured image
               featured_image = None
               if article_link:
                   featured_image = fetch_featured_image(article_link)
-              
-              # Use featured image or fallback
               if not featured_image:
                   featured_image = fallback_thumbnail
-              
-              # Sanitize URL
+
+              # Sanitize non-absolute URLs
               if not featured_image.startswith('http'):
                   if featured_image.startswith('//'):
                       featured_image = 'https:' + featured_image
                   elif featured_image.startswith('/'):
                       featured_image = 'https://www.cabletv.com' + featured_image
-              
+
               featured_image = featured_image.replace('&', '&amp;')
-              
               xml_parts.append(f'<media:thumbnail url="{featured_image}"/>')
               xml_parts.append('</item>')
-          
+
           xml_parts.append('</channel></rss>')
-          xml_string = ''.join(xml_parts).replace('https://www.cabletv.com/feed', 'https://ctv-clearlink.github.io/RSS-Feed/feed.xml')
-          
+          # Replace the source feed URL with the GitHub-hosted feed URL
+          xml_string = ''.join(xml_parts).replace(
+              'https://rss.app/feeds/PnXLTXpDQSdLv1cb.xml',
+              'https://ctv-clearlink.github.io/RSS-Feed/feed.xml'
+          )
+
           with open('feed.xml', 'w', encoding='utf-8') as f:
               f.write(xml_string)
-          
+
           print(f"\n✓ Feed created with {cdata_count} CDATA sections")
           print(f"✓ Output size: {len(xml_string):,} bytes")
           EOF
-      
+
       - name: Verify logo in feed
         run: |
           echo "=== Checking for logo in feed ==="
@@ -234,12 +212,12 @@ jobs:
           echo ""
           echo "=== Logo content ==="
           grep -A 1 '<snf:logo>' feed.xml || echo "No logo to display"
-      
+
       - name: Check for changes
         id: changes
         run: |
           git diff --quiet feed.xml || echo "changed=true" >> $GITHUB_OUTPUT
-      
+
       - name: Commit and push feed
         if: steps.changes.outputs.changed == 'true'
         run: |
