@@ -1,19 +1,18 @@
 name: Build SmartNews Feed
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
-
-permissions:
-  contents: write
+  schedule:
+    - cron: "0 6 * * *"  # runs daily at 6 AM UTC (11 PM MT the night before)
+  push:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -23,170 +22,48 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests beautifulsoup4 lxml python-dateutil
+          python -m pip install --upgrade pip pytz feedparser
 
       - name: Generate feed.xml (SmartNews)
         run: |
-          python3 <<'PY'
-          import requests, re, html, os
-          from bs4 import BeautifulSoup
-          from lxml import etree
-          from datetime import datetime
-          from dateutil import parser, tz
+          python3 - <<'EOF'
+          import datetime, pytz, xml.etree.ElementTree as ET, os
 
-          # --- Config ---
-          SOURCE_FEED = "https://rss.app/feeds/PnXLTXpDQSdLv1cb.xml"
-          PAGES_BASE  = "https://watchctv.github.io/SmartNews"
-          LOGO_FILE   = "CTV-Feed-Logo.png"
-          LOGO_SRC    = "https://i.ibb.co/sptKgp34/CTV-Feed-Logo.png"
-          LOGO_URL    = f"{PAGES_BASE}/{LOGO_FILE}"
-          OUTPUT_FILE = "feed.xml"
-          MAX_ITEMS   = 20
+          FEED_FILE = "feed.xml"
+          MTN = pytz.timezone("US/Mountain")
+          now = datetime.datetime.now(MTN)
 
-          # --- Ensure logo is hosted on your Pages site ---
-          try:
-            r = requests.get(LOGO_SRC, timeout=30)
-            r.raise_for_status()
-            with open(LOGO_FILE, "wb") as f:
-              f.write(r.content)
-          except Exception as e:
-            print(f"Warning: could not download logo from {LOGO_SRC}: {e}")
+          if not os.path.exists(FEED_FILE):
+              raise FileNotFoundError(f"{FEED_FILE} not found")
 
-          # --- Fetch source feed ---
-          src_xml = requests.get(SOURCE_FEED, timeout=30).text
-          soup = BeautifulSoup(src_xml, "xml")
+          tree = ET.parse(FEED_FILE)
+          root = tree.getroot()
 
-          # --- Build RSS 2.0 with namespaces ---
-          rss = etree.Element("rss", version="2.0", nsmap={
-              "content": "http://purl.org/rss/1.0/modules/content/",
-              "wfw":     "http://wellformedweb.org/CommentAPI/",
-              "dc":      "http://purl.org/dc/elements/1.1/",
-              "atom":    "http://www.w3.org/2005/Atom",
-              "sy":      "http://purl.org/rss/1.0/modules/syndication/",
-              "slash":   "http://purl.org/rss/1.0/modules/slash/",
-              "media":   "http://search.yahoo.com/mrss/",
-              "snf":     "http://www.smartnews.be/snf",
-          })
+          for item in root.findall(".//item"):
+              pub = item.find("pubDate")
+              if pub is not None:
+                  text = pub.text.strip() if pub.text else ""
+                  try:
+                      # Try parsing “October 26, 2025” style dates
+                      dt = datetime.datetime.strptime(text, "%B %d, %Y")
+                      dt_mt = MTN.localize(dt.replace(hour=0, minute=0))
+                      pub.text = dt_mt.strftime("%a, %d %b %Y %H:%M:%S %z")
+                  except Exception:
+                      # Already a valid format, skip
+                      continue
+              else:
+                  # Add missing pubDate
+                  pub = ET.SubElement(item, "pubDate")
+                  pub.text = now.strftime("%a, %d %b %Y %H:%M:%S %z")
 
-          ch = etree.SubElement(rss, "channel")
-          etree.SubElement(ch, "title").text = "Entertainment News"
-          etree.SubElement(ch, "link").text = "https://www.cabletv.com/blog/category/entertainment"
-          etree.SubElement(ch, "description").text = "Let's start watching! CableTV.com keeps you informed of all entertainment news."
+          tree.write(FEED_FILE, encoding="utf-8", xml_declaration=True)
+          EOF
 
-          # SmartNews logo
-          snf_logo = etree.SubElement(ch, "{http://www.smartnews.be/snf}logo")
-          etree.SubElement(snf_logo, "url").text = LOGO_URL
-
-          # Atom self link
-          atom_link = etree.SubElement(ch, "{http://www.w3.org/2005/Atom}link")
-          atom_link.set("href", f"{PAGES_BASE}/feed.xml")
-          atom_link.set("rel", "self")
-          atom_link.set("type", "application/rss+xml")
-
-          # --- Date handling: Mountain Time + long format with UTC-7 fallback ---
-          MTN = tz.gettz("America/Denver")
-          if MTN is None:
-            MTN = tz.tzoffset("UTC-7", -7 * 3600)
-
-          def to_mtn_long(dt_text: str) -> str:
-            """Convert to Mountain Time (America/Denver). If unavailable, default to UTC-7.
-            Return long date only, e.g. 'October 26, 2025'."""
-            try:
-              dt = parser.parse(dt_text) if dt_text else datetime.now(tz.UTC)
-            except Exception:
-              dt = datetime.now(tz.UTC)
-            if dt.tzinfo is None:
-              dt = dt.replace(tzinfo=tz.UTC)
-            dt_mtn = dt.astimezone(MTN)
-            return dt_mtn.strftime("%B %d, %Y")
-
-          def first_img_src(html_fragment: str) -> str | None:
-            if not html_fragment:
-              return None
-            m = re.search(r'<img[^>]+src="([^"]+)"', html_fragment, flags=re.IGNORECASE)
-            return m.group(1) if m else None
-
-          count = 0
-          for item in soup.find_all("item"):
-            if count >= MAX_ITEMS:
-              break
-            count += 1
-
-            it = etree.SubElement(ch, "item")
-
-            title = item.title.text if item.title else "Untitled"
-            link  = item.link.text if item.link else ""
-            guid  = (item.guid.text if item.guid else link) or link
-
-            # Source date candidates
-            pub_text = (
-              (item.find("pubDate").text if item.find("pubDate") else None)
-              or (item.find(text=True, name="dc:date") if item.find("dc:date") else None)
-              or (item.find("updated").text if item.find("updated") else None)
-              or (item.find("published").text if item.find("published") else None)
-            )
-            pub_date = to_mtn_long(pub_text)
-
-            # Author
-            author = None
-            dc_creator = item.find("dc:creator")
-            if dc_creator and dc_creator.text:
-              author = dc_creator.text.strip()
-            elif item.find("author") and item.find("author").text:
-              author = item.find("author").text.strip()
-            if not author:
-              author = "CableTV.com Editorial Team"
-
-            # Description & content:encoded
-            desc_html = item.description.text if item.description else ""
-            desc_unescaped = html.unescape(desc_html)
-
-            # media:thumbnail
-            thumb = None
-            mc = item.find("media:content")
-            if mc and mc.get("url"):
-              thumb = mc["url"]
-            elif item.find("enclosure") and item.find("enclosure").get("url"):
-              thumb = item.find("enclosure")["url"]
-            else:
-              thumb = first_img_src(desc_unescaped)
-
-            etree.SubElement(it, "title").text = title
-            etree.SubElement(it, "link").text = link
-            etree.SubElement(it, "guid").text = guid
-            etree.SubElement(it, "pubDate").text = pub_date  # long date in MT/UTC-7
-
-            etree.SubElement(it, "{http://purl.org/dc/elements/1.1/}creator").text = author
-            etree.SubElement(it, "author").text = author
-
-            etree.SubElement(it, "description").text = desc_unescaped
-            cdata = etree.CDATA(desc_unescaped)
-            etree.SubElement(it, "{http://purl.org/rss/1.0/modules/content/}encoded").text = cdata
-
-            if thumb:
-              etree.SubElement(it, "{http://search.yahoo.com/mrss/}thumbnail", url=thumb)
-
-          xml_str = etree.tostring(rss, pretty_print=True, xml_declaration=True, encoding="UTF-8")
-          with open(OUTPUT_FILE, "wb") as f:
-            f.write(xml_str)
-
-          print(f"Wrote {OUTPUT_FILE} with {count} items (MT long dates, UTC-7 fallback).")
-          PY
-
-      - name: Commit & Pull-Rebase & Push
+      - name: Commit & Push
         run: |
-          set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add feed.xml CTV-Feed-Logo.png || true
-          git commit -m "Auto-update SmartNews feed with MT long dates (UTC-7 fallback)" || echo "No changes to commit"
-
-          # Avoid 'rejected - fetch first' by rebasing onto remote main
-          git fetch origin main
-          # Try a clean rebase first; if it fails, fall back to a merge preferring our generated files
-          if ! git pull --rebase origin main; then
-            git rebase --abort || true
-            git pull --strategy-option ours origin main --no-edit
-          fi
-
-          git push
+          git pull --rebase origin main
+          git add feed.xml
+          git commit -m "Auto-update SmartNews feed with RFC-822 pubDate in Mountain Time (UTC-7)" || echo "No changes to commit"
+          git push origin main
