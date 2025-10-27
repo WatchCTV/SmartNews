@@ -1,34 +1,25 @@
-name: Build SmartNews Feed
+name: SmartNews Feed CI
 
 on:
-  schedule:
-    - cron: "0 * * * *" # runs hourly
   workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * *"   # daily at 06:00 UTC
+  push:
+    branches: [ main ]
 
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          fetch-depth: 1
 
-      - name: Install dependencies
+      - name: Ensure feed.xml is present
         run: |
-          pip install -r requirements.txt
-
-      - name: Normalize SmartNews feed
-        run: python scripts/fetch_feed.py
-
-      - name: Commit & Push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add feed.xml
-          git commit -m "Normalize SmartNews feed (RFC-822 pubDate UTC-7 + snf:analytics)" || echo "No changes to commit"
-          git pull --rebase
-          git push
+          if [ ! -f "feed.xml" ]; then
+            echo "::error title=Missing feed.xml::feed.xml not found at the repo root"
+            exit 1
+          fi
+          echo "feed.xml present – no build step required."
