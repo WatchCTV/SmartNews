@@ -1,44 +1,11 @@
-name: Build SmartNews Feed
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 6 * * *"  # daily 06:00 UTC
-  push:
-    branches: [ main ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Configure Git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
-
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip lxml
-
-      - name: Normalize SmartNews feed (CDATA + RFC-822 UTC-7)
+      - name: Normalize SmartNews feed (CDATA JSON analytics + UTC-7)
         run: |
           python3 - <<'EOF'
           from lxml import etree as ET
           from datetime import datetime, timedelta, timezone
           from email.utils import parsedate_to_datetime
           from html import unescape
-          import urllib.parse, os
+          import urllib.parse, json
 
           FEED_FILE = "feed.xml"
           NS_SNF = "http://www.smartnews.be/snf"
@@ -49,62 +16,50 @@ jobs:
           tz_mtn = timezone(timedelta(hours=-7))
 
           def to_rfc822_mtn(date_text):
-              if not date_text:
+              try:
+                  dt = parsedate_to_datetime(date_text)
+                  if dt.tzinfo is None:
+                      dt = dt.replace(tzinfo=tz_mtn)
+                  else:
+                      dt = dt.astimezone(tz_mtn)
+              except Exception:
                   dt = datetime.now(tz_mtn)
-              else:
-                  try:
-                      dt = parsedate_to_datetime(date_text)
-                      if dt.tzinfo is None:
-                          dt = dt.replace(tzinfo=tz_mtn)
-                      else:
-                          dt = dt.astimezone(tz_mtn)
-                  except Exception:
-                      dt = datetime.now(tz_mtn)
               return dt.strftime("%a, %d %b %Y %H:%M:%S %z")
 
           tree = ET.parse(FEED_FILE)
           root = tree.getroot()
 
           for item in root.findall(".//item"):
-              # ---- pubDate ----
+              # --- pubDate ---
               pub = item.find("pubDate")
               if pub is None:
                   pub = ET.SubElement(item, "pubDate")
-              pub.text = to_rfc822_mtn(pub.text)
+              pub.text = to_rfc822_mtn(pub.text or "")
 
-              # ---- content:encoded ----
+              # --- content:encoded ---
               ctag = f"{{{NS_CONTENT}}}encoded"
               cnode = item.find(ctag)
               if cnode is None:
                   desc = item.find("description")
-                  html_content = unescape(desc.text) if desc is not None and desc.text else ""
+                  html_content = unescape(desc.text) if desc is not None else ""
                   cnode = ET.SubElement(item, ctag)
               else:
                   html_content = unescape(cnode.text or "")
               cnode.text = ET.CDATA(html_content)
 
-              # ---- snf:analytics ----
+              # --- snf:analytics ---
               atag = f"{{{NS_SNF}}}analytics"
               anode = item.find(atag)
-              if anode is None or not (anode.text or "").strip():
-                  link_el = item.find("link")
-                  link_url = (link_el.text or "").strip() if link_el is not None else ""
-                  encoded = urllib.parse.quote(link_url, safe="")
-                  analytics = f"https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url={encoded}"
-                  if anode is None:
-                      anode = ET.SubElement(item, atag)
-              else:
-                  analytics = anode.text.strip()
-              anode.text = ET.CDATA(analytics)
+              link_el = item.find("link")
+              link_url = (link_el.text or "").strip()
+              encoded = urllib.parse.quote(link_url, safe="")
+              tracking_url = f"https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url={encoded}"
+              json_payload = json.dumps({"trackers": [{"url": tracking_url}]}, ensure_ascii=False)
+              if anode is None:
+                  anode = ET.SubElement(item, atag)
+              anode.text = ET.CDATA(json_payload)
 
           xml_str = ET.tostring(root, encoding="utf-8", xml_declaration=True, pretty_print=True)
           with open(FEED_FILE, "wb") as f:
               f.write(xml_str)
           EOF
-
-      - name: Commit & Push safely
-        run: |
-          git add feed.xml
-          git commit -m "Normalize SmartNews feed (UTC-7, CDATA fixes)" || echo "No changes"
-          git pull --rebase origin main || true
-          git push origin main || (git pull --rebase origin main && git push origin main)
