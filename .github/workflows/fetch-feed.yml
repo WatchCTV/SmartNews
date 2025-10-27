@@ -1,55 +1,109 @@
-name: Build and Deploy SmartNews Feed
+name: Build SmartNews Feed
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  contents: write
 
 jobs:
   build:
-    name: Build Feed
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+      - name: Build SmartNews Feed
+        run: |
+          pip install requests lxml beautifulsoup4
 
-      - name: Install dependencies
-        run: npm ci
+          python3 <<'EOF'
+          import requests, re, html, unicodedata
+          from urllib.parse import urlsplit, urlunsplit, quote
+          from lxml import etree
+          from bs4 import BeautifulSoup
 
-      - name: Fetch SmartNews feed
-        run: npm run fetch-feed
+          SOURCE_URL = 'https://rss.app/feeds/PnXLTXpDQSdLv1cb.xml'
+          SELF_URL   = 'https://watchctv.github.io/SmartNews/feed.xml'
+          LOGO_URL   = 'https://i.ibb.co/sptKgp34/CTV-Feed-Logo.png'
 
-      - name: Build site
-        run: npm run build
+          def sanitize_url(u: str) -> str | None:
+              if not u:
+                  return None
+              u = unicodedata.normalize('NFKC', u.strip())
+              u = u.replace('–', '-').replace('—', '-').replace('−', '-')
+              if u.startswith('//'):
+                  u = 'https:' + u
+              if u.startswith('/'):
+                  u = 'https://www.cabletv.com' + u
+              parts = urlsplit(u)
+              clean_path = quote(parts.path)
+              return urlunsplit((parts.scheme, parts.netloc, clean_path, parts.query, parts.fragment))
 
-      - name: Upload artifact for deployment
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist  # change if your build output folder is different (e.g. 'build' or 'public')
+          print("Fetching source feed...")
+          xml = requests.get(SOURCE_URL, timeout=30).text
+          soup = BeautifulSoup(xml, 'xml')
 
-  deploy:
-    name: Deploy to GitHub Pages
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          rss = etree.Element('rss', version='2.0',
+              nsmap={
+                  'content': 'http://purl.org/rss/1.0/modules/content/',
+                  'wfw': 'http://wellformedweb.org/CommentAPI/',
+                  'dc': 'http://purl.org/dc/elements/1.1/',
+                  'atom': 'http://www.w3.org/2005/Atom',
+                  'sy': 'http://purl.org/rss/1.0/modules/syndication/',
+                  'slash': 'http://purl.org/rss/1.0/modules/slash/',
+                  'media': 'http://search.yahoo.com/mrss/',
+                  'snf': 'http://www.smartnews.be/snf'
+              })
+
+          ch = etree.SubElement(rss, 'channel')
+          etree.SubElement(ch, 'title').text = soup.title.text if soup.title else "Entertainment News"
+          etree.SubElement(ch, 'link').text = "https://www.cabletv.com/blog/category/entertainment"
+          etree.SubElement(ch, 'description').text = "Let's start watching! CableTV.com keeps you informed of all entertainment news."
+
+          snf_logo = etree.SubElement(ch, '{http://www.smartnews.be/snf}logo')
+          etree.SubElement(snf_logo, 'url').text = LOGO_URL
+
+          atom_link = etree.SubElement(ch, '{http://www.w3.org/2005/Atom}link')
+          atom_link.set('href', SELF_URL)
+          atom_link.set('rel', 'self')
+          atom_link.set('type', 'application/rss+xml')
+
+          for item in soup.find_all('item'):
+              it = etree.SubElement(ch, 'item')
+              title = item.title.text if item.title else "Untitled"
+              link = item.link.text if item.link else ""
+              desc_html = item.description.text if item.description else ""
+              desc_clean = html.unescape(desc_html)
+
+              etree.SubElement(it, 'title').text = title
+              etree.SubElement(it, 'link').text = link
+              etree.SubElement(it, 'guid').text = item.guid.text if item.guid else link
+              etree.SubElement(it, 'pubDate').text = item.pubDate.text if item.pubDate else ""
+
+              # Add content:encoded
+              cdata = etree.CDATA(desc_clean)
+              etree.SubElement(it, '{http://purl.org/rss/1.0/modules/content/}encoded').text = cdata
+
+              # Add media:thumbnail
+              img_match = re.search(r'<img[^>]+src="([^"]+)"', desc_html)
+              if img_match:
+                  thumb_url = sanitize_url(img_match.group(1))
+                  if thumb_url:
+                      etree.SubElement(it, '{http://search.yahoo.com/mrss/}thumbnail', url=thumb_url)
+
+          xml_str = etree.tostring(rss, pretty_print=True, xml_declaration=True, encoding='UTF-8')
+          with open('feed.xml', 'wb') as f:
+              f.write(xml_str)
+          EOF
+
+      - name: Commit and push feed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add feed.xml
+          git commit -m "Auto-update feed.xml" || echo "No changes to commit"
+          git push
