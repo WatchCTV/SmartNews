@@ -23,6 +23,7 @@ jobs:
           python3 <<'EOF'
           import requests, re, html, unicodedata
           from urllib.parse import urlsplit, urlunsplit, quote
+          from datetime import datetime, timezone
           from lxml import etree
           from bs4 import BeautifulSoup
 
@@ -43,7 +44,17 @@ jobs:
               clean_path = quote(parts.path)
               return urlunsplit((parts.scheme, parts.netloc, clean_path, parts.query, parts.fragment))
 
-          print("Fetching source feed...")
+          def rfc822(dt_str):
+              """Convert date strings to RFC-822 format in UTC."""
+              try:
+                  dt = datetime.strptime(dt_str.strip(), "%a, %d %b %Y %H:%M:%S %Z")
+              except Exception:
+                  try:
+                      dt = datetime.fromisoformat(dt_str.replace("Z","")).astimezone(timezone.utc)
+                  except Exception:
+                      dt = datetime.now(timezone.utc)
+              return dt.strftime("%a, %d %b %Y %H:%M:%S GMT")
+
           xml = requests.get(SOURCE_URL, timeout=30).text
           soup = BeautifulSoup(xml, 'xml')
 
@@ -78,17 +89,21 @@ jobs:
               link = item.link.text if item.link else ""
               desc_html = item.description.text if item.description else ""
               desc_clean = html.unescape(desc_html)
+              guid = item.guid.text if item.guid else link
+              pub_raw = item.pubDate.text if item.pubDate else ""
+              pubdate = rfc822(pub_raw)
 
               etree.SubElement(it, 'title').text = title
               etree.SubElement(it, 'link').text = link
-              etree.SubElement(it, 'guid').text = item.guid.text if item.guid else link
-              etree.SubElement(it, 'pubDate').text = item.pubDate.text if item.pubDate else ""
+              etree.SubElement(it, 'guid').text = guid
+              etree.SubElement(it, 'pubDate').text = pubdate
 
-              # Add content:encoded
+              author_tag = etree.SubElement(it, '{http://purl.org/dc/elements/1.1/}creator')
+              author_tag.text = item.find('author').text if item.find('author') else "CableTV.com Editorial Team"
+
               cdata = etree.CDATA(desc_clean)
               etree.SubElement(it, '{http://purl.org/rss/1.0/modules/content/}encoded').text = cdata
 
-              # Add media:thumbnail
               img_match = re.search(r'<img[^>]+src="([^"]+)"', desc_html)
               if img_match:
                   thumb_url = sanitize_url(img_match.group(1))
