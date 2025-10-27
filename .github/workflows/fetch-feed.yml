@@ -1,25 +1,35 @@
-name: SmartNews Feed CI
+name: Build SmartNews Feed
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 6 * * *"   # daily at 06:00 UTC
   push:
-    branches: [ main ]
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  check:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
 
-      - name: Ensure feed.xml is present
-        run: |
-          if [ ! -f "feed.xml" ]; then
-            echo "::error title=Missing feed.xml::feed.xml not found at the repo root"
-            exit 1
-          fi
-          echo "feed.xml present – no build step required."
+      # No Python, no build tools — just upload existing files
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: . # Upload everything in the repo (feed.xml, images, etc.)
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
