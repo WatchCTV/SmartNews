@@ -1,124 +1,91 @@
 name: Build SmartNews Feed
 
 on:
-  push:
-    branches: [main]
+  schedule:
+    - cron: "0 * * * *" # hourly
   workflow_dispatch:
-
-permissions:
-  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build SmartNews Feed
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install requests lxml beautifulsoup4 feedgen
+
+      - name: Generate SmartNews Feed
         run: |
-          pip install requests lxml beautifulsoup4
-
-          python3 <<'EOF'
-          import requests, re, html, unicodedata
-          from urllib.parse import urlsplit, urlunsplit, quote
-          from datetime import datetime, timezone
-          from lxml import etree
+          python - <<'EOF'
+          import requests
           from bs4 import BeautifulSoup
+          from feedgen.feed import FeedGenerator
+          from datetime import datetime
+          import email.utils as eut
 
-          SOURCE_URL = 'https://rss.app/feeds/PnXLTXpDQSdLv1cb.xml'
-          SELF_URL   = 'https://watchctv.github.io/SmartNews/feed.xml'
-          LOGO_URL   = 'https://i.ibb.co/sptKgp34/CTV-Feed-Logo.png'
+          # --- CONFIG ---
+          SOURCE_FEED = "https://rss.app/feeds/PnXLTXpDQSdLv1cb.xml"
+          LOGO_URL = "https://i.ibb.co/sptKgp34/CTV-Feed-Logo.png"
+          OUTPUT_FILE = "feed.xml"
 
-          def sanitize_url(u: str) -> str | None:
-              if not u:
-                  return None
-              u = unicodedata.normalize('NFKC', u.strip())
-              u = u.replace('–', '-').replace('—', '-').replace('−', '-')
-              if u.startswith('//'):
-                  u = 'https:' + u
-              if u.startswith('/'):
-                  u = 'https://www.cabletv.com' + u
-              parts = urlsplit(u)
-              clean_path = quote(parts.path)
-              return urlunsplit((parts.scheme, parts.netloc, clean_path, parts.query, parts.fragment))
+          # --- FETCH ORIGINAL FEED ---
+          res = requests.get(SOURCE_FEED)
+          soup = BeautifulSoup(res.content, "xml")
 
-          def rfc822(dt_str):
-              """Convert date strings to RFC-822 format in UTC."""
-              try:
-                  dt = datetime.strptime(dt_str.strip(), "%a, %d %b %Y %H:%M:%S %Z")
-              except Exception:
-                  try:
-                      dt = datetime.fromisoformat(dt_str.replace("Z","")).astimezone(timezone.utc)
-                  except Exception:
-                      dt = datetime.now(timezone.utc)
-              return dt.strftime("%a, %d %b %Y %H:%M:%S GMT")
+          # --- CREATE NEW FEED ---
+          fg = FeedGenerator()
+          fg.load_extension('dc')
+          fg.load_extension('content')
+          fg.load_extension('media')
 
-          xml = requests.get(SOURCE_URL, timeout=30).text
-          soup = BeautifulSoup(xml, 'xml')
+          fg.title("Entertainment News")
+          fg.link(href="https://www.cabletv.com/blog/category/entertainment", rel="alternate")
+          fg.description("Let's start watching! CableTV.com keeps you informed of all entertainment news.")
+          fg.logo(LOGO_URL)
+          fg.id("https://watchctv.github.io/SmartNews/feed.xml")
 
-          rss = etree.Element('rss', version='2.0',
-              nsmap={
-                  'content': 'http://purl.org/rss/1.0/modules/content/',
-                  'wfw': 'http://wellformedweb.org/CommentAPI/',
-                  'dc': 'http://purl.org/dc/elements/1.1/',
-                  'atom': 'http://www.w3.org/2005/Atom',
-                  'sy': 'http://purl.org/rss/1.0/modules/syndication/',
-                  'slash': 'http://purl.org/rss/1.0/modules/slash/',
-                  'media': 'http://search.yahoo.com/mrss/',
-                  'snf': 'http://www.smartnews.be/snf'
-              })
-
-          ch = etree.SubElement(rss, 'channel')
-          etree.SubElement(ch, 'title').text = soup.title.text if soup.title else "Entertainment News"
-          etree.SubElement(ch, 'link').text = "https://www.cabletv.com/blog/category/entertainment"
-          etree.SubElement(ch, 'description').text = "Let's start watching! CableTV.com keeps you informed of all entertainment news."
-
-          snf_logo = etree.SubElement(ch, '{http://www.smartnews.be/snf}logo')
-          etree.SubElement(snf_logo, 'url').text = LOGO_URL
-
-          atom_link = etree.SubElement(ch, '{http://www.w3.org/2005/Atom}link')
-          atom_link.set('href', SELF_URL)
-          atom_link.set('rel', 'self')
-          atom_link.set('type', 'application/rss+xml')
-
-          for item in soup.find_all('item'):
-              it = etree.SubElement(ch, 'item')
-              title = item.title.text if item.title else "Untitled"
+          for item in soup.find_all("item"):
+              title = item.title.text if item.title else "No title"
               link = item.link.text if item.link else ""
-              desc_html = item.description.text if item.description else ""
-              desc_clean = html.unescape(desc_html)
               guid = item.guid.text if item.guid else link
-              pub_raw = item.pubDate.text if item.pubDate else ""
-              pubdate = rfc822(pub_raw)
+              pub_raw = item.pubDate.text if item.pubDate else datetime.utcnow().strftime("%a, %d %b %Y %H:%M:%S GMT")
+              pub_date = eut.format_datetime(datetime.strptime(pub_raw[:25], "%a, %d %b %Y %H:%M:%S"))
 
-              etree.SubElement(it, 'title').text = title
-              etree.SubElement(it, 'link').text = link
-              etree.SubElement(it, 'guid').text = guid
-              etree.SubElement(it, 'pubDate').text = pubdate
+              desc = item.description.text if item.description else ""
+              thumb = ""
+              img_tag = BeautifulSoup(desc, "html.parser").find("img")
+              if img_tag and img_tag.get("src"):
+                  thumb = img_tag["src"]
 
-              author_tag = etree.SubElement(it, '{http://purl.org/dc/elements/1.1/}creator')
-              author_tag.text = item.find('author').text if item.find('author') else "CableTV.com Editorial Team"
+              author = item.find("dc:creator").text if item.find("dc:creator") else "CableTV.com Editorial Team"
 
-              cdata = etree.CDATA(desc_clean)
-              etree.SubElement(it, '{http://purl.org/rss/1.0/modules/content/}encoded').text = cdata
+              entry = fg.add_entry()
+              entry.id(guid)
+              entry.title(title)
+              entry.link(href=link)
+              entry.pubDate(pub_date)
+              entry.dc.creator(author)
+              entry.author({'name': author})
+              entry.description(desc)
+              entry.content(desc, type="CDATA")
 
-              img_match = re.search(r'<img[^>]+src="([^"]+)"', desc_html)
-              if img_match:
-                  thumb_url = sanitize_url(img_match.group(1))
-                  if thumb_url:
-                      etree.SubElement(it, '{http://search.yahoo.com/mrss/}thumbnail', url=thumb_url)
+              if thumb:
+                  entry.media.thumbnail({'url': thumb})
 
-          xml_str = etree.tostring(rss, pretty_print=True, xml_declaration=True, encoding='UTF-8')
-          with open('feed.xml', 'wb') as f:
-              f.write(xml_str)
+          fg.rss_file(OUTPUT_FILE)
           EOF
 
-      - name: Commit and push feed
+      - name: Commit and push feed.xml
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml
-          git commit -m "Auto-update feed.xml" || echo "No changes to commit"
+          git commit -m "Update SmartNews feed" || echo "No changes to commit"
           git push
