@@ -105,9 +105,12 @@ jobs:
                   if thumb_url:
                       etree.SubElement(it, '{http://search.yahoo.com/mrss/}thumbnail', url=thumb_url)
 
-              # Add snf:analytics (SmartNews-compliant)
+              # Add snf:analytics (SmartNews compliant)
               snf_analytics = etree.SubElement(it, '{http://www.smartnews.be/snf}analytics')
-              snf_analytics.text = etree.CDATA("https://www.cabletv.com/smartnews-analytics?url={snf_url}")
+              snf_analytics.text = etree.CDATA("""
+https://www.cabletv.com/smartnews-analytics.gif?url={snf_url}
+https://analytics.smartnews.com/track?u={snf_url}
+""".strip())
 
           xml_str = etree.tostring(rss, pretty_print=True, xml_declaration=True, encoding='UTF-8')
           with open('feed.xml', 'wb') as f:
