@@ -3,7 +3,7 @@ name: Build SmartNews Feed
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 6 * * *"  # daily at 06:00 UTC
+    - cron: "0 6 * * *"  # daily 06:00 UTC
   push:
     branches: [ main ]
 
@@ -15,15 +15,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # needed for rebase/pull
+          fetch-depth: 0
 
-      - name: Prepare repository (rebase before changes)
+      - name: Configure Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch origin main
-          git checkout main
-          git pull --rebase origin main || true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -32,98 +29,82 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip lxml
+          pip install --upgrade pip lxml
 
-      - name: Normalize SmartNews feed (RFC-822 pubDate UTC-7 + CDATA)
+      - name: Normalize SmartNews feed (CDATA + RFC-822 UTC-7)
         run: |
           python3 - <<'EOF'
           from lxml import etree as ET
-          from html import unescape
+          from datetime import datetime, timedelta, timezone
           from email.utils import parsedate_to_datetime
-          from datetime import datetime, timezone, timedelta
+          from html import unescape
           import urllib.parse, os
 
           FEED_FILE = "feed.xml"
-          if not os.path.exists(FEED_FILE):
-              raise FileNotFoundError(f"{FEED_FILE} not found")
-
-          # Namespaces
           NS_SNF = "http://www.smartnews.be/snf"
           NS_CONTENT = "http://purl.org/rss/1.0/modules/content/"
           ET.register_namespace("snf", NS_SNF)
           ET.register_namespace("content", NS_CONTENT)
 
-          # Fixed Mountain offset per request (always UTC-7)
-          MTN = timezone(timedelta(hours=-7), name="UTC-7")
+          tz_mtn = timezone(timedelta(hours=-7))
 
-          def to_rfc822_utc7(s):
-              if not s:
-                  dt = datetime.now(MTN)
+          def to_rfc822_mtn(date_text):
+              if not date_text:
+                  dt = datetime.now(tz_mtn)
               else:
                   try:
-                      dt = parsedate_to_datetime(s)
-                      if dt is None:
-                          raise ValueError
-                      # If parsed date has tz, convert; else set fixed UTC-7
+                      dt = parsedate_to_datetime(date_text)
                       if dt.tzinfo is None:
-                          dt = dt.replace(tzinfo=MTN)
+                          dt = dt.replace(tzinfo=tz_mtn)
                       else:
-                          dt = dt.astimezone(MTN)
+                          dt = dt.astimezone(tz_mtn)
                   except Exception:
-                      # Fallback if it's like "October 26, 2025"
-                      try:
-                          dt = datetime.strptime(s.strip(), "%B %d, %Y").replace(tzinfo=MTN)
-                      except Exception:
-                          dt = datetime.now(MTN)
+                      dt = datetime.now(tz_mtn)
               return dt.strftime("%a, %d %b %Y %H:%M:%S %z")
 
           tree = ET.parse(FEED_FILE)
           root = tree.getroot()
 
           for item in root.findall(".//item"):
-              # ---------- pubDate (RFC-822, UTC-7) ----------
+              # ---- pubDate ----
               pub = item.find("pubDate")
               if pub is None:
                   pub = ET.SubElement(item, "pubDate")
-                  pub.text = to_rfc822_utc7(None)
-              else:
-                  pub.text = to_rfc822_utc7((pub.text or "").strip())
+              pub.text = to_rfc822_mtn(pub.text)
 
-              # ---------- content:encoded must be CDATA ----------
+              # ---- content:encoded ----
               ctag = f"{{{NS_CONTENT}}}encoded"
               cnode = item.find(ctag)
               if cnode is None:
-                  # Seed from description if available
                   desc = item.find("description")
-                  html_src = unescape(desc.text) if (desc is not None and desc.text) else ""
+                  html_content = unescape(desc.text) if desc is not None and desc.text else ""
                   cnode = ET.SubElement(item, ctag)
-                  cnode.text = ET.CDATA(html_src)
               else:
-                  # Ensure CDATA (unescape any escaped HTML first)
-                  txt = unescape(cnode.text) if cnode.text else ""
-                  cnode.text = ET.CDATA(txt)
+                  html_content = unescape(cnode.text or "")
+              cnode.text = ET.CDATA(html_content)
 
-              # ---------- snf:analytics must be CDATA ----------
+              # ---- snf:analytics ----
               atag = f"{{{NS_SNF}}}analytics"
               anode = item.find(atag)
               if anode is None or not (anode.text or "").strip():
                   link_el = item.find("link")
                   link_url = (link_el.text or "").strip() if link_el is not None else ""
                   encoded = urllib.parse.quote(link_url, safe="")
-                  tracking = f"https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url={encoded}"
+                  analytics = f"https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url={encoded}"
                   if anode is None:
                       anode = ET.SubElement(item, atag)
-                  anode.text = ET.CDATA(tracking)
               else:
-                  # Wrap existing analytics text in CDATA
-                  anode.text = ET.CDATA(anode.text.strip())
+                  analytics = anode.text.strip()
+              anode.text = ET.CDATA(analytics)
 
-          tree.write(FEED_FILE, encoding="UTF-8", xml_declaration=True, pretty_print=True)
+          xml_str = ET.tostring(root, encoding="utf-8", xml_declaration=True, pretty_print=True)
+          with open(FEED_FILE, "wb") as f:
+              f.write(xml_str)
           EOF
 
-      - name: Commit & Push (rebase & retry-safe)
+      - name: Commit & Push safely
         run: |
           git add feed.xml
-          git commit -m "Normalize SmartNews feed: RFC-822 pubDate (UTC-7) + CDATA(content:encoded,snf:analytics)" || echo "No changes to commit"
+          git commit -m "Normalize SmartNews feed (UTC-7, CDATA fixes)" || echo "No changes"
           git pull --rebase origin main || true
           git push origin main || (git pull --rebase origin main && git push origin main)
