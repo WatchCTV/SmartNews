@@ -16,18 +16,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install deps & build feed
+      - name: Build SmartNews Feed
         run: |
-          set -e
-          python -m pip install --upgrade pip
           pip install requests lxml beautifulsoup4
 
-          python - <<'PY'
+          python3 <<'EOF'
           import requests, re, html, unicodedata
           from urllib.parse import urlsplit, urlunsplit, quote
           from lxml import etree
@@ -37,7 +30,7 @@ jobs:
           SELF_URL   = 'https://watchctv.github.io/SmartNews/feed.xml'
           LOGO_URL   = 'https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png'
 
-          def sanitize_url(u: str | None) -> str | None:
+          def sanitize_url(u: str) -> str | None:
               if not u:
                   return None
               u = unicodedata.normalize('NFKC', u.strip())
@@ -50,11 +43,11 @@ jobs:
               clean_path = quote(parts.path)
               return urlunsplit((parts.scheme, parts.netloc, clean_path, parts.query, parts.fragment))
 
-          # Fetch and parse source feed
+          # Fetch source feed
           xml = requests.get(SOURCE_URL, timeout=30).text
           soup = BeautifulSoup(xml, 'xml')
 
-          # Root + namespaces
+          # Build RSS root with namespaces
           rss = etree.Element('rss', version='2.0',
               nsmap={
                   'content': 'http://purl.org/rss/1.0/modules/content/',
@@ -76,7 +69,7 @@ jobs:
           snf_logo = etree.SubElement(ch, '{http://www.smartnews.be/snf}logo')
           etree.SubElement(snf_logo, 'url').text = LOGO_URL
 
-          # Self link
+          # atom self link
           atom_link = etree.SubElement(ch, '{http://www.w3.org/2005/Atom}link')
           atom_link.set('href', SELF_URL)
           atom_link.set('rel', 'self')
@@ -96,7 +89,7 @@ jobs:
               etree.SubElement(it, 'guid').text = item.guid.text if item.guid else link
               etree.SubElement(it, 'pubDate').text = item.pubDate.text if item.pubDate else ""
 
-              # Author
+              # Author (dc:creator) with fallback
               if item.find('dc:creator'):
                   author = item.find('dc:creator').text
               elif item.find('author'):
@@ -108,22 +101,23 @@ jobs:
               # content:encoded (CDATA)
               etree.SubElement(it, '{http://purl.org/rss/1.0/modules/content/}encoded').text = etree.CDATA(desc_clean)
 
-              # media:thumbnail
-              m = re.search(r'<img[^>]+src="([^"]+)"', desc_html)
-              if m:
-                  thumb_url = sanitize_url(m.group(1))
+              # media:thumbnail from first <img>
+              img_match = re.search(r'<img[^>]+src="([^"]+)"', desc_html)
+              if img_match:
+                  thumb_url = sanitize_url(img_match.group(1))
                   if thumb_url:
                       etree.SubElement(it, '{http://search.yahoo.com/mrss/}thumbnail', url=thumb_url)
 
-              # snf:analytics — single URL, one line, CDATA (validator-friendly)
+              # --- THE ONLY CHANGE: single-line CDATA for snf:analytics ---
               snf_analytics = etree.SubElement(it, '{http://www.smartnews.be/snf}analytics')
               snf_analytics.text = etree.CDATA("https://analytics.smartnews.com/track?u={snf_url}")
+              # -----------------------------------------------------------
 
-          # Write feed
+          # Write out
           xml_str = etree.tostring(rss, pretty_print=True, xml_declaration=True, encoding='UTF-8')
           with open('feed.xml', 'wb') as f:
               f.write(xml_str)
-          PY
+          EOF
 
       - name: Commit and push feed
         run: |
