@@ -5,6 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -49,4 +52,58 @@ jobs:
                   'content': 'http://purl.org/rss/1.0/modules/content/',
                   'wfw': 'http://wellformedweb.org/CommentAPI/',
                   'dc': 'http://purl.org/dc/elements/1.1/',
-                  'atom': 'http://www.w3.org/200
+                  'atom': 'http://www.w3.org/2005/Atom',
+                  'sy': 'http://purl.org/rss/1.0/modules/syndication/',
+                  'slash': 'http://purl.org/rss/1.0/modules/slash/',
+                  'media': 'http://search.yahoo.com/mrss/',
+                  'snf': 'http://www.smartnews.be/snf'
+              })
+
+          ch = etree.SubElement(rss, 'channel')
+          etree.SubElement(ch, 'title').text = soup.title.text if soup.title else "Entertainment News"
+          etree.SubElement(ch, 'link').text = "https://www.cabletv.com/blog/category/entertainment"
+          etree.SubElement(ch, 'description').text = "Let's start watching! CableTV.com keeps you informed of all entertainment news."
+
+          snf_logo = etree.SubElement(ch, '{http://www.smartnews.be/snf}logo')
+          etree.SubElement(snf_logo, 'url').text = LOGO_URL
+
+          atom_link = etree.SubElement(ch, '{http://www.w3.org/2005/Atom}link')
+          atom_link.set('href', SELF_URL)
+          atom_link.set('rel', 'self')
+          atom_link.set('type', 'application/rss+xml')
+
+          for item in soup.find_all('item'):
+              it = etree.SubElement(ch, 'item')
+              title = item.title.text if item.title else "Untitled"
+              link = item.link.text if item.link else ""
+              desc_html = item.description.text if item.description else ""
+              desc_clean = html.unescape(desc_html)
+
+              etree.SubElement(it, 'title').text = title
+              etree.SubElement(it, 'link').text = link
+              etree.SubElement(it, 'guid').text = item.guid.text if item.guid else link
+              etree.SubElement(it, 'pubDate').text = item.pubDate.text if item.pubDate else ""
+
+              # Add content:encoded
+              cdata = etree.CDATA(desc_clean)
+              etree.SubElement(it, '{http://purl.org/rss/1.0/modules/content/}encoded').text = cdata
+
+              # Add media:thumbnail
+              img_match = re.search(r'<img[^>]+src="([^"]+)"', desc_html)
+              if img_match:
+                  thumb_url = sanitize_url(img_match.group(1))
+                  if thumb_url:
+                      etree.SubElement(it, '{http://search.yahoo.com/mrss/}thumbnail', url=thumb_url)
+
+          xml_str = etree.tostring(rss, pretty_print=True, xml_declaration=True, encoding='UTF-8')
+          with open('feed.xml', 'wb') as f:
+              f.write(xml_str)
+          EOF
+
+      - name: Commit and push feed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add feed.xml
+          git commit -m "Auto-update feed.xml" || echo "No changes to commit"
+          git push
