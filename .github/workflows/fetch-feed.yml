@@ -2,7 +2,6 @@ name: Fetch and Clean RSS Feed
 
 on:
   schedule:
-    # Run every 6 hours
     - cron: '0 */6 * * *'
   workflow_dispatch:
 
@@ -15,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+      ​  uses: actions/checkout@v3
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -39,7 +38,7 @@ jobs:
           import re
 
           print("Fetching original feed...")
-          # Updated source feed URL
+          # Source feed from rss.app
           response = requests.get('https://rss.app/feeds/PnXLTXpDQSdLv1cb.xml')
           root = etree.fromstring(response.content)
           channel = root.find('channel')
@@ -55,12 +54,12 @@ jobs:
               'media': 'http://search.yahoo.com/mrss/',
               'snf': 'http://www.smartnews.be/snf'
           }
-
           for prefix, uri in nsmap.items():
               etree.register_namespace(prefix, uri)
 
-          fallback_thumbnail = 'https://ctv-clearlink.github.io/RSS-Feed/CableTV.com%20RSS%20Logo%20Header.png'
-          logo_url = 'https://ctv-clearlink.github.io/RSS-Feed/CableTV.com%20RSS%20Logo%20Header.png'
+          # Use your provided logo URL
+          logo_url = 'https://i.ibb.co/sptKgp34/CTV-Feed-Logo.png'
+          fallback_thumbnail = logo_url  # can still use the logo as thumbnail fallback
 
           xml_parts = []
           xml_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
@@ -75,11 +74,11 @@ jobs:
           xml_parts.append(' xmlns:snf="http://www.smartnews.be/snf">')
           xml_parts.append('<channel>')
 
-          # Insert SmartNews logo as required
+          # Insert logo at channel level
           xml_parts.append(f'<snf:logo><url>{logo_url}</url></snf:logo>')
           print(f"✓ Added logo at start of channel: {logo_url}")
 
-          # Copy channel metadata, skipping any logo tags
+          # Copy channel metadata (exclude any existing logos)
           for elem in channel:
               if elem.tag == 'item':
                   break
@@ -89,7 +88,6 @@ jobs:
           cdata_count = 0
 
           def fetch_featured_image(article_url):
-              """Fetch the featured image from the article page"""
               try:
                   headers = {
                       'User-Agent': 'Mozilla/5.0 (compatible; SmartFeed-Builder/3.0)',
@@ -101,13 +99,10 @@ jobs:
 
                   html = response.text
                   candidates = []
-                  # og:image
                   og_matches = re.findall(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']', html, re.IGNORECASE)
                   candidates.extend(og_matches)
-                  # twitter:image
                   twitter_matches = re.findall(r'<meta[^>]+name=["\']twitter:image["\'][^>]+content=["\']([^"\']+)["\']', html, re.IGNORECASE)
                   candidates.extend(twitter_matches)
-                  # article:image
                   article_matches = re.findall(r'<meta[^>]+property=["\']article:image["\'][^>]+content=["\']([^"\']+)["\']', html, re.IGNORECASE)
                   candidates.extend(article_matches)
 
@@ -135,67 +130,73 @@ jobs:
               xml_parts.append('<item>')
 
               original_content = None
+              description_content = None
               article_link = None
 
-              # Extract link and content:encoded
+              # Extract link, content:encoded (if present), and description
               for elem in item:
+                  tag_name = etree.QName(elem.tag).localname if '}' in elem.tag else elem.tag
+                  namespace = etree.QName(elem.tag).namespace if '}' in elem.tag else None
+
                   if elem.tag == 'link':
                       article_link = elem.text.split('?')[0] if elem.text else None
-                  tag_name = etree.QName(elem.tag).localname if '}' in elem.tag else elem.tag
-                  namespace = etree.QName(elem.tag).namespace if '}' in elem.tag else None
+
                   if namespace == 'http://purl.org/rss/1.0/modules/content/' and tag_name == 'encoded':
                       original_content = elem.text or ''
+                  if tag_name == 'description':
+                      description_content = elem.text or ''
 
-              # Copy elements, handling content:encoded specially and skipping existing thumbnails
+              # Copy elements except media:thumbnail and any existing content:encoded (we'll add our own)
               for elem in item:
                   tag_name = etree.QName(elem.tag).localname if '}' in elem.tag else elem.tag
                   namespace = etree.QName(elem.tag).namespace if '}' in elem.tag else None
-
                   if namespace == 'http://search.yahoo.com/mrss/':
-                      continue  # skip existing media:thumbnail
+                      continue  # skip existing thumbnails
                   if namespace == 'http://purl.org/rss/1.0/modules/content/' and tag_name == 'encoded':
-                      if original_content:
-                          soup = BeautifulSoup(original_content, 'html.parser')
-                          links = soup.find_all('a')
-                          if len(links) > 3:
-                              for link in links[3:]:
-                                  link.unwrap()
-                          content_html = str(soup)
-                          xml_parts.append(f'<content:encoded><![CDATA[{content_html}]]></content:encoded>')
-                          cdata_count += 1
-                  else:
-                      xml_parts.append(etree.tostring(elem, encoding='unicode', method='xml'))
+                      continue  # skip existing content:encoded
+                  xml_parts.append(etree.tostring(elem, encoding='unicode', method='xml'))
 
-              # Add missing dc:creator
+              # Determine what to use for <content:encoded>
+              content_html = original_content or description_content or ''
+              if content_html:
+                  soup = BeautifulSoup(content_html, 'html.parser')
+                  links = soup.find_all('a')
+                  if len(links) > 3:
+                      for link in links[3:]:
+                          link.unwrap()
+                  content_html = str(soup)
+                  xml_parts.append(f'<content:encoded><![CDATA[{content_html}]]></content:encoded>')
+                  cdata_count += 1
+              else:
+                  xml_parts.append('<content:encoded><![CDATA[]]></content:encoded>')
+
+              # Ensure required dc:creator and pubDate are present
               if item.find('dc:creator', nsmap) is None:
                   xml_parts.append('<dc:creator>CableTV.com</dc:creator>')
-              # Add missing pubDate
               if item.find('pubDate') is None:
                   xml_parts.append(f'<pubDate>{datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")}</pubDate>')
 
-              # Fetch featured image
+              # Fetch or fallback a thumbnail
               featured_image = None
               if article_link:
                   featured_image = fetch_featured_image(article_link)
               if not featured_image:
                   featured_image = fallback_thumbnail
-
-              # Sanitize non-absolute URLs
+              # Sanitize relative URLs
               if not featured_image.startswith('http'):
                   if featured_image.startswith('//'):
                       featured_image = 'https:' + featured_image
                   elif featured_image.startswith('/'):
                       featured_image = 'https://www.cabletv.com' + featured_image
-
               featured_image = featured_image.replace('&', '&amp;')
               xml_parts.append(f'<media:thumbnail url="{featured_image}"/>')
               xml_parts.append('</item>')
 
           xml_parts.append('</channel></rss>')
-          # Replace the source feed URL with the GitHub-hosted feed URL
+          # Ensure our output feed self-references the GitHub-hosted feed rather than the source feed
           xml_string = ''.join(xml_parts).replace(
               'https://rss.app/feeds/PnXLTXpDQSdLv1cb.xml',
-              'https://ctv-clearlink.github.io/RSS-Feed/feed.xml'
+              'https://watchctv.github.io/SmartNews/feed.xml'
           )
 
           with open('feed.xml', 'w', encoding='utf-8') as f:
