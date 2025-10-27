@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns0="http://www.smartnews.be/snf" xmlns:ns1="http://www.w3.org/2005/Atom" xmlns:ns3="http://purl.org/rss/1.0/modules/content/" xmlns:ns4="http://search.yahoo.com/mrss/" version="2.0">
   <channel>
     <title>Entertainment News</title>
@@ -7,116 +7,116 @@
     <ns0:logo>
       <url>https://watchctv.github.io/SmartNews/CTV-Feed-Logo.png</url>
     </ns0:logo>
-    <ns1:link href="https://watchctv.github.io/SmartNews/feed.xml" rel="self" type="application/rss+xml" />
+    <ns1:link href="https://watchctv.github.io/SmartNews/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>How To Watch Army Black Knights Football in 2025</title>
       <link>https://www.cabletv.com/sports/watch-army-black-knights-football</link>
       <guid>f09bbb04b3c81d7b98b37bc7227c99dc</guid>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 -0600</pubDate>
+      <pubDate>Sat, 25 Oct 2025 23:00:00 -0700</pubDate>
       <dc:creator>Taylor Kujawa</dc:creator>
       <author>Taylor Kujawa</author>
       <description>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-army-west-point-black-knights-football.webp" style="width: 100%;" /&gt;&lt;div&gt;On, brave old Army team! Our Army football viewing guide features the complete 2025 TV schedule, plus channel listings and streaming recommendations.&lt;/div&gt;&lt;/div&gt;</description>
-      <ns3:encoded>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-army-west-point-black-knights-football.webp" style="width: 100%;" /&gt;&lt;div&gt;On, brave old Army team! Our Army football viewing guide features the complete 2025 TV schedule, plus channel listings and streaming recommendations.&lt;/div&gt;&lt;/div&gt;</ns3:encoded>
-      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-army-west-point-black-knights-football.webp" />
-    <ns0:analytics>https://www.cabletv.com/tracking?source=smartnews&amp;utm_medium=feed&amp;utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-army-black-knights-football</ns0:analytics></item>
+      <ns3:encoded><![CDATA[<div><img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-army-west-point-black-knights-football.webp" style="width: 100%;" /><div>On, brave old Army team! Our Army football viewing guide features the complete 2025 TV schedule, plus channel listings and streaming recommendations.</div></div>]]></ns3:encoded>
+      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-army-west-point-black-knights-football.webp"/>
+    <ns0:analytics><![CDATA[https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-army-black-knights-football]]></ns0:analytics></item>
     <item>
       <title>NFL Plus Review 2025: Score Live NFL Action on the Go</title>
       <link>https://www.cabletv.com/sports/nfl-plus-review</link>
       <guid>b2ce02df9cd7fb8c3cec9ba014a65fa0</guid>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 -0600</pubDate>
+      <pubDate>Sat, 25 Oct 2025 23:00:00 -0700</pubDate>
       <dc:creator>Taylor Kujawa</dc:creator>
       <author>Taylor Kujawa</author>
       <description>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2022/08/CTV_NFL_Plus_Review-Featured.png" style="width: 100%;" /&gt;&lt;div&gt;NFL+ is your new destination for watching full NFL game replays—replacing NFL Game Pass in the U.S. While the streaming service now includes live game coverage, don’t expect to ditch your TV provider &lt;/div&gt;&lt;/div&gt;</description>
-      <ns3:encoded>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2022/08/CTV_NFL_Plus_Review-Featured.png" style="width: 100%;" /&gt;&lt;div&gt;NFL+ is your new destination for watching full NFL game replays—replacing NFL Game Pass in the U.S. While the streaming service now includes live game coverage, don’t expect to ditch your TV provider &lt;/div&gt;&lt;/div&gt;</ns3:encoded>
-      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2022/08/CTV_NFL_Plus_Review-Featured.png" />
-    <ns0:analytics>https://www.cabletv.com/tracking?source=smartnews&amp;utm_medium=feed&amp;utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fnfl-plus-review</ns0:analytics></item>
+      <ns3:encoded><![CDATA[<div><img src="https://www.cabletv.com/app/uploads/2022/08/CTV_NFL_Plus_Review-Featured.png" style="width: 100%;" /><div>NFL+ is your new destination for watching full NFL game replays—replacing NFL Game Pass in the U.S. While the streaming service now includes live game coverage, don’t expect to ditch your TV provider </div></div>]]></ns3:encoded>
+      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2022/08/CTV_NFL_Plus_Review-Featured.png"/>
+    <ns0:analytics><![CDATA[https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fnfl-plus-review]]></ns0:analytics></item>
     <item>
       <title>How To Watch the 2025 CFL Season</title>
       <link>https://www.cabletv.com/sports/watch-cfl</link>
       <guid>079de35db8ef2050851dd8aa887bb503</guid>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 -0600</pubDate>
+      <pubDate>Sat, 25 Oct 2025 23:00:00 -0700</pubDate>
       <dc:creator>Taylor Kujawa</dc:creator>
       <author>Taylor Kujawa</author>
       <description>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2022/07/CTV_How-to-Watch-CFL-featured.png" style="width: 100%;" /&gt;&lt;div&gt;Are you curious about watching the Canadian Football League (CFL) this season? Our viewing guide highlights the best TV plans for experiencing the Great White North’s finest gridiron action.&lt;/div&gt;&lt;/div&gt;</description>
-      <ns3:encoded>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2022/07/CTV_How-to-Watch-CFL-featured.png" style="width: 100%;" /&gt;&lt;div&gt;Are you curious about watching the Canadian Football League (CFL) this season? Our viewing guide highlights the best TV plans for experiencing the Great White North’s finest gridiron action.&lt;/div&gt;&lt;/div&gt;</ns3:encoded>
-      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2022/07/CTV_How-to-Watch-CFL-featured.png" />
-    <ns0:analytics>https://www.cabletv.com/tracking?source=smartnews&amp;utm_medium=feed&amp;utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-cfl</ns0:analytics></item>
+      <ns3:encoded><![CDATA[<div><img src="https://www.cabletv.com/app/uploads/2022/07/CTV_How-to-Watch-CFL-featured.png" style="width: 100%;" /><div>Are you curious about watching the Canadian Football League (CFL) this season? Our viewing guide highlights the best TV plans for experiencing the Great White North’s finest gridiron action.</div></div>]]></ns3:encoded>
+      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2022/07/CTV_How-to-Watch-CFL-featured.png"/>
+    <ns0:analytics><![CDATA[https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-cfl]]></ns0:analytics></item>
     <item>
       <title>What To Watch This Week: Stream Our Top 7 TV and Movie Picks (Oct. 27–Nov. 2)</title>
       <link>https://www.cabletv.com/what-to-watch</link>
       <guid>beee84b4c7699d2ad3ab2c17b2a795d3</guid>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 -0600</pubDate>
+      <pubDate>Sat, 25 Oct 2025 23:00:00 -0700</pubDate>
       <dc:creator>Randy Harward</dc:creator>
       <author>Randy Harward</author>
       <description>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2025/10/FEATIMG_W2W-OCT27%E2%80%93NOV-2-opt.webp" style="width: 100%;" /&gt;&lt;div&gt;This week’s “What To Watch” picks include The Witcher (Netflix), Hazbin Hotel (Prime Video), I Love LA (HBO Max), Down Cemetery Road (Apple TV), Shudder’s Trick or Treat Watch Party double feature, an&lt;/div&gt;&lt;/div&gt;</description>
-      <ns3:encoded>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2025/10/FEATIMG_W2W-OCT27%E2%80%93NOV-2-opt.webp" style="width: 100%;" /&gt;&lt;div&gt;This week’s “What To Watch” picks include The Witcher (Netflix), Hazbin Hotel (Prime Video), I Love LA (HBO Max), Down Cemetery Road (Apple TV), Shudder’s Trick or Treat Watch Party double feature, an&lt;/div&gt;&lt;/div&gt;</ns3:encoded>
-      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2025/10/FEATIMG_W2W-OCT27%E2%80%93NOV-2-opt.webp" />
-    <ns0:analytics>https://www.cabletv.com/tracking?source=smartnews&amp;utm_medium=feed&amp;utm_url=https%3A%2F%2Fwww.cabletv.com%2Fwhat-to-watch</ns0:analytics></item>
+      <ns3:encoded><![CDATA[<div><img src="https://www.cabletv.com/app/uploads/2025/10/FEATIMG_W2W-OCT27%E2%80%93NOV-2-opt.webp" style="width: 100%;" /><div>This week’s “What To Watch” picks include The Witcher (Netflix), Hazbin Hotel (Prime Video), I Love LA (HBO Max), Down Cemetery Road (Apple TV), Shudder’s Trick or Treat Watch Party double feature, an</div></div>]]></ns3:encoded>
+      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2025/10/FEATIMG_W2W-OCT27%E2%80%93NOV-2-opt.webp"/>
+    <ns0:analytics><![CDATA[https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url=https%3A%2F%2Fwww.cabletv.com%2Fwhat-to-watch]]></ns0:analytics></item>
     <item>
       <title>From Premier League to MLS: How To Watch Soccer on TV in the US</title>
       <link>https://www.cabletv.com/sports/watch-soccer</link>
       <guid>ff2ebed3c33fcb7e4a7ba6382cd19418</guid>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 -0600</pubDate>
+      <pubDate>Sat, 25 Oct 2025 23:00:00 -0700</pubDate>
       <dc:creator>Taylor Kujawa</dc:creator>
       <author>Taylor Kujawa</author>
       <description>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2022/09/CTV_How-to-Watch-Soccer-featured.png" style="width: 100%;" /&gt;&lt;div&gt;If you are a soccer fan, don’t miss our lineup of the best TV providers you need to catch all the matches from your team. Score some inside information here!&lt;/div&gt;&lt;/div&gt;</description>
-      <ns3:encoded>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2022/09/CTV_How-to-Watch-Soccer-featured.png" style="width: 100%;" /&gt;&lt;div&gt;If you are a soccer fan, don’t miss our lineup of the best TV providers you need to catch all the matches from your team. Score some inside information here!&lt;/div&gt;&lt;/div&gt;</ns3:encoded>
-      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2022/09/CTV_How-to-Watch-Soccer-featured.png" />
-    <ns0:analytics>https://www.cabletv.com/tracking?source=smartnews&amp;utm_medium=feed&amp;utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-soccer</ns0:analytics></item>
+      <ns3:encoded><![CDATA[<div><img src="https://www.cabletv.com/app/uploads/2022/09/CTV_How-to-Watch-Soccer-featured.png" style="width: 100%;" /><div>If you are a soccer fan, don’t miss our lineup of the best TV providers you need to catch all the matches from your team. Score some inside information here!</div></div>]]></ns3:encoded>
+      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2022/09/CTV_How-to-Watch-Soccer-featured.png"/>
+    <ns0:analytics><![CDATA[https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-soccer]]></ns0:analytics></item>
     <item>
       <title>How To Watch Alabama Football</title>
       <link>https://www.cabletv.com/sports/watch-alabama-football</link>
       <guid>1c61ea261b15f255da164be496c1752f</guid>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 -0600</pubDate>
+      <pubDate>Sat, 25 Oct 2025 23:00:00 -0700</pubDate>
       <dc:creator>Eric Chiu</dc:creator>
       <author>Eric Chiu</author>
       <description>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-alabama-crimson-tide-football.webp" style="width: 100%;" /&gt;&lt;div&gt;Roll Tide! Check out our college football schedule guide for the Alabama Crimson Tide.&lt;/div&gt;&lt;/div&gt;</description>
-      <ns3:encoded>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-alabama-crimson-tide-football.webp" style="width: 100%;" /&gt;&lt;div&gt;Roll Tide! Check out our college football schedule guide for the Alabama Crimson Tide.&lt;/div&gt;&lt;/div&gt;</ns3:encoded>
-      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-alabama-crimson-tide-football.webp" />
-    <ns0:analytics>https://www.cabletv.com/tracking?source=smartnews&amp;utm_medium=feed&amp;utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-alabama-football</ns0:analytics></item>
+      <ns3:encoded><![CDATA[<div><img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-alabama-crimson-tide-football.webp" style="width: 100%;" /><div>Roll Tide! Check out our college football schedule guide for the Alabama Crimson Tide.</div></div>]]></ns3:encoded>
+      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-alabama-crimson-tide-football.webp"/>
+    <ns0:analytics><![CDATA[https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-alabama-football]]></ns0:analytics></item>
     <item>
       <title>Late-Night TV Show Lineups This Week: Colbert, Fallon, Meyers, and More (Oct. 27–Nov. 2)</title>
       <link>https://www.cabletv.com/entertainment/late-night-tv-this-week</link>
       <guid>9974d34c41e630c008f81e516e39efd3</guid>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 -0600</pubDate>
+      <pubDate>Sat, 25 Oct 2025 23:00:00 -0700</pubDate>
       <dc:creator>Randy Harward</dc:creator>
       <author>Randy Harward</author>
       <description>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2024/08/Late-Night-TV-jpg.webp" style="width: 100%;" /&gt;&lt;div&gt;Can’t go to sleep until you’ve had your late-night laughs? We feel you. Here’s this week’s couch lineups for The Late Show with Stephen Colbert, Jimmy Kimmel Live!, The Tonight Show Starring Jimmy Fal&lt;/div&gt;&lt;/div&gt;</description>
-      <ns3:encoded>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2024/08/Late-Night-TV-jpg.webp" style="width: 100%;" /&gt;&lt;div&gt;Can’t go to sleep until you’ve had your late-night laughs? We feel you. Here’s this week’s couch lineups for The Late Show with Stephen Colbert, Jimmy Kimmel Live!, The Tonight Show Starring Jimmy Fal&lt;/div&gt;&lt;/div&gt;</ns3:encoded>
-      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2024/08/Late-Night-TV-jpg.webp" />
-    <ns0:analytics>https://www.cabletv.com/tracking?source=smartnews&amp;utm_medium=feed&amp;utm_url=https%3A%2F%2Fwww.cabletv.com%2Fentertainment%2Flate-night-tv-this-week</ns0:analytics></item>
+      <ns3:encoded><![CDATA[<div><img src="https://www.cabletv.com/app/uploads/2024/08/Late-Night-TV-jpg.webp" style="width: 100%;" /><div>Can’t go to sleep until you’ve had your late-night laughs? We feel you. Here’s this week’s couch lineups for The Late Show with Stephen Colbert, Jimmy Kimmel Live!, The Tonight Show Starring Jimmy Fal</div></div>]]></ns3:encoded>
+      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2024/08/Late-Night-TV-jpg.webp"/>
+    <ns0:analytics><![CDATA[https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url=https%3A%2F%2Fwww.cabletv.com%2Fentertainment%2Flate-night-tv-this-week]]></ns0:analytics></item>
     <item>
       <title>How To Watch BYU Cougars Football in 2025</title>
       <link>https://www.cabletv.com/sports/watch-byu-cougars-football</link>
       <guid>cb40eefdea260a19aa7497d631907078</guid>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 -0600</pubDate>
+      <pubDate>Sat, 25 Oct 2025 23:00:00 -0700</pubDate>
       <dc:creator>Alex Vejar</dc:creator>
       <author>Alex Vejar</author>
       <description>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-byu-cougars-football.webp" style="width: 100%;" /&gt;&lt;div&gt;How far can the BYU Cougars football team go without Jake Retzlaff at QB? Our detailed guide will help Cougar Nation watch every Cougars game in 2025.&lt;/div&gt;&lt;/div&gt;</description>
-      <ns3:encoded>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-byu-cougars-football.webp" style="width: 100%;" /&gt;&lt;div&gt;How far can the BYU Cougars football team go without Jake Retzlaff at QB? Our detailed guide will help Cougar Nation watch every Cougars game in 2025.&lt;/div&gt;&lt;/div&gt;</ns3:encoded>
-      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-byu-cougars-football.webp" />
-    <ns0:analytics>https://www.cabletv.com/tracking?source=smartnews&amp;utm_medium=feed&amp;utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-byu-cougars-football</ns0:analytics></item>
+      <ns3:encoded><![CDATA[<div><img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-byu-cougars-football.webp" style="width: 100%;" /><div>How far can the BYU Cougars football team go without Jake Retzlaff at QB? Our detailed guide will help Cougar Nation watch every Cougars game in 2025.</div></div>]]></ns3:encoded>
+      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-byu-cougars-football.webp"/>
+    <ns0:analytics><![CDATA[https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-byu-cougars-football]]></ns0:analytics></item>
     <item>
       <title>How To Watch Tennessee Volunteers Football in 2025</title>
       <link>https://www.cabletv.com/sports/watch-tennessee-volunteers-football</link>
       <guid>9fd9d876064a0eb7f198d793bf294e1d</guid>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 -0600</pubDate>
+      <pubDate>Sat, 25 Oct 2025 23:00:00 -0700</pubDate>
       <dc:creator>Taylor Kujawa</dc:creator>
       <author>Taylor Kujawa</author>
       <description>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-tennessee-volunteers-football.webp" style="width: 100%;" /&gt;&lt;div&gt;Go Vols! Here’s how to watch Tennessee football all season long. Our guide has the complete 2025 TV schedule, channel listings, and our top streaming pick.&lt;/div&gt;&lt;/div&gt;</description>
-      <ns3:encoded>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-tennessee-volunteers-football.webp" style="width: 100%;" /&gt;&lt;div&gt;Go Vols! Here’s how to watch Tennessee football all season long. Our guide has the complete 2025 TV schedule, channel listings, and our top streaming pick.&lt;/div&gt;&lt;/div&gt;</ns3:encoded>
-      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-tennessee-volunteers-football.webp" />
-    <ns0:analytics>https://www.cabletv.com/tracking?source=smartnews&amp;utm_medium=feed&amp;utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-tennessee-volunteers-football</ns0:analytics></item>
+      <ns3:encoded><![CDATA[<div><img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-tennessee-volunteers-football.webp" style="width: 100%;" /><div>Go Vols! Here’s how to watch Tennessee football all season long. Our guide has the complete 2025 TV schedule, channel listings, and our top streaming pick.</div></div>]]></ns3:encoded>
+      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-tennessee-volunteers-football.webp"/>
+    <ns0:analytics><![CDATA[https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-tennessee-volunteers-football]]></ns0:analytics></item>
     <item>
       <title>How To Watch Florida State Seminoles Football in 2025</title>
       <link>https://www.cabletv.com/sports/watch-florida-state-seminoles-football</link>
       <guid>f1a48221b8666f5fa1e18cd2be35fe9d</guid>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 -0600</pubDate>
+      <pubDate>Sat, 25 Oct 2025 23:00:00 -0700</pubDate>
       <dc:creator>Taylor Kujawa</dc:creator>
       <author>Taylor Kujawa</author>
       <description>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-florida-state-seminoles-football.webp" style="width: 100%;" /&gt;&lt;div&gt;Go Noles! Here’s how to watch Florida State football this season. Our guide has the complete 2025 TV schedule, channel listings, and top streaming options.&lt;/div&gt;&lt;/div&gt;</description>
-      <ns3:encoded>&lt;div&gt;&lt;img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-florida-state-seminoles-football.webp" style="width: 100%;" /&gt;&lt;div&gt;Go Noles! Here’s how to watch Florida State football this season. Our guide has the complete 2025 TV schedule, channel listings, and top streaming options.&lt;/div&gt;&lt;/div&gt;</ns3:encoded>
-      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-florida-state-seminoles-football.webp" />
-    <ns0:analytics>https://www.cabletv.com/tracking?source=smartnews&amp;utm_medium=feed&amp;utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-florida-state-seminoles-football</ns0:analytics></item>
+      <ns3:encoded><![CDATA[<div><img src="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-florida-state-seminoles-football.webp" style="width: 100%;" /><div>Go Noles! Here’s how to watch Florida State football this season. Our guide has the complete 2025 TV schedule, channel listings, and top streaming options.</div></div>]]></ns3:encoded>
+      <ns4:thumbnail url="https://www.cabletv.com/app/uploads/2020/01/how-to-watch-florida-state-seminoles-football.webp"/>
+    <ns0:analytics><![CDATA[https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url=https%3A%2F%2Fwww.cabletv.com%2Fsports%2Fwatch-florida-state-seminoles-football]]></ns0:analytics></item>
   </channel>
 </rss>
