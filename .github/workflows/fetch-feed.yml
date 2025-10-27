@@ -83,19 +83,19 @@ jobs:
           atom_link.set("rel", "self")
           atom_link.set("type", "application/rss+xml")
 
-          def to_rfc822(dt_text: str) -> str:
-            """Parse any reasonable date string and output RFC-822 in UTC (GMT)."""
-            if not dt_text:
-              return datetime.now(tz.UTC).strftime("%a, %d %b %Y %H:%M:%S GMT")
+          # --- Date handling: Mountain Time + long format ---
+          MTN = tz.gettz("America/Denver")
+
+          def to_mtn_long(dt_text: str) -> str:
+            """Convert to Mountain Time and return long format date (e.g. October 26, 2025)."""
             try:
               dt = parser.parse(dt_text)
-              if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=tz.UTC)
-              else:
-                dt = dt.astimezone(tz.UTC)
-              return dt.strftime("%a, %d %b %Y %H:%M:%S GMT")
             except Exception:
-              return datetime.now(tz.UTC).strftime("%a, %d %b %Y %H:%M:%S GMT")
+              dt = datetime.now(tz.UTC)
+            if dt.tzinfo is None:
+              dt = dt.replace(tzinfo=tz.UTC)
+            dt_mtn = dt.astimezone(MTN)
+            return dt_mtn.strftime("%B %d, %Y")
 
           def first_img_src(html_fragment: str) -> str | None:
             if not html_fragment:
@@ -115,14 +115,13 @@ jobs:
             link  = item.link.text if item.link else ""
             guid  = (item.guid.text if item.guid else link) or link
 
-            # Pull pubDate from source (pubDate, dc:date, updated, published…)
             pub_text = (
               (item.find("pubDate").text if item.find("pubDate") else None)
               or (item.find(text=True, name="dc:date") if item.find("dc:date") else None)
               or (item.find("updated").text if item.find("updated") else None)
               or (item.find("published").text if item.find("published") else None)
             )
-            pub_date = to_rfc822(pub_text)
+            pub_date = to_mtn_long(pub_text)
 
             # Author
             author = None
@@ -138,7 +137,7 @@ jobs:
             desc_html = item.description.text if item.description else ""
             desc_unescaped = html.unescape(desc_html)
 
-            # media:thumbnail source
+            # media:thumbnail
             thumb = None
             mc = item.find("media:content")
             if mc and mc.get("url"):
@@ -167,7 +166,7 @@ jobs:
           with open(OUTPUT_FILE, "wb") as f:
             f.write(xml_str)
 
-          print(f"Wrote {OUTPUT_FILE} with {count} items.")
+          print(f"Wrote {OUTPUT_FILE} with {count} items (MTN long dates).")
           PY
 
       - name: Commit & Push
@@ -175,5 +174,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml CTV-Feed-Logo.png || true
-          git commit -m "Auto-update SmartNews feed & logo" || echo "No changes to commit"
+          git commit -m "Auto-update SmartNews feed with MTN long dates" || echo "No changes to commit"
           git push
