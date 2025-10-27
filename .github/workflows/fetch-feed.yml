@@ -74,6 +74,7 @@ jobs:
 
           for item in soup.find_all('item'):
               it = etree.SubElement(ch, 'item')
+
               title = item.title.text if item.title else "Untitled"
               link = item.link.text if item.link else ""
               desc_html = item.description.text if item.description else ""
@@ -83,6 +84,16 @@ jobs:
               etree.SubElement(it, 'link').text = link
               etree.SubElement(it, 'guid').text = item.guid.text if item.guid else link
               etree.SubElement(it, 'pubDate').text = item.pubDate.text if item.pubDate else ""
+
+              # Add author
+              author = None
+              if item.find('dc:creator'):
+                  author = item.find('dc:creator').text
+              elif item.find('author'):
+                  author = item.find('author').text
+              else:
+                  author = "CableTV.com Staff"
+              etree.SubElement(it, '{http://purl.org/dc/elements/1.1/}creator').text = author
 
               # Add content:encoded
               cdata = etree.CDATA(desc_clean)
@@ -94,6 +105,10 @@ jobs:
                   thumb_url = sanitize_url(img_match.group(1))
                   if thumb_url:
                       etree.SubElement(it, '{http://search.yahoo.com/mrss/}thumbnail', url=thumb_url)
+
+              # Add snf:analytics (SmartNews tracking)
+              snf_analytics = etree.SubElement(it, '{http://www.smartnews.be/snf}analytics')
+              snf_analytics.text = "https://www.cabletv.com/smartnews-analytics?url=" + quote(link, safe='')
 
           xml_str = etree.tostring(rss, pretty_print=True, xml_declaration=True, encoding='UTF-8')
           with open('feed.xml', 'wb') as f:
