@@ -83,13 +83,16 @@ jobs:
           atom_link.set("rel", "self")
           atom_link.set("type", "application/rss+xml")
 
-          # --- Date handling: Mountain Time + long format ---
+          # --- Date handling: Mountain Time + long format with UTC-7 fallback ---
           MTN = tz.gettz("America/Denver")
+          if MTN is None:
+            MTN = tz.tzoffset("UTC-7", -7 * 3600)
 
           def to_mtn_long(dt_text: str) -> str:
-            """Convert to Mountain Time and return long format date (e.g. October 26, 2025)."""
+            """Convert to Mountain Time (America/Denver). If unavailable, default to UTC-7.
+            Return long date only, e.g. 'October 26, 2025'."""
             try:
-              dt = parser.parse(dt_text)
+              dt = parser.parse(dt_text) if dt_text else datetime.now(tz.UTC)
             except Exception:
               dt = datetime.now(tz.UTC)
             if dt.tzinfo is None:
@@ -115,6 +118,7 @@ jobs:
             link  = item.link.text if item.link else ""
             guid  = (item.guid.text if item.guid else link) or link
 
+            # Source date candidates
             pub_text = (
               (item.find("pubDate").text if item.find("pubDate") else None)
               or (item.find(text=True, name="dc:date") if item.find("dc:date") else None)
@@ -150,7 +154,7 @@ jobs:
             etree.SubElement(it, "title").text = title
             etree.SubElement(it, "link").text = link
             etree.SubElement(it, "guid").text = guid
-            etree.SubElement(it, "pubDate").text = pub_date
+            etree.SubElement(it, "pubDate").text = pub_date  # long date in MT/UTC-7
 
             etree.SubElement(it, "{http://purl.org/dc/elements/1.1/}creator").text = author
             etree.SubElement(it, "author").text = author
@@ -166,13 +170,23 @@ jobs:
           with open(OUTPUT_FILE, "wb") as f:
             f.write(xml_str)
 
-          print(f"Wrote {OUTPUT_FILE} with {count} items (MTN long dates).")
+          print(f"Wrote {OUTPUT_FILE} with {count} items (MT long dates, UTC-7 fallback).")
           PY
 
-      - name: Commit & Push
+      - name: Commit & Pull-Rebase & Push
         run: |
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml CTV-Feed-Logo.png || true
-          git commit -m "Auto-update SmartNews feed with MTN long dates" || echo "No changes to commit"
+          git commit -m "Auto-update SmartNews feed with MT long dates (UTC-7 fallback)" || echo "No changes to commit"
+
+          # Avoid 'rejected - fetch first' by rebasing onto remote main
+          git fetch origin main
+          # Try a clean rebase first; if it fails, fall back to a merge preferring our generated files
+          if ! git pull --rebase origin main; then
+            git rebase --abort || true
+            git pull --strategy-option ours origin main --no-edit
+          fi
+
           git push
