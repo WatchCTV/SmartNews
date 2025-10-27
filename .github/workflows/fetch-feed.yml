@@ -28,7 +28,7 @@ jobs:
 
           SOURCE_URL = 'https://rss.app/feeds/PnXLTXpDQSdLv1cb.xml'
           SELF_URL   = 'https://watchctv.github.io/SmartNews/feed.xml'
-          LOGO_URL   = 'https://i.ibb.co/sptKgp34/CTV-Feed-Logo.png'
+          LOGO_URL   = 'https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png'
 
           def sanitize_url(u: str) -> str | None:
               if not u:
@@ -106,9 +106,10 @@ jobs:
                   if thumb_url:
                       etree.SubElement(it, '{http://search.yahoo.com/mrss/}thumbnail', url=thumb_url)
 
-              # Add snf:analytics (SmartNews tracking)
+              # Add snf:analytics (must be CDATA)
+              analytics_url = "https://www.cabletv.com/smartnews-analytics?url=" + quote(link, safe='')
               snf_analytics = etree.SubElement(it, '{http://www.smartnews.be/snf}analytics')
-              snf_analytics.text = "https://www.cabletv.com/smartnews-analytics?url=" + quote(link, safe='')
+              snf_analytics.text = etree.CDATA(analytics_url)
 
           xml_str = etree.tostring(rss, pretty_print=True, xml_declaration=True, encoding='UTF-8')
           with open('feed.xml', 'wb') as f:
