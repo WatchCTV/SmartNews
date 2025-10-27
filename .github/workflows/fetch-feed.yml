@@ -3,7 +3,7 @@ name: Build SmartNews Feed
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 6 * * *"  # runs daily at 6 AM UTC (11 PM MT the night before)
+    - cron: "0 6 * * *"  # runs daily at 6 AM UTC (11 PM MT previous day)
   push:
     branches: [ main ]
 
@@ -24,10 +24,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip pytz feedparser
 
-      - name: Generate feed.xml (SmartNews)
+      - name: Normalize SmartNews feed
         run: |
           python3 - <<'EOF'
-          import datetime, pytz, xml.etree.ElementTree as ET, os
+          import datetime, pytz, xml.etree.ElementTree as ET, os, urllib.parse
 
           FEED_FILE = "feed.xml"
           MTN = pytz.timezone("US/Mountain")
@@ -36,25 +36,41 @@ jobs:
           if not os.path.exists(FEED_FILE):
               raise FileNotFoundError(f"{FEED_FILE} not found")
 
+          ET.register_namespace("snf", "http://www.smartnews.be/snf")
           tree = ET.parse(FEED_FILE)
           root = tree.getroot()
 
           for item in root.findall(".//item"):
+              # --- pubDate ---
               pub = item.find("pubDate")
               if pub is not None:
-                  text = pub.text.strip() if pub.text else ""
+                  text = (pub.text or "").strip()
                   try:
-                      # Try parsing “October 26, 2025” style dates
                       dt = datetime.datetime.strptime(text, "%B %d, %Y")
-                      dt_mt = MTN.localize(dt.replace(hour=0, minute=0))
-                      pub.text = dt_mt.strftime("%a, %d %b %Y %H:%M:%S %z")
+                      dt = MTN.localize(dt.replace(hour=0, minute=0))
+                      pub.text = dt.strftime("%a, %d %b %Y %H:%M:%S %z")
                   except Exception:
-                      # Already a valid format, skip
-                      continue
+                      # leave already-valid or unknown formats
+                      pass
               else:
-                  # Add missing pubDate
                   pub = ET.SubElement(item, "pubDate")
                   pub.text = now.strftime("%a, %d %b %Y %H:%M:%S %z")
+
+              # --- snf:analytics ---
+              ns = {"snf": "http://www.smartnews.be/snf"}
+              analytics = item.find("snf:analytics", ns)
+              if analytics is None:
+                  link_el = item.find("link")
+                  if link_el is not None and link_el.text:
+                      encoded_url = urllib.parse.quote(link_el.text.strip(), safe="")
+                      tracking = (
+                          f"https://www.cabletv.com/tracking?"
+                          f"source=smartnews&utm_medium=feed&utm_url={encoded_url}"
+                      )
+                      analytics = ET.SubElement(
+                          item, "{http://www.smartnews.be/snf}analytics"
+                      )
+                      analytics.text = tracking
 
           tree.write(FEED_FILE, encoding="utf-8", xml_declaration=True)
           EOF
@@ -65,5 +81,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin main
           git add feed.xml
-          git commit -m "Auto-update SmartNews feed with RFC-822 pubDate in Mountain Time (UTC-7)" || echo "No changes to commit"
+          git commit -m "Auto-normalize SmartNews feed (RFC-822 pubDate UTC-7 + snf:analytics)" || echo "No changes to commit"
           git push origin main
