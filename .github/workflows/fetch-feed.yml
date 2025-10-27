@@ -1,65 +1,34 @@
-      - name: Normalize SmartNews feed (CDATA JSON analytics + UTC-7)
+name: Build SmartNews Feed
+
+on:
+  schedule:
+    - cron: "0 * * * *" # runs hourly
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
         run: |
-          python3 - <<'EOF'
-          from lxml import etree as ET
-          from datetime import datetime, timedelta, timezone
-          from email.utils import parsedate_to_datetime
-          from html import unescape
-          import urllib.parse, json
+          pip install -r requirements.txt
 
-          FEED_FILE = "feed.xml"
-          NS_SNF = "http://www.smartnews.be/snf"
-          NS_CONTENT = "http://purl.org/rss/1.0/modules/content/"
-          ET.register_namespace("snf", NS_SNF)
-          ET.register_namespace("content", NS_CONTENT)
+      - name: Normalize SmartNews feed
+        run: python scripts/fetch_feed.py
 
-          tz_mtn = timezone(timedelta(hours=-7))
-
-          def to_rfc822_mtn(date_text):
-              try:
-                  dt = parsedate_to_datetime(date_text)
-                  if dt.tzinfo is None:
-                      dt = dt.replace(tzinfo=tz_mtn)
-                  else:
-                      dt = dt.astimezone(tz_mtn)
-              except Exception:
-                  dt = datetime.now(tz_mtn)
-              return dt.strftime("%a, %d %b %Y %H:%M:%S %z")
-
-          tree = ET.parse(FEED_FILE)
-          root = tree.getroot()
-
-          for item in root.findall(".//item"):
-              # --- pubDate ---
-              pub = item.find("pubDate")
-              if pub is None:
-                  pub = ET.SubElement(item, "pubDate")
-              pub.text = to_rfc822_mtn(pub.text or "")
-
-              # --- content:encoded ---
-              ctag = f"{{{NS_CONTENT}}}encoded"
-              cnode = item.find(ctag)
-              if cnode is None:
-                  desc = item.find("description")
-                  html_content = unescape(desc.text) if desc is not None else ""
-                  cnode = ET.SubElement(item, ctag)
-              else:
-                  html_content = unescape(cnode.text or "")
-              cnode.text = ET.CDATA(html_content)
-
-              # --- snf:analytics ---
-              atag = f"{{{NS_SNF}}}analytics"
-              anode = item.find(atag)
-              link_el = item.find("link")
-              link_url = (link_el.text or "").strip()
-              encoded = urllib.parse.quote(link_url, safe="")
-              tracking_url = f"https://www.cabletv.com/tracking?source=smartnews&utm_medium=feed&utm_url={encoded}"
-              json_payload = json.dumps({"trackers": [{"url": tracking_url}]}, ensure_ascii=False)
-              if anode is None:
-                  anode = ET.SubElement(item, atag)
-              anode.text = ET.CDATA(json_payload)
-
-          xml_str = ET.tostring(root, encoding="utf-8", xml_declaration=True, pretty_print=True)
-          with open(FEED_FILE, "wb") as f:
-              f.write(xml_str)
-          EOF
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add feed.xml
+          git commit -m "Normalize SmartNews feed (RFC-822 pubDate UTC-7 + snf:analytics)" || echo "No changes to commit"
+          git pull --rebase
+          git push
