@@ -86,7 +86,6 @@ jobs:
               etree.SubElement(it, 'pubDate').text = item.pubDate.text if item.pubDate else ""
 
               # Add author
-              author = None
               if item.find('dc:creator'):
                   author = item.find('dc:creator').text
               elif item.find('author'):
@@ -106,10 +105,9 @@ jobs:
                   if thumb_url:
                       etree.SubElement(it, '{http://search.yahoo.com/mrss/}thumbnail', url=thumb_url)
 
-              # Add snf:analytics (must be CDATA)
-              analytics_url = "https://www.cabletv.com/smartnews-analytics?url=" + quote(link, safe='')
+              # Add snf:analytics (SmartNews-compliant)
               snf_analytics = etree.SubElement(it, '{http://www.smartnews.be/snf}analytics')
-              snf_analytics.text = etree.CDATA(analytics_url)
+              snf_analytics.text = etree.CDATA("https://www.cabletv.com/smartnews-analytics?url={snf_url}")
 
           xml_str = etree.tostring(rss, pretty_print=True, xml_declaration=True, encoding='UTF-8')
           with open('feed.xml', 'wb') as f:
