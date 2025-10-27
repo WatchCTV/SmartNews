@@ -1,112 +1,52 @@
-name: Build SmartNews Feed
+    - name: Generate SmartNews Feed
+      run: |
+        python - <<'EOF'
+        import requests
+        from bs4 import BeautifulSoup
+        from feedgen.feed import FeedGenerator
+        from datetime import datetime
+        from dateutil import parser
 
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+        source_url = "https://rss.app/feeds/PnXLTXpDQSdLv1cb.xml"
+        xml = requests.get(source_url).text
+        soup = BeautifulSoup(xml, "xml")
 
-permissions:
-  contents: write
+        fg = FeedGenerator()
+        fg.load_extension('media')
+        fg.load_extension('content')
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+        fg.title("Entertainment News")
+        fg.link(href="https://www.cabletv.com/blog/category/entertainment", rel="alternate")
+        fg.description("Let's start watching! CableTV.com keeps you informed of all entertainment news.")
+        fg.logo("https://i.ibb.co/sptKgp34/CTV-Feed-Logo.png")
 
-      - name: Build SmartNews Feed
-        run: |
-          pip install requests beautifulsoup4 lxml
+        for item in soup.find_all("item"):
+            title = item.title.text if item.title else ""
+            link = item.link.text if item.link else ""
+            description = item.description.text if item.description else ""
+            author = item.findtext("dc:creator") or item.findtext("author")
+            pub_date_raw = item.findtext("pubDate") or item.findtext("dc:date")
+            try:
+                pub_date = parser.parse(pub_date_raw).strftime('%a, %d %b %Y %H:%M:%S GMT')
+            except Exception:
+                pub_date = datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
-          python3 <<'EOF'
-          import requests, re, html
-          from bs4 import BeautifulSoup
-          from lxml import etree
-          from datetime import datetime
+            img = ""
+            if item.find("media:content"):
+                img = item.find("media:content").get("url", "")
+            elif item.find("enclosure"):
+                img = item.find("enclosure").get("url", "")
 
-          SOURCE_FEED = "https://rss.app/feeds/PnXLTXpDQSdLv1cb.xml"
-          SELF_URL = "https://watchctv.github.io/SmartNews/feed.xml"
-          LOGO_URL = "https://i.ibb.co/sptKgp34/CTV-Feed-Logo.png"
+            fe = fg.add_item()
+            fe.title(title)
+            fe.link(href=link)
+            fe.description(description)
+            fe.author({"name": author})
+            fe.pubDate(pub_date)
+            if img:
+                fe.enclosure(url=img, type="image/jpeg")
+                fe.media.thumbnail(url=img)
+            fe.content(content=description, type='CDATA')
 
-          print("Fetching source feed...")
-          xml = requests.get(SOURCE_FEED, timeout=30).text
-          soup = BeautifulSoup(xml, "xml")
-
-          rss = etree.Element("rss", version="2.0", nsmap={
-              "content": "http://purl.org/rss/1.0/modules/content/",
-              "wfw": "http://wellformedweb.org/CommentAPI/",
-              "dc": "http://purl.org/dc/elements/1.1/",
-              "atom": "http://www.w3.org/2005/Atom",
-              "sy": "http://purl.org/rss/1.0/modules/syndication/",
-              "slash": "http://purl.org/rss/1.0/modules/slash/",
-              "media": "http://search.yahoo.com/mrss/",
-              "snf": "http://www.smartnews.be/snf"
-          })
-
-          ch = etree.SubElement(rss, "channel")
-          etree.SubElement(ch, "title").text = "Entertainment News"
-          etree.SubElement(ch, "link").text = "https://www.cabletv.com/blog/category/entertainment"
-          etree.SubElement(ch, "description").text = "Let's start watching! CableTV.com keeps you informed of all entertainment news."
-
-          # SmartNews logo
-          snf_logo = etree.SubElement(ch, "{http://www.smartnews.be/snf}logo")
-          etree.SubElement(snf_logo, "url").text = LOGO_URL
-
-          # Atom self-link
-          atom_link = etree.SubElement(ch, "{http://www.w3.org/2005/Atom}link")
-          atom_link.set("href", SELF_URL)
-          atom_link.set("rel", "self")
-          atom_link.set("type", "application/rss+xml")
-
-          for item in soup.find_all("item"):
-              it = etree.SubElement(ch, "item")
-              title = item.title.text if item.title else "Untitled"
-              link = item.link.text if item.link else ""
-              guid = item.guid.text if item.guid else link
-
-              # Extract and normalize date
-              pub_raw = item.pubDate.text if item.pubDate else None
-              try:
-                  pub_date = datetime.strptime(pub_raw.strip(), "%a, %d %b %Y %H:%M:%S %Z")
-              except Exception:
-                  pub_date = datetime.utcnow()
-              etree.SubElement(it, "pubDate").text = pub_date.strftime("%a, %d %b %Y %H:%M:%S GMT")
-
-              # Author name
-              author = item.find("dc:creator").text if item.find("dc:creator") else "CableTV.com Editorial Team"
-              etree.SubElement(it, "{http://purl.org/dc/elements/1.1/}creator").text = author
-              etree.SubElement(it, "author").text = author
-
-              etree.SubElement(it, "title").text = title
-              etree.SubElement(it, "link").text = link
-              etree.SubElement(it, "guid").text = guid
-
-              desc_html = item.description.text if item.description else ""
-              desc_clean = html.unescape(desc_html)
-              etree.SubElement(it, "description").text = desc_clean
-
-              # content:encoded (CDATA)
-              cdata = etree.CDATA(desc_clean)
-              etree.SubElement(it, "{http://purl.org/rss/1.0/modules/content/}encoded").text = cdata
-
-              # media:thumbnail
-              img_match = re.search(r'<img[^>]+src="([^"]+)"', desc_html)
-              if img_match:
-                  thumb_url = img_match.group(1)
-                  etree.SubElement(it, "{http://search.yahoo.com/mrss/}thumbnail", url=thumb_url)
-
-          xml_str = etree.tostring(rss, pretty_print=True, xml_declaration=True, encoding="UTF-8")
-          with open("feed.xml", "wb") as f:
-              f.write(xml_str)
-
-          print("feed.xml successfully generated.")
-          EOF
-
-      - name: Commit and Push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add feed.xml
-          git commit -m "Auto-update feed.xml" || echo "No changes to commit"
-          git push
+        fg.rss_file("feed.xml")
+        EOF
