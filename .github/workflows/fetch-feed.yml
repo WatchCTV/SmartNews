@@ -2,60 +2,142 @@ name: Fix SmartNews Feed
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'  # Run every 6 hours to keep feed fresh
 
 jobs:
   update-feed:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
+    
     steps:
       - uses: actions/checkout@v4
-
-      - name: Inject SmartNews logo and thumbnails
+      
+      - name: Inject SmartNews logo, thumbnails, and fix content
         run: |
           FEED_URL="https://www.cabletv.com/blog/category/entertainment/feed"
           LOGO_URL="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
-
+          
           curl -sSL "$FEED_URL" -o feed.xml
-
+          
           python3 <<'PYCODE'
           import xml.etree.ElementTree as ET
-
-          ET.register_namespace('media', "http://search.yahoo.com/mrss/")
-          ET.register_namespace('snf', "http://www.smartnews.be/snf")
-
+          import re
+          from html.parser import HTMLParser
+          
+          # Register namespaces
+          ET.register_namespace('', 'http://www.w3.org/2005/Atom')
+          ET.register_namespace('media', 'http://search.yahoo.com/mrss/')
+          ET.register_namespace('snf', 'http://www.smartnews.be/snf')
+          ET.register_namespace('content', 'http://purl.org/rss/1.0/modules/content/')
+          ET.register_namespace('dc', 'http://purl.org/dc/elements/1.1/')
+          
           tree = ET.parse("feed.xml")
           root = tree.getroot()
           channel = root.find("channel")
+          
           if channel is None:
-              raise SystemExit("No <channel> found")
-
-          # ✅ Add SmartNews logo under <channel>
+              raise SystemExit("ERROR: No <channel> found in feed")
+          
+          # ✅ 1. Add SmartNews logo under <channel>
           snf_logo_tag = "{http://www.smartnews.be/snf}logo"
           logo = channel.find(snf_logo_tag)
           if logo is None:
               logo = ET.Element(snf_logo_tag)
-              logo.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
-              channel.append(logo)
-          else:
-              logo.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
-
-          # ✅ Add media:thumbnail to each <item> if missing
+              channel.insert(3, logo)  # Insert after title/link/description
+          logo.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
+          
+          # Helper function to count links in HTML
+          class LinkCounter(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.link_count = 0
+              
+              def handle_starttag(self, tag, attrs):
+                  if tag == 'a':
+                      self.link_count += 1
+          
+          # Helper function to limit links in content
+          def limit_links(html_content, max_links=3):
+              if not html_content:
+                  return html_content
+              
+              parser = LinkCounter()
+              try:
+                  parser.feed(html_content)
+              except:
+                  return html_content
+              
+              if parser.link_count <= max_links:
+                  return html_content
+              
+              # Remove excess links by keeping only the first max_links
+              link_pattern = re.compile(r'<a[^>]*>.*?</a>', re.IGNORECASE | re.DOTALL)
+              links = link_pattern.findall(html_content)
+              
+              if len(links) <= max_links:
+                  return html_content
+              
+              # Keep first max_links, convert rest to plain text
+              for link in links[max_links:]:
+                  # Extract text from link
+                  text_match = re.search(r'>([^<]+)<', link)
+                  if text_match:
+                      plain_text = text_match.group(1)
+                      html_content = html_content.replace(link, plain_text, 1)
+              
+              return html_content
+          
+          # ✅ 2. Process each <item>
           thumb_tag = "{http://search.yahoo.com/mrss/}thumbnail"
+          content_tag = "{http://purl.org/rss/1.0/modules/content/}encoded"
+          snf_analytics_tag = "{http://www.smartnews.be/snf}analytics"
+          
           for item in channel.findall("item"):
+              # Add media:thumbnail if missing
               thumb = item.find(thumb_tag)
               if thumb is None:
                   thumb = ET.Element(thumb_tag)
                   thumb.set("url", "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png")
-                  item.append(thumb)
-
+                  item.insert(0, thumb)  # Insert at beginning of item
+              elif not thumb.get("url"):
+                  thumb.set("url", "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png")
+              
+              # ✅ 3. Fix content:encoded - limit links
+              content_elem = item.find(content_tag)
+              if content_elem is not None and content_elem.text:
+                  content_elem.text = limit_links(content_elem.text, max_links=3)
+              
+              # ✅ 4. Add snf:analytics (recommended)
+              analytics = item.find(snf_analytics_tag)
+              if analytics is None:
+                  analytics = ET.Element(snf_analytics_tag)
+                  # Get item link for analytics
+                  link_elem = item.find("link")
+                  if link_elem is not None and link_elem.text:
+                      analytics.set("url", link_elem.text)
+                      item.append(analytics)
+          
+          # Write with proper XML declaration
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
+          print("✅ Feed successfully updated:")
+          print(f"   - Added SmartNews logo to channel")
+          print(f"   - Added thumbnails to all items")
+          print(f"   - Limited links in content:encoded")
+          print(f"   - Added snf:analytics tags")
           PYCODE
-
+      
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml
-          git diff --quiet || (git commit -m "Fix SmartNews logo + thumbnails" && git push)
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🔧 Fix SmartNews feed: Add logo, thumbnails, analytics & limit links"
+            git push
+            echo "✅ Changes pushed successfully"
+          fi
