@@ -93,14 +93,18 @@ jobs:
               except Exception as e:
                   print(f"Thumbnail error for {link}: {e}")
 
-          # --- Fix [current_date format="yy"] or [current_date format="yyyy"] ---
+          # --- Fix [current_date format="yy"], [current_date format="yyyy"], [current_date format="Y"], etc. ---
           year_full = str(datetime.datetime.now().year)
 
           for item in channel.findall("item"):
               title_el = item.find("title")
               if title_el is not None and title_el.text:
-                  # Replace any [current_date format="yy"] or [current_date format="yyyy"] with full year (2025)
-                  title_el.text = re.sub(r'\[current_date\s+format="?y{2,4}"?\]', year_full, title_el.text)
+                  # Replace any date shortcode variants with full year (e.g. 2025)
+                  title_el.text = re.sub(
+                      r'\[current_date\s+format\s*=\s*["\']?[yY]{1,4}["\']?\]',
+                      year_full,
+                      title_el.text
+                  )
 
           # Write final feed
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
