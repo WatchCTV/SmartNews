@@ -6,6 +6,7 @@ on:
     branches:
       - main
     paths:
+      - "feed.xml"
       - ".github/workflows/fetch-feed.yml"
 
 permissions:
@@ -21,33 +22,66 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install dependencies
+      - name: Install xmllint
         run: |
           sudo apt-get update
-          sudo apt-get install -y xmllint
+          sudo apt-get install -y libxml2-utils
 
-      - name: Validate feed structure
+      - name: Ensure feed exists and is well-formed
         run: |
-          if xmllint --noout feed.xml; then
-            echo "✅ feed.xml is well-formed XML."
+          test -f feed.xml || (echo "❌ feed.xml not found at repo root." && exit 1)
+          xmllint --noout feed.xml || (echo "❌ feed.xml is not well-formed XML." && exit 1)
+          echo "✅ feed.xml present and well-formed."
+
+      # --- Normalize & auto-fix ---
+      - name: Normalize SmartNews namespace and fix analytics placeholder
+        run: |
+          set -euo pipefail
+          BEFORE="$(sha256sum feed.xml | awk '{print $1}')"
+
+          # Ensure correct SmartNews namespace
+          sed -i 's~xmlns:snf="[^"]*smartnews\.be/snf"~xmlns:snf="http://www.smartnews.com/snf"~g' feed.xml
+          sed -i 's~xmlns:snf="https\?://smartnews\.com/snf"~xmlns:snf="http://www.smartnews.com/snf"~g' feed.xml
+          grep -q 'xmlns:snf="http://www.smartnews.com/snf"' feed.xml || \
+            sed -i '1s~<rss ~<rss xmlns:snf="http://www.smartnews.com/snf" ~' feed.xml
+
+          # Fix {snf_url} -> ${snf_url} inside CDATA
+          sed -i 's|https://analytics.smartnews.com/track?u={snf_url}|https://analytics.smartnews.com/track?u=${snf_url}|g' feed.xml
+
+          AFTER="$(sha256sum feed.xml | awk '{print $1}')"
+          if [ "$BEFORE" != "$AFTER" ]; then
+            echo "🔧 feed.xml changed; committing."
+            git config user.name "github-actions"
+            git config user.email "github-actions@users.noreply.github.com"
+            git add feed.xml
+            git commit -m "ci: normalize snf namespace and fix snf:analytics placeholder"
+            git push
           else
-            echo "❌ feed.xml has syntax errors."
+            echo "No normalization needed."
+          fi
+
+      # --- Validate SmartNews requirements ---
+      - name: Validate SmartNews namespace
+        run: |
+          if grep -q 'xmlns:snf="http://www.smartnews.com/snf"' feed.xml; then
+            echo "✅ SmartNews namespace OK."
+          else
+            echo '❌ Missing/invalid SmartNews namespace. Expected: xmlns:snf="http://www.smartnews.com/snf"'
             exit 1
           fi
 
-      - name: Check SmartNews analytics tag
+      - name: Validate snf:analytics tag format
         run: |
           echo "Validating snf:analytics tag format..."
-          if grep -q "<snf:analytics" feed.xml; then
-            if grep -q '<snf:analytics><!\[CDATA\[https://analytics.smartnews.com/track?u={snf_url}\]\]></snf:analytics>' feed.xml; then
-              echo "✅ snf:analytics tag format looks valid."
-            else
-              echo "❌ Invalid snf:analytics tag format detected."
-              echo "Expected exactly: <snf:analytics><![CDATA[https://analytics.smartnews.com/track?u={snf_url}]]></snf:analytics>"
-              exit 1
-            fi
+          if ! grep -q '<snf:analytics>' feed.xml; then
+            echo "❌ Missing <snf:analytics> tag."
+            exit 1
+          fi
+          if grep -q '<snf:analytics><!\[CDATA\[https://analytics.smartnews.com/track?u=\${snf_url}\]\]></snf:analytics>' feed.xml; then
+            echo "✅ snf:analytics format OK."
           else
-            echo "❌ Missing snf:analytics tag in feed.xml."
+            echo "❌ Invalid snf:analytics format."
+            echo 'Expected exactly: <snf:analytics><![CDATA[https://analytics.smartnews.com/track?u=${snf_url}]]></snf:analytics>'
             exit 1
           fi
 
