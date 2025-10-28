@@ -1,10 +1,6 @@
 name: Fix SmartNews Feed
-
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   update-feed:
@@ -15,46 +11,43 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch and update SmartNews feed
+      - name: Fetch and update feed
         run: |
           FEED_URL="https://www.cabletv.com/blog/category/entertainment/feed"
-          LOGO_URL="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
+          LOGO_PATH="CTV-Feed-Logo.png"
 
           echo "📡 Downloading feed..."
           curl -sSL "$FEED_URL" -o feed.xml
 
-          echo "🧩 Injecting logo and thumbnails..."
+          echo "🧩 Adding logo and thumbnails..."
           python3 <<'PYCODE'
-          import re, xml.etree.ElementTree as ET
-          from xml.dom import minidom
+          import xml.etree.ElementTree as ET
 
           tree = ET.parse("feed.xml")
           root = tree.getroot()
-          ns = {'media': 'http://search.yahoo.com/mrss/'}
 
-          # Add SmartNews logo
+          # Add logo if missing
           channel = root.find("channel")
-          if channel is not None and channel.find("snf:logo", namespaces=ns) is None:
-              logo = ET.SubElement(channel, "snf:logo")
-              url = ET.SubElement(logo, "url")
-              url.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
+          if channel is not None and channel.find("logo") is None:
+              logo = ET.Element("logo")
+              logo.text = "CTV-Feed-Logo.png"
+              channel.append(logo)
 
-          # Ensure thumbnails
-          for item in root.findall("channel/item"):
-              if item.find("media:thumbnail", ns) is None:
-                  match = re.search(r'src="([^"]+)"', "".join(item.itertext()))
-                  if match:
-                      thumb = ET.SubElement(item, "{http://search.yahoo.com/mrss/}thumbnail")
-                      thumb.set("url", match.group(1))
+          # Add thumbnails to each item if missing
+          for item in channel.findall("item"):
+              media_thumb = item.find("thumbnail")
+              if media_thumb is None:
+                  thumb = ET.Element("thumbnail")
+                  thumb.text = "CTV-Feed-Logo.png"
+                  item.append(thumb)
 
-          xml_str = minidom.parseString(ET.tostring(root)).toprettyxml(indent="  ")
-          with open("feed.xml", "w", encoding="utf-8") as f:
-              f.write(xml_str)
+          tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
           PYCODE
 
-      - name: Commit and push if changed
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml
-          git diff --quiet && echo "✅ No changes." || (git commit -m "Auto update SmartNews feed" && git push)
+          git commit -m "Fix SmartNews feed: added logo and thumbnails" || echo "No changes"
+          git push
