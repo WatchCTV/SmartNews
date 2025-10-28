@@ -13,62 +13,48 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Install dependencies
+      - name: Fetch and update SmartNews feed
         run: |
-          sudo apt-get update -y
-          sudo apt-get install -y curl libxml2-utils
-
-      - name: Download latest CableTV feed
-        run: |
-          curl -L "https://www.cabletv.com/blog/category/entertainment/feed" -o feed.xml
-
-      - name: Add SmartNews logo and fix thumbnails
-        run: |
+          FEED_URL="https://www.cabletv.com/blog/category/entertainment/feed"
           LOGO_URL="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
 
-          # Inject SmartNews logo if missing
-          if ! grep -q "<snf:logo>" feed.xml; then
-            sed -i "s|<channel>|<channel>\n  <snf:logo><url>${LOGO_URL}</url></snf:logo>|" feed.xml
-            echo "✅ SmartNews logo added"
-          else
-            echo "ℹ️ SmartNews logo already present"
-          fi
+          echo "📡 Downloading feed..."
+          curl -sSL "$FEED_URL" -o feed.xml
 
-          # Extract image URLs and add missing media:thumbnail tags
-          awk '
-            BEGIN {in_item=0; img=""}
-            /<item>/ {in_item=1; item=""}
-            in_item {item = item $0 ORS}
-            in_item && match($0, /<content:encoded>.*src="([^"]+)"/, arr) {img=arr[1]}
-            /<\/item>/ {
-              if (in_item && img != "" && item !~ /<media:thumbnail/) {
-                sub(/<\/item>/, "    <media:thumbnail url=\"" img "\" />\n</item>", item)
-              }
-              print item
-              in_item=0; item=""; img=""
-            }
-            !in_item && !/<item>/ {print}
-          ' feed.xml > feed_fixed.xml
-          mv feed_fixed.xml feed.xml
+          echo "🧩 Injecting logo and thumbnails..."
+          python3 <<'PYCODE'
+          import re, xml.etree.ElementTree as ET
+          from xml.dom import minidom
 
-          echo "✅ Feed thumbnails verified and updated"
+          tree = ET.parse("feed.xml")
+          root = tree.getroot()
+          ns = {'media': 'http://search.yahoo.com/mrss/'}
 
-      - name: Validate feed format
-        run: |
-          xmllint --noout feed.xml
-          echo "✅ XML syntax valid"
+          # Add SmartNews logo
+          channel = root.find("channel")
+          if channel is not None and channel.find("snf:logo", namespaces=ns) is None:
+              logo = ET.SubElement(channel, "snf:logo")
+              url = ET.SubElement(logo, "url")
+              url.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
 
-      - name: Commit and push changes
+          # Ensure thumbnails
+          for item in root.findall("channel/item"):
+              if item.find("media:thumbnail", ns) is None:
+                  match = re.search(r'src="([^"]+)"', "".join(item.itertext()))
+                  if match:
+                      thumb = ET.SubElement(item, "{http://search.yahoo.com/mrss/}thumbnail")
+                      thumb.set("url", match.group(1))
+
+          xml_str = minidom.parseString(ET.tostring(root)).toprettyxml(indent="  ")
+          with open("feed.xml", "w", encoding="utf-8") as f:
+              f.write(xml_str)
+          PYCODE
+
+      - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: update SmartNews feed with logo and thumbnails"
-            git push origin main
-          else
-            echo "No changes to commit."
-          fi
+          git diff --quiet && echo "✅ No changes." || (git commit -m "Auto update SmartNews feed" && git push)
