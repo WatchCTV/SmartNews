@@ -20,7 +20,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install lxml requests
+        run: pip install lxml requests beautifulsoup4
 
       - name: Fetch and fix SmartNews feed
         run: |
@@ -29,16 +29,18 @@ jobs:
 
           python3 <<'EOF'
           from lxml import etree
+          from bs4 import BeautifulSoup
           import re
 
           SNF_NS = "http://www.smartnews.be/snf"
           MEDIA_NS = "http://search.yahoo.com/mrss/"
+          CONTENT_NS = "http://purl.org/rss/1.0/modules/content/"
 
           parser = etree.XMLParser(strip_cdata=False)
           tree = etree.parse("original.xml", parser)
           root = tree.getroot()
 
-          # --- Ensure SmartNews namespace exists ---
+          # Ensure SmartNews namespace exists
           if "snf" not in root.nsmap:
               nsmap = root.nsmap.copy()
               nsmap["snf"] = SNF_NS
@@ -56,7 +58,6 @@ jobs:
 
           # --- Add SmartNews logo ---
           logo_url = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png"
-
           old_logo = channel.find("snf:logo", {"snf": SNF_NS})
           if old_logo is not None:
               channel.remove(old_logo)
@@ -66,18 +67,21 @@ jobs:
           url_el.text = logo_url
           channel.append(logo_el)
 
-          # --- Add media:thumbnail to each <item> if missing ---
+          # --- Add media:thumbnail to each <item> using CSS selector ---
           for item in channel.findall("item"):
               media_thumb = item.find("media:thumbnail", {"media": MEDIA_NS})
-              if media_thumb is None:
-                  # Try to extract an image from <content:encoded> or <description>
-                  desc = (item.findtext("description") or "") + (item.findtext("{http://purl.org/rss/1.0/modules/content/}encoded") or "")
-                  match = re.search(r'https?://[^"\']+\.(?:jpg|jpeg|png|webp)', desc)
-                  if match:
-                      thumb_url = match.group(0)
-                      thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
-                      thumb_el.set("url", thumb_url)
-                      item.append(thumb_el)
+              if media_thumb is not None:
+                  continue
+
+              html = (item.findtext("description") or "") + (item.findtext(f"{{{CONTENT_NS}}}encoded") or "")
+              soup = BeautifulSoup(html, "html.parser")
+
+              img = soup.select_one("div > a > img:nth-child(1)")
+              if img and img.get("src"):
+                  thumb_url = img["src"].strip()
+                  thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
+                  thumb_el.set("url", thumb_url)
+                  item.append(thumb_el)
 
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
           EOF
