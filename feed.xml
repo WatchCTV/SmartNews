@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" version="2.0">
+<rss xmlns:snf="http://www.smartnews.be/snf" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" version="2.0">
 
 <channel>
 	<title>Entertainment Archives | CableTV.com</title>
 	<atom:link href="https://www.cabletv.com/blog/category/entertainment/feed" rel="self" type="application/rss+xml"/>
 	<link>https://www.cabletv.com/blog/category/entertainment</link>
 	<description>TV Tech and Entertainment</description>
-	<snf:logo xmlns:snf="http://www.smartnews.be/snf">https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png</snf:logo><lastBuildDate>Mon, 27 Oct 2025 19:10:04 +0000</lastBuildDate>
+	<snf:logo>https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png</snf:logo><lastBuildDate>Mon, 27 Oct 2025 19:10:04 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -22,7 +22,7 @@
 	<height>32</height>
 </image> 
 	<item>
-		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>From Premier League to MLS: How To Watch Soccer on TV in the US</title>
+		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>From Premier League to MLS: How To Watch Soccer on TV in the US</title>
 		<link>https://www.cabletv.com/sports/watch-soccer</link>
 		
 		<dc:creator><![CDATA[Taylor Kujawa]]></dc:creator>
@@ -748,9 +748,9 @@
 					
 		
 		
-			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-soccer"/></item>
+			<snf:analytics url="https://www.cabletv.com/sports/watch-soccer"/></item>
 		<item>
-		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch the 2025 CFL Season</title>
+		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch the 2025 CFL Season</title>
 		<link>https://www.cabletv.com/sports/watch-cfl</link>
 		
 		<dc:creator><![CDATA[Taylor Kujawa]]></dc:creator>
@@ -1441,9 +1441,9 @@
 					
 		
 		
-			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-cfl"/></item>
+			<snf:analytics url="https://www.cabletv.com/sports/watch-cfl"/></item>
 		<item>
-		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>What To Watch This Week: Stream Our Top 7 TV and Movie Picks (Oct. 27–Nov. 2)</title>
+		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>What To Watch This Week: Stream Our Top 7 TV and Movie Picks (Oct. 27–Nov. 2)</title>
 		<link>https://www.cabletv.com/what-to-watch</link>
 		
 		<dc:creator><![CDATA[Randy Harward]]></dc:creator>
@@ -1828,9 +1828,9 @@
 					
 		
 		
-			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/what-to-watch"/></item>
+			<snf:analytics url="https://www.cabletv.com/what-to-watch"/></item>
 		<item>
-		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>Late-Night TV Show Lineups This Week: Colbert, Fallon, Meyers, and More (Oct. 27–Nov. 2)</title>
+		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>Late-Night TV Show Lineups This Week: Colbert, Fallon, Meyers, and More (Oct. 27–Nov. 2)</title>
 		<link>https://www.cabletv.com/entertainment/late-night-tv-this-week</link>
 		
 		<dc:creator><![CDATA[Randy Harward]]></dc:creator>
@@ -2222,9 +2222,9 @@
 					
 		
 		
-			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/entertainment/late-night-tv-this-week"/></item>
+			<snf:analytics url="https://www.cabletv.com/entertainment/late-night-tv-this-week"/></item>
 		<item>
-		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>NFL Plus Review [current_date format="yy"]: Score Live NFL Action on the Go</title>
+		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>NFL Plus Review [current_date format="yy"]: Score Live NFL Action on the Go</title>
 		<link>https://www.cabletv.com/sports/nfl-plus-review</link>
 		
 		<dc:creator><![CDATA[Taylor Kujawa]]></dc:creator>
@@ -2953,9 +2953,9 @@
 					
 		
 		
-			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/nfl-plus-review"/></item>
+			<snf:analytics url="https://www.cabletv.com/sports/nfl-plus-review"/></item>
 		<item>
-		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Alabama Football</title>
+		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Alabama Football</title>
 		<link>https://www.cabletv.com/sports/watch-alabama-football</link>
 		
 		<dc:creator><![CDATA[Eric Chiu]]></dc:creator>
@@ -3877,9 +3877,9 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-alabama-football"/></item>
+			<snf:analytics url="https://www.cabletv.com/sports/watch-alabama-football"/></item>
 		<item>
-		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch BYU Cougars Football in [current_date format="yy"]</title>
+		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch BYU Cougars Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-byu-cougars-football</link>
 		
 		<dc:creator><![CDATA[Alex Vejar]]></dc:creator>
@@ -4739,9 +4739,9 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-byu-cougars-football"/></item>
+			<snf:analytics url="https://www.cabletv.com/sports/watch-byu-cougars-football"/></item>
 		<item>
-		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Army Black Knights Football in [current_date format="yy"]</title>
+		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Army Black Knights Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-army-black-knights-football</link>
 		
 		<dc:creator><![CDATA[Taylor Kujawa]]></dc:creator>
@@ -5591,9 +5591,9 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-army-black-knights-football"/></item>
+			<snf:analytics url="https://www.cabletv.com/sports/watch-army-black-knights-football"/></item>
 		<item>
-		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Florida State Seminoles Football in [current_date format="yy"]</title>
+		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Florida State Seminoles Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-florida-state-seminoles-football</link>
 		
 		<dc:creator><![CDATA[Taylor Kujawa]]></dc:creator>
@@ -6452,9 +6452,9 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-florida-state-seminoles-football"/></item>
+			<snf:analytics url="https://www.cabletv.com/sports/watch-florida-state-seminoles-football"/></item>
 		<item>
-		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Tennessee Volunteers Football in [current_date format="yy"]</title>
+		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Tennessee Volunteers Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-tennessee-volunteers-football</link>
 		
 		<dc:creator><![CDATA[Taylor Kujawa]]></dc:creator>
@@ -7315,6 +7315,6 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-tennessee-volunteers-football"/></item>
+			<snf:analytics url="https://www.cabletv.com/sports/watch-tennessee-volunteers-football"/></item>
 	</channel>
 </rss>
