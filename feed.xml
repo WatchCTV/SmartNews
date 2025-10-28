@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns0="http://www.w3.org/2005/Atom" xmlns:ns1="http://www.smartnews.be/snf" xmlns:ns2="http://purl.org/rss/1.0/modules/syndication/" xmlns:ns3="http://search.yahoo.com/mrss/" xmlns:ns5="http://purl.org/rss/1.0/modules/content/" version="2.0" xmlns:snf="http://www.smartnews.be/snf" xmlns:media="http://search.yahoo.com/mrss/">
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" version="2.0">
 
 <channel>
 	<title>Entertainment Archives | CableTV.com</title>
-	<ns0:link href="https://www.cabletv.com/blog/category/entertainment/feed" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.cabletv.com/blog/category/entertainment/feed" rel="self" type="application/rss+xml"/>
 	<link>https://www.cabletv.com/blog/category/entertainment</link>
 	<description>TV Tech and Entertainment</description>
-	<ns1:logo>https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png</ns1:logo><lastBuildDate>Mon, 27 Oct 2025 19:10:04 +0000</lastBuildDate>
+	<snf:logo xmlns:snf="http://www.smartnews.be/snf">https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png</snf:logo><lastBuildDate>Mon, 27 Oct 2025 19:10:04 +0000</lastBuildDate>
 	<language>en-US</language>
-	<ns2:updatePeriod>
-	hourly	</ns2:updatePeriod>
-	<ns2:updateFrequency>
-	1	</ns2:updateFrequency>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
 	
 
 <image>
@@ -22,20 +22,20 @@
 	<height>32</height>
 </image> 
 	<item>
-		<ns3:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png" /><title>From Premier League to MLS: How To Watch Soccer on TV in the US</title>
+		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>From Premier League to MLS: How To Watch Soccer on TV in the US</title>
 		<link>https://www.cabletv.com/sports/watch-soccer</link>
 		
-		<dc:creator>Taylor Kujawa</dc:creator>
+		<dc:creator><![CDATA[Taylor Kujawa]]></dc:creator>
 		<pubDate>Mon, 27 Oct 2025 19:10:17 +0000</pubDate>
-				<category>Entertainment</category>
-		<category>TV FAQs</category>
-		<category>Sports Soccer</category>
+				<category><![CDATA[Entertainment]]></category>
+		<category><![CDATA[TV FAQs]]></category>
+		<category><![CDATA[Sports Soccer]]></category>
 		<guid isPermaLink="false">http://cabletv.com/blog/?p=51931</guid>
 
-					<description>&lt;p&gt;If you are a soccer fan, don't miss our lineup of the best TV providers you need to catch all the matches from your team. Score some inside information here!&lt;/p&gt;
-&lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-soccer"&gt;From Premier League to MLS: How To Watch Soccer on TV in the US&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
-</description>
-										<ns5:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">  <div
+					<description><![CDATA[<p>If you are a soccer fan, don't miss our lineup of the best TV providers you need to catch all the matches from your team. Score some inside information here!</p>
+<p>The post <a href="https://www.cabletv.com/sports/watch-soccer">From Premier League to MLS: How To Watch Soccer on TV in the US</a> appeared first on <a href="https://www.cabletv.com">CableTV.com</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">  <div
       class="best-of-hero-card is-best num-cards- layout-stacked">
     <div class="best-of-hero-card__label">Editor's Choice</div>    <div class="best-of-hero-card__contents">
 
@@ -744,25 +744,25 @@
 	</div>
 </div></div></p>
 <p>The post From Premier League to MLS: How To Watch Soccer on TV in the US appeared first on CableTV.com.</p>
-]]></ns5:encoded>
+]]></content:encoded>
 					
 		
 		
-			<ns1:analytics><![CDATA[https://www.cabletv.com/sports/watch-soccer]]></ns1:analytics></item>
+			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-soccer"/></item>
 		<item>
-		<ns3:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png" /><title>How To Watch the 2025 CFL Season</title>
+		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch the 2025 CFL Season</title>
 		<link>https://www.cabletv.com/sports/watch-cfl</link>
 		
-		<dc:creator>Taylor Kujawa</dc:creator>
+		<dc:creator><![CDATA[Taylor Kujawa]]></dc:creator>
 		<pubDate>Mon, 27 Oct 2025 18:49:46 +0000</pubDate>
-				<category>Entertainment</category>
-		<category>Sports Football</category>
+				<category><![CDATA[Entertainment]]></category>
+		<category><![CDATA[Sports Football]]></category>
 		<guid isPermaLink="false">https://www.cabletv.com/?p=103652</guid>
 
-					<description>&lt;p&gt;Are you curious about watching the Canadian Football League (CFL) this season? Our viewing guide highlights the best TV plans for experiencing the Great White North’s finest gridiron action.&lt;/p&gt;
-&lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-cfl"&gt;How To Watch the 2025 CFL Season&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
-</description>
-										<ns5:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">  <div
+					<description><![CDATA[<p>Are you curious about watching the Canadian Football League (CFL) this season? Our viewing guide highlights the best TV plans for experiencing the Great White North’s finest gridiron action.</p>
+<p>The post <a href="https://www.cabletv.com/sports/watch-cfl">How To Watch the 2025 CFL Season</a> appeared first on <a href="https://www.cabletv.com">CableTV.com</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">  <div
       class="best-of-hero-card is-best num-cards- layout-stacked">
     <div class="best-of-hero-card__label">Editor's Choice</div>    <div class="best-of-hero-card__contents">
 
@@ -1437,25 +1437,25 @@
 	</div>
 </div></div></p>
 <p>The post How To Watch the 2025 CFL Season appeared first on CableTV.com.</p>
-]]></ns5:encoded>
+]]></content:encoded>
 					
 		
 		
-			<ns1:analytics><![CDATA[https://www.cabletv.com/sports/watch-cfl]]></ns1:analytics></item>
+			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-cfl"/></item>
 		<item>
-		<ns3:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png" /><title>What To Watch This Week: Stream Our Top 7 TV and Movie Picks (Oct. 27–Nov. 2)</title>
+		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>What To Watch This Week: Stream Our Top 7 TV and Movie Picks (Oct. 27–Nov. 2)</title>
 		<link>https://www.cabletv.com/what-to-watch</link>
 		
-		<dc:creator>Randy Harward</dc:creator>
+		<dc:creator><![CDATA[Randy Harward]]></dc:creator>
 		<pubDate>Mon, 27 Oct 2025 16:54:59 +0000</pubDate>
-				<category>Entertainment</category>
-		<category>Entertainment What to Watch</category>
+				<category><![CDATA[Entertainment]]></category>
+		<category><![CDATA[Entertainment What to Watch]]></category>
 		<guid isPermaLink="false">https://www.cabletv.com/?p=258221</guid>
 
-					<description>&lt;p&gt;This week’s “What To Watch” picks include The Witcher (Netflix), Hazbin Hotel (Prime Video), I Love LA (HBO Max), Down Cemetery Road (Apple TV), Shudder’s Trick or Treat Watch Party double feature, and more. Let’s hit the couch!&lt;/p&gt;
-&lt;p&gt;The post &lt;a href="https://www.cabletv.com/what-to-watch"&gt;What To Watch This Week: Stream Our Top 7 TV and Movie Picks (Oct. 27–Nov. 2)&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
-</description>
-										<ns5:encoded><![CDATA[<div class="row"><div class="columns small-12 medium-12 large-12"><section class="vc_cta3-container"><div class="vc_general vc_do_cta3 vc_cta3 vc_cta3-style-outline vc_cta3-shape-rounded vc_cta3-align-left vc_cta3-color-blue vc_cta3-icons-on-border vc_cta3-icon-size-md vc_cta3-icons-in-box vc_cta3-icons-top"><div class="vc_cta3-icons"><div class="vc_icon_element vc_icon_element-outer vc_do_icon vc_icon_element-align-left vc_icon_element-have-style"><div class="vc_icon_element-inner vc_icon_element-color-juicy_pink vc_icon_element-have-style-inner vc_icon_element-size-md vc_icon_element-style-rounded vc_icon_element-background vc_icon_element-background-color-white" ><span class="vc_icon_element-icon fas fa-tv" ></span></div></div></div><div class="vc_cta3_content-container"><div class="vc_cta3-content"><header class="vc_cta3-content-header"></header><p class="h3">CableTV.com&#8217;s fall TV preview guide is here!</p>
+					<description><![CDATA[<p>This week’s “What To Watch” picks include The Witcher (Netflix), Hazbin Hotel (Prime Video), I Love LA (HBO Max), Down Cemetery Road (Apple TV), Shudder’s Trick or Treat Watch Party double feature, and more. Let’s hit the couch!</p>
+<p>The post <a href="https://www.cabletv.com/what-to-watch">What To Watch This Week: Stream Our Top 7 TV and Movie Picks (Oct. 27–Nov. 2)</a> appeared first on <a href="https://www.cabletv.com">CableTV.com</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<div class="row"><div class="columns small-12 medium-12 large-12"><section class="vc_cta3-container"><div class="vc_general vc_do_cta3 vc_cta3 vc_cta3-style-outline vc_cta3-shape-rounded vc_cta3-align-left vc_cta3-color-blue vc_cta3-icons-on-border vc_cta3-icon-size-md vc_cta3-icons-in-box vc_cta3-icons-top"><div class="vc_cta3-icons"><div class="vc_icon_element vc_icon_element-outer vc_do_icon vc_icon_element-align-left vc_icon_element-have-style"><div class="vc_icon_element-inner vc_icon_element-color-juicy_pink vc_icon_element-have-style-inner vc_icon_element-size-md vc_icon_element-style-rounded vc_icon_element-background vc_icon_element-background-color-white" ><span class="vc_icon_element-icon fas fa-tv" ></span></div></div></div><div class="vc_cta3_content-container"><div class="vc_cta3-content"><header class="vc_cta3-content-header"></header><p class="h3">CableTV.com&#8217;s fall TV preview guide is here!</p>
 <p>Embrace cozy season with the best fall TV! The TV experts at CableTV.com have curated a list of <a href="/entertainment/fall-tv-preview-2025">top fall TV shows</a> to help you find something to binge-watch while the leaves drop.</p>
 </div></div></div></section></div></div><div class="row"><div class="columns small-12 medium-12 large-6">
 	<div  class="wpb_single_image wpb_content_element vc_align_center">
@@ -1824,25 +1824,25 @@
 	</div>
 </div></div></div></div></p>
 <p>The post What To Watch This Week: Stream Our Top 7 TV and Movie Picks (Oct. 27–Nov. 2) appeared first on CableTV.com.</p>
-]]></ns5:encoded>
+]]></content:encoded>
 					
 		
 		
-			<ns1:analytics><![CDATA[https://www.cabletv.com/what-to-watch]]></ns1:analytics></item>
+			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/what-to-watch"/></item>
 		<item>
-		<ns3:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png" /><title>Late-Night TV Show Lineups This Week: Colbert, Fallon, Meyers, and More (Oct. 27–Nov. 2)</title>
+		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>Late-Night TV Show Lineups This Week: Colbert, Fallon, Meyers, and More (Oct. 27–Nov. 2)</title>
 		<link>https://www.cabletv.com/entertainment/late-night-tv-this-week</link>
 		
-		<dc:creator>Randy Harward</dc:creator>
+		<dc:creator><![CDATA[Randy Harward]]></dc:creator>
 		<pubDate>Mon, 27 Oct 2025 16:44:01 +0000</pubDate>
-				<category>Entertainment</category>
-		<category>Entertainment What to Watch</category>
+				<category><![CDATA[Entertainment]]></category>
+		<category><![CDATA[Entertainment What to Watch]]></category>
 		<guid isPermaLink="false">https://www.cabletv.com/?p=152506</guid>
 
-					<description>&lt;p&gt;Can’t go to sleep until you’ve had your late-night laughs? We feel you. Here’s this week’s couch lineups for The Late Show with Stephen Colbert, Jimmy Kimmel Live!, The Tonight Show Starring Jimmy Fallon, Late Night with Seth Meyers, and the rest of the after-hours comedy crew.&lt;/p&gt;
-&lt;p&gt;The post &lt;a href="https://www.cabletv.com/entertainment/late-night-tv-this-week"&gt;Late-Night TV Show Lineups This Week: Colbert, Fallon, Meyers, and More (Oct. 27–Nov. 2)&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
-</description>
-										<ns5:encoded><![CDATA[<div class="row"><div class="columns small-12 medium-12 large-12">
+					<description><![CDATA[<p>Can’t go to sleep until you’ve had your late-night laughs? We feel you. Here’s this week’s couch lineups for The Late Show with Stephen Colbert, Jimmy Kimmel Live!, The Tonight Show Starring Jimmy Fallon, Late Night with Seth Meyers, and the rest of the after-hours comedy crew.</p>
+<p>The post <a href="https://www.cabletv.com/entertainment/late-night-tv-this-week">Late-Night TV Show Lineups This Week: Colbert, Fallon, Meyers, and More (Oct. 27–Nov. 2)</a> appeared first on <a href="https://www.cabletv.com">CableTV.com</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<div class="row"><div class="columns small-12 medium-12 large-12">
 	<div class="wpb_text_column wpb_content_element" >
 		<div class="wpb_wrapper">
 			<h2>What&#8217;s on late-night TV this week?</h2>
@@ -2218,25 +2218,25 @@
 </ul>
 </div></div></div></section></div></div></p>
 <p>The post Late-Night TV Show Lineups This Week: Colbert, Fallon, Meyers, and More (Oct. 27–Nov. 2) appeared first on CableTV.com.</p>
-]]></ns5:encoded>
+]]></content:encoded>
 					
 		
 		
-			<ns1:analytics><![CDATA[https://www.cabletv.com/entertainment/late-night-tv-this-week]]></ns1:analytics></item>
+			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/entertainment/late-night-tv-this-week"/></item>
 		<item>
-		<ns3:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png" /><title>NFL Plus Review [current_date format="yy"]: Score Live NFL Action on the Go</title>
+		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>NFL Plus Review [current_date format="yy"]: Score Live NFL Action on the Go</title>
 		<link>https://www.cabletv.com/sports/nfl-plus-review</link>
 		
-		<dc:creator>Taylor Kujawa</dc:creator>
+		<dc:creator><![CDATA[Taylor Kujawa]]></dc:creator>
 		<pubDate>Mon, 27 Oct 2025 15:51:31 +0000</pubDate>
-				<category>Entertainment</category>
-		<category>Sports NFL</category>
+				<category><![CDATA[Entertainment]]></category>
+		<category><![CDATA[Sports NFL]]></category>
 		<guid isPermaLink="false">https://www.cabletv.com/?p=104820</guid>
 
-					<description>&lt;p&gt;NFL+ is your new destination for watching full NFL game replays—replacing NFL Game Pass in the U.S. While the streaming service now includes live game coverage, don’t expect to ditch your TV provider in favor of NFL+.&lt;/p&gt;
-&lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/nfl-plus-review"&gt;NFL Plus Review [current_date format=&amp;quot;yy&amp;quot;]: Score Live NFL Action on the Go&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
-</description>
-										<ns5:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-3"></div><div class="columns small-12 medium-12 large-6">  <div
+					<description><![CDATA[<p>NFL+ is your new destination for watching full NFL game replays—replacing NFL Game Pass in the U.S. While the streaming service now includes live game coverage, don’t expect to ditch your TV provider in favor of NFL+.</p>
+<p>The post <a href="https://www.cabletv.com/sports/nfl-plus-review">NFL Plus Review [current_date format=&quot;yy&quot;]: Score Live NFL Action on the Go</a> appeared first on <a href="https://www.cabletv.com">CableTV.com</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-3"></div><div class="columns small-12 medium-12 large-6">  <div
       class="best-of-hero-card is-best num-cards- layout-columns">
     <div class="best-of-hero-card__label">Live In-Market and Primetime Games</div>    <div class="best-of-hero-card__contents">
 
@@ -2949,25 +2949,25 @@
 </ul>
 </div></div></div></section></div></div></p>
 <p>The post NFL Plus Review [current_date format=&quot;yy&quot;]: Score Live NFL Action on the Go appeared first on CableTV.com.</p>
-]]></ns5:encoded>
+]]></content:encoded>
 					
 		
 		
-			<ns1:analytics><![CDATA[https://www.cabletv.com/sports/nfl-plus-review]]></ns1:analytics></item>
+			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/nfl-plus-review"/></item>
 		<item>
-		<ns3:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png" /><title>How To Watch Alabama Football</title>
+		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Alabama Football</title>
 		<link>https://www.cabletv.com/sports/watch-alabama-football</link>
 		
-		<dc:creator>Eric Chiu</dc:creator>
+		<dc:creator><![CDATA[Eric Chiu]]></dc:creator>
 		<pubDate>Mon, 27 Oct 2025 15:00:58 +0000</pubDate>
-				<category>Entertainment</category>
-		<category>Sports NCAA Football</category>
+				<category><![CDATA[Entertainment]]></category>
+		<category><![CDATA[Sports NCAA Football]]></category>
 		<guid isPermaLink="false">https://www.cabletv.com/?p=128548</guid>
 
-					<description>&lt;p&gt;Roll Tide! Check out our college football schedule guide for the Alabama Crimson Tide. &lt;/p&gt;
-&lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-alabama-football"&gt;How To Watch Alabama Football&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
-</description>
-										<ns5:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">
+					<description><![CDATA[<p>Roll Tide! Check out our college football schedule guide for the Alabama Crimson Tide. </p>
+<p>The post <a href="https://www.cabletv.com/sports/watch-alabama-football">How To Watch Alabama Football</a> appeared first on <a href="https://www.cabletv.com">CableTV.com</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">
 <div class='vc_btn3-container text-center margin-bottom'><a href="https://go.cabletv.com/aff_c?offer_id=1486&aff_id=1003" class="button button--is-big  button--generic width--standard" rel="nofollow noopener" target="_blank" data-name="fubotv" data-slug="fubotv">Watch Free with Fubo</a></div>
 </div></div><div class="row"><div class="columns small-12 medium-12 large-8">
 	<div class="wpb_text_column wpb_content_element" >
@@ -3873,25 +3873,25 @@ window._load_script = function(url, callback, isSubmit) {
 	</div>
 </div></div></p>
 <p>The post How To Watch Alabama Football appeared first on CableTV.com.</p>
-]]></ns5:encoded>
+]]></content:encoded>
 					
 		
 		
-			<ns1:analytics><![CDATA[https://www.cabletv.com/sports/watch-alabama-football]]></ns1:analytics></item>
+			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-alabama-football"/></item>
 		<item>
-		<ns3:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png" /><title>How To Watch BYU Cougars Football in [current_date format="yy"]</title>
+		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch BYU Cougars Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-byu-cougars-football</link>
 		
-		<dc:creator>Alex Vejar</dc:creator>
+		<dc:creator><![CDATA[Alex Vejar]]></dc:creator>
 		<pubDate>Mon, 27 Oct 2025 15:00:57 +0000</pubDate>
-				<category>Entertainment</category>
-		<category>Sports NCAA Football</category>
+				<category><![CDATA[Entertainment]]></category>
+		<category><![CDATA[Sports NCAA Football]]></category>
 		<guid isPermaLink="false">https://www.cabletv.com/?p=252161</guid>
 
-					<description>&lt;p&gt;How far can the BYU Cougars football team go without Jake Retzlaff at QB? Our detailed guide will help Cougar Nation watch every Cougars game in 2025.&lt;/p&gt;
-&lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-byu-cougars-football"&gt;How To Watch BYU Cougars Football in [current_date format=&amp;quot;yy&amp;quot;]&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
-</description>
-										<ns5:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">
+					<description><![CDATA[<p>How far can the BYU Cougars football team go without Jake Retzlaff at QB? Our detailed guide will help Cougar Nation watch every Cougars game in 2025.</p>
+<p>The post <a href="https://www.cabletv.com/sports/watch-byu-cougars-football">How To Watch BYU Cougars Football in [current_date format=&quot;yy&quot;]</a> appeared first on <a href="https://www.cabletv.com">CableTV.com</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">
 <div class='vc_btn3-container text-center margin-bottom'><a href="https://go.cabletv.com/aff_c?offer_id=1446&aff_id=1003" class="button button--is-big  button--generic width--standard" rel="nofollow noopener" target="_blank" data-name="directv-stream" data-slug="directv-stream">Stream Free on DIRECTV</a></div>
 </div></div><div class="row"><div class="columns small-12 medium-12 large-12">
 	<div class="wpb_text_column wpb_content_element" >
@@ -4735,25 +4735,25 @@ window._load_script = function(url, callback, isSubmit) {
 </ul>
 </div></div></div></section></div></div></p>
 <p>The post How To Watch BYU Cougars Football in [current_date format=&quot;yy&quot;] appeared first on CableTV.com.</p>
-]]></ns5:encoded>
+]]></content:encoded>
 					
 		
 		
-			<ns1:analytics><![CDATA[https://www.cabletv.com/sports/watch-byu-cougars-football]]></ns1:analytics></item>
+			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-byu-cougars-football"/></item>
 		<item>
-		<ns3:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png" /><title>How To Watch Army Black Knights Football in [current_date format="yy"]</title>
+		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Army Black Knights Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-army-black-knights-football</link>
 		
-		<dc:creator>Taylor Kujawa</dc:creator>
+		<dc:creator><![CDATA[Taylor Kujawa]]></dc:creator>
 		<pubDate>Mon, 27 Oct 2025 15:00:54 +0000</pubDate>
-				<category>Entertainment</category>
-		<category>Sports NCAA Football</category>
+				<category><![CDATA[Entertainment]]></category>
+		<category><![CDATA[Sports NCAA Football]]></category>
 		<guid isPermaLink="false">https://www.cabletv.com/?p=252258</guid>
 
-					<description>&lt;p&gt;On, brave old Army team! Our Army football viewing guide features the complete 2025 TV schedule, plus channel listings and streaming recommendations.&lt;/p&gt;
-&lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-army-black-knights-football"&gt;How To Watch Army Black Knights Football in [current_date format=&amp;quot;yy&amp;quot;]&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
-</description>
-										<ns5:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">
+					<description><![CDATA[<p>On, brave old Army team! Our Army football viewing guide features the complete 2025 TV schedule, plus channel listings and streaming recommendations.</p>
+<p>The post <a href="https://www.cabletv.com/sports/watch-army-black-knights-football">How To Watch Army Black Knights Football in [current_date format=&quot;yy&quot;]</a> appeared first on <a href="https://www.cabletv.com">CableTV.com</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">
 <div class='vc_btn3-container text-center margin-bottom'><a href="https://go.cabletv.com/aff_c?offer_id=1446&aff_id=1003" class="button button--is-big  button--generic width--standard" rel="nofollow noopener" target="_blank" data-name="directv-stream" data-slug="directv-stream">Stream Free on DIRECTV</a></div>
 </div></div><div class="row"><div class="columns small-12 medium-12 large-12">
 	<div class="wpb_text_column wpb_content_element" >
@@ -5587,25 +5587,25 @@ window._load_script = function(url, callback, isSubmit) {
 </ul>
 </div></div></div></section></div></div></p>
 <p>The post How To Watch Army Black Knights Football in [current_date format=&quot;yy&quot;] appeared first on CableTV.com.</p>
-]]></ns5:encoded>
+]]></content:encoded>
 					
 		
 		
-			<ns1:analytics><![CDATA[https://www.cabletv.com/sports/watch-army-black-knights-football]]></ns1:analytics></item>
+			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-army-black-knights-football"/></item>
 		<item>
-		<ns3:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png" /><title>How To Watch Florida State Seminoles Football in [current_date format="yy"]</title>
+		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Florida State Seminoles Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-florida-state-seminoles-football</link>
 		
-		<dc:creator>Taylor Kujawa</dc:creator>
+		<dc:creator><![CDATA[Taylor Kujawa]]></dc:creator>
 		<pubDate>Mon, 27 Oct 2025 15:00:50 +0000</pubDate>
-				<category>Entertainment</category>
-		<category>Sports NCAA Football</category>
+				<category><![CDATA[Entertainment]]></category>
+		<category><![CDATA[Sports NCAA Football]]></category>
 		<guid isPermaLink="false">https://www.cabletv.com/?p=252559</guid>
 
-					<description>&lt;p&gt;Go Noles! Here’s how to watch Florida State football this season. Our guide has the complete 2025 TV schedule, channel listings, and top streaming options.&lt;/p&gt;
-&lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-florida-state-seminoles-football"&gt;How To Watch Florida State Seminoles Football in [current_date format=&amp;quot;yy&amp;quot;]&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
-</description>
-										<ns5:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">
+					<description><![CDATA[<p>Go Noles! Here’s how to watch Florida State football this season. Our guide has the complete 2025 TV schedule, channel listings, and top streaming options.</p>
+<p>The post <a href="https://www.cabletv.com/sports/watch-florida-state-seminoles-football">How To Watch Florida State Seminoles Football in [current_date format=&quot;yy&quot;]</a> appeared first on <a href="https://www.cabletv.com">CableTV.com</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">
 <div class='vc_btn3-container text-center margin-bottom'><a href="https://go.cabletv.com/aff_c?offer_id=1446&aff_id=1003" class="button button--is-big  button--generic width--standard" rel="nofollow noopener" target="_blank" data-name="directv-stream" data-slug="directv-stream">Stream Free on DIRECTV</a></div>
 </div></div><div class="row"><div class="columns small-12 medium-12 large-12">
 	<div class="wpb_text_column wpb_content_element" >
@@ -6448,25 +6448,25 @@ window._load_script = function(url, callback, isSubmit) {
 </ul>
 </div></div></div></section></div></div></p>
 <p>The post How To Watch Florida State Seminoles Football in [current_date format=&quot;yy&quot;] appeared first on CableTV.com.</p>
-]]></ns5:encoded>
+]]></content:encoded>
 					
 		
 		
-			<ns1:analytics><![CDATA[https://www.cabletv.com/sports/watch-florida-state-seminoles-football]]></ns1:analytics></item>
+			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-florida-state-seminoles-football"/></item>
 		<item>
-		<ns3:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png" /><title>How To Watch Tennessee Volunteers Football in [current_date format="yy"]</title>
+		<media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Tennessee Volunteers Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-tennessee-volunteers-football</link>
 		
-		<dc:creator>Taylor Kujawa</dc:creator>
+		<dc:creator><![CDATA[Taylor Kujawa]]></dc:creator>
 		<pubDate>Mon, 27 Oct 2025 15:00:48 +0000</pubDate>
-				<category>Entertainment</category>
-		<category>Sports NCAA Football</category>
+				<category><![CDATA[Entertainment]]></category>
+		<category><![CDATA[Sports NCAA Football]]></category>
 		<guid isPermaLink="false">https://www.cabletv.com/?p=252105</guid>
 
-					<description>&lt;p&gt;Go Vols! Here’s how to watch Tennessee football all season long. Our guide has the complete 2025 TV schedule, channel listings, and our top streaming pick.&lt;/p&gt;
-&lt;p&gt;The post &lt;a href="https://www.cabletv.com/sports/watch-tennessee-volunteers-football"&gt;How To Watch Tennessee Volunteers Football in [current_date format=&amp;quot;yy&amp;quot;]&lt;/a&gt; appeared first on &lt;a href="https://www.cabletv.com"&gt;CableTV.com&lt;/a&gt;.&lt;/p&gt;
-</description>
-										<ns5:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">
+					<description><![CDATA[<p>Go Vols! Here’s how to watch Tennessee football all season long. Our guide has the complete 2025 TV schedule, channel listings, and our top streaming pick.</p>
+<p>The post <a href="https://www.cabletv.com/sports/watch-tennessee-volunteers-football">How To Watch Tennessee Volunteers Football in [current_date format=&quot;yy&quot;]</a> appeared first on <a href="https://www.cabletv.com">CableTV.com</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">
 <div class='vc_btn3-container text-center margin-bottom'><a href="https://go.cabletv.com/aff_c?offer_id=1446&aff_id=1003" class="button button--is-big  button--generic width--standard" rel="nofollow noopener" target="_blank" data-name="directv-stream" data-slug="directv-stream">Stream Free on DIRECTV</a></div>
 </div></div><div class="row"><div class="columns small-12 medium-12 large-12">
 	<div class="wpb_text_column wpb_content_element" >
@@ -7311,10 +7311,10 @@ window._load_script = function(url, callback, isSubmit) {
 </ul>
 </div></div></div></section></div></div></p>
 <p>The post How To Watch Tennessee Volunteers Football in [current_date format=&quot;yy&quot;] appeared first on CableTV.com.</p>
-]]></ns5:encoded>
+]]></content:encoded>
 					
 		
 		
-			<ns1:analytics><![CDATA[https://www.cabletv.com/sports/watch-tennessee-volunteers-football]]></ns1:analytics></item>
+			<snf:analytics xmlns:snf="http://www.smartnews.be/snf" url="https://www.cabletv.com/sports/watch-tennessee-volunteers-football"/></item>
 	</channel>
 </rss>
