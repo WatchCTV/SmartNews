@@ -39,12 +39,15 @@ jobs:
           echo "Validating SmartNews feed..."
           if grep -q "<snf:analytics" feed.xml; then
             echo "Checking snf:analytics format..."
-            if grep -q "<snf:analytics><!\[CDATA\[https://analytics.smartnews.com/track?u={snf_url}\]\]></snf:analytics>" feed.xml; then
+            if grep -q "<snf:analytics><![CDATA[https://analytics.smartnews.com/track?u={snf_url}]]></snf:analytics>" feed.xml; then
               echo "✅ snf:analytics tag format looks valid."
             else
               echo "❌ Invalid snf:analytics tag format detected."
               exit 1
             fi
+          else
+            echo "⚠️ No snf:analytics tag found in feed.xml"
+            exit 1
           fi
 
       - name: Upload artifact
