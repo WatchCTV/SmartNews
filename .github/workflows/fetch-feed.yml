@@ -17,6 +17,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Install xmllint
         run: |
@@ -42,7 +45,6 @@ jobs:
             sed -i '1s~<rss ~<rss xmlns:snf="http://www.smartnews.com/snf" ~' feed.xml
           
           # Fix analytics tag - SmartNews expects the tag to be inside each <item>, not in channel
-          # Also ensure proper format: must be under <item> and use correct placeholder format
           # Remove any analytics tags that might be in wrong location
           sed -i '/<channel>/,/<\/channel>/ { /<snf:analytics>/,/<\/snf:analytics>/d }' feed.xml
           
@@ -53,11 +55,37 @@ jobs:
           AFTER="$(sha256sum feed.xml | awk '{print $1}')"
           if [ "$BEFORE" != "$AFTER" ]; then
             echo "🔧 feed.xml changed; committing."
-            git config user.name "github-actions"
-            git config user.email "github-actions@users.noreply.github.com"
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            
+            # Pull latest changes first
+            git pull --rebase origin main || {
+              echo "Failed to pull latest changes"
+              exit 1
+            }
+            
             git add feed.xml
-            git commit -m "ci: normalize snf namespace and fix snf:analytics placement"
-            git push
+            git commit -m "ci: normalize snf namespace and fix snf:analytics placement" || {
+              echo "Nothing to commit or commit failed"
+              exit 0
+            }
+            
+            # Push with retry logic
+            MAX_RETRIES=3
+            RETRY_COUNT=0
+            until git push origin main || [ $RETRY_COUNT -eq $MAX_RETRIES ]; do
+              RETRY_COUNT=$((RETRY_COUNT+1))
+              echo "Push failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
+              sleep 2
+              git pull --rebase origin main
+            done
+            
+            if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
+              echo "❌ Failed to push after $MAX_RETRIES attempts"
+              exit 1
+            fi
+            
+            echo "✅ Changes pushed successfully"
           else
             echo "No normalization needed."
           fi
