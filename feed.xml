@@ -6,7 +6,7 @@
 	<atom:link href="https://www.cabletv.com/blog/category/entertainment/feed" rel="self" type="application/rss+xml"/>
 	<link>https://www.cabletv.com/blog/category/entertainment</link>
 	<description>TV Tech and Entertainment</description>
-	<snf:logo>https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png</snf:logo><lastBuildDate>Mon, 27 Oct 2025 19:10:04 +0000</lastBuildDate>
+	<snf:logo><url>https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png</url></snf:logo><lastBuildDate>Mon, 27 Oct 2025 19:10:04 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
