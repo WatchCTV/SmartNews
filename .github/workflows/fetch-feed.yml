@@ -3,7 +3,7 @@ name: Fix SmartNews Feed
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *' # Runs every 6 hours
+    - cron: '0 */6 * * *'  # Every 6 hours
 
 jobs:
   update-feed:
@@ -24,6 +24,7 @@ jobs:
 
       - name: Fetch and fix SmartNews feed
         run: |
+          # Download the original RSS feed
           curl -sSL "https://www.cabletv.com/blog/category/entertainment/feed" -o original.xml
 
           python3 <<'EOF'
@@ -36,14 +37,25 @@ jobs:
           tree = etree.parse("original.xml", parser)
           root = tree.getroot()
 
-          # Ensure namespace is declared
+          # --- Ensure SmartNews namespace exists ---
           if "snf" not in root.nsmap:
-              root.attrib["xmlns:snf"] = SNF_NS
+              # Copy existing namespaces and add snf
+              new_nsmap = root.nsmap.copy()
+              new_nsmap["snf"] = SNF_NS
+              # Recreate root with nsmap and copy children + attributes
+              new_root = etree.Element(root.tag, nsmap=new_nsmap)
+              for attr, val in root.attrib.items():
+                  new_root.set(attr, val)
+              for child in root:
+                  new_root.append(child)
+              root = new_root
+              tree._setroot(root)
 
+          # --- Modify <channel> section ---
           channel = root.find("channel")
 
-          # Add SmartNews <snf:logo> and <snf:darkModeLogo>
           def add_logo(tag, url):
+              """Creates <snf:logo><url>...</url></snf:logo>"""
               el = etree.Element(f"{{{SNF_NS}}}{tag}")
               url_el = etree.SubElement(el, "url")
               url_el.text = url
@@ -52,16 +64,17 @@ jobs:
           logo_url = "https://www.cabletv.com/images/CTV-Feed-Logo.png"
           dark_logo_url = "https://www.cabletv.com/images/CTV-Feed-Logo-Dark.png"
 
-          # Remove old logos if any
-          for old_tag in ["snf:logo", "snf:darkModeLogo"]:
-              old = channel.find(old_tag, nsmap)
+          # Remove any existing SmartNews logos
+          for tag in ["snf:logo", "snf:darkModeLogo"]:
+              old = channel.find(tag, nsmap)
               if old is not None:
                   channel.remove(old)
 
+          # Append new logos
           channel.append(add_logo("logo", logo_url))
           channel.append(add_logo("darkModeLogo", dark_logo_url))
 
-          # Write output
+          # --- Save updated feed ---
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
           EOF
 
@@ -71,5 +84,5 @@ jobs:
           git config user.email "actions@github.com"
           mv feed.xml ./feed.xml
           git add feed.xml
-          git commit -m "Auto-update SmartNews feed"
+          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed"
           git push
