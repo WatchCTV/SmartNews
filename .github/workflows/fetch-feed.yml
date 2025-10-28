@@ -58,24 +58,23 @@ jobs:
                               text = text.replace(link, match.group(1), 1)
                   content.text = etree.CDATA(text)
               
-              # Add analytics placeholder
+              # Add analytics with CDATA
               link = item.find('link')
               if link is not None and link.text:
                   analytics = etree.Element(f'{{{SNF_NS}}}analytics')
-                  analytics.text = f'__ANALYTICS_URL__{link.text}__ANALYTICS_URL__'
+                  analytics.text = etree.CDATA(link.text)
                   item.append(analytics)
           
           tree.write('temp.xml', encoding='utf-8', xml_declaration=True)
           EOF
           
-          # Fix namespace prefixes and add declarations
+          # Fix namespace prefixes
           sed -e '2s|<rss|<rss xmlns:snf="http://www.smartnews.be/snf" xmlns:media="http://search.yahoo.com/mrss/"|' \
               -e 's| xmlns:ns0="http://www.smartnews.be/snf"||g' \
               -e 's| xmlns:ns0="http://search.yahoo.com/mrss/"||g' \
               -e 's|<ns0:|<snf:|g' \
               -e 's|</ns0:|</snf:|g' \
               -e 's|<snf:thumbnail|<media:thumbnail|g' \
-              -e 's|<snf:analytics>__ANALYTICS_URL__\(.*\)__ANALYTICS_URL__</snf:analytics>|<snf:analytics url="\1"/>|g' \
               temp.xml > feed.xml
           
           rm -f temp.xml original.xml
