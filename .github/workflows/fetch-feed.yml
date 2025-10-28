@@ -66,7 +66,7 @@ jobs:
           url_el.text = logo_url
           channel.append(logo_el)
 
-          # --- Add media:thumbnail using correct selector ---
+          # --- Add media:thumbnail using more reliable logic ---
           for item in channel.findall("item"):
               media_thumb = item.find("media:thumbnail", {"media": MEDIA_NS})
               if media_thumb is not None:
@@ -75,7 +75,11 @@ jobs:
               html = (item.findtext("description") or "") + (item.findtext(f"{{{CONTENT_NS}}}encoded") or "")
               soup = BeautifulSoup(html, "html.parser")
 
-              img = soup.select_one('a[data-element="Image"] > img') or soup.find("img")
+              # Try featured image first
+              img = soup.select_one("img.wp-post-image") \
+                    or soup.select_one('a[data-element="Image"] > img') \
+                    or soup.find("img")
+
               if img and img.get("src"):
                   thumb_url = img["src"].strip()
                   thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
@@ -90,5 +94,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add feed.xml
-          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (logo + thumbnails)"
+          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (logo + featured thumbnails)"
           git push
