@@ -21,28 +21,31 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Validate SmartNews feed exists
+      - name: Validate feed structure
         run: |
+          echo "Checking for feed.xml..."
           if [ ! -f "feed.xml" ]; then
-            echo "❌ feed.xml not found at repo root."
+            echo "❌ feed.xml not found in repository root."
             exit 1
           fi
 
-      - name: Validate snf:analytics tag format
+      - name: Check SmartNews analytics tag
         run: |
-          if grep -q '<snf:analytics' feed.xml; then
-            if grep -q '<snf:analytics><!\[CDATA\[https://analytics.smartnews.com/track?u={snf_url}\]\]></snf:analytics>' feed.xml; then
+          echo "Validating snf:analytics tag format..."
+          if grep -q "<snf:analytics" feed.xml; then
+            if grep -q '<snf:analytics><![CDATA\[https://analytics.smartnews.com/track?u=\${snf_url}\]\]></snf:analytics>' feed.xml; then
               echo "✅ snf:analytics tag format looks valid."
             else
-              echo "❌ Invalid snf:analytics tag format."
+              echo "❌ Invalid snf:analytics tag format detected."
+              echo "Expected exactly: <snf:analytics><![CDATA[https://analytics.smartnews.com/track?u=\${snf_url}]]></snf:analytics>"
               exit 1
             fi
           else
-            echo "❌ snf:analytics tag missing."
+            echo "❌ Missing snf:analytics tag in feed.xml."
             exit 1
           fi
 
-      - name: Upload artifact
+      - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
