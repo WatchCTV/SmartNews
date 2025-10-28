@@ -748,7 +748,7 @@
 					
 		
 		
-			<snf:analytics url="https://www.cabletv.com/sports/watch-soccer"/></item>
+			<snf:analytics><![CDATA[https://www.cabletv.com/sports/watch-soccer]]></snf:analytics></item>
 		<item>
 		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch the 2025 CFL Season</title>
 		<link>https://www.cabletv.com/sports/watch-cfl</link>
@@ -1441,7 +1441,7 @@
 					
 		
 		
-			<snf:analytics url="https://www.cabletv.com/sports/watch-cfl"/></item>
+			<snf:analytics><![CDATA[https://www.cabletv.com/sports/watch-cfl]]></snf:analytics></item>
 		<item>
 		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>What To Watch This Week: Stream Our Top 7 TV and Movie Picks (Oct. 27–Nov. 2)</title>
 		<link>https://www.cabletv.com/what-to-watch</link>
@@ -1828,7 +1828,7 @@
 					
 		
 		
-			<snf:analytics url="https://www.cabletv.com/what-to-watch"/></item>
+			<snf:analytics><![CDATA[https://www.cabletv.com/what-to-watch]]></snf:analytics></item>
 		<item>
 		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>Late-Night TV Show Lineups This Week: Colbert, Fallon, Meyers, and More (Oct. 27–Nov. 2)</title>
 		<link>https://www.cabletv.com/entertainment/late-night-tv-this-week</link>
@@ -2222,7 +2222,7 @@
 					
 		
 		
-			<snf:analytics url="https://www.cabletv.com/entertainment/late-night-tv-this-week"/></item>
+			<snf:analytics><![CDATA[https://www.cabletv.com/entertainment/late-night-tv-this-week]]></snf:analytics></item>
 		<item>
 		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>NFL Plus Review [current_date format="yy"]: Score Live NFL Action on the Go</title>
 		<link>https://www.cabletv.com/sports/nfl-plus-review</link>
@@ -2953,7 +2953,7 @@
 					
 		
 		
-			<snf:analytics url="https://www.cabletv.com/sports/nfl-plus-review"/></item>
+			<snf:analytics><![CDATA[https://www.cabletv.com/sports/nfl-plus-review]]></snf:analytics></item>
 		<item>
 		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Alabama Football</title>
 		<link>https://www.cabletv.com/sports/watch-alabama-football</link>
@@ -3877,7 +3877,7 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			<snf:analytics url="https://www.cabletv.com/sports/watch-alabama-football"/></item>
+			<snf:analytics><![CDATA[https://www.cabletv.com/sports/watch-alabama-football]]></snf:analytics></item>
 		<item>
 		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch BYU Cougars Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-byu-cougars-football</link>
@@ -4739,7 +4739,7 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			<snf:analytics url="https://www.cabletv.com/sports/watch-byu-cougars-football"/></item>
+			<snf:analytics><![CDATA[https://www.cabletv.com/sports/watch-byu-cougars-football]]></snf:analytics></item>
 		<item>
 		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Army Black Knights Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-army-black-knights-football</link>
@@ -5591,7 +5591,7 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			<snf:analytics url="https://www.cabletv.com/sports/watch-army-black-knights-football"/></item>
+			<snf:analytics><![CDATA[https://www.cabletv.com/sports/watch-army-black-knights-football]]></snf:analytics></item>
 		<item>
 		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Florida State Seminoles Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-florida-state-seminoles-football</link>
@@ -6452,7 +6452,7 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			<snf:analytics url="https://www.cabletv.com/sports/watch-florida-state-seminoles-football"/></item>
+			<snf:analytics><![CDATA[https://www.cabletv.com/sports/watch-florida-state-seminoles-football]]></snf:analytics></item>
 		<item>
 		<media:thumbnail url="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"/><title>How To Watch Tennessee Volunteers Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-tennessee-volunteers-football</link>
@@ -7315,6 +7315,6 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			<snf:analytics url="https://www.cabletv.com/sports/watch-tennessee-volunteers-football"/></item>
+			<snf:analytics><![CDATA[https://www.cabletv.com/sports/watch-tennessee-volunteers-football]]></snf:analytics></item>
 	</channel>
 </rss>
