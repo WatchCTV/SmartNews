@@ -1,4 +1,5 @@
 name: Fix SmartNews Feed
+
 on:
   workflow_dispatch:
 
@@ -11,10 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch and update feed
+      - name: Fetch and update SmartNews feed
         run: |
           FEED_URL="https://www.cabletv.com/blog/category/entertainment/feed"
-          LOGO_URL="https://watchctv.github.io/SmartNews/CTV-Feed-Logo.png"
+          LOGO_URL="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
 
           echo "📡 Downloading feed..."
           curl -sSL "$FEED_URL" -o feed.xml
@@ -29,27 +30,31 @@ jobs:
           tree = ET.parse("feed.xml")
           root = tree.getroot()
 
-          # Ensure <channel> exists
           channel = root.find("channel")
           if channel is None:
-              raise ValueError("No <channel> found in feed")
+              raise SystemExit("❌ No <channel> element found in feed.")
 
-          # Add SmartNews logo (snf:logo)
+          # ✅ Add SmartNews logo
           logo_tag = "{http://www.smartnews.be/snf}logo"
-          if channel.find(logo_tag) is None:
+          logo = channel.find(logo_tag)
+          if logo is None:
               logo = ET.Element(logo_tag)
-              logo.text = "https://watchctv.github.io/SmartNews/CTV-Feed-Logo.png"
+              logo.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
               channel.append(logo)
+          else:
+              logo.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
 
-          # Add thumbnails to each item
+          # ✅ Add media:thumbnail to each item
+          thumb_tag = "{http://search.yahoo.com/mrss/}thumbnail"
           for item in channel.findall("item"):
-              thumb_tag = "{http://search.yahoo.com/mrss/}thumbnail"
-              if item.find(thumb_tag) is None:
+              thumb = item.find(thumb_tag)
+              if thumb is None:
                   thumb = ET.Element(thumb_tag)
-                  thumb.set("url", "https://watchctv.github.io/SmartNews/CTV-Feed-Logo.png")
+                  thumb.set("url", "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png")
                   item.append(thumb)
 
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
+          print("✅ Logo and thumbnails added successfully.")
           PYCODE
 
       - name: Commit and push if changed
@@ -57,5 +62,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml
-          git commit -m "Added SmartNews logo and thumbnails" || echo "No changes to commit"
-          git push
+          git diff --quiet && echo "No changes detected." || (git commit -m "Added SmartNews logo + thumbnails" && git push)
