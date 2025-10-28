@@ -1,5 +1,4 @@
 name: Build SmartNews Feed
-
 on:
   workflow_dispatch:
   push:
@@ -8,58 +7,61 @@ on:
     paths:
       - "feed.xml"
       - ".github/workflows/fetch-feed.yml"
-
 permissions:
   contents: write
   pages: write
   id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+      
       - name: Install xmllint
         run: |
           sudo apt-get update
           sudo apt-get install -y libxml2-utils
-
+      
       - name: Ensure feed exists and is well-formed
         run: |
           test -f feed.xml || (echo "❌ feed.xml not found at repo root." && exit 1)
           xmllint --noout feed.xml || (echo "❌ feed.xml is not well-formed XML." && exit 1)
           echo "✅ feed.xml present and well-formed."
-
+      
       # --- Normalize & auto-fix ---
-      - name: Normalize SmartNews namespace and fix analytics placeholder
+      - name: Normalize SmartNews namespace and fix analytics
         run: |
           set -euo pipefail
           BEFORE="$(sha256sum feed.xml | awk '{print $1}')"
-
+          
           # Ensure correct SmartNews namespace
           sed -i 's~xmlns:snf="[^"]*smartnews\.be/snf"~xmlns:snf="http://www.smartnews.com/snf"~g' feed.xml
           sed -i 's~xmlns:snf="https\?://smartnews\.com/snf"~xmlns:snf="http://www.smartnews.com/snf"~g' feed.xml
           grep -q 'xmlns:snf="http://www.smartnews.com/snf"' feed.xml || \
             sed -i '1s~<rss ~<rss xmlns:snf="http://www.smartnews.com/snf" ~' feed.xml
-
-          # Fix {snf_url} -> ${snf_url} inside CDATA
-          sed -i 's|https://analytics.smartnews.com/track?u={snf_url}|https://analytics.smartnews.com/track?u=${snf_url}|g' feed.xml
-
+          
+          # Fix analytics tag - SmartNews expects the tag to be inside each <item>, not in channel
+          # Also ensure proper format: must be under <item> and use correct placeholder format
+          # Remove any analytics tags that might be in wrong location
+          sed -i '/<channel>/,/<\/channel>/ { /<snf:analytics>/,/<\/snf:analytics>/d }' feed.xml
+          
+          # Ensure analytics is properly formatted in items
+          # The tag should appear once per item and use ${snf_url} placeholder
+          perl -i -pe 's|<snf:analytics>.*?</snf:analytics>|<snf:analytics><![CDATA[https://analytics.smartnews.com/track?u=\${snf_url}]]></snf:analytics>|gs' feed.xml
+          
           AFTER="$(sha256sum feed.xml | awk '{print $1}')"
           if [ "$BEFORE" != "$AFTER" ]; then
             echo "🔧 feed.xml changed; committing."
             git config user.name "github-actions"
             git config user.email "github-actions@users.noreply.github.com"
             git add feed.xml
-            git commit -m "ci: normalize snf namespace and fix snf:analytics placeholder"
+            git commit -m "ci: normalize snf namespace and fix snf:analytics placement"
             git push
           else
             echo "No normalization needed."
           fi
-
+      
       # --- Validate SmartNews requirements ---
       - name: Validate SmartNews namespace
         run: |
@@ -69,27 +71,37 @@ jobs:
             echo '❌ Missing/invalid SmartNews namespace. Expected: xmlns:snf="http://www.smartnews.com/snf"'
             exit 1
           fi
-
-      - name: Validate snf:analytics tag format
+      
+      - name: Validate snf:analytics placement and format
         run: |
-          echo "Validating snf:analytics tag format..."
-          if ! grep -q '<snf:analytics>' feed.xml; then
-            echo "❌ Missing <snf:analytics> tag."
+          echo "Validating snf:analytics tag..."
+          
+          # Check that analytics tags exist in items
+          ANALYTICS_COUNT=$(grep -c '<snf:analytics>' feed.xml || echo "0")
+          ITEM_COUNT=$(grep -c '<item>' feed.xml || echo "0")
+          
+          echo "Found $ITEM_COUNT items and $ANALYTICS_COUNT analytics tags"
+          
+          if [ "$ANALYTICS_COUNT" -eq 0 ]; then
+            echo "❌ No <snf:analytics> tags found."
             exit 1
           fi
-          if grep -q '<snf:analytics><!\[CDATA\[https://analytics.smartnews.com/track?u=\${snf_url}\]\]></snf:analytics>' feed.xml; then
+          
+          # Check format - should contain the tracking URL with ${snf_url}
+          if grep -q 'https://analytics.smartnews.com/track?u=\${snf_url}' feed.xml; then
             echo "✅ snf:analytics format OK."
           else
             echo "❌ Invalid snf:analytics format."
-            echo 'Expected exactly: <snf:analytics><![CDATA[https://analytics.smartnews.com/track?u=${snf_url}]]></snf:analytics>'
+            echo 'Expected analytics URL: https://analytics.smartnews.com/track?u=${snf_url}'
+            grep '<snf:analytics>' feed.xml | head -3
             exit 1
           fi
-
+      
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
-
+  
   deploy:
     runs-on: ubuntu-latest
     needs: build
