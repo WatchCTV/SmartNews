@@ -104,24 +104,31 @@ jobs:
         run: |
           echo "Validating snf:analytics tag..."
           
-          # Check that analytics tags exist in items
-          ANALYTICS_COUNT=$(grep -c '<snf:analytics>' feed.xml || echo "0")
-          ITEM_COUNT=$(grep -c '<item>' feed.xml || echo "0")
+          # Check that analytics tags exist in items - fix the counting
+          ANALYTICS_COUNT=$(grep -o '<snf:analytics>' feed.xml | wc -l | tr -d '[:space:]')
+          ITEM_COUNT=$(grep -o '<item>' feed.xml | wc -l | tr -d '[:space:]')
           
           echo "Found $ITEM_COUNT items and $ANALYTICS_COUNT analytics tags"
           
+          # Convert to integers explicitly
+          ANALYTICS_COUNT=${ANALYTICS_COUNT:-0}
+          ITEM_COUNT=${ITEM_COUNT:-0}
+          
           if [ "$ANALYTICS_COUNT" -eq 0 ]; then
             echo "❌ No <snf:analytics> tags found."
+            echo "Showing feed.xml structure:"
+            grep -n '<item>' feed.xml | head -5
             exit 1
           fi
           
           # Check format - should contain the tracking URL with ${snf_url}
           if grep -q 'https://analytics.smartnews.com/track?u=\${snf_url}' feed.xml; then
-            echo "✅ snf:analytics format OK."
+            echo "✅ snf:analytics format OK with $ANALYTICS_COUNT tags."
           else
             echo "❌ Invalid snf:analytics format."
             echo 'Expected analytics URL: https://analytics.smartnews.com/track?u=${snf_url}'
-            grep '<snf:analytics>' feed.xml | head -3
+            echo "Current analytics tags found:"
+            grep -A 1 '<snf:analytics>' feed.xml | head -10
             exit 1
           fi
       
