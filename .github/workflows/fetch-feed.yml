@@ -29,8 +29,11 @@ jobs:
 
           python3 <<'EOF'
           from lxml import etree
+          import re
 
           SNF_NS = "http://www.smartnews.be/snf"
+          MEDIA_NS = "http://search.yahoo.com/mrss/"
+
           parser = etree.XMLParser(strip_cdata=False)
           tree = etree.parse("original.xml", parser)
           root = tree.getroot()
@@ -40,41 +43,42 @@ jobs:
               nsmap = root.nsmap.copy()
               nsmap["snf"] = SNF_NS
               new_root = etree.Element(root.tag, nsmap=nsmap)
-              # Copy attributes
               for attr, val in root.attrib.items():
                   new_root.set(attr, val)
-              # Copy children
               for child in root:
                   new_root.append(child)
               root = new_root
               tree._setroot(root)
 
-          # --- Modify <channel> section ---
           channel = root.find("channel")
           if channel is None:
               raise ValueError("No <channel> element found in feed")
 
-          def add_logo(tag, url):
-              """Creates <snf:logo><url>...</url></snf:logo>"""
-              el = etree.Element(f"{{{SNF_NS}}}{tag}")
-              url_el = etree.SubElement(el, "url")
-              url_el.text = url
-              return el
+          # --- Add SmartNews logo ---
+          logo_url = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png"
 
-          logo_url = "https://www.cabletv.com/images/CTV-Feed-Logo.png"
-          dark_logo_url = "https://www.cabletv.com/images/CTV-Feed-Logo-Dark.png"
+          old_logo = channel.find("snf:logo", {"snf": SNF_NS})
+          if old_logo is not None:
+              channel.remove(old_logo)
 
-          # Remove any existing SmartNews logos
-          for tag in ["snf:logo", "snf:darkModeLogo"]:
-              old = channel.find(tag, {"snf": SNF_NS})
-              if old is not None:
-                  channel.remove(old)
+          logo_el = etree.Element(f"{{{SNF_NS}}}logo")
+          url_el = etree.SubElement(logo_el, "url")
+          url_el.text = logo_url
+          channel.append(logo_el)
 
-          # Append new logos
-          channel.append(add_logo("logo", logo_url))
-          channel.append(add_logo("darkModeLogo", dark_logo_url))
+          # --- Add media:thumbnail to each <item> if missing ---
+          for item in channel.findall("item"):
+              media_thumb = item.find("media:thumbnail", {"media": MEDIA_NS})
+              if media_thumb is None:
+                  # Try to extract an image from <content:encoded> or <description>
+                  desc = (item.findtext("description") or "") + (item.findtext("{http://purl.org/rss/1.0/modules/content/}encoded") or "")
+                  match = re.search(r'https?://[^"\']+\.(?:jpg|jpeg|png|webp)', desc)
+                  if match:
+                      thumb_url = match.group(0)
+                      thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
+                      thumb_el.set("url", thumb_url)
+                      item.append(thumb_el)
 
-          # --- Save updated feed ---
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
           EOF
 
@@ -83,5 +87,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add feed.xml
-          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed"
+          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (logo + thumbnails)"
           git push
