@@ -56,7 +56,7 @@ jobs:
         run: |
           xmllint --noout feed.xml || echo "⚠️ XML validation warning (not critical)."
 
-      - name: Commit and push changes
+       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -66,3 +66,5 @@ jobs:
             git push
           else
             echo "No changes to commit."
+          fi
+
