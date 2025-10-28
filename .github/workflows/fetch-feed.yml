@@ -1,14 +1,8 @@
 name: Build SmartNews Feed
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - "feed.xml"
-      - ".github/workflows/fetch-feed.yml"
   schedule:
-    - cron: '0 */6 * * *'  # Run every 6 hours to fetch new articles
+    - cron: '0 */6 * * *'  # Run every 6 hours
 
 permissions:
   contents: write
@@ -25,165 +19,266 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
       
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
       - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y libxml2-utils python3 python3-pip
-          pip3 install feedparser requests beautifulsoup4 lxml
+          pip install requests beautifulsoup4 lxml feedparser
       
-      - name: Fetch and enhance feed
+      - name: Build SmartNews Feed
         run: |
-          cat > enhance_feed.py << 'PYTHON_SCRIPT'
-          import feedparser
+          cat > build_feed.py << 'PYTHON_SCRIPT'
           import requests
           from bs4 import BeautifulSoup
           import xml.etree.ElementTree as ET
+          from xml.dom import minidom
           from datetime import datetime
+          import hashlib
           import re
           
-          # Parse existing feed
-          tree = ET.parse('feed.xml')
-          root = tree.getroot()
+          def prettify_xml(elem):
+              """Return a pretty-printed XML string."""
+              rough_string = ET.tostring(elem, encoding='utf-8')
+              reparsed = minidom.parseString(rough_string)
+              return reparsed.toprettyxml(indent="  ", encoding='utf-8')
           
-          # Register namespaces
-          namespaces = {
-              'content': 'http://purl.org/rss/1.0/modules/content/',
-              'dc': 'http://purl.org/dc/elements/1.1/',
-              'media': 'http://search.yahoo.com/mrss/',
-              'snf': 'http://www.smartnews.com/snf'
-          }
+          def clean_text(text):
+              """Clean text content."""
+              if not text:
+                  return ""
+              # Remove extra whitespace
+              text = re.sub(r'\s+', ' ', text).strip()
+              return text
           
-          for prefix, uri in namespaces.items():
-              ET.register_namespace(prefix, uri)
+          def create_guid(url):
+              """Create a unique GUID from URL."""
+              return hashlib.md5(url.encode()).hexdigest()
           
-          channel = root.find('channel')
-          
-          # Get current items
-          existing_items = channel.findall('item')
-          print(f"Current items in feed: {len(existing_items)}")
-          
-          # Add snf:analytics to each existing item if missing
-          analytics_url = 'https://analytics.smartnews.com/track?u=${snf_url}'
-          
-          for item in existing_items:
-              # Check if snf:analytics already exists
-              analytics = item.find('snf:analytics', namespaces)
-              if analytics is None:
-                  # Add snf:analytics tag
-                  analytics = ET.SubElement(item, '{http://www.smartnews.com/snf}analytics')
-                  analytics.text = analytics_url
-                  print(f"Added snf:analytics to: {item.find('title').text}")
-          
-          # If we have fewer than 20 items, try to fetch more from the source
-          if len(existing_items) < 20:
-              print(f"Attempting to fetch more articles (current: {len(existing_items)}, target: 20)")
-              
-              # Fetch the original RSS feed
+          def fetch_article_content(url):
+              """Fetch full article content from URL."""
               try:
-                  source_feed_url = 'https://www.cabletv.com/blog/category/entertainment/feed/'
-                  response = requests.get(source_feed_url, timeout=10)
-                  source_feed = feedparser.parse(response.content)
+                  response = requests.get(url, timeout=15, headers={
+                      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+                  })
+                  soup = BeautifulSoup(response.content, 'html.parser')
                   
-                  # Get existing GUIDs to avoid duplicates
-                  existing_guids = set()
-                  for item in existing_items:
-                      guid = item.find('guid')
-                      if guid is not None:
-                          existing_guids.add(guid.text)
+                  # Try to find the main article content
+                  article = None
                   
-                  # Add new items up to 20 total
-                  added_count = 0
-                  for entry in source_feed.entries[:25]:  # Check more entries
-                      if len(existing_items) + added_count >= 20:
+                  # Common article selectors
+                  selectors = [
+                      'article',
+                      '.entry-content',
+                      '.post-content',
+                      '.article-content',
+                      '[class*="content"]'
+                  ]
+                  
+                  for selector in selectors:
+                      article = soup.select_one(selector)
+                      if article:
                           break
-                      
-                      # Create a GUID (use link as fallback)
-                      entry_guid = getattr(entry, 'id', entry.link)
-                      
-                      if entry_guid not in existing_guids:
-                          # Create new item
-                          new_item = ET.SubElement(channel, 'item')
-                          
-                          # Add title
-                          title = ET.SubElement(new_item, 'title')
-                          title.text = entry.title
-                          
-                          # Add link
-                          link = ET.SubElement(new_item, 'link')
-                          link.text = entry.link
-                          
-                          # Add guid
-                          guid = ET.SubElement(new_item, 'guid')
-                          guid.text = entry_guid
-                          
-                          # Add pubDate
-                          pub_date = ET.SubElement(new_item, 'pubDate')
-                          if hasattr(entry, 'published_parsed') and entry.published_parsed:
-                              pub_date.text = datetime(*entry.published_parsed[:6]).strftime('%a, %d %b %Y %H:%M:%S GMT')
-                          else:
-                              pub_date.text = datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
-                          
-                          # Add author
-                          if hasattr(entry, 'author'):
-                              author = ET.SubElement(new_item, '{http://purl.org/dc/elements/1.1/}creator')
-                              author.text = entry.author
-                          
-                          # Add content
-                          content_encoded = ET.SubElement(new_item, '{http://purl.org/rss/1.0/modules/content/}encoded')
-                          
-                          # Try to get full content
-                          if hasattr(entry, 'content') and len(entry.content) > 0:
-                              full_content = entry.content[0].value
-                          elif hasattr(entry, 'summary'):
-                              full_content = entry.summary
-                          else:
-                              full_content = entry.description if hasattr(entry, 'description') else ''
-                          
-                          content_encoded.text = full_content
-                          
-                          # Add thumbnail if available
-                          if hasattr(entry, 'media_thumbnail') and len(entry.media_thumbnail) > 0:
-                              thumbnail = ET.SubElement(new_item, '{http://search.yahoo.com/mrss/}thumbnail')
-                              thumbnail.set('url', entry.media_thumbnail[0]['url'])
-                          elif hasattr(entry, 'media_content') and len(entry.media_content) > 0:
-                              thumbnail = ET.SubElement(new_item, '{http://search.yahoo.com/mrss/}thumbnail')
-                              thumbnail.set('url', entry.media_content[0]['url'])
-                          
-                          # Add snf:analytics
-                          analytics = ET.SubElement(new_item, '{http://www.smartnews.com/snf}analytics')
-                          analytics.text = analytics_url
-                          
-                          added_count += 1
-                          print(f"Added new article: {entry.title}")
                   
-                  print(f"Added {added_count} new articles")
+                  if not article:
+                      return None
+                  
+                  # Remove unwanted elements
+                  for element in article.find_all(['script', 'style', 'nav', 'aside', 'footer']):
+                      element.decompose()
+                  
+                  # Get text and images
+                  content_html = str(article)
+                  
+                  return content_html
               except Exception as e:
-                  print(f"Error fetching additional articles: {e}")
+                  print(f"Error fetching article content from {url}: {e}")
+                  return None
           
-          # Write the updated feed
+          def fetch_articles():
+              """Fetch articles from CableTV.com entertainment category."""
+              url = 'https://www.cabletv.com/blog/category/entertainment'
+              
+              try:
+                  response = requests.get(url, timeout=15, headers={
+                      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+                  })
+                  soup = BeautifulSoup(response.content, 'html.parser')
+                  
+                  articles = []
+                  
+                  # Find article cards/items - adjust selectors based on site structure
+                  article_items = soup.find_all('article', limit=20)
+                  
+                  if not article_items:
+                      # Try alternative selectors
+                      article_items = soup.find_all('div', class_=re.compile(r'post|article|entry'), limit=20)
+                  
+                  print(f"Found {len(article_items)} article elements")
+                  
+                  for item in article_items[:20]:
+                      try:
+                          # Extract title and link
+                          title_elem = item.find(['h1', 'h2', 'h3'], class_=re.compile(r'title|heading'))
+                          if not title_elem:
+                              title_elem = item.find('a')
+                          
+                          if not title_elem:
+                              continue
+                          
+                          link_elem = title_elem.find('a') if title_elem.name != 'a' else title_elem
+                          if not link_elem or not link_elem.get('href'):
+                              continue
+                          
+                          article_url = link_elem['href']
+                          if not article_url.startswith('http'):
+                              article_url = 'https://www.cabletv.com' + article_url
+                          
+                          title = clean_text(link_elem.get_text())
+                          
+                          # Extract excerpt/description
+                          excerpt_elem = item.find(['p', 'div'], class_=re.compile(r'excerpt|description|summary'))
+                          excerpt = clean_text(excerpt_elem.get_text()) if excerpt_elem else ""
+                          
+                          # Extract image
+                          img_elem = item.find('img')
+                          image_url = img_elem.get('src') or img_elem.get('data-src') if img_elem else None
+                          
+                          # Extract date
+                          date_elem = item.find(['time', 'span'], class_=re.compile(r'date|time'))
+                          pub_date = None
+                          if date_elem:
+                              date_str = date_elem.get('datetime') or date_elem.get_text()
+                              try:
+                                  pub_date = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
+                              except:
+                                  pub_date = datetime.now()
+                          else:
+                              pub_date = datetime.now()
+                          
+                          # Extract author
+                          author_elem = item.find(['span', 'a'], class_=re.compile(r'author|by'))
+                          author = clean_text(author_elem.get_text()) if author_elem else "CableTV.com"
+                          
+                          # Fetch full article content
+                          print(f"Fetching content for: {title}")
+                          full_content = fetch_article_content(article_url)
+                          
+                          if not full_content:
+                              # Fallback to excerpt
+                              full_content = f'<div><p>{excerpt}</p></div>' if excerpt else '<div><p>Read full article on CableTV.com</p></div>'
+                          
+                          # Add image to content if available
+                          if image_url:
+                              full_content = f'<div><img src="{image_url}" style="width: 100%;" />{full_content}</div>'
+                          
+                          articles.append({
+                              'title': title,
+                              'link': article_url,
+                              'guid': create_guid(article_url),
+                              'pubDate': pub_date.strftime('%a, %d %b %Y %H:%M:%S GMT'),
+                              'author': author,
+                              'content': full_content,
+                              'image': image_url,
+                              'excerpt': excerpt
+                          })
+                          
+                      except Exception as e:
+                          print(f"Error processing article: {e}")
+                          continue
+                  
+                  return articles
+                  
+              except Exception as e:
+                  print(f"Error fetching articles: {e}")
+                  return []
+          
+          def build_feed(articles):
+              """Build RSS feed with SmartNews requirements."""
+              
+              # Create root RSS element
+              rss = ET.Element('rss', {
+                  'version': '2.0',
+                  'xmlns:content': 'http://purl.org/rss/1.0/modules/content/',
+                  'xmlns:dc': 'http://purl.org/dc/elements/1.1/',
+                  'xmlns:media': 'http://search.yahoo.com/mrss/',
+                  'xmlns:atom': 'http://www.w3.org/2005/Atom',
+                  'xmlns:snf': 'http://www.smartnews.com/snf'
+              })
+              
+              channel = ET.SubElement(rss, 'channel')
+              
+              # Channel info
+              ET.SubElement(channel, 'title').text = 'Entertainment News'
+              ET.SubElement(channel, 'link').text = 'https://www.cabletv.com/blog/category/entertainment'
+              ET.SubElement(channel, 'description').text = "Let's start watching! CableTV.com keeps you informed of all entertainment news."
+              
+              # SmartNews logo
+              logo = ET.SubElement(channel, '{http://www.smartnews.com/snf}logo')
+              ET.SubElement(logo, 'url').text = 'https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png'
+              
+              # Atom self link
+              ET.SubElement(channel, '{http://www.w3.org/2005/Atom}link', {
+                  'href': 'https://watchctv.github.io/SmartNews/feed.xml',
+                  'rel': 'self',
+                  'type': 'application/rss+xml'
+              })
+              
+              # Add articles
+              for article in articles:
+                  item = ET.SubElement(channel, 'item')
+                  
+                  ET.SubElement(item, 'title').text = article['title']
+                  ET.SubElement(item, 'link').text = article['link']
+                  ET.SubElement(item, 'guid').text = article['guid']
+                  ET.SubElement(item, 'pubDate').text = article['pubDate']
+                  ET.SubElement(item, '{http://purl.org/dc/elements/1.1/}creator').text = article['author']
+                  
+                  # Content with CDATA
+                  content_elem = ET.SubElement(item, '{http://purl.org/rss/1.0/modules/content/}encoded')
+                  content_elem.text = article['content']
+                  
+                  # Media thumbnail
+                  if article['image']:
+                      ET.SubElement(item, '{http://search.yahoo.com/mrss/}thumbnail', {
+                          'url': article['image']
+                      })
+                  
+                  # SmartNews analytics - CRITICAL
+                  analytics = ET.SubElement(item, '{http://www.smartnews.com/snf}analytics')
+                  analytics.text = 'https://analytics.smartnews.com/track?u=${snf_url}'
+              
+              return rss
+          
+          # Main execution
+          print("Fetching articles from CableTV.com...")
+          articles = fetch_articles()
+          
+          if not articles:
+              print("No articles found! Exiting...")
+              exit(1)
+          
+          print(f"Building feed with {len(articles)} articles...")
+          feed = build_feed(articles)
+          
+          # Write feed to file
+          tree = ET.ElementTree(feed)
+          ET.indent(tree, space="  ")
           tree.write('feed.xml', encoding='utf-8', xml_declaration=True)
-          print(f"Final feed has {len(channel.findall('item'))} items")
+          
+          print(f"✅ Feed created with {len(articles)} articles")
           
           PYTHON_SCRIPT
           
-          python3 enhance_feed.py
+          python3 build_feed.py
       
       - name: Validate XML
         run: |
-          xmllint --noout feed.xml || (echo "❌ feed.xml is not well-formed XML." && exit 1)
-          echo "✅ feed.xml is well-formed."
-      
-      - name: Normalize SmartNews namespace
-        run: |
-          set -euo pipefail
-          
-          # Ensure correct SmartNews namespace
-          sed -i 's~xmlns:snf="[^"]*smartnews\.be/snf"~xmlns:snf="http://www.smartnews.com/snf"~g' feed.xml
-          sed -i 's~xmlns:snf="https\?://smartnews\.com/snf"~xmlns:snf="http://www.smartnews.com/snf"~g' feed.xml
-          grep -q 'xmlns:snf="http://www.smartnews.com/snf"' feed.xml || \
-            sed -i '1s~<rss ~<rss xmlns:snf="http://www.smartnews.com/snf" ~' feed.xml
-          
-          echo "✅ Namespace normalized"
+          sudo apt-get update
+          sudo apt-get install -y libxml2-utils
+          xmllint --noout feed.xml && echo "✅ XML is well-formed" || exit 1
       
       - name: Validate SmartNews requirements
         run: |
@@ -195,43 +290,40 @@ jobs:
             exit 1
           fi
           
-          # Count items and analytics tags
-          ITEM_COUNT=$(grep -o '<item>' feed.xml | wc -l | tr -d '[:space:]')
-          ANALYTICS_COUNT=$(grep -o '<snf:analytics>' feed.xml | wc -l | tr -d '[:space:]')
+          # Count items and analytics
+          ITEMS=$(grep -c '<item>' feed.xml)
+          ANALYTICS=$(grep -c '<snf:analytics>' feed.xml)
           
-          echo "Items: $ITEM_COUNT"
-          echo "Analytics tags: $ANALYTICS_COUNT"
+          echo "Items: $ITEMS"
+          echo "Analytics tags: $ANALYTICS"
           
-          if [ "$ANALYTICS_COUNT" -eq 0 ]; then
-            echo "❌ No snf:analytics tags found"
+          if [ "$ANALYTICS" -eq 0 ]; then
+            echo "❌ Missing snf:analytics tags"
             exit 1
           fi
           
-          if [ "$ANALYTICS_COUNT" -ne "$ITEM_COUNT" ]; then
-            echo "⚠️  Warning: Item count ($ITEM_COUNT) doesn't match analytics count ($ANALYTICS_COUNT)"
+          if [ "$ITEMS" -ne "$ANALYTICS" ]; then
+            echo "⚠️  Warning: Items ($ITEMS) != Analytics ($ANALYTICS)"
           fi
           
-          echo "✅ Validation passed"
+          echo "✅ SmartNews validation passed"
       
-      - name: Commit changes if modified
+      - name: Commit and push changes
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
           if git diff --quiet feed.xml; then
-            echo "No changes to commit"
+            echo "No changes to feed"
           else
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git pull --rebase origin main || echo "No remote changes"
             git add feed.xml
-            git commit -m "ci: update feed with snf:analytics and additional articles"
+            git commit -m "chore: update SmartNews feed - $(date -u +'%Y-%m-%d %H:%M UTC')"
             
             # Push with retry
-            MAX_RETRIES=3
-            RETRY_COUNT=0
-            until git push origin main || [ $RETRY_COUNT -eq $MAX_RETRIES ]; do
-              RETRY_COUNT=$((RETRY_COUNT+1))
-              echo "Push failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
-              sleep 2
-              git pull --rebase origin main
+            for i in {1..3}; do
+              git pull --rebase origin main && git push origin main && break
+              echo "Retry $i failed, waiting..."
+              sleep 3
             done
           fi
       
