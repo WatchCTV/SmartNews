@@ -31,19 +31,17 @@ jobs:
           if channel is None:
               raise SystemExit("No <channel> found")
 
-          # ✅ SmartNews logo under <channel>
+          # ✅ Add SmartNews logo under <channel>
           snf_logo_tag = "{http://www.smartnews.be/snf}logo"
           logo = channel.find(snf_logo_tag)
           if logo is None:
               logo = ET.Element(snf_logo_tag)
+              logo.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
               channel.append(logo)
+          else:
+              logo.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
 
-          url_tag = logo.find("url")
-          if url_tag is None:
-              url_tag = ET.SubElement(logo, "url")
-          url_tag.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
-
-          # ✅ media:thumbnail for each <item>
+          # ✅ Add media:thumbnail to each <item> if missing
           thumb_tag = "{http://search.yahoo.com/mrss/}thumbnail"
           for item in channel.findall("item"):
               thumb = item.find(thumb_tag)
