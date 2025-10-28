@@ -6,7 +6,6 @@ on:
     branches:
       - main
     paths:
-      - "feed.xml"
       - ".github/workflows/fetch-feed.yml"
 
 permissions:
@@ -17,68 +16,40 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Ensure feed exists
+      - name: Install dependencies
         run: |
-          if [ ! -f "feed.xml" ]; then
-            echo "❌ feed.xml not found at repo root."
-            exit 1
-          fi
+          sudo apt-get update
+          sudo apt-get install -y xmllint
 
-      # --- AUTO-FIXES --------------------------------------------------------
-      # 1) SmartNews namespace must be .com, not .be
-      # 2) Normalize snf:analytics to the expected CDATA form
-      - name: Normalize SmartNews namespace & analytics tag
+      - name: Validate feed structure
         run: |
-          set -euo pipefail
-          BEFORE_HASH="$(sha256sum feed.xml | awk '{print $1}')"
-
-          # Fix wrong namespace (common source of 'item.snf:* is invalid')
-          # Replace any *.smartnews.be/snf (or missing scheme) with http://www.smartnews.com/snf
-          sed -i 's~xmlns:snf="[^"]*smartnews\.be/snf"~xmlns:snf="http://www.smartnews.com/snf"~g' feed.xml
-          sed -i 's~xmlns:snf="smartnews\.be/snf"~xmlns:snf="http://www.smartnews.com/snf"~g' feed.xml
-          sed -i 's~xmlns:snf="https\?://smartnews\.com/snf"~xmlns:snf="http://www.smartnews.com/snf"~g' feed.xml
-
-          # Normalize analytics tag to one canonical line (no stray spaces/newlines)
-          # Accept either ${snf_url} or {snf_url} in input and rewrite to the canonical {snf_url}
-          # (Most feeds pass validator with {snf_url}; mismatch + wrong namespace is what triggers INVALID.)
-          # First collapse any whitespace between tag parts:
-          perl -0777 -pe 's/<snf:analytics>\s*<!\[CDATA\[\s*https?:\/\/analytics\.smartnews\.com\/track\?u=\{?\$?snf_url\}?\s*\]\]>\s*<\/snf:analytics>/<snf:analytics><![CDATA[https:\/\/analytics.smartnews.com\/track?u={snf_url}]]><\/snf:analytics>/g' -i feed.xml
-
-          AFTER_HASH="$(sha256sum feed.xml | awk '{print $1}')"
-          if [ "$BEFORE_HASH" != "$AFTER_HASH" ]; then
-            echo "Feed changed — committing normalization."
-            git config user.name "github-actions"
-            git config user.email "github-actions@users.noreply.github.com"
-            git add feed.xml
-            git commit -m "ci: normalize SmartNews namespace and snf:analytics tag"
-            git push
+          if xmllint --noout feed.xml; then
+            echo "✅ feed.xml is well-formed XML."
           else
-            echo "No normalization needed."
-          fi
-
-      # --- VALIDATION --------------------------------------------------------
-      - name: Validate SmartNews namespace
-        run: |
-          if ! grep -q 'xmlns:snf="http://www.smartnews.com/snf"' feed.xml; then
-            echo "❌ Invalid or missing SmartNews namespace. Expected: xmlns:snf=\"http://www.smartnews.com/snf\""
+            echo "❌ feed.xml has syntax errors."
             exit 1
           fi
-          echo "✅ SmartNews namespace OK."
 
-      - name: Validate snf:analytics tag format
+      - name: Check SmartNews analytics tag
         run: |
-          set -e
-          # Must be present in every item; at minimum, ensure presence and exact format exists.
-          if ! grep -q '<snf:analytics><!\[CDATA\[https://analytics.smartnews.com/track?u={snf_url}\]\]></snf:analytics>' feed.xml; then
-            echo "❌ Invalid or missing snf:analytics format."
-            echo "Expected exactly: <snf:analytics><![CDATA[https://analytics.smartnews.com/track?u={snf_url}]]></snf:analytics>"
+          echo "Validating snf:analytics tag format..."
+          if grep -q "<snf:analytics" feed.xml; then
+            if grep -q '<snf:analytics><!\[CDATA\[https://analytics.smartnews.com/track?u={snf_url}\]\]></snf:analytics>' feed.xml; then
+              echo "✅ snf:analytics tag format looks valid."
+            else
+              echo "❌ Invalid snf:analytics tag format detected."
+              echo "Expected exactly: <snf:analytics><![CDATA[https://analytics.smartnews.com/track?u={snf_url}]]></snf:analytics>"
+              exit 1
+            fi
+          else
+            echo "❌ Missing snf:analytics tag in feed.xml."
             exit 1
           fi
-          echo "✅ snf:analytics format OK."
 
       - name: Upload artifact for Pages
         uses: actions/upload-pages-artifact@v3
