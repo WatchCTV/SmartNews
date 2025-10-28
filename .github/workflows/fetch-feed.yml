@@ -1,89 +1,75 @@
 name: Fix SmartNews Feed
+
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 */6 * * *' # Runs every 6 hours
+
 jobs:
   update-feed:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Install lxml
-        run: pip install lxml --break-system-packages
-      
-      - name: Fix feed
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install lxml requests
+
+      - name: Fetch and fix SmartNews feed
         run: |
           curl -sSL "https://www.cabletv.com/blog/category/entertainment/feed" -o original.xml
-          
+
           python3 <<'EOF'
           from lxml import etree
-          import re
-          
+
+          SNF_NS = "http://www.smartnews.be/snf"
+          nsmap = {"snf": SNF_NS}
+
           parser = etree.XMLParser(strip_cdata=False)
           tree = etree.parse("original.xml", parser)
           root = tree.getroot()
-          
-          SNF_NS = 'http://www.smartnews.be/snf'
-          MEDIA_NS = 'http://search.yahoo.com/mrss/'
-          CONTENT_NS = 'http://purl.org/rss/1.0/modules/content/'
-          
-          channel = root.find('channel')
-          
-          # Add logo with nested <url> tag
-          desc = channel.find('description')
-          desc_index = list(channel).index(desc)
-          logo = etree.Element(f'{{{SNF_NS}}}logo')
-          url_elem = etree.SubElement(logo, 'url')
-          url_elem.text = 'https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png'
-          channel.insert(desc_index + 1, logo)
-          
-          # Process items
-          for item in channel.findall('item'):
-              # Add thumbnail
-              thumb = etree.Element(f'{{{MEDIA_NS}}}thumbnail')
-              thumb.set('url', 'https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png')
-              item.insert(0, thumb)
-              
-              # Fix content with CDATA
-              content = item.find(f'{{{CONTENT_NS}}}encoded')
-              if content is not None:
-                  text = content.text if content.text else ''
-                  links = re.findall(r'<a[^>]*href="[^"]*"[^>]*>.*?</a>', text, re.DOTALL)
-                  if len(links) > 3:
-                      for link in links[3:]:
-                          match = re.search(r'>([^<]+)<', link)
-                          if match:
-                              text = text.replace(link, match.group(1), 1)
-                  content.text = etree.CDATA(text)
-              
-              # Add analytics with CDATA
-              link = item.find('link')
-              if link is not None and link.text:
-                  analytics = etree.Element(f'{{{SNF_NS}}}analytics')
-                  analytics.text = etree.CDATA(link.text)
-                  item.append(analytics)
-          
-          tree.write('temp.xml', encoding='utf-8', xml_declaration=True)
+
+          # Ensure namespace is declared
+          if "snf" not in root.nsmap:
+              root.attrib["xmlns:snf"] = SNF_NS
+
+          channel = root.find("channel")
+
+          # Add SmartNews <snf:logo> and <snf:darkModeLogo>
+          def add_logo(tag, url):
+              el = etree.Element(f"{{{SNF_NS}}}{tag}")
+              url_el = etree.SubElement(el, "url")
+              url_el.text = url
+              return el
+
+          logo_url = "https://www.cabletv.com/images/CTV-Feed-Logo.png"
+          dark_logo_url = "https://www.cabletv.com/images/CTV-Feed-Logo-Dark.png"
+
+          # Remove old logos if any
+          for old_tag in ["snf:logo", "snf:darkModeLogo"]:
+              old = channel.find(old_tag, nsmap)
+              if old is not None:
+                  channel.remove(old)
+
+          channel.append(add_logo("logo", logo_url))
+          channel.append(add_logo("darkModeLogo", dark_logo_url))
+
+          # Write output
+          tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
           EOF
-          
-          # Fix namespace prefixes
-          sed -e '2s|<rss|<rss xmlns:snf="http://www.smartnews.be/snf" xmlns:media="http://search.yahoo.com/mrss/"|' \
-              -e 's| xmlns:ns0="http://www.smartnews.be/snf"||g' \
-              -e 's| xmlns:ns0="http://search.yahoo.com/mrss/"||g' \
-              -e 's|<ns0:|<snf:|g' \
-              -e 's|</ns0:|</snf:|g' \
-              -e 's|<snf:thumbnail|<media:thumbnail|g' \
-              temp.xml > feed.xml
-          
-          rm -f temp.xml original.xml
-      
-      - name: Commit
+
+      - name: Commit and push updated feed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          mv feed.xml ./feed.xml
           git add feed.xml
-          git diff --quiet --staged || git commit -m "Update SmartNews feed"
+          git commit -m "Auto-update SmartNews feed"
           git push
