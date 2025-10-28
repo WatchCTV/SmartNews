@@ -15,36 +15,28 @@ jobs:
       - name: Fetch and update SmartNews feed
         run: |
           FEED_URL="https://www.cabletv.com/blog/category/entertainment/feed"
-          LOGO_URL="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
+          LOGO="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
 
-          echo "📡 Downloading feed..."
           curl -sSL "$FEED_URL" -o feed.xml
 
-          echo "🧩 Injecting SmartNews logo and thumbnails..."
           python3 <<'PYCODE'
           import xml.etree.ElementTree as ET
-
           ET.register_namespace('media', "http://search.yahoo.com/mrss/")
           ET.register_namespace('snf', "http://www.smartnews.be/snf")
 
           tree = ET.parse("feed.xml")
           root = tree.getroot()
-
           channel = root.find("channel")
           if channel is None:
-              raise SystemExit("❌ No <channel> element found in feed.")
+              raise SystemExit("No <channel> element found")
 
-          # ✅ Add SmartNews logo
           logo_tag = "{http://www.smartnews.be/snf}logo"
           logo = channel.find(logo_tag)
           if logo is None:
               logo = ET.Element(logo_tag)
-              logo.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
               channel.append(logo)
-          else:
-              logo.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
+          logo.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
 
-          # ✅ Add media:thumbnail to each item
           thumb_tag = "{http://search.yahoo.com/mrss/}thumbnail"
           for item in channel.findall("item"):
               thumb = item.find(thumb_tag)
@@ -54,12 +46,11 @@ jobs:
                   item.append(thumb)
 
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
-          print("✅ Logo and thumbnails added successfully.")
           PYCODE
 
-      - name: Commit and push if changed
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml
-          git diff --quiet && echo "No changes detected." || (git commit -m "Added SmartNews logo + thumbnails" && git push)
+          git diff --quiet || (git commit -m "Fix: added SmartNews logo and thumbnails" && git push)
