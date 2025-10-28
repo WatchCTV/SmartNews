@@ -3,7 +3,7 @@ name: Fix SmartNews Feed
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours
+    - cron: '0 */6 * * *' # Every 6 hours
 
 jobs:
   update-feed:
@@ -31,21 +31,19 @@ jobs:
           from lxml import etree
 
           SNF_NS = "http://www.smartnews.be/snf"
-          nsmap = {"snf": SNF_NS}
-
           parser = etree.XMLParser(strip_cdata=False)
           tree = etree.parse("original.xml", parser)
           root = tree.getroot()
 
           # --- Ensure SmartNews namespace exists ---
           if "snf" not in root.nsmap:
-              # Copy existing namespaces and add snf
-              new_nsmap = root.nsmap.copy()
-              new_nsmap["snf"] = SNF_NS
-              # Recreate root with nsmap and copy children + attributes
-              new_root = etree.Element(root.tag, nsmap=new_nsmap)
+              nsmap = root.nsmap.copy()
+              nsmap["snf"] = SNF_NS
+              new_root = etree.Element(root.tag, nsmap=nsmap)
+              # Copy attributes
               for attr, val in root.attrib.items():
                   new_root.set(attr, val)
+              # Copy children
               for child in root:
                   new_root.append(child)
               root = new_root
@@ -53,6 +51,8 @@ jobs:
 
           # --- Modify <channel> section ---
           channel = root.find("channel")
+          if channel is None:
+              raise ValueError("No <channel> element found in feed")
 
           def add_logo(tag, url):
               """Creates <snf:logo><url>...</url></snf:logo>"""
@@ -66,7 +66,7 @@ jobs:
 
           # Remove any existing SmartNews logos
           for tag in ["snf:logo", "snf:darkModeLogo"]:
-              old = channel.find(tag, nsmap)
+              old = channel.find(tag, {"snf": SNF_NS})
               if old is not None:
                   channel.remove(old)
 
@@ -82,7 +82,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          mv feed.xml ./feed.xml
           git add feed.xml
           git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed"
           git push
