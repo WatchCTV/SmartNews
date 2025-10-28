@@ -7851,5 +7851,5 @@ window._load_script = function(url, callback, isSubmit) {
 		
 		
 			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/04/CTV_Logo-CTV-Sports-150x150.png"/></item>
-	<snf:logo><url>https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png</url></snf:logo></channel>
+	<snf:logo><snf:url>https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png</snf:url></snf:logo></channel>
 </rss>
