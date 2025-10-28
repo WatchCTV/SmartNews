@@ -34,6 +34,19 @@ jobs:
         run: |
           python fetch_feed.py
 
+      - name: Validate SmartNews feed
+        run: |
+          echo "Validating SmartNews feed..."
+          if grep -q "<snf:analytics" feed.xml; then
+            echo "Checking snf:analytics format..."
+            if grep -q "<snf:analytics><!\[CDATA\[https://analytics.smartnews.com/track?u={snf_url}\]\]></snf:analytics>" feed.xml; then
+              echo "✅ snf:analytics tag format looks valid."
+            else
+              echo "❌ Invalid snf:analytics tag format detected."
+              exit 1
+            fi
+          fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
