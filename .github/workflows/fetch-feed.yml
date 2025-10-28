@@ -1,24 +1,3 @@
-name: Fix SmartNews Feed
-
-on:
-  workflow_dispatch:
-
-jobs:
-  update-feed:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Inject SmartNews logo and thumbnails
-        run: |
-          FEED_URL="https://www.cabletv.com/blog/category/entertainment/feed"
-          LOGO_URL="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
-
-          curl -sSL "$FEED_URL" -o feed.xml
-
           python3 <<'PYCODE'
           import xml.etree.ElementTree as ET
 
@@ -27,17 +6,25 @@ jobs:
 
           tree = ET.parse("feed.xml")
           root = tree.getroot()
+
           channel = root.find("channel")
           if channel is None:
               raise SystemExit("No <channel> found")
 
-          # Add or update SmartNews logo
+          # Ensure snf:channel exists
+          snf_channel_tag = "{http://www.smartnews.be/snf}channel"
+          snf_channel = channel.find(snf_channel_tag)
+          if snf_channel is None:
+              snf_channel = ET.Element(snf_channel_tag)
+              channel.append(snf_channel)
+
+          # Add or update SmartNews logo under snf:channel
           logo_tag = "{http://www.smartnews.be/snf}logo"
-          logo = channel.find(logo_tag)
+          logo = snf_channel.find(logo_tag)
           if logo is None:
               logo = ET.Element(logo_tag)
-              channel.append(logo)
-          logo.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
+              snf_channel.append(logo)
+          logo.text = "https://watchctv.github.io/SmartNews/CTV-Feed-Logo.png"
 
           # Add or update media thumbnails
           thumb_tag = "{http://search.yahoo.com/mrss/}thumbnail"
@@ -45,15 +32,8 @@ jobs:
               thumb = item.find(thumb_tag)
               if thumb is None:
                   thumb = ET.Element(thumb_tag)
-                  thumb.set("url", "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png")
+                  thumb.set("url", "https://watchctv.github.io/SmartNews/CTV-Feed-Logo.png")
                   item.append(thumb)
 
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
           PYCODE
-
-      - name: Commit and push if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add feed.xml
-          git diff --quiet || (git commit -m "Fix SmartNews logo + thumbnails" && git push)
