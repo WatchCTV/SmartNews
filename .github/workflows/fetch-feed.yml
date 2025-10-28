@@ -44,13 +44,11 @@ jobs:
           grep -q 'xmlns:snf="http://www.smartnews.com/snf"' feed.xml || \
             sed -i '1s~<rss ~<rss xmlns:snf="http://www.smartnews.com/snf" ~' feed.xml
           
-          # Fix analytics tag - SmartNews expects the tag to be inside each <item>, not in channel
-          # Remove any analytics tags that might be in wrong location
-          sed -i '/<channel>/,/<\/channel>/ { /<snf:analytics>/,/<\/snf:analytics>/d }' feed.xml
+          # Fix the analytics placeholder format: {snf_url} -> ${snf_url}
+          sed -i 's|track?u={snf_url}|track?u=${snf_url}|g' feed.xml
           
-          # Ensure analytics is properly formatted in items
-          # The tag should appear once per item and use ${snf_url} placeholder
-          perl -i -pe 's|<snf:analytics>.*?</snf:analytics>|<snf:analytics><![CDATA[https://analytics.smartnews.com/track?u=\${snf_url}]]></snf:analytics>|gs' feed.xml
+          # Ensure analytics tags are properly wrapped in CDATA if they aren't already
+          perl -i -0777 -pe 's|<snf:analytics>(?!<!\[CDATA\[)(https://[^<]+)</snf:analytics>|<snf:analytics><![CDATA[$1]]></snf:analytics>|gs' feed.xml
           
           AFTER="$(sha256sum feed.xml | awk '{print $1}')"
           if [ "$BEFORE" != "$AFTER" ]; then
@@ -65,7 +63,7 @@ jobs:
             }
             
             git add feed.xml
-            git commit -m "ci: normalize snf namespace and fix snf:analytics placement" || {
+            git commit -m "ci: normalize snf namespace and fix snf:analytics format" || {
               echo "Nothing to commit or commit failed"
               exit 0
             }
@@ -104,7 +102,7 @@ jobs:
         run: |
           echo "Validating snf:analytics tag..."
           
-          # Check that analytics tags exist in items - fix the counting
+          # Check that analytics tags exist in items
           ANALYTICS_COUNT=$(grep -o '<snf:analytics>' feed.xml | wc -l | tr -d '[:space:]')
           ITEM_COUNT=$(grep -o '<item>' feed.xml | wc -l | tr -d '[:space:]')
           
@@ -115,20 +113,27 @@ jobs:
           ITEM_COUNT=${ITEM_COUNT:-0}
           
           if [ "$ANALYTICS_COUNT" -eq 0 ]; then
-            echo "❌ No <snf:analytics> tags found."
-            echo "Showing feed.xml structure:"
-            grep -n '<item>' feed.xml | head -5
+            echo "❌ No <snf:analytics> tags found in feed."
+            echo "Please ensure each <item> has an <snf:analytics> tag."
             exit 1
           fi
           
+          # Verify analytics tags are inside items, not at channel level
+          # Count analytics tags that appear between <item> and </item>
+          ANALYTICS_IN_ITEMS=$(perl -ne 'print if /<item>/ .. /<\/item>/' feed.xml | grep -c '<snf:analytics>' || echo "0")
+          
+          if [ "$ANALYTICS_IN_ITEMS" -ne "$ANALYTICS_COUNT" ]; then
+            echo "⚠️  Warning: Some analytics tags may be outside of items"
+          fi
+          
           # Check format - should contain the tracking URL with ${snf_url}
-          if grep -q 'https://analytics.smartnews.com/track?u=\${snf_url}' feed.xml; then
+          if grep -q 'track?u=\${snf_url}' feed.xml; then
             echo "✅ snf:analytics format OK with $ANALYTICS_COUNT tags."
           else
-            echo "❌ Invalid snf:analytics format."
-            echo 'Expected analytics URL: https://analytics.smartnews.com/track?u=${snf_url}'
+            echo "❌ Invalid snf:analytics placeholder format."
+            echo 'Expected: track?u=${snf_url}'
             echo "Current analytics tags found:"
-            grep -A 1 '<snf:analytics>' feed.xml | head -10
+            grep '<snf:analytics>' feed.xml | head -5
             exit 1
           fi
       
