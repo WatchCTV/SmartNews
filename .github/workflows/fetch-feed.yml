@@ -6,7 +6,8 @@ on:
     branches:
       - main
     paths:
-      - "fetch_feed.py"
+      - "feed.xml"
+      - ".github/workflows/fetch-feed.yml"
 
 permissions:
   contents: write
@@ -20,33 +21,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install dependencies
+      - name: Validate SmartNews feed exists
         run: |
-          python -m pip install --upgrade pip
-          pip install requests feedparser lxml
+          if [ ! -f "feed.xml" ]; then
+            echo "❌ feed.xml not found at repo root."
+            exit 1
+          fi
 
-      - name: Fetch and build feed
+      - name: Validate snf:analytics tag format
         run: |
-          python fetch_feed.py
-
-      - name: Validate SmartNews feed
-        run: |
-          echo "Validating SmartNews feed..."
-          if grep -q "<snf:analytics" feed.xml; then
-            echo "Checking snf:analytics format..."
-            if grep -q "<snf:analytics><![CDATA[https://analytics.smartnews.com/track?u={snf_url}]]></snf:analytics>" feed.xml; then
+          if grep -q '<snf:analytics' feed.xml; then
+            if grep -q '<snf:analytics><!\[CDATA\[https://analytics.smartnews.com/track?u={snf_url}\]\]></snf:analytics>' feed.xml; then
               echo "✅ snf:analytics tag format looks valid."
             else
-              echo "❌ Invalid snf:analytics tag format detected."
+              echo "❌ Invalid snf:analytics tag format."
               exit 1
             fi
           else
-            echo "⚠️ No snf:analytics tag found in feed.xml"
+            echo "❌ snf:analytics tag missing."
             exit 1
           fi
 
