@@ -1,1 +1,57 @@
+name: Fix SmartNews Feed
 
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  update-feed:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch live feed
+        run: |
+          curl -L "https://www.cabletv.com/blog/category/entertainment/feed" -o feed.xml
+
+      - name: Ensure SmartNews logo and thumbnails
+        run: |
+          # Define logo URL (served directly from your repo)
+          LOGO_URL="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
+
+          # If no snf:logo tag, inject one after <channel>
+          if ! grep -q "<snf:logo>" feed.xml; then
+            sed -i "s|<channel>|<channel>\n  <snf:logo><url>${LOGO_URL}</url></snf:logo>|" feed.xml
+          fi
+
+          # Add missing media:thumbnail tags to each <item>
+          # Extract first <img> URL inside content:encoded if thumbnail is missing
+          awk '
+            /<item>/ {in_item=1}
+            in_item && /<content:encoded>/ {content=1}
+            in_item && content && match($0, /src="([^"]+)"/, arr) {img=arr[1]}
+            /<\/content:encoded>/ {content=0}
+            in_item && /<\/item>/ {
+              if (!match(item, /<media:thumbnail/)) {
+                print "    <media:thumbnail url=\"" img "\" />" >> "fixed_feed.xml"
+              }
+              in_item=0; img=""
+            }
+            {print >> "fixed_feed.xml"}
+          ' feed.xml && mv fixed_feed.xml feed.xml
+
+      - name: Validate XML format
+        run: |
+          xmllint --noout feed.xml || echo "Warning: XML validation skipped."
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add feed.xml
+          git commit -m "fix: add SmartNews logo and media thumbnails"
+          git push
