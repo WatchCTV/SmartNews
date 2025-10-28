@@ -32,11 +32,12 @@ jobs:
           
           channel = root.find('channel')
           
-          # Add logo
+          # Add logo with nested <url> tag
           desc = channel.find('description')
           desc_index = list(channel).index(desc)
           logo = etree.Element(f'{{{SNF_NS}}}logo')
-          logo.text = 'https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png'
+          url_elem = etree.SubElement(logo, 'url')
+          url_elem.text = 'https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png'
           channel.insert(desc_index + 1, logo)
           
           # Process items
