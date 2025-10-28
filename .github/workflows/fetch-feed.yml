@@ -54,6 +54,18 @@ jobs:
           if channel is None:
               raise ValueError("No <channel> found in feed")
 
+          # --- Update channel title and description ---
+          title_el = channel.find("title")
+          if title_el is not None:
+              title_el.text = "Entertainment News | CableTV.com"
+
+          desc_el = channel.find("description")
+          if desc_el is not None:
+              desc_el.text = "Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming."
+          else:
+              new_desc = etree.SubElement(channel, "description")
+              new_desc.text = "Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming."
+
           # --- SmartNews logo ---
           logo_url = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png"
           old_logo = channel.find("snf:logo", {"snf": SNF_NS})
@@ -99,7 +111,6 @@ jobs:
           for item in channel.findall("item"):
               title_el = item.find("title")
               if title_el is not None and title_el.text:
-                  # Replace any date shortcode variants with full year (e.g. 2025)
                   title_el.text = re.sub(
                       r'\[current_date\s+format\s*=\s*["\']?[yY]{1,4}["\']?\]',
                       year_full,
@@ -115,5 +126,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add feed.xml
-          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (logo + thumbnails + date fix)"
+          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (title + desc + logo + thumbnails + date fix)"
           git push
