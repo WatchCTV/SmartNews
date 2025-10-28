@@ -14,40 +14,48 @@ jobs:
       - name: Fetch and update feed
         run: |
           FEED_URL="https://www.cabletv.com/blog/category/entertainment/feed"
-          LOGO_PATH="CTV-Feed-Logo.png"
+          LOGO_URL="https://watchctv.github.io/SmartNews/CTV-Feed-Logo.png"
 
           echo "📡 Downloading feed..."
           curl -sSL "$FEED_URL" -o feed.xml
 
-          echo "🧩 Adding logo and thumbnails..."
+          echo "🧩 Injecting SmartNews logo and thumbnails..."
           python3 <<'PYCODE'
           import xml.etree.ElementTree as ET
+
+          ET.register_namespace('media', "http://search.yahoo.com/mrss/")
+          ET.register_namespace('snf', "http://www.smartnews.be/snf")
 
           tree = ET.parse("feed.xml")
           root = tree.getroot()
 
-          # Add logo if missing
+          # Ensure <channel> exists
           channel = root.find("channel")
-          if channel is not None and channel.find("logo") is None:
-              logo = ET.Element("logo")
-              logo.text = "CTV-Feed-Logo.png"
+          if channel is None:
+              raise ValueError("No <channel> found in feed")
+
+          # Add SmartNews logo (snf:logo)
+          logo_tag = "{http://www.smartnews.be/snf}logo"
+          if channel.find(logo_tag) is None:
+              logo = ET.Element(logo_tag)
+              logo.text = "https://watchctv.github.io/SmartNews/CTV-Feed-Logo.png"
               channel.append(logo)
 
-          # Add thumbnails to each item if missing
+          # Add thumbnails to each item
           for item in channel.findall("item"):
-              media_thumb = item.find("thumbnail")
-              if media_thumb is None:
-                  thumb = ET.Element("thumbnail")
-                  thumb.text = "CTV-Feed-Logo.png"
+              thumb_tag = "{http://search.yahoo.com/mrss/}thumbnail"
+              if item.find(thumb_tag) is None:
+                  thumb = ET.Element(thumb_tag)
+                  thumb.set("url", "https://watchctv.github.io/SmartNews/CTV-Feed-Logo.png")
                   item.append(thumb)
 
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
           PYCODE
 
-      - name: Commit and push changes
+      - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml
-          git commit -m "Fix SmartNews feed: added logo and thumbnails" || echo "No changes"
+          git commit -m "Added SmartNews logo and thumbnails" || echo "No changes to commit"
           git push
