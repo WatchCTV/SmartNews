@@ -24,23 +24,21 @@ jobs:
 
       - name: Fetch and fix SmartNews feed
         run: |
-          # Download the original RSS feed
           curl -sSL "https://www.cabletv.com/blog/category/entertainment/feed" -o original.xml
 
           python3 <<'EOF'
           from lxml import etree
           from bs4 import BeautifulSoup
-          import requests
+          import requests, datetime, re
 
           SNF_NS = "http://www.smartnews.be/snf"
           MEDIA_NS = "http://search.yahoo.com/mrss/"
-          CONTENT_NS = "http://purl.org/rss/1.0/modules/content/"
 
           parser = etree.XMLParser(strip_cdata=False)
           tree = etree.parse("original.xml", parser)
           root = tree.getroot()
 
-          # Ensure SmartNews namespace exists
+          # Ensure SmartNews namespace
           if "snf" not in root.nsmap:
               nsmap = root.nsmap.copy()
               nsmap["snf"] = SNF_NS
@@ -54,38 +52,30 @@ jobs:
 
           channel = root.find("channel")
           if channel is None:
-              raise ValueError("No <channel> element found in feed")
+              raise ValueError("No <channel> found in feed")
 
-          # --- Add SmartNews logo ---
+          # --- SmartNews logo ---
           logo_url = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png"
           old_logo = channel.find("snf:logo", {"snf": SNF_NS})
           if old_logo is not None:
               channel.remove(old_logo)
-
           logo_el = etree.Element(f"{{{SNF_NS}}}logo")
           url_el = etree.SubElement(logo_el, "url")
           url_el.text = logo_url
           channel.append(logo_el)
 
-          # --- Add media:thumbnail using featured image or og:image ---
+          # --- Thumbnails ---
           for item in channel.findall("item"):
-              # Skip if already has thumbnail
               if item.find("media:thumbnail", {"media": MEDIA_NS}) is not None:
                   continue
-
               link = item.findtext("link")
               if not link:
                   continue
-
               try:
                   resp = requests.get(link, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
                   if resp.status_code != 200:
-                      print(f"Skipping {link}: HTTP {resp.status_code}")
                       continue
-
                   soup = BeautifulSoup(resp.text, "html.parser")
-
-                  # Try to find featured image
                   img = soup.select_one("img.wp-post-image")
                   if not img:
                       meta_img = soup.select_one('meta[property="og:image"]')
@@ -96,16 +86,23 @@ jobs:
                           img_url = img_tag["src"].strip() if img_tag and img_tag.get("src") else None
                   else:
                       img_url = img.get("src")
-
                   if img_url:
                       thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
                       thumb_el.set("url", img_url)
                       item.append(thumb_el)
-                      print(f"Added thumbnail for {link}")
-
               except Exception as e:
-                  print(f"Error processing {link}: {e}")
+                  print(f"Thumbnail error for {link}: {e}")
 
+          ### NEW FIX — Replace [current_date format="yy"] with real year
+          year_full = datetime.datetime.now().year
+          year_short = str(year_full)[-2:]
+          for item in channel.findall("item"):
+              title_el = item.find("title")
+              if title_el is not None and title_el.text:
+                  title_el.text = re.sub(r'\[current_date\s+format="?yy"?\]', year_short, title_el.text)
+                  title_el.text = re.sub(r'\[current_date\s+format="?yyyy"?\]', str(year_full), title_el.text)
+
+          # Write final feed
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
           EOF
 
@@ -114,5 +111,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add feed.xml
-          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (logo + thumbnails)"
+          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (logo + thumbnails + date fix)"
           git push
