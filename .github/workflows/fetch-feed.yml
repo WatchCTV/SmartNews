@@ -30,6 +30,7 @@ jobs:
           python3 <<'EOF'
           from lxml import etree
           from bs4 import BeautifulSoup
+          import requests
 
           SNF_NS = "http://www.smartnews.be/snf"
           MEDIA_NS = "http://search.yahoo.com/mrss/"
@@ -66,25 +67,44 @@ jobs:
           url_el.text = logo_url
           channel.append(logo_el)
 
-          # --- Add media:thumbnail using more reliable logic ---
+          # --- Add media:thumbnail using featured image or og:image ---
           for item in channel.findall("item"):
-              media_thumb = item.find("media:thumbnail", {"media": MEDIA_NS})
-              if media_thumb is not None:
+              # Skip if already has thumbnail
+              if item.find("media:thumbnail", {"media": MEDIA_NS}) is not None:
                   continue
 
-              html = (item.findtext("description") or "") + (item.findtext(f"{{{CONTENT_NS}}}encoded") or "")
-              soup = BeautifulSoup(html, "html.parser")
+              link = item.findtext("link")
+              if not link:
+                  continue
 
-              # Try featured image first
-              img = soup.select_one("img.wp-post-image") \
-                    or soup.select_one('a[data-element="Image"] > img') \
-                    or soup.find("img")
+              try:
+                  resp = requests.get(link, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
+                  if resp.status_code != 200:
+                      print(f"Skipping {link}: HTTP {resp.status_code}")
+                      continue
 
-              if img and img.get("src"):
-                  thumb_url = img["src"].strip()
-                  thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
-                  thumb_el.set("url", thumb_url)
-                  item.append(thumb_el)
+                  soup = BeautifulSoup(resp.text, "html.parser")
+
+                  # Try to find featured image
+                  img = soup.select_one("img.wp-post-image")
+                  if not img:
+                      meta_img = soup.select_one('meta[property="og:image"]')
+                      if meta_img and meta_img.get("content"):
+                          img_url = meta_img["content"].strip()
+                      else:
+                          img_tag = soup.find("img")
+                          img_url = img_tag["src"].strip() if img_tag and img_tag.get("src") else None
+                  else:
+                      img_url = img.get("src")
+
+                  if img_url:
+                      thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
+                      thumb_el.set("url", img_url)
+                      item.append(thumb_el)
+                      print(f"Added thumbnail for {link}")
+
+              except Exception as e:
+                  print(f"Error processing {link}: {e}")
 
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
           EOF
@@ -94,5 +114,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add feed.xml
-          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (logo + featured thumbnails)"
+          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (logo + thumbnails)"
           git push
