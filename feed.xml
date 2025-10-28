@@ -811,7 +811,7 @@
 					
 		
 		
-			</item>
+			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2023/01/MLS-season-pass.png"/></item>
 		<item>
 		<title>How To Watch the 2025 CFL Season</title>
 		<link>https://www.cabletv.com/sports/watch-cfl</link>
@@ -1567,7 +1567,7 @@
 					
 		
 		
-			</item>
+			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2023/05/CFL_Plus_logo.png"/></item>
 		<item>
 		<title>What To Watch This Week: Stream Our Top 7 TV and Movie Picks (Oct. 27–Nov. 2)</title>
 		<link>https://www.cabletv.com/what-to-watch</link>
@@ -1954,7 +1954,7 @@
 					
 		
 		
-			</item>
+			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2025/10/FEATIMG_W2W-OCT27–NOV-2-opt.webp"/></item>
 		<item>
 		<title>Late-Night TV Show Lineups This Week: Colbert, Fallon, Meyers, and More (Oct. 27–Nov. 2)</title>
 		<link>https://www.cabletv.com/entertainment/late-night-tv-this-week</link>
@@ -2348,7 +2348,7 @@
 					
 		
 		
-			</item>
+			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2025/04/directv-stream-new-logo-600x170.webp"/></item>
 		<item>
 		<title>NFL Plus Review [current_date format="yy"]: Score Live NFL Action on the Go</title>
 		<link>https://www.cabletv.com/sports/nfl-plus-review</link>
@@ -3154,7 +3154,7 @@
 					
 		
 		
-			</item>
+			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/03/NFL.png"/></item>
 		<item>
 		<title>How To Watch Alabama Football</title>
 		<link>https://www.cabletv.com/sports/watch-alabama-football</link>
@@ -4168,7 +4168,7 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			</item>
+			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2025/06/Bama8.webp"/></item>
 		<item>
 		<title>How To Watch BYU Cougars Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-byu-cougars-football</link>
@@ -5091,7 +5091,7 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			</item>
+			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/04/CTV_Logo-CTV-Sports-150x150.png"/></item>
 		<item>
 		<title>How To Watch Army Black Knights Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-army-black-knights-football</link>
@@ -6004,7 +6004,7 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			</item>
+			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/04/CTV_Logo-CTV-Sports-150x150.png"/></item>
 		<item>
 		<title>How To Watch Florida State Seminoles Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-florida-state-seminoles-football</link>
@@ -6926,7 +6926,7 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			</item>
+			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/04/CTV_Logo-CTV-Sports-150x150.png"/></item>
 		<item>
 		<title>How To Watch Tennessee Volunteers Football in [current_date format="yy"]</title>
 		<link>https://www.cabletv.com/sports/watch-tennessee-volunteers-football</link>
@@ -7850,6 +7850,6 @@ window._load_script = function(url, callback, isSubmit) {
 					
 		
 		
-			</item>
-	<snf:logo><url>https://www.cabletv.com/images/CTV-Feed-Logo.png</url></snf:logo><snf:darkModeLogo><url>https://www.cabletv.com/images/CTV-Feed-Logo-Dark.png</url></snf:darkModeLogo></channel>
+			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/04/CTV_Logo-CTV-Sports-150x150.png"/></item>
+	<snf:logo><url>https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png</url></snf:logo></channel>
 </rss>
