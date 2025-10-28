@@ -12,15 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch and update SmartNews feed
+      - name: Inject SmartNews logo and thumbnails
         run: |
           FEED_URL="https://www.cabletv.com/blog/category/entertainment/feed"
-          LOGO="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
+          LOGO_URL="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
 
           curl -sSL "$FEED_URL" -o feed.xml
 
           python3 <<'PYCODE'
           import xml.etree.ElementTree as ET
+
           ET.register_namespace('media', "http://search.yahoo.com/mrss/")
           ET.register_namespace('snf', "http://www.smartnews.be/snf")
 
@@ -28,8 +29,9 @@ jobs:
           root = tree.getroot()
           channel = root.find("channel")
           if channel is None:
-              raise SystemExit("No <channel> element found")
+              raise SystemExit("No <channel> found")
 
+          # Add or update SmartNews logo
           logo_tag = "{http://www.smartnews.be/snf}logo"
           logo = channel.find(logo_tag)
           if logo is None:
@@ -37,6 +39,7 @@ jobs:
               channel.append(logo)
           logo.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
 
+          # Add or update media thumbnails
           thumb_tag = "{http://search.yahoo.com/mrss/}thumbnail"
           for item in channel.findall("item"):
               thumb = item.find(thumb_tag)
@@ -48,9 +51,9 @@ jobs:
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
           PYCODE
 
-      - name: Commit and push changes
+      - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml
-          git diff --quiet || (git commit -m "Fix: added SmartNews logo and thumbnails" && git push)
+          git diff --quiet || (git commit -m "Fix SmartNews logo + thumbnails" && git push)
