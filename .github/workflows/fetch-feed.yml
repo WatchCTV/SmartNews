@@ -27,34 +27,32 @@ jobs:
           root = tree.getroot()
           
           # Define namespaces
-          ns = {
-              'content': 'http://purl.org/rss/1.0/modules/content/',
-              'snf': 'http://www.smartnews.be/snf',
-              'media': 'http://search.yahoo.com/mrss/'
-          }
+          SNF_NS = 'http://www.smartnews.be/snf'
+          MEDIA_NS = 'http://search.yahoo.com/mrss/'
+          CONTENT_NS = 'http://purl.org/rss/1.0/modules/content/'
           
-          # Add namespaces to root
-          for prefix, uri in ns.items():
-              root.attrib[f'{{{etree.QName(root).namespace}}}xmlns:{prefix}' if etree.QName(root).namespace else f'xmlns:{prefix}'] = uri
+          # Register with proper prefixes
+          etree.register_namespace('snf', SNF_NS)
+          etree.register_namespace('media', MEDIA_NS)
           
           channel = root.find('channel')
           
-          # Add logo
+          # Add logo with snf: prefix
           desc = channel.find('description')
           desc_index = list(channel).index(desc)
-          logo = etree.Element(f'{{{ns["snf"]}}}logo')
+          logo = etree.Element(f'{{{SNF_NS}}}logo')
           logo.text = 'https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png'
           channel.insert(desc_index + 1, logo)
           
           # Process items
           for item in channel.findall('item'):
               # Add thumbnail
-              thumb = etree.Element(f'{{{ns["media"]}}}thumbnail')
+              thumb = etree.Element(f'{{{MEDIA_NS}}}thumbnail')
               thumb.set('url', 'https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png')
               item.insert(0, thumb)
               
               # Fix content:encoded with CDATA
-              content = item.find(f'{{{ns["content"]}}}encoded')
+              content = item.find(f'{{{CONTENT_NS}}}encoded')
               if content is not None:
                   text = content.text if content.text else ''
                   # Limit links
@@ -65,18 +63,18 @@ jobs:
                           if match:
                               text = text.replace(link, match.group(1), 1)
                   
-                  # Clear and set as CDATA
+                  # Set as CDATA
                   content.text = etree.CDATA(text)
               
-              # Add analytics with CDATA
+              # Add analytics as ATTRIBUTE not CDATA
               link = item.find('link')
               if link is not None and link.text:
-                  analytics = etree.Element(f'{{{ns["snf"]}}}analytics')
-                  analytics.text = etree.CDATA(link.text)
+                  analytics = etree.Element(f'{{{SNF_NS}}}analytics')
+                  analytics.set('url', link.text)  # Use attribute, not text content
                   item.append(analytics)
           
-          # Write with CDATA preserved
-          tree.write('feed.xml', encoding='utf-8', xml_declaration=True, pretty_print=False)
+          # Write with proper encoding
+          tree.write('feed.xml', encoding='utf-8', xml_declaration=True, pretty_print=True)
           EOF
       
       - name: Commit
@@ -84,5 +82,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml
-          git diff --quiet --staged || git commit -m "Update feed"
+          git diff --quiet --staged || git commit -m "Update SmartNews feed"
           git push
