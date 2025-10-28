@@ -1,6 +1,8 @@
 name: Fix SmartNews Feed
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
 jobs:
   update-feed:
     runs-on: ubuntu-latest
@@ -9,12 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Inject SmartNews logo and thumbnails
+      - name: Fix feed
         run: |
-          FEED_URL="https://www.cabletv.com/blog/category/entertainment/feed"
-          curl -sSL "$FEED_URL" -o feed.xml
+          curl -sSL "https://www.cabletv.com/blog/category/entertainment/feed" -o feed.xml
           
-          python3 <<'PYCODE'
+          python3 <<'EOF'
           import xml.etree.ElementTree as ET
           import re
           
@@ -22,41 +23,62 @@ jobs:
           root = tree.getroot()
           channel = root.find("channel")
           
-          # Add logo to channel
+          # Add namespaces
+          root.set("xmlns:snf", "http://www.smartnews.be/snf")
+          root.set("xmlns:media", "http://search.yahoo.com/mrss/")
+          
+          # Add logo
+          desc = channel.find("description")
+          desc_index = list(channel).index(desc)
           logo = ET.Element("{http://www.smartnews.be/snf}logo")
           logo.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
-          channel.insert(3, logo)
+          channel.insert(desc_index + 1, logo)
           
-          # Fix each item
+          # Process items
           for item in channel.findall("item"):
               # Add thumbnail
               thumb = ET.Element("{http://search.yahoo.com/mrss/}thumbnail")
               thumb.set("url", "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png")
               item.insert(0, thumb)
               
-              # Limit links in content:encoded
+              # Fix content:encoded - wrap in CDATA and limit links
               content = item.find("{http://purl.org/rss/1.0/modules/content/}encoded")
-              if content is not None and content.text:
-                  links = re.findall(r'<a[^>]*>.*?</a>', content.text, re.DOTALL)
+              if content is not None:
+                  text = content.text if content.text else ""
+                  # Limit links to 3
+                  links = re.findall(r'<a[^>]*href="[^"]*"[^>]*>.*?</a>', text, re.DOTALL)
                   if len(links) > 3:
                       for link in links[3:]:
-                          match = re.search(r'>([^<]+)<', link)
-                          if match:
-                              content.text = content.text.replace(link, match.group(1), 1)
+                          link_text = re.search(r'>([^<]+)<', link)
+                          if link_text:
+                              text = text.replace(link, link_text.group(1), 1)
+                  # Remove existing text and set as CDATA
+                  content.text = None
+                  content.append(ET.Comment(f"[CDATA[{text}]]"))
               
-              # Add analytics
-              link_elem = item.find("link")
-              if link_elem is not None and link_elem.text:
+              # Add analytics with CDATA
+              link = item.find("link")
+              if link is not None and link.text:
                   analytics = ET.Element("{http://www.smartnews.be/snf}analytics")
-                  analytics.set("url", link_elem.text)
+                  analytics.text = None
+                  analytics.append(ET.Comment(f"[CDATA[{link.text}]]"))
                   item.append(analytics)
           
-          tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
-          PYCODE
+          # Write XML
+          xml_str = ET.tostring(root, encoding='unicode')
+          # Fix CDATA formatting
+          xml_str = xml_str.replace("<!--[CDATA[", "<![CDATA[")
+          xml_str = xml_str.replace("]]-->", "]]>")
+          
+          with open("feed.xml", "w", encoding="utf-8") as f:
+              f.write('<?xml version="1.0" encoding="utf-8"?>\n')
+              f.write(xml_str)
+          EOF
       
-      - name: Commit and push if changed
+      - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml
-          git diff --quiet || (git commit -m "Fix SmartNews feed" && git push)
+          git diff --quiet --staged || git commit -m "Update feed"
+          git push
