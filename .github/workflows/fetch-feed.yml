@@ -1,70 +1,74 @@
 name: Fix SmartNews Feed
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   update-feed:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install tools
+      - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y libxml2-utils curl
+          sudo apt-get update -y
+          sudo apt-get install -y curl libxml2-utils
 
-      - name: Fetch live feed
+      - name: Download latest CableTV feed
         run: |
           curl -L "https://www.cabletv.com/blog/category/entertainment/feed" -o feed.xml
 
-      - name: Ensure SmartNews logo and thumbnails
+      - name: Add SmartNews logo and fix thumbnails
         run: |
           LOGO_URL="https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CTV-Feed-Logo.png"
 
           # Inject SmartNews logo if missing
           if ! grep -q "<snf:logo>" feed.xml; then
             sed -i "s|<channel>|<channel>\n  <snf:logo><url>${LOGO_URL}</url></snf:logo>|" feed.xml
-            echo "✅ Added SmartNews logo"
+            echo "✅ SmartNews logo added"
+          else
+            echo "ℹ️ SmartNews logo already present"
           fi
 
-          # Create a temp file for safe processing
+          # Extract image URLs and add missing media:thumbnail tags
           awk '
-            BEGIN {in_item=0; content=0; img=""}
-            /<item>/ {in_item=1}
-            in_item && /<content:encoded>/ {content=1}
-            in_item && content && match($0, /src="([^"]+)"/, arr) {img=arr[1]}
-            /<\/content:encoded>/ {content=0}
-            in_item && /<\/item>/ {
-              if (img != "" && !match(item, /<media:thumbnail/)) {
-                print "    <media:thumbnail url=\"" img "\" />"
+            BEGIN {in_item=0; img=""}
+            /<item>/ {in_item=1; item=""}
+            in_item {item = item $0 ORS}
+            in_item && match($0, /<content:encoded>.*src="([^"]+)"/, arr) {img=arr[1]}
+            /<\/item>/ {
+              if (in_item && img != "" && item !~ /<media:thumbnail/) {
+                sub(/<\/item>/, "    <media:thumbnail url=\"" img "\" />\n</item>", item)
               }
-              in_item=0; img=""
+              print item
+              in_item=0; item=""; img=""
             }
-            {print}
-          ' feed.xml > fixed_feed.xml
+            !in_item && !/<item>/ {print}
+          ' feed.xml > feed_fixed.xml
+          mv feed_fixed.xml feed.xml
 
-          mv fixed_feed.xml feed.xml
-          echo "✅ Added missing media:thumbnail tags (if any)"
+          echo "✅ Feed thumbnails verified and updated"
 
-      - name: Validate XML format
+      - name: Validate feed format
         run: |
-          xmllint --noout feed.xml || echo "⚠️ XML validation warning (not critical)."
+          xmllint --noout feed.xml
+          echo "✅ XML syntax valid"
 
-       - name: Commit and push changes
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.xml
           if ! git diff --cached --quiet; then
-            git commit -m "fix: add SmartNews logo and media thumbnails"
-            git push
+            git commit -m "chore: update SmartNews feed with logo and thumbnails"
+            git push origin main
           else
             echo "No changes to commit."
           fi
-
