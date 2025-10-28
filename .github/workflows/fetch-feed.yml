@@ -61,10 +61,16 @@ jobs:
 
           desc_el = channel.find("description")
           if desc_el is not None:
-              desc_el.text = "Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming."
+              desc_el.text = (
+                  "Super fans, rejoice! Our entertainment news keeps you passionate "
+                  "about sports, TV, and streaming."
+              )
           else:
               new_desc = etree.SubElement(channel, "description")
-              new_desc.text = "Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming."
+              new_desc.text = (
+                  "Super fans, rejoice! Our entertainment news keeps you passionate "
+                  "about sports, TV, and streaming."
+              )
 
           # --- SmartNews logo ---
           logo_url = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png"
@@ -105,6 +111,11 @@ jobs:
               if not img_url:
                   continue
 
+              # --- Filter out unwanted logos or ad images ---
+              if any(bad in img_url.lower() for bad in ["hulu", "logo", "ads", "banner", "sponsor"]):
+                  print(f"Skipped logo/ad image for {link}: {img_url}")
+                  continue
+
               # --- Add or update <media:thumbnail> ---
               if item.find("media:thumbnail", {"media": MEDIA_NS}) is None:
                   thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
@@ -115,7 +126,12 @@ jobs:
               content_el = item.find("{http://purl.org/rss/1.0/modules/content/}encoded")
               if content_el is not None:
                   content_html = content_el.text or ""
-                  img_html = f'<div style="margin:20px 0;text-align:center;"><img src="{img_url}" alt="" style="max-width:100%;height:auto;border-radius:8px;" /></div>'
+                  img_html = (
+                      f'<div style="margin:20px 0;text-align:center;">'
+                      f'<img src="{img_url}" alt="" '
+                      f'style="max-width:100%;height:auto;border-radius:8px;" />'
+                      f'</div>'
+                  )
                   if img_url not in content_html:
                       combined_html = img_html + content_html
                       content_el.text = etree.CDATA(combined_html)
@@ -140,5 +156,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add feed.xml
-          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (embed thumbnails + date + title + desc)"
+          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (embed thumbnails + skip logos + date + title + desc)"
           git push
