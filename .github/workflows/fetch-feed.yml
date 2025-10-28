@@ -113,11 +113,12 @@ jobs:
 
               # --- Embed image into <content:encoded> (above article text) ---
               content_el = item.find("{http://purl.org/rss/1.0/modules/content/}encoded")
-              if content_el is not None and img_url not in content_el.text:
+              if content_el is not None:
                   content_html = content_el.text or ""
                   img_html = f'<div style="margin:20px 0;text-align:center;"><img src="{img_url}" alt="" style="max-width:100%;height:auto;border-radius:8px;" /></div>'
-                  # Insert image after logo but before the first paragraph
-                  content_el.text = img_html + content_html
+                  if img_url not in content_html:
+                      combined_html = img_html + content_html
+                      content_el.text = etree.CDATA(combined_html)
 
           # --- Fix [current_date format="yy"], [current_date format="yyyy"], etc. ---
           year_full = str(datetime.datetime.now().year)
