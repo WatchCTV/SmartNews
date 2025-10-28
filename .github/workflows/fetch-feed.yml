@@ -76,38 +76,51 @@ jobs:
           url_el.text = logo_url
           channel.append(logo_el)
 
-          # --- Thumbnails ---
+          # --- Thumbnails + embed inside article ---
           for item in channel.findall("item"):
-              if item.find("media:thumbnail", {"media": MEDIA_NS}) is not None:
-                  continue
               link = item.findtext("link")
               if not link:
                   continue
+
+              img_url = None
               try:
                   resp = requests.get(link, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
                   if resp.status_code != 200:
                       continue
                   soup = BeautifulSoup(resp.text, "html.parser")
+
                   img = soup.select_one("img.wp-post-image")
-                  if not img:
+                  if img and img.get("src"):
+                      img_url = img["src"].strip()
+                  else:
                       meta_img = soup.select_one('meta[property="og:image"]')
                       if meta_img and meta_img.get("content"):
                           img_url = meta_img["content"].strip()
                       else:
                           img_tag = soup.find("img")
                           img_url = img_tag["src"].strip() if img_tag and img_tag.get("src") else None
-                  else:
-                      img_url = img.get("src")
-                  if img_url:
-                      thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
-                      thumb_el.set("url", img_url)
-                      item.append(thumb_el)
               except Exception as e:
                   print(f"Thumbnail error for {link}: {e}")
 
-          # --- Fix [current_date format="yy"], [current_date format="yyyy"], [current_date format="Y"], etc. ---
-          year_full = str(datetime.datetime.now().year)
+              if not img_url:
+                  continue
 
+              # --- Add or update <media:thumbnail> ---
+              if item.find("media:thumbnail", {"media": MEDIA_NS}) is None:
+                  thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
+                  thumb_el.set("url", img_url)
+                  item.append(thumb_el)
+
+              # --- Embed image into <content:encoded> (above article text) ---
+              content_el = item.find("{http://purl.org/rss/1.0/modules/content/}encoded")
+              if content_el is not None and img_url not in content_el.text:
+                  content_html = content_el.text or ""
+                  img_html = f'<div style="margin:20px 0;text-align:center;"><img src="{img_url}" alt="" style="max-width:100%;height:auto;border-radius:8px;" /></div>'
+                  # Insert image after logo but before the first paragraph
+                  content_el.text = img_html + content_html
+
+          # --- Fix [current_date format="yy"], [current_date format="yyyy"], etc. ---
+          year_full = str(datetime.datetime.now().year)
           for item in channel.findall("item"):
               title_el = item.find("title")
               if title_el is not None and title_el.text:
@@ -126,5 +139,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add feed.xml
-          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (title + desc + logo + thumbnails + date fix)"
+          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (embed thumbnails + date + title + desc)"
           git push
