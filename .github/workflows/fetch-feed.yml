@@ -24,7 +24,7 @@ jobs:
 
       - name: Fetch and fix SmartNews feed
         run: |
-          curl -sSL "https://www.cabletv.com/blog/category/entertainment/feed" -o original.xml
+          curl -sSL "https://www.cabletv.com/blog/category/industry-news/feed" -o original.xml
 
           python3 <<'EOF'
           from lxml import etree
