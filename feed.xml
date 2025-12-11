@@ -2012,57 +2012,58 @@ window._load_script = function(url, callback, isSubmit) {
 
 		</div>
 	</div>
-<div class="logo-row ">
-              <div class="logo-row__item">
-        <a href='/xfinity/promotions' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/10/Xfinity-logo.svg'  alt='Xfinity logo' loading='lazy'></a>      </div>
-              <div class="logo-row__item">
-        <a href='/tmobile/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO-300x121.webp' srcset='https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO.webp 720w, https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO-600x242.webp 600w, https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO-300x121.webp 300w' alt='TMobile_5G_Home_Internet_TMO' loading='lazy'></a>      </div>
-              <div class="logo-row__break"></div>
-            <div class="logo-row__item">
-        <a href='/att/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/10/ATT-logo.svg'  alt='AT&#038;T logo' loading='lazy'></a>      </div>
-  </div>
-<div class="logo-row ">
-              <div class="logo-row__item">
-        <a href='/spectrum/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/10/Spectrum-logo.svg'  alt='Spectrum logo' loading='lazy'></a>      </div>
-              <div class="logo-row__item">
-        <a href='/verizon/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2025/03/Verizon_GlowWordmark_RGB-1.svg'  alt='Verizon_GlowWordmark_RGB (1)' loading='lazy'></a>      </div>
-              <div class="logo-row__break"></div>
-            <div class="logo-row__item">
-        <a href='/cox/deals-and-promotions' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2020/05/Cox-Logo-4C-R-1-1.jpg' srcset='https://www.cabletv.com/app/uploads/2020/05/Cox-Logo-4C-R-1-1.jpg 2084w, https://www.cabletv.com/app/uploads/2020/05/Cox-Logo-4C-R-1-1-1115x370.jpg 1115w, https://www.cabletv.com/app/uploads/2020/05/Cox-Logo-4C-R-1-1-1565x520.jpg 1565w' alt='Cox-Logo-4C-R-1' loading='lazy'></a>      </div>
-  </div>
-<div class="logo-row ">
-              <div class="logo-row__item">
-        <a href='/optimum/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2020/01/optimum-1-1.svg'  alt='optimum-1-1' loading='lazy'></a>      </div>
-              <div class="logo-row__item">
-        <a href='/directv/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-300x158.webp' srcset='https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-png.webp 1200w, https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-600x315.webp 600w, https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-900x473.webp 900w, https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-300x158.webp 300w' alt='directv-stream-2025-logo' loading='lazy'></a>      </div>
-              <div class="logo-row__break"></div>
-            <div class="logo-row__item">
-        <a href='/dish/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/03/dish.svg'  alt='DISH logo' loading='lazy'></a>      </div>
-  </div>
-<div class="logo-row ">
-              <div class="logo-row__item">
-        <a href='/youtube-tv/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2019/03/YouTubeTV-Logo.png' srcset='https://www.cabletv.com/app/uploads/2019/03/YouTubeTV-Logo.png 152w, https://www.cabletv.com/app/uploads/2019/03/YouTubeTV-Logo-150x95.png 150w' alt='YouTubeTV-Logo.png' loading='lazy'></a>      </div>
-              <div class="logo-row__item">
-        <a href='/disney-plus/bundles' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/05/DisneyPlus.svg'  alt='DisneyPlus' loading='lazy'></a>      </div>
-              <div class="logo-row__break"></div>
-            <div class="logo-row__item">
-        <a href='/hulu/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/05/Featured-image-Hulu-logo-1200x630-1.jpg' srcset='https://www.cabletv.com/app/uploads/2022/05/Featured-image-Hulu-logo-1200x630-1.jpg 1200w, https://www.cabletv.com/app/uploads/2022/05/Featured-image-Hulu-logo-1200x630-1-1115x585.jpg 1115w' alt='Featured image &#8211; Hulu logo 1200&#215;630' loading='lazy'></a>      </div>
-  </div>
-<div class="logo-row ">
-              <div class="logo-row__item">
-        <a href='/hbo-max/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-300x219.webp' srcset='https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225.webp 1592w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-600x439.webp 600w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-1026x750.webp 1026w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-1536x1123.webp 1536w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-900x658.webp 900w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-300x219.webp 300w' alt='HBO Max_Logo_Obsidian Black_052225' loading='lazy'></a>      </div>
-              <div class="logo-row__item">
-        <a href='/fubotv/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2023/11/fubo.svg'  alt='fubo' loading='lazy'></a>      </div>
-              <div class="logo-row__break"></div>
-            <div class="logo-row__item">
-        <a href='/paramount-plus/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/03/paramount-plus-with-showtime.svg'  alt='paramount-plus-with-showtime' loading='lazy'></a>      </div>
-  </div>
-<div class="logo-row ">
-              <div class="logo-row__item">
-        <a href='/sling-tv' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/11/sling-logo-2022.png'  alt='sling-logo-2022' loading='lazy'></a>      </div>
-              <div class="logo-row__item">
-        <a href='/philo/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2021/09/philo-logo-dark.svg'  alt='philo-logo-dark' loading='lazy'></a>      </div>
-  </div>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:20px;">
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/xfinity/promotions' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/10/Xfinity-logo.svg' alt='Xfinity logo' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/tmobile/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO-300x121.webp' alt='TMobile_5G_Home_Internet_TMO' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/att/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/10/ATT-logo.svg' alt='AT&#038;T logo' style='height=60px;width: 135px;'></a>        </div>
+    </div>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:20px;">
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/spectrum/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/10/Spectrum-logo.svg' alt='Spectrum logo' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/verizon/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2025/03/Verizon_GlowWordmark_RGB-1.svg' alt='Verizon_GlowWordmark_RGB (1)' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/cox/deals-and-promotions' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2020/05/Cox-Logo-4C-R-1-1.jpg' alt='Cox-Logo-4C-R-1' style='height=60px;width: 135px;'></a>        </div>
+    </div>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:20px;">
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/optimum/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2020/01/optimum-1-1.svg' alt='optimum-1-1' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/directv/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-300x158.webp' alt='directv-stream-2025-logo' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/dish/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/03/dish.svg' alt='DISH logo' style='height=60px;width: 135px;'></a>        </div>
+    </div>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:20px;">
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/youtube-tv/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2019/03/YouTubeTV-Logo.png' alt='YouTubeTV-Logo.png' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/disney-plus/bundles' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/05/DisneyPlus.svg' alt='DisneyPlus' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/hulu/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/05/Featured-image-Hulu-logo-1200x630-1.jpg' alt='Featured image &#8211; Hulu logo 1200&#215;630' style='height=60px;width: 135px;'></a>        </div>
+    </div>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:20px;">
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/hbo-max/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-300x219.webp' alt='HBO Max_Logo_Obsidian Black_052225' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/fubotv/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2023/11/fubo.svg' alt='fubo' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/paramount-plus/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/03/paramount-plus-with-showtime.svg' alt='paramount-plus-with-showtime' style='height=60px;width: 135px;'></a>        </div>
+    </div>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:20px;">
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/sling-tv' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/11/sling-logo-2022.png' alt='sling-logo-2022' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/philo/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2021/09/philo-logo-dark.svg' alt='philo-logo-dark' style='height=60px;width: 135px;'></a>        </div>
+    </div>
 </div></div></div></div></div></div></div></div></div></div><div class="row large-padding"><div class="columns small-12 medium-12 large-12"><span name="2" id="2" class="section_anchor " data-anchor="2" ></span>
 <div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_border_width_3 vc_sep_pos_align_center vc_sep_color_blue wpb_content_element" ><span class="vc_sep_holder vc_sep_holder_l"><span class="vc_sep_line"></span></span><div class="vc_icon_element vc_icon_element-outer vc_do_icon vc_icon_element-align-left"><div class="vc_icon_element-inner vc_icon_element-color-juicy_pink vc_icon_element-size-md vc_icon_element-style- vc_icon_element-background-color-grey" ><span class="vc_icon_element-icon fas fa-gift" ></span></div></div><span class="vc_sep_holder vc_sep_holder_r"><span class="vc_sep_line"></span></span>
 </div>
@@ -4797,57 +4798,58 @@ window._load_script = function(url, callback, isSubmit) {
 
 		</div>
 	</div>
-<div class="logo-row ">
-              <div class="logo-row__item">
-        <a href='/xfinity/promotions' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/10/Xfinity-logo.svg'  alt='Xfinity logo' loading='lazy'></a>      </div>
-              <div class="logo-row__item">
-        <a href='/tmobile/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO-300x121.webp' srcset='https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO.webp 720w, https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO-600x242.webp 600w, https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO-300x121.webp 300w' alt='TMobile_5G_Home_Internet_TMO' loading='lazy'></a>      </div>
-              <div class="logo-row__break"></div>
-            <div class="logo-row__item">
-        <a href='/att/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/10/ATT-logo.svg'  alt='AT&#038;T logo' loading='lazy'></a>      </div>
-  </div>
-<div class="logo-row ">
-              <div class="logo-row__item">
-        <a href='/spectrum/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/10/Spectrum-logo.svg'  alt='Spectrum logo' loading='lazy'></a>      </div>
-              <div class="logo-row__item">
-        <a href='/verizon/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2025/03/Verizon_GlowWordmark_RGB-1.svg'  alt='Verizon_GlowWordmark_RGB (1)' loading='lazy'></a>      </div>
-              <div class="logo-row__break"></div>
-            <div class="logo-row__item">
-        <a href='/cox/deals-and-promotions' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2020/05/Cox-Logo-4C-R-1-1.jpg' srcset='https://www.cabletv.com/app/uploads/2020/05/Cox-Logo-4C-R-1-1.jpg 2084w, https://www.cabletv.com/app/uploads/2020/05/Cox-Logo-4C-R-1-1-1115x370.jpg 1115w, https://www.cabletv.com/app/uploads/2020/05/Cox-Logo-4C-R-1-1-1565x520.jpg 1565w' alt='Cox-Logo-4C-R-1' loading='lazy'></a>      </div>
-  </div>
-<div class="logo-row ">
-              <div class="logo-row__item">
-        <a href='/optimum/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2020/01/optimum-1-1.svg'  alt='optimum-1-1' loading='lazy'></a>      </div>
-              <div class="logo-row__item">
-        <a href='/directv/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-300x158.webp' srcset='https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-png.webp 1200w, https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-600x315.webp 600w, https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-900x473.webp 900w, https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-300x158.webp 300w' alt='directv-stream-2025-logo' loading='lazy'></a>      </div>
-              <div class="logo-row__break"></div>
-            <div class="logo-row__item">
-        <a href='/dish/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/03/dish.svg'  alt='DISH logo' loading='lazy'></a>      </div>
-  </div>
-<div class="logo-row ">
-              <div class="logo-row__item">
-        <a href='/youtube-tv/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2019/03/YouTubeTV-Logo.png' srcset='https://www.cabletv.com/app/uploads/2019/03/YouTubeTV-Logo.png 152w, https://www.cabletv.com/app/uploads/2019/03/YouTubeTV-Logo-150x95.png 150w' alt='YouTubeTV-Logo.png' loading='lazy'></a>      </div>
-              <div class="logo-row__item">
-        <a href='/disney-plus/bundles' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/05/DisneyPlus.svg'  alt='DisneyPlus' loading='lazy'></a>      </div>
-              <div class="logo-row__break"></div>
-            <div class="logo-row__item">
-        <a href='/hulu/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/05/Featured-image-Hulu-logo-1200x630-1.jpg' srcset='https://www.cabletv.com/app/uploads/2022/05/Featured-image-Hulu-logo-1200x630-1.jpg 1200w, https://www.cabletv.com/app/uploads/2022/05/Featured-image-Hulu-logo-1200x630-1-1115x585.jpg 1115w' alt='Featured image &#8211; Hulu logo 1200&#215;630' loading='lazy'></a>      </div>
-  </div>
-<div class="logo-row ">
-              <div class="logo-row__item">
-        <a href='/hbo-max/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-300x219.webp' srcset='https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225.webp 1592w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-600x439.webp 600w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-1026x750.webp 1026w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-1536x1123.webp 1536w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-900x658.webp 900w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-300x219.webp 300w' alt='HBO Max_Logo_Obsidian Black_052225' loading='lazy'></a>      </div>
-              <div class="logo-row__item">
-        <a href='/fubotv/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2023/11/fubo.svg'  alt='fubo' loading='lazy'></a>      </div>
-              <div class="logo-row__break"></div>
-            <div class="logo-row__item">
-        <a href='/paramount-plus/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/03/paramount-plus-with-showtime.svg'  alt='paramount-plus-with-showtime' loading='lazy'></a>      </div>
-  </div>
-<div class="logo-row ">
-              <div class="logo-row__item">
-        <a href='/sling-tv' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/11/sling-logo-2022.png'  alt='sling-logo-2022' loading='lazy'></a>      </div>
-              <div class="logo-row__item">
-        <a href='/philo/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2021/09/philo-logo-dark.svg'  alt='philo-logo-dark' loading='lazy'></a>      </div>
-  </div>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:20px;">
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/xfinity/promotions' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/10/Xfinity-logo.svg' alt='Xfinity logo' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/tmobile/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO-300x121.webp' alt='TMobile_5G_Home_Internet_TMO' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/att/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/10/ATT-logo.svg' alt='AT&#038;T logo' style='height=60px;width: 135px;'></a>        </div>
+    </div>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:20px;">
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/spectrum/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2024/10/Spectrum-logo.svg' alt='Spectrum logo' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/verizon/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2025/03/Verizon_GlowWordmark_RGB-1.svg' alt='Verizon_GlowWordmark_RGB (1)' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/cox/deals-and-promotions' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2020/05/Cox-Logo-4C-R-1-1.jpg' alt='Cox-Logo-4C-R-1' style='height=60px;width: 135px;'></a>        </div>
+    </div>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:20px;">
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/optimum/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2020/01/optimum-1-1.svg' alt='optimum-1-1' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/directv/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-300x158.webp' alt='directv-stream-2025-logo' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/dish/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/03/dish.svg' alt='DISH logo' style='height=60px;width: 135px;'></a>        </div>
+    </div>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:20px;">
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/youtube-tv/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2019/03/YouTubeTV-Logo.png' alt='YouTubeTV-Logo.png' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/disney-plus/bundles' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/05/DisneyPlus.svg' alt='DisneyPlus' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/hulu/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/05/Featured-image-Hulu-logo-1200x630-1.jpg' alt='Featured image &#8211; Hulu logo 1200&#215;630' style='height=60px;width: 135px;'></a>        </div>
+    </div>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:20px;">
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/hbo-max/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-300x219.webp' alt='HBO Max_Logo_Obsidian Black_052225' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/fubotv/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2023/11/fubo.svg' alt='fubo' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/paramount-plus/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/03/paramount-plus-with-showtime.svg' alt='paramount-plus-with-showtime' style='height=60px;width: 135px;'></a>        </div>
+    </div>
+
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:20px;">
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/sling-tv' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2022/11/sling-logo-2022.png' alt='sling-logo-2022' style='height=60px;width: 135px;'></a>        </div>
+            <div style="padding:10px;text-align:center;display:flex;align-items:center;justify-content:center;">
+            <a href='/philo/deals' target="_blank" rel="noopener"><img src='https://www.cabletv.com/app/uploads/2021/09/philo-logo-dark.svg' alt='philo-logo-dark' style='height=60px;width: 135px;'></a>        </div>
+    </div>
 </div></div></div></div></div></div></div></div></div></div><div class="row large-padding"><div class="columns small-12 medium-12 large-12"><span name="2" id="2" class="section_anchor " data-anchor="2" ></span>
 <div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_border_width_3 vc_sep_pos_align_center vc_sep_color_blue wpb_content_element" ><span class="vc_sep_holder vc_sep_holder_l"><span class="vc_sep_line"></span></span><div class="vc_icon_element vc_icon_element-outer vc_do_icon vc_icon_element-align-left"><div class="vc_icon_element-inner vc_icon_element-color-juicy_pink vc_icon_element-size-md vc_icon_element-style- vc_icon_element-background-color-grey" ><span class="vc_icon_element-icon fas fa-mobile-alt" ></span></div></div><span class="vc_sep_holder vc_sep_holder_r"><span class="vc_sep_line"></span></span>
 </div>
