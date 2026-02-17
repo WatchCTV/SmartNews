@@ -19,12 +19,12 @@
 	<width>32</width>
 	<height>32</height>
 </image> 
-	<item>
+	<snf:logo><url>https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png</url></snf:logo><item>
 		<title>Saturday Night Live Season 51: SNL TV Schedule, Cast, and How To Watch</title>
 		<link>https://www.cabletv.com/entertainment/watch-saturday-night-live-snl</link>
 		
 		<dc:creator><![CDATA[CableTV.com Staff]]></dc:creator>
-		<pubDate>Thu, 12 Feb 2026 23:37:17 +0000</pubDate>
+		<pubDate>Fri, 13 Feb 2026 12:00:00 +0000</pubDate>
 				<category><![CDATA[Entertainment]]></category>
 		<category><![CDATA[How to Watch]]></category>
 		<category><![CDATA[Industry News]]></category>
@@ -517,7 +517,7 @@
 		<link>https://www.cabletv.com/news/streaming-service-price-increases</link>
 		
 		<dc:creator><![CDATA[Olivia Bono]]></dc:creator>
-		<pubDate>Thu, 12 Feb 2026 20:00:03 +0000</pubDate>
+		<pubDate>Thu, 12 Feb 2026 12:00:00 +0000</pubDate>
 				<category><![CDATA[Entertainment]]></category>
 		<category><![CDATA[Industry News]]></category>
 		<category><![CDATA[News Streaming Service]]></category>
@@ -526,7 +526,7 @@
 					<description><![CDATA[<p>I’ve compiled data on all of our favorite streaming services to see the bigger picture. Which services are making reasonable changes, and which are taking advantage of economic panic?</p>
 <p>The post <a href="https://www.cabletv.com/news/streaming-service-price-increases">Every Netflix, HBO Max, and Hulu Price Increase: The History of Streaming Service Prices</a> appeared first on <a href="https://www.cabletv.com">CableTV.com</a>.</p>
 ]]></description>
-										<content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2024/06/priceincrease1200x630-jpg.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;" /></div><div class="row"><div class="columns small-12 medium-12 large-12"><div class="row "><div class="columns small-12 medium-24 large-6">
+										<content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/02/Untitled-1.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;" /></div><div class="row"><div class="columns small-12 medium-12 large-12"><div class="row "><div class="columns small-12 medium-24 large-6">
 	<div class="wpb_text_column wpb_content_element" >
 		<div class="wpb_wrapper">
 			<h2>It&rsquo;s not just you; streaming prices are rising, fast</h2>
@@ -2524,13 +2524,13 @@
 					
 		
 		
-			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2024/06/priceincrease1200x630-jpg.webp"/></item>
+			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2026/02/Untitled-1.webp"/></item>
 		<item>
 		<title>‘Where’s the Big Game?’ 3 Tips to Watch More of Your Favorite Sports, Faster.</title>
 		<link>https://www.cabletv.com/news/xfinity-streaming-sports</link>
 		
 		<dc:creator><![CDATA[Mike Strayer]]></dc:creator>
-		<pubDate>Thu, 12 Feb 2026 19:02:28 +0000</pubDate>
+		<pubDate>Thu, 12 Feb 2026 12:00:00 +0000</pubDate>
 				<category><![CDATA[Industry News]]></category>
 		<category><![CDATA[Internet]]></category>
 		<category><![CDATA[Streaming]]></category>
@@ -2657,7 +2657,7 @@
 		<link>https://www.cabletv.com/sports/winter-olympic-movies-for-every-sport</link>
 		
 		<dc:creator><![CDATA[Taylor Kujawa]]></dc:creator>
-		<pubDate>Thu, 12 Feb 2026 18:18:40 +0000</pubDate>
+		<pubDate>Thu, 12 Feb 2026 12:00:00 +0000</pubDate>
 				<category><![CDATA[Industry News]]></category>
 		<category><![CDATA[Sports]]></category>
 		<category><![CDATA[Sports Olympics]]></category>
@@ -3121,7 +3121,7 @@
 		<link>https://www.cabletv.com/entertainment/margot-robbie-movies</link>
 		
 		<dc:creator><![CDATA[CableTV.com Staff]]></dc:creator>
-		<pubDate>Thu, 12 Feb 2026 03:41:52 +0000</pubDate>
+		<pubDate>Thu, 12 Feb 2026 12:00:00 +0000</pubDate>
 				<category><![CDATA[Entertainment]]></category>
 		<category><![CDATA[Industry News]]></category>
 		<category><![CDATA[Entertainment AI Listicle]]></category>
@@ -3684,7 +3684,7 @@
 		<link>https://www.cabletv.com/entertainment/jacob-elordi-movies-and-tv-shows</link>
 		
 		<dc:creator><![CDATA[CableTV.com Staff]]></dc:creator>
-		<pubDate>Wed, 11 Feb 2026 20:55:13 +0000</pubDate>
+		<pubDate>Wed, 11 Feb 2026 12:00:00 +0000</pubDate>
 				<category><![CDATA[Entertainment]]></category>
 		<category><![CDATA[Industry News]]></category>
 		<category><![CDATA[Entertainment AI Listicle]]></category>
@@ -4138,7 +4138,7 @@
 		<link>https://www.cabletv.com/entertainment/new-netflix-shows-feb-2026</link>
 		
 		<dc:creator><![CDATA[CableTV.com Staff]]></dc:creator>
-		<pubDate>Wed, 11 Feb 2026 20:25:23 +0000</pubDate>
+		<pubDate>Wed, 11 Feb 2026 12:00:00 +0000</pubDate>
 				<category><![CDATA[Entertainment]]></category>
 		<category><![CDATA[Industry News]]></category>
 		<category><![CDATA[Listicles]]></category>
@@ -4489,7 +4489,7 @@
 		<link>https://www.cabletv.com/ranking/best-live-tv-streaming-services</link>
 		
 		<dc:creator><![CDATA[Randy Harward]]></dc:creator>
-		<pubDate>Tue, 10 Feb 2026 22:00:07 +0000</pubDate>
+		<pubDate>Tue, 10 Feb 2026 12:00:00 +0000</pubDate>
 				<category><![CDATA[Best of the Best]]></category>
 		<category><![CDATA[Industry News]]></category>
 		<category><![CDATA[Reviews]]></category>
@@ -5788,7 +5788,7 @@
 		<link>https://www.cabletv.com/ranking/best-streaming-services</link>
 		
 		<dc:creator><![CDATA[Olivia Bono]]></dc:creator>
-		<pubDate>Tue, 10 Feb 2026 21:56:54 +0000</pubDate>
+		<pubDate>Tue, 10 Feb 2026 12:00:00 +0000</pubDate>
 				<category><![CDATA[Best of the Best]]></category>
 		<category><![CDATA[Industry News]]></category>
 		<category><![CDATA[Reviews]]></category>
@@ -6948,7 +6948,7 @@ You also might be thinking of live TV streaming services, which act more like a 
 		<link>https://www.cabletv.com/ranking/best-tv-providers</link>
 		
 		<dc:creator><![CDATA[Logan Jones]]></dc:creator>
-		<pubDate>Tue, 10 Feb 2026 21:00:02 +0000</pubDate>
+		<pubDate>Tue, 10 Feb 2026 12:00:00 +0000</pubDate>
 				<category><![CDATA[Best of the Best]]></category>
 		<category><![CDATA[Featured]]></category>
 		<category><![CDATA[Industry News]]></category>
@@ -8206,5 +8206,5 @@ Of course, you can still <a href="/blog/best-tv-providers#What_to_look_for">do y
 		
 		
 			<ns0:thumbnail xmlns:ns0="http://search.yahoo.com/mrss/" url="https://www.cabletv.com/app/uploads/2022/05/couple-cuddling-eating-popcorn-watching-tv.jpg"/></item>
-	<snf:logo><url>https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png</url></snf:logo></channel>
+	</channel>
 </rss>
