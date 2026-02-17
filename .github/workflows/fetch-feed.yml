@@ -1,4 +1,28 @@
-- name: Fetch and fix SmartNews feed
+name: Fix SmartNews Feed
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+
+jobs:
+  update-feed:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install lxml requests beautifulsoup4
+
+      - name: Fetch and fix SmartNews feed
         run: |
           curl -sSL "https://www.cabletv.com/category/news/feed" -o original.xml
 
@@ -18,7 +42,7 @@
               with open(STATE_FILE, "r") as f:
                   drip_state = json.load(f)
           else:
-              drip_state = {}  # { "article_url": "YYYY-MM-DD" }
+              drip_state = {}
 
           parser = etree.XMLParser(strip_cdata=False)
           tree = etree.parse("original.xml", parser)
@@ -65,7 +89,6 @@
           # --- Drip logic ---
           items = channel.findall("item")
 
-          # Parse original pub dates
           def get_pub_date(item):
               pd = item.findtext("pubDate")
               try:
@@ -73,25 +96,18 @@
               except:
                   return datetime.datetime.now(datetime.timezone.utc)
 
-          # Sort items oldest to newest so we assign slots in order
           items_sorted = sorted(items, key=get_pub_date)
-
           today = datetime.date.today()
 
-          # Count how many slots are already used per day in existing state
-          slots_used = {}  # { "YYYY-MM-DD": count }
+          slots_used = {}
           for url, assigned_date in drip_state.items():
               slots_used[assigned_date] = slots_used.get(assigned_date, 0) + 1
 
-          # Assign release dates to any new articles not yet in state
           for item in items_sorted:
               link = item.findtext("link") or ""
               if link in drip_state:
-                  continue  # Already assigned
-
+                  continue
               orig_date = get_pub_date(item).date()
-
-              # Find the earliest date >= orig_date with an open slot
               candidate = orig_date
               while True:
                   day_key = candidate.isoformat()
@@ -101,12 +117,9 @@
                       break
                   candidate += datetime.timedelta(days=1)
 
-          # Save updated state
           with open(STATE_FILE, "w") as f:
               json.dump(drip_state, f, indent=2)
 
-          # Now filter: only include items whose assigned date <= today
-          # and update their pubDate to match the assigned date
           items_to_keep = []
           for item in items:
               link = item.findtext("link") or ""
@@ -115,7 +128,6 @@
                   continue
               assigned_date = datetime.date.fromisoformat(assigned)
               if assigned_date <= today:
-                  # Update pubDate to assigned date at noon UTC for clean ordering
                   new_pub = datetime.datetime(
                       assigned_date.year, assigned_date.month, assigned_date.day,
                       12, 0, 0, tzinfo=datetime.timezone.utc
@@ -125,7 +137,6 @@
                       pub_el.text = format_datetime(new_pub)
                   items_to_keep.append(item)
 
-          # Remove all items from channel and re-add only the approved ones
           for item in channel.findall("item"):
               channel.remove(item)
           for item in items_to_keep:
@@ -160,13 +171,11 @@
               if not img_url:
                   continue
 
-              # --- Add or update <media:thumbnail> ---
               if item.find("media:thumbnail", {"media": MEDIA_NS}) is None:
                   thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
                   thumb_el.set("url", img_url)
                   item.append(thumb_el)
 
-              # --- Embed image into <content:encoded> ---
               content_el = item.find("{http://purl.org/rss/1.0/modules/content/}encoded")
               if content_el is not None:
                   content_html = content_el.text or ""
@@ -186,7 +195,14 @@
                       title_el.text
                   )
 
-          # Write final feed
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
           print(f"Feed written with {len(items_to_keep)} items.")
           EOF
+
+      - name: Commit and push updated feed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add feed.xml drip_state.json
+          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (drip logic + thumbnails + date + title + desc)"
+          git push
