@@ -1,16 +1,13 @@
 name: Fix SmartNews Feed
-
 on:
   workflow_dispatch:
   schedule:
     - cron: '0 */6 * * *'
-
 jobs:
   update-feed:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
       - uses: actions/checkout@v4
 
@@ -24,21 +21,31 @@ jobs:
 
       - name: Fetch and fix SmartNews feed
         run: |
-          curl -sSL "https://www.cabletv.com/category/news/feed" -o original.xml
+          # Force bypass of WordPress RSS cache with cache-busting headers and query param
+          CACHE_BUST=$(date +%s)
+          curl -sSL \
+            -H "Cache-Control: no-cache, no-store, must-revalidate" \
+            -H "Pragma: no-cache" \
+            -H "Expires: 0" \
+            -H "User-Agent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" \
+            "https://www.cabletv.com/category/news/feed?nocache=${CACHE_BUST}" \
+            -o original.xml
+
+          echo "--- Feed lastBuildDate from source ---"
+          grep -o '<lastBuildDate>[^<]*</lastBuildDate>' original.xml || echo "(not found)"
+          echo "--- Item count ---"
+          grep -c '<item>' original.xml || echo "0"
 
           python3 <<'EOF'
           from lxml import etree
           from bs4 import BeautifulSoup
           import requests, datetime, re
           from email.utils import parsedate_to_datetime
-
           SNF_NS = "http://www.smartnews.be/snf"
           MEDIA_NS = "http://search.yahoo.com/mrss/"
-
           parser = etree.XMLParser(strip_cdata=False)
           tree = etree.parse("original.xml", parser)
           root = tree.getroot()
-
           if "snf" not in root.nsmap:
               nsmap = root.nsmap.copy()
               nsmap["snf"] = SNF_NS
@@ -49,22 +56,18 @@ jobs:
                   new_root.append(child)
               root = new_root
               tree._setroot(root)
-
           channel = root.find("channel")
           if channel is None:
               raise ValueError("No <channel> found in feed")
-
           title_el = channel.find("title")
           if title_el is not None:
               title_el.text = "Entertainment News | CableTV.com"
-
           desc_el = channel.find("description")
           if desc_el is not None:
               desc_el.text = "Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming."
           else:
               new_desc = etree.SubElement(channel, "description")
               new_desc.text = "Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming."
-
           logo_url = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png"
           old_logo = channel.find("snf:logo", {"snf": SNF_NS})
           if old_logo is not None:
@@ -73,15 +76,12 @@ jobs:
           url_el = etree.SubElement(logo_el, "url")
           url_el.text = logo_url
           channel.append(logo_el)
-
           items = channel.findall("item")
           print(f"Processing {len(items)} items...")
-
           for item in items:
               link = item.findtext("link")
               if not link:
                   continue
-
               img_url = None
               try:
                   resp = requests.get(link, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
@@ -89,7 +89,6 @@ jobs:
                       print(f"  Skipping {link} (HTTP {resp.status_code})")
                       continue
                   soup = BeautifulSoup(resp.text, "html.parser")
-
                   img = soup.select_one("img.wp-post-image")
                   if img and img.get("src"):
                       img_url = img["src"].strip()
@@ -102,15 +101,12 @@ jobs:
                           img_url = img_tag["src"].strip() if img_tag and img_tag.get("src") else None
               except Exception as e:
                   print(f"  Thumbnail error for {link}: {e}")
-
               if not img_url:
                   continue
-
               if item.find("media:thumbnail", {"media": MEDIA_NS}) is None:
                   thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
                   thumb_el.set("url", img_url)
                   item.append(thumb_el)
-
               content_el = item.find("{http://purl.org/rss/1.0/modules/content/}encoded")
               if content_el is not None:
                   content_html = content_el.text or ""
@@ -121,9 +117,7 @@ jobs:
                   )
                   if img_url not in content_html:
                       content_el.text = etree.CDATA(img_html + content_html)
-
               print(f"  OK: {link}")
-
           year_full = str(datetime.datetime.now().year)
           for item in channel.findall("item"):
               title_el = item.find("title")
@@ -133,7 +127,6 @@ jobs:
                       year_full,
                       title_el.text
                   )
-
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
           print(f"Done. Feed written with {len(items)} items.")
           EOF
