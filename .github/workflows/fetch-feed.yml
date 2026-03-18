@@ -39,7 +39,6 @@ jobs:
           tree = etree.parse("original.xml", parser)
           root = tree.getroot()
 
-          # Ensure SmartNews namespace is present
           if "snf" not in root.nsmap:
               nsmap = root.nsmap.copy()
               nsmap["snf"] = SNF_NS
@@ -55,12 +54,10 @@ jobs:
           if channel is None:
               raise ValueError("No <channel> found in feed")
 
-          # --- Update channel title ---
           title_el = channel.find("title")
           if title_el is not None:
               title_el.text = "Entertainment News | CableTV.com"
 
-          # --- Update channel description ---
           desc_el = channel.find("description")
           if desc_el is not None:
               desc_el.text = "Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming."
@@ -68,7 +65,6 @@ jobs:
               new_desc = etree.SubElement(channel, "description")
               new_desc.text = "Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming."
 
-          # --- SmartNews logo ---
           logo_url = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png"
           old_logo = channel.find("snf:logo", {"snf": SNF_NS})
           if old_logo is not None:
@@ -78,7 +74,6 @@ jobs:
           url_el.text = logo_url
           channel.append(logo_el)
 
-          # --- Process each item: thumbnails + hero image embed ---
           items = channel.findall("item")
           print(f"Processing {len(items)} items...")
 
@@ -95,7 +90,6 @@ jobs:
                       continue
                   soup = BeautifulSoup(resp.text, "html.parser")
 
-                  # Try WordPress featured image first, then OG tag, then first img
                   img = soup.select_one("img.wp-post-image")
                   if img and img.get("src"):
                       img_url = img["src"].strip()
@@ -106,21 +100,17 @@ jobs:
                       else:
                           img_tag = soup.find("img")
                           img_url = img_tag["src"].strip() if img_tag and img_tag.get("src") else None
-
               except Exception as e:
                   print(f"  Thumbnail error for {link}: {e}")
 
               if not img_url:
-                  print(f"  No image found for {link}")
                   continue
 
-              # Add media:thumbnail if not already present
               if item.find("media:thumbnail", {"media": MEDIA_NS}) is None:
                   thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
                   thumb_el.set("url", img_url)
                   item.append(thumb_el)
 
-              # Prepend hero image to content:encoded if not already there
               content_el = item.find("{http://purl.org/rss/1.0/modules/content/}encoded")
               if content_el is not None:
                   content_html = content_el.text or ""
@@ -134,7 +124,6 @@ jobs:
 
               print(f"  OK: {link}")
 
-          # --- Fix WordPress [current_date format="Y"] shortcodes in titles ---
           year_full = str(datetime.datetime.now().year)
           for item in channel.findall("item"):
               title_el = item.find("title")
@@ -146,7 +135,7 @@ jobs:
                   )
 
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
-          print(f"\nDone. Feed written with {len(items)} items.")
+          print(f"Done. Feed written with {len(items)} items.")
           EOF
 
       - name: Commit and push updated feed
@@ -154,5 +143,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add feed.xml
-          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git commit -m "Auto-update SmartNews feed $(date -u +'%Y-%m-%d %H:%M UTC')" || echo "Nothing to commit"
           git push
