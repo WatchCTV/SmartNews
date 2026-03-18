@@ -29,26 +29,17 @@ jobs:
           python3 <<'EOF'
           from lxml import etree
           from bs4 import BeautifulSoup
-          import requests, datetime, re, json, os
-          from email.utils import parsedate_to_datetime, format_datetime
+          import requests, datetime, re
+          from email.utils import parsedate_to_datetime
 
           SNF_NS = "http://www.smartnews.be/snf"
           MEDIA_NS = "http://search.yahoo.com/mrss/"
-          STATE_FILE = "drip_state.json"
-          MAX_PER_DAY = 4
-
-          # --- Load drip state ---
-          if os.path.exists(STATE_FILE):
-              with open(STATE_FILE, "r") as f:
-                  drip_state = json.load(f)
-          else:
-              drip_state = {}
 
           parser = etree.XMLParser(strip_cdata=False)
           tree = etree.parse("original.xml", parser)
           root = tree.getroot()
 
-          # Ensure SmartNews namespace
+          # Ensure SmartNews namespace is present
           if "snf" not in root.nsmap:
               nsmap = root.nsmap.copy()
               nsmap["snf"] = SNF_NS
@@ -64,11 +55,12 @@ jobs:
           if channel is None:
               raise ValueError("No <channel> found in feed")
 
-          # --- Update channel title and description ---
+          # --- Update channel title ---
           title_el = channel.find("title")
           if title_el is not None:
               title_el.text = "Entertainment News | CableTV.com"
 
+          # --- Update channel description ---
           desc_el = channel.find("description")
           if desc_el is not None:
               desc_el.text = "Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming."
@@ -86,64 +78,11 @@ jobs:
           url_el.text = logo_url
           channel.append(logo_el)
 
-          # --- Drip logic ---
+          # --- Process each item: thumbnails + hero image embed ---
           items = channel.findall("item")
+          print(f"Processing {len(items)} items...")
 
-          def get_pub_date(item):
-              pd = item.findtext("pubDate")
-              try:
-                  return parsedate_to_datetime(pd)
-              except:
-                  return datetime.datetime.now(datetime.timezone.utc)
-
-          items_sorted = sorted(items, key=get_pub_date)
-          today = datetime.date.today()
-
-          slots_used = {}
-          for url, assigned_date in drip_state.items():
-              slots_used[assigned_date] = slots_used.get(assigned_date, 0) + 1
-
-          for item in items_sorted:
-              link = item.findtext("link") or ""
-              if link in drip_state:
-                  continue
-              orig_date = get_pub_date(item).date()
-              candidate = orig_date
-              while True:
-                  day_key = candidate.isoformat()
-                  if slots_used.get(day_key, 0) < MAX_PER_DAY:
-                      drip_state[link] = day_key
-                      slots_used[day_key] = slots_used.get(day_key, 0) + 1
-                      break
-                  candidate += datetime.timedelta(days=1)
-
-          with open(STATE_FILE, "w") as f:
-              json.dump(drip_state, f, indent=2)
-
-          items_to_keep = []
           for item in items:
-              link = item.findtext("link") or ""
-              assigned = drip_state.get(link)
-              if not assigned:
-                  continue
-              assigned_date = datetime.date.fromisoformat(assigned)
-              if assigned_date <= today:
-                  new_pub = datetime.datetime(
-                      assigned_date.year, assigned_date.month, assigned_date.day,
-                      12, 0, 0, tzinfo=datetime.timezone.utc
-                  )
-                  pub_el = item.find("pubDate")
-                  if pub_el is not None:
-                      pub_el.text = format_datetime(new_pub)
-                  items_to_keep.append(item)
-
-          for item in channel.findall("item"):
-              channel.remove(item)
-          for item in items_to_keep:
-              channel.append(item)
-
-          # --- Thumbnails + embed inside article ---
-          for item in channel.findall("item"):
               link = item.findtext("link")
               if not link:
                   continue
@@ -152,9 +91,11 @@ jobs:
               try:
                   resp = requests.get(link, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
                   if resp.status_code != 200:
+                      print(f"  Skipping {link} (HTTP {resp.status_code})")
                       continue
                   soup = BeautifulSoup(resp.text, "html.parser")
 
+                  # Try WordPress featured image first, then OG tag, then first img
                   img = soup.select_one("img.wp-post-image")
                   if img and img.get("src"):
                       img_url = img["src"].strip()
@@ -165,26 +106,35 @@ jobs:
                       else:
                           img_tag = soup.find("img")
                           img_url = img_tag["src"].strip() if img_tag and img_tag.get("src") else None
+
               except Exception as e:
-                  print(f"Thumbnail error for {link}: {e}")
+                  print(f"  Thumbnail error for {link}: {e}")
 
               if not img_url:
+                  print(f"  No image found for {link}")
                   continue
 
+              # Add media:thumbnail if not already present
               if item.find("media:thumbnail", {"media": MEDIA_NS}) is None:
                   thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
                   thumb_el.set("url", img_url)
                   item.append(thumb_el)
 
+              # Prepend hero image to content:encoded if not already there
               content_el = item.find("{http://purl.org/rss/1.0/modules/content/}encoded")
               if content_el is not None:
                   content_html = content_el.text or ""
-                  img_html = f'<div style="margin:20px 0;text-align:center;"><img src="{img_url}" alt="" style="max-width:100%;height:auto;border-radius:8px;" /></div>'
+                  img_html = (
+                      f'<div style="margin:20px 0;text-align:center;">'
+                      f'<img src="{img_url}" alt="" style="max-width:100%;height:auto;border-radius:8px;" />'
+                      f'</div>'
+                  )
                   if img_url not in content_html:
-                      combined_html = img_html + content_html
-                      content_el.text = etree.CDATA(combined_html)
+                      content_el.text = etree.CDATA(img_html + content_html)
 
-          # --- Fix [current_date format="yy"] etc. ---
+              print(f"  OK: {link}")
+
+          # --- Fix WordPress [current_date format="Y"] shortcodes in titles ---
           year_full = str(datetime.datetime.now().year)
           for item in channel.findall("item"):
               title_el = item.find("title")
@@ -196,13 +146,13 @@ jobs:
                   )
 
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
-          print(f"Feed written with {len(items_to_keep)} items.")
+          print(f"\nDone. Feed written with {len(items)} items.")
           EOF
 
       - name: Commit and push updated feed
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add feed.xml drip_state.json
-          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed (drip logic + thumbnails + date + title + desc)"
+          git add feed.xml
+          git diff-index --quiet HEAD || git commit -m "Auto-update SmartNews feed $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
