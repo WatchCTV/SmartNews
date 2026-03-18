@@ -21,31 +21,148 @@ jobs:
 
       - name: Fetch and fix SmartNews feed
         run: |
-          # Force bypass of WordPress RSS cache with cache-busting headers and query param
-          CACHE_BUST=$(date +%s)
-          curl -sSL \
-            -H "Cache-Control: no-cache, no-store, must-revalidate" \
-            -H "Pragma: no-cache" \
-            -H "Expires: 0" \
-            -H "User-Agent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" \
-            "https://www.cabletv.com/category/news/feed?nocache=${CACHE_BUST}" \
-            -o original.xml
+          curl -sSL "https://www.cabletv.com/category/news/feed" -o original.xml
 
-          echo "--- Feed lastBuildDate from source ---"
-          grep -o '<lastBuildDate>[^<]*</lastBuildDate>' original.xml || echo "(not found)"
-          echo "--- Item count ---"
-          grep -c '<item>' original.xml || echo "0"
-
-          python3 <<'EOF'
+          python3 <<'PYEOF'
           from lxml import etree
           from bs4 import BeautifulSoup
-          import requests, datetime, re
-          from email.utils import parsedate_to_datetime
+          import requests, datetime, re, sys
+          from email.utils import parsedate_to_datetime, format_datetime
+
           SNF_NS = "http://www.smartnews.be/snf"
           MEDIA_NS = "http://search.yahoo.com/mrss/"
+          HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; feedfetcher/1.0)"}
+
+          # --- Load the RSS feed from curl output ---
           parser = etree.XMLParser(strip_cdata=False)
           tree = etree.parse("original.xml", parser)
           root = tree.getroot()
+          channel = root.find("channel")
+          if channel is None:
+              print("ERROR: No <channel> in feed", file=sys.stderr)
+              sys.exit(1)
+
+          # --- Check if feed is stale ---
+          lbd_el = channel.find("lastBuildDate")
+          feed_is_stale = True
+          if lbd_el is not None and lbd_el.text:
+              try:
+                  lbd_dt = parsedate_to_datetime(lbd_el.text.strip())
+                  age_hours = (datetime.datetime.now(datetime.timezone.utc) - lbd_dt).total_seconds() / 3600
+                  print(f"Feed lastBuildDate: {lbd_el.text.strip()} (age: {age_hours:.1f}h)")
+                  feed_is_stale = age_hours > 12
+              except Exception as e:
+                  print(f"Could not parse lastBuildDate: {e}")
+
+          if feed_is_stale:
+              print("Feed is stale! Scraping category page for fresh articles...")
+              # Scrape the news category page to get current article links
+              cat_resp = requests.get(
+                  "https://www.cabletv.com/category/news/",
+                  headers=HEADERS, timeout=15
+              )
+              cat_soup = BeautifulSoup(cat_resp.text, "html.parser")
+
+              # Get existing item guids to avoid duplication
+              existing_guids = set()
+              for item in channel.findall("item"):
+                  g = item.findtext("guid")
+                  if g:
+                      existing_guids.add(g.strip())
+                  lnk = item.findtext("link")
+                  if lnk:
+                      existing_guids.add(lnk.strip())
+
+              # Find article links on the category page
+              new_articles = []
+              for a in cat_soup.select("h2 a, h3 a, .entry-title a"):
+                  href = a.get("href", "").strip()
+                  title_text = a.get_text(strip=True)
+                  if href and "cabletv.com" in href and href not in existing_guids and title_text:
+                      new_articles.append((href, title_text))
+
+              print(f"Found {len(new_articles)} potentially new articles on category page")
+
+              # Build new RSS items for articles not already in feed
+              now_rfc = format_datetime(datetime.datetime.now(datetime.timezone.utc))
+              for href, title_text in new_articles[:20]:  # cap at 20
+                  # Fetch the article page
+                  try:
+                      art_resp = requests.get(href, headers=HEADERS, timeout=10)
+                      if art_resp.status_code != 200:
+                          print(f"  Skipping {href} (HTTP {art_resp.status_code})")
+                          continue
+                      art_soup = BeautifulSoup(art_resp.text, "html.parser")
+
+                      # Get pub date
+                      pub_time = art_soup.select_one("time[datetime]")
+                      pub_date = now_rfc
+                      if pub_time and pub_time.get("datetime"):
+                          try:
+                              dt = datetime.datetime.fromisoformat(pub_time["datetime"].replace("Z", "+00:00"))
+                              pub_date = format_datetime(dt)
+                          except:
+                              pass
+
+                      # Get author
+                      author_el = art_soup.select_one(".author a, .byline a, [rel=author]")
+                      author_name = author_el.get_text(strip=True) if author_el else "CableTV.com"
+
+                      # Get thumbnail
+                      img_url = None
+                      img = art_soup.select_one("img.wp-post-image")
+                      if img and img.get("src"):
+                          img_url = img["src"].strip()
+                      else:
+                          meta_img = art_soup.select_one('meta[property="og:image"]')
+                          if meta_img and meta_img.get("content"):
+                              img_url = meta_img["content"].strip()
+
+                      # Get description
+                      meta_desc = art_soup.select_one('meta[name="description"], meta[property="og:description"]')
+                      desc_text = meta_desc["content"].strip() if meta_desc and meta_desc.get("content") else title_text
+
+                      # Get content:encoded
+                      article_body = art_soup.select_one("article, .entry-content, .post-content")
+                      content_html = str(article_body) if article_body else f"<p>{desc_text}</p>"
+
+                      # Build item element
+                      new_item = etree.SubElement(channel, "item")
+                      t = etree.SubElement(new_item, "title")
+                      t.text = title_text
+                      l = etree.SubElement(new_item, "link")
+                      l.text = href
+                      pd = etree.SubElement(new_item, "pubDate")
+                      pd.text = pub_date
+                      cr = etree.SubElement(new_item, "dc:creator" if False else "{http://purl.org/dc/elements/1.1/}creator")
+                      cr.text = etree.CDATA(author_name)
+                      g = etree.SubElement(new_item, "guid")
+                      g.set("isPermaLink", "false")
+                      g.text = href
+                      de = etree.SubElement(new_item, "description")
+                      de.text = etree.CDATA(f"<p>{desc_text}</p>")
+                      ce = etree.SubElement(new_item, "{http://purl.org/rss/1.0/modules/content/}encoded")
+                      if img_url:
+                          img_html = f'<div style="margin:20px 0;text-align:center;"><img src="{img_url}" alt="" style="max-width:100%;height:auto;border-radius:8px;" /></div>'
+                          ce.text = etree.CDATA(img_html + content_html)
+                          thumb = etree.SubElement(new_item, f"{{{MEDIA_NS}}}thumbnail")
+                          thumb.set("url", img_url)
+                      else:
+                          ce.text = etree.CDATA(content_html)
+
+                      print(f"  Added new item: {title_text[:60]}")
+                  except Exception as e:
+                      print(f"  Error processing {href}: {e}")
+
+              # Update lastBuildDate
+              if lbd_el is not None:
+                  lbd_el.text = now_rfc
+              else:
+                  new_lbd = etree.SubElement(channel, "lastBuildDate")
+                  new_lbd.text = now_rfc
+
+          # --- Standard processing for all items ---
+          # Ensure snf namespace
           if "snf" not in root.nsmap:
               nsmap = root.nsmap.copy()
               nsmap["snf"] = SNF_NS
@@ -56,9 +173,9 @@ jobs:
                   new_root.append(child)
               root = new_root
               tree._setroot(root)
-          channel = root.find("channel")
-          if channel is None:
-              raise ValueError("No <channel> found in feed")
+              channel = root.find("channel")
+
+          # Update channel metadata
           title_el = channel.find("title")
           if title_el is not None:
               title_el.text = "Entertainment News | CableTV.com"
@@ -68,6 +185,8 @@ jobs:
           else:
               new_desc = etree.SubElement(channel, "description")
               new_desc.text = "Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming."
+
+          # Update logo
           logo_url = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png"
           old_logo = channel.find("snf:logo", {"snf": SNF_NS})
           if old_logo is not None:
@@ -76,17 +195,30 @@ jobs:
           url_el = etree.SubElement(logo_el, "url")
           url_el.text = logo_url
           channel.append(logo_el)
+
+          # Process items: add thumbnails and fix year shortcodes
           items = channel.findall("item")
-          print(f"Processing {len(items)} items...")
+          print(f"Processing {len(items)} total items...")
+          year_full = str(datetime.datetime.now().year)
           for item in items:
               link = item.findtext("link")
+              # Fix [current_date] shortcodes in titles
+              title_el = item.find("title")
+              if title_el is not None and title_el.text:
+                  title_el.text = re.sub(
+                      r'\[current_date\s+format\s*=\s*["\']?[yY]{1,4}["\']?\]',
+                      year_full, title_el.text
+                  )
+              # Add thumbnail if missing
+              if item.find("media:thumbnail", {"media": MEDIA_NS}) is not None:
+                  continue  # already has thumbnail
               if not link:
                   continue
               img_url = None
               try:
-                  resp = requests.get(link, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
+                  resp = requests.get(link, timeout=10, headers=HEADERS)
                   if resp.status_code != 200:
-                      print(f"  Skipping {link} (HTTP {resp.status_code})")
+                      print(f"  Skipping thumbnail for {link} (HTTP {resp.status_code})")
                       continue
                   soup = BeautifulSoup(resp.text, "html.parser")
                   img = soup.select_one("img.wp-post-image")
@@ -103,10 +235,9 @@ jobs:
                   print(f"  Thumbnail error for {link}: {e}")
               if not img_url:
                   continue
-              if item.find("media:thumbnail", {"media": MEDIA_NS}) is None:
-                  thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
-                  thumb_el.set("url", img_url)
-                  item.append(thumb_el)
+              thumb_el = etree.Element(f"{{{MEDIA_NS}}}thumbnail")
+              thumb_el.set("url", img_url)
+              item.append(thumb_el)
               content_el = item.find("{http://purl.org/rss/1.0/modules/content/}encoded")
               if content_el is not None:
                   content_html = content_el.text or ""
@@ -118,18 +249,10 @@ jobs:
                   if img_url not in content_html:
                       content_el.text = etree.CDATA(img_html + content_html)
               print(f"  OK: {link}")
-          year_full = str(datetime.datetime.now().year)
-          for item in channel.findall("item"):
-              title_el = item.find("title")
-              if title_el is not None and title_el.text:
-                  title_el.text = re.sub(
-                      r'\[current_date\s+format\s*=\s*["\']?[yY]{1,4}["\']?\]',
-                      year_full,
-                      title_el.text
-                  )
+
           tree.write("feed.xml", encoding="utf-8", xml_declaration=True)
           print(f"Done. Feed written with {len(items)} items.")
-          EOF
+          PYEOF
 
       - name: Commit and push updated feed
         run: |
