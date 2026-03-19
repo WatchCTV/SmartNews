@@ -42,6 +42,18 @@ jobs:
           CONTENT_NS = "http://purl.org/rss/1.0/modules/content/"
           DC_NS = "http://purl.org/dc/elements/1.1/"
 
+          def clean_content(html):
+              """Remove WPBakery shortcodes and other junk from content HTML."""
+              # Strip all [ ... ] shortcodes (WPBakery, etc.)
+              html = re.sub(r'\[/?[a-zA-Z_][^\]]*\]', '', html)
+              # Strip any leftover empty tags or excessive whitespace
+              soup = BeautifulSoup(html, "html.parser")
+              # Remove empty block elements left behind by shortcodes
+              for tag in soup.find_all(['div', 'p', 'span']):
+                  if not tag.get_text(strip=True) and not tag.find('img'):
+                      tag.decompose()
+              return str(soup)
+
           # --- Fetch latest posts from REST API ---
           api_url = (
               f"{API_BASE}/posts"
@@ -82,7 +94,6 @@ jobs:
                   r = requests.get(f"{API_BASE}/media/{media_id}", headers=HEADERS, timeout=10)
                   if r.status_code == 200:
                       data = r.json()
-                      # Prefer large or full size
                       sizes = data.get("media_details", {}).get("sizes", {})
                       url = (
                           sizes.get("large", {}).get("source_url")
@@ -97,16 +108,6 @@ jobs:
               return None
 
           # --- Build RSS XML ---
-          nsmap = {
-              None: None,
-              "content": CONTENT_NS,
-              "dc": DC_NS,
-              "media": MEDIA_NS,
-              "snf": SNF_NS,
-              "atom": "http://www.w3.org/2005/Atom",
-              "sy": "http://purl.org/rss/1.0/modules/syndication/",
-          }
-          # lxml doesn't allow None key in nsmap for rss element directly
           rss = etree.Element("rss", nsmap={
               "content": CONTENT_NS,
               "dc": DC_NS,
@@ -143,12 +144,10 @@ jobs:
           sy_freq = etree.SubElement(channel, "{http://purl.org/rss/1.0/modules/syndication/}updateFrequency")
           sy_freq.text = "1"
 
-          # Logo
           logo_el = etree.SubElement(channel, f"{{{SNF_NS}}}logo")
           logo_url_el = etree.SubElement(logo_el, "url")
           logo_url_el.text = "https://raw.githubusercontent.com/WatchCTV/SmartNews/main/CableTV.com%20RSS%20Logo%20Header.png"
 
-          # Channel image
           img_el = etree.SubElement(channel, "image")
           sub_text(img_el, "url", "https://www.cabletv.com/app/uploads/2020/12/cropped-favicon2-32x32.png")
           sub_text(img_el, "title", "Entertainment News | CableTV.com")
@@ -163,31 +162,25 @@ jobs:
               post_id = post["id"]
               post_link = post["link"]
               post_title_raw = post["title"]["rendered"]
-              # Strip HTML entities and tags from title
               post_title = BeautifulSoup(post_title_raw, "html.parser").get_text()
-              # Fix [current_date format=Y] shortcodes
               post_title = re.sub(
                   r'\[current_date\s+format\s*=\s*["\']?[yY]{1,4}["\']?\]',
                   year_full, post_title
               )
 
-              # Pub date
               try:
                   pub_dt = datetime.datetime.fromisoformat(post["date"] + "+00:00")
                   pub_date = format_datetime(pub_dt)
               except:
                   pub_date = now_rfc
 
-              # Author
               author_id = post.get("author", 0)
               author_name = get_author(author_id)
-              print(f"  Processing: {post_title[:60]} ({post_link})")
+              print(f"  Processing: {post_title[:60]}")
 
-              # Featured image
               media_id = post.get("featured_media", 0)
               img_url = get_media_url(media_id)
 
-              # Fallback: og:image from article page if no featured media
               if not img_url:
                   try:
                       art_resp = requests.get(post_link, headers=HEADERS, timeout=10)
@@ -199,19 +192,21 @@ jobs:
                   except Exception as e:
                       print(f"    og:image fallback failed: {e}")
 
-              # Content
+              # Clean WPBakery shortcodes from content
               content_raw = post["content"]["rendered"]
-              if img_url and img_url not in content_raw:
-                  img_html = f'<div style="margin:20px 0;text-align:center;"><img src="{img_url}" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div>'
-                  content_full = img_html + content_raw
-              else:
-                  content_full = content_raw
+              content_clean = clean_content(content_raw)
 
-              # Excerpt
+              if img_url and img_url not in content_clean:
+                  img_html = f'<div style="margin:20px 0;text-align:center;"><img src="{img_url}" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div>'
+                  content_full = img_html + content_clean
+              else:
+                  content_full = content_clean
+
               excerpt_raw = post["excerpt"]["rendered"]
               excerpt_text = BeautifulSoup(excerpt_raw, "html.parser").get_text(strip=True)
+              # Also strip shortcodes from excerpt just in case
+              excerpt_text = re.sub(r'\[/?[a-zA-Z_][^\]]*\]', '', excerpt_text).strip()
 
-              # Build item
               item = etree.SubElement(channel, "item")
               t = etree.SubElement(item, "title")
               t.text = post_title
