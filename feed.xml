@@ -4,7 +4,7 @@
     <title>Entertainment News | CableTV.com</title>
     <link>https://www.cabletv.com/category/news</link>
     <description>Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming.</description>
-    <lastBuildDate>Wed, 01 Jul 2026 14:08:35 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jul 2026 19:39:06 +0000</lastBuildDate>
     <language>en-US</language>
     <atom:link href="https://www.cabletv.com/category/news/feed" rel="self" type="application/rss+xml"/>
     <sy:updatePeriod>hourly</sy:updatePeriod>
@@ -19,1157 +19,6 @@
       <width>32</width>
       <height>32</height>
     </image>
-    <item>
-      <title>17 Best Returning Shows of 2026: Your Ultimate Premiere Guide</title>
-      <link>https://www.cabletv.com/entertainment/best-returning-shows-2026</link>
-      <pubDate>Fri, 26 Jun 2026 15:00:37 +0000</pubDate>
-      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
-      <guid isPermaLink="false">https://www.cabletv.com/entertainment/best-returning-shows-2026</guid>
-      <description><![CDATA[<p>It’s finally over! The wait for your favorite shows is ending in 2026. From the halls of Sacred Heart in the Scrubs revival to the queasy drama of Euphoria, we’ve got the premiere dates for the 17 most anticipated returning shows of the year. Here’s your 2026 binge-watching calendar!</p>]]></description>
-      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/01/featimg_returning-shows-2026-ctv-logo-opt.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>Returning shows in 2026: laughter, tears, and long-awaited comebacks</h2><p>
-We get it. You find a show you love so much that you gobble it up in a few days, only to have to wait <em>forever</em> for a new season. You try other shows to pass the time, and some are pretty good. But there’s still The One Show you fester to resume, the one that left you with a cliffhanger or a <em>really</em> long hiatus, complete with scary renewal/cancellation rumors. Good news, couch creature: The wait is finally over—at least it is for the 17 returning shows we’re highlighting in this column.
-
-The 2026 television landscape spans everything from the high-stakes trading floors of London and dusty reservations to eerie, snow-covered wilderness and beyond. The year is stacked with the kind of prestige drama and comfort-watch comedy that (almost) justifies those frequent <a href="/news/streaming-service-price-increases">streaming-service price hikes</a>.
-
-The lineup of returning shows in 2026 balances long-awaited sequels with the steady return of our current favorites. We’re seeing Tom Hiddleston step back into the shadows for a second chapter of <em>The Night Manager</em>—a full decade after the first season redefined the spy thriller. (Note: Lisa Kudrow’s <em>The Comeback</em> took 11 years to live up to its name, and <em>Scrubs</em> kept us in the waiting room for a solid 16 years.) Meanwhile, the tearjerkers return to tug at our heartstrings, with the raw, medical intensity of <em>The Pitt</em> and the vulnerable vibes of <em>Shrinking</em>.</p></div></div><div class="row section--padding-bottom"><div class="columns small-12 medium-12 large-12">
-<div class="row align-center vc-email-subscribe__wrapper">
-<div class="columns small-12 large-6">
-<div class="callout-area">
-
-<div class="callout-text">
-<h3>Looking for the hottest entertainment?</h3> <p>Subscribe to CableTV.com’s email newsletter for the latest TV event viewing guides, entertaining takes, and money-saving promotions.</p> </div>
-</div>
-</div>
-<div class="columns small-12 large-6">
-<div class="vc-email-subscribe">
-<div class="vc-email-subscribe__inline-form">
-<form action="https://cabletv.activehosted.com/proc.php" class="_form _form_19 _inline-form" id="_form_19_" method="POST">
-<input name="u" type="hidden" value="19"/>
-<input name="f" type="hidden" value="19"/>
-<input name="s" type="hidden"/>
-<input name="c" type="hidden" value="0"/>
-<input name="m" type="hidden" value="0"/>
-<input name="act" type="hidden" value="sub"/>
-<input name="v" type="hidden" value="2"/>
-<input name="or" type="hidden" value="8b2db1a6b150094e4ac73dc0ec08c9b4"/>
-<input id="ls" name="ls" type="hidden" value="1"/>
-<input id="nlbox_2" name="nlbox[]" type="hidden" value="2"/><input id="nlbox_3" name="nlbox[]" type="hidden" value="3"/><input id="nlbox_5" name="nlbox[]" type="hidden" value="5"/><input id="nlbox_16" name="nlbox[]" type="hidden" value="16"/><input id="nlbox_17" name="nlbox[]" type="hidden" value="17"/> <div class="_form-content">
-<div class="_field-wrapper">
-<input class="field-email" id="email" name="email" placeholder="Email Address" required="" type="text"/>
-<label class="show-for-sr" for="email">Email*</label>
-</div>
-<div class="_field-wrapper">
-<input class="field-zip" id="field[1]" maxlength="5" minlength="5" name="field[1]" pattern="[0-9]{5}" placeholder="Zip Code" required="" type="text"/>
-<label class="show-for-sr" for="field[1]">Zip code*</label>
-</div>
-<div class="_button-wrapper _inline-style">
-<button class="button button--generic" id="_form_19_submit" type="submit">
-        Sign Up
-      </button>
-</div>
-
-</div>
-
-</form>
-<script type="text/javascript">
-window.cfields = {"1":"zip_code"};
-window._show_thank_you = function(id, message, trackcmp_url, email) {
-  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
-  form.querySelector('._form-content').style.display = 'none';
-  thank_you.innerHTML = message;
-  thank_you.style.display = 'block';
-  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
-  var visitorObject = window;
-  if (email && typeof visitorObject !== 'undefined') {
-    visitorObject('setEmail', email);
-    visitorObject('update');
-  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
-    // Site tracking URL to use after inline form submission.
-    _load_script(trackcmp_url);
-  }
-  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
-};
-window._show_error = function(id, message, html) {
-  var form = document.getElementById('_form_' + id + '_'),
-    err = document.createElement('div'),
-    button = form.querySelector('button'),
-    old_error = form.querySelector('._form_error');
-  if (old_error) old_error.parentNode.removeChild(old_error);
-  err.innerHTML = message;
-  err.className = '_error-inner _form_error _no_arrow';
-  var wrapper = document.createElement('div');
-  wrapper.className = '_form-inner';
-  wrapper.appendChild(err);
-  button.parentNode.insertBefore(wrapper, button);
-  var submitButton = form.querySelector('');
-  submitButton.disabled = false;
-  submitButton.classList.remove('processing');
-  if (html) {
-    var div = document.createElement('div');
-    div.className = '_error-html';
-    div.innerHTML = html;
-    err.appendChild(div);
-  }
-};
-window._load_script = function(url, callback, isSubmit) {
-  var head = document.querySelector('head'), script = document.createElement('script'), r = false;
-  var submitButton = document.querySelector('#_form_19_submit');
-  script.type = 'text/javascript';
-  script.charset = 'utf-8';
-  script.src = url;
-  if (callback) {
-    script.onload = script.onreadystatechange = function() {
-      if (!r && (!this.readyState || this.readyState == 'complete')) {
-        r = true;
-        callback();
-      }
-    };
-  }
-  script.onerror = function() {
-    if (isSubmit) {
-      if (script.src.length > 10000) {
-        _show_error("19", "Sorry, your submission failed. Please shorten your responses and try again.");
-      } else {
-        _show_error("19", "Sorry, your submission failed. Please try again.");
-      }
-      submitButton.disabled = false;
-      submitButton.classList.remove('processing');
-    }
-  }
-  head.appendChild(script);
-};
-(function() {
-  if (window.location.search.search("excludeform") !== -1) return false;
-  var getCookie = function(name) {
-    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
-    return match ? match[2] : null;
-  }
-  var setCookie = function(name, value) {
-    var now = new Date();
-    var time = now.getTime();
-    var expireTime = time + 1000 * 60 * 60 * 24 * 365;
-    now.setTime(expireTime);
-    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';
-  }
-      var addEvent = function(element, event, func) {
-    if (element.addEventListener) {
-      element.addEventListener(event, func);
-    } else {
-      var oldFunc = element['on' + event];
-      element['on' + event] = function() {
-        oldFunc.apply(this, arguments);
-        func.apply(this, arguments);
-      };
-    }
-  }
-  var _removed = false;
-    var form_to_submit = document.getElementById('_form_19_');
-  var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
-  var getUrlParam = function(name) {
-    var params = new URLSearchParams(window.location.search);
-    return params.get(name) || false;
-  };
-  var acctDateFormat = "%m/%d/%Y";
-  var getNormalizedDate = function(date, acctFormat) {
-    var decodedDate = decodeURIComponent(date);
-    if (acctFormat && acctFormat.match(/(%d|%e).*%m/gi) !== null) {
-      return decodedDate.replace(/(\d{2}).*(\d{2}).*(\d{4})/g, '$3-$2-$1');
-    } else if (Date.parse(decodedDate)) {
-      var dateObj = new Date(decodedDate);
-      var year = dateObj.getFullYear();
-      var month = dateObj.getMonth() + 1;
-      var day = dateObj.getDate();
-      return `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
-    }
-    return false;
-  };
-  var getNormalizedTime = function(time) {
-    var hour, minutes;
-    var decodedTime = decodeURIComponent(time);
-    var timeParts = Array.from(decodedTime.matchAll(/(\d{1,2}):(\d{1,2})\W*()?/gm))[0];
-    if (timeParts[3]) { // 12 hour format
-      var isPM = timeParts[3].toLowerCase() === 'pm';
-      if (isPM) {
-        hour = parseInt(timeParts[1]) === 12 ? '12' : `${parseInt(timeParts[1]) + 12}`;
-      } else {
-        hour = parseInt(timeParts[1]) === 12 ? '0' : timeParts[1];
-      }
-    } else { // 24 hour format
-      hour = timeParts[1];
-    }
-    var normalizedHour = parseInt(hour) < 10 ? `0${parseInt(hour)}` : hour;
-    var minutes = timeParts[2];
-    return `${normalizedHour}:${minutes}`;
-  };
-  for (var i = 0; i < allInputs.length; i++) {
-    var regexStr = "field\\[(\\d+)\\]";
-    var results = new RegExp(regexStr).exec(allInputs.name);
-    if (results != undefined) {
-      allInputs.dataset.name = allInputs.name.match(/\$/)
-        ? `${window.cfields]}_time`
-        : window.cfields];
-    } else {
-      allInputs.dataset.name = allInputs.name;
-    }
-    var fieldVal = getUrlParam(allInputs.dataset.name);
-    if (fieldVal) {
-      if (allInputs.dataset.autofill === "false") {
-        continue;
-      }
-      if (allInputs.type == "radio" || allInputs.type == "checkbox") {
-        if (allInputs.value == fieldVal) {
-          allInputs.checked = true;
-        }
-      } else if (allInputs.type == "date") {
-        allInputs.value = getNormalizedDate(fieldVal, acctDateFormat);
-      } else if (allInputs.type == "time") {
-        allInputs.value = getNormalizedTime(fieldVal);
-      } else {
-        allInputs.value = fieldVal;
-      }
-    }
-  }
-  var remove_tooltips = function() {
-    for (var i = 0; i < tooltips.length; i++) {
-      tooltips.tip.parentNode.removeChild(tooltips.tip);
-    }
-    tooltips = [];
-  };
-  var remove_tooltip = function(elem) {
-    for (var i = 0; i < tooltips.length; i++) {
-      if (tooltips.elem === elem) {
-        tooltips.tip.parentNode.removeChild(tooltips.tip);
-        tooltips.splice(i, 1);
-        return;
-      }
-    }
-  };
-  var create_tooltip = function(elem, text) {
-    var tooltip = document.createElement('div'),
-      arrow = document.createElement('div'),
-      inner = document.createElement('div'), new_tooltip = {};
-    if (elem.type != 'radio' && elem.type != 'checkbox') {
-      tooltip.className = '_error';
-      arrow.className = '_error-arrow';
-      inner.className = '_error-inner';
-      inner.innerHTML = text;
-      tooltip.appendChild(arrow);
-      tooltip.appendChild(inner);
-      elem.parentNode.appendChild(tooltip);
-    } else {
-      tooltip.className = '_error-inner _no_arrow';
-      tooltip.innerHTML = text;
-      elem.parentNode.insertBefore(tooltip, elem);
-      new_tooltip.no_arrow = true;
-    }
-    new_tooltip.tip = tooltip;
-    new_tooltip.elem = elem;
-    tooltips.push(new_tooltip);
-    return new_tooltip;
-  };
-  var resize_tooltip = function(tooltip) {
-    var rect = tooltip.elem.getBoundingClientRect();
-    var doc = document.documentElement,
-      scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
-    if (scrollPosition < 40) {
-      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
-    } else {
-      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
-    }
-  };
-  var resize_tooltips = function() {
-    if (_removed) return;
-    for (var i = 0; i < tooltips.length; i++) {
-      if (!tooltips.no_arrow) resize_tooltip(tooltips);
-    }
-  };
-  var validate_field = function(elem, remove) {
-    var tooltip = null, value = elem.value, no_error = true;
-    remove ? remove_tooltip(elem) : false;
-    if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
-    if (elem.getAttribute('required') !== null) {
-      if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
-        var elems = form_to_submit.elements;
-        if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
-          no_error = elem.checked;
-        }
-        else {
-          no_error = false;
-          for (var i = 0; i < elems.length; i++) {
-            if (elems.checked) no_error = true;
-          }
-        }
-        if (!no_error) {
-          tooltip = create_tooltip(elem, "Please select an option.");
-        }
-      } else if (elem.type =='checkbox') {
-        var elems = form_to_submit.elements, found = false, err = [];
-        no_error = true;
-        for (var i = 0; i < elems.length; i++) {
-          if (elems.getAttribute('required') === null) continue;
-          if (!found && elems !== elem) return true;
-          found = true;
-          elems.className = elems.className.replace(/ ?_has_error ?/g, '');
-          if (!elems.checked) {
-            no_error = false;
-            elems.className = elems.className + ' _has_error';
-            err.push("Checking %s is required".replace("%s", elems.value));
-          }
-        }
-        if (!no_error) {
-          tooltip = create_tooltip(elem, err.join('<br/>'));
-        }
-      } else if (elem.tagName == 'SELECT') {
-        var selected = true;
-        if (elem.multiple) {
-          selected = false;
-          for (var i = 0; i < elem.options.length; i++) {
-            if (elem.options.selected) {
-              selected = true;
-              break;
-            }
-          }
-        } else {
-          for (var i = 0; i < elem.options.length; i++) {
-            if (elem.options.selected
-              && (!elem.options.value
-              || (elem.options.value.match(/\n/g)))
-            ) {
-              selected = false;
-            }
-          }
-        }
-        if (!selected) {
-          elem.className = elem.className + ' _has_error';
-          no_error = false;
-          tooltip = create_tooltip(elem, "Please select an option.");
-        }
-      } else if (value === undefined || value === null || value === '') {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "This field is required.");
-      }
-    }
-    if (no_error && (elem.id == 'field[]' || elem.id == 'ca[11]')) {
-      if (elem.className.includes('phone-input-error')) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-      }
-    }
-    if (no_error && elem.name == 'email') {
-      if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@+(\.+)*(\.{2,})$/i)) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "Enter a valid email address.");
-      }
-    }
-    if (no_error && /date_field/.test(elem.className)) {
-      if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "Enter a valid date.");
-      }
-    }
-    tooltip ? resize_tooltip(tooltip) : false;
-    return no_error;
-  };
-  var needs_validate = function(el) {
-    if(el.getAttribute('required') !== null){
-      return true
-    }
-    if(el.name === 'email' && el.value !== ""){
-      return true
-    }
-    if((el.id == 'field[]' || el.id == 'ca[11]') && el.className.includes('phone-input-error')){
-      return true
-    }
-    return false
-  };
-  var validate_form = function(e) {
-    var err = form_to_submit.querySelector('._form_error'), no_error = true;
-    if (!submitted) {
-      submitted = true;
-      for (var i = 0, len = allInputs.length; i < len; i++) {
-        var input = allInputs;
-        if (needs_validate(input)) {
-          if (input.type == 'tel') {
-            addEvent(input, 'blur', function() {
-              this.value = this.value.trim();
-              validate_field(this, true);
-            });
-          }
-          if (input.type == 'text' || input.type == 'number' || input.type == 'time') {
-            addEvent(input, 'blur', function() {
-              this.value = this.value.trim();
-              validate_field(this, true);
-            });
-            addEvent(input, 'input', function() {
-              validate_field(this, true);
-            });
-          } else if (input.type == 'radio' || input.type == 'checkbox') {
-            (function(el) {
-              var radios = form_to_submit.elements;
-              for (var i = 0; i < radios.length; i++) {
-                addEvent(radios, 'click', function() {
-                  validate_field(el, true);
-                });
-              }
-            })(input);
-          } else if (input.tagName == 'SELECT') {
-            addEvent(input, 'change', function() {
-              validate_field(this, true);
-            });
-          } else if (input.type == 'textarea'){
-            addEvent(input, 'input', function() {
-              validate_field(this, true);
-            });
-          }
-        }
-      }
-    }
-    remove_tooltips();
-    for (var i = 0, len = allInputs.length; i < len; i++) {
-      var elem = allInputs;
-      if (needs_validate(elem)) {
-        if (elem.tagName.toLowerCase() !== "select") {
-          elem.value = elem.value.trim();
-        }
-        validate_field(elem) ? true : no_error = false;
-      }
-    }
-    if (!no_error && e) {
-      e.preventDefault();
-    }
-    resize_tooltips();
-    return no_error;
-  };
-  addEvent(window, 'resize', resize_tooltips);
-  addEvent(window, 'scroll', resize_tooltips);
-  var hidePhoneInputError = function(inputId) {
-    var errorMessage = document.getElementById("error-msg-" + inputId);
-    var input = document.getElementById(inputId);
-    errorMessage.classList.remove("phone-error");
-    errorMessage.classList.add("phone-error-hidden");
-    input.classList.remove("phone-input-error");
-  };
-  var initializePhoneInput = function(input, defaultCountry) {
-    return window.intlTelInput(input, {
-      utilsScript: "https://unpkg.com/intl-tel-input@17.0.18/build/js/utils.js",
-      autoHideDialCode: false,
-      separateDialCode: true,
-      initialCountry: defaultCountry,
-      preferredCountries: []
-    });
-  }
-  var setPhoneInputEventListeners = function(inputId, input, iti) {
-    input.addEventListener('blur', function() {
-      var errorMessage = document.getElementById("error-msg-" + inputId);
-      if (input.value.trim()) {
-        if (iti.isValidNumber()) {
-          iti.setNumber(iti.getNumber());
-          if (errorMessage.classList.contains("phone-error")){
-            hidePhoneInputError(inputId);
-          }
-        } else {
-          showPhoneInputError(inputId)
-        }
-      } else {
-        if (errorMessage.classList.contains("phone-error")){
-          hidePhoneInputError(inputId);
-        }
-      }
-    });
-    input.addEventListener("countrychange", function() {
-      iti.setNumber('');
-    });
-    input.addEventListener("keydown", function(e) {
-      var charCode = (e.which) ? e.which : e.keyCode;
-      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 8) {
-        e.preventDefault();
-      }
-    });
-  };
-  var showPhoneInputError = function(inputId) {
-    var errorMessage = document.getElementById("error-msg-" + inputId);
-    var input = document.getElementById(inputId);
-    errorMessage.classList.add("phone-error");
-    errorMessage.classList.remove("phone-error-hidden");
-    input.classList.add("phone-input-error");
-  };
-  var _form_serialize = function(form){if(!form||form.nodeName!=="FORM"){return }var i,j,q=[];for(i=0;i<form.elements.length;i++){if(form.elements.name===""){continue}switch(form.elements.nodeName){case"INPUT":switch(form.elements.type){case"tel":q.push(form.elements.name+"="+encodeURIComponent(form.elements.previousSibling.querySelector('div.iti__selected-dial-code').innerText)+encodeURIComponent(" ")+encodeURIComponent(form.elements.value));break;case"text":case"number":case"date":case"time":case"hidden":case"password":case"button":case"reset":case"submit":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"checkbox":case"radio":if(form.elements.checked){q.push(form.elements.name+"="+encodeURIComponent(form.elements.value))}break;case"file":break}break;case"TEXTAREA":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"SELECT":switch(form.elements.type){case"select-one":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"select-multiple":for(j=0;j<form.elements.options.length;j++){if(form.elements.options.selected){q.push(form.elements.name+"="+encodeURIComponent(form.elements.options.value))}}break}break;case"BUTTON":switch(form.elements.type){case"reset":case"submit":case"button":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break}break}}return q.join("&")};
-  const formSupportsPost = false;
-  var form_submit = function(e) {
-    e.preventDefault();
-    if (validate_form()) {
-      // use this trick to get the submit button & disable it using plain javascript
-      var submitButton = e.target.querySelector('#_form_19_submit');
-      submitButton.disabled = true;
-      submitButton.classList.add('processing');
-            var serialized = _form_serialize(
-        document.getElementById('_form_19_')
-      ).replace(/%0A/g, '\\n');
-      var err = form_to_submit.querySelector('._form_error');
-      err ? err.parentNode.removeChild(err) : false;
-      async function submitForm() {
-       var formData = new FormData();
-       const searchParams = new URLSearchParams(serialized);
-       searchParams.forEach((value, key) => {
-        formData.append(key, value);
-       });
-       const response = await fetch('https://cabletv.activehosted.com/proc.php?jsonp=true', {
-        headers: {
-         "Accept": "application/json"
-        },
-        body: formData,
-        method: "POST"
-       });
-       return response.json();
-      }
-      if (formSupportsPost) {
-       submitForm().then((data) => {
-        eval(data.js);
-       });
-      } else {
-       _load_script('https://cabletv.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
-      }
-    }
-    return false;
-  };
-  addEvent(form_to_submit, 'submit', form_submit);
-})();
-</script>
-<p class="vc-email-subscribe__disclaimer">
-          By signing up, you agree to our <a href="/privacy-policy-terms-and-conditions">Privacy Policy &amp; Terms and Conditions</a>.
-        </p>
-</div>
-</div>
-</div>
-</div>
-</div></div><div class="row"><div class="columns small-12 medium-12 large-12">Do you crave chaos? You won’t be disappointed. “The Ton” is buzzing again with Benedict’s turn in the spotlight for <em>Bridgerton</em>, while the kitchen heat in <em>The Bear</em> and the toxic rivalries in <em>Beef</em> promise to collectively pump up our blood pressure. Add in the intensity of thrillers like <em>Dark Winds</em>, <em>Paradise</em>, and the final season of <em>Yellowjackets</em>, and you have a year of TV worth clearing your schedule for.</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>The Pitt</em>, Season 2 | <a href="/hbo-max-review">HBO Max</a> | Jan. 8</h2><p>
-Another season, another 15-hour shift. <em>The Pitt</em> returns to HBO Max for <a href="/entertainment/new-shows">Season 2</a>, proving that the “real-time” medical drama is here to stay. Emmy and Golden Globe winner Noah Wyle leads the charge in this body-horror-infused, Pittsburgh-set series that trades the soap opera tropes of other medical procedurals for a raw, honest look at the breaking point of American healthcare. —<em>Mike Strayer, Managing Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Industry</em>, Season 4 | <a href="/hbo-max-review">HBO Max</a> | Jan. 11</h2><p>
-The trading floor looks a bit different this year in HBO’s critically acclaimed financial thriller, <em>Industry</em>. The high-stakes drama series officially returned for its fourth season on Sunday, Jan. 11, introducing a wave of fresh faces to the roster, including Kiernan Shipka, Kal Penn, and Claire Forlani. While fans are thrilled to see Kit Harington (<em>Game of Thrones</em>) return to the fold, the new season carries a bittersweet note: Harry Lawtey has officially exited the series following the events of last season. As the new blood settles in, the stakes for London’s elite have never been higher. —<em>Randy Harward, Senior Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>The Night Manager</em>, Season 2 | <a href="/amazon-prime-video">Prime Video</a> | Jan. 11</h2><p>
-<em>The Night Manager</em>‘s first series is one of my all-time favorite seasons of television, so when I heard it was getting the sequel treatment—albeit 10 years later—I was excited, but skeptical. Could it capture the lightning in a bottle that made the first season so good? I haven’t watched all the available episodes (yet), but what I’ve seen so far makes me hopeful that Season 2 may give Season 1 a run for its money.
-
-This season, Tom Hiddleston is back as the veteran soldier turned hotelier turned spy, Jonathan Pine. When we reconnect with Pine, he’s swapped the luxury hotel circuit for a quiet life in London, operating under the MI6 alias Alex Goodwin. Unfortunately for him, his retirement is cut short after a bloody run-in with a Colombian “businessman” forces him back into the field. This new mission takes Pine deep into South America, where he must once again go undercover to dismantle a massive arms-dealing syndicate from the inside. —<em>Logan Jones, Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Shrinking</em>, Season 3 | <a href="/apple-tv-plus">Apple TV</a> | Jan. 28</h2><p>
-Jason Segel, Jessica Williams, and Harrison Ford are back in one of the most earnest, emotionally involving, and hilarious TV shows about what it’s like to overcome struggle. I binged the first two seasons of this show to get ready for Season 3, and the volume of laughter and tears that came out of my body are too embarrassing to mention. Actually, not embarrassed—it was a lot. If this show has taught me anything, it’s that it’s OK to be vulnerable. I can’t wait for the next 12 episodes of this great show. —<em>Alex Vejar, Jr. Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Bridgerton</em>, Season 4 | <a href="/netflix">Netflix</a> | Jan. 29</h2><p>
-Violet Bridgerton famously had a lot of children, and that means a lot of television. As per the usual <em>Bridgerton</em> formula, each season focuses on a different sibling, and this January we’ll finally get Benedict’s story. Expect masquerades, lavish costumes, and a Cinderella-inspired fairytale romance. After that? <a href="/news/bridgerton-season-5-leading-couple-announced">Four more Bridgertons to go</a> (and probably spin-offs for every minor character)! —<em>Olivia Bono, Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Dark Winds</em>, Season 4 | AMC, <a href="/amc-plus">AMC+</a> | Feb. 15</h2><p>
-Navajo Nation’s finest dicks are trading the High Desert for the trashy streets of ’70s Los Angeles, following Leaphorn (Zahn McClarnon), Chee (Kiowa Gordon), and Manuelito (Jessica Matten) as they hunt for a missing girl in a race against a deadly LA crime ring. With a well-deserved perfect 100% Rotten Tomatoes score and Zahn McClarnon making his directorial debut this season, for my money, this’ll be the TV event of the winter. —<em>Mike Strayer, Managing Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Paradise</em>, Season 2 | <a href="/hulu-review">Hulu</a> | Feb. 23</h2><p>
-The first season of the hit Hulu sci-fi/political thriller caught fire thanks to how adeptly its winding and pulpy premise was anchored by Sterling K. Brown’s performance as Secret Service agent Xavier Collins, who’s investigating the president’s assassination. (The show comes from <em>This is Us</em> creator Dan Fogelman, who’s no stranger to episodes loaded with twists to keep us hooked.)
-
-We’ll refrain from diving into plot details if you’re still playing catch up (seriously, it’s a doozy). But the new season of Paradise will expand the show’s scope as Collins searches for his family members. —<em>Eric Chiu, Internet Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Scrubs</em>, Season 10 | <a href="/blog/what-channel-is-abc">ABC</a>, <a href="/hulu-review">Hulu</a> | Feb. 25</h2><p>
-I was late to the <em>Scrubs</em> party, but with the current sitcom landscape feeling dry, this revival feels like just what the doctor ordered. Premiering February 25, the nine-episode season reunites Zach Braff, Donald Faison, and Sarah Chalke. While I doubt it’ll crush broadcast ratings on ABC, it’s destined to be a solid hit on streaming.
-
-After years of watching Braff and Faison’s chemistry in T-Mobile ads, I’m ready to see them back at Sacred Heart. With guest spots from John C. McGinley and Judy Reyes, this mid-season entry will blend fresh laughs with well-earned nostalgia. Plus, creator Bill Lawrence has been on a massive hot streak lately (<em>Shrinking</em>, <em>Ted Lasso</em>, <em>Bad Monkey</em>), so my confidence is high. —<em>Taylor Kujawa, Sports Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Monarch: Legacy of Monsters</em>, Season 2 | <a href="/apple-tv-plus">Apple TV</a> | Feb. 27</h2><p>
-Over two years after Season 1 ended, <em>Monarch: Legacy of Monsters</em> is finally back. Sure, the Monsterverse movies feel increasingly repetitive, but this TV series is the franchise’s high point. It balances spectacle with story far better than the recent films, weaving between the events of <em>Godzilla</em> (2014) and <em>Kong: Skull Island</em> (2017) to offer a grounded view of life among Titans.
-
-If you thought the first season was light on kaiju, the Season 2 teaser promises Godzilla, King Kong, and a new threat. But for me, it’s the human cast that drives the show. Anna Sawai is fantastic, and having Kurt and Wyatt Russell play the same character across two different time periods works really well. —<em>Taylor Kujawa, Sports Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<p class="h3">New on Streaming in March 2026</p><ul>
-<li><a href="/entertainment/new-to-hulu-march-2026">6 New on Hulu Shows and Movies to Stream</a></li>
-<li><a href="/entertainment/new-on-prime-video-march-2026">7 New Shows and Movies on Prime Video</a></li>
-<li><a href="/entertainment/new-to-netflix-march-2026">New Shows and Movies on Netflix</a></li>
-<li><a href="/entertainment/new-on-hbo-max-march-2026">What’s Coming to HBO Max</a></li>
-</ul></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Ted</em>, Season 2 | <a href="/peacock">Peacock</a> | March 5</h2><p>
-Who likes sweary bears? <em>Me</em>, muthahuggaz! Although I enjoyed the two <em>Ted</em> films, I didn’t have high hopes for Seth McFarlane’s <em>Ted</em> ‘90s–set prequel series. Then I gave it a shot one night to thwart a bout of choice paralysis. I’m glad I did, ‘cause sometimes a mix of lowbrow humor and cuteness (such that the crass, McFarlane-voiced Ted can be cute) just hits the spot. Especially when you get into the fantasy of having a talking bear sidekick in high school (and the ‘90s are close enough to my time). P.S. Have you heard about the upcoming <a href="https://variety.com/2025/tv/news/ted-season-2-release-date-peacock-1236606482/" rel="false noopener" target="_blank">animated sequel</a>? —<em>Randy Harward, Senior Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>The Comeback</em>, Season 3 | HBO, <a href="/hbo-max-review">HBO Max</a> | March 22</h2><p>
-You had me at Lisa Kudrow and AI chatbot. The ultimate meta-comedy has returned after 11 years, once again proving that the “cringe-comedy” from Lisa Kudrow and Michael Patrick King is a perfect vehicle for pretty much any cultural moment. Picking up two decades after Valerie’s Emmy-winning comeback, the new season satirizes the industry’s current obsession with AI mediocrity. Hey, Netflix, you sure you wanna hear what comedy writers have to say ’bout that? —<em>Mike Strayer, Managing Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Euphoria</em>, Season 3 | HBO, <a href="/hbo-max-review">HBO Max</a> | April 12</h2><p>
-Here’s a data point that piqued my interest: Nearly <a href="https://deadline.com/2026/01/euphoria-season-3-trailer-viewership-record-hbo-1236685553/" rel="false noopener" target="_blank">100 million people saw the <em>Euphoria</em> Season 3 trailer</a> in just two days, which broke a record, per HBO. So it’s safe to say that people are stoked for this show. I loved the first two seasons, and I’m waiting with bated breath to see how the <a href="https://www.glamour.com/story/euphoria-season-3-details-plot-cast-premiere-date-update-december-2025" rel="false noopener" target="_blank">massive time jump</a> will affect the story. It’s also pretty crazy how famous Zendaya, Jacob Elordi, Sydney Sweeney, and others are nowadays compared to when the show first premiered in 2019. Will their fame take away from the raw nature of the show, or add to it? Is this really <a href="https://deadline.com/feature/euphoria-season-3-news-updates-1236296782/" rel="false noopener" target="_blank">the final season</a>? How much more intense can this show get? I’m anxious for the answers. —<em>Alex Vejar, Jr. Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Beef</em>, Season 2 | <a href="/netflix">Netflix</a> | April 16</h2><p>
-The first season of <em>Beef</em> was so intense that I’m pretty sure I’ll have slightly elevated blood pressure for the rest of my life. It was worth it, though, and I hope the second season of this anthology series is just as unrelenting. The all-new cast for Season 2 is stacked—Oscar Isaac, Carey Mulligan, Charles Melton, Cailee Spaeny, and others. The story is centered around a couple who witness an unnerving fight between their boss and his wife, and the aftermath of that. I’m curious to see which actors play what parts. I’m also curious to see how this second season embodies the toxic anger that the idea of “beef” conveys. —<em>Alex Vejar, Jr. Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>The Bear</em>, Season 5 | <a href="/hulu-review">Hulu</a> | June 25</h2><p>
-The kitchen of <em>The Bear</em>—and Carmy (<a href="/entertainment/best-jeremy-allen-white-roles">Jeremy Allen White</a>) himself—has always been a pressure cooker. But with Carmy stepping aside from cooking to deal with his emotional issues (<em>finally</em>) at the end of Season 4, we may be seeing a different side of him, and the show, in Season 5.
-
-While the rest of the core ensemble is returning to the restaurant, the central question will be whether Carmy can find a version of peace outside the kitchen that <em>doesn’t</em> involve alienating everyone and everything he loves. I’m keeping my expectations low, but we’ll see. —<em>Logan Jones, Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Ted Lasso</em>, Season 4 | <a href="/apple-tv-plus">Apple TV</a> | Aug. 5</h2><p>
-What can I say ’bout your mustachioed boi Ted that hasn’t already been said? Not much, but for what it’s worth, I’m not mad that Jason Sudeikis and crew surprised fans with a fourth season. Will Coach Nate continue his return toward good? Will Coach Beard and Jane’s horny romance last in marriage? There are a lot of ways Season 4 could go (not even mentioning Ted’s fugue to Kansas), but I’m here for it. —<em>Mike Strayer, Managing Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>The Hunting Wives</em>, Season 2 | <a href="/netflix">Netflix</a> | TBD 2026</h2><p>
-I didn’t think I’d be into this show about a Chicago career woman (Brittany Snow) who moves to Texas and joins a clique of socialites with a shady side—but it got me. I’m halfway through Season 1, and extra happy not to have to wait too long for Season 2. I just wish I didn’t already know about the (SPOILER, kinda) massive cliffhanger. At least I won’t have to sit with that suspense for a whole year.
-
-All I know about Season 2 is purposely vague, and sourced from a colleague (let’s call him “Dave Google”). The stakes have shifted from “fitting in” to “staying alive” as the fallout from the investigation turns besties into bitter rivals, navigating legal and social wreckage. Intriguing!
-
-Er . . . it just occurred to me that “TBA 2026” could mean late July (which is when Season 1 premiered). It could be a long six months if I don’t slow my Season 1 roll. —<em>Randy Harward, Senior Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Yellowjackets</em>, Season 4 | <a href="/entertainment/what-channel-is-paramount-plus-with-showtime">SHOWTIME</a>, <a href="/paramount-plus-review">Paramount+</a> | TBD 2026</h2><p>
-Is it weird that, for me, <em>Yellowjackets</em> is a comfort show? Ashley Lyle and Bart Nickerson’s psychological horror-drama is anything but comforting, and the characters aren’t exactly BFF material (except crazy-but-oddly-reliable Misty . . . Is <em>that</em> weird?). And, season after season, things seem to only get more complicated for the marooned girls soccer team—both their past and present versions. Maybe it just feels like we’ve trauma-bonded over their Donner Party-style ordeal. I dunno. As for plot details in the series’ <a href="https://variety.com/2025/tv/news/yellowjackets-final-season-4-showtime-paramount-1236546225/" rel="false noopener" target="_blank">fourth and final season</a>, the creators tease, “We can’t wait to share the final chapter with you, and hope you find it…delicious.” Om nom? —<em>Randy Harward, Senior Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<p class="h3">Related articles</p><ul>
-<li><a href="/netflix">Netflix Review</a></li>
-<li><a href="/hbo-max-review">HBO Max Review</a></li>
-<li><a href="/hulu-review">Hulu Review</a></li>
-<li><a href="/amazon-prime-video">Prime Video Review</a></li>
-<li><a href="/entertainment/best-tv-shows-of-2026">Best TV Shows of 2026 (So Far)</a></li>
-</ul></div></div>
-]]></content:encoded>
-      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/01/featimg_returning-shows-2026-ctv-logo-opt.webp"/>
-    </item>
-    <item>
-      <title>Jalen Brunson, Messi, Shohei Ohtani Highlight 2026 ESPYs Nominations</title>
-      <link>https://www.cabletv.com/news/espys-nominees-announced</link>
-      <pubDate>Fri, 26 Jun 2026 14:45:59 +0000</pubDate>
-      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
-      <guid isPermaLink="false">https://www.cabletv.com/news/espys-nominees-announced</guid>
-      <description><![CDATA[<p>The 2026 ESPY Awards nominations are out, featuring big names such as Lionel Messi, Shohei Ohtani, and A’ja Wilson. Check out our breakdown of the nominees.</p>]]></description>
-      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/06/ESPYs-Nominees.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>94 athletes nominated for the 2026 ESPYs</h2><p>
-ESPN announced the nominees for the 2026 ESPY Awards on Thursday, June 25, and the list features some of the best and most impactful athletes across men’s and women’s sports.
-
-New York Knicks point guard Jalen Brunson is nominated in two categories this year, while Los Angeles Dodgers pitcher Shohei Ohtani is nominated in three. Las Vegas Aces star A’ja Wilson and soccer GOAT Lionel Messi are each nominated in two categories.
-
-Other notable nominees are Carlos Alcaraz, Jannik Sinner, Cameron Boozer, Napheesa Collier, Fernando Mendoza, and Megan Grant.
-
-Athletes were nominated in 22 categories, including Best Athlete, Men’s Sports; Best Athlete, Women’s Sports; Best Championship Performance; Best Play; Best Team; and Best Single-Game Performance. There are also several sport-specific awards.
-
-New this year at the ESPYs are three social-only awards: Best Tunnel Fit, Best Celebration, and Best Sports Card. The nominees for those categories will be announced at a later date.
-
-Check out the <a href="https://espnpressroom.com/us/the-2026-espys-nominees/" rel="noopener" target="_blank">full list of ESPY nominees</a> on ESPN’s website.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>SNL star to host the awards show</h2><p>
-Marcello Hernández is one of the stars of “Saturday Night Live.” His hilarious sketches include <a href="https://www.youtube.com/watch?v=ntueYuZ8r94" rel="noopener" target="_blank">playing a dance instructor opposite Ariana Grande</a>, a suave man named <a href="https://www.youtube.com/watch?v=R3CZMn6z0ZI&amp;list=PLySA0qEHNzF0nKq0kgHazfsT4AGR4wobc&amp;index=2" rel="noopener" target="_blank">Domingo</a>, and the clueless <a href="https://www.youtube.com/watch?v=LrSPxf6scy4" rel="noopener" target="_blank">Movie Guy</a> on Weekend Update. He made history by becoming the first Gen Z cast member of “SNL.”
-
-“I started doing comedy 10 years ago, in Cleveland, Ohio, and I would take the train 12 hours to New York to sell comedy tickets on the street in Greenwich Village in exchange for stage time,” Hernández said in a statement. “It is an honor, and frankly feels crazy to be hosting the ESPYS this year in New York. I’m sure the energy is going to be great.”
-
-The addition of Hernández as host signals a desire for ESPN to attract a younger audience to the ESPYs.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>How to watch the 2026 ESPY Awards</h2><p>
-The ESPYs will air live on <a href="/entertainment/what-channel-is-abc">ABC</a> on Wednesday, July 15, at 8:00 p.m. ET. It’ll be available to stream on <a href="/disney-plus">Disney+</a>, <a href="/hulu">Hulu</a>, and the ESPN app the following day.
-
-The show will be broadcast from the David H. Koch Theater at Lincoln Center in New York City. This year marks the return to NYC for the ESPYs, which have been held in Los Angeles for more than 20 years.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>Who we are</h2><p>
-At CableTV.com, we’re not just entertainment experts — we’re also fans just like you. So while our first priority is reporting the best and most accurate information about TV providers and streaming services, we also love talking about our favorite shows and movies. So you can count on us to share our honest opinions and unbridled enthusiasm. For more on our process, check out our <a href="/how-we-rank">Editorial Policy</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<p class="h3">More industry news for sports fans</p><ul>
-<li><a href="/news/2026-premier-league-fixture-release">Premier League Fixture Release Brings Key Changes</a></li>
-<li><a href="/news/womens-sports-sundays-schedule-release">Caitlin Clark, Trinity Rodman, and More to Highlight New ESPN Sunday Showcase</a></li>
-<li><a href="/news/fubo-nbc-resolve-dispute">Fubo and NBCU Resolve Dispute: What It Means for Sports Fans</a></li>
-<li><a href="/entertainment/upcoming-award-shows">How To Watch Upcoming Awards Shows in 2026</a></li>
-</ul></div></div>
-]]></content:encoded>
-      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/06/ESPYs-Nominees.webp"/>
-    </item>
-    <item>
-      <title>DIRECTV Streaming vs. DIRECTV Satellite: Live Streaming or Satellite TV Service – Which Is Better For You?</title>
-      <link>https://www.cabletv.com/reviews/directv-stream-vs-directv</link>
-      <pubDate>Fri, 26 Jun 2026 14:14:01 +0000</pubDate>
-      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
-      <guid isPermaLink="false">https://www.cabletv.com/reviews/directv-stream-vs-directv</guid>
-      <description><![CDATA[<p>DIRECTV’s streaming and satellite products both have some excellent features, but they’re both way too expensive to be worth it for most folks. Forced to choose one over the other, we’d pick DIRECTV’s streaming plans since they’re the most flexible (no contract means an easier escape) and avoid DIRECTV’s ridiculous second-year price hike.</p>]]></description>
-      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2025/10/DTV-vs-DTV-featured-image.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12"> <div class="best-of-hero-card is-best num-cards- layout-columns">
-<div class="best-of-hero-card__label">Most Streaming Sports Channels</div> <div class="best-of-hero-card__contents">
-<div class="best-of-hero-card__contents__first-column">
-<div>
-<div class="best-of-hero-card__contents__logo-container">
-<a data-brand="DIRECTV STREAM" data-name="directv-stream" data-slug="directv-stream" href="https://go.cabletv.com/aff_c?offer_id=1446&amp;aff_id=1003" rel="nofollow noopener" target="_blank">
-<img alt="DIRECTV STREAM" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-png.webp" srcset="https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-png.webp 1200w, https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-600x315.webp 600w, https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-900x473.webp 900w, https://www.cabletv.com/app/uploads/2022/03/directv-stream-2025-logo-300x158.webp 300w" width="175"/>
-</a><div class="provider-name-container text-center">DIRECTV Streaming</div> <div class="rating-container margin--top-15 margin-bottom-5">
-<div>
-<style>#rating_stars_6a3fcbcd669c0 .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3fcbcd669c0 .remainder-star { width:9px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3fcbcd669c0 .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a3fcbcd669c0 .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a3fcbcd669c0 .remainder-star { width:9px; min-height:15px; background-size:15px; }#rating_stars_6a3fcbcd669c0 .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.60/5)</a></div> </div>
-</div>
-</div>
-<div class="best-of-hero-card__contents__features-container first-container">
-<div class="featured-price-container">$59.99–$129.99/mo. for 1st mo. + taxes &amp; fees</div><div class="pros-cons-container"><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">No contracts</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">Fast self-installation; no device requirement</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">Many sports channels, regional sports networks, and add-ons</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">5-day free trial</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Con" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/con.svg" width="175"/></div><div class="pros-cons-text">High pricing for a streaming TV service</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Con" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/con.svg" width="175"/></div><div class="pros-cons-text">Equipment fees</div></div></div> </div>
-</div>
-<div class="best-of-hero-card__contents__cta-container">
-<a class="button button--generic button--is-big width--full" data-name="directv-stream" data-slug="directv-stream" href="https://go.cabletv.com/aff_c?offer_id=1446&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plans<span class="show-for-sr"> for DIRECTV STREAM</span></a><div class="cta-link"><a href="#Compare_head_to_head">Compare top features</a></div> </div>
-</div>
-<div class="best-of-hero-card__contents__features-container second-container">
-<div class="featured-price-container">$59.99–$129.99/mo. for 1st mo. + taxes &amp; fees</div><div class="pros-cons-container"><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">No contracts</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">Fast self-installation; no device requirement</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">Many sports channels, regional sports networks, and add-ons</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">5-day free trial</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Con" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/con.svg" width="175"/></div><div class="pros-cons-text">High pricing for a streaming TV service</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Con" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/con.svg" width="175"/></div><div class="pros-cons-text">Equipment fees</div></div></div> </div>
-</div>
-</div>
-<script type="application/ld+json">
-    {
-      "@context": "http://schema.org/",
-      "@type": "Review",
-      "author": [
-        {
-      "@type": "Person",
-      "name": "Nathan Brown"
-        }
-      ],
-      "url": "https://www.cabletv.com/provider/directv-stream",
-      "datePublished":"2022-03-30",
-      "dateModified":"2025-04-24",
-      "publisher": {
-      "@type":"Organization",
-      "name":"CableTV.com",
-      "url":"https://www.cabletv.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.cabletv.com/app/uploads/logo-cabletv.png",
-        "width": "217",
-        "height": "60"
-        }
-      },
-      "description":"",
-      "itemReviewed": {
-        "@type": "Product",
-        "review":{
-        "@type":"Review",
-        "author": "Nathan Brown"
-        },
-        "name": "DIRECTV STREAM",
-        "url": "https://www.cabletv.com/provider/directv-stream",
-        "image": ""
-      },
-      "reviewRating": {
-        "@type":"Rating",
-        "worstRating":"0",
-        "bestRating":"5",
-        "ratingValue":"3.6"
-      }
-    }
-
-
-  </script>
-<div class="best-of-hero-card num-cards- layout-columns">
-<div class="best-of-hero-card__label">Best TV Provider for Sports</div> <div class="best-of-hero-card__contents">
-<div class="best-of-hero-card__contents__first-column">
-<div>
-<div class="best-of-hero-card__contents__logo-container">
-<a data-brand="DIRECTV" data-name="directv" data-slug="directv" href="https://go.cabletv.com/aff_c?offer_id=1447&amp;aff_id=1003" rel="nofollow noopener" target="_blank">
-<img alt="DIRECTV" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-png.webp" srcset="https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-png.webp 1200w, https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-600x315.webp 600w, https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-900x473.webp 900w, https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-300x158.webp 300w" width="175"/>
-</a><div class="provider-name-container text-center">DIRECTV Satellite</div> <div class="rating-container margin--top-15 margin-bottom-5">
-<div>
-<style>#rating_stars_6a3fcbcd6b79e .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3fcbcd6b79e .remainder-star { width:4.5px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3fcbcd6b79e .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a3fcbcd6b79e .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a3fcbcd6b79e .remainder-star { width:4.5px; min-height:15px; background-size:15px; }#rating_stars_6a3fcbcd6b79e .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (4.30/5)</a></div> </div>
-</div>
-</div>
-<div class="best-of-hero-card__contents__features-container first-container">
-<div class="featured-price-container">$89.99–$169.99/mo.</div><div class="pros-cons-container"><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">2-yr. price guarantee</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">Genie DVR or wireless Gemini devices</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">Many sports channels, regional sports networks, and add-ons</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Con" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/con.svg" width="175"/></div><div class="pros-cons-text">2-yr. contract</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Con" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/con.svg" width="175"/></div><div class="pros-cons-text">No self-installation</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Con" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/con.svg" width="175"/></div><div class="pros-cons-text">High prices</div></div></div> </div>
-</div>
-<div class="best-of-hero-card__contents__cta-container">
-<a class="button button--generic button--is-big width--full" data-name="directv" data-slug="directv" href="https://go.cabletv.com/aff_c?offer_id=1447&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plans<span class="show-for-sr"> for DIRECTV</span></a><div class="cta-link"><a href="#Compare_head_to_head">Compare top features</a></div> </div>
-</div>
-<div class="best-of-hero-card__contents__features-container second-container">
-<div class="featured-price-container">$89.99–$169.99/mo.</div><div class="pros-cons-container"><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">2-yr. price guarantee</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">Genie DVR or wireless Gemini devices</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Pro" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/check.svg" width="175"/></div><div class="pros-cons-text">Many sports channels, regional sports networks, and add-ons</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Con" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/con.svg" width="175"/></div><div class="pros-cons-text">2-yr. contract</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Con" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/con.svg" width="175"/></div><div class="pros-cons-text">No self-installation</div></div><div class="pros-cons-item"><div class="pros-cons-icon"><img alt="Con" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/themes/bifrost-child/dist/images/components/best-of-hero-card/con.svg" width="175"/></div><div class="pros-cons-text">High prices</div></div></div> </div>
-</div>
-</div>
-<script type="application/ld+json">
-    {
-      "@context": "http://schema.org/",
-      "@type": "Review",
-      "author": [
-        {
-      "@type": "Person",
-      "name": "Shawn Spainhour"
-        }
-      ],
-      "url": "https://www.cabletv.com/provider/directv",
-      "datePublished":"2020-01-22",
-      "dateModified":"2025-04-30",
-      "publisher": {
-      "@type":"Organization",
-      "name":"CableTV.com",
-      "url":"https://www.cabletv.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.cabletv.com/app/uploads/logo-cabletv.png",
-        "width": "217",
-        "height": "60"
-        }
-      },
-      "description":"",
-      "itemReviewed": {
-        "@type": "Product",
-        "review":{
-        "@type":"Review",
-        "author": "Shawn Spainhour"
-        },
-        "name": "DIRECTV",
-        "url": "https://www.cabletv.com/provider/directv",
-        "image": ""
-      },
-      "reviewRating": {
-        "@type":"Rating",
-        "worstRating":"0",
-        "bestRating":"5",
-        "ratingValue":"4.3"
-      }
-    }
-
-
-  </script>
-</div></div><div class="row full-width-hero align-middle expanded collapse margin--top-30"><div class="columns small-12 medium-12 large-12">
-<p style="font-size: 12px; width: 100%; text-align: left;"><em>Data effective as of post date. Not all offers are available in all areas. See <a href="#disclaimer">full disclaimer</a> for details.
-</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-6"><strong>Status:</strong> Verified on 6/26/26</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>Is DIRECTV streaming or DIRECTV satellite better?</h2></div></div><div class="row"><div class="columns small-12 medium-12 large-8">When it comes to DIRECTV, I have years of experience using both the classic satellite dish setup and its streaming form. Which one is better depends on your preferences.
-
-Each DIRECTV service has (nearly) identical high prices, two-year term agreements, and hidden fees that always seem to pop up. Also, both services are <a href="/streaming/best-live-tv-streaming-services">excellent for sports</a>. The biggest differences are channel lineups, delivery method (satellite vs. streaming), devices (Genie or Gemini) for live TV channels, movies, and shows.
-
-I’ve enjoyed both feature-rich services, but if you forced me to choose, I’d go with DIRECTV’s streaming plans. It’s just simpler to install and use—and cancel without a penalty.
-
-However, my overall recommendation is that DIRECTV plans change too frequently and its prices are much too high; you can often get more bang for your buck elsewhere. Check out <a href="/youtube-tv">YouTube TV</a> or <a href="/hulu/live-tv">Hulu + Live TV</a> or, if you’re still considering a satellite setup, <a href="/dish/review">DISH</a>.
-
-But maybe you’re not yet ready to turn your back on DIRECTV—perhaps because you want to access the services’ top-shelf sportsball experience. If so, read on for a deeper comparison of both services.</div></div><div class="row"><div class="columns small-12 medium-12 large-12"><p><img alt="The official light blue DIRECTV logo." class="alignnone size-medium wp-image-243984" decoding="async" height="126" loading="lazy" sizes="auto, (max-width: 240px) 100vw, 240px" src="https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-600x315.webp" srcset="https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-600x315.webp 600w, https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-900x473.webp 900w, https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-300x158.webp 300w, https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-png.webp 1200w" width="240"/></p>
-<p class="h3">Don't be caught offsides with the wrong streamer this World Cup</p>
-<p>DIRECTV is the streaming service hooligans choose for football. According to CableTV.com's 2026 customer satisfaction survey, more fans (49%) watch soccer on DIRECTV than any other streaming service. That's more than rivals Fubo and YouTube TV. What's more, a staggering 97% of DIRECTV streaming subscribers reported satisfaction with their live sports experience. So, what are you waiting for? Hit the World Cup pitch this summer by streaming it on DIRECTV.</p>
-<p><a class="button button--generic button--is-big button--is-auto-width" href="/directv/stream">View DIRECTV Plans</a></p></div></div><div class="row hide"><div class="columns small-12 medium-12 large-12">
-<p class="h3">What else is out there?</p><p>
-You can get <a href="/streaming/best-live-tv-streaming-services">streaming TV services</a> wherever you can get a steady internet connection. <a href="/blog/dish-vs-directv">Satellite TV services</a> like DISH and DIRECTV are available almost anywhere. But <a href="/tv/best-tv-providers">cable TV providers</a>’ availability depends on your location. Enter your zip code below to find providers in your area.
-
-
-  <form class="zip-finder zip-finder--inline" data-abide="" data-filter-hash="tv" data-form-location="Body" data-zip-finder="" novalidate="">
-<div class="zip-finder__wrapper"><div class="zip-finder__fields">
-
-<div class="zip-finder__button">
-<button class="button button--has-icon-on-right button--hide-spinner" type="submit">
-<p class="h4 zip-finder__button__header">Find</p>
-
-
-</button>
-</div>
-</div>
-</div>
-</form>
-</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>Compare DIRECTV streaming and satellite plans head-to-head</h2><p>
-<div class="vc-table-scrolling scrolling-table">
-<div class="grid-x">
-<div class="cell vc-table-scrolling__table-container">
-<table class="vc-table-scrolling__table scrolling-table__table no-margin-bottom">
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<th class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  Provider                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Price*                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Connection type                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Channel count                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  DVR storage                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Simultaneous recordings                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Details                </th>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  DIRECTV (streaming)<br/><b>Best for flexibility</b> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $59.99–$129.99/mo. for 1st mo. + taxes &amp; fees                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Internet                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  90–185+                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Unlimited for $10.00/mo.                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  5                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-<a class="button button--generic button--is-big width--full" data-name="directv-stream" data-slug="directv-stream" href="https://go.cabletv.com/aff_c?offer_id=1446&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plans<span class="show-for-sr"> for DIRECTV STREAM</span></a><br/><br/><a href="/directv/stream">Read DIRECTV Streaming Review</a> </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  DIRECTV (satellite)<br/><b>Best for DVR and features</b> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $89.99–$169.99/mo. for 24 mos. plus taxes &amp; fees                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Satellite                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  165–340+                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  200 hrs. (Genie) or 450 hrs. (Gemini) for $10.00/mo.                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  3                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-<a class="button button--generic button--is-big width--full" data-name="directv" data-slug="directv" href="https://go.cabletv.com/aff_c?offer_id=1447&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plans<span class="show-for-sr"> for DIRECTV</span></a><br/><br/><a href="/directv-review">Read DIRECTV Satellite Review</a> </td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</p><p style="font-size: 12px; width: 100%; text-align: left;"><em>Data effective as of post date. Not all offers are available in all areas. See <a href="#disclaimer">full disclaimer</a> for details.
-</em></p><p>
-Let’s recap the similarities and differences between DIRECTV’s streaming and satellite plans.
-
-DIRECTV’s streaming plans have 90–185+ channels—that’s a good bit less than its satellite plans. That’s not such a big deal because the lineups are curated to include mostly popular channels—you won’t get as many filler channels as you find on DIRECTV.
-
-DIRECTV’s streaming plans connect to your home Wi-Fi network and deliver your channels via either the Gemini device (first one’s free), or one of several streaming devices that support the DIRECTV app.<strong>Pro tip:</strong> If DIRECTV’s traditional plans are too expensive, but you like the brand, check out <a href="/directv-stream/genre-packs">DIRECTV’s Genre Packs</a>. These themed packages are dedicated to entertainment, kids, news, and sports content, featuring smaller price tags. They also have fewer channels—but more of the ones you want—and some even include streaming services like <a href="/disney-plus-review">Disney+</a>, <a href="/espn-plus-review">ESPN Select</a>, <a href="/hulu-review">Hulu</a>, and <a href="/hbo-max-review">HBO Max</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-8">If satellite TV is your only option, we think DIRECTV is the <a href="/ranking/best-tv-providers">best in the biz</a>. Still, some folks love <a href="/dish/review">DISH Network</a>, which has slightly fewer channels than DIRECTV, but almost as many sports networks and add-ons. DISH also has the more powerful <a href="/dish/hopper-3">Hopper 3 DVR</a> and similarly guarantees your monthly payment for two years.
-
-However, as I mentioned, I steer people away from DIRECTV and towards live TV streaming services like <a href="/youtube-tv">YouTube TV</a> or <a href="/hulu/live-tv">Hulu + Live TV</a>. While they have fewer channels than DIRECTV, I’ve found they offer better overall value with better affordability, no hidden fees, curated lineups of popular channels, and free unlimited cloud DVR storage.</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>DIRECTV streaming vs. satellite prices and plans: Both are expensive</h2><p>
-<a href="/directv/stream">DIRECTV’s streaming </a><span style="box-sizing: border-box; margin: 0px; padding: 0px;">and <a href="/directv/satellite" rel="noopener" target="_blank">satellite</a> services each have four </span>plans with similar monthly payments—but wildly divergent channel counts. Let’s see how they rate in terms of overall value.
-</p><h3>DIRECTV streaming pricing and plans</h3><p>
-<div class="vc-table-scrolling scrolling-table">
-<div class="grid-x">
-<div class="cell vc-table-scrolling__table-container">
-<table class="vc-table-scrolling__table scrolling-table__table no-margin-bottom">
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<th class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  Package                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Price*                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Channel count                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Popular channels                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Details                </th>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  ENTERTAINMENT                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $59.99/mo. for 1st month + taxes &amp; fees                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  90+                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  AMC, CNN, ESPN, Hallmark Channel, HGTV, MSNBC, Nickelodeon, and TLC                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell has-button">
-<a class="button button--generic button--is-big width--full" data-name="directv-stream" data-slug="directv-stream" href="https://go.cabletv.com/aff_c?offer_id=1446&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plan</a> </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  CHOICE™                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $64.99/mo. for 1st month + taxes &amp; fees                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  125+                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Bravo, Disney, IFC, Nick Jr., OWN, Science, Travel Channel, and UniMás                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell has-button">
-<a class="button button--generic button--is-big width--full" data-name="directv-stream" data-slug="directv-stream" href="https://go.cabletv.com/aff_c?offer_id=1446&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plan</a> </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  ULTIMATE                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $89.99/mo. for 1st month + taxes &amp; fees                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  160+                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Magnolia Network, Golf Channel, LOGO, Nat Geo WILD, NHL Network, and Universal Kids                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell has-button">
-<a class="button button--generic button--is-big width--full" data-name="directv-stream" data-slug="directv-stream" href="https://go.cabletv.com/aff_c?offer_id=1446&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plan</a> </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  PREMIER                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $129.99/mo. for 1st month + taxes &amp; fees                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  185+                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  CINEMAX<sup>®</sup>, STARZ<sup>®</sup>, Paramount+ Premium and HBO Max<sup>TM</sup> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell has-button">
-<a class="button button--generic button--is-big width--full" data-name="directv-stream" data-slug="directv-stream" href="https://go.cabletv.com/aff_c?offer_id=1446&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plan</a> </td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</p><p style="font-size: 12px; width: 100%; text-align: left;"><em>Data effective as of post date. Not all offers are available in all areas. See <a href="#disclaimer">full disclaimer</a> for details.
-</em></p><p>
-All live TV streaming services, not just DIRECTV, have fewer channels than cable and satellite TV services. So it’s not like DIRECTV is trying to give you less for your money. It’s how live TV streaming services roll—they offer quality over quantity or more popular channels instead of filler networks.
-
-The streaming CHOICE plan with 125+ channels is the best value. With CHOICE and ULTIMATE packages, new customers get <a href="/directv/deals">three free months</a> of CINEMAX, <a href="/mgm-plus">MGM+</a>, <a href="/hbo-max">HBO Max</a>, <a href="/paramount-plus">Paramount+ Premium</a>, and <a href="/starz">STARZ</a>. But if you go with PREMIER, those premium channels are a permanent part of your plan.
-<div class="vc_btn3-container text-center margin-bottom"><a class="button button--is-big button--generic button--is-short-unlimited button--is-bold width--standard" data-element="Button" href="/directv/stream#Channels">See All DIRECTV Streaming Channels</a></div>
-</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h3>DIRECTV satellite pricing and plans</h3><p>
-<div class="vc-table-scrolling scrolling-table">
-<div class="grid-x">
-<div class="cell vc-table-scrolling__table-container">
-<table class="vc-table-scrolling__table scrolling-table__table no-margin-bottom">
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<th class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  Package                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Price*                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Channel count                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Popular channels                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Details                </th>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  ENTERTAINMENT                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $89.99/mo. for 24 mos. plus taxes and fees                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  175+                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  AMC, CNN, ESPN, Hallmark Channel, HGTV, MSNBC, Nickelodeon, and TLC                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell has-button">
-<a class="button button--generic button--is-big width--full" data-name="directv" data-slug="directv" href="https://go.cabletv.com/aff_c?offer_id=1447&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plan</a> </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  CHOICE™                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $94.99/mo. for 24 mos. plus taxes and fees                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  215+                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Bravo, Disney, IFC, Nick Jr., OWN, Science, Travel Channel, and UniMás                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell has-button">
-<a class="button button--generic button--is-big width--full" data-name="directv" data-slug="directv" href="https://go.cabletv.com/aff_c?offer_id=1447&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plan</a> </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  ULTIMATE                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $124.99/mo. for 24 mos. plus taxes and fees                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  270+                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Magnolia Network, Golf Channel, LOGO, Nat Geo WILD, NHL Network, and Universal Kids                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell has-button">
-<a class="button button--generic button--is-big width--full" data-name="directv" data-slug="directv" href="https://go.cabletv.com/aff_c?offer_id=1447&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plan</a> </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  PREMIER™                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $169.99/mo. for 24 mos. plus taxes and fees                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  350+                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  CINEMAX, STARZ, Paramount+ Premium, and HBO Max                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell has-button">
-<a class="button button--generic button--is-big width--full" data-name="directv" data-slug="directv" href="https://go.cabletv.com/aff_c?offer_id=1447&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plan</a> </td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</p><p style="font-size: 12px; width: 100%; text-align: left;"><em>Data effective as of post date. Not all offers are available in all areas. See <a href="#disclaimer">full disclaimer</a> for details.
-</em></p><p>
-DIRECTV’s satellite and streaming packages are essentially the same in terms of popular channels. The difference is that the streaming packages cut out the filler channels you’ll probably never watch.
-
-Both providers now charge close to the same price for their plans—but the channel counts are vastly different, as I’ve shown.
-<div class="vc_btn3-container text-center margin-bottom"><a class="button button--is-big button--generic button--is-short-unlimited button--is-bold width--standard" data-element="Button" href="/directv/channel-lineup">See All DIRECTV Satellite Channels</a></div>
-<strong>Pro tip:</strong> Check out our guide to the <a href="/directv/hidden-costs">Hidden Costs of DIRECTV</a>, which explains all of the service’s various hidden charges, including fees for activation, devices, early cancellation, late payments, local channels, and more.</p></div></div><div class="row small-padding"><div class="columns small-12 medium-12 large-12">
-<h2>DIRECTV streaming and satellite plans have different equipment and DVR storage</h2><p>
-When it comes to DVRs, the <a href="/directv/genie">DIRECTV Genie</a> (200 hours) and Genie 2 (450 hours) are powerful units with limited streaming app support. That said, the DIRECTV Gemini (450–unlimited hours) isn’t as feature-rich as the Genies, but its accompanying cloud DVR storage is much greater. Check out each device’s vital statistics below.
-</p><h3>DIRECTV streaming vs. satellite DVR</h3><p>
-<div class="vc-table-scrolling scrolling-table">
-<div class="grid-x">
-<div class="cell vc-table-scrolling__table-container">
-<table class="vc-table-scrolling__table scrolling-table__table margin-bottom">
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<th class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  DVR                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Price                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Storage                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Simultaneous recordings                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Video quality                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Streaming app support                </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-                  Details                </th>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  DIRECTV Genie                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $10.00/mo.                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  200 hrs. (physical)                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  5                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Up to 4K                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  HBO Max, Netflix, Pandora                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell has-button">
-<a class="button button--generic button--is-big width--full" data-name="directv" data-slug="directv" href="https://go.cabletv.com/aff_c?offer_id=1447&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plans<span class="show-for-sr"> for DIRECTV</span></a> </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  DIRECTV Genie 2 (wireless)                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $10.00/mo.                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  450 hrs. (cloud)                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  7                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Up to 4K                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  HBO Max, Netflix, Pandora                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-<a class="button button--generic button--is-big width--full" data-name="directv" data-slug="directv" href="https://go.cabletv.com/aff_c?offer_id=1447&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plans<span class="show-for-sr"> for DIRECTV</span></a> </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-                  DIRECTV Gemini                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $10.00/mo.                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  450 hrs.–unlimited (cloud)                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  3                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Up to 4K                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Disney+, ESPN, Hulu, HBO Max, Netflix, Paramount+, Peacock, Prime Video                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-<a class="button button--generic button--is-big width--full" data-name="directv" data-slug="directv" href="https://go.cabletv.com/aff_c?offer_id=1447&amp;aff_id=1003" rel="nofollow noopener" target="_blank">View Plans<span class="show-for-sr"> for DIRECTV</span></a> </td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</p><p style="font-size: 12px; width: 100%; text-align: left;"><em>Data effective as of post date. Not all offers are available in all areas. See <a href="#disclaimer">full disclaimer</a> for details.
-</em></p><h3>DIRECTV Gemini and cloud DVR</h3><p>
-<div class="row"><div class="columns small-12 medium-24 large-6">When you sign up for DIRECTV’s streaming plans, you can choose to use the service’s new Gemini device ($10.00 per month), which includes a universal voice remote, support for most major streaming apps, and unlimited DVR. Or you can save ten bucks a month by using one of the many streaming devices, smartphones, or tablets that you probably already own—and already support the DIRECTV app.
-
-Unlimited cloud DVR has a nine-month keep time for recordings, and that sure beats DIRECTV’s old cloud DVR offer: A measly 20 hours free or unlimited storage for $10.00 a month, with only a 90-day keep time. It’s also infinitely more DVR storage than you get with the Genies.</div></div></p><h3>DIRECTV Genie DVRs and wireless Gemini</h3><p>
-If you like to keep movies, shows, and sporting events to watch at your leisure, the best option is DIRECTV’s Genie (200 hours, five simultaneous recordings) or wireless Genie 2 (450 hours, three simultaneous recordings). The Genie DVRs don’t auto-delete your recordings unless you’re out of storage.The basic Genie (wired) has enough storage and tuners for most users. The Genie 2 is best for committed couch creatures and their binge-watching habits, and the unit is wireless so you can avoid cable clutter.
-
-If you have multiple TVs, you can add DIRECTV on up to seven more screens in your home with additional Genie or Gemini devices ($10.00 a month each). To learn more about DIRECTV whole-home DVR, check out our <a href="/directv/genie">DIRECTV Genie review</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>DIRECTV satellite vs. streaming installation = simple vs. complicated</h2><p>
-Installing and setting up DIRECTV’s streaming plans is a breeze. In fewer than five minutes, I downloaded the app to my Roku Ultra and smartphone, signed in, and started browsing what to watch while also building my watchlist. (<strong>Note:</strong> We haven’t tested the Gemini device. When we do, we’ll update this article. For now, it’s safe to assume the setup process will be just as easy.)
-
-The installation process is much more complicated, and potentially frustrating, with DIRECTV’s satellite service. It required setting up an install appointment where a technician installed the dish on my roof, drilled cable holes into my house, and set up my Genie DVR. That involved taking time off work and took significantly longer to complete. Also, apartment dwellers may need to have their landlord sign an installation approval form. On the bright side, installation is free of charge.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>DIRECTV streaming vs. satellite: Two services, one streaming app</h2><p>
-Comparing DIRECTV’s apps is a little tricky. Allow us to elaborate.
-</p><h3>DIRECTV streaming app</h3><p>
-<div class="row"><div class="columns small-12 medium-24 large-9">All streaming services are based around an app that you use on a compatible device like a Chromecast, gaming console, personal computer, smart TV, smartphone, streaming stick, or tablet. So, while the DIRECTV app is an extra way to enjoy your DIRECTV satellite package on the go, it’s the main way to use the streaming service.
-
-When I put the DIRECTV app to the test, I quickly understood why it boasts such high ratings—4.6 out of 5.0 on both <a href="https://play.google.com/store/apps/details?id=com.att.tv&amp;hl=en_US" rel="false noopener" target="_blank">Google Play</a> and the <a href="https://apps.apple.com/us/app/directv/id1136238277" rel="false noopener" target="_blank">Apple App Store</a>. From my perspective, the app consistently delivered an easy, intuitive user experience across every platform I tried.
-
-One of the first things that struck me was the app’s incredible device compatibility. I found it worked seamlessly with my Android and iOS devices, Amazon Fire TV sticks, Apple TV, Chromecast, NVIDIA Shield, and even my Roku. I also experimented with it on my Google and Roku smart TVs, as well as various internet browsers, and had no issues whatsoever. It’s safe to say you probably already own something that works with it.
-
-Now, on the downside, I was a bit disappointed to discover there’s no gaming console support. As a gamer, that’s a feature I’d love to see in the future. But I was pleasantly surprised to find that the app is compatible with the Apple Vision Pro virtual reality device and even select Peloton models, which is a nice touch.
-
-The <a href="https://www.directv.com/support/article/000066174" rel="false noopener" target="_blank">DIRECTV device compatibility page</a> offers all the nitty-gritty details like specific model numbers and operating system requirements.</div></div></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>DIRECTV streaming vs. DIRECTV satellite FAQ</h2></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>Why you should trust us</h2><p>
-At CableTV.com, we constantly analyze prices, plans, and specifications of TV providers like DIRECTV so our readers can make informed buying decisions. We’ve also tested DIRECTV streaming and DIRECTV satellite from signup through activation, and <a href="/reviews/best-tv-providers-in-customer-satisfaction" rel="false">surveyed other customers</a> to see what they thought about providers. To learn more about our process, see our <a href="/how-we-rank">How We Rank</a> page.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h3>Related articles</h3><ul>
-<li style="list-style-type: none;">
-<ul>
-<li><a href="/directv/stream-review" rel="false"><span data-sheets-root="1">DIRECTV Streaming </span>Review</a></li>
-<li><a href="/directv/satellite/review" rel="false">DIRECTV Satellite Review</a></li>
-<li><a href="/blog/best-tv-providers" rel="false">Best TV Providers</a></li>
-</ul>
-</li>
-</ul></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<strong>Disclaimer</strong>
-<p style="font-size: 12px;"><em>Satellite:</em>
-<em><em><strong>ENTERTAINMENT</strong>: ($99.99/mo. w/req’d $10/mo. TV Access Fee) w/24-mo. agmt. Autopay and paperless bill req’d. One-time $49.95 activation fee is extra and applies.
-<strong>CHOICE</strong>: ($124.98/mo. w/req’d $10/mo. TV Access Fee &amp; Regional Sports Fee of up to $19.99/mo.) w/ 24-mo.agmt. Autopay and paperless bill req’d. One-time $49.95 activation fee is extra and applies.
-<strong>ULTIMATE</strong>: ($154.98/mo. w/req’d $10/mo. TV Access Fee &amp; Regional Sports Fee of up to $19.99/mo.) w/ 24-mo.agmt. Autopay and paperless bill req’d. One-time $49.95 activation fee is extra and applies.
-<strong>PREMIER™</strong>: ($199.98/mo. w/req’d $10/mo. TV Access Fee &amp; Regional Sports Fee of up to $19.99/mo.) w/ 24-mo. agmt. Autopay and paperless bill req’d. One-time $49.95 activation fee is extra and applies.</em></em></p><p style="font-size: 12px;"><em>Streaming:</em>
-<em><strong>Entertainment</strong>: for 1st month + taxes &amp; fees (Up to $69.99/mo. w/ req’d fees. Price reflects $30 off for 1st mo.; $10 off for mos. 2-24. Cancel anytime.)</em>
-<em><strong>Choice</strong>: for 1st month + taxes &amp; fees (Up to $94.98/mo. w/ req’d fees. Price reflects $30 off for 1st mo.; $10 off for mos. 2-24. Cancel anytime.)</em>
-<em><strong>Ultimate</strong>: for 1st month + taxes &amp; fees (Up to $119.98/mo. w/ req’d fees for 1st mo. Price reflects $35 off for 1st mo.; $10 off for mos. 2-24. Cancel anytime.)</em>
-<em><strong>Premier</strong>: for 1st month + taxes &amp; fees (Up to $159.98/mo. w/ req’d fees for 1st mo. Price reflects $30 off for 1st mo.; $10 off for mos. 2-24. Cancel anytime.)</em></p></div></div>
-]]></content:encoded>
-      <media:thumbnail url="https://www.cabletv.com/app/uploads/2025/10/DTV-vs-DTV-featured-image.webp"/>
-    </item>
     <item>
       <title>Premier League Fixtures Released: 2026-2027 Opening Weekend Schedule and Broadcast Changes</title>
       <link>https://www.cabletv.com/news/2026-premier-league-fixture-release</link>
@@ -1302,7 +151,7 @@ At CableTV.com, we constantly analyze prices, plans, and specifications of TV pr
 <img alt="Google Fiber" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2020/01/gfiber-logo.svg" width="175"/>
 </a> <div class="rating-container margin--top-15 margin-bottom-5">
 <div>
-<style>#rating_stars_6a3fcbce8ad61 .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3fcbce8ad61 .remainder-star { width:0px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3fcbce8ad61 .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a3fcbce8ad61 .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a3fcbce8ad61 .remainder-star { width:0px; min-height:15px; background-size:15px; }#rating_stars_6a3fcbce8ad61 .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (4.00/5)</a></div> </div>
+<style>#rating_stars_6a3962c9a2394 .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3962c9a2394 .remainder-star { width:0px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3962c9a2394 .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a3962c9a2394 .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a3962c9a2394 .remainder-star { width:0px; min-height:15px; background-size:15px; }#rating_stars_6a3962c9a2394 .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (4.00/5)</a></div> </div>
 </div>
 </div>
 <div class="best-of-hero-card__contents__features-container first-container">
@@ -1324,7 +173,7 @@ At CableTV.com, we constantly analyze prices, plans, and specifications of TV pr
 <div class="best-of-hero-card__contents__logo-container">
 <img alt="AT&amp;T" class="image--is-provider-logo" loading="lazy" src="https://www.cabletv.com/app/uploads/2020/01/ATT_Fiber_Logo.svg"/> <div class="rating-container margin--top-15 margin-bottom-5">
 <div>
-<style>#rating_stars_6a3fcbce8e964 .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3fcbce8e964 .remainder-star { width:10.5px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3fcbce8e964 .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a3fcbce8e964 .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a3fcbce8e964 .remainder-star { width:10.5px; min-height:15px; background-size:15px; }#rating_stars_6a3fcbce8e964 .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.70/5)</a></div> </div>
+<style>#rating_stars_6a3962c9a6c3c .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3962c9a6c3c .remainder-star { width:10.5px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3962c9a6c3c .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a3962c9a6c3c .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a3962c9a6c3c .remainder-star { width:10.5px; min-height:15px; background-size:15px; }#rating_stars_6a3962c9a6c3c .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.70/5)</a></div> </div>
 </div>
 </div>
 <div class="best-of-hero-card__contents__features-container first-container">
@@ -1375,7 +224,7 @@ At CableTV.com, we constantly analyze prices, plans, and specifications of TV pr
 <img alt="T-Mobile" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO.webp" srcset="https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO.webp 720w, https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO-600x242.webp 600w, https://www.cabletv.com/app/uploads/2024/01/TMobile_5G_Home_Internet_TMO-300x121.webp 300w" width="175"/>
 </a> <div class="rating-container margin--top-15 margin-bottom-5">
 <div>
-<style>#rating_stars_6a3fcbce92799 .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3fcbce92799 .remainder-star { width:13.5px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3fcbce92799 .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a3fcbce92799 .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a3fcbce92799 .remainder-star { width:13.5px; min-height:15px; background-size:15px; }#rating_stars_6a3fcbce92799 .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.90/5)</a></div> </div>
+<style>#rating_stars_6a3962c9b04ff .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3962c9b04ff .remainder-star { width:13.5px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3962c9b04ff .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a3962c9b04ff .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a3962c9b04ff .remainder-star { width:13.5px; min-height:15px; background-size:15px; }#rating_stars_6a3962c9b04ff .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.90/5)</a></div> </div>
 </div>
 </div>
 <div class="best-of-hero-card__contents__features-container first-container">
@@ -1399,7 +248,7 @@ At CableTV.com, we constantly analyze prices, plans, and specifications of TV pr
 <img alt="Xfinity" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/logo-xfinity-NO-AR.svg" width="175"/>
 </a> <div class="rating-container margin--top-15 margin-bottom-5">
 <div>
-<style>#rating_stars_6a3fcbce96261 .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3fcbce96261 .remainder-star { width:12px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3fcbce96261 .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a3fcbce96261 .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a3fcbce96261 .remainder-star { width:12px; min-height:15px; background-size:15px; }#rating_stars_6a3fcbce96261 .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.80/5)</a></div> </div>
+<style>#rating_stars_6a3962c9b5833 .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3962c9b5833 .remainder-star { width:12px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a3962c9b5833 .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a3962c9b5833 .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a3962c9b5833 .remainder-star { width:12px; min-height:15px; background-size:15px; }#rating_stars_6a3962c9b5833 .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.80/5)</a></div> </div>
 </div>
 </div>
 <div class="best-of-hero-card__contents__features-container first-container">
@@ -1413,7 +262,7 @@ At CableTV.com, we constantly analyze prices, plans, and specifications of TV pr
 </div>
 </div>
 </div></div><div class="row full-width-hero expanded collapse"><div class="columns small-12 medium-12 large-12">
-<p style="font-size: 12px;"><em>Data effective as of <span>June 27, 2026</span>. Compatible device and internet connection required. Offers and availability may vary by location and are subject to change.</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">✦ At CableTV.com, we’ve been helping folks find the best home internet and TV services in their area since 2007. Get an in-depth look at how we evaluate internet services on our <a href="/how-we-rank#customer">Why You Can Trust </a><a href="http://cabletv.com/">CableTV.com</a> page.</div></div><div class="row"><div class="columns small-12 medium-12 large-8">
+<p style="font-size: 12px;"><em>Data effective as of <span>June 22, 2026</span>. Compatible device and internet connection required. Offers and availability may vary by location and are subject to change.</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">✦ At CableTV.com, we’ve been helping folks find the best home internet and TV services in their area since 2007. Get an in-depth look at how we evaluate internet services on our <a href="/how-we-rank#customer">Why You Can Trust </a><a href="http://cabletv.com/">CableTV.com</a> page.</div></div><div class="row"><div class="columns small-12 medium-12 large-8">
 <h2>Who is the best home internet provider?</h2><p>
 Between family video calls, YouTube streaming, and web browsing, home internet is more essential than ever. But what home internet providers offer the best combination of price and performance?
 
@@ -1701,7 +550,7 @@ Read on to see our data-rich breakdown of the top ISPs in the U.S.</p></div><div
 </div>
 </div>
 </div>
-</p><p style="font-size: 12px;"><em>Data effective as of <span>June 27, 2026</span>. Offers and availability may vary by location and are subject to change.
+</p><p style="font-size: 12px;"><em>Data effective as of <span>June 22, 2026</span>. Offers and availability may vary by location and are subject to change.
 *Price per month with Auto Pay &amp; without select 5G mobile plans. Consumer data usage is subject to the usage restrictions set forth in Verizon’s terms of service; visit: https://www.verizon.com/support/customer-agreement/ for more information about 5G Home Internet or https://www.verizon.com/about/terms-conditions/verizon-customer-agreement for Fios internet.
 **Plus taxes and fees.</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
 <h2>Best of the Best Award internet winners up close</h2><p>
@@ -2259,6 +1108,688 @@ At CableTV.com, we’re not just entertainment experts — we’re also fans jus
 </ul></div></div>
 ]]></content:encoded>
       <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/06/ESPN-Womens-Sports.webp"/>
+    </item>
+    <item>
+      <title>Fox Corporation is Expanding Past Sports and News, Buying Roku For $22 Billion</title>
+      <link>https://www.cabletv.com/news/fox-corporation-buys-roku</link>
+      <pubDate>Mon, 15 Jun 2026 14:40:44 +0000</pubDate>
+      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
+      <guid isPermaLink="false">https://www.cabletv.com/news/fox-corporation-buys-roku</guid>
+      <description><![CDATA[<p>Fox Corporation shocked us all this morning by announcing its intent to purchase Roku, the streaming device manufacturer. Read on for details.</p>]]></description>
+      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/06/FoxRoku1200x630.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>The deal will close in 2027</h2><p>
+Fox Corporation, the company that owns FOX News and FOX Sports, shocked consumers this morning by <a href="https://www.cnbc.com/2026/06/15/fox-to-buy-roku.html" rel="noopener" target="_blank">announcing that it is buying the streaming stick manufacturer, Roku</a>. Roku makes streaming devices to add smart TV capabilities to HDMI-capable displays, plus its own line of smart TVs.
+
+Fox is buying the company for $160 per share, which totals to about $22 billion. $12 billion of that will be financed through a loan.
+
+It’s worth noting that this is <em>not </em>the same arm of the Fox brand that controls 21st Century Fox and owns the X-Men. That branch was bought up by Disney a few years ago and is no longer affiliated with the Fox Corporation. But this <em>is </em>the version of Fox that’s controlled by Lachlan Murdoch, son of Rupert Murdoch.
+
+Read on for more info on the implications of yet another entertainment merger.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>What this means for you and me</h2><p>
+What’s interesting about this deal is where Fox and Roku intersect. Each one has its own free, ad-supported streaming television (FAST) service: Fox bought Tubi six years ago and Roku has The Roku Channel. But at least for now, there are no plans to merge the two services, <a href="https://www.cnbc.com/2026/06/15/fox-to-buy-roku.html" rel="noopener" target="_blank">which Lachlan Murdoch calls “complementary.”</a>
+
+It’s also interesting that this is coming at the same time that <a href="/news/netflix-leaves-warner-bros-deal">Paramount Skydance is buying up Warner Bros. Discovery</a>. In both cases, a single company (run by a notorious conservative figurehead from a powerful family) is buying up an entertainment brand with a lot of reach. When that happens, competition shrinks and monopolies grow.
+
+If I had to guess, I’d say that all of those Roku-branded streaming sticks and TVs are about to lean heavily into advertisements for Fox brands. It’s tough to say this—of all the streaming devices I’ve tried, I like Roku the best, and even upgraded to a Roku TV earlier this year. I’ve always highly recommended their products, and yet I have to wonder if Fox ownership will have a negative impact on the user experience.
+
+Roku has always been pretty ad-heavy. They even trick users into watching ads in the guise of entertainment (what do you think that Roku City screensaver is all about?). But it’s about to have a super vested interest in spotlighting one production company in particular, so I wouldn’t be surprised to see an increase in FOX Sports and FOX News ads on my Roku TV.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>Who we are</h2><p>
+At CableTV.com, we’re not just entertainment experts—we’re also fans just like you. So while our first priority is reporting the best and most accurate information about TV providers and streaming services, we also love talking about our favorite shows and movies. So you can count on us to share our honest opinions and unbridled enthusiasm. For more on our process, check out our <a href="/how-we-rank">Editorial Policy</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<p class="h3">More industry news for TV fans</p><ul>
+<li><a href="/news/2026-world-cup-players-to-watch">Players to Watch at the World Cup</a></li>
+<li><a href="/news/fubo-nbc-resolve-dispute">Fubo and NCBU Resolve Their Dispute</a></li>
+<li><a href="/news/bet-plus-shutting-down-june-2026-update">BET+ Is Shutting Down</a></li>
+</ul></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/06/FoxRoku1200x630.webp"/>
+    </item>
+    <item>
+      <title>From Messi’s Farewell to Haaland’s Debut: 7 Players To Watch at the 2026 FIFA World Cup</title>
+      <link>https://www.cabletv.com/news/2026-world-cup-players-to-watch</link>
+      <pubDate>Fri, 12 Jun 2026 12:00:45 +0000</pubDate>
+      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
+      <guid isPermaLink="false">https://www.cabletv.com/news/2026-world-cup-players-to-watch</guid>
+      <description><![CDATA[<p>Looking for the top 2026 World Cup players to watch? Here are seven must-see stars, their biggest storylines, and how to follow them live on TV.</p>]]></description>
+      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/06/2026-World-Cup-Players-To-Watch.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12"><p>The 2026 FIFA World Cup is officially upon us, and with a staggering 48 teams stepping onto the pitch, keeping tabs on every ounce of talent is nearly impossible. Believe me, narrowing down a “must-watch” list to just seven players felt like a monumental task.</p><p>When you’re picking only seven athletes out of a record-breaking 1,248 players, that means leaving off literal odds-on favorites. My sincere apologies to <a href="https://boardroom.tv/lamine-yamal-spain-world-cup-american-eagle-interview/" rel="noopener" target="_blank">Spain’s teenage sensation Lamine Yamal</a>, but we only have so much real estate. Plus, if there’s anything we’ve learned from past tournaments, this expanded format guarantees we’ll see plenty of lesser-known players turn into overnight global superstars.</p><p>For the sake of this article, I’m focusing on the proven heavy hitters, the defining storylines, and the absolute legends chasing one final taste of glory. Grab your remote, clear your calendar, and let’s count down this World Cup’s top seven must-watch players, complete with their full group-stage TV schedules.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><p><img alt="The official light blue DIRECTV logo." class="alignnone size-medium wp-image-243984" decoding="async" height="126" loading="lazy" sizes="auto, (max-width: 240px) 100vw, 240px" src="https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-600x315.webp" srcset="https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-600x315.webp 600w, https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-900x473.webp 900w, https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-300x158.webp 300w, https://www.cabletv.com/app/uploads/2020/01/directv-stream-2025-logo-png.webp 1200w" width="240"/></p>
+<p class="h3">Don't be caught offsides with the wrong streamer this World Cup</p>
+<p>DIRECTV is the streaming service hooligans choose for football. According to CableTV.com's 2026 customer satisfaction survey, more fans (49%) watch soccer on DIRECTV than any other streaming service. That's more than rivals Fubo and YouTube TV. What's more, a staggering 97% of DIRECTV streaming subscribers reported satisfaction with their live sports experience. So, what are you waiting for? Hit the World Cup pitch this summer by streaming it on DIRECTV.</p>
+<p><a class="button button--generic button--is-big button--is-auto-width" href="/directv/stream">View DIRECTV Plans</a></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>7. Mohamed Salah (<a href="/soccer/watch-egypt-mens-national-football-team">Egypt</a>)</h2><p>You may not be able to see him repping Liverpool red anymore, but Mo Salah remains the heartbeat of Egypt’s national team. The “Egyptian King” carries a nation’s expectations every time he steps onto the pitch, turning broken plays into highlight-reel goals in a flash. But he isn’t backed by a star-studded attacking machine like the one he enjoyed at Anfield. Instead, the Pharaohs are known for their defensive grit, and Salah is the spark that makes their setup dangerous enough to unsettle any side.</p><p>This tournament is likely Salah’s final World Cup while still operating at near-superstar level, making his next three matches essential viewing. Egypt was drawn into Group G, and Salah’s opening test is a clash against European heavyweight Belgium in Seattle — a match that’ll immediately reveal whether Egypt has what it takes to reach the knockout round.</p><p><strong>How to watch Mohamed Salah in the group stage</strong></p><ul>
+<li><strong>Belgium vs. Egypt:</strong> Monday, June 15, at 3:00 p.m. ET (FOX, Telemundo)</li>
+<li><strong>New Zealand vs. Egypt:</strong> Sunday, June 21, at 9:00 p.m. ET (FS1, Telemundo)</li>
+<li><strong>Egypt vs. Iran:</strong> Friday, June 26, at 11:00 p.m. ET (FS1, Telemundo)</li>
+</ul></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>6. Erling Haaland (Norway)</h2><p>Erling Haaland has terrorized Premier League and Champions League defenders for years. But until now, soccer’s most efficient <a href="https://www.youtube.com/shorts/aV-ZUtTQR2E" target="_blank">goalscoring cyborg</a> has been missing from the sport’s grandest stage.</p><p>After a 28-year absence, Norway is finally back in the World Cup, largely thanks to Haaland’s absurd <a href="https://www.uefa.com/european-qualifiers/news/0297-1d5d6735f8d7-9bf819c5c8e9-1000--european-qualifiers-top-scorer-erling-haaland/" target="_blank">16 goals during the European qualifiers</a>. His blistering pace and ruthless finishing are always exciting to watch, even when he’s dropping multiple goals against your favorite team. So, finally seeing him unleash that power in a World Cup environment is a dream for soccer fans.</p><p>While Norway boasts a promising golden generation that includes Arsenal’s Martin Ødegaard, they aren’t heavily favored to push far into July. That means every game matters, and their final Group I clash against a loaded French squad is one to circle.</p><p><strong>How to watch Erling Haaland in the group stage</strong></p><ul>
+<li><strong>Iraq vs. Norway:</strong> Tuesday, June 16, at 6:00 p.m. ET (FOX, Telemundo)</li>
+<li><strong>Norway vs. Senegal:</strong> Monday, June 22, at 8:00 p.m. ET (FOX, Telemundo)</li>
+<li><strong>Norway vs. France:</strong> Friday, June 26, at 3:00 p.m. ET (FOX, Telemundo)</li>
+</ul></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>5. Cristiano Ronaldo (<a href="/soccer/watch-portugal-mens-national-football-team">Portugal</a>)</h2><p>While he may not dominate the mainstream spotlight like he once did, Cristiano Ronaldo still brings a little controlled madness to every Portugal match. This is almost certainly his final World Cup, which gives his Group K run historical weight. Sure, he no longer drives every attack, but he remains a proven penalty-box finisher for a more well-rounded Portugal roster.</p><p>Portugal should be favored to advance, though Colombia poses a serious test for Roberto Martínez’s side. The question is no longer whether Ronaldo is the entire identity of this squad, but how much he can still elevate a team loaded with creators, midfield control, and defensive quality. After Portugal’s 2025 Nations League title, a deep run in the knockout stage feels realistic for CR7’s last World Cup chapter.</p><p><strong>How to watch Cristiano Ronaldo in the group stage</strong></p><ul>
+<li><strong>Portugal vs. Congo DR:</strong> Wednesday, June 17, at 1:00 p.m. ET (FOX, Telemundo)</li>
+<li><strong>Portugal vs. Uzbekistan:</strong> Tuesday, June 23, at 1:00 p.m. ET (FOX, Telemundo)</li>
+<li><strong>Colombia vs. Portugal:</strong> Saturday, June 27, at 7:30 p.m. ET (FOX, Telemundo)</li>
+</ul></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>4. Vinícius Júnior (<a href="/soccer/watch-brazil-mens-national-football-team">Brazil</a>)</h2><p>With Neymar’s Brazil era drifting into the rearview mirror — which, to be fair, has felt true for a while — Vinícius Júnior now looks like the Seleção’s most reliable source of chaos. The Real Madrid winger is made for the TV screen: The moment he gets isolated on the left wing, the danger is clear before the nearest defender can react. That kind of direct, match-winning explosiveness is exactly what Brazil needs as it chases its first World Cup title since 2002.</p><p>Brazil’s Group C slate against Morocco, Haiti, and Scotland gives Vinícius a clear runway to test that threat. The opener against Morocco should say a lot about whether Brazil has the balance to make a real title run or if it’s still leaning too heavily on individual brilliance. If Brazil stays organized behind him, Vinícius gives the Verde-Amarela the kind of attacking edge that can disrupt any team’s knockout bracket.</p><p><strong>How to watch Vinícius Júnior in the group stage</strong></p><ul>
+<li><strong>Brazil vs. Morocco:</strong> Saturday, June 13, at 6:00 p.m. ET (FOX, Telemundo)</li>
+<li><strong>Brazil vs. Haiti:</strong> Friday, June 19, at 9:00 p.m. ET (FOX, Telemundo)</li>
+<li><strong>Scotland vs. Brazil:</strong> Wednesday, June 24, at 6:00 p.m. ET (FOX, Telemundo)</li>
+</ul></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>3. Jude Bellingham (<a href="/soccer/watch-england-mens-national-football-team">England</a>)</h2><p>Jude Bellingham is the youngest player on this list, but he arrives at the 2026 World Cup with more big-game experience than many of his older peers. He was a 19-year-old Borussia Dortmund midfielder when he scored his <a href="https://www.youtube.com/watch?v=oNaDRQEe77k" target="_blank">first international goal at the 2022 World Cup</a>. Four years later, he’s a central figure at Real Madrid and one of the players England will rely on most in Group L.</p><p>Bellingham turns 23 midway through the tournament, which highlights just how much untapped promise he has left to show. He’s still incredibly young, yet he already plays with the authority of someone trusted to shape matches rather than simply contribute to them. The Three Lions have spent decades chasing another major trophy, and this squad has the talent to make a serious run. So, is this finally the summer football comes home?</p><p><strong>How to watch Jude Bellingham in the group stage</strong></p><ul>
+<li><strong>England vs. Croatia:</strong> Wednesday, June 17, at 4:00 p.m. ET (FOX, Telemundo)</li>
+<li><strong>England vs. Ghana:</strong> Tuesday, June 23, at 4:00 p.m. ET (FOX, Telemundo)</li>
+<li><strong>Panama vs. England:</strong> Saturday, June 27, at 5:00 p.m. ET (FOX, Telemundo)</li>
+</ul></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>2. Kylian Mbappé (<a href="/soccer/watch-france-mens-national-football-team">France</a>)</h2><p>Kylian Mbappé is already one of the defining World Cup players of his generation. He won the tournament in 2018, kept France alive in the 2022 final with a hat trick, and now leads Les Bleus as captain. The team’s attack still tilts around his speed, timing, and ability to turn one defensive mistake into a goal.</p><p>France’s schedule features a compelling World Cup rematch against Senegal, a side that <a href="https://www.fifa.com/en/tournaments/mens/worldcup/articles/world-cup-upsets-france-senegal" target="_blank">famously upset them 1-0 in 2002</a> — just four years after France secured the 1998 title. There’s also that match against Norway, which puts Mbappé and Haaland on the same field. That alone makes France’s group slate one of the easiest to sell to casual fans.</p><p><strong>How to watch Kylian Mbappé in the group stage</strong></p><ul>
+<li><strong>France vs. Senegal:</strong> Tuesday, June 16, at 3:00 p.m. ET (FOX, Telemundo)</li>
+<li><strong>France vs. Iraq:</strong> Monday, June 22, at 5:00 p.m. ET (FOX, Telemundo)</li>
+<li><strong>Norway vs. France:</strong> Friday, June 26, at 3:00 p.m. ET (FOX, Telemundo)</li>
+</ul></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>1. Lionel Messi (<a href="/soccer/watch-argentina-mens-national-football-team">Argentina</a>)</h2><p>Lionel Messi’s name carries far beyond the typical sports audience. I even heard my seven-year-old nephew shout it at soccer practice — the same way people yell “Kobe!” when tossing paper into a trash can. That ubiquitous recognition follows Messi into the 2026 World Cup, where he returns as captain of the defending champions with a chance to make history.</p><p>Argentina is trying to become only the third men’s national team to win consecutive World Cups, following Italy (1934 and 1938) and Brazil (1958 and 1962). For Messi, another title would add one more defining chapter to an international career that already delivered the trophy he had spent years chasing.</p><p>His role has changed with age, but Argentina still runs through his vision, passing range, and control in the final third. He no longer has to carry every attacking sequence himself, which I think makes this version of La Albiceleste more balanced. We’ll see that rhythm on full display as Argentina navigates a manageable Group J schedule.</p><p><strong>How to watch Lionel Messi in the group stage</strong></p><ul>
+<li><strong>Argentina vs. Algeria:</strong> Tuesday, June 16, at 9:00 p.m. ET (FOX, Telemundo)</li>
+<li><strong>Argentina vs. Austria:</strong> Monday, June 22, at 1:00 p.m. ET (FOX, Telemundo)</li>
+<li><strong>Jordan vs. Argentina:</strong> Saturday, June 27, at 10:00 p.m. ET (FOX, Telemundo)</li>
+</ul></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h3>Related articles</h3><ul>
+<li><a href="/sports/watch-fifa-world-cup">How To Watch the 2026 FIFA World Cup: TV Schedule &amp; Streaming Info</a></li>
+<li><a href="/news/cost-to-watch-world-cup">The Cost of the World Cup: What Americans Will Spend To Tune In</a></li>
+<li><a href="/news/world-cup-deals">2026 World Cup Deals Broken Down: Which Ones Are Worth Your Money?</a></li>
+<li><a href="/sports/best-soccer-movies">13 Best Soccer Movies to Stream Right Now</a></li>
+</ul></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/06/2026-World-Cup-Players-To-Watch.webp"/>
+    </item>
+    <item>
+      <title>The 10 Best TV and Movie Dads of All Time, Ranked</title>
+      <link>https://www.cabletv.com/entertainment/best-tv-and-movie-dads</link>
+      <pubDate>Fri, 12 Jun 2026 10:09:38 +0000</pubDate>
+      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
+      <guid isPermaLink="false">https://www.cabletv.com/entertainment/best-tv-and-movie-dads</guid>
+      <description><![CDATA[<p>Check out our list of the best TV and movie dads of all time. You won’t believe who didn’t make the list. Hint: Doh!</p>]]></description>
+      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/06/Best-TV-and-Movie-Dads.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>The best TV and movie dads aren’t perfect, but they still try</h2><p>
+There’s no better day than Father’s Day to celebrate our favorite onscreen dads!
+
+Whether they were protecting their families, offering advice, or just trying their best, these TV and movie fathers deserve a little recognition.
+
+Here are my picks for the 10 best TV and movie dads of all time, counting down to No. 1.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>Honorable Mention: Ned Stark (“Game of Thrones”)</h2><p>
+In a world full of betrayal and political games, Ned Stark stood out because of his honesty.
+
+He taught his children the importance of honor, loyalty, and doing what’s right — even when it came at a personal cost.
+
+If you loved “Game of Thrones,” check out our <a href="/entertainment/shows-like-game-of-thrones">list of 10 shows like it</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>10. Goofy (“A Goofy Movie”)</h2><p>
+Goofy might be embarrassing, but few dads care more than he does. “A Goofy Movie” perfectly captures the awkwardness of growing up and drifting apart from your parents while showing how much effort Goofy puts into connecting with his son, Max.
+
+If you haven’t seen this movie yet, you’re about 30 years behind, but better late than never. Check out the trailer here and get ready to fix that gap in your movie history.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>9. Stoick the Vast (“How to Train Your Dragon”)</h2><p>
+Stoick starts out as a tough Viking chief who doesn’t really understand his son Hiccup, but that’s what makes his arc so good.
+
+Watching Stoick go from “You’re not my son” to “I’m proud to call you my son” as he learns to accept Hiccup for who he is makes this one of the most rewarding father-son journeys on screen.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>8. Joel Miller (“The Last of Us”)</h2><p>
+Joel may not be a traditional dad, but his relationship with Ellie became one of the most compelling bonds in recent television.
+
+Though he didn’t always show it in the best way (dads, lying extensively to your kid to “protect” them can backfire on you), no one can deny that he was fiercely protective.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>7. Marlin (“Finding Nemo”)</h2><p>
+Sure, Marlin was overprotective, but after crossing the entire ocean to rescue Nemo, it’s hard to question his dedication.
+
+There’s a scene where he says, “I promised I would never let anything happen to him,” and Dory replies, “Then nothing would ever happen to him.”
+
+That’s the moment you start to see Marlin shift from trying to control everything to realizing Nemo has to face the world to grow. That’s what his journey is really about: growth, trust, and letting kids find their own way.
+
+Check out the full scene here.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>6. Jim Hopper (“Stranger Things”)</h2><p>
+Jim Hopper starts “Stranger Things” as a grumpy small-town sheriff barely holding his life together, but his bond with El transforms him into one of television’s best dads.
+
+Protective, stubborn, and willing to fight literal monsters for his kids, Hopper balances tough-love parenting with emotional growth.</p></div></div><div class="row section--padding-bottom-30"><div class="columns small-12 medium-12 large-12">
+<div class="row align-center vc-email-subscribe__wrapper">
+<div class="columns small-12 large-6">
+<div class="callout-area">
+
+<div class="callout-text">
+<h3>Want more TV entertainment coverage?</h3> <p>Subscribe to CableTV.com's email newsletter for the latest event-viewing guides, entertaining takes, and money-saving promotions.</p> </div>
+</div>
+</div>
+<div class="columns small-12 large-6">
+<div class="vc-email-subscribe">
+<div class="vc-email-subscribe__inline-form">
+<form action="https://cabletv.activehosted.com/proc.php" class="_form _form_19 _inline-form" id="_form_19_" method="POST">
+<input name="u" type="hidden" value="19"/>
+<input name="f" type="hidden" value="19"/>
+<input name="s" type="hidden"/>
+<input name="c" type="hidden" value="0"/>
+<input name="m" type="hidden" value="0"/>
+<input name="act" type="hidden" value="sub"/>
+<input name="v" type="hidden" value="2"/>
+<input name="or" type="hidden" value="8b2db1a6b150094e4ac73dc0ec08c9b4"/>
+<input id="ls" name="ls" type="hidden" value="1"/>
+<input id="nlbox_2" name="nlbox[]" type="hidden" value="2"/><input id="nlbox_3" name="nlbox[]" type="hidden" value="3"/> <div class="_form-content">
+<div class="_field-wrapper">
+<input class="field-email" id="email" name="email" placeholder="Email Address" required="" type="text"/>
+<label class="show-for-sr" for="email">Email*</label>
+</div>
+<div class="_field-wrapper">
+<input class="field-zip" id="field[1]" maxlength="5" minlength="5" name="field[1]" pattern="[0-9]{5}" placeholder="Zip Code" required="" type="text"/>
+<label class="show-for-sr" for="field[1]">Zip code*</label>
+</div>
+<div class="_button-wrapper _inline-style">
+<button class="button button--generic" id="_form_19_submit" type="submit">
+        Sign Up
+      </button>
+</div>
+
+</div>
+
+</form>
+<script type="text/javascript">
+window.cfields = {"1":"zip_code"};
+window._show_thank_you = function(id, message, trackcmp_url, email) {
+  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
+  form.querySelector('._form-content').style.display = 'none';
+  thank_you.innerHTML = message;
+  thank_you.style.display = 'block';
+  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
+  var visitorObject = window;
+  if (email && typeof visitorObject !== 'undefined') {
+    visitorObject('setEmail', email);
+    visitorObject('update');
+  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
+    // Site tracking URL to use after inline form submission.
+    _load_script(trackcmp_url);
+  }
+  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
+};
+window._show_error = function(id, message, html) {
+  var form = document.getElementById('_form_' + id + '_'),
+    err = document.createElement('div'),
+    button = form.querySelector('button'),
+    old_error = form.querySelector('._form_error');
+  if (old_error) old_error.parentNode.removeChild(old_error);
+  err.innerHTML = message;
+  err.className = '_error-inner _form_error _no_arrow';
+  var wrapper = document.createElement('div');
+  wrapper.className = '_form-inner';
+  wrapper.appendChild(err);
+  button.parentNode.insertBefore(wrapper, button);
+  var submitButton = form.querySelector('');
+  submitButton.disabled = false;
+  submitButton.classList.remove('processing');
+  if (html) {
+    var div = document.createElement('div');
+    div.className = '_error-html';
+    div.innerHTML = html;
+    err.appendChild(div);
+  }
+};
+window._load_script = function(url, callback, isSubmit) {
+  var head = document.querySelector('head'), script = document.createElement('script'), r = false;
+  var submitButton = document.querySelector('#_form_19_submit');
+  script.type = 'text/javascript';
+  script.charset = 'utf-8';
+  script.src = url;
+  if (callback) {
+    script.onload = script.onreadystatechange = function() {
+      if (!r && (!this.readyState || this.readyState == 'complete')) {
+        r = true;
+        callback();
+      }
+    };
+  }
+  script.onerror = function() {
+    if (isSubmit) {
+      if (script.src.length > 10000) {
+        _show_error("19", "Sorry, your submission failed. Please shorten your responses and try again.");
+      } else {
+        _show_error("19", "Sorry, your submission failed. Please try again.");
+      }
+      submitButton.disabled = false;
+      submitButton.classList.remove('processing');
+    }
+  }
+  head.appendChild(script);
+};
+(function() {
+  if (window.location.search.search("excludeform") !== -1) return false;
+  var getCookie = function(name) {
+    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  var setCookie = function(name, value) {
+    var now = new Date();
+    var time = now.getTime();
+    var expireTime = time + 1000 * 60 * 60 * 24 * 365;
+    now.setTime(expireTime);
+    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';
+  }
+      var addEvent = function(element, event, func) {
+    if (element.addEventListener) {
+      element.addEventListener(event, func);
+    } else {
+      var oldFunc = element['on' + event];
+      element['on' + event] = function() {
+        oldFunc.apply(this, arguments);
+        func.apply(this, arguments);
+      };
+    }
+  }
+  var _removed = false;
+    var form_to_submit = document.getElementById('_form_19_');
+  var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
+  var getUrlParam = function(name) {
+    var params = new URLSearchParams(window.location.search);
+    return params.get(name) || false;
+  };
+  var acctDateFormat = "%m/%d/%Y";
+  var getNormalizedDate = function(date, acctFormat) {
+    var decodedDate = decodeURIComponent(date);
+    if (acctFormat && acctFormat.match(/(%d|%e).*%m/gi) !== null) {
+      return decodedDate.replace(/(\d{2}).*(\d{2}).*(\d{4})/g, '$3-$2-$1');
+    } else if (Date.parse(decodedDate)) {
+      var dateObj = new Date(decodedDate);
+      var year = dateObj.getFullYear();
+      var month = dateObj.getMonth() + 1;
+      var day = dateObj.getDate();
+      return `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
+    }
+    return false;
+  };
+  var getNormalizedTime = function(time) {
+    var hour, minutes;
+    var decodedTime = decodeURIComponent(time);
+    var timeParts = Array.from(decodedTime.matchAll(/(\d{1,2}):(\d{1,2})\W*()?/gm))[0];
+    if (timeParts[3]) { // 12 hour format
+      var isPM = timeParts[3].toLowerCase() === 'pm';
+      if (isPM) {
+        hour = parseInt(timeParts[1]) === 12 ? '12' : `${parseInt(timeParts[1]) + 12}`;
+      } else {
+        hour = parseInt(timeParts[1]) === 12 ? '0' : timeParts[1];
+      }
+    } else { // 24 hour format
+      hour = timeParts[1];
+    }
+    var normalizedHour = parseInt(hour) < 10 ? `0${parseInt(hour)}` : hour;
+    var minutes = timeParts[2];
+    return `${normalizedHour}:${minutes}`;
+  };
+  for (var i = 0; i < allInputs.length; i++) {
+    var regexStr = "field\\[(\\d+)\\]";
+    var results = new RegExp(regexStr).exec(allInputs.name);
+    if (results != undefined) {
+      allInputs.dataset.name = allInputs.name.match(/\$/)
+        ? `${window.cfields]}_time`
+        : window.cfields];
+    } else {
+      allInputs.dataset.name = allInputs.name;
+    }
+    var fieldVal = getUrlParam(allInputs.dataset.name);
+    if (fieldVal) {
+      if (allInputs.dataset.autofill === "false") {
+        continue;
+      }
+      if (allInputs.type == "radio" || allInputs.type == "checkbox") {
+        if (allInputs.value == fieldVal) {
+          allInputs.checked = true;
+        }
+      } else if (allInputs.type == "date") {
+        allInputs.value = getNormalizedDate(fieldVal, acctDateFormat);
+      } else if (allInputs.type == "time") {
+        allInputs.value = getNormalizedTime(fieldVal);
+      } else {
+        allInputs.value = fieldVal;
+      }
+    }
+  }
+  var remove_tooltips = function() {
+    for (var i = 0; i < tooltips.length; i++) {
+      tooltips.tip.parentNode.removeChild(tooltips.tip);
+    }
+    tooltips = [];
+  };
+  var remove_tooltip = function(elem) {
+    for (var i = 0; i < tooltips.length; i++) {
+      if (tooltips.elem === elem) {
+        tooltips.tip.parentNode.removeChild(tooltips.tip);
+        tooltips.splice(i, 1);
+        return;
+      }
+    }
+  };
+  var create_tooltip = function(elem, text) {
+    var tooltip = document.createElement('div'),
+      arrow = document.createElement('div'),
+      inner = document.createElement('div'), new_tooltip = {};
+    if (elem.type != 'radio' && elem.type != 'checkbox') {
+      tooltip.className = '_error';
+      arrow.className = '_error-arrow';
+      inner.className = '_error-inner';
+      inner.innerHTML = text;
+      tooltip.appendChild(arrow);
+      tooltip.appendChild(inner);
+      elem.parentNode.appendChild(tooltip);
+    } else {
+      tooltip.className = '_error-inner _no_arrow';
+      tooltip.innerHTML = text;
+      elem.parentNode.insertBefore(tooltip, elem);
+      new_tooltip.no_arrow = true;
+    }
+    new_tooltip.tip = tooltip;
+    new_tooltip.elem = elem;
+    tooltips.push(new_tooltip);
+    return new_tooltip;
+  };
+  var resize_tooltip = function(tooltip) {
+    var rect = tooltip.elem.getBoundingClientRect();
+    var doc = document.documentElement,
+      scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
+    if (scrollPosition < 40) {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
+    } else {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
+    }
+  };
+  var resize_tooltips = function() {
+    if (_removed) return;
+    for (var i = 0; i < tooltips.length; i++) {
+      if (!tooltips.no_arrow) resize_tooltip(tooltips);
+    }
+  };
+  var validate_field = function(elem, remove) {
+    var tooltip = null, value = elem.value, no_error = true;
+    remove ? remove_tooltip(elem) : false;
+    if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
+    if (elem.getAttribute('required') !== null) {
+      if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
+        var elems = form_to_submit.elements;
+        if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
+          no_error = elem.checked;
+        }
+        else {
+          no_error = false;
+          for (var i = 0; i < elems.length; i++) {
+            if (elems.checked) no_error = true;
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (elem.type =='checkbox') {
+        var elems = form_to_submit.elements, found = false, err = [];
+        no_error = true;
+        for (var i = 0; i < elems.length; i++) {
+          if (elems.getAttribute('required') === null) continue;
+          if (!found && elems !== elem) return true;
+          found = true;
+          elems.className = elems.className.replace(/ ?_has_error ?/g, '');
+          if (!elems.checked) {
+            no_error = false;
+            elems.className = elems.className + ' _has_error';
+            err.push("Checking %s is required".replace("%s", elems.value));
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, err.join('<br/>'));
+        }
+      } else if (elem.tagName == 'SELECT') {
+        var selected = true;
+        if (elem.multiple) {
+          selected = false;
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected) {
+              selected = true;
+              break;
+            }
+          }
+        } else {
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected
+              && (!elem.options.value
+              || (elem.options.value.match(/\n/g)))
+            ) {
+              selected = false;
+            }
+          }
+        }
+        if (!selected) {
+          elem.className = elem.className + ' _has_error';
+          no_error = false;
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (value === undefined || value === null || value === '') {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "This field is required.");
+      }
+    }
+    if (no_error && (elem.id == 'field[]' || elem.id == 'ca[11]')) {
+      if (elem.className.includes('phone-input-error')) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+      }
+    }
+    if (no_error && elem.name == 'email') {
+      if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@+(\.+)*(\.{2,})$/i)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid email address.");
+      }
+    }
+    if (no_error && /date_field/.test(elem.className)) {
+      if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid date.");
+      }
+    }
+    tooltip ? resize_tooltip(tooltip) : false;
+    return no_error;
+  };
+  var needs_validate = function(el) {
+    if(el.getAttribute('required') !== null){
+      return true
+    }
+    if(el.name === 'email' && el.value !== ""){
+      return true
+    }
+    if((el.id == 'field[]' || el.id == 'ca[11]') && el.className.includes('phone-input-error')){
+      return true
+    }
+    return false
+  };
+  var validate_form = function(e) {
+    var err = form_to_submit.querySelector('._form_error'), no_error = true;
+    if (!submitted) {
+      submitted = true;
+      for (var i = 0, len = allInputs.length; i < len; i++) {
+        var input = allInputs;
+        if (needs_validate(input)) {
+          if (input.type == 'tel') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+          }
+          if (input.type == 'text' || input.type == 'number' || input.type == 'time') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'radio' || input.type == 'checkbox') {
+            (function(el) {
+              var radios = form_to_submit.elements;
+              for (var i = 0; i < radios.length; i++) {
+                addEvent(radios, 'click', function() {
+                  validate_field(el, true);
+                });
+              }
+            })(input);
+          } else if (input.tagName == 'SELECT') {
+            addEvent(input, 'change', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'textarea'){
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          }
+        }
+      }
+    }
+    remove_tooltips();
+    for (var i = 0, len = allInputs.length; i < len; i++) {
+      var elem = allInputs;
+      if (needs_validate(elem)) {
+        if (elem.tagName.toLowerCase() !== "select") {
+          elem.value = elem.value.trim();
+        }
+        validate_field(elem) ? true : no_error = false;
+      }
+    }
+    if (!no_error && e) {
+      e.preventDefault();
+    }
+    resize_tooltips();
+    return no_error;
+  };
+  addEvent(window, 'resize', resize_tooltips);
+  addEvent(window, 'scroll', resize_tooltips);
+  var hidePhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.remove("phone-error");
+    errorMessage.classList.add("phone-error-hidden");
+    input.classList.remove("phone-input-error");
+  };
+  var initializePhoneInput = function(input, defaultCountry) {
+    return window.intlTelInput(input, {
+      utilsScript: "https://unpkg.com/intl-tel-input@17.0.18/build/js/utils.js",
+      autoHideDialCode: false,
+      separateDialCode: true,
+      initialCountry: defaultCountry,
+      preferredCountries: []
+    });
+  }
+  var setPhoneInputEventListeners = function(inputId, input, iti) {
+    input.addEventListener('blur', function() {
+      var errorMessage = document.getElementById("error-msg-" + inputId);
+      if (input.value.trim()) {
+        if (iti.isValidNumber()) {
+          iti.setNumber(iti.getNumber());
+          if (errorMessage.classList.contains("phone-error")){
+            hidePhoneInputError(inputId);
+          }
+        } else {
+          showPhoneInputError(inputId)
+        }
+      } else {
+        if (errorMessage.classList.contains("phone-error")){
+          hidePhoneInputError(inputId);
+        }
+      }
+    });
+    input.addEventListener("countrychange", function() {
+      iti.setNumber('');
+    });
+    input.addEventListener("keydown", function(e) {
+      var charCode = (e.which) ? e.which : e.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 8) {
+        e.preventDefault();
+      }
+    });
+  };
+  var showPhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.add("phone-error");
+    errorMessage.classList.remove("phone-error-hidden");
+    input.classList.add("phone-input-error");
+  };
+  var _form_serialize = function(form){if(!form||form.nodeName!=="FORM"){return }var i,j,q=[];for(i=0;i<form.elements.length;i++){if(form.elements.name===""){continue}switch(form.elements.nodeName){case"INPUT":switch(form.elements.type){case"tel":q.push(form.elements.name+"="+encodeURIComponent(form.elements.previousSibling.querySelector('div.iti__selected-dial-code').innerText)+encodeURIComponent(" ")+encodeURIComponent(form.elements.value));break;case"text":case"number":case"date":case"time":case"hidden":case"password":case"button":case"reset":case"submit":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"checkbox":case"radio":if(form.elements.checked){q.push(form.elements.name+"="+encodeURIComponent(form.elements.value))}break;case"file":break}break;case"TEXTAREA":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"SELECT":switch(form.elements.type){case"select-one":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"select-multiple":for(j=0;j<form.elements.options.length;j++){if(form.elements.options.selected){q.push(form.elements.name+"="+encodeURIComponent(form.elements.options.value))}}break}break;case"BUTTON":switch(form.elements.type){case"reset":case"submit":case"button":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break}break}}return q.join("&")};
+  const formSupportsPost = false;
+  var form_submit = function(e) {
+    e.preventDefault();
+    if (validate_form()) {
+      // use this trick to get the submit button & disable it using plain javascript
+      var submitButton = e.target.querySelector('#_form_19_submit');
+      submitButton.disabled = true;
+      submitButton.classList.add('processing');
+            var serialized = _form_serialize(
+        document.getElementById('_form_19_')
+      ).replace(/%0A/g, '\\n');
+      var err = form_to_submit.querySelector('._form_error');
+      err ? err.parentNode.removeChild(err) : false;
+      async function submitForm() {
+       var formData = new FormData();
+       const searchParams = new URLSearchParams(serialized);
+       searchParams.forEach((value, key) => {
+        formData.append(key, value);
+       });
+       const response = await fetch('https://cabletv.activehosted.com/proc.php?jsonp=true', {
+        headers: {
+         "Accept": "application/json"
+        },
+        body: formData,
+        method: "POST"
+       });
+       return response.json();
+      }
+      if (formSupportsPost) {
+       submitForm().then((data) => {
+        eval(data.js);
+       });
+      } else {
+       _load_script('https://cabletv.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
+      }
+    }
+    return false;
+  };
+  addEvent(form_to_submit, 'submit', form_submit);
+})();
+</script>
+<p class="vc-email-subscribe__disclaimer">
+          By signing up, you agree to our <a href="/privacy-policy-terms-and-conditions">Privacy Policy &amp; Terms and Conditions</a>.
+        </p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>5. Bob Belcher (“Bob’s Burgers”)</h2><p>
+Bob may not always have everything under control and he might get a little salty in the early seasons, but he consistently supports his kids’ weird passions and personalities.
+
+Bob lets his children be themselves without judgment, and that’s what makes him so great.
+
+Check out our <a href="/listicles/best-fox-cartoons">ranking of the best FOX cartoons</a> of all time.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>4. Phil Dunphy (“Modern Family”)</h2><p>
+Phil Dunphy mastered the art of embarrassing dad energy. He’s goofy, overly enthusiastic, and constantly trying too hard — but he also loves his family unconditionally.
+
+Beneath all the dad jokes is a genuinely supportive father who always shows up when it matters.
+
+Take a look at his collection of life lessons, also known as “Phil’s-osophies.”</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><strong>3. Din Djarin (“The Mandalorian”)</strong>
+
+If I had a nickel for every time Pedro Pascal starred in a popular series as a gruff loner who becomes emotionally attached to a child and turns into their devoted protector, I’d have two nickels — which isn’t a lot, but it’s weird that it happened twice.
+
+Din Djarin starts as a solitary bounty hunter, but once he meets Grogu, he quickly becomes the galaxy’s most devoted space dad.
+
+His armor is cool, but his emotional development during his parenting journey is what puts him so high on my list.
+
+If you’re interested in more Star Wars content, check out our official <a href="/entertainment/watch-every-star-wars-movie-in-order">Star Wars viewing order guide.</a></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>2. Mufasa (“The Lion King”)</h2><p>
+Few movie dads have left a bigger impact than Mufasa. Wise, brave, and patient with Simba, he taught generations of kids about responsibility, courage, and of course, the circle of life.
+
+While I’ll never forgive Scar for what he did to him, the fact that Mufasa still connects with his son even after he’s gone is what really locks in his legacy and proves he deserves this ranking.
+
+For more family favorites, check out our guide to <a href="/disney-plus/what-to-watch">the best shows and movies on Disney+</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>1. Bandit Heeler (“Bluey”)</h2><p>
+Bandit is the blueprint (pun intended) for what a modern parent should look like. He somehow balances patience, creativity, humor, and emotional intelligence while turning everyday life into adventures for his kids.
+
+Bandit has parents everywhere wondering how he still has the energy to play keepy uppy after a long day of work.
+
+What solidifies his No. 1 spot for me is that he shows up every time, meets his kids in their world, and makes even the ordinary moments feel like something special.
+
+Check out some of his best moments.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>Final thoughts</h2><p>
+The best TV and movie dads aren’t perfect. They make mistakes, embarrass their kids, and sometimes lose their cool — but what sticks is how much they care.
+
+Whether they’re ruling Pride Rock, running a burger shop, or protecting a tiny green child across the galaxy, these dads make fictional families feel real.
+
+Happy Father’s Day to the ones who did it best.</p></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/06/Best-TV-and-Movie-Dads.webp"/>
     </item>
   </channel>
 </rss>
