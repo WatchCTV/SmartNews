@@ -4,7 +4,7 @@
     <title>Entertainment News | CableTV.com</title>
     <link>https://www.cabletv.com/category/news</link>
     <description>Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming.</description>
-    <lastBuildDate>Thu, 09 Jul 2026 19:22:29 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jul 2026 01:59:57 +0000</lastBuildDate>
     <language>en-US</language>
     <atom:link href="https://www.cabletv.com/category/news/feed" rel="self" type="application/rss+xml"/>
     <sy:updatePeriod>hourly</sy:updatePeriod>
@@ -19,6 +19,589 @@
       <width>32</width>
       <height>32</height>
     </image>
+    <item>
+      <title>No Refunds: Playstation Takes Movies Away From Customers Who Purchased VOD</title>
+      <link>https://www.cabletv.com/news/sony-playstation-removes-movies</link>
+      <pubDate>Thu, 09 Jul 2026 14:02:08 +0000</pubDate>
+      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
+      <guid isPermaLink="false">https://www.cabletv.com/news/sony-playstation-removes-movies</guid>
+      <description><![CDATA[<p>Yet another reminder that you don’t own your digital purchases: PlayStation is deleting hundreds of movies with no refunds.</p>]]></description>
+      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/07/Paddington1200x630.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>551 titles are leaving Playstation on September 1</h2><p>
+Streaming may have been the big innovation of the 2010s, but there’s a reason that physical media is making a comeback in the 2020s. Because even when you buy digital copies of movies from VOD platforms like Prime Video, Apple TV, or, in this case, PlayStation, you never truly own your content. And <a href="https://kotaku.com/amazons-luna-service-removing-access-to-purchased-games-and-is-offering-no-refunds-2000686688" rel="nofollow">it can be taken away at any time</a>.
+
+That’s what’s happening to PlayStation customers this September. Sony’s <a href="https://kotaku.com/playstation-store-movies-digital-studio-canal-terminator-2000711013" rel="noopener" target="_blank">licensing deal with distributor StudioCanal is about to expire</a>. StudioCanal’s Youtube page describes itself as “Europe’s leading movie &amp; television studio with one of the world’s largest film libraries,” so it’s not surprising that over 500 TV shows and movies are about to disappear from the PlayStation store.
+
+But rather than negotiating to extend the StudioCanal deal or reimbursing customers, Sony is simply removing them from customers’ libraries with no refunds.
+
+Normally, I’d have some advice about “what to do before they expire,” but there’s not much you can do here. Unlike <a href="https://www.engadget.com/google-play-music-153919131.html" rel="noopener" target="_blank">when Google Play shut down its music service</a>, you can’t download your library to use it somewhere else. All you can do is watch your library while you still can and then try to re-purchase your titles elsewhere.
+
+But if you’re wondering exactly which titles are affected, keep reading. I’ll highlight some of the shows and movies I think you’re most likely to have. And then I’ll recommend some other options in case you’re thinking of leaving the PlayStation ecosystem.</p></div></div><div class="row section--padding-bottom-30"><div class="columns small-12 medium-12 large-12">
+<div class="row align-center vc-email-subscribe__wrapper">
+<div class="columns small-12 large-6">
+<div class="callout-area">
+
+<div class="callout-text">
+<h3>Keep up with all the latest in entertainment news</h3> <p>Subscribe to CableTV.com's email newsletter for the latest TV event viewing guides, entertaining takes, and money-saving promotions.</p> </div>
+</div>
+</div>
+<div class="columns small-12 large-6">
+<div class="vc-email-subscribe">
+<div class="vc-email-subscribe__inline-form">
+<form action="https://cabletv.activehosted.com/proc.php" class="_form _form_19 _inline-form" id="_form_19_" method="POST">
+<input name="u" type="hidden" value="19"/>
+<input name="f" type="hidden" value="19"/>
+<input name="s" type="hidden"/>
+<input name="c" type="hidden" value="0"/>
+<input name="m" type="hidden" value="0"/>
+<input name="act" type="hidden" value="sub"/>
+<input name="v" type="hidden" value="2"/>
+<input name="or" type="hidden" value="8b2db1a6b150094e4ac73dc0ec08c9b4"/>
+<input id="ls" name="ls" type="hidden" value="1"/>
+<input id="nlbox_2" name="nlbox[]" type="hidden" value="2"/><input id="nlbox_3" name="nlbox[]" type="hidden" value="3"/><input id="nlbox_5" name="nlbox[]" type="hidden" value="5"/><input id="nlbox_16" name="nlbox[]" type="hidden" value="16"/><input id="nlbox_17" name="nlbox[]" type="hidden" value="17"/> <div class="_form-content">
+<div class="_field-wrapper">
+<input class="field-email" id="email" name="email" placeholder="Email Address" required="" type="text"/>
+<label class="show-for-sr" for="email">Email*</label>
+</div>
+<div class="_field-wrapper">
+<input class="field-zip" id="field[1]" maxlength="5" minlength="5" name="field[1]" pattern="[0-9]{5}" placeholder="Zip Code" required="" type="text"/>
+<label class="show-for-sr" for="field[1]">Zip code*</label>
+</div>
+<div class="_button-wrapper _inline-style">
+<button class="button button--generic" id="_form_19_submit" type="submit">
+        Sign Up
+      </button>
+</div>
+
+</div>
+
+</form>
+<script type="text/javascript">
+window.cfields = {"1":"zip_code"};
+window._show_thank_you = function(id, message, trackcmp_url, email) {
+  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
+  form.querySelector('._form-content').style.display = 'none';
+  thank_you.innerHTML = message;
+  thank_you.style.display = 'block';
+  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
+  var visitorObject = window;
+  if (email && typeof visitorObject !== 'undefined') {
+    visitorObject('setEmail', email);
+    visitorObject('update');
+  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
+    // Site tracking URL to use after inline form submission.
+    _load_script(trackcmp_url);
+  }
+  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
+};
+window._show_error = function(id, message, html) {
+  var form = document.getElementById('_form_' + id + '_'),
+    err = document.createElement('div'),
+    button = form.querySelector('button'),
+    old_error = form.querySelector('._form_error');
+  if (old_error) old_error.parentNode.removeChild(old_error);
+  err.innerHTML = message;
+  err.className = '_error-inner _form_error _no_arrow';
+  var wrapper = document.createElement('div');
+  wrapper.className = '_form-inner';
+  wrapper.appendChild(err);
+  button.parentNode.insertBefore(wrapper, button);
+  var submitButton = form.querySelector('');
+  submitButton.disabled = false;
+  submitButton.classList.remove('processing');
+  if (html) {
+    var div = document.createElement('div');
+    div.className = '_error-html';
+    div.innerHTML = html;
+    err.appendChild(div);
+  }
+};
+window._load_script = function(url, callback, isSubmit) {
+  var head = document.querySelector('head'), script = document.createElement('script'), r = false;
+  var submitButton = document.querySelector('#_form_19_submit');
+  script.type = 'text/javascript';
+  script.charset = 'utf-8';
+  script.src = url;
+  if (callback) {
+    script.onload = script.onreadystatechange = function() {
+      if (!r && (!this.readyState || this.readyState == 'complete')) {
+        r = true;
+        callback();
+      }
+    };
+  }
+  script.onerror = function() {
+    if (isSubmit) {
+      if (script.src.length > 10000) {
+        _show_error("19", "Sorry, your submission failed. Please shorten your responses and try again.");
+      } else {
+        _show_error("19", "Sorry, your submission failed. Please try again.");
+      }
+      submitButton.disabled = false;
+      submitButton.classList.remove('processing');
+    }
+  }
+  head.appendChild(script);
+};
+(function() {
+  if (window.location.search.search("excludeform") !== -1) return false;
+  var getCookie = function(name) {
+    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  var setCookie = function(name, value) {
+    var now = new Date();
+    var time = now.getTime();
+    var expireTime = time + 1000 * 60 * 60 * 24 * 365;
+    now.setTime(expireTime);
+    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';
+  }
+      var addEvent = function(element, event, func) {
+    if (element.addEventListener) {
+      element.addEventListener(event, func);
+    } else {
+      var oldFunc = element['on' + event];
+      element['on' + event] = function() {
+        oldFunc.apply(this, arguments);
+        func.apply(this, arguments);
+      };
+    }
+  }
+  var _removed = false;
+    var form_to_submit = document.getElementById('_form_19_');
+  var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
+  var getUrlParam = function(name) {
+    var params = new URLSearchParams(window.location.search);
+    return params.get(name) || false;
+  };
+  var acctDateFormat = "%m/%d/%Y";
+  var getNormalizedDate = function(date, acctFormat) {
+    var decodedDate = decodeURIComponent(date);
+    if (acctFormat && acctFormat.match(/(%d|%e).*%m/gi) !== null) {
+      return decodedDate.replace(/(\d{2}).*(\d{2}).*(\d{4})/g, '$3-$2-$1');
+    } else if (Date.parse(decodedDate)) {
+      var dateObj = new Date(decodedDate);
+      var year = dateObj.getFullYear();
+      var month = dateObj.getMonth() + 1;
+      var day = dateObj.getDate();
+      return `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
+    }
+    return false;
+  };
+  var getNormalizedTime = function(time) {
+    var hour, minutes;
+    var decodedTime = decodeURIComponent(time);
+    var timeParts = Array.from(decodedTime.matchAll(/(\d{1,2}):(\d{1,2})\W*()?/gm))[0];
+    if (timeParts[3]) { // 12 hour format
+      var isPM = timeParts[3].toLowerCase() === 'pm';
+      if (isPM) {
+        hour = parseInt(timeParts[1]) === 12 ? '12' : `${parseInt(timeParts[1]) + 12}`;
+      } else {
+        hour = parseInt(timeParts[1]) === 12 ? '0' : timeParts[1];
+      }
+    } else { // 24 hour format
+      hour = timeParts[1];
+    }
+    var normalizedHour = parseInt(hour) < 10 ? `0${parseInt(hour)}` : hour;
+    var minutes = timeParts[2];
+    return `${normalizedHour}:${minutes}`;
+  };
+  for (var i = 0; i < allInputs.length; i++) {
+    var regexStr = "field\\[(\\d+)\\]";
+    var results = new RegExp(regexStr).exec(allInputs.name);
+    if (results != undefined) {
+      allInputs.dataset.name = allInputs.name.match(/\$/)
+        ? `${window.cfields]}_time`
+        : window.cfields];
+    } else {
+      allInputs.dataset.name = allInputs.name;
+    }
+    var fieldVal = getUrlParam(allInputs.dataset.name);
+    if (fieldVal) {
+      if (allInputs.dataset.autofill === "false") {
+        continue;
+      }
+      if (allInputs.type == "radio" || allInputs.type == "checkbox") {
+        if (allInputs.value == fieldVal) {
+          allInputs.checked = true;
+        }
+      } else if (allInputs.type == "date") {
+        allInputs.value = getNormalizedDate(fieldVal, acctDateFormat);
+      } else if (allInputs.type == "time") {
+        allInputs.value = getNormalizedTime(fieldVal);
+      } else {
+        allInputs.value = fieldVal;
+      }
+    }
+  }
+  var remove_tooltips = function() {
+    for (var i = 0; i < tooltips.length; i++) {
+      tooltips.tip.parentNode.removeChild(tooltips.tip);
+    }
+    tooltips = [];
+  };
+  var remove_tooltip = function(elem) {
+    for (var i = 0; i < tooltips.length; i++) {
+      if (tooltips.elem === elem) {
+        tooltips.tip.parentNode.removeChild(tooltips.tip);
+        tooltips.splice(i, 1);
+        return;
+      }
+    }
+  };
+  var create_tooltip = function(elem, text) {
+    var tooltip = document.createElement('div'),
+      arrow = document.createElement('div'),
+      inner = document.createElement('div'), new_tooltip = {};
+    if (elem.type != 'radio' && elem.type != 'checkbox') {
+      tooltip.className = '_error';
+      arrow.className = '_error-arrow';
+      inner.className = '_error-inner';
+      inner.innerHTML = text;
+      tooltip.appendChild(arrow);
+      tooltip.appendChild(inner);
+      elem.parentNode.appendChild(tooltip);
+    } else {
+      tooltip.className = '_error-inner _no_arrow';
+      tooltip.innerHTML = text;
+      elem.parentNode.insertBefore(tooltip, elem);
+      new_tooltip.no_arrow = true;
+    }
+    new_tooltip.tip = tooltip;
+    new_tooltip.elem = elem;
+    tooltips.push(new_tooltip);
+    return new_tooltip;
+  };
+  var resize_tooltip = function(tooltip) {
+    var rect = tooltip.elem.getBoundingClientRect();
+    var doc = document.documentElement,
+      scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
+    if (scrollPosition < 40) {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
+    } else {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
+    }
+  };
+  var resize_tooltips = function() {
+    if (_removed) return;
+    for (var i = 0; i < tooltips.length; i++) {
+      if (!tooltips.no_arrow) resize_tooltip(tooltips);
+    }
+  };
+  var validate_field = function(elem, remove) {
+    var tooltip = null, value = elem.value, no_error = true;
+    remove ? remove_tooltip(elem) : false;
+    if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
+    if (elem.getAttribute('required') !== null) {
+      if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
+        var elems = form_to_submit.elements;
+        if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
+          no_error = elem.checked;
+        }
+        else {
+          no_error = false;
+          for (var i = 0; i < elems.length; i++) {
+            if (elems.checked) no_error = true;
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (elem.type =='checkbox') {
+        var elems = form_to_submit.elements, found = false, err = [];
+        no_error = true;
+        for (var i = 0; i < elems.length; i++) {
+          if (elems.getAttribute('required') === null) continue;
+          if (!found && elems !== elem) return true;
+          found = true;
+          elems.className = elems.className.replace(/ ?_has_error ?/g, '');
+          if (!elems.checked) {
+            no_error = false;
+            elems.className = elems.className + ' _has_error';
+            err.push("Checking %s is required".replace("%s", elems.value));
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, err.join('<br/>'));
+        }
+      } else if (elem.tagName == 'SELECT') {
+        var selected = true;
+        if (elem.multiple) {
+          selected = false;
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected) {
+              selected = true;
+              break;
+            }
+          }
+        } else {
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected
+              && (!elem.options.value
+              || (elem.options.value.match(/\n/g)))
+            ) {
+              selected = false;
+            }
+          }
+        }
+        if (!selected) {
+          elem.className = elem.className + ' _has_error';
+          no_error = false;
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (value === undefined || value === null || value === '') {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "This field is required.");
+      }
+    }
+    if (no_error && (elem.id == 'field[]' || elem.id == 'ca[11]')) {
+      if (elem.className.includes('phone-input-error')) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+      }
+    }
+    if (no_error && elem.name == 'email') {
+      if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@+(\.+)*(\.{2,})$/i)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid email address.");
+      }
+    }
+    if (no_error && /date_field/.test(elem.className)) {
+      if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid date.");
+      }
+    }
+    tooltip ? resize_tooltip(tooltip) : false;
+    return no_error;
+  };
+  var needs_validate = function(el) {
+    if(el.getAttribute('required') !== null){
+      return true
+    }
+    if(el.name === 'email' && el.value !== ""){
+      return true
+    }
+    if((el.id == 'field[]' || el.id == 'ca[11]') && el.className.includes('phone-input-error')){
+      return true
+    }
+    return false
+  };
+  var validate_form = function(e) {
+    var err = form_to_submit.querySelector('._form_error'), no_error = true;
+    if (!submitted) {
+      submitted = true;
+      for (var i = 0, len = allInputs.length; i < len; i++) {
+        var input = allInputs;
+        if (needs_validate(input)) {
+          if (input.type == 'tel') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+          }
+          if (input.type == 'text' || input.type == 'number' || input.type == 'time') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'radio' || input.type == 'checkbox') {
+            (function(el) {
+              var radios = form_to_submit.elements;
+              for (var i = 0; i < radios.length; i++) {
+                addEvent(radios, 'click', function() {
+                  validate_field(el, true);
+                });
+              }
+            })(input);
+          } else if (input.tagName == 'SELECT') {
+            addEvent(input, 'change', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'textarea'){
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          }
+        }
+      }
+    }
+    remove_tooltips();
+    for (var i = 0, len = allInputs.length; i < len; i++) {
+      var elem = allInputs;
+      if (needs_validate(elem)) {
+        if (elem.tagName.toLowerCase() !== "select") {
+          elem.value = elem.value.trim();
+        }
+        validate_field(elem) ? true : no_error = false;
+      }
+    }
+    if (!no_error && e) {
+      e.preventDefault();
+    }
+    resize_tooltips();
+    return no_error;
+  };
+  addEvent(window, 'resize', resize_tooltips);
+  addEvent(window, 'scroll', resize_tooltips);
+  var hidePhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.remove("phone-error");
+    errorMessage.classList.add("phone-error-hidden");
+    input.classList.remove("phone-input-error");
+  };
+  var initializePhoneInput = function(input, defaultCountry) {
+    return window.intlTelInput(input, {
+      utilsScript: "https://unpkg.com/intl-tel-input@17.0.18/build/js/utils.js",
+      autoHideDialCode: false,
+      separateDialCode: true,
+      initialCountry: defaultCountry,
+      preferredCountries: []
+    });
+  }
+  var setPhoneInputEventListeners = function(inputId, input, iti) {
+    input.addEventListener('blur', function() {
+      var errorMessage = document.getElementById("error-msg-" + inputId);
+      if (input.value.trim()) {
+        if (iti.isValidNumber()) {
+          iti.setNumber(iti.getNumber());
+          if (errorMessage.classList.contains("phone-error")){
+            hidePhoneInputError(inputId);
+          }
+        } else {
+          showPhoneInputError(inputId)
+        }
+      } else {
+        if (errorMessage.classList.contains("phone-error")){
+          hidePhoneInputError(inputId);
+        }
+      }
+    });
+    input.addEventListener("countrychange", function() {
+      iti.setNumber('');
+    });
+    input.addEventListener("keydown", function(e) {
+      var charCode = (e.which) ? e.which : e.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 8) {
+        e.preventDefault();
+      }
+    });
+  };
+  var showPhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.add("phone-error");
+    errorMessage.classList.remove("phone-error-hidden");
+    input.classList.add("phone-input-error");
+  };
+  var _form_serialize = function(form){if(!form||form.nodeName!=="FORM"){return }var i,j,q=[];for(i=0;i<form.elements.length;i++){if(form.elements.name===""){continue}switch(form.elements.nodeName){case"INPUT":switch(form.elements.type){case"tel":q.push(form.elements.name+"="+encodeURIComponent(form.elements.previousSibling.querySelector('div.iti__selected-dial-code').innerText)+encodeURIComponent(" ")+encodeURIComponent(form.elements.value));break;case"text":case"number":case"date":case"time":case"hidden":case"password":case"button":case"reset":case"submit":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"checkbox":case"radio":if(form.elements.checked){q.push(form.elements.name+"="+encodeURIComponent(form.elements.value))}break;case"file":break}break;case"TEXTAREA":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"SELECT":switch(form.elements.type){case"select-one":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"select-multiple":for(j=0;j<form.elements.options.length;j++){if(form.elements.options.selected){q.push(form.elements.name+"="+encodeURIComponent(form.elements.options.value))}}break}break;case"BUTTON":switch(form.elements.type){case"reset":case"submit":case"button":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break}break}}return q.join("&")};
+  const formSupportsPost = false;
+  var form_submit = function(e) {
+    e.preventDefault();
+    if (validate_form()) {
+      // use this trick to get the submit button & disable it using plain javascript
+      var submitButton = e.target.querySelector('#_form_19_submit');
+      submitButton.disabled = true;
+      submitButton.classList.add('processing');
+            var serialized = _form_serialize(
+        document.getElementById('_form_19_')
+      ).replace(/%0A/g, '\\n');
+      var err = form_to_submit.querySelector('._form_error');
+      err ? err.parentNode.removeChild(err) : false;
+      async function submitForm() {
+       var formData = new FormData();
+       const searchParams = new URLSearchParams(serialized);
+       searchParams.forEach((value, key) => {
+        formData.append(key, value);
+       });
+       const response = await fetch('https://cabletv.activehosted.com/proc.php?jsonp=true', {
+        headers: {
+         "Accept": "application/json"
+        },
+        body: formData,
+        method: "POST"
+       });
+       return response.json();
+      }
+      if (formSupportsPost) {
+       submitForm().then((data) => {
+        eval(data.js);
+       });
+      } else {
+       _load_script('https://cabletv.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
+      }
+    }
+    return false;
+  };
+  addEvent(form_to_submit, 'submit', form_submit);
+})();
+</script>
+<p class="vc-email-subscribe__disclaimer">
+          By signing up, you agree to our <a href="/privacy-policy-terms-and-conditions">Privacy Policy &amp; Terms and Conditions</a>.
+        </p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>How do I know which movies are getting removed?</h2><p>
+The only silver lining in this situation is that Sony helpfully spelled out each and every movie getting removed from its platform. Well, considering that the list is labeled as a “Legal notice” on its site, Sony likely didn’t have a choice in the matter.
+
+But either way, we know the names of all 551 TV shows and movies leaving the platform. Head over to <a href="https://www.playstation.com/en-gb/legal/psvideocontent/" rel="noopener" target="_blank">PlayStation’s website</a> to read the full list. StudioCanal, which owns the rights to all of these titles, is a French company, so there are a lot of French names in there. But they also own plenty of English-language hits, too, and some of them might be in your own library.
+
+Here are some of the biggest titles that I noticed:
+</p><h3>Movies leaving PlayStation</h3><ul>
+<li>“A Shaun the Sheep Movie: Farmageddon”</li>
+<li>“Apocalypse Now: The Final Cut”</li>
+<li>“Big Eyes”</li>
+<li>“Bridget Jones’s Diary”</li>
+<li>“Evil Dead” (2013)</li>
+<li>“He Named Me Malala”</li>
+<li>“Highlander”</li>
+<li>“Hot Fuzz”</li>
+<li>“Murder on the Orient Express”</li>
+<li>“Paddington”</li>
+<li>“Pan’s Labyrinth”</li>
+<li>“Rambo First Blood”</li>
+<li>“Sharknado”</li>
+<li>“Silver Linings Playbook”</li>
+<li>“Song of the Sea”</li>
+<li>“The Boy in the Striped Pajamas”</li>
+<li>“This Is Spinal Tap”</li>
+<li>“Tinker, Tailor, Soldier, Spy”</li>
+</ul><h3>TV Shows leaving PlayStation</h3><ul>
+<li>“American Gods” Season 1</li>
+<li>“Below the Surface” Season 1</li>
+<li>“Crossing Lines” Season 1–3</li>
+<li>“Midnight Sun” Season 1</li>
+<li>“The Young Pope” Season 1–2</li>
+<li>“Versailles” Season 2–3</li>
+</ul></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>Other VOD storefronts</h2><p>
+I can’t promise this problem won’t happen with other VOD storefronts; removals are a problem with all intangible media. Unfortunately, there’s no DRM-free storefront for movies. But if this situation with PlayStation is making you angry enough to change platforms, here are some recommendations:</p><h3><a href="/amazon-prime-video">Prime Video</a></h3><p>
+It won’t surprise you that you can buy anything on Amazon, including TV shows and movies. Yes, you can subscribe to Prime to get a huge streaming library, but if you want to own titles, you can also rent or buy things from its VOD storefront. But with licensing restrictions (<a href="https://kotaku.com/amazons-luna-service-removing-access-to-purchased-games-and-is-offering-no-refunds-2000686688" rel="nofollow">and whatever went down with Amazon Luna</a>), you may be better off using Amazon to build your physical media library through CDs and DVDs instead.</p></div></div><div class="row"><div class="columns small-12 medium-24 large-9">
+<h3><a href="/apple-tv-plus">Apple TV</a></h3><p>
+”Apple TV” is the name of Apple’s subscription service, VOD storefront, and streaming device. It’s a confusing naming convention, but rest assured that you can both stream Apple Originals and purchase shows from other production companies through the Apple TV storefront.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>Other options</h2><p>
+If you’re really looking to future-proof your media collection, you should avoid VOD storefronts. Instead, try investing in physical media. And if you have a media collection locally on your computer, you can always set up a Plex or <a href="https://www.xda-developers.com/things-i-wish-id-known-before-setting-up-my-first-jellyfin-server/" rel="noopener" target="_blank">Jellyfin</a> server and access your movies from any other device, like your TV or tablet.</p><h3><a href="/equipment/how-to-set-up-plex-server">Plex</a></h3><p>
+Plex is a neat service, often used by tech enthusiasts, that lets you host your own local media library on a server. If you have an always-running device like a single-board computer or a mini PC, you can essentially create your own streaming service. It’s less complicated than it sounds; our tech expert Eric Chiu <a href="/equipment/how-to-set-up-plex-server">has a how-to guide with everything you need to know</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>Who we are</h2><p>
+At CableTV.com, we’re not just entertainment experts — we’re also fans just like you. So while our first priority is reporting the best and most accurate information about TV providers and streaming services, we also love talking about our favorite shows and movies. So you can count on us to share our honest opinions and unbridled enthusiasm. For more on our process, check out our <a href="/how-we-rank">Editorial Policy</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<p class="h3">More industry news for TV fans</p><ul>
+<li><a href="/news/apple-tv-4k-shows">Apple TV Upgrades TV Shows to 4K</a></li>
+<li><a href="/news/anime-expo-2026-announcements">Anime Expo Announcements Recap</a></li>
+<li><a href="/news/dish-tv-files-bankruptcy">DISH Files for Bankruptcy</a></li>
+</ul></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/07/Paddington1200x630.webp"/>
+    </item>
     <item>
       <title>New Streaming This Week (July 6, 2026): ‘Ghost in the Shell,’ ‘The Westies,’ and ‘Backrooms’ Top the List</title>
       <link>https://www.cabletv.com/news/new-streaming-jul-6-12-2026</link>
@@ -1573,598 +2156,6 @@ At CableTV.com, we’re not just entertainment experts — we’re also fans jus
 </ul></div></div>
 ]]></content:encoded>
       <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/06/NBCUniversal1200x630.webp"/>
-    </item>
-    <item>
-      <title>17 Best Returning Shows of 2026: Your Ultimate Premiere Guide</title>
-      <link>https://www.cabletv.com/entertainment/best-returning-shows-2026</link>
-      <pubDate>Fri, 26 Jun 2026 15:00:37 +0000</pubDate>
-      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
-      <guid isPermaLink="false">https://www.cabletv.com/entertainment/best-returning-shows-2026</guid>
-      <description><![CDATA[<p>It’s finally over! The wait for your favorite shows is ending in 2026. From the halls of Sacred Heart in the Scrubs revival to the queasy drama of Euphoria, we’ve got the premiere dates for the 17 most anticipated returning shows of the year. Here’s your 2026 binge-watching calendar!</p>]]></description>
-      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/01/featimg_returning-shows-2026-ctv-logo-opt.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>Returning shows in 2026: laughter, tears, and long-awaited comebacks</h2><p>
-We get it. You find a show you love so much that you gobble it up in a few days, only to have to wait <em>forever</em> for a new season. You try other shows to pass the time, and some are pretty good. But there’s still The One Show you fester to resume, the one that left you with a cliffhanger or a <em>really</em> long hiatus, complete with scary renewal/cancellation rumors. Good news, couch creature: The wait is finally over—at least it is for the 17 returning shows we’re highlighting in this column.
-
-The 2026 television landscape spans everything from the high-stakes trading floors of London and dusty reservations to eerie, snow-covered wilderness and beyond. The year is stacked with the kind of prestige drama and comfort-watch comedy that (almost) justifies those frequent <a href="/news/streaming-service-price-increases">streaming-service price hikes</a>.
-
-The lineup of returning shows in 2026 balances long-awaited sequels with the steady return of our current favorites. We’re seeing Tom Hiddleston step back into the shadows for a second chapter of <em>The Night Manager</em>—a full decade after the first season redefined the spy thriller. (Note: Lisa Kudrow’s <em>The Comeback</em> took 11 years to live up to its name, and <em>Scrubs</em> kept us in the waiting room for a solid 16 years.) Meanwhile, the tearjerkers return to tug at our heartstrings, with the raw, medical intensity of <em>The Pitt</em> and the vulnerable vibes of <em>Shrinking</em>.</p></div></div><div class="row section--padding-bottom"><div class="columns small-12 medium-12 large-12">
-<div class="row align-center vc-email-subscribe__wrapper">
-<div class="columns small-12 large-6">
-<div class="callout-area">
-
-<div class="callout-text">
-<h3>Looking for the hottest entertainment?</h3> <p>Subscribe to CableTV.com’s email newsletter for the latest TV event viewing guides, entertaining takes, and money-saving promotions.</p> </div>
-</div>
-</div>
-<div class="columns small-12 large-6">
-<div class="vc-email-subscribe">
-<div class="vc-email-subscribe__inline-form">
-<form action="https://cabletv.activehosted.com/proc.php" class="_form _form_19 _inline-form" id="_form_19_" method="POST">
-<input name="u" type="hidden" value="19"/>
-<input name="f" type="hidden" value="19"/>
-<input name="s" type="hidden"/>
-<input name="c" type="hidden" value="0"/>
-<input name="m" type="hidden" value="0"/>
-<input name="act" type="hidden" value="sub"/>
-<input name="v" type="hidden" value="2"/>
-<input name="or" type="hidden" value="8b2db1a6b150094e4ac73dc0ec08c9b4"/>
-<input id="ls" name="ls" type="hidden" value="1"/>
-<input id="nlbox_2" name="nlbox[]" type="hidden" value="2"/><input id="nlbox_3" name="nlbox[]" type="hidden" value="3"/><input id="nlbox_5" name="nlbox[]" type="hidden" value="5"/><input id="nlbox_16" name="nlbox[]" type="hidden" value="16"/><input id="nlbox_17" name="nlbox[]" type="hidden" value="17"/> <div class="_form-content">
-<div class="_field-wrapper">
-<input class="field-email" id="email" name="email" placeholder="Email Address" required="" type="text"/>
-<label class="show-for-sr" for="email">Email*</label>
-</div>
-<div class="_field-wrapper">
-<input class="field-zip" id="field[1]" maxlength="5" minlength="5" name="field[1]" pattern="[0-9]{5}" placeholder="Zip Code" required="" type="text"/>
-<label class="show-for-sr" for="field[1]">Zip code*</label>
-</div>
-<div class="_button-wrapper _inline-style">
-<button class="button button--generic" id="_form_19_submit" type="submit">
-        Sign Up
-      </button>
-</div>
-
-</div>
-
-</form>
-<script type="text/javascript">
-window.cfields = {"1":"zip_code"};
-window._show_thank_you = function(id, message, trackcmp_url, email) {
-  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
-  form.querySelector('._form-content').style.display = 'none';
-  thank_you.innerHTML = message;
-  thank_you.style.display = 'block';
-  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
-  var visitorObject = window;
-  if (email && typeof visitorObject !== 'undefined') {
-    visitorObject('setEmail', email);
-    visitorObject('update');
-  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
-    // Site tracking URL to use after inline form submission.
-    _load_script(trackcmp_url);
-  }
-  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
-};
-window._show_error = function(id, message, html) {
-  var form = document.getElementById('_form_' + id + '_'),
-    err = document.createElement('div'),
-    button = form.querySelector('button'),
-    old_error = form.querySelector('._form_error');
-  if (old_error) old_error.parentNode.removeChild(old_error);
-  err.innerHTML = message;
-  err.className = '_error-inner _form_error _no_arrow';
-  var wrapper = document.createElement('div');
-  wrapper.className = '_form-inner';
-  wrapper.appendChild(err);
-  button.parentNode.insertBefore(wrapper, button);
-  var submitButton = form.querySelector('');
-  submitButton.disabled = false;
-  submitButton.classList.remove('processing');
-  if (html) {
-    var div = document.createElement('div');
-    div.className = '_error-html';
-    div.innerHTML = html;
-    err.appendChild(div);
-  }
-};
-window._load_script = function(url, callback, isSubmit) {
-  var head = document.querySelector('head'), script = document.createElement('script'), r = false;
-  var submitButton = document.querySelector('#_form_19_submit');
-  script.type = 'text/javascript';
-  script.charset = 'utf-8';
-  script.src = url;
-  if (callback) {
-    script.onload = script.onreadystatechange = function() {
-      if (!r && (!this.readyState || this.readyState == 'complete')) {
-        r = true;
-        callback();
-      }
-    };
-  }
-  script.onerror = function() {
-    if (isSubmit) {
-      if (script.src.length > 10000) {
-        _show_error("19", "Sorry, your submission failed. Please shorten your responses and try again.");
-      } else {
-        _show_error("19", "Sorry, your submission failed. Please try again.");
-      }
-      submitButton.disabled = false;
-      submitButton.classList.remove('processing');
-    }
-  }
-  head.appendChild(script);
-};
-(function() {
-  if (window.location.search.search("excludeform") !== -1) return false;
-  var getCookie = function(name) {
-    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
-    return match ? match[2] : null;
-  }
-  var setCookie = function(name, value) {
-    var now = new Date();
-    var time = now.getTime();
-    var expireTime = time + 1000 * 60 * 60 * 24 * 365;
-    now.setTime(expireTime);
-    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';
-  }
-      var addEvent = function(element, event, func) {
-    if (element.addEventListener) {
-      element.addEventListener(event, func);
-    } else {
-      var oldFunc = element['on' + event];
-      element['on' + event] = function() {
-        oldFunc.apply(this, arguments);
-        func.apply(this, arguments);
-      };
-    }
-  }
-  var _removed = false;
-    var form_to_submit = document.getElementById('_form_19_');
-  var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
-  var getUrlParam = function(name) {
-    var params = new URLSearchParams(window.location.search);
-    return params.get(name) || false;
-  };
-  var acctDateFormat = "%m/%d/%Y";
-  var getNormalizedDate = function(date, acctFormat) {
-    var decodedDate = decodeURIComponent(date);
-    if (acctFormat && acctFormat.match(/(%d|%e).*%m/gi) !== null) {
-      return decodedDate.replace(/(\d{2}).*(\d{2}).*(\d{4})/g, '$3-$2-$1');
-    } else if (Date.parse(decodedDate)) {
-      var dateObj = new Date(decodedDate);
-      var year = dateObj.getFullYear();
-      var month = dateObj.getMonth() + 1;
-      var day = dateObj.getDate();
-      return `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
-    }
-    return false;
-  };
-  var getNormalizedTime = function(time) {
-    var hour, minutes;
-    var decodedTime = decodeURIComponent(time);
-    var timeParts = Array.from(decodedTime.matchAll(/(\d{1,2}):(\d{1,2})\W*()?/gm))[0];
-    if (timeParts[3]) { // 12 hour format
-      var isPM = timeParts[3].toLowerCase() === 'pm';
-      if (isPM) {
-        hour = parseInt(timeParts[1]) === 12 ? '12' : `${parseInt(timeParts[1]) + 12}`;
-      } else {
-        hour = parseInt(timeParts[1]) === 12 ? '0' : timeParts[1];
-      }
-    } else { // 24 hour format
-      hour = timeParts[1];
-    }
-    var normalizedHour = parseInt(hour) < 10 ? `0${parseInt(hour)}` : hour;
-    var minutes = timeParts[2];
-    return `${normalizedHour}:${minutes}`;
-  };
-  for (var i = 0; i < allInputs.length; i++) {
-    var regexStr = "field\\[(\\d+)\\]";
-    var results = new RegExp(regexStr).exec(allInputs.name);
-    if (results != undefined) {
-      allInputs.dataset.name = allInputs.name.match(/\$/)
-        ? `${window.cfields]}_time`
-        : window.cfields];
-    } else {
-      allInputs.dataset.name = allInputs.name;
-    }
-    var fieldVal = getUrlParam(allInputs.dataset.name);
-    if (fieldVal) {
-      if (allInputs.dataset.autofill === "false") {
-        continue;
-      }
-      if (allInputs.type == "radio" || allInputs.type == "checkbox") {
-        if (allInputs.value == fieldVal) {
-          allInputs.checked = true;
-        }
-      } else if (allInputs.type == "date") {
-        allInputs.value = getNormalizedDate(fieldVal, acctDateFormat);
-      } else if (allInputs.type == "time") {
-        allInputs.value = getNormalizedTime(fieldVal);
-      } else {
-        allInputs.value = fieldVal;
-      }
-    }
-  }
-  var remove_tooltips = function() {
-    for (var i = 0; i < tooltips.length; i++) {
-      tooltips.tip.parentNode.removeChild(tooltips.tip);
-    }
-    tooltips = [];
-  };
-  var remove_tooltip = function(elem) {
-    for (var i = 0; i < tooltips.length; i++) {
-      if (tooltips.elem === elem) {
-        tooltips.tip.parentNode.removeChild(tooltips.tip);
-        tooltips.splice(i, 1);
-        return;
-      }
-    }
-  };
-  var create_tooltip = function(elem, text) {
-    var tooltip = document.createElement('div'),
-      arrow = document.createElement('div'),
-      inner = document.createElement('div'), new_tooltip = {};
-    if (elem.type != 'radio' && elem.type != 'checkbox') {
-      tooltip.className = '_error';
-      arrow.className = '_error-arrow';
-      inner.className = '_error-inner';
-      inner.innerHTML = text;
-      tooltip.appendChild(arrow);
-      tooltip.appendChild(inner);
-      elem.parentNode.appendChild(tooltip);
-    } else {
-      tooltip.className = '_error-inner _no_arrow';
-      tooltip.innerHTML = text;
-      elem.parentNode.insertBefore(tooltip, elem);
-      new_tooltip.no_arrow = true;
-    }
-    new_tooltip.tip = tooltip;
-    new_tooltip.elem = elem;
-    tooltips.push(new_tooltip);
-    return new_tooltip;
-  };
-  var resize_tooltip = function(tooltip) {
-    var rect = tooltip.elem.getBoundingClientRect();
-    var doc = document.documentElement,
-      scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
-    if (scrollPosition < 40) {
-      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
-    } else {
-      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
-    }
-  };
-  var resize_tooltips = function() {
-    if (_removed) return;
-    for (var i = 0; i < tooltips.length; i++) {
-      if (!tooltips.no_arrow) resize_tooltip(tooltips);
-    }
-  };
-  var validate_field = function(elem, remove) {
-    var tooltip = null, value = elem.value, no_error = true;
-    remove ? remove_tooltip(elem) : false;
-    if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
-    if (elem.getAttribute('required') !== null) {
-      if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
-        var elems = form_to_submit.elements;
-        if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
-          no_error = elem.checked;
-        }
-        else {
-          no_error = false;
-          for (var i = 0; i < elems.length; i++) {
-            if (elems.checked) no_error = true;
-          }
-        }
-        if (!no_error) {
-          tooltip = create_tooltip(elem, "Please select an option.");
-        }
-      } else if (elem.type =='checkbox') {
-        var elems = form_to_submit.elements, found = false, err = [];
-        no_error = true;
-        for (var i = 0; i < elems.length; i++) {
-          if (elems.getAttribute('required') === null) continue;
-          if (!found && elems !== elem) return true;
-          found = true;
-          elems.className = elems.className.replace(/ ?_has_error ?/g, '');
-          if (!elems.checked) {
-            no_error = false;
-            elems.className = elems.className + ' _has_error';
-            err.push("Checking %s is required".replace("%s", elems.value));
-          }
-        }
-        if (!no_error) {
-          tooltip = create_tooltip(elem, err.join('<br/>'));
-        }
-      } else if (elem.tagName == 'SELECT') {
-        var selected = true;
-        if (elem.multiple) {
-          selected = false;
-          for (var i = 0; i < elem.options.length; i++) {
-            if (elem.options.selected) {
-              selected = true;
-              break;
-            }
-          }
-        } else {
-          for (var i = 0; i < elem.options.length; i++) {
-            if (elem.options.selected
-              && (!elem.options.value
-              || (elem.options.value.match(/\n/g)))
-            ) {
-              selected = false;
-            }
-          }
-        }
-        if (!selected) {
-          elem.className = elem.className + ' _has_error';
-          no_error = false;
-          tooltip = create_tooltip(elem, "Please select an option.");
-        }
-      } else if (value === undefined || value === null || value === '') {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "This field is required.");
-      }
-    }
-    if (no_error && (elem.id == 'field[]' || elem.id == 'ca[11]')) {
-      if (elem.className.includes('phone-input-error')) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-      }
-    }
-    if (no_error && elem.name == 'email') {
-      if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@+(\.+)*(\.{2,})$/i)) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "Enter a valid email address.");
-      }
-    }
-    if (no_error && /date_field/.test(elem.className)) {
-      if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "Enter a valid date.");
-      }
-    }
-    tooltip ? resize_tooltip(tooltip) : false;
-    return no_error;
-  };
-  var needs_validate = function(el) {
-    if(el.getAttribute('required') !== null){
-      return true
-    }
-    if(el.name === 'email' && el.value !== ""){
-      return true
-    }
-    if((el.id == 'field[]' || el.id == 'ca[11]') && el.className.includes('phone-input-error')){
-      return true
-    }
-    return false
-  };
-  var validate_form = function(e) {
-    var err = form_to_submit.querySelector('._form_error'), no_error = true;
-    if (!submitted) {
-      submitted = true;
-      for (var i = 0, len = allInputs.length; i < len; i++) {
-        var input = allInputs;
-        if (needs_validate(input)) {
-          if (input.type == 'tel') {
-            addEvent(input, 'blur', function() {
-              this.value = this.value.trim();
-              validate_field(this, true);
-            });
-          }
-          if (input.type == 'text' || input.type == 'number' || input.type == 'time') {
-            addEvent(input, 'blur', function() {
-              this.value = this.value.trim();
-              validate_field(this, true);
-            });
-            addEvent(input, 'input', function() {
-              validate_field(this, true);
-            });
-          } else if (input.type == 'radio' || input.type == 'checkbox') {
-            (function(el) {
-              var radios = form_to_submit.elements;
-              for (var i = 0; i < radios.length; i++) {
-                addEvent(radios, 'click', function() {
-                  validate_field(el, true);
-                });
-              }
-            })(input);
-          } else if (input.tagName == 'SELECT') {
-            addEvent(input, 'change', function() {
-              validate_field(this, true);
-            });
-          } else if (input.type == 'textarea'){
-            addEvent(input, 'input', function() {
-              validate_field(this, true);
-            });
-          }
-        }
-      }
-    }
-    remove_tooltips();
-    for (var i = 0, len = allInputs.length; i < len; i++) {
-      var elem = allInputs;
-      if (needs_validate(elem)) {
-        if (elem.tagName.toLowerCase() !== "select") {
-          elem.value = elem.value.trim();
-        }
-        validate_field(elem) ? true : no_error = false;
-      }
-    }
-    if (!no_error && e) {
-      e.preventDefault();
-    }
-    resize_tooltips();
-    return no_error;
-  };
-  addEvent(window, 'resize', resize_tooltips);
-  addEvent(window, 'scroll', resize_tooltips);
-  var hidePhoneInputError = function(inputId) {
-    var errorMessage = document.getElementById("error-msg-" + inputId);
-    var input = document.getElementById(inputId);
-    errorMessage.classList.remove("phone-error");
-    errorMessage.classList.add("phone-error-hidden");
-    input.classList.remove("phone-input-error");
-  };
-  var initializePhoneInput = function(input, defaultCountry) {
-    return window.intlTelInput(input, {
-      utilsScript: "https://unpkg.com/intl-tel-input@17.0.18/build/js/utils.js",
-      autoHideDialCode: false,
-      separateDialCode: true,
-      initialCountry: defaultCountry,
-      preferredCountries: []
-    });
-  }
-  var setPhoneInputEventListeners = function(inputId, input, iti) {
-    input.addEventListener('blur', function() {
-      var errorMessage = document.getElementById("error-msg-" + inputId);
-      if (input.value.trim()) {
-        if (iti.isValidNumber()) {
-          iti.setNumber(iti.getNumber());
-          if (errorMessage.classList.contains("phone-error")){
-            hidePhoneInputError(inputId);
-          }
-        } else {
-          showPhoneInputError(inputId)
-        }
-      } else {
-        if (errorMessage.classList.contains("phone-error")){
-          hidePhoneInputError(inputId);
-        }
-      }
-    });
-    input.addEventListener("countrychange", function() {
-      iti.setNumber('');
-    });
-    input.addEventListener("keydown", function(e) {
-      var charCode = (e.which) ? e.which : e.keyCode;
-      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 8) {
-        e.preventDefault();
-      }
-    });
-  };
-  var showPhoneInputError = function(inputId) {
-    var errorMessage = document.getElementById("error-msg-" + inputId);
-    var input = document.getElementById(inputId);
-    errorMessage.classList.add("phone-error");
-    errorMessage.classList.remove("phone-error-hidden");
-    input.classList.add("phone-input-error");
-  };
-  var _form_serialize = function(form){if(!form||form.nodeName!=="FORM"){return }var i,j,q=[];for(i=0;i<form.elements.length;i++){if(form.elements.name===""){continue}switch(form.elements.nodeName){case"INPUT":switch(form.elements.type){case"tel":q.push(form.elements.name+"="+encodeURIComponent(form.elements.previousSibling.querySelector('div.iti__selected-dial-code').innerText)+encodeURIComponent(" ")+encodeURIComponent(form.elements.value));break;case"text":case"number":case"date":case"time":case"hidden":case"password":case"button":case"reset":case"submit":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"checkbox":case"radio":if(form.elements.checked){q.push(form.elements.name+"="+encodeURIComponent(form.elements.value))}break;case"file":break}break;case"TEXTAREA":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"SELECT":switch(form.elements.type){case"select-one":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"select-multiple":for(j=0;j<form.elements.options.length;j++){if(form.elements.options.selected){q.push(form.elements.name+"="+encodeURIComponent(form.elements.options.value))}}break}break;case"BUTTON":switch(form.elements.type){case"reset":case"submit":case"button":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break}break}}return q.join("&")};
-  const formSupportsPost = false;
-  var form_submit = function(e) {
-    e.preventDefault();
-    if (validate_form()) {
-      // use this trick to get the submit button & disable it using plain javascript
-      var submitButton = e.target.querySelector('#_form_19_submit');
-      submitButton.disabled = true;
-      submitButton.classList.add('processing');
-            var serialized = _form_serialize(
-        document.getElementById('_form_19_')
-      ).replace(/%0A/g, '\\n');
-      var err = form_to_submit.querySelector('._form_error');
-      err ? err.parentNode.removeChild(err) : false;
-      async function submitForm() {
-       var formData = new FormData();
-       const searchParams = new URLSearchParams(serialized);
-       searchParams.forEach((value, key) => {
-        formData.append(key, value);
-       });
-       const response = await fetch('https://cabletv.activehosted.com/proc.php?jsonp=true', {
-        headers: {
-         "Accept": "application/json"
-        },
-        body: formData,
-        method: "POST"
-       });
-       return response.json();
-      }
-      if (formSupportsPost) {
-       submitForm().then((data) => {
-        eval(data.js);
-       });
-      } else {
-       _load_script('https://cabletv.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
-      }
-    }
-    return false;
-  };
-  addEvent(form_to_submit, 'submit', form_submit);
-})();
-</script>
-<p class="vc-email-subscribe__disclaimer">
-          By signing up, you agree to our <a href="/privacy-policy-terms-and-conditions">Privacy Policy &amp; Terms and Conditions</a>.
-        </p>
-</div>
-</div>
-</div>
-</div>
-</div></div><div class="row"><div class="columns small-12 medium-12 large-12">Do you crave chaos? You won’t be disappointed. “The Ton” is buzzing again with Benedict’s turn in the spotlight for <em>Bridgerton</em>, while the kitchen heat in <em>The Bear</em> and the toxic rivalries in <em>Beef</em> promise to collectively pump up our blood pressure. Add in the intensity of thrillers like <em>Dark Winds</em>, <em>Paradise</em>, and the final season of <em>Yellowjackets</em>, and you have a year of TV worth clearing your schedule for.</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>The Pitt</em>, Season 2 | <a href="/hbo-max-review">HBO Max</a> | Jan. 8</h2><p>
-Another season, another 15-hour shift. <em>The Pitt</em> returns to HBO Max for <a href="/entertainment/new-shows">Season 2</a>, proving that the “real-time” medical drama is here to stay. Emmy and Golden Globe winner Noah Wyle leads the charge in this body-horror-infused, Pittsburgh-set series that trades the soap opera tropes of other medical procedurals for a raw, honest look at the breaking point of American healthcare. —<em>Mike Strayer, Managing Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Industry</em>, Season 4 | <a href="/hbo-max-review">HBO Max</a> | Jan. 11</h2><p>
-The trading floor looks a bit different this year in HBO’s critically acclaimed financial thriller, <em>Industry</em>. The high-stakes drama series officially returned for its fourth season on Sunday, Jan. 11, introducing a wave of fresh faces to the roster, including Kiernan Shipka, Kal Penn, and Claire Forlani. While fans are thrilled to see Kit Harington (<em>Game of Thrones</em>) return to the fold, the new season carries a bittersweet note: Harry Lawtey has officially exited the series following the events of last season. As the new blood settles in, the stakes for London’s elite have never been higher. —<em>Randy Harward, Senior Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>The Night Manager</em>, Season 2 | <a href="/amazon-prime-video">Prime Video</a> | Jan. 11</h2><p>
-<em>The Night Manager</em>‘s first series is one of my all-time favorite seasons of television, so when I heard it was getting the sequel treatment—albeit 10 years later—I was excited, but skeptical. Could it capture the lightning in a bottle that made the first season so good? I haven’t watched all the available episodes (yet), but what I’ve seen so far makes me hopeful that Season 2 may give Season 1 a run for its money.
-
-This season, Tom Hiddleston is back as the veteran soldier turned hotelier turned spy, Jonathan Pine. When we reconnect with Pine, he’s swapped the luxury hotel circuit for a quiet life in London, operating under the MI6 alias Alex Goodwin. Unfortunately for him, his retirement is cut short after a bloody run-in with a Colombian “businessman” forces him back into the field. This new mission takes Pine deep into South America, where he must once again go undercover to dismantle a massive arms-dealing syndicate from the inside. —<em>Logan Jones, Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Shrinking</em>, Season 3 | <a href="/apple-tv-plus">Apple TV</a> | Jan. 28</h2><p>
-Jason Segel, Jessica Williams, and Harrison Ford are back in one of the most earnest, emotionally involving, and hilarious TV shows about what it’s like to overcome struggle. I binged the first two seasons of this show to get ready for Season 3, and the volume of laughter and tears that came out of my body are too embarrassing to mention. Actually, not embarrassed—it was a lot. If this show has taught me anything, it’s that it’s OK to be vulnerable. I can’t wait for the next 12 episodes of this great show. —<em>Alex Vejar, Jr. Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Bridgerton</em>, Season 4 | <a href="/netflix">Netflix</a> | Jan. 29</h2><p>
-Violet Bridgerton famously had a lot of children, and that means a lot of television. As per the usual <em>Bridgerton</em> formula, each season focuses on a different sibling, and this January we’ll finally get Benedict’s story. Expect masquerades, lavish costumes, and a Cinderella-inspired fairytale romance. After that? <a href="/news/bridgerton-season-5-leading-couple-announced">Four more Bridgertons to go</a> (and probably spin-offs for every minor character)! —<em>Olivia Bono, Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Dark Winds</em>, Season 4 | AMC, <a href="/amc-plus">AMC+</a> | Feb. 15</h2><p>
-Navajo Nation’s finest dicks are trading the High Desert for the trashy streets of ’70s Los Angeles, following Leaphorn (Zahn McClarnon), Chee (Kiowa Gordon), and Manuelito (Jessica Matten) as they hunt for a missing girl in a race against a deadly LA crime ring. With a well-deserved perfect 100% Rotten Tomatoes score and Zahn McClarnon making his directorial debut this season, for my money, this’ll be the TV event of the winter. —<em>Mike Strayer, Managing Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Paradise</em>, Season 2 | <a href="/hulu-review">Hulu</a> | Feb. 23</h2><p>
-The first season of the hit Hulu sci-fi/political thriller caught fire thanks to how adeptly its winding and pulpy premise was anchored by Sterling K. Brown’s performance as Secret Service agent Xavier Collins, who’s investigating the president’s assassination. (The show comes from <em>This is Us</em> creator Dan Fogelman, who’s no stranger to episodes loaded with twists to keep us hooked.)
-
-We’ll refrain from diving into plot details if you’re still playing catch up (seriously, it’s a doozy). But the new season of Paradise will expand the show’s scope as Collins searches for his family members. —<em>Eric Chiu, Internet Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Scrubs</em>, Season 10 | <a href="/blog/what-channel-is-abc">ABC</a>, <a href="/hulu-review">Hulu</a> | Feb. 25</h2><p>
-I was late to the <em>Scrubs</em> party, but with the current sitcom landscape feeling dry, this revival feels like just what the doctor ordered. Premiering February 25, the nine-episode season reunites Zach Braff, Donald Faison, and Sarah Chalke. While I doubt it’ll crush broadcast ratings on ABC, it’s destined to be a solid hit on streaming.
-
-After years of watching Braff and Faison’s chemistry in T-Mobile ads, I’m ready to see them back at Sacred Heart. With guest spots from John C. McGinley and Judy Reyes, this mid-season entry will blend fresh laughs with well-earned nostalgia. Plus, creator Bill Lawrence has been on a massive hot streak lately (<em>Shrinking</em>, <em>Ted Lasso</em>, <em>Bad Monkey</em>), so my confidence is high. —<em>Taylor Kujawa, Sports Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Monarch: Legacy of Monsters</em>, Season 2 | <a href="/apple-tv-plus">Apple TV</a> | Feb. 27</h2><p>
-Over two years after Season 1 ended, <em>Monarch: Legacy of Monsters</em> is finally back. Sure, the Monsterverse movies feel increasingly repetitive, but this TV series is the franchise’s high point. It balances spectacle with story far better than the recent films, weaving between the events of <em>Godzilla</em> (2014) and <em>Kong: Skull Island</em> (2017) to offer a grounded view of life among Titans.
-
-If you thought the first season was light on kaiju, the Season 2 teaser promises Godzilla, King Kong, and a new threat. But for me, it’s the human cast that drives the show. Anna Sawai is fantastic, and having Kurt and Wyatt Russell play the same character across two different time periods works really well. —<em>Taylor Kujawa, Sports Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<p class="h3">New on Streaming in March 2026</p><ul>
-<li><a href="/entertainment/new-to-hulu-march-2026">6 New on Hulu Shows and Movies to Stream</a></li>
-<li><a href="/entertainment/new-on-prime-video-march-2026">7 New Shows and Movies on Prime Video</a></li>
-<li><a href="/entertainment/new-to-netflix-march-2026">New Shows and Movies on Netflix</a></li>
-<li><a href="/entertainment/new-on-hbo-max-march-2026">What’s Coming to HBO Max</a></li>
-</ul></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Ted</em>, Season 2 | <a href="/peacock">Peacock</a> | March 5</h2><p>
-Who likes sweary bears? <em>Me</em>, muthahuggaz! Although I enjoyed the two <em>Ted</em> films, I didn’t have high hopes for Seth McFarlane’s <em>Ted</em> ‘90s–set prequel series. Then I gave it a shot one night to thwart a bout of choice paralysis. I’m glad I did, ‘cause sometimes a mix of lowbrow humor and cuteness (such that the crass, McFarlane-voiced Ted can be cute) just hits the spot. Especially when you get into the fantasy of having a talking bear sidekick in high school (and the ‘90s are close enough to my time). P.S. Have you heard about the upcoming <a href="https://variety.com/2025/tv/news/ted-season-2-release-date-peacock-1236606482/" rel="false noopener" target="_blank">animated sequel</a>? —<em>Randy Harward, Senior Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>The Comeback</em>, Season 3 | HBO, <a href="/hbo-max-review">HBO Max</a> | March 22</h2><p>
-You had me at Lisa Kudrow and AI chatbot. The ultimate meta-comedy has returned after 11 years, once again proving that the “cringe-comedy” from Lisa Kudrow and Michael Patrick King is a perfect vehicle for pretty much any cultural moment. Picking up two decades after Valerie’s Emmy-winning comeback, the new season satirizes the industry’s current obsession with AI mediocrity. Hey, Netflix, you sure you wanna hear what comedy writers have to say ’bout that? —<em>Mike Strayer, Managing Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Euphoria</em>, Season 3 | HBO, <a href="/hbo-max-review">HBO Max</a> | April 12</h2><p>
-Here’s a data point that piqued my interest: Nearly <a href="https://deadline.com/2026/01/euphoria-season-3-trailer-viewership-record-hbo-1236685553/" rel="false noopener" target="_blank">100 million people saw the <em>Euphoria</em> Season 3 trailer</a> in just two days, which broke a record, per HBO. So it’s safe to say that people are stoked for this show. I loved the first two seasons, and I’m waiting with bated breath to see how the <a href="https://www.glamour.com/story/euphoria-season-3-details-plot-cast-premiere-date-update-december-2025" rel="false noopener" target="_blank">massive time jump</a> will affect the story. It’s also pretty crazy how famous Zendaya, Jacob Elordi, Sydney Sweeney, and others are nowadays compared to when the show first premiered in 2019. Will their fame take away from the raw nature of the show, or add to it? Is this really <a href="https://deadline.com/feature/euphoria-season-3-news-updates-1236296782/" rel="false noopener" target="_blank">the final season</a>? How much more intense can this show get? I’m anxious for the answers. —<em>Alex Vejar, Jr. Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Beef</em>, Season 2 | <a href="/netflix">Netflix</a> | April 16</h2><p>
-The first season of <em>Beef</em> was so intense that I’m pretty sure I’ll have slightly elevated blood pressure for the rest of my life. It was worth it, though, and I hope the second season of this anthology series is just as unrelenting. The all-new cast for Season 2 is stacked—Oscar Isaac, Carey Mulligan, Charles Melton, Cailee Spaeny, and others. The story is centered around a couple who witness an unnerving fight between their boss and his wife, and the aftermath of that. I’m curious to see which actors play what parts. I’m also curious to see how this second season embodies the toxic anger that the idea of “beef” conveys. —<em>Alex Vejar, Jr. Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>The Bear</em>, Season 5 | <a href="/hulu-review">Hulu</a> | June 25</h2><p>
-The kitchen of <em>The Bear</em>—and Carmy (<a href="/entertainment/best-jeremy-allen-white-roles">Jeremy Allen White</a>) himself—has always been a pressure cooker. But with Carmy stepping aside from cooking to deal with his emotional issues (<em>finally</em>) at the end of Season 4, we may be seeing a different side of him, and the show, in Season 5.
-
-While the rest of the core ensemble is returning to the restaurant, the central question will be whether Carmy can find a version of peace outside the kitchen that <em>doesn’t</em> involve alienating everyone and everything he loves. I’m keeping my expectations low, but we’ll see. —<em>Logan Jones, Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Ted Lasso</em>, Season 4 | <a href="/apple-tv-plus">Apple TV</a> | Aug. 5</h2><p>
-What can I say ’bout your mustachioed boi Ted that hasn’t already been said? Not much, but for what it’s worth, I’m not mad that Jason Sudeikis and crew surprised fans with a fourth season. Will Coach Nate continue his return toward good? Will Coach Beard and Jane’s horny romance last in marriage? There are a lot of ways Season 4 could go (not even mentioning Ted’s fugue to Kansas), but I’m here for it. —<em>Mike Strayer, Managing Editor</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>The Hunting Wives</em>, Season 2 | <a href="/netflix">Netflix</a> | TBD 2026</h2><p>
-I didn’t think I’d be into this show about a Chicago career woman (Brittany Snow) who moves to Texas and joins a clique of socialites with a shady side—but it got me. I’m halfway through Season 1, and extra happy not to have to wait too long for Season 2. I just wish I didn’t already know about the (SPOILER, kinda) massive cliffhanger. At least I won’t have to sit with that suspense for a whole year.
-
-All I know about Season 2 is purposely vague, and sourced from a colleague (let’s call him “Dave Google”). The stakes have shifted from “fitting in” to “staying alive” as the fallout from the investigation turns besties into bitter rivals, navigating legal and social wreckage. Intriguing!
-
-Er . . . it just occurred to me that “TBA 2026” could mean late July (which is when Season 1 premiered). It could be a long six months if I don’t slow my Season 1 roll. —<em>Randy Harward, Senior Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2><em>Yellowjackets</em>, Season 4 | <a href="/entertainment/what-channel-is-paramount-plus-with-showtime">SHOWTIME</a>, <a href="/paramount-plus-review">Paramount+</a> | TBD 2026</h2><p>
-Is it weird that, for me, <em>Yellowjackets</em> is a comfort show? Ashley Lyle and Bart Nickerson’s psychological horror-drama is anything but comforting, and the characters aren’t exactly BFF material (except crazy-but-oddly-reliable Misty . . . Is <em>that</em> weird?). And, season after season, things seem to only get more complicated for the marooned girls soccer team—both their past and present versions. Maybe it just feels like we’ve trauma-bonded over their Donner Party-style ordeal. I dunno. As for plot details in the series’ <a href="https://variety.com/2025/tv/news/yellowjackets-final-season-4-showtime-paramount-1236546225/" rel="false noopener" target="_blank">fourth and final season</a>, the creators tease, “We can’t wait to share the final chapter with you, and hope you find it…delicious.” Om nom? —<em>Randy Harward, Senior Staff Writer</em></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<p class="h3">Related articles</p><ul>
-<li><a href="/netflix">Netflix Review</a></li>
-<li><a href="/hbo-max-review">HBO Max Review</a></li>
-<li><a href="/hulu-review">Hulu Review</a></li>
-<li><a href="/amazon-prime-video">Prime Video Review</a></li>
-<li><a href="/entertainment/best-tv-shows-of-2026">Best TV Shows of 2026 (So Far)</a></li>
-</ul></div></div>
-]]></content:encoded>
-      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/01/featimg_returning-shows-2026-ctv-logo-opt.webp"/>
     </item>
   </channel>
 </rss>
