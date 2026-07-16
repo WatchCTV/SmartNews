@@ -4,7 +4,7 @@
     <title>Entertainment News | CableTV.com</title>
     <link>https://www.cabletv.com/category/news</link>
     <description>Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming.</description>
-    <lastBuildDate>Wed, 15 Jul 2026 18:55:19 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jul 2026 01:46:11 +0000</lastBuildDate>
     <language>en-US</language>
     <atom:link href="https://www.cabletv.com/category/news/feed" rel="self" type="application/rss+xml"/>
     <sy:updatePeriod>hourly</sy:updatePeriod>
@@ -19,6 +19,1113 @@
       <width>32</width>
       <height>32</height>
     </image>
+    <item>
+      <title>DIRECTV Slashes Sports Prices Just in Time for the World Cup Final</title>
+      <link>https://www.cabletv.com/news/directv-world-cup-deal</link>
+      <pubDate>Wed, 15 Jul 2026 13:53:17 +0000</pubDate>
+      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
+      <guid isPermaLink="false">https://www.cabletv.com/news/directv-world-cup-deal</guid>
+      <description><![CDATA[<p>Catch the World Cup final and save on sports. Get DIRECTV’s MySports Pack for $49.99/mo. and a free month of MySports Extra for a limited time.</p>]]></description>
+      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/07/DIRECTV-World-Cup-deal.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>DIRECTV’s offering $20 sports discounts for a limited time</h2><p>
+Plenty of providers are <a href="/news/world-cup-deals">using the World Cup to sling deals to new subscribers</a>. But for year-round sports fans, it doesn’t get much better than <a href="/directv/stream">DIRECTV</a>, our perennial pick for the <a href="/ranking/best-streaming-service-sports">Best Streaming Service for Sports</a> (and the most popular streamer for soccer fans according to <a href="/reviews/best-live-tv-streaming-services-customer-satisfaction">this year’s Customer Satisfaction Survey</a>, too).
+
+Here are the details: DIRECTV is currently discounting its <a href="/directv/sports/mysports-review">MySports® Genre Pack®</a> to just $49.99/mo. for the first two months. With MySports, you’ll get access to 20+ channels, including the necessary <a href="/entertainment/what-channel-is-fox">FOX</a> and <a href="/entertainment/what-channel-is-fs1">FS1</a> to catch the rest of the matches. That includes the <a href="/sports/watch-fifa-world-cup-final">World Cup final</a>, which will be played on July 19 at 3:00 p.m. ET on FOX.
+
+On top of the $20 off deal, you’ll also get a month of free MySports Extra® for a limited time. This <a href="/directv/stream/genre-packs#Mini">Mini Pack</a> (which can only be purchased as an add-on to the larger MySports Genre Pack) adds an additional 8+ channels, including NFL Redzone and MLB Strikezone.
+
+Just keep in mind that after one month is up, MySports Extra will renew at its going rate of $13.99/mo. plus tax. And after the second month, MySports will return to its regular price of $69.00/mo., plus tax.</p></div></div><div class="row section--padding-bottom-30"><div class="columns small-12 medium-12 large-12">
+<div class="row align-center vc-email-subscribe__wrapper">
+<div class="columns small-12 large-6">
+<div class="callout-area">
+
+<div class="callout-text">
+<h3>Hook it up with the hottest in TV and internet</h3> <p>Stay tuned for the latest deals, show premieres, and more by signing up for our newsletter.</p> </div>
+</div>
+</div>
+<div class="columns small-12 large-6">
+<div class="vc-email-subscribe">
+<div class="vc-email-subscribe__inline-form">
+<form action="https://cabletv.activehosted.com/proc.php" class="_form _form_19 _inline-form" id="_form_19_" method="POST">
+<input name="u" type="hidden" value="19"/>
+<input name="f" type="hidden" value="19"/>
+<input name="s" type="hidden"/>
+<input name="c" type="hidden" value="0"/>
+<input name="m" type="hidden" value="0"/>
+<input name="act" type="hidden" value="sub"/>
+<input name="v" type="hidden" value="2"/>
+<input name="or" type="hidden" value="8b2db1a6b150094e4ac73dc0ec08c9b4"/>
+<input id="ls" name="ls" type="hidden" value="1"/>
+<input id="nlbox_2" name="nlbox[]" type="hidden" value="2"/><input id="nlbox_3" name="nlbox[]" type="hidden" value="3"/><input id="nlbox_5" name="nlbox[]" type="hidden" value="5"/><input id="nlbox_16" name="nlbox[]" type="hidden" value="16"/><input id="nlbox_17" name="nlbox[]" type="hidden" value="17"/> <div class="_form-content">
+<div class="_field-wrapper">
+<input class="field-email" id="email" name="email" placeholder="Email Address" required="" type="text"/>
+<label class="show-for-sr" for="email">Email*</label>
+</div>
+<div class="_field-wrapper">
+<input class="field-zip" id="field[1]" maxlength="5" minlength="5" name="field[1]" pattern="[0-9]{5}" placeholder="Zip Code" required="" type="text"/>
+<label class="show-for-sr" for="field[1]">Zip code*</label>
+</div>
+<div class="_button-wrapper _inline-style">
+<button class="button button--generic" id="_form_19_submit" type="submit">
+        Sign Up
+      </button>
+</div>
+
+</div>
+
+</form>
+<script type="text/javascript">
+window.cfields = {"1":"zip_code"};
+window._show_thank_you = function(id, message, trackcmp_url, email) {
+  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
+  form.querySelector('._form-content').style.display = 'none';
+  thank_you.innerHTML = message;
+  thank_you.style.display = 'block';
+  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
+  var visitorObject = window;
+  if (email && typeof visitorObject !== 'undefined') {
+    visitorObject('setEmail', email);
+    visitorObject('update');
+  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
+    // Site tracking URL to use after inline form submission.
+    _load_script(trackcmp_url);
+  }
+  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
+};
+window._show_error = function(id, message, html) {
+  var form = document.getElementById('_form_' + id + '_'),
+    err = document.createElement('div'),
+    button = form.querySelector('button'),
+    old_error = form.querySelector('._form_error');
+  if (old_error) old_error.parentNode.removeChild(old_error);
+  err.innerHTML = message;
+  err.className = '_error-inner _form_error _no_arrow';
+  var wrapper = document.createElement('div');
+  wrapper.className = '_form-inner';
+  wrapper.appendChild(err);
+  button.parentNode.insertBefore(wrapper, button);
+  var submitButton = form.querySelector('');
+  submitButton.disabled = false;
+  submitButton.classList.remove('processing');
+  if (html) {
+    var div = document.createElement('div');
+    div.className = '_error-html';
+    div.innerHTML = html;
+    err.appendChild(div);
+  }
+};
+window._load_script = function(url, callback, isSubmit) {
+  var head = document.querySelector('head'), script = document.createElement('script'), r = false;
+  var submitButton = document.querySelector('#_form_19_submit');
+  script.type = 'text/javascript';
+  script.charset = 'utf-8';
+  script.src = url;
+  if (callback) {
+    script.onload = script.onreadystatechange = function() {
+      if (!r && (!this.readyState || this.readyState == 'complete')) {
+        r = true;
+        callback();
+      }
+    };
+  }
+  script.onerror = function() {
+    if (isSubmit) {
+      if (script.src.length > 10000) {
+        _show_error("19", "Sorry, your submission failed. Please shorten your responses and try again.");
+      } else {
+        _show_error("19", "Sorry, your submission failed. Please try again.");
+      }
+      submitButton.disabled = false;
+      submitButton.classList.remove('processing');
+    }
+  }
+  head.appendChild(script);
+};
+(function() {
+  if (window.location.search.search("excludeform") !== -1) return false;
+  var getCookie = function(name) {
+    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  var setCookie = function(name, value) {
+    var now = new Date();
+    var time = now.getTime();
+    var expireTime = time + 1000 * 60 * 60 * 24 * 365;
+    now.setTime(expireTime);
+    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';
+  }
+      var addEvent = function(element, event, func) {
+    if (element.addEventListener) {
+      element.addEventListener(event, func);
+    } else {
+      var oldFunc = element['on' + event];
+      element['on' + event] = function() {
+        oldFunc.apply(this, arguments);
+        func.apply(this, arguments);
+      };
+    }
+  }
+  var _removed = false;
+    var form_to_submit = document.getElementById('_form_19_');
+  var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
+  var getUrlParam = function(name) {
+    var params = new URLSearchParams(window.location.search);
+    return params.get(name) || false;
+  };
+  var acctDateFormat = "%m/%d/%Y";
+  var getNormalizedDate = function(date, acctFormat) {
+    var decodedDate = decodeURIComponent(date);
+    if (acctFormat && acctFormat.match(/(%d|%e).*%m/gi) !== null) {
+      return decodedDate.replace(/(\d{2}).*(\d{2}).*(\d{4})/g, '$3-$2-$1');
+    } else if (Date.parse(decodedDate)) {
+      var dateObj = new Date(decodedDate);
+      var year = dateObj.getFullYear();
+      var month = dateObj.getMonth() + 1;
+      var day = dateObj.getDate();
+      return `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
+    }
+    return false;
+  };
+  var getNormalizedTime = function(time) {
+    var hour, minutes;
+    var decodedTime = decodeURIComponent(time);
+    var timeParts = Array.from(decodedTime.matchAll(/(\d{1,2}):(\d{1,2})\W*()?/gm))[0];
+    if (timeParts[3]) { // 12 hour format
+      var isPM = timeParts[3].toLowerCase() === 'pm';
+      if (isPM) {
+        hour = parseInt(timeParts[1]) === 12 ? '12' : `${parseInt(timeParts[1]) + 12}`;
+      } else {
+        hour = parseInt(timeParts[1]) === 12 ? '0' : timeParts[1];
+      }
+    } else { // 24 hour format
+      hour = timeParts[1];
+    }
+    var normalizedHour = parseInt(hour) < 10 ? `0${parseInt(hour)}` : hour;
+    var minutes = timeParts[2];
+    return `${normalizedHour}:${minutes}`;
+  };
+  for (var i = 0; i < allInputs.length; i++) {
+    var regexStr = "field\\[(\\d+)\\]";
+    var results = new RegExp(regexStr).exec(allInputs.name);
+    if (results != undefined) {
+      allInputs.dataset.name = allInputs.name.match(/\$/)
+        ? `${window.cfields]}_time`
+        : window.cfields];
+    } else {
+      allInputs.dataset.name = allInputs.name;
+    }
+    var fieldVal = getUrlParam(allInputs.dataset.name);
+    if (fieldVal) {
+      if (allInputs.dataset.autofill === "false") {
+        continue;
+      }
+      if (allInputs.type == "radio" || allInputs.type == "checkbox") {
+        if (allInputs.value == fieldVal) {
+          allInputs.checked = true;
+        }
+      } else if (allInputs.type == "date") {
+        allInputs.value = getNormalizedDate(fieldVal, acctDateFormat);
+      } else if (allInputs.type == "time") {
+        allInputs.value = getNormalizedTime(fieldVal);
+      } else {
+        allInputs.value = fieldVal;
+      }
+    }
+  }
+  var remove_tooltips = function() {
+    for (var i = 0; i < tooltips.length; i++) {
+      tooltips.tip.parentNode.removeChild(tooltips.tip);
+    }
+    tooltips = [];
+  };
+  var remove_tooltip = function(elem) {
+    for (var i = 0; i < tooltips.length; i++) {
+      if (tooltips.elem === elem) {
+        tooltips.tip.parentNode.removeChild(tooltips.tip);
+        tooltips.splice(i, 1);
+        return;
+      }
+    }
+  };
+  var create_tooltip = function(elem, text) {
+    var tooltip = document.createElement('div'),
+      arrow = document.createElement('div'),
+      inner = document.createElement('div'), new_tooltip = {};
+    if (elem.type != 'radio' && elem.type != 'checkbox') {
+      tooltip.className = '_error';
+      arrow.className = '_error-arrow';
+      inner.className = '_error-inner';
+      inner.innerHTML = text;
+      tooltip.appendChild(arrow);
+      tooltip.appendChild(inner);
+      elem.parentNode.appendChild(tooltip);
+    } else {
+      tooltip.className = '_error-inner _no_arrow';
+      tooltip.innerHTML = text;
+      elem.parentNode.insertBefore(tooltip, elem);
+      new_tooltip.no_arrow = true;
+    }
+    new_tooltip.tip = tooltip;
+    new_tooltip.elem = elem;
+    tooltips.push(new_tooltip);
+    return new_tooltip;
+  };
+  var resize_tooltip = function(tooltip) {
+    var rect = tooltip.elem.getBoundingClientRect();
+    var doc = document.documentElement,
+      scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
+    if (scrollPosition < 40) {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
+    } else {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
+    }
+  };
+  var resize_tooltips = function() {
+    if (_removed) return;
+    for (var i = 0; i < tooltips.length; i++) {
+      if (!tooltips.no_arrow) resize_tooltip(tooltips);
+    }
+  };
+  var validate_field = function(elem, remove) {
+    var tooltip = null, value = elem.value, no_error = true;
+    remove ? remove_tooltip(elem) : false;
+    if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
+    if (elem.getAttribute('required') !== null) {
+      if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
+        var elems = form_to_submit.elements;
+        if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
+          no_error = elem.checked;
+        }
+        else {
+          no_error = false;
+          for (var i = 0; i < elems.length; i++) {
+            if (elems.checked) no_error = true;
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (elem.type =='checkbox') {
+        var elems = form_to_submit.elements, found = false, err = [];
+        no_error = true;
+        for (var i = 0; i < elems.length; i++) {
+          if (elems.getAttribute('required') === null) continue;
+          if (!found && elems !== elem) return true;
+          found = true;
+          elems.className = elems.className.replace(/ ?_has_error ?/g, '');
+          if (!elems.checked) {
+            no_error = false;
+            elems.className = elems.className + ' _has_error';
+            err.push("Checking %s is required".replace("%s", elems.value));
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, err.join('<br/>'));
+        }
+      } else if (elem.tagName == 'SELECT') {
+        var selected = true;
+        if (elem.multiple) {
+          selected = false;
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected) {
+              selected = true;
+              break;
+            }
+          }
+        } else {
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected
+              && (!elem.options.value
+              || (elem.options.value.match(/\n/g)))
+            ) {
+              selected = false;
+            }
+          }
+        }
+        if (!selected) {
+          elem.className = elem.className + ' _has_error';
+          no_error = false;
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (value === undefined || value === null || value === '') {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "This field is required.");
+      }
+    }
+    if (no_error && (elem.id == 'field[]' || elem.id == 'ca[11]')) {
+      if (elem.className.includes('phone-input-error')) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+      }
+    }
+    if (no_error && elem.name == 'email') {
+      if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@+(\.+)*(\.{2,})$/i)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid email address.");
+      }
+    }
+    if (no_error && /date_field/.test(elem.className)) {
+      if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid date.");
+      }
+    }
+    tooltip ? resize_tooltip(tooltip) : false;
+    return no_error;
+  };
+  var needs_validate = function(el) {
+    if(el.getAttribute('required') !== null){
+      return true
+    }
+    if(el.name === 'email' && el.value !== ""){
+      return true
+    }
+    if((el.id == 'field[]' || el.id == 'ca[11]') && el.className.includes('phone-input-error')){
+      return true
+    }
+    return false
+  };
+  var validate_form = function(e) {
+    var err = form_to_submit.querySelector('._form_error'), no_error = true;
+    if (!submitted) {
+      submitted = true;
+      for (var i = 0, len = allInputs.length; i < len; i++) {
+        var input = allInputs;
+        if (needs_validate(input)) {
+          if (input.type == 'tel') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+          }
+          if (input.type == 'text' || input.type == 'number' || input.type == 'time') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'radio' || input.type == 'checkbox') {
+            (function(el) {
+              var radios = form_to_submit.elements;
+              for (var i = 0; i < radios.length; i++) {
+                addEvent(radios, 'click', function() {
+                  validate_field(el, true);
+                });
+              }
+            })(input);
+          } else if (input.tagName == 'SELECT') {
+            addEvent(input, 'change', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'textarea'){
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          }
+        }
+      }
+    }
+    remove_tooltips();
+    for (var i = 0, len = allInputs.length; i < len; i++) {
+      var elem = allInputs;
+      if (needs_validate(elem)) {
+        if (elem.tagName.toLowerCase() !== "select") {
+          elem.value = elem.value.trim();
+        }
+        validate_field(elem) ? true : no_error = false;
+      }
+    }
+    if (!no_error && e) {
+      e.preventDefault();
+    }
+    resize_tooltips();
+    return no_error;
+  };
+  addEvent(window, 'resize', resize_tooltips);
+  addEvent(window, 'scroll', resize_tooltips);
+  var hidePhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.remove("phone-error");
+    errorMessage.classList.add("phone-error-hidden");
+    input.classList.remove("phone-input-error");
+  };
+  var initializePhoneInput = function(input, defaultCountry) {
+    return window.intlTelInput(input, {
+      utilsScript: "https://unpkg.com/intl-tel-input@17.0.18/build/js/utils.js",
+      autoHideDialCode: false,
+      separateDialCode: true,
+      initialCountry: defaultCountry,
+      preferredCountries: []
+    });
+  }
+  var setPhoneInputEventListeners = function(inputId, input, iti) {
+    input.addEventListener('blur', function() {
+      var errorMessage = document.getElementById("error-msg-" + inputId);
+      if (input.value.trim()) {
+        if (iti.isValidNumber()) {
+          iti.setNumber(iti.getNumber());
+          if (errorMessage.classList.contains("phone-error")){
+            hidePhoneInputError(inputId);
+          }
+        } else {
+          showPhoneInputError(inputId)
+        }
+      } else {
+        if (errorMessage.classList.contains("phone-error")){
+          hidePhoneInputError(inputId);
+        }
+      }
+    });
+    input.addEventListener("countrychange", function() {
+      iti.setNumber('');
+    });
+    input.addEventListener("keydown", function(e) {
+      var charCode = (e.which) ? e.which : e.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 8) {
+        e.preventDefault();
+      }
+    });
+  };
+  var showPhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.add("phone-error");
+    errorMessage.classList.remove("phone-error-hidden");
+    input.classList.add("phone-input-error");
+  };
+  var _form_serialize = function(form){if(!form||form.nodeName!=="FORM"){return }var i,j,q=[];for(i=0;i<form.elements.length;i++){if(form.elements.name===""){continue}switch(form.elements.nodeName){case"INPUT":switch(form.elements.type){case"tel":q.push(form.elements.name+"="+encodeURIComponent(form.elements.previousSibling.querySelector('div.iti__selected-dial-code').innerText)+encodeURIComponent(" ")+encodeURIComponent(form.elements.value));break;case"text":case"number":case"date":case"time":case"hidden":case"password":case"button":case"reset":case"submit":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"checkbox":case"radio":if(form.elements.checked){q.push(form.elements.name+"="+encodeURIComponent(form.elements.value))}break;case"file":break}break;case"TEXTAREA":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"SELECT":switch(form.elements.type){case"select-one":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"select-multiple":for(j=0;j<form.elements.options.length;j++){if(form.elements.options.selected){q.push(form.elements.name+"="+encodeURIComponent(form.elements.options.value))}}break}break;case"BUTTON":switch(form.elements.type){case"reset":case"submit":case"button":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break}break}}return q.join("&")};
+  const formSupportsPost = false;
+  var form_submit = function(e) {
+    e.preventDefault();
+    if (validate_form()) {
+      // use this trick to get the submit button & disable it using plain javascript
+      var submitButton = e.target.querySelector('#_form_19_submit');
+      submitButton.disabled = true;
+      submitButton.classList.add('processing');
+            var serialized = _form_serialize(
+        document.getElementById('_form_19_')
+      ).replace(/%0A/g, '\\n');
+      var err = form_to_submit.querySelector('._form_error');
+      err ? err.parentNode.removeChild(err) : false;
+      async function submitForm() {
+       var formData = new FormData();
+       const searchParams = new URLSearchParams(serialized);
+       searchParams.forEach((value, key) => {
+        formData.append(key, value);
+       });
+       const response = await fetch('https://cabletv.activehosted.com/proc.php?jsonp=true', {
+        headers: {
+         "Accept": "application/json"
+        },
+        body: formData,
+        method: "POST"
+       });
+       return response.json();
+      }
+      if (formSupportsPost) {
+       submitForm().then((data) => {
+        eval(data.js);
+       });
+      } else {
+       _load_script('https://cabletv.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
+      }
+    }
+    return false;
+  };
+  addEvent(form_to_submit, 'submit', form_submit);
+})();
+</script>
+<p class="vc-email-subscribe__disclaimer">
+          By signing up, you agree to our <a href="/privacy-policy-terms-and-conditions">Privacy Policy &amp; Terms and Conditions</a>.
+        </p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>Spanish speakers will need to upgrade, though</h2><p>
+Unfortunately, if you’re a Spanish-speaking fútbol lover who wants to take advantage of this <a href="/directv/deals">slick deal</a>, you’ll need to look elsewhere. The DIRECTV MySports and MySports Extra Packs don’t include the two channels you need to watch the World Cup in Spanish—<a href="/entertainment/what-channel-is-telemundo">Telemundo</a> and <a href="/entertainment/what-channel-is-universo">UNIVERSO</a>.
+
+Lucky for you, I compiled an exhaustive list of the <a href="/news/world-cup-deals">best 2026 FIFA World Cup deals</a> just last month. You’ll be able to take your pick from multiple discounts that’ll let you catch the World Cup finals in Spanish, and save some <em>dinero</em> while you’re at it.<strong>Loyal to DIRECTV?:</strong> Even though the MySports deal won’t be much use to you if you want to watch the World Cup finals <em>en español</em>, DIRECTV offers plenty of other ways to watch the Cup in multiple languages. Check out our <a href="/directv/sports/world-cup">How To Watch the World Cup on DIRECTV</a> guide for all the details.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>Who we are</h2><p>
+At CableTV.com, we’re not just entertainment experts — we’re also fans just like you. So while our first priority is reporting the best and most accurate information about TV providers and streaming services, we also love talking about our favorite shows and movies. So you can count on us to share our honest opinions and unbridled enthusiasm. For more on our process, check out our <a href="/how-we-rank">Editorial Policy</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<p class="h3">More industry news for sports fans</p><ul>
+<li><a href="/news/more-soccer-fans-choose-directv">More Soccer Fans Choose DIRECTV Than Any Other Streamer</a></li>
+<li><a href="/news/world-cup-viewership-soccer-interest">World Cup Viewership Hits Record Highs</a></li>
+<li><a href="/news/espys-nominees-announced">Jalen Brunson, Messi, Shohei Ohtani Highlight 2026 ESPYs Nominations</a></li>
+</ul></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/07/DIRECTV-World-Cup-deal.webp"/>
+    </item>
+    <item>
+      <title>California Leads 12-State Effort to Block Paramount/Warner Bros. Deal</title>
+      <link>https://www.cabletv.com/news/states-suing-paramount-warner-bros-merger</link>
+      <pubDate>Tue, 14 Jul 2026 15:15:47 +0000</pubDate>
+      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
+      <guid isPermaLink="false">https://www.cabletv.com/news/states-suing-paramount-warner-bros-merger</guid>
+      <description><![CDATA[<p>12 states, led by California, are suing Paramount Skydance in an effort to block the media giant’s Warner Bros. Discovery acquisition.</p>]]></description>
+      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/07/ParamountSkydance1200x630.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>The case will likely delay Paramount’s plans</h2><p>
+I’ve been following the Paramount situation for some time now; Paramount Skydance <a href="/news/netflix-leaves-warner-bros-deal">announced its intention to buy Warner Bros. Discovery out from under Netflix</a> back in March, and so far no one’s been able to stop it. Normally, the U.S. government might try to enact anti-trust protections (you know, the ones you learned about in 8th grade Social Studies), but it’s been extremely lax on the subject in recent years.
+
+Enter the Attorneys General of 12 U.S. states. Led by California’s Attorney General Rob Bonta, <a href="https://www.reuters.com/world/urgent-california-11-states-suing-block-paramounts-110-billion-warner-bros-deal-2026-07-13/" rel="noopener" target="_blank">the group is suing to block the acquisition</a>. Bonta argues that the deal would “create a media behemoth” that would negatively impact the economy.
+
+The case is also being presented in defense of local movie theaters, who would lose out on revenue if coerced by a film distribution monopoly. And cable TV providers — the bread and butter of our own website — would lose negotiation leverage, causing increased prices for consumers. <a href="https://www.reuters.com/legal/litigation/us-state-officials-fear-paramount-warner-deal-will-squeeze-local-movie-theaters-2026-07-14/" rel="noopener" target="_blank">In Bonta’s words</a>, “Your cable bill is going to go up.”
+
+The states’ case is aiming to reduce costs for the everyday person — or at least stop them from rising even further — by stopping Paramount’s Warner Bros. acquisition. It’s too early to say how the case will end, but keep reading for the details we know about right now.</p></div></div><div class="row section--padding-bottom-30"><div class="columns small-12 medium-12 large-12">
+<div class="row align-center vc-email-subscribe__wrapper">
+<div class="columns small-12 large-6">
+<div class="callout-area">
+
+<div class="callout-text">
+<h3>Keep up with all the latest in entertainment news</h3> <p>Subscribe to CableTV.com's email newsletter for the latest TV event viewing guides, entertaining takes, and money-saving promotions.</p> </div>
+</div>
+</div>
+<div class="columns small-12 large-6">
+<div class="vc-email-subscribe">
+<div class="vc-email-subscribe__inline-form">
+<form action="https://cabletv.activehosted.com/proc.php" class="_form _form_19 _inline-form" id="_form_19_" method="POST">
+<input name="u" type="hidden" value="19"/>
+<input name="f" type="hidden" value="19"/>
+<input name="s" type="hidden"/>
+<input name="c" type="hidden" value="0"/>
+<input name="m" type="hidden" value="0"/>
+<input name="act" type="hidden" value="sub"/>
+<input name="v" type="hidden" value="2"/>
+<input name="or" type="hidden" value="8b2db1a6b150094e4ac73dc0ec08c9b4"/>
+<input id="ls" name="ls" type="hidden" value="1"/>
+<input id="nlbox_2" name="nlbox[]" type="hidden" value="2"/><input id="nlbox_3" name="nlbox[]" type="hidden" value="3"/><input id="nlbox_5" name="nlbox[]" type="hidden" value="5"/><input id="nlbox_16" name="nlbox[]" type="hidden" value="16"/><input id="nlbox_17" name="nlbox[]" type="hidden" value="17"/> <div class="_form-content">
+<div class="_field-wrapper">
+<input class="field-email" id="email" name="email" placeholder="Email Address" required="" type="text"/>
+<label class="show-for-sr" for="email">Email*</label>
+</div>
+<div class="_field-wrapper">
+<input class="field-zip" id="field[1]" maxlength="5" minlength="5" name="field[1]" pattern="[0-9]{5}" placeholder="Zip Code" required="" type="text"/>
+<label class="show-for-sr" for="field[1]">Zip code*</label>
+</div>
+<div class="_button-wrapper _inline-style">
+<button class="button button--generic" id="_form_19_submit" type="submit">
+        Sign Up
+      </button>
+</div>
+
+</div>
+
+</form>
+<script type="text/javascript">
+window.cfields = {"1":"zip_code"};
+window._show_thank_you = function(id, message, trackcmp_url, email) {
+  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
+  form.querySelector('._form-content').style.display = 'none';
+  thank_you.innerHTML = message;
+  thank_you.style.display = 'block';
+  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
+  var visitorObject = window;
+  if (email && typeof visitorObject !== 'undefined') {
+    visitorObject('setEmail', email);
+    visitorObject('update');
+  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
+    // Site tracking URL to use after inline form submission.
+    _load_script(trackcmp_url);
+  }
+  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
+};
+window._show_error = function(id, message, html) {
+  var form = document.getElementById('_form_' + id + '_'),
+    err = document.createElement('div'),
+    button = form.querySelector('button'),
+    old_error = form.querySelector('._form_error');
+  if (old_error) old_error.parentNode.removeChild(old_error);
+  err.innerHTML = message;
+  err.className = '_error-inner _form_error _no_arrow';
+  var wrapper = document.createElement('div');
+  wrapper.className = '_form-inner';
+  wrapper.appendChild(err);
+  button.parentNode.insertBefore(wrapper, button);
+  var submitButton = form.querySelector('');
+  submitButton.disabled = false;
+  submitButton.classList.remove('processing');
+  if (html) {
+    var div = document.createElement('div');
+    div.className = '_error-html';
+    div.innerHTML = html;
+    err.appendChild(div);
+  }
+};
+window._load_script = function(url, callback, isSubmit) {
+  var head = document.querySelector('head'), script = document.createElement('script'), r = false;
+  var submitButton = document.querySelector('#_form_19_submit');
+  script.type = 'text/javascript';
+  script.charset = 'utf-8';
+  script.src = url;
+  if (callback) {
+    script.onload = script.onreadystatechange = function() {
+      if (!r && (!this.readyState || this.readyState == 'complete')) {
+        r = true;
+        callback();
+      }
+    };
+  }
+  script.onerror = function() {
+    if (isSubmit) {
+      if (script.src.length > 10000) {
+        _show_error("19", "Sorry, your submission failed. Please shorten your responses and try again.");
+      } else {
+        _show_error("19", "Sorry, your submission failed. Please try again.");
+      }
+      submitButton.disabled = false;
+      submitButton.classList.remove('processing');
+    }
+  }
+  head.appendChild(script);
+};
+(function() {
+  if (window.location.search.search("excludeform") !== -1) return false;
+  var getCookie = function(name) {
+    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  var setCookie = function(name, value) {
+    var now = new Date();
+    var time = now.getTime();
+    var expireTime = time + 1000 * 60 * 60 * 24 * 365;
+    now.setTime(expireTime);
+    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';
+  }
+      var addEvent = function(element, event, func) {
+    if (element.addEventListener) {
+      element.addEventListener(event, func);
+    } else {
+      var oldFunc = element['on' + event];
+      element['on' + event] = function() {
+        oldFunc.apply(this, arguments);
+        func.apply(this, arguments);
+      };
+    }
+  }
+  var _removed = false;
+    var form_to_submit = document.getElementById('_form_19_');
+  var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
+  var getUrlParam = function(name) {
+    var params = new URLSearchParams(window.location.search);
+    return params.get(name) || false;
+  };
+  var acctDateFormat = "%m/%d/%Y";
+  var getNormalizedDate = function(date, acctFormat) {
+    var decodedDate = decodeURIComponent(date);
+    if (acctFormat && acctFormat.match(/(%d|%e).*%m/gi) !== null) {
+      return decodedDate.replace(/(\d{2}).*(\d{2}).*(\d{4})/g, '$3-$2-$1');
+    } else if (Date.parse(decodedDate)) {
+      var dateObj = new Date(decodedDate);
+      var year = dateObj.getFullYear();
+      var month = dateObj.getMonth() + 1;
+      var day = dateObj.getDate();
+      return `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
+    }
+    return false;
+  };
+  var getNormalizedTime = function(time) {
+    var hour, minutes;
+    var decodedTime = decodeURIComponent(time);
+    var timeParts = Array.from(decodedTime.matchAll(/(\d{1,2}):(\d{1,2})\W*()?/gm))[0];
+    if (timeParts[3]) { // 12 hour format
+      var isPM = timeParts[3].toLowerCase() === 'pm';
+      if (isPM) {
+        hour = parseInt(timeParts[1]) === 12 ? '12' : `${parseInt(timeParts[1]) + 12}`;
+      } else {
+        hour = parseInt(timeParts[1]) === 12 ? '0' : timeParts[1];
+      }
+    } else { // 24 hour format
+      hour = timeParts[1];
+    }
+    var normalizedHour = parseInt(hour) < 10 ? `0${parseInt(hour)}` : hour;
+    var minutes = timeParts[2];
+    return `${normalizedHour}:${minutes}`;
+  };
+  for (var i = 0; i < allInputs.length; i++) {
+    var regexStr = "field\\[(\\d+)\\]";
+    var results = new RegExp(regexStr).exec(allInputs.name);
+    if (results != undefined) {
+      allInputs.dataset.name = allInputs.name.match(/\$/)
+        ? `${window.cfields]}_time`
+        : window.cfields];
+    } else {
+      allInputs.dataset.name = allInputs.name;
+    }
+    var fieldVal = getUrlParam(allInputs.dataset.name);
+    if (fieldVal) {
+      if (allInputs.dataset.autofill === "false") {
+        continue;
+      }
+      if (allInputs.type == "radio" || allInputs.type == "checkbox") {
+        if (allInputs.value == fieldVal) {
+          allInputs.checked = true;
+        }
+      } else if (allInputs.type == "date") {
+        allInputs.value = getNormalizedDate(fieldVal, acctDateFormat);
+      } else if (allInputs.type == "time") {
+        allInputs.value = getNormalizedTime(fieldVal);
+      } else {
+        allInputs.value = fieldVal;
+      }
+    }
+  }
+  var remove_tooltips = function() {
+    for (var i = 0; i < tooltips.length; i++) {
+      tooltips.tip.parentNode.removeChild(tooltips.tip);
+    }
+    tooltips = [];
+  };
+  var remove_tooltip = function(elem) {
+    for (var i = 0; i < tooltips.length; i++) {
+      if (tooltips.elem === elem) {
+        tooltips.tip.parentNode.removeChild(tooltips.tip);
+        tooltips.splice(i, 1);
+        return;
+      }
+    }
+  };
+  var create_tooltip = function(elem, text) {
+    var tooltip = document.createElement('div'),
+      arrow = document.createElement('div'),
+      inner = document.createElement('div'), new_tooltip = {};
+    if (elem.type != 'radio' && elem.type != 'checkbox') {
+      tooltip.className = '_error';
+      arrow.className = '_error-arrow';
+      inner.className = '_error-inner';
+      inner.innerHTML = text;
+      tooltip.appendChild(arrow);
+      tooltip.appendChild(inner);
+      elem.parentNode.appendChild(tooltip);
+    } else {
+      tooltip.className = '_error-inner _no_arrow';
+      tooltip.innerHTML = text;
+      elem.parentNode.insertBefore(tooltip, elem);
+      new_tooltip.no_arrow = true;
+    }
+    new_tooltip.tip = tooltip;
+    new_tooltip.elem = elem;
+    tooltips.push(new_tooltip);
+    return new_tooltip;
+  };
+  var resize_tooltip = function(tooltip) {
+    var rect = tooltip.elem.getBoundingClientRect();
+    var doc = document.documentElement,
+      scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
+    if (scrollPosition < 40) {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
+    } else {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
+    }
+  };
+  var resize_tooltips = function() {
+    if (_removed) return;
+    for (var i = 0; i < tooltips.length; i++) {
+      if (!tooltips.no_arrow) resize_tooltip(tooltips);
+    }
+  };
+  var validate_field = function(elem, remove) {
+    var tooltip = null, value = elem.value, no_error = true;
+    remove ? remove_tooltip(elem) : false;
+    if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
+    if (elem.getAttribute('required') !== null) {
+      if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
+        var elems = form_to_submit.elements;
+        if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
+          no_error = elem.checked;
+        }
+        else {
+          no_error = false;
+          for (var i = 0; i < elems.length; i++) {
+            if (elems.checked) no_error = true;
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (elem.type =='checkbox') {
+        var elems = form_to_submit.elements, found = false, err = [];
+        no_error = true;
+        for (var i = 0; i < elems.length; i++) {
+          if (elems.getAttribute('required') === null) continue;
+          if (!found && elems !== elem) return true;
+          found = true;
+          elems.className = elems.className.replace(/ ?_has_error ?/g, '');
+          if (!elems.checked) {
+            no_error = false;
+            elems.className = elems.className + ' _has_error';
+            err.push("Checking %s is required".replace("%s", elems.value));
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, err.join('<br/>'));
+        }
+      } else if (elem.tagName == 'SELECT') {
+        var selected = true;
+        if (elem.multiple) {
+          selected = false;
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected) {
+              selected = true;
+              break;
+            }
+          }
+        } else {
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected
+              && (!elem.options.value
+              || (elem.options.value.match(/\n/g)))
+            ) {
+              selected = false;
+            }
+          }
+        }
+        if (!selected) {
+          elem.className = elem.className + ' _has_error';
+          no_error = false;
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (value === undefined || value === null || value === '') {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "This field is required.");
+      }
+    }
+    if (no_error && (elem.id == 'field[]' || elem.id == 'ca[11]')) {
+      if (elem.className.includes('phone-input-error')) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+      }
+    }
+    if (no_error && elem.name == 'email') {
+      if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@+(\.+)*(\.{2,})$/i)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid email address.");
+      }
+    }
+    if (no_error && /date_field/.test(elem.className)) {
+      if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid date.");
+      }
+    }
+    tooltip ? resize_tooltip(tooltip) : false;
+    return no_error;
+  };
+  var needs_validate = function(el) {
+    if(el.getAttribute('required') !== null){
+      return true
+    }
+    if(el.name === 'email' && el.value !== ""){
+      return true
+    }
+    if((el.id == 'field[]' || el.id == 'ca[11]') && el.className.includes('phone-input-error')){
+      return true
+    }
+    return false
+  };
+  var validate_form = function(e) {
+    var err = form_to_submit.querySelector('._form_error'), no_error = true;
+    if (!submitted) {
+      submitted = true;
+      for (var i = 0, len = allInputs.length; i < len; i++) {
+        var input = allInputs;
+        if (needs_validate(input)) {
+          if (input.type == 'tel') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+          }
+          if (input.type == 'text' || input.type == 'number' || input.type == 'time') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'radio' || input.type == 'checkbox') {
+            (function(el) {
+              var radios = form_to_submit.elements;
+              for (var i = 0; i < radios.length; i++) {
+                addEvent(radios, 'click', function() {
+                  validate_field(el, true);
+                });
+              }
+            })(input);
+          } else if (input.tagName == 'SELECT') {
+            addEvent(input, 'change', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'textarea'){
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          }
+        }
+      }
+    }
+    remove_tooltips();
+    for (var i = 0, len = allInputs.length; i < len; i++) {
+      var elem = allInputs;
+      if (needs_validate(elem)) {
+        if (elem.tagName.toLowerCase() !== "select") {
+          elem.value = elem.value.trim();
+        }
+        validate_field(elem) ? true : no_error = false;
+      }
+    }
+    if (!no_error && e) {
+      e.preventDefault();
+    }
+    resize_tooltips();
+    return no_error;
+  };
+  addEvent(window, 'resize', resize_tooltips);
+  addEvent(window, 'scroll', resize_tooltips);
+  var hidePhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.remove("phone-error");
+    errorMessage.classList.add("phone-error-hidden");
+    input.classList.remove("phone-input-error");
+  };
+  var initializePhoneInput = function(input, defaultCountry) {
+    return window.intlTelInput(input, {
+      utilsScript: "https://unpkg.com/intl-tel-input@17.0.18/build/js/utils.js",
+      autoHideDialCode: false,
+      separateDialCode: true,
+      initialCountry: defaultCountry,
+      preferredCountries: []
+    });
+  }
+  var setPhoneInputEventListeners = function(inputId, input, iti) {
+    input.addEventListener('blur', function() {
+      var errorMessage = document.getElementById("error-msg-" + inputId);
+      if (input.value.trim()) {
+        if (iti.isValidNumber()) {
+          iti.setNumber(iti.getNumber());
+          if (errorMessage.classList.contains("phone-error")){
+            hidePhoneInputError(inputId);
+          }
+        } else {
+          showPhoneInputError(inputId)
+        }
+      } else {
+        if (errorMessage.classList.contains("phone-error")){
+          hidePhoneInputError(inputId);
+        }
+      }
+    });
+    input.addEventListener("countrychange", function() {
+      iti.setNumber('');
+    });
+    input.addEventListener("keydown", function(e) {
+      var charCode = (e.which) ? e.which : e.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 8) {
+        e.preventDefault();
+      }
+    });
+  };
+  var showPhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.add("phone-error");
+    errorMessage.classList.remove("phone-error-hidden");
+    input.classList.add("phone-input-error");
+  };
+  var _form_serialize = function(form){if(!form||form.nodeName!=="FORM"){return }var i,j,q=[];for(i=0;i<form.elements.length;i++){if(form.elements.name===""){continue}switch(form.elements.nodeName){case"INPUT":switch(form.elements.type){case"tel":q.push(form.elements.name+"="+encodeURIComponent(form.elements.previousSibling.querySelector('div.iti__selected-dial-code').innerText)+encodeURIComponent(" ")+encodeURIComponent(form.elements.value));break;case"text":case"number":case"date":case"time":case"hidden":case"password":case"button":case"reset":case"submit":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"checkbox":case"radio":if(form.elements.checked){q.push(form.elements.name+"="+encodeURIComponent(form.elements.value))}break;case"file":break}break;case"TEXTAREA":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"SELECT":switch(form.elements.type){case"select-one":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"select-multiple":for(j=0;j<form.elements.options.length;j++){if(form.elements.options.selected){q.push(form.elements.name+"="+encodeURIComponent(form.elements.options.value))}}break}break;case"BUTTON":switch(form.elements.type){case"reset":case"submit":case"button":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break}break}}return q.join("&")};
+  const formSupportsPost = false;
+  var form_submit = function(e) {
+    e.preventDefault();
+    if (validate_form()) {
+      // use this trick to get the submit button & disable it using plain javascript
+      var submitButton = e.target.querySelector('#_form_19_submit');
+      submitButton.disabled = true;
+      submitButton.classList.add('processing');
+            var serialized = _form_serialize(
+        document.getElementById('_form_19_')
+      ).replace(/%0A/g, '\\n');
+      var err = form_to_submit.querySelector('._form_error');
+      err ? err.parentNode.removeChild(err) : false;
+      async function submitForm() {
+       var formData = new FormData();
+       const searchParams = new URLSearchParams(serialized);
+       searchParams.forEach((value, key) => {
+        formData.append(key, value);
+       });
+       const response = await fetch('https://cabletv.activehosted.com/proc.php?jsonp=true', {
+        headers: {
+         "Accept": "application/json"
+        },
+        body: formData,
+        method: "POST"
+       });
+       return response.json();
+      }
+      if (formSupportsPost) {
+       submitForm().then((data) => {
+        eval(data.js);
+       });
+      } else {
+       _load_script('https://cabletv.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
+      }
+    }
+    return false;
+  };
+  addEvent(form_to_submit, 'submit', form_submit);
+})();
+</script>
+<p class="vc-email-subscribe__disclaimer">
+          By signing up, you agree to our <a href="/privacy-policy-terms-and-conditions">Privacy Policy &amp; Terms and Conditions</a>.
+        </p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>Which states are participating?</h2><p>
+Attorneys General from <a href="https://www.newsweek.com/map-shows-states-suing-to-stop-paramount-merger-with-warner-bros-12194594" rel="noopener" target="_blank">12 states </a>are banding together in an effort to stop Paramount. Here’s the full list in alphabetical order:
+</p><ul>
+<li>Arizona</li>
+<li>California</li>
+<li>Colorado</li>
+<li>Connecticut</li>
+<li>Massachusetts</li>
+<li>Minnesota</li>
+<li>Nevada</li>
+<li>New Jersey</li>
+<li>New Mexico</li>
+<li>New York</li>
+<li>Oregon</li>
+<li>Washington</li>
+</ul></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>What does this mean for your subscriptions?</h2><p>
+Paramount Skydance hasn’t been quiet about its plans to combine HBO Max and Paramount+ into one giant streamer to rival Netflix. If David Ellison’s plans go through, you’ll have fewer subscriptions and a higher bill to pay. There will be less competition forcing prices down, making things worse for both consumers and workers.
+
+That’s why those 12 states are moving to block the deal. According to Reuters, <a href="https://www.reuters.com/world/urgent-california-11-states-suing-block-paramounts-110-billion-warner-bros-deal-2026-07-13/" rel="noopener" target="_blank">this case could take months</a>—and that kind of delay will cost Paramount a lot of money no matter how it’s resolved. Paramount even has to pay an extra $650 million in fees if it doesn’t close the deal by October. That means that these 12 states have created an actual, tangible threat to Paramount’s plans, not just a symbolic gesture.</p><h3><a href="/paramount-plus">Paramount+</a></h3><p>
+Paramount+ is three streaming services in one; it also contains everything from the now-defunct SHOWTIME and <a href="/news/bet-plus-shuts-down">BET+</a> streaming services. Will HBO Max be its next acquisition?</p></div></div><div class="row"><div class="columns small-12 medium-24 large-9">
+<h3><a href="/hbo-max">HBO Max</a></h3><p>
+In addition to its HBO library, HBO Max also hosts Discovery+ content. That makes it a really appealing target for David Ellison’s growing monopoly.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>Who we are</h2><p>
+At CableTV.com, we’re not just entertainment experts — we’re also fans just like you. So while our first priority is reporting the best and most accurate information about TV providers and streaming services, we also love talking about our favorite shows and movies. So you can count on us to share our honest opinions and unbridled enthusiasm. For more on our process, check out our <a href="/how-we-rank">Editorial Policy</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<p class="h3">More industry news for TV fans</p><ul>
+<li><a href="/entertainment/cost-of-a-movie-ticket">How Much Does a Movie Ticket Cost?</a></li>
+<li><a href="/news/sony-playstation-removes-movies">PlayStation deletes VOD Titles</a></li>
+<li><a href="/news/apple-tv-4k-shows">Apple TV Gives Free Upgrades</a></li>
+</ul></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/07/ParamountSkydance1200x630.webp"/>
+    </item>
     <item>
       <title>World Cup Viewership Hits Record Highs: Will Casual Soccer Viewing Continue?</title>
       <link>https://www.cabletv.com/news/world-cup-viewership-soccer-interest</link>
@@ -3554,36 +4661,6 @@ At CableTV.com, we’re not just entertainment experts — we’re also fans jus
       <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/07/GreenYuri1200x630.webp"/>
     </item>
     <item>
-      <title>DISH Just Filed Bankruptcy; What Does This Mean for DISH TV and Sling TV?</title>
-      <link>https://www.cabletv.com/news/dish-tv-files-bankruptcy</link>
-      <pubDate>Thu, 02 Jul 2026 14:58:05 +0000</pubDate>
-      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
-      <guid isPermaLink="false">https://www.cabletv.com/news/dish-tv-files-bankruptcy</guid>
-      <description><![CDATA[<p>DISH DBS Corporation, the company behind DISH TV and Sling TV, just filed for Chapter 11 bankruptcy. Let’s discuss the reasons why.</p>]]></description>
-      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/07/dishtv_1200x630.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>DISH files Chapter 11</h2><p>
-Last year, satellite TV company DISH DBS Corporation decided to give up on its plans to become a wireless carrier and tried to<a href="https://www.theverge.com/report/766038/dish-echostar-spectrum-att-sale-fourth-carrier" rel="noopener" target="_blank"> sell its 5G spectrum to AT&amp;T</a>. That deal was supposed to be a financial boon to DISH’s parent company, EchoStar, but <a href="https://ir.echostar.com/news-releases/news-release-details/dish-dbs-corporation-and-subsidiaries-initiate-prepackaged" rel="noopener" target="_blank">“unforseen delays”</a> are preventing it from going through, putting the company in some hot water.
-
-In an effort to “pay off debt early with no penalty,” DISH has officially <a href="https://www.sdxcentral.com/news/echostar-blames-att-deal-delay-for-dish-bankruptcy-move/" rel="noopener" target="_blank">filed for Chapter 11 bankruptcy</a>. This will allow the company to stay afloat for a little while longer while continuing to offload its failed wireless business.
-
-Bankruptcy is a confusing thing, so keep reading to learn how this may impact you.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>What happens next?</h2><p>
-One of the main headers in <a href="https://ir.echostar.com/news-releases/news-release-details/dish-dbs-corporation-and-subsidiaries-initiate-prepackaged" rel="noopener" target="_blank">Echostar’s press release</a> was the importance of “Maintaining Business as Usual.” According to EchoStar, “the filing and prosecution of the Cases will not impact DISH TV, Sling TV, or their active operations and employees.”
-
-So it seems like you shouldn’t plan on cancelling your DISH or Sling TV subscription just yet. (Although if you’re interested, we’ve got the scoop <a href="/ranking/best-tv-providers">on every one of the best TV providers on the market</a>.) If things go according to plan (or “the Plan,” as EchoStar’s legalese puts it), DISH DBS will emerge from Chapter 11 bankruptcy by the end of Q3 (September) 2026.
-
-Hopefully this will only be a blip in the company’s history; it’d be a shame to see <a href="/dish/review">one of our editors’ favorite TV providers</a> go the way of JoAnn Fabrics.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>Who we are</h2><p>
-At CableTV.com, we’re not just entertainment experts — we’re also fans just like you. So while our first priority is reporting the best and most accurate information about TV providers and streaming services, we also love talking about our favorite shows and movies. So you can count on us to share our honest opinions and unbridled enthusiasm. For more on our process, check out our <a href="/how-we-rank">Editorial Policy</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<p class="h3">More industry news for TV fans</p><ul>
-<li><a href="/news/vision-de-campo-peacock-unveils-new-feature-for-select-world-cup-knockout-matches">New Peacock Feature For World Cup</a></li>
-<li><a href="/news/california-ad-volume-streaming-law-july-2026">California Law Changes How Streaming Ads Work</a></li>
-<li><a href="/news/comcast-spins-off-nbc-universal">Comcast Says Goodbye to NBCUniversal</a></li>
-</ul></div></div>
-]]></content:encoded>
-      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/07/dishtv_1200x630.webp"/>
-    </item>
-    <item>
       <title>24 Best Fourth of July Movies (and Where To Stream Them in 2026)</title>
       <link>https://www.cabletv.com/entertainment/best-fourth-of-july-movies</link>
       <pubDate>Wed, 01 Jul 2026 16:18:36 +0000</pubDate>
@@ -3780,32 +4857,6 @@ You can stream “Top Gun: Maverick” on <a href="/paramount-plus">Paramount+</
 </ul></div></div>
 ]]></content:encoded>
       <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/07/Best-Fourth-of-July-Movies.webp"/>
-    </item>
-    <item>
-      <title>America 250 Deals for July 4th: Discounted iPhones, $250 off TV, and More</title>
-      <link>https://www.cabletv.com/news/america-250-deals</link>
-      <pubDate>Wed, 01 Jul 2026 10:34:45 +0000</pubDate>
-      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
-      <guid isPermaLink="false">https://www.cabletv.com/news/america-250-deals</guid>
-      <description><![CDATA[<p>Celebrate the semiquincentennial with the best America 250 deals! Save $250 on iPads, iPhones, and TV plans, plus stream the fireworks for cheap.</p>]]></description>
-      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/07/America-250-deals-featured-image.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">Growing up, it felt like every car dealership and furniture store near me did a blowout sale each <a href="/sports/july-4-tv-schedule">Fourth of July</a>. Even though the times have changed, summer deals slinging really hasn’t—<em>especially</em> with the countdown to the America 250 celebrations happening later this week.<p>As CableTV.com’s resident deals hunter, I’ve narrowed down only the best deals for you to snag for the semiquincentennial week. Whether you’re looking for discounted 5G phones and iPads or cheap <a href="/streaming/streaming-bundles">streaming bundles</a> to catch all the historic America 250 programming, I’ve got you covered.<strong>Looking to save even more money? </strong>Lucky for you, I also keep our best <a href="/deals/best-tv-packages">TV</a>, <a href="/internet/best-internet-deals">internet</a>, and <a href="/deals/streaming-tv-deals">streaming</a> deals pages up-to-date with all the best promotions. Check ’em out!</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>Xfinity’s giving you $250 off iPads</h2><p style="text-align: center;">
-<a data-brand="Xfinity" data-name="xfinity" data-slug="comcast" href="https://go.cabletv.com/aff_c?offer_id=1613&amp;aff_id=1003" rel="nofollow noopener" target="_blank">
-<img alt="Xfinity" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/logo-xfinity-NO-AR.svg" width="175"/>
-</a></p></div><div class="columns small-12 medium-24 large-8">Searching for uber-discounted tech to keep the kids occupied this summer? Right now, <a href="/xfinity/mobile">Xfinity</a> is offering a whopping $250 off the 11-inch iPad with the superfast A16 chip exclusively for new and existing Xfinity Mobile customers.<p>I can’t tell you for certain if the $250 off is in honor of the semiquincentennial or just a coincidence, but with the deal ending not long after the Fourth (on July 21), I wouldn’t be surprised.</p><p>Along with discounted iPads, Xfinity often offers totally no-cost phones—check out our <a href="/xfinity/free-phones">guide to Xfinity free phones</a>, plus our all-encompassing (Xfinity offers great <a href="/xfinity/internet">internet</a> and <a href="/xfinity/cable-tv">TV</a>, too!) <a href="/xfinity/promotions">Xfinity deals</a> page.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>Optimum’s offering 5G phones for just $250</h2><p style="text-align: center;">
-<a data-brand="Optimum" data-name="optimum" data-slug="optimum" href="https://go.cabletv.com/aff_c?offer_id=1528&amp;aff_id=1003" rel="nofollow noopener" target="_blank">
-<img alt="Optimum" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2020/01/optimum-1-1.svg" width="175"/>
-</a></p></div><div class="columns small-12 medium-24 large-8">Whether you’re team Apple or Android, Optimum is dropping a huge 5G phone promo just in time for the fireworks. Qualified new or existing <a href="/optimum/mobile">Optimum Mobile</a> customers can choose from an iPhone 17e, iPhone 16, Samsung Galaxy S25 FE, Samsung Galaxy A26, or Moto Razr 2025 for only $250 flat to celebrate America’s 250th.<p>That $250 price point is a steal, especially if you’re looking to upgrade the whole family’s tech before summer vacation kicks into high gear. Just make sure to grab the corresponding promo code from https://go.cabletv.com/aff_c?offer_id=2914&amp;aff_id=1003 before checking out.</p><p><a href="/optimum/deals">We’ve got more Optimum deals</a> where that came from, too.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>DISH’s $250 off TV deal</h2><p style="text-align: center;">
-<a data-brand="DISH" data-name="dish" data-slug="dish" href="https://go.cabletv.com/aff_c?offer_id=1465&amp;aff_id=1003" rel="nofollow noopener" target="_blank">
-<img alt="DISH" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2022/03/dish.svg" width="175"/>
-</a></p></div><div class="columns small-12 medium-24 large-8">To celebrate the semiquincentennial, <a href="/dish">DISH</a> is letting new customers save $250 when they sign up for DISH’s America’s Top 200 or America’s Top 250 plan.<p>DISH is leaning hard into the “250” theme. Instead of a one-time rebate, they’re taking $10 off your bill every month for 25 months. To lock in this discount, you’ll need to use the promo code DISH250 at checkout and sign up for either America’s Top 200 (which actually offers 240+ channels) or America’s Top 250 (290+ channels).</p><p>Want more DISH deals? <a href="/dish/deals">We’ve got ’em</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>Snag free Paramount+ to watch July 4th festivities</h2><p style="text-align: center;">
-<a data-brand="Paramount Plus" data-name="paramount-plus" data-slug="paramount-plus" href="https://go.cabletv.com/aff_c?offer_id=1533&amp;aff_id=1003" rel="nofollow noopener" target="_blank">
-<img alt="Paramount Plus" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2022/05/paramount-plus.svg" width="175"/>
-</a></p></div><div class="columns small-12 medium-24 large-8">If you want a front-row seat to the country’s historic 250th birthday bash, <a href="/paramount-plus/">Paramount+</a>‘s got you covered. The platform is streaming <a href="/entertainment/what-channel-is-cbs-on">CBS’</a>s live, three-hour concert block, The Great American Block Party 250, on July 4th.<p>The best—and cheapest—way to stream the July 4th festivities is to snag free Paramount+ (Essential plan) with a $12.95 a month (or $98 a year) <a href="https://www.walmart.com/plus/paramount-video-streaming" rel="noopener" target="_blank">Walmart+ membership</a>. Double discounts for the win.</p><p>For a deep dive into more deals (including steep student discounts), head over to our dedicated <a href="/paramount-plus/deals">Paramount+ promos page</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>Get discounted Disney+ to stream “Disney Celebrates America”</h2><p style="text-align: center;">
-<a data-brand="Disney Plus" data-name="disney-plus" data-slug="disney-plus" href="https://go.cabletv.com/aff_c?offer_id=1471&amp;aff_id=1003" rel="nofollow noopener" target="_blank">
-<img alt="Disney Plus" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2022/05/DisneyPlus.svg" width="175"/>
-</a></p></div><div class="columns small-12 medium-24 large-8"><a href="/disney-plus">Disney</a> is celebrating America 250 the only way the mouse knows how to—BIG.<p>They’re pulling out all the stops for Disney’s company-wide “Disney Celebrates America” initiative, including a 24-hour cross-platform broadcast starting the evening of July 3rd that’ll span Disney+, <a href="/hulu">Hulu</a>, <a href="/entertainment/what-channel-is-abc">ABC</a>, and more.</p><p>While Disney+ rarely slashes prices on standalone plans, the best holiday hack is to lock in a <a href="/disney-plus/bundles">discounted bundle</a> to watch the marathon on any app. You can grab the Disney+ and Hulu bundle right now for an extra discounted rate of $11.99 a month (half off the non-bundled rate of $24). Or, go all in with the Disney+, Hulu, and <a href="/espn-unlimited">ESPN Unlimited</a> bundle for $35.99 a month—that’s savings of 33% each month.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><p style="font-size: 10px;"><em>Xfinity: Offer ends 7/21/26. Limited to iPad A16 (128GB). Requires activation of a new Xfinity Mobile tablet line within 30 days of tablet purchase date. Must maintain the new line with an account in good standing for 90 days following line activation. Device credits applied monthly to your account over 36 months. If line is canceled, voluntarily or involuntarily, balance of credits associated with device payment are forfeited. Offer not valid with prior purchases, returns or exchanges. Back orders are eligible. Out of stock devices are not eligible. May not be combined with other device offers.</em></p><p style="font-size: 10px;"><em>Optimum: Savings applied as 36 monthly bill credits toward the finance of the phone. See terms for details.</em></p><p style="font-size: 10px;"><em>DISH: 250th Offer: New and qualifying returning customers will receive $10 off their bill for 25 months. America’s Top 200 or America’s Top 250 package required. Requires credit qualification, 2 year commitment with early termination fee and autopay. Offer ends 8/12/26. Code: DISH250</em></p></div></div>
-]]></content:encoded>
-      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/07/America-250-deals-featured-image.webp"/>
     </item>
   </channel>
 </rss>
