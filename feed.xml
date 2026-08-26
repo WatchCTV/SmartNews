@@ -4,7 +4,7 @@
     <title>Entertainment News | CableTV.com</title>
     <link>https://www.cabletv.com/category/news</link>
     <description>Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming.</description>
-    <lastBuildDate>Wed, 26 Aug 2026 00:42:27 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 06:30:36 +0000</lastBuildDate>
     <language>en-US</language>
     <atom:link href="https://www.cabletv.com/category/news/feed" rel="self" type="application/rss+xml"/>
     <sy:updatePeriod>hourly</sy:updatePeriod>
@@ -1179,9 +1179,9 @@ Peacock’s annual prices are also going up, although they’re staying on pace 
 <td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
                   Peacock Select                </td>
 <td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $89.99/yr.                </td>
+                  $89.99/mo.                </td>
 <td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $79.99/yr.                </td>
+                  $79.99/mo.                </td>
 <td class="vc-table-scrolling__cell scrolling-table__cell">
                   —                </td>
 <td class="vc-table-scrolling__cell scrolling-table__cell">
@@ -1193,9 +1193,9 @@ Peacock’s annual prices are also going up, although they’re staying on pace 
 <td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
                   Peacock Premium                </td>
 <td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $129.99/yr.                </td>
+                  $129.99/mo.                </td>
 <td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $109.99/yr.                </td>
+                  $109.99/mo.                </td>
 <td class="vc-table-scrolling__cell scrolling-table__cell">
                   ✔                </td>
 <td class="vc-table-scrolling__cell scrolling-table__cell">
@@ -1207,9 +1207,9 @@ Peacock’s annual prices are also going up, although they’re staying on pace 
 <td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
                   Peacock Premium Plus                </td>
 <td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $199.99/yr.                </td>
+                  $199.99/mo.                </td>
 <td class="vc-table-scrolling__cell scrolling-table__cell">
-                  $169.99/yr.                </td>
+                  $169.99/mo.                </td>
 <td class="vc-table-scrolling__cell scrolling-table__cell">
                   ✔                </td>
 <td class="vc-table-scrolling__cell scrolling-table__cell">
@@ -4521,7 +4521,7 @@ At CableTV.com, we have years of experience covering the biggest tech and stream
 <img alt="Hulu" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/hulu-green-digital.svg" width="175"/>
 </a><div class="provider-name-container text-center">Hulu (With Ads)</div> <div class="rating-container margin--top-15 margin-bottom-5">
 <div>
-<style>#rating_stars_6a8ddddcbebad .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a8ddddcbebad .remainder-star { width:4.5px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a8ddddcbebad .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a8ddddcbebad .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a8ddddcbebad .remainder-star { width:4.5px; min-height:15px; background-size:15px; }#rating_stars_6a8ddddcbebad .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (2.30/5)</a></div> </div>
+<style>#rating_stars_6a8c8c8ce16db .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a8c8c8ce16db .remainder-star { width:4.5px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a8c8c8ce16db .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a8c8c8ce16db .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a8c8c8ce16db .remainder-star { width:4.5px; min-height:15px; background-size:15px; }#rating_stars_6a8c8c8ce16db .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (2.30/5)</a></div> </div>
 </div>
 </div>
 <div class="best-of-hero-card__contents__features-container first-container">
@@ -4543,7 +4543,7 @@ At CableTV.com, we have years of experience covering the biggest tech and stream
 <img alt="Apple TV+" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2022/03/Apple_TV_Logo_Blk_CI_082925.svg" width="175"/>
 </a><div class="provider-name-container text-center">Apple Music with Apple TV</div> <div class="rating-container margin--top-15 margin-bottom-5">
 <div>
-<style>#rating_stars_6a8ddddcc173b .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a8ddddcc173b .remainder-star { width:13.5px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a8ddddcc173b .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a8ddddcc173b .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a8ddddcc173b .remainder-star { width:13.5px; min-height:15px; background-size:15px; }#rating_stars_6a8ddddcc173b .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.90/5)</a></div> </div>
+<style>#rating_stars_6a8c8c8ce403e .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a8c8c8ce403e .remainder-star { width:13.5px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a8c8c8ce403e .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a8c8c8ce403e .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a8c8c8ce403e .remainder-star { width:13.5px; min-height:15px; background-size:15px; }#rating_stars_6a8c8c8ce403e .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.90/5)</a></div> </div>
 </div>
 </div>
 <div class="best-of-hero-card__contents__features-container first-container">
@@ -4565,7 +4565,7 @@ At CableTV.com, we have years of experience covering the biggest tech and stream
 <img alt="Amazon Prime Video logo" class="image--is-provider-logo" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2019/04/AmazonVideo-Center-Color.png" width="175"/>
 </div><div class="provider-name-container text-center">Amazon Prime for Young Adults</div> <div class="rating-container margin--top-15 margin-bottom-5">
 <div>
-<style>#rating_stars_6a8ddddcc2791 .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a8ddddcc2791 .remainder-star { width:7.5px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a8ddddcc2791 .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a8ddddcc2791 .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a8ddddcc2791 .remainder-star { width:7.5px; min-height:15px; background-size:15px; }#rating_stars_6a8ddddcc2791 .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.50/5)</a></div> </div>
+<style>#rating_stars_6a8c8c8ce54e8 .rating-star { width:15px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a8c8c8ce54e8 .remainder-star { width:7.5px; min-height:15px; background-size:15px; margin:0 2px; }#rating_stars_6a8c8c8ce54e8 .stars-empty .rating-star-empty { min-height:15px !important; }@media screen and (max-width:768px){#rating_stars_6a8c8c8ce54e8 .rating-star { width:15px; min-height:15px; background-size:15px; }#rating_stars_6a8c8c8ce54e8 .remainder-star { width:7.5px; min-height:15px; background-size:15px; }#rating_stars_6a8c8c8ce54e8 .stars-empty .rating-star-empty { min-height:15px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.50/5)</a></div> </div>
 </div>
 </div>
 <div class="best-of-hero-card__contents__features-container first-container">
@@ -4771,7 +4771,7 @@ The savings don’t have to end once you graduate. Most streaming services let y
 <img alt="Hulu" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/hulu-green-digital.svg" width="175"/>
 </a> <div class="rating-container">
 <div>
-<style>#rating_stars_6a8ddddccaa4a .rating-star { width:25px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8ddddccaa4a .remainder-star { width:7.5px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8ddddccaa4a .stars-empty .rating-star-empty { min-height:25px !important; }@media screen and (max-width:768px){#rating_stars_6a8ddddccaa4a .rating-star { width:25px; min-height:25px; background-size:25px; }#rating_stars_6a8ddddccaa4a .remainder-star { width:7.5px; min-height:25px; background-size:25px; }#rating_stars_6a8ddddccaa4a .stars-empty .rating-star-empty { min-height:25px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (2.3/5)</a></div> </div>
+<style>#rating_stars_6a8c8c8cf0deb .rating-star { width:25px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8c8c8cf0deb .remainder-star { width:7.5px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8c8c8cf0deb .stars-empty .rating-star-empty { min-height:25px !important; }@media screen and (max-width:768px){#rating_stars_6a8c8c8cf0deb .rating-star { width:25px; min-height:25px; background-size:25px; }#rating_stars_6a8c8c8cf0deb .remainder-star { width:7.5px; min-height:25px; background-size:25px; }#rating_stars_6a8c8c8cf0deb .stars-empty .rating-star-empty { min-height:25px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (2.3/5)</a></div> </div>
 </div>
 </div>
 </div>
@@ -4864,7 +4864,7 @@ Unfortunately, no matter which plan you sign up for, you won’t be able to comb
 <img alt="Apple TV+" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2022/03/Apple_TV_Logo_Blk_CI_082925.svg" width="175"/>
 </a> <div class="rating-container">
 <div>
-<style>#rating_stars_6a8ddddccc83c .rating-star { width:25px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8ddddccc83c .remainder-star { width:22.5px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8ddddccc83c .stars-empty .rating-star-empty { min-height:25px !important; }@media screen and (max-width:768px){#rating_stars_6a8ddddccc83c .rating-star { width:25px; min-height:25px; background-size:25px; }#rating_stars_6a8ddddccc83c .remainder-star { width:22.5px; min-height:25px; background-size:25px; }#rating_stars_6a8ddddccc83c .stars-empty .rating-star-empty { min-height:25px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.9/5)</a></div> </div>
+<style>#rating_stars_6a8c8c8cf4185 .rating-star { width:25px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8c8c8cf4185 .remainder-star { width:22.5px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8c8c8cf4185 .stars-empty .rating-star-empty { min-height:25px !important; }@media screen and (max-width:768px){#rating_stars_6a8c8c8cf4185 .rating-star { width:25px; min-height:25px; background-size:25px; }#rating_stars_6a8c8c8cf4185 .remainder-star { width:22.5px; min-height:25px; background-size:25px; }#rating_stars_6a8c8c8cf4185 .stars-empty .rating-star-empty { min-height:25px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.9/5)</a></div> </div>
 </div>
 </div>
 </div>
@@ -4960,7 +4960,7 @@ Since I graduated from college several years ago, I usually can’t get too far 
 <div class="rating-container">
  <div class="rating-container">
 <div>
-<style>#rating_stars_6a8ddddccdee6 .rating-star { width:25px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8ddddccdee6 .remainder-star { width:12.5px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8ddddccdee6 .stars-empty .rating-star-empty { min-height:25px !important; }@media screen and (max-width:768px){#rating_stars_6a8ddddccdee6 .rating-star { width:25px; min-height:25px; background-size:25px; }#rating_stars_6a8ddddccdee6 .remainder-star { width:12.5px; min-height:25px; background-size:25px; }#rating_stars_6a8ddddccdee6 .stars-empty .rating-star-empty { min-height:25px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.5/5)</a></div> </div>
+<style>#rating_stars_6a8c8c8d01fec .rating-star { width:25px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8c8c8d01fec .remainder-star { width:12.5px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8c8c8d01fec .stars-empty .rating-star-empty { min-height:25px !important; }@media screen and (max-width:768px){#rating_stars_6a8c8c8d01fec .rating-star { width:25px; min-height:25px; background-size:25px; }#rating_stars_6a8c8c8d01fec .remainder-star { width:12.5px; min-height:25px; background-size:25px; }#rating_stars_6a8c8c8d01fec .stars-empty .rating-star-empty { min-height:25px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.5/5)</a></div> </div>
 </div>
 </div>
 </div>
@@ -5089,7 +5089,7 @@ Amazon stands out from other student discount programs by letting customers choo
 <img alt="Paramount Plus" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2022/05/paramount-plus.svg" width="175"/>
 </a> <div class="rating-container">
 <div>
-<style>#rating_stars_6a8ddddccf5e8 .rating-star { width:25px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8ddddccf5e8 .remainder-star { width:20px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8ddddccf5e8 .stars-empty .rating-star-empty { min-height:25px !important; }@media screen and (max-width:768px){#rating_stars_6a8ddddccf5e8 .rating-star { width:25px; min-height:25px; background-size:25px; }#rating_stars_6a8ddddccf5e8 .remainder-star { width:20px; min-height:25px; background-size:25px; }#rating_stars_6a8ddddccf5e8 .stars-empty .rating-star-empty { min-height:25px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.8/5)</a></div> </div>
+<style>#rating_stars_6a8c8c8d03a44 .rating-star { width:25px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8c8c8d03a44 .remainder-star { width:20px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8c8c8d03a44 .stars-empty .rating-star-empty { min-height:25px !important; }@media screen and (max-width:768px){#rating_stars_6a8c8c8d03a44 .rating-star { width:25px; min-height:25px; background-size:25px; }#rating_stars_6a8c8c8d03a44 .remainder-star { width:20px; min-height:25px; background-size:25px; }#rating_stars_6a8c8c8d03a44 .stars-empty .rating-star-empty { min-height:25px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.8/5)</a></div> </div>
 </div>
 </div>
 </div>
@@ -5176,7 +5176,7 @@ And you didn’t hear it from me, but if you’re not eligible for a student dis
 <img alt="HBO Max" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225.webp" srcset="https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225.webp 1592w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-600x439.webp 600w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-1026x750.webp 1026w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-1536x1123.webp 1536w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-900x658.webp 900w, https://www.cabletv.com/app/uploads/2021/11/HBO-Max_Logo_Obsidian-Black_052225-300x219.webp 300w" width="175"/>
 </a> <div class="rating-container">
 <div>
-<style>#rating_stars_6a8ddddcd15c1 .rating-star { width:25px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8ddddcd15c1 .remainder-star { width:12.5px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8ddddcd15c1 .stars-empty .rating-star-empty { min-height:25px !important; }@media screen and (max-width:768px){#rating_stars_6a8ddddcd15c1 .rating-star { width:25px; min-height:25px; background-size:25px; }#rating_stars_6a8ddddcd15c1 .remainder-star { width:12.5px; min-height:25px; background-size:25px; }#rating_stars_6a8ddddcd15c1 .stars-empty .rating-star-empty { min-height:25px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (2.5/5)</a></div> </div>
+<style>#rating_stars_6a8c8c8d07048 .rating-star { width:25px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8c8c8d07048 .remainder-star { width:12.5px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8c8c8d07048 .stars-empty .rating-star-empty { min-height:25px !important; }@media screen and (max-width:768px){#rating_stars_6a8c8c8d07048 .rating-star { width:25px; min-height:25px; background-size:25px; }#rating_stars_6a8c8c8d07048 .remainder-star { width:12.5px; min-height:25px; background-size:25px; }#rating_stars_6a8c8c8d07048 .stars-empty .rating-star-empty { min-height:25px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (2.5/5)</a></div> </div>
 </div>
 </div>
 </div>
@@ -5205,7 +5205,7 @@ In theory, a UNiDAYS account will give you access to student discounts from othe
 <img alt="Peacock" class="image--is-provider-logo" decoding="async" height="65" loading="lazy" src="https://www.cabletv.com/app/uploads/2022/03/peacocktv.svg" width="175"/>
 </a> <div class="rating-container">
 <div>
-<style>#rating_stars_6a8ddddcd34b2 .rating-star { width:25px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8ddddcd34b2 .remainder-star { width:7.5px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8ddddcd34b2 .stars-empty .rating-star-empty { min-height:25px !important; }@media screen and (max-width:768px){#rating_stars_6a8ddddcd34b2 .rating-star { width:25px; min-height:25px; background-size:25px; }#rating_stars_6a8ddddcd34b2 .remainder-star { width:7.5px; min-height:25px; background-size:25px; }#rating_stars_6a8ddddcd34b2 .stars-empty .rating-star-empty { min-height:25px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.3/5)</a></div> </div>
+<style>#rating_stars_6a8c8c8d09052 .rating-star { width:25px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8c8c8d09052 .remainder-star { width:7.5px; min-height:25px; background-size:25px; margin:0 2px; }#rating_stars_6a8c8c8d09052 .stars-empty .rating-star-empty { min-height:25px !important; }@media screen and (max-width:768px){#rating_stars_6a8c8c8d09052 .rating-star { width:25px; min-height:25px; background-size:25px; }#rating_stars_6a8c8c8d09052 .remainder-star { width:7.5px; min-height:25px; background-size:25px; }#rating_stars_6a8c8c8d09052 .stars-empty .rating-star-empty { min-height:25px !important; }}</style><div class="rating"><a class="text-link" href="/how-we-rank#star">Editorial rating (3.3/5)</a></div> </div>
 </div>
 </div>
 </div>
