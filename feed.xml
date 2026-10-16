@@ -4,7 +4,7 @@
     <title>Entertainment News | CableTV.com</title>
     <link>https://www.cabletv.com/category/news</link>
     <description>Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming.</description>
-    <lastBuildDate>Fri, 16 Oct 2026 02:18:29 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 10:21:10 +0000</lastBuildDate>
     <language>en-US</language>
     <atom:link href="https://www.cabletv.com/category/news/feed" rel="self" type="application/rss+xml"/>
     <sy:updatePeriod>hourly</sy:updatePeriod>
@@ -19,6 +19,535 @@
       <width>32</width>
       <height>32</height>
     </image>
+    <item>
+      <title>DIRECTV Takes a Page From YouTube TV With This Expanded Sports Feature</title>
+      <link>https://www.cabletv.com/news/directv-adds-customizable-multiview-for-sports</link>
+      <pubDate>Thu, 15 Oct 2026 16:25:08 +0000</pubDate>
+      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
+      <guid isPermaLink="false">https://www.cabletv.com/news/directv-adds-customizable-multiview-for-sports</guid>
+      <description><![CDATA[<p>DIRECTV introduced its Build Your Own Multiview. Here’s what the new feature does, what it doesn’t, and how it compares to others in the market.</p>]]></description>
+      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/10/Customizable-Multiview-DIRECTV.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>DIRECTV adds customizable sports multiview experience for streaming customers</h2><p>Sports fans looking to watch multiple games simultaneously on one screen just got some good news.</p><p>This week, <a href="/directv/stream/stream-review">DIRECTV</a> unveiled a new feature: a customizable multiview experience catered specifically to live sports. The company launched the new multiview option on October 13.</p><p>“DIRECTV has been at the forefront of Multiview innovation for nearly two decades, and we continue to evolve the experience around how fans want to watch,” Vikash Sharma, head of product at DIRECTV, said in a statement. “Giving fans the ability to build their own lineup is the next step, offering even more choice and control over how they follow the games that matter most to them.”</p><p>The new feature is the second iteration of multiview that DIRECTV has rolled out in the last two months. The first was a <a href="https://www.directv.com/insider/curated-multiview/" target="_blank">curated multiview</a> with preselected live sports matchups. Both are separate from DIRECTV’s existing Mix Channels, which offer preset, always-on channel combinations for sports, news, weather, and more.</p></div></div><div class="row section--padding-bottom-30"><div class="columns small-12 medium-12 large-12">
+<div class="row align-center vc-email-subscribe__wrapper">
+<div class="columns small-12 large-6">
+<div class="callout-area">
+
+<div class="callout-text">
+<h3>Keep up with all the latest in entertainment news</h3> <p>Subscribe to CableTV.com's email newsletter for the latest TV event viewing guides, entertaining takes, and money-saving promotions.</p> </div>
+</div>
+</div>
+<div class="columns small-12 large-6">
+<div class="vc-email-subscribe">
+<div class="vc-email-subscribe__inline-form">
+<form action="https://cabletv.activehosted.com/proc.php" class="_form _form_19 _inline-form" id="_form_19_" method="POST">
+<input name="u" type="hidden" value="19"/>
+<input name="f" type="hidden" value="19"/>
+<input name="s" type="hidden"/>
+<input name="c" type="hidden" value="0"/>
+<input name="m" type="hidden" value="0"/>
+<input name="act" type="hidden" value="sub"/>
+<input name="v" type="hidden" value="2"/>
+<input name="or" type="hidden" value="8b2db1a6b150094e4ac73dc0ec08c9b4"/>
+<input id="ls" name="ls" type="hidden" value="1"/>
+<input id="nlbox_2" name="nlbox[]" type="hidden" value="2"/><input id="nlbox_3" name="nlbox[]" type="hidden" value="3"/><input id="nlbox_5" name="nlbox[]" type="hidden" value="5"/><input id="nlbox_16" name="nlbox[]" type="hidden" value="16"/><input id="nlbox_17" name="nlbox[]" type="hidden" value="17"/> <div class="_form-content">
+<div class="_field-wrapper">
+<input class="field-email" id="email" name="email" placeholder="Email Address" required="" type="text"/>
+<label class="show-for-sr" for="email">Email*</label>
+</div>
+<div class="_field-wrapper">
+<input class="field-zip" id="field[1]" maxlength="5" minlength="5" name="field[1]" pattern="[0-9]{5}" placeholder="Zip Code" required="" type="text"/>
+<label class="show-for-sr" for="field[1]">Zip code*</label>
+</div>
+<div class="_button-wrapper _inline-style">
+<button class="button button--generic" id="_form_19_submit" type="submit">
+        Sign Up
+      </button>
+</div>
+
+</div>
+
+</form>
+<script type="text/javascript">
+window.cfields = {"1":"zip_code"};
+window._show_thank_you = function(id, message, trackcmp_url, email) {
+  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
+  form.querySelector('._form-content').style.display = 'none';
+  thank_you.innerHTML = message;
+  thank_you.style.display = 'block';
+  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
+  var visitorObject = window;
+  if (email && typeof visitorObject !== 'undefined') {
+    visitorObject('setEmail', email);
+    visitorObject('update');
+  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
+    // Site tracking URL to use after inline form submission.
+    _load_script(trackcmp_url);
+  }
+  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
+};
+window._show_error = function(id, message, html) {
+  var form = document.getElementById('_form_' + id + '_'),
+    err = document.createElement('div'),
+    button = form.querySelector('button'),
+    old_error = form.querySelector('._form_error');
+  if (old_error) old_error.parentNode.removeChild(old_error);
+  err.innerHTML = message;
+  err.className = '_error-inner _form_error _no_arrow';
+  var wrapper = document.createElement('div');
+  wrapper.className = '_form-inner';
+  wrapper.appendChild(err);
+  button.parentNode.insertBefore(wrapper, button);
+  var submitButton = form.querySelector('');
+  submitButton.disabled = false;
+  submitButton.classList.remove('processing');
+  if (html) {
+    var div = document.createElement('div');
+    div.className = '_error-html';
+    div.innerHTML = html;
+    err.appendChild(div);
+  }
+};
+window._load_script = function(url, callback, isSubmit) {
+  var head = document.querySelector('head'), script = document.createElement('script'), r = false;
+  var submitButton = document.querySelector('#_form_19_submit');
+  script.type = 'text/javascript';
+  script.charset = 'utf-8';
+  script.src = url;
+  if (callback) {
+    script.onload = script.onreadystatechange = function() {
+      if (!r && (!this.readyState || this.readyState == 'complete')) {
+        r = true;
+        callback();
+      }
+    };
+  }
+  script.onerror = function() {
+    if (isSubmit) {
+      if (script.src.length > 10000) {
+        _show_error("19", "Sorry, your submission failed. Please shorten your responses and try again.");
+      } else {
+        _show_error("19", "Sorry, your submission failed. Please try again.");
+      }
+      submitButton.disabled = false;
+      submitButton.classList.remove('processing');
+    }
+  }
+  head.appendChild(script);
+};
+(function() {
+  if (window.location.search.search("excludeform") !== -1) return false;
+  var getCookie = function(name) {
+    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  var setCookie = function(name, value) {
+    var now = new Date();
+    var time = now.getTime();
+    var expireTime = time + 1000 * 60 * 60 * 24 * 365;
+    now.setTime(expireTime);
+    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';
+  }
+      var addEvent = function(element, event, func) {
+    if (element.addEventListener) {
+      element.addEventListener(event, func);
+    } else {
+      var oldFunc = element['on' + event];
+      element['on' + event] = function() {
+        oldFunc.apply(this, arguments);
+        func.apply(this, arguments);
+      };
+    }
+  }
+  var _removed = false;
+    var form_to_submit = document.getElementById('_form_19_');
+  var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
+  var getUrlParam = function(name) {
+    var params = new URLSearchParams(window.location.search);
+    return params.get(name) || false;
+  };
+  var acctDateFormat = "%m/%d/%Y";
+  var getNormalizedDate = function(date, acctFormat) {
+    var decodedDate = decodeURIComponent(date);
+    if (acctFormat && acctFormat.match(/(%d|%e).*%m/gi) !== null) {
+      return decodedDate.replace(/(\d{2}).*(\d{2}).*(\d{4})/g, '$3-$2-$1');
+    } else if (Date.parse(decodedDate)) {
+      var dateObj = new Date(decodedDate);
+      var year = dateObj.getFullYear();
+      var month = dateObj.getMonth() + 1;
+      var day = dateObj.getDate();
+      return `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
+    }
+    return false;
+  };
+  var getNormalizedTime = function(time) {
+    var hour, minutes;
+    var decodedTime = decodeURIComponent(time);
+    var timeParts = Array.from(decodedTime.matchAll(/(\d{1,2}):(\d{1,2})\W*()?/gm))[0];
+    if (timeParts[3]) { // 12 hour format
+      var isPM = timeParts[3].toLowerCase() === 'pm';
+      if (isPM) {
+        hour = parseInt(timeParts[1]) === 12 ? '12' : `${parseInt(timeParts[1]) + 12}`;
+      } else {
+        hour = parseInt(timeParts[1]) === 12 ? '0' : timeParts[1];
+      }
+    } else { // 24 hour format
+      hour = timeParts[1];
+    }
+    var normalizedHour = parseInt(hour) < 10 ? `0${parseInt(hour)}` : hour;
+    var minutes = timeParts[2];
+    return `${normalizedHour}:${minutes}`;
+  };
+  for (var i = 0; i < allInputs.length; i++) {
+    var regexStr = "field\\[(\\d+)\\]";
+    var results = new RegExp(regexStr).exec(allInputs.name);
+    if (results != undefined) {
+      allInputs.dataset.name = allInputs.name.match(/\$/)
+        ? `${window.cfields]}_time`
+        : window.cfields];
+    } else {
+      allInputs.dataset.name = allInputs.name;
+    }
+    var fieldVal = getUrlParam(allInputs.dataset.name);
+    if (fieldVal) {
+      if (allInputs.dataset.autofill === "false") {
+        continue;
+      }
+      if (allInputs.type == "radio" || allInputs.type == "checkbox") {
+        if (allInputs.value == fieldVal) {
+          allInputs.checked = true;
+        }
+      } else if (allInputs.type == "date") {
+        allInputs.value = getNormalizedDate(fieldVal, acctDateFormat);
+      } else if (allInputs.type == "time") {
+        allInputs.value = getNormalizedTime(fieldVal);
+      } else {
+        allInputs.value = fieldVal;
+      }
+    }
+  }
+  var remove_tooltips = function() {
+    for (var i = 0; i < tooltips.length; i++) {
+      tooltips.tip.parentNode.removeChild(tooltips.tip);
+    }
+    tooltips = [];
+  };
+  var remove_tooltip = function(elem) {
+    for (var i = 0; i < tooltips.length; i++) {
+      if (tooltips.elem === elem) {
+        tooltips.tip.parentNode.removeChild(tooltips.tip);
+        tooltips.splice(i, 1);
+        return;
+      }
+    }
+  };
+  var create_tooltip = function(elem, text) {
+    var tooltip = document.createElement('div'),
+      arrow = document.createElement('div'),
+      inner = document.createElement('div'), new_tooltip = {};
+    if (elem.type != 'radio' && elem.type != 'checkbox') {
+      tooltip.className = '_error';
+      arrow.className = '_error-arrow';
+      inner.className = '_error-inner';
+      inner.innerHTML = text;
+      tooltip.appendChild(arrow);
+      tooltip.appendChild(inner);
+      elem.parentNode.appendChild(tooltip);
+    } else {
+      tooltip.className = '_error-inner _no_arrow';
+      tooltip.innerHTML = text;
+      elem.parentNode.insertBefore(tooltip, elem);
+      new_tooltip.no_arrow = true;
+    }
+    new_tooltip.tip = tooltip;
+    new_tooltip.elem = elem;
+    tooltips.push(new_tooltip);
+    return new_tooltip;
+  };
+  var resize_tooltip = function(tooltip) {
+    var rect = tooltip.elem.getBoundingClientRect();
+    var doc = document.documentElement,
+      scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
+    if (scrollPosition < 40) {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
+    } else {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
+    }
+  };
+  var resize_tooltips = function() {
+    if (_removed) return;
+    for (var i = 0; i < tooltips.length; i++) {
+      if (!tooltips.no_arrow) resize_tooltip(tooltips);
+    }
+  };
+  var validate_field = function(elem, remove) {
+    var tooltip = null, value = elem.value, no_error = true;
+    remove ? remove_tooltip(elem) : false;
+    if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
+    if (elem.getAttribute('required') !== null) {
+      if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
+        var elems = form_to_submit.elements;
+        if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
+          no_error = elem.checked;
+        }
+        else {
+          no_error = false;
+          for (var i = 0; i < elems.length; i++) {
+            if (elems.checked) no_error = true;
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (elem.type =='checkbox') {
+        var elems = form_to_submit.elements, found = false, err = [];
+        no_error = true;
+        for (var i = 0; i < elems.length; i++) {
+          if (elems.getAttribute('required') === null) continue;
+          if (!found && elems !== elem) return true;
+          found = true;
+          elems.className = elems.className.replace(/ ?_has_error ?/g, '');
+          if (!elems.checked) {
+            no_error = false;
+            elems.className = elems.className + ' _has_error';
+            err.push("Checking %s is required".replace("%s", elems.value));
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, err.join('<br/>'));
+        }
+      } else if (elem.tagName == 'SELECT') {
+        var selected = true;
+        if (elem.multiple) {
+          selected = false;
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected) {
+              selected = true;
+              break;
+            }
+          }
+        } else {
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected
+              && (!elem.options.value
+              || (elem.options.value.match(/\n/g)))
+            ) {
+              selected = false;
+            }
+          }
+        }
+        if (!selected) {
+          elem.className = elem.className + ' _has_error';
+          no_error = false;
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (value === undefined || value === null || value === '') {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "This field is required.");
+      }
+    }
+    if (no_error && (elem.id == 'field[]' || elem.id == 'ca[11]')) {
+      if (elem.className.includes('phone-input-error')) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+      }
+    }
+    if (no_error && elem.name == 'email') {
+      if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@+(\.+)*(\.{2,})$/i)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid email address.");
+      }
+    }
+    if (no_error && /date_field/.test(elem.className)) {
+      if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid date.");
+      }
+    }
+    tooltip ? resize_tooltip(tooltip) : false;
+    return no_error;
+  };
+  var needs_validate = function(el) {
+    if(el.getAttribute('required') !== null){
+      return true
+    }
+    if(el.name === 'email' && el.value !== ""){
+      return true
+    }
+    if((el.id == 'field[]' || el.id == 'ca[11]') && el.className.includes('phone-input-error')){
+      return true
+    }
+    return false
+  };
+  var validate_form = function(e) {
+    var err = form_to_submit.querySelector('._form_error'), no_error = true;
+    if (!submitted) {
+      submitted = true;
+      for (var i = 0, len = allInputs.length; i < len; i++) {
+        var input = allInputs;
+        if (needs_validate(input)) {
+          if (input.type == 'tel') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+          }
+          if (input.type == 'text' || input.type == 'number' || input.type == 'time') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'radio' || input.type == 'checkbox') {
+            (function(el) {
+              var radios = form_to_submit.elements;
+              for (var i = 0; i < radios.length; i++) {
+                addEvent(radios, 'click', function() {
+                  validate_field(el, true);
+                });
+              }
+            })(input);
+          } else if (input.tagName == 'SELECT') {
+            addEvent(input, 'change', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'textarea'){
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          }
+        }
+      }
+    }
+    remove_tooltips();
+    for (var i = 0, len = allInputs.length; i < len; i++) {
+      var elem = allInputs;
+      if (needs_validate(elem)) {
+        if (elem.tagName.toLowerCase() !== "select") {
+          elem.value = elem.value.trim();
+        }
+        validate_field(elem) ? true : no_error = false;
+      }
+    }
+    if (!no_error && e) {
+      e.preventDefault();
+    }
+    resize_tooltips();
+    return no_error;
+  };
+  addEvent(window, 'resize', resize_tooltips);
+  addEvent(window, 'scroll', resize_tooltips);
+  var hidePhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.remove("phone-error");
+    errorMessage.classList.add("phone-error-hidden");
+    input.classList.remove("phone-input-error");
+  };
+  var initializePhoneInput = function(input, defaultCountry) {
+    return window.intlTelInput(input, {
+      utilsScript: "https://unpkg.com/intl-tel-input@17.0.18/build/js/utils.js",
+      autoHideDialCode: false,
+      separateDialCode: true,
+      initialCountry: defaultCountry,
+      preferredCountries: []
+    });
+  }
+  var setPhoneInputEventListeners = function(inputId, input, iti) {
+    input.addEventListener('blur', function() {
+      var errorMessage = document.getElementById("error-msg-" + inputId);
+      if (input.value.trim()) {
+        if (iti.isValidNumber()) {
+          iti.setNumber(iti.getNumber());
+          if (errorMessage.classList.contains("phone-error")){
+            hidePhoneInputError(inputId);
+          }
+        } else {
+          showPhoneInputError(inputId)
+        }
+      } else {
+        if (errorMessage.classList.contains("phone-error")){
+          hidePhoneInputError(inputId);
+        }
+      }
+    });
+    input.addEventListener("countrychange", function() {
+      iti.setNumber('');
+    });
+    input.addEventListener("keydown", function(e) {
+      var charCode = (e.which) ? e.which : e.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 8) {
+        e.preventDefault();
+      }
+    });
+  };
+  var showPhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.add("phone-error");
+    errorMessage.classList.remove("phone-error-hidden");
+    input.classList.add("phone-input-error");
+  };
+  var _form_serialize = function(form){if(!form||form.nodeName!=="FORM"){return }var i,j,q=[];for(i=0;i<form.elements.length;i++){if(form.elements.name===""){continue}switch(form.elements.nodeName){case"INPUT":switch(form.elements.type){case"tel":q.push(form.elements.name+"="+encodeURIComponent(form.elements.previousSibling.querySelector('div.iti__selected-dial-code').innerText)+encodeURIComponent(" ")+encodeURIComponent(form.elements.value));break;case"text":case"number":case"date":case"time":case"hidden":case"password":case"button":case"reset":case"submit":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"checkbox":case"radio":if(form.elements.checked){q.push(form.elements.name+"="+encodeURIComponent(form.elements.value))}break;case"file":break}break;case"TEXTAREA":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"SELECT":switch(form.elements.type){case"select-one":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"select-multiple":for(j=0;j<form.elements.options.length;j++){if(form.elements.options.selected){q.push(form.elements.name+"="+encodeURIComponent(form.elements.options.value))}}break}break;case"BUTTON":switch(form.elements.type){case"reset":case"submit":case"button":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break}break}}return q.join("&")};
+  const formSupportsPost = false;
+  var form_submit = function(e) {
+    e.preventDefault();
+    if (validate_form()) {
+      // use this trick to get the submit button & disable it using plain javascript
+      var submitButton = e.target.querySelector('#_form_19_submit');
+      submitButton.disabled = true;
+      submitButton.classList.add('processing');
+            var serialized = _form_serialize(
+        document.getElementById('_form_19_')
+      ).replace(/%0A/g, '\\n');
+      var err = form_to_submit.querySelector('._form_error');
+      err ? err.parentNode.removeChild(err) : false;
+      async function submitForm() {
+       var formData = new FormData();
+       const searchParams = new URLSearchParams(serialized);
+       searchParams.forEach((value, key) => {
+        formData.append(key, value);
+       });
+       const response = await fetch('https://cabletv.activehosted.com/proc.php?jsonp=true', {
+        headers: {
+         "Accept": "application/json"
+        },
+        body: formData,
+        method: "POST"
+       });
+       return response.json();
+      }
+      if (formSupportsPost) {
+       submitForm().then((data) => {
+        eval(data.js);
+       });
+      } else {
+       _load_script('https://cabletv.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
+      }
+    }
+    return false;
+  };
+  addEvent(form_to_submit, 'submit', form_submit);
+})();
+</script>
+<p class="vc-email-subscribe__disclaimer">
+          By signing up, you agree to our <a href="/privacy-policy-terms-and-conditions">Privacy Policy &amp; Terms and Conditions</a>.
+        </p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>The new multiview appears to be limited to live sports</h2><p>Is DIRECTV’s new feature really customizable? Yes and no.</p><p>If a viewer wants to watch up to four channels at once, they’re currently limited to networks that show live sports, such as ESPN, FS1, NFL Network, CBS Sports Network, Tennis Channel, and others. The company says that local and national channels <em>could</em> be available for multiview “when they’re carrying eligible live sporting events.”</p><p>Of course, which channels you have depends on the DIRECTV package.Compare that to <a href="/youtube-tv/review">YouTube TV</a>‘s multiview feature, and you start to see just how different it is. I tested the YouTube TV one recently and put together a multiview of MS NOW, ESPN, CNBC, and whatever channel was currently showing “The Last Duel.” That’s true customization.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>CableTV.com verdict: A step forward, but still behind YouTube TV</h2><p>Multiview is one of those features that seems great in theory, but serves a niche audience. Still, multiple TV providers have developed their own multiview experiences, some more extensive than others.</p><p>DIRECTV made a huge leap in the space earlier this year with its curated multiview, a predetermined set of live sports broadcasts dependent on how many marquee games were airing on any given day. That development came a few months after <a href="/news/spectrum-multiview">Spectrum unveiled its own curated multiview in advance of March Madness</a>.</p><p>DIRECTV took yet another step with its new Build Your Own offering, but it’s still inferior to the multiview options from YouTube TV and Fubo. To be fair, Fubo has its own limitations: Its multiview is available only on Apple TV, select Roku devices, and some LG TVs. When it comes to DIRECTV’s rollout, users on Reddit seem <a href="https://www.reddit.com/r/DirectvStream/comments/1x4joed/custom_multiview_now_available/" target="_blank">mixed</a> or even <a href="https://www.reddit.com/r/DirectvStream/comments/1x52m59/you_wanted_it_you_got_it_directv_stream_now_has/" target="_blank">dismissive</a> of the new feature. </p><p>Saying people can build their own experience of up to four channels, then limiting the channels available, is a bit misleading. But the option of having two, three, or four games on one screen definitely is pretty cool and useful.</p><p>A huge caveat: The feature is only available on DIRECTV Gemini or Roku devices to start, with additional devices coming down the pike. That feels like another limitation to the multiview, at least for now. Once Android TV, Fire TV, Vizio, LG, Apple TV, and Tizen TV enter the field, the situation will be better for fans and consumers.</p><p>Don’t get me wrong: Sports fans who are DIRECTV users are gonna love this feature, so long as it doesn’t lag or introduce other tech issues. But is it the best out there? Not yet.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>Who we are</h2><p>At CableTV.com, we’re not just entertainment experts — we’re also fans just like you. So while our first priority is reporting the best and most accurate information about TV providers and streaming services, we also love talking about our favorite shows and movies. So you can count on us to share our honest opinions and unbridled enthusiasm. For more on our process, check out our <a href="/how-we-rank">Editorial Policy</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><p class="h3">More industry news for sports fans</p><ul>
+<li><a href="/news/fanduel-sports-network-replacements">Where NBA and NHL Teams Went After FanDuel Sports Network Closed</a></li>
+<li><a href="/news/fubo-adds-four-new-nhl-regional-sports-networks">Fubo Adds New NHL Regional Sports Networks in These Four Markets</a></li>
+<li><a href="/news/ppv-sports-vs-day-passes">2 in 5 Sports Fans Skipped Subscriptions in Favor of These Hacks</a></li>
+</ul></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/10/Customizable-Multiview-DIRECTV.webp"/>
+    </item>
     <item>
       <title>How a Home Internet Connection Actually Reaches Your House</title>
       <link>https://www.cabletv.com/news/how-an-internet-connection-works</link>
@@ -4599,535 +5128,6 @@ At CableTV.com, we’re not just entertainment experts — we’re also fans jus
 </ul></div></div>
 ]]></content:encoded>
       <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/10/Prime-Video-Streaming-Deals.webp"/>
-    </item>
-    <item>
-      <title>Paramount and Warner Bros. Officially Merge: What’s Next for Skydance</title>
-      <link>https://www.cabletv.com/news/skydance-deal-closes</link>
-      <pubDate>Tue, 06 Oct 2026 14:53:14 +0000</pubDate>
-      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
-      <guid isPermaLink="false">https://www.cabletv.com/news/skydance-deal-closes</guid>
-      <description><![CDATA[<p>It’s October 6, which means that Paramount and Warner Bros. have officially merged to become Skydance. What does that mean for you?</p>]]></description>
-      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/10/Animaniacs1200x630.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>October 6 marks Skydance’s first day as a new company</h2><p>David Zaslav <a href="https://deadline.com/2026/10/david-zaslav-farewell-warner-bros-discovery-farewell-video-1237146919/" target="_blank">formally left his job yesterday</a>, stepping down as Warner Bros. Discovery’s last CEO. That’s because Paramount Skydance, after <a href="/news/paramount-delays-merger-with-warner-bros">vocal pushback from several courts of law</a>, has finally closed its deal to acquire Warner Bros. Discovery as of October 6. As we reported last week, the new company will simply be called Skydance.</p><p>This morning, the company’s stock ticker changed from PSKY to SKYD and <a href="https://deadline.com/2026/10/warner-bros-water-tower-repainted-skydance-1237148186/" target="_blank">workers were spotted repainting the iconic “WB” water tower</a> with the Skydance name, so the change really is official. But there are still a lot of questions that need to be answered. Let’s go over what this corporate merger means for some of Skydance’s biggest brands.</p></div></div><div class="row section--padding-bottom-30"><div class="columns small-12 medium-12 large-12">
-<div class="row align-center vc-email-subscribe__wrapper">
-<div class="columns small-12 large-6">
-<div class="callout-area">
-
-<div class="callout-text">
-<h3>Keep up with all the latest in entertainment news</h3> <p>Subscribe to CableTV.com's email newsletter for the latest TV event viewing guides, entertaining takes, and money-saving promotions.</p> </div>
-</div>
-</div>
-<div class="columns small-12 large-6">
-<div class="vc-email-subscribe">
-<div class="vc-email-subscribe__inline-form">
-<form action="https://cabletv.activehosted.com/proc.php" class="_form _form_19 _inline-form" id="_form_19_" method="POST">
-<input name="u" type="hidden" value="19"/>
-<input name="f" type="hidden" value="19"/>
-<input name="s" type="hidden"/>
-<input name="c" type="hidden" value="0"/>
-<input name="m" type="hidden" value="0"/>
-<input name="act" type="hidden" value="sub"/>
-<input name="v" type="hidden" value="2"/>
-<input name="or" type="hidden" value="8b2db1a6b150094e4ac73dc0ec08c9b4"/>
-<input id="ls" name="ls" type="hidden" value="1"/>
-<input id="nlbox_2" name="nlbox[]" type="hidden" value="2"/><input id="nlbox_3" name="nlbox[]" type="hidden" value="3"/><input id="nlbox_5" name="nlbox[]" type="hidden" value="5"/><input id="nlbox_16" name="nlbox[]" type="hidden" value="16"/><input id="nlbox_17" name="nlbox[]" type="hidden" value="17"/> <div class="_form-content">
-<div class="_field-wrapper">
-<input class="field-email" id="email" name="email" placeholder="Email Address" required="" type="text"/>
-<label class="show-for-sr" for="email">Email*</label>
-</div>
-<div class="_field-wrapper">
-<input class="field-zip" id="field[1]" maxlength="5" minlength="5" name="field[1]" pattern="[0-9]{5}" placeholder="Zip Code" required="" type="text"/>
-<label class="show-for-sr" for="field[1]">Zip code*</label>
-</div>
-<div class="_button-wrapper _inline-style">
-<button class="button button--generic" id="_form_19_submit" type="submit">
-        Sign Up
-      </button>
-</div>
-
-</div>
-
-</form>
-<script type="text/javascript">
-window.cfields = {"1":"zip_code"};
-window._show_thank_you = function(id, message, trackcmp_url, email) {
-  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
-  form.querySelector('._form-content').style.display = 'none';
-  thank_you.innerHTML = message;
-  thank_you.style.display = 'block';
-  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
-  var visitorObject = window;
-  if (email && typeof visitorObject !== 'undefined') {
-    visitorObject('setEmail', email);
-    visitorObject('update');
-  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
-    // Site tracking URL to use after inline form submission.
-    _load_script(trackcmp_url);
-  }
-  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
-};
-window._show_error = function(id, message, html) {
-  var form = document.getElementById('_form_' + id + '_'),
-    err = document.createElement('div'),
-    button = form.querySelector('button'),
-    old_error = form.querySelector('._form_error');
-  if (old_error) old_error.parentNode.removeChild(old_error);
-  err.innerHTML = message;
-  err.className = '_error-inner _form_error _no_arrow';
-  var wrapper = document.createElement('div');
-  wrapper.className = '_form-inner';
-  wrapper.appendChild(err);
-  button.parentNode.insertBefore(wrapper, button);
-  var submitButton = form.querySelector('');
-  submitButton.disabled = false;
-  submitButton.classList.remove('processing');
-  if (html) {
-    var div = document.createElement('div');
-    div.className = '_error-html';
-    div.innerHTML = html;
-    err.appendChild(div);
-  }
-};
-window._load_script = function(url, callback, isSubmit) {
-  var head = document.querySelector('head'), script = document.createElement('script'), r = false;
-  var submitButton = document.querySelector('#_form_19_submit');
-  script.type = 'text/javascript';
-  script.charset = 'utf-8';
-  script.src = url;
-  if (callback) {
-    script.onload = script.onreadystatechange = function() {
-      if (!r && (!this.readyState || this.readyState == 'complete')) {
-        r = true;
-        callback();
-      }
-    };
-  }
-  script.onerror = function() {
-    if (isSubmit) {
-      if (script.src.length > 10000) {
-        _show_error("19", "Sorry, your submission failed. Please shorten your responses and try again.");
-      } else {
-        _show_error("19", "Sorry, your submission failed. Please try again.");
-      }
-      submitButton.disabled = false;
-      submitButton.classList.remove('processing');
-    }
-  }
-  head.appendChild(script);
-};
-(function() {
-  if (window.location.search.search("excludeform") !== -1) return false;
-  var getCookie = function(name) {
-    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
-    return match ? match[2] : null;
-  }
-  var setCookie = function(name, value) {
-    var now = new Date();
-    var time = now.getTime();
-    var expireTime = time + 1000 * 60 * 60 * 24 * 365;
-    now.setTime(expireTime);
-    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';
-  }
-      var addEvent = function(element, event, func) {
-    if (element.addEventListener) {
-      element.addEventListener(event, func);
-    } else {
-      var oldFunc = element['on' + event];
-      element['on' + event] = function() {
-        oldFunc.apply(this, arguments);
-        func.apply(this, arguments);
-      };
-    }
-  }
-  var _removed = false;
-    var form_to_submit = document.getElementById('_form_19_');
-  var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
-  var getUrlParam = function(name) {
-    var params = new URLSearchParams(window.location.search);
-    return params.get(name) || false;
-  };
-  var acctDateFormat = "%m/%d/%Y";
-  var getNormalizedDate = function(date, acctFormat) {
-    var decodedDate = decodeURIComponent(date);
-    if (acctFormat && acctFormat.match(/(%d|%e).*%m/gi) !== null) {
-      return decodedDate.replace(/(\d{2}).*(\d{2}).*(\d{4})/g, '$3-$2-$1');
-    } else if (Date.parse(decodedDate)) {
-      var dateObj = new Date(decodedDate);
-      var year = dateObj.getFullYear();
-      var month = dateObj.getMonth() + 1;
-      var day = dateObj.getDate();
-      return `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
-    }
-    return false;
-  };
-  var getNormalizedTime = function(time) {
-    var hour, minutes;
-    var decodedTime = decodeURIComponent(time);
-    var timeParts = Array.from(decodedTime.matchAll(/(\d{1,2}):(\d{1,2})\W*()?/gm))[0];
-    if (timeParts[3]) { // 12 hour format
-      var isPM = timeParts[3].toLowerCase() === 'pm';
-      if (isPM) {
-        hour = parseInt(timeParts[1]) === 12 ? '12' : `${parseInt(timeParts[1]) + 12}`;
-      } else {
-        hour = parseInt(timeParts[1]) === 12 ? '0' : timeParts[1];
-      }
-    } else { // 24 hour format
-      hour = timeParts[1];
-    }
-    var normalizedHour = parseInt(hour) < 10 ? `0${parseInt(hour)}` : hour;
-    var minutes = timeParts[2];
-    return `${normalizedHour}:${minutes}`;
-  };
-  for (var i = 0; i < allInputs.length; i++) {
-    var regexStr = "field\\[(\\d+)\\]";
-    var results = new RegExp(regexStr).exec(allInputs.name);
-    if (results != undefined) {
-      allInputs.dataset.name = allInputs.name.match(/\$/)
-        ? `${window.cfields]}_time`
-        : window.cfields];
-    } else {
-      allInputs.dataset.name = allInputs.name;
-    }
-    var fieldVal = getUrlParam(allInputs.dataset.name);
-    if (fieldVal) {
-      if (allInputs.dataset.autofill === "false") {
-        continue;
-      }
-      if (allInputs.type == "radio" || allInputs.type == "checkbox") {
-        if (allInputs.value == fieldVal) {
-          allInputs.checked = true;
-        }
-      } else if (allInputs.type == "date") {
-        allInputs.value = getNormalizedDate(fieldVal, acctDateFormat);
-      } else if (allInputs.type == "time") {
-        allInputs.value = getNormalizedTime(fieldVal);
-      } else {
-        allInputs.value = fieldVal;
-      }
-    }
-  }
-  var remove_tooltips = function() {
-    for (var i = 0; i < tooltips.length; i++) {
-      tooltips.tip.parentNode.removeChild(tooltips.tip);
-    }
-    tooltips = [];
-  };
-  var remove_tooltip = function(elem) {
-    for (var i = 0; i < tooltips.length; i++) {
-      if (tooltips.elem === elem) {
-        tooltips.tip.parentNode.removeChild(tooltips.tip);
-        tooltips.splice(i, 1);
-        return;
-      }
-    }
-  };
-  var create_tooltip = function(elem, text) {
-    var tooltip = document.createElement('div'),
-      arrow = document.createElement('div'),
-      inner = document.createElement('div'), new_tooltip = {};
-    if (elem.type != 'radio' && elem.type != 'checkbox') {
-      tooltip.className = '_error';
-      arrow.className = '_error-arrow';
-      inner.className = '_error-inner';
-      inner.innerHTML = text;
-      tooltip.appendChild(arrow);
-      tooltip.appendChild(inner);
-      elem.parentNode.appendChild(tooltip);
-    } else {
-      tooltip.className = '_error-inner _no_arrow';
-      tooltip.innerHTML = text;
-      elem.parentNode.insertBefore(tooltip, elem);
-      new_tooltip.no_arrow = true;
-    }
-    new_tooltip.tip = tooltip;
-    new_tooltip.elem = elem;
-    tooltips.push(new_tooltip);
-    return new_tooltip;
-  };
-  var resize_tooltip = function(tooltip) {
-    var rect = tooltip.elem.getBoundingClientRect();
-    var doc = document.documentElement,
-      scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
-    if (scrollPosition < 40) {
-      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
-    } else {
-      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
-    }
-  };
-  var resize_tooltips = function() {
-    if (_removed) return;
-    for (var i = 0; i < tooltips.length; i++) {
-      if (!tooltips.no_arrow) resize_tooltip(tooltips);
-    }
-  };
-  var validate_field = function(elem, remove) {
-    var tooltip = null, value = elem.value, no_error = true;
-    remove ? remove_tooltip(elem) : false;
-    if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
-    if (elem.getAttribute('required') !== null) {
-      if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
-        var elems = form_to_submit.elements;
-        if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
-          no_error = elem.checked;
-        }
-        else {
-          no_error = false;
-          for (var i = 0; i < elems.length; i++) {
-            if (elems.checked) no_error = true;
-          }
-        }
-        if (!no_error) {
-          tooltip = create_tooltip(elem, "Please select an option.");
-        }
-      } else if (elem.type =='checkbox') {
-        var elems = form_to_submit.elements, found = false, err = [];
-        no_error = true;
-        for (var i = 0; i < elems.length; i++) {
-          if (elems.getAttribute('required') === null) continue;
-          if (!found && elems !== elem) return true;
-          found = true;
-          elems.className = elems.className.replace(/ ?_has_error ?/g, '');
-          if (!elems.checked) {
-            no_error = false;
-            elems.className = elems.className + ' _has_error';
-            err.push("Checking %s is required".replace("%s", elems.value));
-          }
-        }
-        if (!no_error) {
-          tooltip = create_tooltip(elem, err.join('<br/>'));
-        }
-      } else if (elem.tagName == 'SELECT') {
-        var selected = true;
-        if (elem.multiple) {
-          selected = false;
-          for (var i = 0; i < elem.options.length; i++) {
-            if (elem.options.selected) {
-              selected = true;
-              break;
-            }
-          }
-        } else {
-          for (var i = 0; i < elem.options.length; i++) {
-            if (elem.options.selected
-              && (!elem.options.value
-              || (elem.options.value.match(/\n/g)))
-            ) {
-              selected = false;
-            }
-          }
-        }
-        if (!selected) {
-          elem.className = elem.className + ' _has_error';
-          no_error = false;
-          tooltip = create_tooltip(elem, "Please select an option.");
-        }
-      } else if (value === undefined || value === null || value === '') {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "This field is required.");
-      }
-    }
-    if (no_error && (elem.id == 'field[]' || elem.id == 'ca[11]')) {
-      if (elem.className.includes('phone-input-error')) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-      }
-    }
-    if (no_error && elem.name == 'email') {
-      if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@+(\.+)*(\.{2,})$/i)) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "Enter a valid email address.");
-      }
-    }
-    if (no_error && /date_field/.test(elem.className)) {
-      if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "Enter a valid date.");
-      }
-    }
-    tooltip ? resize_tooltip(tooltip) : false;
-    return no_error;
-  };
-  var needs_validate = function(el) {
-    if(el.getAttribute('required') !== null){
-      return true
-    }
-    if(el.name === 'email' && el.value !== ""){
-      return true
-    }
-    if((el.id == 'field[]' || el.id == 'ca[11]') && el.className.includes('phone-input-error')){
-      return true
-    }
-    return false
-  };
-  var validate_form = function(e) {
-    var err = form_to_submit.querySelector('._form_error'), no_error = true;
-    if (!submitted) {
-      submitted = true;
-      for (var i = 0, len = allInputs.length; i < len; i++) {
-        var input = allInputs;
-        if (needs_validate(input)) {
-          if (input.type == 'tel') {
-            addEvent(input, 'blur', function() {
-              this.value = this.value.trim();
-              validate_field(this, true);
-            });
-          }
-          if (input.type == 'text' || input.type == 'number' || input.type == 'time') {
-            addEvent(input, 'blur', function() {
-              this.value = this.value.trim();
-              validate_field(this, true);
-            });
-            addEvent(input, 'input', function() {
-              validate_field(this, true);
-            });
-          } else if (input.type == 'radio' || input.type == 'checkbox') {
-            (function(el) {
-              var radios = form_to_submit.elements;
-              for (var i = 0; i < radios.length; i++) {
-                addEvent(radios, 'click', function() {
-                  validate_field(el, true);
-                });
-              }
-            })(input);
-          } else if (input.tagName == 'SELECT') {
-            addEvent(input, 'change', function() {
-              validate_field(this, true);
-            });
-          } else if (input.type == 'textarea'){
-            addEvent(input, 'input', function() {
-              validate_field(this, true);
-            });
-          }
-        }
-      }
-    }
-    remove_tooltips();
-    for (var i = 0, len = allInputs.length; i < len; i++) {
-      var elem = allInputs;
-      if (needs_validate(elem)) {
-        if (elem.tagName.toLowerCase() !== "select") {
-          elem.value = elem.value.trim();
-        }
-        validate_field(elem) ? true : no_error = false;
-      }
-    }
-    if (!no_error && e) {
-      e.preventDefault();
-    }
-    resize_tooltips();
-    return no_error;
-  };
-  addEvent(window, 'resize', resize_tooltips);
-  addEvent(window, 'scroll', resize_tooltips);
-  var hidePhoneInputError = function(inputId) {
-    var errorMessage = document.getElementById("error-msg-" + inputId);
-    var input = document.getElementById(inputId);
-    errorMessage.classList.remove("phone-error");
-    errorMessage.classList.add("phone-error-hidden");
-    input.classList.remove("phone-input-error");
-  };
-  var initializePhoneInput = function(input, defaultCountry) {
-    return window.intlTelInput(input, {
-      utilsScript: "https://unpkg.com/intl-tel-input@17.0.18/build/js/utils.js",
-      autoHideDialCode: false,
-      separateDialCode: true,
-      initialCountry: defaultCountry,
-      preferredCountries: []
-    });
-  }
-  var setPhoneInputEventListeners = function(inputId, input, iti) {
-    input.addEventListener('blur', function() {
-      var errorMessage = document.getElementById("error-msg-" + inputId);
-      if (input.value.trim()) {
-        if (iti.isValidNumber()) {
-          iti.setNumber(iti.getNumber());
-          if (errorMessage.classList.contains("phone-error")){
-            hidePhoneInputError(inputId);
-          }
-        } else {
-          showPhoneInputError(inputId)
-        }
-      } else {
-        if (errorMessage.classList.contains("phone-error")){
-          hidePhoneInputError(inputId);
-        }
-      }
-    });
-    input.addEventListener("countrychange", function() {
-      iti.setNumber('');
-    });
-    input.addEventListener("keydown", function(e) {
-      var charCode = (e.which) ? e.which : e.keyCode;
-      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 8) {
-        e.preventDefault();
-      }
-    });
-  };
-  var showPhoneInputError = function(inputId) {
-    var errorMessage = document.getElementById("error-msg-" + inputId);
-    var input = document.getElementById(inputId);
-    errorMessage.classList.add("phone-error");
-    errorMessage.classList.remove("phone-error-hidden");
-    input.classList.add("phone-input-error");
-  };
-  var _form_serialize = function(form){if(!form||form.nodeName!=="FORM"){return }var i,j,q=[];for(i=0;i<form.elements.length;i++){if(form.elements.name===""){continue}switch(form.elements.nodeName){case"INPUT":switch(form.elements.type){case"tel":q.push(form.elements.name+"="+encodeURIComponent(form.elements.previousSibling.querySelector('div.iti__selected-dial-code').innerText)+encodeURIComponent(" ")+encodeURIComponent(form.elements.value));break;case"text":case"number":case"date":case"time":case"hidden":case"password":case"button":case"reset":case"submit":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"checkbox":case"radio":if(form.elements.checked){q.push(form.elements.name+"="+encodeURIComponent(form.elements.value))}break;case"file":break}break;case"TEXTAREA":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"SELECT":switch(form.elements.type){case"select-one":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"select-multiple":for(j=0;j<form.elements.options.length;j++){if(form.elements.options.selected){q.push(form.elements.name+"="+encodeURIComponent(form.elements.options.value))}}break}break;case"BUTTON":switch(form.elements.type){case"reset":case"submit":case"button":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break}break}}return q.join("&")};
-  const formSupportsPost = false;
-  var form_submit = function(e) {
-    e.preventDefault();
-    if (validate_form()) {
-      // use this trick to get the submit button & disable it using plain javascript
-      var submitButton = e.target.querySelector('#_form_19_submit');
-      submitButton.disabled = true;
-      submitButton.classList.add('processing');
-            var serialized = _form_serialize(
-        document.getElementById('_form_19_')
-      ).replace(/%0A/g, '\\n');
-      var err = form_to_submit.querySelector('._form_error');
-      err ? err.parentNode.removeChild(err) : false;
-      async function submitForm() {
-       var formData = new FormData();
-       const searchParams = new URLSearchParams(serialized);
-       searchParams.forEach((value, key) => {
-        formData.append(key, value);
-       });
-       const response = await fetch('https://cabletv.activehosted.com/proc.php?jsonp=true', {
-        headers: {
-         "Accept": "application/json"
-        },
-        body: formData,
-        method: "POST"
-       });
-       return response.json();
-      }
-      if (formSupportsPost) {
-       submitForm().then((data) => {
-        eval(data.js);
-       });
-      } else {
-       _load_script('https://cabletv.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
-      }
-    }
-    return false;
-  };
-  addEvent(form_to_submit, 'submit', form_submit);
-})();
-</script>
-<p class="vc-email-subscribe__disclaimer">
-          By signing up, you agree to our <a href="/privacy-policy-terms-and-conditions">Privacy Policy &amp; Terms and Conditions</a>.
-        </p>
-</div>
-</div>
-</div>
-</div>
-</div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>What’s next for Skydance?</h2><p>David Ellison, the mastermind behind the whole merger, is staying on as Skydance’s CEO. This comes at no surprise — this is just the next step in his plan to create a media empire. (<a href="https://deadline.com/2026/10/skydance-extends-employment-contracts-ellison-top-executives-1237147747/" target="_blank">He also reportedly gave himself a $5 million raise in the process</a>). Ellison was the CEO of Skydance Media since he launched it as a production company in 2006, and oversaw the company’s acquisition of Paramount in 2025.</p><p>Ellison didn’t wait very long before setting his sights on another media giant: Warner Bros. Discovery. That’s the deal that just went through, creating a new company that he’s also calling “Skydance.” But this time, Ellison is bringing on some help to run the (some would say, overbloated) conglomerate.</p><p>Ynon Kreiz will serve as Skydance’s Co-CEO. Before today, Kreiz was the CEO at Mattel, which means he had a hand in Warner Bros.’s live-action “<a href="/how-to-watch/barbie-movies">Barbie</a>” film. With his successful track record and pre-existing relationship with Warner Bros., it’s easy to see how Kreiz was a natural fit to help Ellison with his company’s growing pains.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>What’s next for DC?</h2><p><a href="/hbo-max/dc-universe">DC Studios</a>, Warner Bros.’s powerhouse superhero brand, has been in a weird reboot state for the past few years. The new creative direction is still in its infancy, having started with the 2025 “Superman” movie.</p><p>It looks like this merger will keep that new creative direction intact, rather than scrapping it for something else like some fans feared. James Gunn, the (formerly Marvel-aligned) director currently in charge of the DC films, will remain as Skydance’s Co-Chairman of DC Studios alongside Peter Safran.</p><p>Peter Safran was involved with DC Studios before the reboot (producing “Aquaman” and “Shazam!”), and has run DC Studios alongside James Gunn since 2022.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>What’s next for Paramount+ and HBO Max?</h2><p>Both Paramount+ and HBO Max now fall under Skydance’s Direct-To-Consumer (DTC) division, which is run by CCO Casey Bloys. Bloys has been in charge of HBO programming since 2016 (so you can probably at least partially blame him for all of those HBO Max rebrands).</p><p>But it’s unlikely that Paramount+ and HBO Max will remain separate services for very long. In fact, Skydance’s own press release states that its DTC streaming services will “unify into a single service over time.”</p><p>Of course, the next logical question you may have is about the service’s cost. Twice the content probably means twice the cost, right? But Skydance wants to make money; they don’t want to scare away existing subscribers by inflating their bills. </p><p>Some outlets <a href="https://deadline.com/2026/10/skydance-hbo-max-paramount-streaming-bundle-1237145362/" target="_blank">have hypothesized that Skydance may keep its services separate but offer a bundle discount to subscribe together</a>, which would solve the problem, but I think that contradicts what this new press release says. I think that Skydance will aim for a “sweet spot” price point instead, trying to remain competitive with Netflix and The Disney Bundle. </p><p>(Note, The Disney Bundle itself will not remain a bundle for very long, as Disney+ and Hulu are due to merge by the end of the year. Just another piece of evidence indicating that single services are the new vogue over bundles).</p><p>Last week, we conducted a couple of polls amongst our readers to figure out what that “sweet spot” price point could be. <a href="/news/paramount-hbo-max-skydance-streaming-cost">Check out our full writeup for more details</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>What’s next for CNN and CBS News?</h2><p>Both CNN Worldwide and CBS News fall under the same News division within Skydance, but each will have their own leadership.</p><p>Mark Thompson will continue as the Editor-in-Chief of CNN Worldwide. Thompson previously ran the BBC, where he set out to make the network, in his view, less biased against the Conservative Party, taking issue with <a href="https://www.telegraph.co.uk/culture/tvandradio/bbc/7976318/BBC-was-biased-against-Thatcher-admits-Mark-Thompson.html" target="_blank">how its journalists criticized former Prime Minister Margaret Thatcher</a>. He became the CEO of CNN in 2023 under David Zaslav’s leadership.</p><p>Bari Weiss will continue as the Editor-in-Chief of CBS News, a position she’s held since October 2025. She’s been known for her criticism of progressive viewpoints, and especially pushing back against women’s rights movements.</p><p>One of the chief concerns around the Skydance deal was the possible danger of letting one company manage two of America’s biggest news networks. To mitigate these concerns, <a href="/news/paramount-california-settlement-september-2026">a settlement with 12 U.S. states</a> made Skydance promise to create a news ethics board. </p><p>The board must contain five journalists, and no two members can be a part of the same political party. Hypothetically, this board would prevent CNN and CBS News from becoming too biased in their reporting, as many feared when Ellison began creating his new media empire. (As we’ve reported in the past, <a href="/news/netflix-leaves-warner-bros-deal">President Donald Trump has backed Ellison’s deal from the beginning</a>, leading some to wonder if it would benefit him and his party.)</p><p>It’s unclear right now whether this ethics board will succeed in its mission — especially with two conservative and somewhat controversial figures at the helm of each news network.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>In this article</h2><h3><a href="/paramount-plus">Paramount+</a></h3><p><strong></strong>The company formerly known as Paramount Skydance is bringing Paramount+ to the table.</p></div></div><div class="row"><div class="columns small-12 medium-24 large-9"><h3><a href="/hbo-max">HBO Max</a></h3><p><strong></strong>The company formerly known as Warner Bros. Discovery is bringing HBO Max to the table.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>Who we are</h2><p>At CableTV.com, we’re not just entertainment experts — we’re also fans just like you. So while our first priority is reporting the best and most accurate information about TV providers and streaming services, we also love talking about our favorite shows and movies. So you can count on us to share our honest opinions and unbridled enthusiasm. For more on our process, check out our <a href="/how-we-rank">Editorial Policy</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><p class="h3">More industry news for TV fans</p><ul>
-<li><a href="/news/paramount-hbo-max-skydance-streaming-cost">Poll: Will the Skydance Streamer Be Too Expensive?</a></li>
-<li><a href="/news/fubo-adds-four-new-nhl-regional-sports-networks">Fubo Adds New NHL Regional Sports Networks</a></li>
-<li><a href="/news/spectrum-cox-merger-price-increase-question">Spectrum/Cox Merger Questions Answered</a></li>
-</ul></div></div>
-]]></content:encoded>
-      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/10/Animaniacs1200x630.webp"/>
     </item>
   </channel>
 </rss>
