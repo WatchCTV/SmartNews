@@ -4,7 +4,7 @@
     <title>Entertainment News | CableTV.com</title>
     <link>https://www.cabletv.com/category/news</link>
     <description>Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming.</description>
-    <lastBuildDate>Thu, 29 Oct 2026 18:03:12 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 03:35:45 +0000</lastBuildDate>
     <language>en-US</language>
     <atom:link href="https://www.cabletv.com/category/news/feed" rel="self" type="application/rss+xml"/>
     <sy:updatePeriod>hourly</sy:updatePeriod>
@@ -19,622 +19,6 @@
       <width>32</width>
       <height>32</height>
     </image>
-    <item>
-      <title>Apple’s $2,000 iPhone Duo Is Out: Here Are the Deals That Cut the Price in Half</title>
-      <link>https://www.cabletv.com/news/best-iphone-duo-deals</link>
-      <pubDate>Wed, 28 Oct 2026 12:49:23 +0000</pubDate>
-      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
-      <guid isPermaLink="false">https://www.cabletv.com/news/best-iphone-duo-deals</guid>
-      <description><![CDATA[<p>Looking for the best iPhone Duo deals? See how AT&T, T-Mobile, and Xfinity cut up to $1,200 off, plus top trade-ins for the new iPhone 18s.</p>]]></description>
-      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/10/iPhone-Duo-deals.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>You don’t need to pay two grand for the latest iPhone</h2><p>
-An iPhone that costs more than most MacBooks? Who wants to fork over that much money for a smartphone?
-
-Well, turns out plenty of people — even when <a href="https://arstechnica.com/gadgets/2026/10/some-iphone-duo-screens-are-already-failing/" rel="noopener" target="_blank">some Duo phone screens are already breaking</a>.
-
-If the Duo still interests you (that folding screen <em>is</em> pretty slick regardless), or you just want to upgrade to the new iPhone 18 line, you’re in the right place. Major mobile carriers and internet provider MVNOs are all rolling out big promos that knock up to $1,200 off the $2,000 iPhone Duo, and can even get you an iPhone 18 Pro on the house.
-
-Keep reading for my roundup of the best carrier offers to help you score a new iPhone without paying full price.</p></div></div><div class="row section--padding-bottom-30"><div class="columns small-12 medium-12 large-12">
-<div class="row align-center vc-email-subscribe__wrapper">
-<div class="columns small-12 large-6">
-<div class="callout-area">
-
-<div class="callout-text">
-<h3>Hook it up with the hottest in TV and internet</h3> <p>Stay tuned for the latest deals, show premieres, and more by signing up for our newsletter.</p> </div>
-</div>
-</div>
-<div class="columns small-12 large-6">
-<div class="vc-email-subscribe">
-<div class="vc-email-subscribe__inline-form">
-<form action="https://cabletv.activehosted.com/proc.php" class="_form _form_19 _inline-form" id="_form_19_" method="POST">
-<input name="u" type="hidden" value="19"/>
-<input name="f" type="hidden" value="19"/>
-<input name="s" type="hidden"/>
-<input name="c" type="hidden" value="0"/>
-<input name="m" type="hidden" value="0"/>
-<input name="act" type="hidden" value="sub"/>
-<input name="v" type="hidden" value="2"/>
-<input name="or" type="hidden" value="8b2db1a6b150094e4ac73dc0ec08c9b4"/>
-<input id="ls" name="ls" type="hidden" value="1"/>
-<input id="nlbox_2" name="nlbox[]" type="hidden" value="2"/><input id="nlbox_3" name="nlbox[]" type="hidden" value="3"/><input id="nlbox_5" name="nlbox[]" type="hidden" value="5"/><input id="nlbox_16" name="nlbox[]" type="hidden" value="16"/><input id="nlbox_17" name="nlbox[]" type="hidden" value="17"/> <div class="_form-content">
-<div class="_field-wrapper">
-<input class="field-email" id="email" name="email" placeholder="Email Address" required="" type="text"/>
-<label class="show-for-sr" for="email">Email*</label>
-</div>
-<div class="_field-wrapper">
-<input class="field-zip" id="field[1]" maxlength="5" minlength="5" name="field[1]" pattern="[0-9]{5}" placeholder="Zip Code" required="" type="text"/>
-<label class="show-for-sr" for="field[1]">Zip code*</label>
-</div>
-<div class="_button-wrapper _inline-style">
-<button class="button button--generic" id="_form_19_submit" type="submit">
-        Sign Up
-      </button>
-</div>
-
-</div>
-
-</form>
-<script type="text/javascript">
-window.cfields = {"1":"zip_code"};
-window._show_thank_you = function(id, message, trackcmp_url, email) {
-  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
-  form.querySelector('._form-content').style.display = 'none';
-  thank_you.innerHTML = message;
-  thank_you.style.display = 'block';
-  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
-  var visitorObject = window;
-  if (email && typeof visitorObject !== 'undefined') {
-    visitorObject('setEmail', email);
-    visitorObject('update');
-  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
-    // Site tracking URL to use after inline form submission.
-    _load_script(trackcmp_url);
-  }
-  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
-};
-window._show_error = function(id, message, html) {
-  var form = document.getElementById('_form_' + id + '_'),
-    err = document.createElement('div'),
-    button = form.querySelector('button'),
-    old_error = form.querySelector('._form_error');
-  if (old_error) old_error.parentNode.removeChild(old_error);
-  err.innerHTML = message;
-  err.className = '_error-inner _form_error _no_arrow';
-  var wrapper = document.createElement('div');
-  wrapper.className = '_form-inner';
-  wrapper.appendChild(err);
-  button.parentNode.insertBefore(wrapper, button);
-  var submitButton = form.querySelector('');
-  submitButton.disabled = false;
-  submitButton.classList.remove('processing');
-  if (html) {
-    var div = document.createElement('div');
-    div.className = '_error-html';
-    div.innerHTML = html;
-    err.appendChild(div);
-  }
-};
-window._load_script = function(url, callback, isSubmit) {
-  var head = document.querySelector('head'), script = document.createElement('script'), r = false;
-  var submitButton = document.querySelector('#_form_19_submit');
-  script.type = 'text/javascript';
-  script.charset = 'utf-8';
-  script.src = url;
-  if (callback) {
-    script.onload = script.onreadystatechange = function() {
-      if (!r && (!this.readyState || this.readyState == 'complete')) {
-        r = true;
-        callback();
-      }
-    };
-  }
-  script.onerror = function() {
-    if (isSubmit) {
-      if (script.src.length > 10000) {
-        _show_error("19", "Sorry, your submission failed. Please shorten your responses and try again.");
-      } else {
-        _show_error("19", "Sorry, your submission failed. Please try again.");
-      }
-      submitButton.disabled = false;
-      submitButton.classList.remove('processing');
-    }
-  }
-  head.appendChild(script);
-};
-(function() {
-  if (window.location.search.search("excludeform") !== -1) return false;
-  var getCookie = function(name) {
-    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
-    return match ? match[2] : null;
-  }
-  var setCookie = function(name, value) {
-    var now = new Date();
-    var time = now.getTime();
-    var expireTime = time + 1000 * 60 * 60 * 24 * 365;
-    now.setTime(expireTime);
-    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';
-  }
-      var addEvent = function(element, event, func) {
-    if (element.addEventListener) {
-      element.addEventListener(event, func);
-    } else {
-      var oldFunc = element['on' + event];
-      element['on' + event] = function() {
-        oldFunc.apply(this, arguments);
-        func.apply(this, arguments);
-      };
-    }
-  }
-  var _removed = false;
-    var form_to_submit = document.getElementById('_form_19_');
-  var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
-  var getUrlParam = function(name) {
-    var params = new URLSearchParams(window.location.search);
-    return params.get(name) || false;
-  };
-  var acctDateFormat = "%m/%d/%Y";
-  var getNormalizedDate = function(date, acctFormat) {
-    var decodedDate = decodeURIComponent(date);
-    if (acctFormat && acctFormat.match(/(%d|%e).*%m/gi) !== null) {
-      return decodedDate.replace(/(\d{2}).*(\d{2}).*(\d{4})/g, '$3-$2-$1');
-    } else if (Date.parse(decodedDate)) {
-      var dateObj = new Date(decodedDate);
-      var year = dateObj.getFullYear();
-      var month = dateObj.getMonth() + 1;
-      var day = dateObj.getDate();
-      return `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
-    }
-    return false;
-  };
-  var getNormalizedTime = function(time) {
-    var hour, minutes;
-    var decodedTime = decodeURIComponent(time);
-    var timeParts = Array.from(decodedTime.matchAll(/(\d{1,2}):(\d{1,2})\W*()?/gm))[0];
-    if (timeParts[3]) { // 12 hour format
-      var isPM = timeParts[3].toLowerCase() === 'pm';
-      if (isPM) {
-        hour = parseInt(timeParts[1]) === 12 ? '12' : `${parseInt(timeParts[1]) + 12}`;
-      } else {
-        hour = parseInt(timeParts[1]) === 12 ? '0' : timeParts[1];
-      }
-    } else { // 24 hour format
-      hour = timeParts[1];
-    }
-    var normalizedHour = parseInt(hour) < 10 ? `0${parseInt(hour)}` : hour;
-    var minutes = timeParts[2];
-    return `${normalizedHour}:${minutes}`;
-  };
-  for (var i = 0; i < allInputs.length; i++) {
-    var regexStr = "field\\[(\\d+)\\]";
-    var results = new RegExp(regexStr).exec(allInputs.name);
-    if (results != undefined) {
-      allInputs.dataset.name = allInputs.name.match(/\$/)
-        ? `${window.cfields]}_time`
-        : window.cfields];
-    } else {
-      allInputs.dataset.name = allInputs.name;
-    }
-    var fieldVal = getUrlParam(allInputs.dataset.name);
-    if (fieldVal) {
-      if (allInputs.dataset.autofill === "false") {
-        continue;
-      }
-      if (allInputs.type == "radio" || allInputs.type == "checkbox") {
-        if (allInputs.value == fieldVal) {
-          allInputs.checked = true;
-        }
-      } else if (allInputs.type == "date") {
-        allInputs.value = getNormalizedDate(fieldVal, acctDateFormat);
-      } else if (allInputs.type == "time") {
-        allInputs.value = getNormalizedTime(fieldVal);
-      } else {
-        allInputs.value = fieldVal;
-      }
-    }
-  }
-  var remove_tooltips = function() {
-    for (var i = 0; i < tooltips.length; i++) {
-      tooltips.tip.parentNode.removeChild(tooltips.tip);
-    }
-    tooltips = [];
-  };
-  var remove_tooltip = function(elem) {
-    for (var i = 0; i < tooltips.length; i++) {
-      if (tooltips.elem === elem) {
-        tooltips.tip.parentNode.removeChild(tooltips.tip);
-        tooltips.splice(i, 1);
-        return;
-      }
-    }
-  };
-  var create_tooltip = function(elem, text) {
-    var tooltip = document.createElement('div'),
-      arrow = document.createElement('div'),
-      inner = document.createElement('div'), new_tooltip = {};
-    if (elem.type != 'radio' && elem.type != 'checkbox') {
-      tooltip.className = '_error';
-      arrow.className = '_error-arrow';
-      inner.className = '_error-inner';
-      inner.innerHTML = text;
-      tooltip.appendChild(arrow);
-      tooltip.appendChild(inner);
-      elem.parentNode.appendChild(tooltip);
-    } else {
-      tooltip.className = '_error-inner _no_arrow';
-      tooltip.innerHTML = text;
-      elem.parentNode.insertBefore(tooltip, elem);
-      new_tooltip.no_arrow = true;
-    }
-    new_tooltip.tip = tooltip;
-    new_tooltip.elem = elem;
-    tooltips.push(new_tooltip);
-    return new_tooltip;
-  };
-  var resize_tooltip = function(tooltip) {
-    var rect = tooltip.elem.getBoundingClientRect();
-    var doc = document.documentElement,
-      scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
-    if (scrollPosition < 40) {
-      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
-    } else {
-      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
-    }
-  };
-  var resize_tooltips = function() {
-    if (_removed) return;
-    for (var i = 0; i < tooltips.length; i++) {
-      if (!tooltips.no_arrow) resize_tooltip(tooltips);
-    }
-  };
-  var validate_field = function(elem, remove) {
-    var tooltip = null, value = elem.value, no_error = true;
-    remove ? remove_tooltip(elem) : false;
-    if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
-    if (elem.getAttribute('required') !== null) {
-      if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
-        var elems = form_to_submit.elements;
-        if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
-          no_error = elem.checked;
-        }
-        else {
-          no_error = false;
-          for (var i = 0; i < elems.length; i++) {
-            if (elems.checked) no_error = true;
-          }
-        }
-        if (!no_error) {
-          tooltip = create_tooltip(elem, "Please select an option.");
-        }
-      } else if (elem.type =='checkbox') {
-        var elems = form_to_submit.elements, found = false, err = [];
-        no_error = true;
-        for (var i = 0; i < elems.length; i++) {
-          if (elems.getAttribute('required') === null) continue;
-          if (!found && elems !== elem) return true;
-          found = true;
-          elems.className = elems.className.replace(/ ?_has_error ?/g, '');
-          if (!elems.checked) {
-            no_error = false;
-            elems.className = elems.className + ' _has_error';
-            err.push("Checking %s is required".replace("%s", elems.value));
-          }
-        }
-        if (!no_error) {
-          tooltip = create_tooltip(elem, err.join('<br/>'));
-        }
-      } else if (elem.tagName == 'SELECT') {
-        var selected = true;
-        if (elem.multiple) {
-          selected = false;
-          for (var i = 0; i < elem.options.length; i++) {
-            if (elem.options.selected) {
-              selected = true;
-              break;
-            }
-          }
-        } else {
-          for (var i = 0; i < elem.options.length; i++) {
-            if (elem.options.selected
-              && (!elem.options.value
-              || (elem.options.value.match(/\n/g)))
-            ) {
-              selected = false;
-            }
-          }
-        }
-        if (!selected) {
-          elem.className = elem.className + ' _has_error';
-          no_error = false;
-          tooltip = create_tooltip(elem, "Please select an option.");
-        }
-      } else if (value === undefined || value === null || value === '') {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "This field is required.");
-      }
-    }
-    if (no_error && (elem.id == 'field[]' || elem.id == 'ca[11]')) {
-      if (elem.className.includes('phone-input-error')) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-      }
-    }
-    if (no_error && elem.name == 'email') {
-      if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@+(\.+)*(\.{2,})$/i)) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "Enter a valid email address.");
-      }
-    }
-    if (no_error && /date_field/.test(elem.className)) {
-      if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "Enter a valid date.");
-      }
-    }
-    tooltip ? resize_tooltip(tooltip) : false;
-    return no_error;
-  };
-  var needs_validate = function(el) {
-    if(el.getAttribute('required') !== null){
-      return true
-    }
-    if(el.name === 'email' && el.value !== ""){
-      return true
-    }
-    if((el.id == 'field[]' || el.id == 'ca[11]') && el.className.includes('phone-input-error')){
-      return true
-    }
-    return false
-  };
-  var validate_form = function(e) {
-    var err = form_to_submit.querySelector('._form_error'), no_error = true;
-    if (!submitted) {
-      submitted = true;
-      for (var i = 0, len = allInputs.length; i < len; i++) {
-        var input = allInputs;
-        if (needs_validate(input)) {
-          if (input.type == 'tel') {
-            addEvent(input, 'blur', function() {
-              this.value = this.value.trim();
-              validate_field(this, true);
-            });
-          }
-          if (input.type == 'text' || input.type == 'number' || input.type == 'time') {
-            addEvent(input, 'blur', function() {
-              this.value = this.value.trim();
-              validate_field(this, true);
-            });
-            addEvent(input, 'input', function() {
-              validate_field(this, true);
-            });
-          } else if (input.type == 'radio' || input.type == 'checkbox') {
-            (function(el) {
-              var radios = form_to_submit.elements;
-              for (var i = 0; i < radios.length; i++) {
-                addEvent(radios, 'click', function() {
-                  validate_field(el, true);
-                });
-              }
-            })(input);
-          } else if (input.tagName == 'SELECT') {
-            addEvent(input, 'change', function() {
-              validate_field(this, true);
-            });
-          } else if (input.type == 'textarea'){
-            addEvent(input, 'input', function() {
-              validate_field(this, true);
-            });
-          }
-        }
-      }
-    }
-    remove_tooltips();
-    for (var i = 0, len = allInputs.length; i < len; i++) {
-      var elem = allInputs;
-      if (needs_validate(elem)) {
-        if (elem.tagName.toLowerCase() !== "select") {
-          elem.value = elem.value.trim();
-        }
-        validate_field(elem) ? true : no_error = false;
-      }
-    }
-    if (!no_error && e) {
-      e.preventDefault();
-    }
-    resize_tooltips();
-    return no_error;
-  };
-  addEvent(window, 'resize', resize_tooltips);
-  addEvent(window, 'scroll', resize_tooltips);
-  var hidePhoneInputError = function(inputId) {
-    var errorMessage = document.getElementById("error-msg-" + inputId);
-    var input = document.getElementById(inputId);
-    errorMessage.classList.remove("phone-error");
-    errorMessage.classList.add("phone-error-hidden");
-    input.classList.remove("phone-input-error");
-  };
-  var initializePhoneInput = function(input, defaultCountry) {
-    return window.intlTelInput(input, {
-      utilsScript: "https://unpkg.com/intl-tel-input@17.0.18/build/js/utils.js",
-      autoHideDialCode: false,
-      separateDialCode: true,
-      initialCountry: defaultCountry,
-      preferredCountries: []
-    });
-  }
-  var setPhoneInputEventListeners = function(inputId, input, iti) {
-    input.addEventListener('blur', function() {
-      var errorMessage = document.getElementById("error-msg-" + inputId);
-      if (input.value.trim()) {
-        if (iti.isValidNumber()) {
-          iti.setNumber(iti.getNumber());
-          if (errorMessage.classList.contains("phone-error")){
-            hidePhoneInputError(inputId);
-          }
-        } else {
-          showPhoneInputError(inputId)
-        }
-      } else {
-        if (errorMessage.classList.contains("phone-error")){
-          hidePhoneInputError(inputId);
-        }
-      }
-    });
-    input.addEventListener("countrychange", function() {
-      iti.setNumber('');
-    });
-    input.addEventListener("keydown", function(e) {
-      var charCode = (e.which) ? e.which : e.keyCode;
-      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 8) {
-        e.preventDefault();
-      }
-    });
-  };
-  var showPhoneInputError = function(inputId) {
-    var errorMessage = document.getElementById("error-msg-" + inputId);
-    var input = document.getElementById(inputId);
-    errorMessage.classList.add("phone-error");
-    errorMessage.classList.remove("phone-error-hidden");
-    input.classList.add("phone-input-error");
-  };
-  var _form_serialize = function(form){if(!form||form.nodeName!=="FORM"){return }var i,j,q=[];for(i=0;i<form.elements.length;i++){if(form.elements.name===""){continue}switch(form.elements.nodeName){case"INPUT":switch(form.elements.type){case"tel":q.push(form.elements.name+"="+encodeURIComponent(form.elements.previousSibling.querySelector('div.iti__selected-dial-code').innerText)+encodeURIComponent(" ")+encodeURIComponent(form.elements.value));break;case"text":case"number":case"date":case"time":case"hidden":case"password":case"button":case"reset":case"submit":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"checkbox":case"radio":if(form.elements.checked){q.push(form.elements.name+"="+encodeURIComponent(form.elements.value))}break;case"file":break}break;case"TEXTAREA":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"SELECT":switch(form.elements.type){case"select-one":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"select-multiple":for(j=0;j<form.elements.options.length;j++){if(form.elements.options.selected){q.push(form.elements.name+"="+encodeURIComponent(form.elements.options.value))}}break}break;case"BUTTON":switch(form.elements.type){case"reset":case"submit":case"button":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break}break}}return q.join("&")};
-  const formSupportsPost = false;
-  var form_submit = function(e) {
-    e.preventDefault();
-    if (validate_form()) {
-      // use this trick to get the submit button & disable it using plain javascript
-      var submitButton = e.target.querySelector('#_form_19_submit');
-      submitButton.disabled = true;
-      submitButton.classList.add('processing');
-            var serialized = _form_serialize(
-        document.getElementById('_form_19_')
-      ).replace(/%0A/g, '\\n');
-      var err = form_to_submit.querySelector('._form_error');
-      err ? err.parentNode.removeChild(err) : false;
-      async function submitForm() {
-       var formData = new FormData();
-       const searchParams = new URLSearchParams(serialized);
-       searchParams.forEach((value, key) => {
-        formData.append(key, value);
-       });
-       const response = await fetch('https://cabletv.activehosted.com/proc.php?jsonp=true', {
-        headers: {
-         "Accept": "application/json"
-        },
-        body: formData,
-        method: "POST"
-       });
-       return response.json();
-      }
-      if (formSupportsPost) {
-       submitForm().then((data) => {
-        eval(data.js);
-       });
-      } else {
-       _load_script('https://cabletv.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
-      }
-    }
-    return false;
-  };
-  addEvent(form_to_submit, 'submit', form_submit);
-})();
-</script>
-<p class="vc-email-subscribe__disclaimer">
-          By signing up, you agree to our <a href="/privacy-policy-terms-and-conditions">Privacy Policy &amp; Terms and Conditions</a>.
-        </p>
-</div>
-</div>
-</div>
-</div>
-</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>The best iPhone Duo and iPhone 18 deals right now</h2><p>
-Whether you’re going for the flashy foldable or sticking to the classic Pro series, carriers are leaning big into new iPhone promos to lure you in. Just keep in mind that most of these deals require some sort of trade-in, new line, and/or internet bundle to score the best discount.
-
-Depending on whether you’re trading in your current phone or adding mobile service to your existing internet plan, you can get up to $1,200 in credits toward the Duo or snag an iPhone 18 Pro for no cost.
-
-Here’s my roundup of all the best new iPhone deals currently available:
-</p><ul>
-<li><a href="/att/deals"><strong>AT&amp;T</strong></a>: Get the iPhone 18 Pro for $0 or save up to $1,200 on the new iPhone Duo with an eligible trade-in.</li>
-<li><a href="/optimum/deals"><strong>Optimum</strong></a>: Score an iPhone 18 Pro when you add a mobile line to qualifying internet bundles.</li>
-<li><a href="/spectrum/deals"><strong>Spectrum</strong></a>: Save $600 on the iPhone 18 Pro or Pro Max when paired with an Unlimited Plus Premium plan and a trade-in.</li>
-<li><a href="/tmobile/deals"><strong>T-Mobile</strong></a>: Save $1,000 on the iPhone Duo ($0 upfront) with a new line and port-in on an Experience Beyond plan; Get $1,000 off the iPhone 18 Pro ($0 upfront); Get the iPhone 18 Pro Max for under $100 when you trade in or switch on an Experience Beyond plan.</li>
-<li><a href="/xfinity/promotions"><strong>Xfinity</strong></a>: Save up to $1,000 on the iPhone Duo or up to $930 on your choice of iPhone with a qualifying new line, trade-in, and device payment plan.</li>
-</ul></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>In this article</h2><h3><a href="/att/deals">AT&amp;T</a></h3><p>
-AT&amp;T’s iPhone deals can get you the iPhone 18 Pro for free.</p></div></div><div class="row"><div class="columns small-12 medium-24 large-9">
-<h3><a href="/optimum/deals">Optimum</a></h3><p>
-Optimum’s also handing out free iPhone 18 Pros with qualifying <a href="/optimum/bundles">Internet and Mobile bundles</a>.</p></div></div><div class="row"><div class="columns small-12 medium-24 large-9">
-<h3><a href="/spectrum/deals">Spectrum</a></h3><p>
-Spectrum’s best iPhone deal is $600 off the new iPhone 18 Pro or Pro Max.</p></div></div><div class="row"><div class="columns small-12 medium-24 large-9">
-<h3><a href="/tmobile/deals">T-Mobile</a></h3><p>
-T-Mobile is offering savings on the iPhone Duo, iPhone 18 Pro, and iPhone Pro Max.</p></div></div><div class="row"><div class="columns small-12 medium-24 large-9">
-<h3><a href="/xfinity/promotions">Xfinity</a></h3><p>
-Xfinity is offering up to $1,000 off the new iPhone Duo.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>Who we are</h2><p>
-At CableTV.com, we’re not just entertainment experts — we’re also fans just like you. So while our first priority is reporting the best and most accurate information about TV providers and streaming services, we also love talking about our favorite shows and movies. So you can count on us to share our honest opinions and unbridled enthusiasm.
-
-For more on our process, check out our <a href="/how-we-rank">Editorial Policy</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>More industry news from CableTV.com</h2><p>
-<div class="row margin--top-15"><div class="columns small-12 medium-24 large-4">
-<div class="post-block">
-<div class="post-block--featured-image">
-<a href="https://www.cabletv.com/news/optimum-prepares-for-bankruptcy"><img alt='Optimum logo and the text "Optimum Bankruptcy Explained for Customers" above it in front of a grey background.' class="attachment-post-thumbnail size-post-thumbnail wp-post-image" decoding="async" loading="lazy" sizes="auto, (max-width: 1280px) 100vw, 1280px" src="https://www.cabletv.com/app/uploads/2026/10/CTV_Optimum-Bankruptcy.webp" srcset="https://www.cabletv.com/app/uploads/2026/10/CTV_Optimum-Bankruptcy.webp 1280w, https://www.cabletv.com/app/uploads/2026/10/CTV_Optimum-Bankruptcy-600x338.webp 600w, https://www.cabletv.com/app/uploads/2026/10/CTV_Optimum-Bankruptcy-1200x675.webp 1200w, https://www.cabletv.com/app/uploads/2026/10/CTV_Optimum-Bankruptcy-900x506.webp 900w, https://www.cabletv.com/app/uploads/2026/10/CTV_Optimum-Bankruptcy-300x169.webp 300w"/></a> </div>
-<div class="post-block--title">
-<h4><a href="https://www.cabletv.com/news/optimum-prepares-for-bankruptcy">Optimum Prepares to File for Bankruptcy — What It Means for Customers</a></h4>
-</div>
-<div class="post-block--author-area">
-<div class="author-area--image-link">
-<a href="https://www.cabletv.com/author/mike-strayer">
-<img alt="Mike Strayer's Author Page" class="avatar avatar-28 photo" data-src="https://secure.gravatar.com/avatar/033e7dc1935db2a0499ae6eba2b23c47e54b903cb90c2e2f9aa42c1b01f5b200?s=28&amp;d=mm&amp;r=g" height="28" loading="lazy" srcset="https://secure.gravatar.com/avatar/033e7dc1935db2a0499ae6eba2b23c47e54b903cb90c2e2f9aa42c1b01f5b200?s=56&amp;d=mm&amp;r=g 2x" width="28"/> </a>
-</div>
-<div class="author-area--name">By <a class="author url fn" href="https://www.cabletv.com/author/mike-strayer" rel="author" title="Posts by Mike Strayer">Mike Strayer</a></div>
-<div class="author-area--date">Oct 28, 2026</div>
-</div>
-<p class="post-block--excerpt">
-          The national ISP Optimum will file for Chapter 11 bankruptcy this fall, but what does that mean for customers?        </p>
-</div>
-</div><div class="columns small-12 medium-24 large-4">
-<div class="post-block">
-<div class="post-block--featured-image">
-<a href="https://www.cabletv.com/news/what-is-smart-tv-vibes-coding"><img alt="a screenshot of the CleanYourTV homepage" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" decoding="async" loading="lazy" sizes="auto, (max-width: 1200px) 100vw, 1200px" src="https://www.cabletv.com/app/uploads/2026/10/TV-Vibescoding-Featured.webp" srcset="https://www.cabletv.com/app/uploads/2026/10/TV-Vibescoding-Featured.webp 1200w, https://www.cabletv.com/app/uploads/2026/10/TV-Vibescoding-Featured-600x315.webp 600w, https://www.cabletv.com/app/uploads/2026/10/TV-Vibescoding-Featured-900x473.webp 900w, https://www.cabletv.com/app/uploads/2026/10/TV-Vibescoding-Featured-300x158.webp 300w"/></a> </div>
-<div class="post-block--title">
-<h4><a href="https://www.cabletv.com/news/what-is-smart-tv-vibes-coding">Tired of TV Ad Tracking? Why People Are Using AI To Dumb Down Smart TVs</a></h4>
-</div>
-<div class="post-block--author-area">
-<div class="author-area--image-link">
-<a href="https://www.cabletv.com/author/eric-chiu">
-<img alt="Eric Chiu's Author Page" class="avatar avatar-28 photo" data-src="https://secure.gravatar.com/avatar/12d5c08b1dc79e90149a6ce76238abf753e5974a4179a149905391a0b83d6546?s=28&amp;d=mm&amp;r=g" height="28" loading="lazy" srcset="https://secure.gravatar.com/avatar/12d5c08b1dc79e90149a6ce76238abf753e5974a4179a149905391a0b83d6546?s=56&amp;d=mm&amp;r=g 2x" width="28"/> </a>
-</div>
-<div class="author-area--name">By <a class="author url fn" href="https://www.cabletv.com/author/eric-chiu" rel="author" title="Posts by Eric Chiu">Eric Chiu</a></div>
-<div class="author-area--date">Oct 28, 2026</div>
-</div>
-<p class="post-block--excerpt">
-          Sick of ads on your TV operating system? Here's why people are using AI vibescoding to make their smart TVs dumb.        </p>
-</div>
-</div><div class="columns small-12 medium-24 large-4">
-<div class="post-block">
-<div class="post-block--featured-image">
-<a href="https://www.cabletv.com/news/xfinity-early-black-friday-internet-deals"><img alt="" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" decoding="async" loading="lazy" sizes="auto, (max-width: 1200px) 100vw, 1200px" src="https://www.cabletv.com/app/uploads/2026/10/Xfinity-Early-Black-Friday-deals-news-featured-image.webp" srcset="https://www.cabletv.com/app/uploads/2026/10/Xfinity-Early-Black-Friday-deals-news-featured-image.webp 1200w, https://www.cabletv.com/app/uploads/2026/10/Xfinity-Early-Black-Friday-deals-news-featured-image-600x315.webp 600w, https://www.cabletv.com/app/uploads/2026/10/Xfinity-Early-Black-Friday-deals-news-featured-image-900x473.webp 900w, https://www.cabletv.com/app/uploads/2026/10/Xfinity-Early-Black-Friday-deals-news-featured-image-300x158.webp 300w"/></a> </div>
-<div class="post-block--title">
-<h4><a href="https://www.cabletv.com/news/xfinity-early-black-friday-internet-deals">Don’t Wait for Late November — Xfinity Just Quietly Dropped Its Best Deal of the Year</a></h4>
-</div>
-<div class="post-block--author-area">
-<div class="author-area--image-link">
-<a href="https://www.cabletv.com/author/logan-jones">
-<img alt="Logan Jones's Author Page" class="avatar avatar-28 photo" data-src="https://secure.gravatar.com/avatar/4ee10b7357f408ed164643de5faf48ba104b7f523a5c2b57434dc4d523cfae36?s=28&amp;d=mm&amp;r=g" height="28" loading="lazy" srcset="https://secure.gravatar.com/avatar/4ee10b7357f408ed164643de5faf48ba104b7f523a5c2b57434dc4d523cfae36?s=56&amp;d=mm&amp;r=g 2x" width="28"/> </a>
-</div>
-<div class="author-area--name">By <a class="author url fn" href="https://www.cabletv.com/author/logan-jones" rel="author" title="Posts by Logan Jones">Logan Jones</a></div>
-<div class="author-area--date">Oct 27, 2026</div>
-</div>
-<p class="post-block--excerpt">
-          Holiday internet promotions start now! We break down the season's first big drop with discounted gig plans, free mobile, and five-year price locks.        </p>
-</div>
-</div></div></p></div></div>
-]]></content:encoded>
-      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/10/iPhone-Duo-deals.webp"/>
-    </item>
     <item>
       <title>Optimum Prepares to File for Bankruptcy — What It Means for Customers</title>
       <link>https://www.cabletv.com/news/optimum-prepares-for-bankruptcy</link>
@@ -5673,6 +5057,568 @@ At CableTV.com, we’re not just entertainment experts — we’re also fans jus
 </div></div></p></div></div>
 ]]></content:encoded>
       <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/10/FanDuel-Sports-Network-Replacements.webp"/>
+    </item>
+    <item>
+      <title>DIRECTV Takes a Page From YouTube TV With This Expanded Sports Feature</title>
+      <link>https://www.cabletv.com/news/directv-adds-customizable-multiview-for-sports</link>
+      <pubDate>Tue, 20 Oct 2026 14:59:08 +0000</pubDate>
+      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
+      <guid isPermaLink="false">https://www.cabletv.com/news/directv-adds-customizable-multiview-for-sports</guid>
+      <description><![CDATA[<p>DIRECTV introduced its Build Your Own Multiview. Here’s what the new feature does, what it doesn’t, and how it compares to others in the market.</p>]]></description>
+      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/10/Customizable-Multiview-DIRECTV.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>DIRECTV adds customizable sports multiview experience for streaming customers</h2><p>
+Sports fans looking to watch multiple games simultaneously on one screen just got some good news.
+
+This week, <a href="/directv/stream/stream-review">DIRECTV</a> unveiled a new feature: a customizable multiview experience catered specifically to live sports. The company launched the new multiview option on October 13.
+
+“DIRECTV has been at the forefront of Multiview innovation for nearly two decades, and we continue to evolve the experience around how fans want to watch,” Vikash Sharma, head of product at DIRECTV, said in a statement. “Giving fans the ability to build their own lineup is the next step, offering even more choice and control over how they follow the games that matter most to them.”
+
+The new feature is the second iteration of multiview that DIRECTV has rolled out in the last two months. The first was a <a href="https://www.directv.com/insider/curated-multiview/" rel="noopener" target="_blank">curated multiview</a> with preselected live sports matchups. Both are separate from DIRECTV’s existing Mix Channels, which offer preset, always-on channel combinations for sports, news, weather, and more.</p></div></div><div class="row section--padding-bottom-30"><div class="columns small-12 medium-12 large-12">
+<div class="row align-center vc-email-subscribe__wrapper">
+<div class="columns small-12 large-6">
+<div class="callout-area">
+
+<div class="callout-text">
+<h3>Keep up with all the latest in entertainment news</h3> <p>Subscribe to CableTV.com's email newsletter for the latest TV event viewing guides, entertaining takes, and money-saving promotions.</p> </div>
+</div>
+</div>
+<div class="columns small-12 large-6">
+<div class="vc-email-subscribe">
+<div class="vc-email-subscribe__inline-form">
+<form action="https://cabletv.activehosted.com/proc.php" class="_form _form_19 _inline-form" id="_form_19_" method="POST">
+<input name="u" type="hidden" value="19"/>
+<input name="f" type="hidden" value="19"/>
+<input name="s" type="hidden"/>
+<input name="c" type="hidden" value="0"/>
+<input name="m" type="hidden" value="0"/>
+<input name="act" type="hidden" value="sub"/>
+<input name="v" type="hidden" value="2"/>
+<input name="or" type="hidden" value="8b2db1a6b150094e4ac73dc0ec08c9b4"/>
+<input id="ls" name="ls" type="hidden" value="1"/>
+<input id="nlbox_2" name="nlbox[]" type="hidden" value="2"/><input id="nlbox_3" name="nlbox[]" type="hidden" value="3"/><input id="nlbox_5" name="nlbox[]" type="hidden" value="5"/><input id="nlbox_16" name="nlbox[]" type="hidden" value="16"/><input id="nlbox_17" name="nlbox[]" type="hidden" value="17"/> <div class="_form-content">
+<div class="_field-wrapper">
+<input class="field-email" id="email" name="email" placeholder="Email Address" required="" type="text"/>
+<label class="show-for-sr" for="email">Email*</label>
+</div>
+<div class="_field-wrapper">
+<input class="field-zip" id="field[1]" maxlength="5" minlength="5" name="field[1]" pattern="[0-9]{5}" placeholder="Zip Code" required="" type="text"/>
+<label class="show-for-sr" for="field[1]">Zip code*</label>
+</div>
+<div class="_button-wrapper _inline-style">
+<button class="button button--generic" id="_form_19_submit" type="submit">
+        Sign Up
+      </button>
+</div>
+
+</div>
+
+</form>
+<script type="text/javascript">
+window.cfields = {"1":"zip_code"};
+window._show_thank_you = function(id, message, trackcmp_url, email) {
+  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
+  form.querySelector('._form-content').style.display = 'none';
+  thank_you.innerHTML = message;
+  thank_you.style.display = 'block';
+  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
+  var visitorObject = window;
+  if (email && typeof visitorObject !== 'undefined') {
+    visitorObject('setEmail', email);
+    visitorObject('update');
+  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
+    // Site tracking URL to use after inline form submission.
+    _load_script(trackcmp_url);
+  }
+  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
+};
+window._show_error = function(id, message, html) {
+  var form = document.getElementById('_form_' + id + '_'),
+    err = document.createElement('div'),
+    button = form.querySelector('button'),
+    old_error = form.querySelector('._form_error');
+  if (old_error) old_error.parentNode.removeChild(old_error);
+  err.innerHTML = message;
+  err.className = '_error-inner _form_error _no_arrow';
+  var wrapper = document.createElement('div');
+  wrapper.className = '_form-inner';
+  wrapper.appendChild(err);
+  button.parentNode.insertBefore(wrapper, button);
+  var submitButton = form.querySelector('');
+  submitButton.disabled = false;
+  submitButton.classList.remove('processing');
+  if (html) {
+    var div = document.createElement('div');
+    div.className = '_error-html';
+    div.innerHTML = html;
+    err.appendChild(div);
+  }
+};
+window._load_script = function(url, callback, isSubmit) {
+  var head = document.querySelector('head'), script = document.createElement('script'), r = false;
+  var submitButton = document.querySelector('#_form_19_submit');
+  script.type = 'text/javascript';
+  script.charset = 'utf-8';
+  script.src = url;
+  if (callback) {
+    script.onload = script.onreadystatechange = function() {
+      if (!r && (!this.readyState || this.readyState == 'complete')) {
+        r = true;
+        callback();
+      }
+    };
+  }
+  script.onerror = function() {
+    if (isSubmit) {
+      if (script.src.length > 10000) {
+        _show_error("19", "Sorry, your submission failed. Please shorten your responses and try again.");
+      } else {
+        _show_error("19", "Sorry, your submission failed. Please try again.");
+      }
+      submitButton.disabled = false;
+      submitButton.classList.remove('processing');
+    }
+  }
+  head.appendChild(script);
+};
+(function() {
+  if (window.location.search.search("excludeform") !== -1) return false;
+  var getCookie = function(name) {
+    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  var setCookie = function(name, value) {
+    var now = new Date();
+    var time = now.getTime();
+    var expireTime = time + 1000 * 60 * 60 * 24 * 365;
+    now.setTime(expireTime);
+    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';
+  }
+      var addEvent = function(element, event, func) {
+    if (element.addEventListener) {
+      element.addEventListener(event, func);
+    } else {
+      var oldFunc = element['on' + event];
+      element['on' + event] = function() {
+        oldFunc.apply(this, arguments);
+        func.apply(this, arguments);
+      };
+    }
+  }
+  var _removed = false;
+    var form_to_submit = document.getElementById('_form_19_');
+  var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
+  var getUrlParam = function(name) {
+    var params = new URLSearchParams(window.location.search);
+    return params.get(name) || false;
+  };
+  var acctDateFormat = "%m/%d/%Y";
+  var getNormalizedDate = function(date, acctFormat) {
+    var decodedDate = decodeURIComponent(date);
+    if (acctFormat && acctFormat.match(/(%d|%e).*%m/gi) !== null) {
+      return decodedDate.replace(/(\d{2}).*(\d{2}).*(\d{4})/g, '$3-$2-$1');
+    } else if (Date.parse(decodedDate)) {
+      var dateObj = new Date(decodedDate);
+      var year = dateObj.getFullYear();
+      var month = dateObj.getMonth() + 1;
+      var day = dateObj.getDate();
+      return `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
+    }
+    return false;
+  };
+  var getNormalizedTime = function(time) {
+    var hour, minutes;
+    var decodedTime = decodeURIComponent(time);
+    var timeParts = Array.from(decodedTime.matchAll(/(\d{1,2}):(\d{1,2})\W*()?/gm))[0];
+    if (timeParts[3]) { // 12 hour format
+      var isPM = timeParts[3].toLowerCase() === 'pm';
+      if (isPM) {
+        hour = parseInt(timeParts[1]) === 12 ? '12' : `${parseInt(timeParts[1]) + 12}`;
+      } else {
+        hour = parseInt(timeParts[1]) === 12 ? '0' : timeParts[1];
+      }
+    } else { // 24 hour format
+      hour = timeParts[1];
+    }
+    var normalizedHour = parseInt(hour) < 10 ? `0${parseInt(hour)}` : hour;
+    var minutes = timeParts[2];
+    return `${normalizedHour}:${minutes}`;
+  };
+  for (var i = 0; i < allInputs.length; i++) {
+    var regexStr = "field\\[(\\d+)\\]";
+    var results = new RegExp(regexStr).exec(allInputs.name);
+    if (results != undefined) {
+      allInputs.dataset.name = allInputs.name.match(/\$/)
+        ? `${window.cfields]}_time`
+        : window.cfields];
+    } else {
+      allInputs.dataset.name = allInputs.name;
+    }
+    var fieldVal = getUrlParam(allInputs.dataset.name);
+    if (fieldVal) {
+      if (allInputs.dataset.autofill === "false") {
+        continue;
+      }
+      if (allInputs.type == "radio" || allInputs.type == "checkbox") {
+        if (allInputs.value == fieldVal) {
+          allInputs.checked = true;
+        }
+      } else if (allInputs.type == "date") {
+        allInputs.value = getNormalizedDate(fieldVal, acctDateFormat);
+      } else if (allInputs.type == "time") {
+        allInputs.value = getNormalizedTime(fieldVal);
+      } else {
+        allInputs.value = fieldVal;
+      }
+    }
+  }
+  var remove_tooltips = function() {
+    for (var i = 0; i < tooltips.length; i++) {
+      tooltips.tip.parentNode.removeChild(tooltips.tip);
+    }
+    tooltips = [];
+  };
+  var remove_tooltip = function(elem) {
+    for (var i = 0; i < tooltips.length; i++) {
+      if (tooltips.elem === elem) {
+        tooltips.tip.parentNode.removeChild(tooltips.tip);
+        tooltips.splice(i, 1);
+        return;
+      }
+    }
+  };
+  var create_tooltip = function(elem, text) {
+    var tooltip = document.createElement('div'),
+      arrow = document.createElement('div'),
+      inner = document.createElement('div'), new_tooltip = {};
+    if (elem.type != 'radio' && elem.type != 'checkbox') {
+      tooltip.className = '_error';
+      arrow.className = '_error-arrow';
+      inner.className = '_error-inner';
+      inner.innerHTML = text;
+      tooltip.appendChild(arrow);
+      tooltip.appendChild(inner);
+      elem.parentNode.appendChild(tooltip);
+    } else {
+      tooltip.className = '_error-inner _no_arrow';
+      tooltip.innerHTML = text;
+      elem.parentNode.insertBefore(tooltip, elem);
+      new_tooltip.no_arrow = true;
+    }
+    new_tooltip.tip = tooltip;
+    new_tooltip.elem = elem;
+    tooltips.push(new_tooltip);
+    return new_tooltip;
+  };
+  var resize_tooltip = function(tooltip) {
+    var rect = tooltip.elem.getBoundingClientRect();
+    var doc = document.documentElement,
+      scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
+    if (scrollPosition < 40) {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
+    } else {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
+    }
+  };
+  var resize_tooltips = function() {
+    if (_removed) return;
+    for (var i = 0; i < tooltips.length; i++) {
+      if (!tooltips.no_arrow) resize_tooltip(tooltips);
+    }
+  };
+  var validate_field = function(elem, remove) {
+    var tooltip = null, value = elem.value, no_error = true;
+    remove ? remove_tooltip(elem) : false;
+    if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
+    if (elem.getAttribute('required') !== null) {
+      if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
+        var elems = form_to_submit.elements;
+        if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
+          no_error = elem.checked;
+        }
+        else {
+          no_error = false;
+          for (var i = 0; i < elems.length; i++) {
+            if (elems.checked) no_error = true;
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (elem.type =='checkbox') {
+        var elems = form_to_submit.elements, found = false, err = [];
+        no_error = true;
+        for (var i = 0; i < elems.length; i++) {
+          if (elems.getAttribute('required') === null) continue;
+          if (!found && elems !== elem) return true;
+          found = true;
+          elems.className = elems.className.replace(/ ?_has_error ?/g, '');
+          if (!elems.checked) {
+            no_error = false;
+            elems.className = elems.className + ' _has_error';
+            err.push("Checking %s is required".replace("%s", elems.value));
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, err.join('<br/>'));
+        }
+      } else if (elem.tagName == 'SELECT') {
+        var selected = true;
+        if (elem.multiple) {
+          selected = false;
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected) {
+              selected = true;
+              break;
+            }
+          }
+        } else {
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected
+              && (!elem.options.value
+              || (elem.options.value.match(/\n/g)))
+            ) {
+              selected = false;
+            }
+          }
+        }
+        if (!selected) {
+          elem.className = elem.className + ' _has_error';
+          no_error = false;
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (value === undefined || value === null || value === '') {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "This field is required.");
+      }
+    }
+    if (no_error && (elem.id == 'field[]' || elem.id == 'ca[11]')) {
+      if (elem.className.includes('phone-input-error')) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+      }
+    }
+    if (no_error && elem.name == 'email') {
+      if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@+(\.+)*(\.{2,})$/i)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid email address.");
+      }
+    }
+    if (no_error && /date_field/.test(elem.className)) {
+      if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid date.");
+      }
+    }
+    tooltip ? resize_tooltip(tooltip) : false;
+    return no_error;
+  };
+  var needs_validate = function(el) {
+    if(el.getAttribute('required') !== null){
+      return true
+    }
+    if(el.name === 'email' && el.value !== ""){
+      return true
+    }
+    if((el.id == 'field[]' || el.id == 'ca[11]') && el.className.includes('phone-input-error')){
+      return true
+    }
+    return false
+  };
+  var validate_form = function(e) {
+    var err = form_to_submit.querySelector('._form_error'), no_error = true;
+    if (!submitted) {
+      submitted = true;
+      for (var i = 0, len = allInputs.length; i < len; i++) {
+        var input = allInputs;
+        if (needs_validate(input)) {
+          if (input.type == 'tel') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+          }
+          if (input.type == 'text' || input.type == 'number' || input.type == 'time') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'radio' || input.type == 'checkbox') {
+            (function(el) {
+              var radios = form_to_submit.elements;
+              for (var i = 0; i < radios.length; i++) {
+                addEvent(radios, 'click', function() {
+                  validate_field(el, true);
+                });
+              }
+            })(input);
+          } else if (input.tagName == 'SELECT') {
+            addEvent(input, 'change', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'textarea'){
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          }
+        }
+      }
+    }
+    remove_tooltips();
+    for (var i = 0, len = allInputs.length; i < len; i++) {
+      var elem = allInputs;
+      if (needs_validate(elem)) {
+        if (elem.tagName.toLowerCase() !== "select") {
+          elem.value = elem.value.trim();
+        }
+        validate_field(elem) ? true : no_error = false;
+      }
+    }
+    if (!no_error && e) {
+      e.preventDefault();
+    }
+    resize_tooltips();
+    return no_error;
+  };
+  addEvent(window, 'resize', resize_tooltips);
+  addEvent(window, 'scroll', resize_tooltips);
+  var hidePhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.remove("phone-error");
+    errorMessage.classList.add("phone-error-hidden");
+    input.classList.remove("phone-input-error");
+  };
+  var initializePhoneInput = function(input, defaultCountry) {
+    return window.intlTelInput(input, {
+      utilsScript: "https://unpkg.com/intl-tel-input@17.0.18/build/js/utils.js",
+      autoHideDialCode: false,
+      separateDialCode: true,
+      initialCountry: defaultCountry,
+      preferredCountries: []
+    });
+  }
+  var setPhoneInputEventListeners = function(inputId, input, iti) {
+    input.addEventListener('blur', function() {
+      var errorMessage = document.getElementById("error-msg-" + inputId);
+      if (input.value.trim()) {
+        if (iti.isValidNumber()) {
+          iti.setNumber(iti.getNumber());
+          if (errorMessage.classList.contains("phone-error")){
+            hidePhoneInputError(inputId);
+          }
+        } else {
+          showPhoneInputError(inputId)
+        }
+      } else {
+        if (errorMessage.classList.contains("phone-error")){
+          hidePhoneInputError(inputId);
+        }
+      }
+    });
+    input.addEventListener("countrychange", function() {
+      iti.setNumber('');
+    });
+    input.addEventListener("keydown", function(e) {
+      var charCode = (e.which) ? e.which : e.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 8) {
+        e.preventDefault();
+      }
+    });
+  };
+  var showPhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.add("phone-error");
+    errorMessage.classList.remove("phone-error-hidden");
+    input.classList.add("phone-input-error");
+  };
+  var _form_serialize = function(form){if(!form||form.nodeName!=="FORM"){return }var i,j,q=[];for(i=0;i<form.elements.length;i++){if(form.elements.name===""){continue}switch(form.elements.nodeName){case"INPUT":switch(form.elements.type){case"tel":q.push(form.elements.name+"="+encodeURIComponent(form.elements.previousSibling.querySelector('div.iti__selected-dial-code').innerText)+encodeURIComponent(" ")+encodeURIComponent(form.elements.value));break;case"text":case"number":case"date":case"time":case"hidden":case"password":case"button":case"reset":case"submit":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"checkbox":case"radio":if(form.elements.checked){q.push(form.elements.name+"="+encodeURIComponent(form.elements.value))}break;case"file":break}break;case"TEXTAREA":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"SELECT":switch(form.elements.type){case"select-one":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"select-multiple":for(j=0;j<form.elements.options.length;j++){if(form.elements.options.selected){q.push(form.elements.name+"="+encodeURIComponent(form.elements.options.value))}}break}break;case"BUTTON":switch(form.elements.type){case"reset":case"submit":case"button":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break}break}}return q.join("&")};
+  const formSupportsPost = false;
+  var form_submit = function(e) {
+    e.preventDefault();
+    if (validate_form()) {
+      // use this trick to get the submit button & disable it using plain javascript
+      var submitButton = e.target.querySelector('#_form_19_submit');
+      submitButton.disabled = true;
+      submitButton.classList.add('processing');
+            var serialized = _form_serialize(
+        document.getElementById('_form_19_')
+      ).replace(/%0A/g, '\\n');
+      var err = form_to_submit.querySelector('._form_error');
+      err ? err.parentNode.removeChild(err) : false;
+      async function submitForm() {
+       var formData = new FormData();
+       const searchParams = new URLSearchParams(serialized);
+       searchParams.forEach((value, key) => {
+        formData.append(key, value);
+       });
+       const response = await fetch('https://cabletv.activehosted.com/proc.php?jsonp=true', {
+        headers: {
+         "Accept": "application/json"
+        },
+        body: formData,
+        method: "POST"
+       });
+       return response.json();
+      }
+      if (formSupportsPost) {
+       submitForm().then((data) => {
+        eval(data.js);
+       });
+      } else {
+       _load_script('https://cabletv.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
+      }
+    }
+    return false;
+  };
+  addEvent(form_to_submit, 'submit', form_submit);
+})();
+</script>
+<p class="vc-email-subscribe__disclaimer">
+          By signing up, you agree to our <a href="/privacy-policy-terms-and-conditions">Privacy Policy &amp; Terms and Conditions</a>.
+        </p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>The new multiview appears to be limited to live sports</h2><p>
+Is DIRECTV’s new feature really customizable? Yes and no.
+
+If a viewer wants to watch up to four channels at once, they’re currently limited to networks that show live sports, such as ESPN, FS1, NFL Network, CBS Sports Network, Tennis Channel, and others. The company says that local and national channels <em>could</em> be available for multiview “when they’re carrying eligible live sporting events.”
+
+Of course, which channels you have depends on the DIRECTV package.Compare that to <a href="/youtube-tv/review">YouTube TV</a>‘s multiview feature, and you start to see just how different it is. I tested the YouTube TV one recently and put together a multiview of MS NOW, ESPN, CNBC, and whatever channel was currently showing “The Last Duel.” That’s true customization.
+
+For what it’s worth, more customization appears to be in the works.
+
+“We’re evaluating expansion to select eligible networks and programming, including live news, as we continue enhancing the experience,” a DIRECTV spokesperson told CableTV.com.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>CableTV.com verdict: A step forward, but still behind YouTube TV</h2><p>
+Multiview is one of those features that seems great in theory, but serves a niche audience. Still, multiple TV providers have developed their own multiview experiences, some more extensive than others.
+
+DIRECTV made a huge leap in the space earlier this year with its curated multiview, a predetermined set of live sports broadcasts dependent on how many marquee games were airing on any given day. That development came a few months after <a href="/news/spectrum-multiview">Spectrum unveiled its own curated multiview in advance of March Madness</a>.
+
+DIRECTV took yet another step with its new Build Your Own offering, but it’s still inferior to the multiview options from YouTube TV and Fubo. To be fair, Fubo has its own limitations: Its multiview is available only on Apple TV, select Roku devices, and some LG TVs. When it comes to DIRECTV’s rollout, users on Reddit seem <a href="https://www.reddit.com/r/DirectvStream/comments/1x4joed/custom_multiview_now_available/" rel="noopener" target="_blank">mixed</a> or even <a href="https://www.reddit.com/r/DirectvStream/comments/1x52m59/you_wanted_it_you_got_it_directv_stream_now_has/" rel="noopener" target="_blank">dismissive</a> of the new feature.
+
+Saying people can build their own experience of up to four channels, then limiting the channels available, is a bit misleading. But the option of having two, three, or four games on one screen definitely is pretty cool and useful.
+
+A huge caveat: The feature is only available on DIRECTV Gemini or Roku devices to start, with additional devices coming down the pike. That feels like another limitation to the multiview, at least for now. Once Android TV, Fire TV, Vizio, LG, Apple TV, and Tizen TV enter the field, the situation will be better for fans and consumers.
+
+Don’t get me wrong: Sports fans who are DIRECTV users are gonna love this feature, so long as it doesn’t lag or introduce other tech issues. But is it the best out there? Not yet.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>Who we are</h2><p>
+At CableTV.com, we’re not just entertainment experts — we’re also fans just like you. So while our first priority is reporting the best and most accurate information about TV providers and streaming services, we also love talking about our favorite shows and movies. So you can count on us to share our honest opinions and unbridled enthusiasm. For more on our process, check out our <a href="/how-we-rank">Editorial Policy</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<p class="h3">More industry news for sports fans</p><ul>
+<li><a href="/news/fanduel-sports-network-replacements">Where NBA and NHL Teams Went After FanDuel Sports Network Closed</a></li>
+<li><a href="/news/fubo-adds-four-new-nhl-regional-sports-networks">Fubo Adds New NHL Regional Sports Networks in These Four Markets</a></li>
+<li><a href="/news/ppv-sports-vs-day-passes">2 in 5 Sports Fans Skipped Subscriptions in Favor of These Hacks</a></li>
+</ul></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/10/Customizable-Multiview-DIRECTV.webp"/>
     </item>
   </channel>
 </rss>
