@@ -4,7 +4,7 @@
     <title>Entertainment News | CableTV.com</title>
     <link>https://www.cabletv.com/category/news</link>
     <description>Super fans, rejoice! Our entertainment news keeps you passionate about sports, TV, and streaming.</description>
-    <lastBuildDate>Sat, 31 Oct 2026 16:31:26 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 20:47:36 +0000</lastBuildDate>
     <language>en-US</language>
     <atom:link href="https://www.cabletv.com/category/news/feed" rel="self" type="application/rss+xml"/>
     <sy:updatePeriod>hourly</sy:updatePeriod>
@@ -19,6 +19,721 @@
       <width>32</width>
       <height>32</height>
     </image>
+    <item>
+      <title>Has ‘Avatar: Seven Havens’ Been Renewed for Season 2? All the Details We Know Right Now.</title>
+      <link>https://www.cabletv.com/news/avatar-seven-havens-season-two</link>
+      <pubDate>Fri, 30 Oct 2026 14:55:08 +0000</pubDate>
+      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
+      <guid isPermaLink="false">https://www.cabletv.com/news/avatar-seven-havens-season-two</guid>
+      <description><![CDATA[<p>The first season of “Avatar: Seven Havens” is officially over. But can we expect a Book 2 anytime soon? Our experts weigh in.</p>]]></description>
+      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/10/SevenHavensC1200x630.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>“Avatar: Seven Havens” will return for Books 2–4</h2><p>The original “Avatar: The Last Airbender” series lasted for three seasons. Its sequel series, “Avatar: The Legend of Korra,” lasted for four seasons. So if you just finished watching the season finale of <a href="/entertainment/avatar-seven-havens-book-1-review">“Avatar: Seven Havens,”</a> you’re probably wondering how many seasons you can expect Paramount+ to produce.</p><p>I have good news for you! Not only is “Avatar: Seven Havens” renewed for a second season, it’s also renewed for a third and fourth. Animation renewals often come in pairs of two, as what we consider to be a “season” (13 episodes) is really half of a standard episode order (26 episodes).</p><p>Beyond those four seasons? Nothing’s been confirmed, but I wouldn’t be surprised if the show lasted for seven seasons in total (even if that goes against what I just said about even-numbered season orders). Keep reading to find out why I think so — but be warned, I’m going to cover <strong>spoilers</strong> for “Seven Havens” Book 1, Episode 13, “The Root Chakra.”</p><p>Finished the new episodes? Not afraid of spoilers? Perfect! Let’s begin.</p></div></div><div class="row section--padding-bottom-30"><div class="columns small-12 medium-12 large-12">
+<div class="row align-center vc-email-subscribe__wrapper">
+<div class="columns small-12 large-6">
+<div class="callout-area">
+
+<div class="callout-text">
+<h3>Keep up with all the latest in entertainment news</h3> <p>Subscribe to CableTV.com's email newsletter for the latest TV event viewing guides, entertaining takes, and money-saving promotions.</p> </div>
+</div>
+</div>
+<div class="columns small-12 large-6">
+<div class="vc-email-subscribe">
+<div class="vc-email-subscribe__inline-form">
+<form action="https://cabletv.activehosted.com/proc.php" class="_form _form_19 _inline-form" id="_form_19_" method="POST">
+<input name="u" type="hidden" value="19"/>
+<input name="f" type="hidden" value="19"/>
+<input name="s" type="hidden"/>
+<input name="c" type="hidden" value="0"/>
+<input name="m" type="hidden" value="0"/>
+<input name="act" type="hidden" value="sub"/>
+<input name="v" type="hidden" value="2"/>
+<input name="or" type="hidden" value="8b2db1a6b150094e4ac73dc0ec08c9b4"/>
+<input id="ls" name="ls" type="hidden" value="1"/>
+<input id="nlbox_2" name="nlbox[]" type="hidden" value="2"/><input id="nlbox_3" name="nlbox[]" type="hidden" value="3"/><input id="nlbox_5" name="nlbox[]" type="hidden" value="5"/><input id="nlbox_16" name="nlbox[]" type="hidden" value="16"/><input id="nlbox_17" name="nlbox[]" type="hidden" value="17"/> <div class="_form-content">
+<div class="_field-wrapper">
+<input class="field-email" id="email" name="email" placeholder="Email Address" required="" type="text"/>
+<label class="show-for-sr" for="email">Email*</label>
+</div>
+<div class="_field-wrapper">
+<input class="field-zip" id="field[1]" maxlength="5" minlength="5" name="field[1]" pattern="[0-9]{5}" placeholder="Zip Code" required="" type="text"/>
+<label class="show-for-sr" for="field[1]">Zip code*</label>
+</div>
+<div class="_button-wrapper _inline-style">
+<button class="button button--generic" id="_form_19_submit" type="submit">
+        Sign Up
+      </button>
+</div>
+
+</div>
+
+</form>
+<script type="text/javascript">
+window.cfields = {"1":"zip_code"};
+window._show_thank_you = function(id, message, trackcmp_url, email) {
+  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
+  form.querySelector('._form-content').style.display = 'none';
+  thank_you.innerHTML = message;
+  thank_you.style.display = 'block';
+  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
+  var visitorObject = window;
+  if (email && typeof visitorObject !== 'undefined') {
+    visitorObject('setEmail', email);
+    visitorObject('update');
+  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
+    // Site tracking URL to use after inline form submission.
+    _load_script(trackcmp_url);
+  }
+  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
+};
+window._show_error = function(id, message, html) {
+  var form = document.getElementById('_form_' + id + '_'),
+    err = document.createElement('div'),
+    button = form.querySelector('button'),
+    old_error = form.querySelector('._form_error');
+  if (old_error) old_error.parentNode.removeChild(old_error);
+  err.innerHTML = message;
+  err.className = '_error-inner _form_error _no_arrow';
+  var wrapper = document.createElement('div');
+  wrapper.className = '_form-inner';
+  wrapper.appendChild(err);
+  button.parentNode.insertBefore(wrapper, button);
+  var submitButton = form.querySelector('');
+  submitButton.disabled = false;
+  submitButton.classList.remove('processing');
+  if (html) {
+    var div = document.createElement('div');
+    div.className = '_error-html';
+    div.innerHTML = html;
+    err.appendChild(div);
+  }
+};
+window._load_script = function(url, callback, isSubmit) {
+  var head = document.querySelector('head'), script = document.createElement('script'), r = false;
+  var submitButton = document.querySelector('#_form_19_submit');
+  script.type = 'text/javascript';
+  script.charset = 'utf-8';
+  script.src = url;
+  if (callback) {
+    script.onload = script.onreadystatechange = function() {
+      if (!r && (!this.readyState || this.readyState == 'complete')) {
+        r = true;
+        callback();
+      }
+    };
+  }
+  script.onerror = function() {
+    if (isSubmit) {
+      if (script.src.length > 10000) {
+        _show_error("19", "Sorry, your submission failed. Please shorten your responses and try again.");
+      } else {
+        _show_error("19", "Sorry, your submission failed. Please try again.");
+      }
+      submitButton.disabled = false;
+      submitButton.classList.remove('processing');
+    }
+  }
+  head.appendChild(script);
+};
+(function() {
+  if (window.location.search.search("excludeform") !== -1) return false;
+  var getCookie = function(name) {
+    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  var setCookie = function(name, value) {
+    var now = new Date();
+    var time = now.getTime();
+    var expireTime = time + 1000 * 60 * 60 * 24 * 365;
+    now.setTime(expireTime);
+    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';
+  }
+      var addEvent = function(element, event, func) {
+    if (element.addEventListener) {
+      element.addEventListener(event, func);
+    } else {
+      var oldFunc = element['on' + event];
+      element['on' + event] = function() {
+        oldFunc.apply(this, arguments);
+        func.apply(this, arguments);
+      };
+    }
+  }
+  var _removed = false;
+    var form_to_submit = document.getElementById('_form_19_');
+  var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
+  var getUrlParam = function(name) {
+    var params = new URLSearchParams(window.location.search);
+    return params.get(name) || false;
+  };
+  var acctDateFormat = "%m/%d/%Y";
+  var getNormalizedDate = function(date, acctFormat) {
+    var decodedDate = decodeURIComponent(date);
+    if (acctFormat && acctFormat.match(/(%d|%e).*%m/gi) !== null) {
+      return decodedDate.replace(/(\d{2}).*(\d{2}).*(\d{4})/g, '$3-$2-$1');
+    } else if (Date.parse(decodedDate)) {
+      var dateObj = new Date(decodedDate);
+      var year = dateObj.getFullYear();
+      var month = dateObj.getMonth() + 1;
+      var day = dateObj.getDate();
+      return `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
+    }
+    return false;
+  };
+  var getNormalizedTime = function(time) {
+    var hour, minutes;
+    var decodedTime = decodeURIComponent(time);
+    var timeParts = Array.from(decodedTime.matchAll(/(\d{1,2}):(\d{1,2})\W*()?/gm))[0];
+    if (timeParts[3]) { // 12 hour format
+      var isPM = timeParts[3].toLowerCase() === 'pm';
+      if (isPM) {
+        hour = parseInt(timeParts[1]) === 12 ? '12' : `${parseInt(timeParts[1]) + 12}`;
+      } else {
+        hour = parseInt(timeParts[1]) === 12 ? '0' : timeParts[1];
+      }
+    } else { // 24 hour format
+      hour = timeParts[1];
+    }
+    var normalizedHour = parseInt(hour) < 10 ? `0${parseInt(hour)}` : hour;
+    var minutes = timeParts[2];
+    return `${normalizedHour}:${minutes}`;
+  };
+  for (var i = 0; i < allInputs.length; i++) {
+    var regexStr = "field\\[(\\d+)\\]";
+    var results = new RegExp(regexStr).exec(allInputs.name);
+    if (results != undefined) {
+      allInputs.dataset.name = allInputs.name.match(/\$/)
+        ? `${window.cfields]}_time`
+        : window.cfields];
+    } else {
+      allInputs.dataset.name = allInputs.name;
+    }
+    var fieldVal = getUrlParam(allInputs.dataset.name);
+    if (fieldVal) {
+      if (allInputs.dataset.autofill === "false") {
+        continue;
+      }
+      if (allInputs.type == "radio" || allInputs.type == "checkbox") {
+        if (allInputs.value == fieldVal) {
+          allInputs.checked = true;
+        }
+      } else if (allInputs.type == "date") {
+        allInputs.value = getNormalizedDate(fieldVal, acctDateFormat);
+      } else if (allInputs.type == "time") {
+        allInputs.value = getNormalizedTime(fieldVal);
+      } else {
+        allInputs.value = fieldVal;
+      }
+    }
+  }
+  var remove_tooltips = function() {
+    for (var i = 0; i < tooltips.length; i++) {
+      tooltips.tip.parentNode.removeChild(tooltips.tip);
+    }
+    tooltips = [];
+  };
+  var remove_tooltip = function(elem) {
+    for (var i = 0; i < tooltips.length; i++) {
+      if (tooltips.elem === elem) {
+        tooltips.tip.parentNode.removeChild(tooltips.tip);
+        tooltips.splice(i, 1);
+        return;
+      }
+    }
+  };
+  var create_tooltip = function(elem, text) {
+    var tooltip = document.createElement('div'),
+      arrow = document.createElement('div'),
+      inner = document.createElement('div'), new_tooltip = {};
+    if (elem.type != 'radio' && elem.type != 'checkbox') {
+      tooltip.className = '_error';
+      arrow.className = '_error-arrow';
+      inner.className = '_error-inner';
+      inner.innerHTML = text;
+      tooltip.appendChild(arrow);
+      tooltip.appendChild(inner);
+      elem.parentNode.appendChild(tooltip);
+    } else {
+      tooltip.className = '_error-inner _no_arrow';
+      tooltip.innerHTML = text;
+      elem.parentNode.insertBefore(tooltip, elem);
+      new_tooltip.no_arrow = true;
+    }
+    new_tooltip.tip = tooltip;
+    new_tooltip.elem = elem;
+    tooltips.push(new_tooltip);
+    return new_tooltip;
+  };
+  var resize_tooltip = function(tooltip) {
+    var rect = tooltip.elem.getBoundingClientRect();
+    var doc = document.documentElement,
+      scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
+    if (scrollPosition < 40) {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
+    } else {
+      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
+    }
+  };
+  var resize_tooltips = function() {
+    if (_removed) return;
+    for (var i = 0; i < tooltips.length; i++) {
+      if (!tooltips.no_arrow) resize_tooltip(tooltips);
+    }
+  };
+  var validate_field = function(elem, remove) {
+    var tooltip = null, value = elem.value, no_error = true;
+    remove ? remove_tooltip(elem) : false;
+    if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
+    if (elem.getAttribute('required') !== null) {
+      if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
+        var elems = form_to_submit.elements;
+        if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
+          no_error = elem.checked;
+        }
+        else {
+          no_error = false;
+          for (var i = 0; i < elems.length; i++) {
+            if (elems.checked) no_error = true;
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (elem.type =='checkbox') {
+        var elems = form_to_submit.elements, found = false, err = [];
+        no_error = true;
+        for (var i = 0; i < elems.length; i++) {
+          if (elems.getAttribute('required') === null) continue;
+          if (!found && elems !== elem) return true;
+          found = true;
+          elems.className = elems.className.replace(/ ?_has_error ?/g, '');
+          if (!elems.checked) {
+            no_error = false;
+            elems.className = elems.className + ' _has_error';
+            err.push("Checking %s is required".replace("%s", elems.value));
+          }
+        }
+        if (!no_error) {
+          tooltip = create_tooltip(elem, err.join('<br/>'));
+        }
+      } else if (elem.tagName == 'SELECT') {
+        var selected = true;
+        if (elem.multiple) {
+          selected = false;
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected) {
+              selected = true;
+              break;
+            }
+          }
+        } else {
+          for (var i = 0; i < elem.options.length; i++) {
+            if (elem.options.selected
+              && (!elem.options.value
+              || (elem.options.value.match(/\n/g)))
+            ) {
+              selected = false;
+            }
+          }
+        }
+        if (!selected) {
+          elem.className = elem.className + ' _has_error';
+          no_error = false;
+          tooltip = create_tooltip(elem, "Please select an option.");
+        }
+      } else if (value === undefined || value === null || value === '') {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "This field is required.");
+      }
+    }
+    if (no_error && (elem.id == 'field[]' || elem.id == 'ca[11]')) {
+      if (elem.className.includes('phone-input-error')) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+      }
+    }
+    if (no_error && elem.name == 'email') {
+      if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@+(\.+)*(\.{2,})$/i)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid email address.");
+      }
+    }
+    if (no_error && /date_field/.test(elem.className)) {
+      if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Enter a valid date.");
+      }
+    }
+    tooltip ? resize_tooltip(tooltip) : false;
+    return no_error;
+  };
+  var needs_validate = function(el) {
+    if(el.getAttribute('required') !== null){
+      return true
+    }
+    if(el.name === 'email' && el.value !== ""){
+      return true
+    }
+    if((el.id == 'field[]' || el.id == 'ca[11]') && el.className.includes('phone-input-error')){
+      return true
+    }
+    return false
+  };
+  var validate_form = function(e) {
+    var err = form_to_submit.querySelector('._form_error'), no_error = true;
+    if (!submitted) {
+      submitted = true;
+      for (var i = 0, len = allInputs.length; i < len; i++) {
+        var input = allInputs;
+        if (needs_validate(input)) {
+          if (input.type == 'tel') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+          }
+          if (input.type == 'text' || input.type == 'number' || input.type == 'time') {
+            addEvent(input, 'blur', function() {
+              this.value = this.value.trim();
+              validate_field(this, true);
+            });
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'radio' || input.type == 'checkbox') {
+            (function(el) {
+              var radios = form_to_submit.elements;
+              for (var i = 0; i < radios.length; i++) {
+                addEvent(radios, 'click', function() {
+                  validate_field(el, true);
+                });
+              }
+            })(input);
+          } else if (input.tagName == 'SELECT') {
+            addEvent(input, 'change', function() {
+              validate_field(this, true);
+            });
+          } else if (input.type == 'textarea'){
+            addEvent(input, 'input', function() {
+              validate_field(this, true);
+            });
+          }
+        }
+      }
+    }
+    remove_tooltips();
+    for (var i = 0, len = allInputs.length; i < len; i++) {
+      var elem = allInputs;
+      if (needs_validate(elem)) {
+        if (elem.tagName.toLowerCase() !== "select") {
+          elem.value = elem.value.trim();
+        }
+        validate_field(elem) ? true : no_error = false;
+      }
+    }
+    if (!no_error && e) {
+      e.preventDefault();
+    }
+    resize_tooltips();
+    return no_error;
+  };
+  addEvent(window, 'resize', resize_tooltips);
+  addEvent(window, 'scroll', resize_tooltips);
+  var hidePhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.remove("phone-error");
+    errorMessage.classList.add("phone-error-hidden");
+    input.classList.remove("phone-input-error");
+  };
+  var initializePhoneInput = function(input, defaultCountry) {
+    return window.intlTelInput(input, {
+      utilsScript: "https://unpkg.com/intl-tel-input@17.0.18/build/js/utils.js",
+      autoHideDialCode: false,
+      separateDialCode: true,
+      initialCountry: defaultCountry,
+      preferredCountries: []
+    });
+  }
+  var setPhoneInputEventListeners = function(inputId, input, iti) {
+    input.addEventListener('blur', function() {
+      var errorMessage = document.getElementById("error-msg-" + inputId);
+      if (input.value.trim()) {
+        if (iti.isValidNumber()) {
+          iti.setNumber(iti.getNumber());
+          if (errorMessage.classList.contains("phone-error")){
+            hidePhoneInputError(inputId);
+          }
+        } else {
+          showPhoneInputError(inputId)
+        }
+      } else {
+        if (errorMessage.classList.contains("phone-error")){
+          hidePhoneInputError(inputId);
+        }
+      }
+    });
+    input.addEventListener("countrychange", function() {
+      iti.setNumber('');
+    });
+    input.addEventListener("keydown", function(e) {
+      var charCode = (e.which) ? e.which : e.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 8) {
+        e.preventDefault();
+      }
+    });
+  };
+  var showPhoneInputError = function(inputId) {
+    var errorMessage = document.getElementById("error-msg-" + inputId);
+    var input = document.getElementById(inputId);
+    errorMessage.classList.add("phone-error");
+    errorMessage.classList.remove("phone-error-hidden");
+    input.classList.add("phone-input-error");
+  };
+  var _form_serialize = function(form){if(!form||form.nodeName!=="FORM"){return }var i,j,q=[];for(i=0;i<form.elements.length;i++){if(form.elements.name===""){continue}switch(form.elements.nodeName){case"INPUT":switch(form.elements.type){case"tel":q.push(form.elements.name+"="+encodeURIComponent(form.elements.previousSibling.querySelector('div.iti__selected-dial-code').innerText)+encodeURIComponent(" ")+encodeURIComponent(form.elements.value));break;case"text":case"number":case"date":case"time":case"hidden":case"password":case"button":case"reset":case"submit":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"checkbox":case"radio":if(form.elements.checked){q.push(form.elements.name+"="+encodeURIComponent(form.elements.value))}break;case"file":break}break;case"TEXTAREA":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"SELECT":switch(form.elements.type){case"select-one":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"select-multiple":for(j=0;j<form.elements.options.length;j++){if(form.elements.options.selected){q.push(form.elements.name+"="+encodeURIComponent(form.elements.options.value))}}break}break;case"BUTTON":switch(form.elements.type){case"reset":case"submit":case"button":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break}break}}return q.join("&")};
+  const formSupportsPost = false;
+  var form_submit = function(e) {
+    e.preventDefault();
+    if (validate_form()) {
+      // use this trick to get the submit button & disable it using plain javascript
+      var submitButton = e.target.querySelector('#_form_19_submit');
+      submitButton.disabled = true;
+      submitButton.classList.add('processing');
+            var serialized = _form_serialize(
+        document.getElementById('_form_19_')
+      ).replace(/%0A/g, '\\n');
+      var err = form_to_submit.querySelector('._form_error');
+      err ? err.parentNode.removeChild(err) : false;
+      async function submitForm() {
+       var formData = new FormData();
+       const searchParams = new URLSearchParams(serialized);
+       searchParams.forEach((value, key) => {
+        formData.append(key, value);
+       });
+       const response = await fetch('https://cabletv.activehosted.com/proc.php?jsonp=true', {
+        headers: {
+         "Accept": "application/json"
+        },
+        body: formData,
+        method: "POST"
+       });
+       return response.json();
+      }
+      if (formSupportsPost) {
+       submitForm().then((data) => {
+        eval(data.js);
+       });
+      } else {
+       _load_script('https://cabletv.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
+      }
+    }
+    return false;
+  };
+  addEvent(form_to_submit, 'submit', form_submit);
+})();
+</script>
+<p class="vc-email-subscribe__disclaimer">
+          By signing up, you agree to our <a href="/privacy-policy-terms-and-conditions">Privacy Policy &amp; Terms and Conditions</a>.
+        </p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>When will “Seven Havens” Book 2 air?</h2><p>Right now, there’s no official release date for the second season of “Avatar: Seven Havens.” We know that, in tradition with every other Avatar show, it’ll be called “Book 2” instead of “Season 2,” but beyond that, we don’t know anything about its release schedule.</p><p>I wouldn’t expect to wait <em>too</em> long, though. Like I mentioned earlier, animated shows are created 26 episodes at a time, so Book 2 would have been created around the same time as Book 1.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>What will “Seven Havens” Book 2 be called?</h2><p>The first season of “Avatar: Seven Havens” was called “Book 1: Survival.” The title card was always accompanied by a symbol that, in the last batch of episodes, Agam explains represents the Root Chakra. This chakra, associated with the color red, rules over fear and the survival instinct. The show starts in Ellora, the red haven, during an attack from a red-colored spiritual entity. Pavi has to overcome her fear to unblock her root chakra, helping her save Ellora from the red spirit.</p><p>But there are seven chakras in total, and the rest of Pavi’s are still blocked. Each is associated with a different color, just like the seven havens where humanity found refuge after the cataclysm. In order to unblock her next chakra — an orange-colored chakra— Pavi must travel to another haven, the Floating Isles.</p><p>Following this pattern, each season (or book) will likely focus on a different chakra and take place in a different one of the titular seven havens. According to real-world meditation processes, the next chakra in the sequence should be the Sacral Chakra, which controls creativity, emotion, and intuition. I wouldn’t be surprised if this next season was called “Book 2: Emotion.”</p><p>But that’s just a theory! An Avatar theory.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>Other Avatar projects</h2><p>”Seven Havens” isn’t the only Avatar show in production right now. Earlier this month, Avatar Studios announced a prequel show called “Avatar Kuruk: Wave of Chaos.” This new show will follow the water-bending Avatar four generations before Korra, Avatar Kuruk, as a teenager still mastering his powers.</p><p>Like “Seven Havens” Book 2, we don’t have a release date for “Wave of Chaos.” But just know that there are plenty more Avatar adventures in store, as Paramount+ seems to be going all-in on the franchise.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>In this article</h2><h3><a href="/paramount-plus">Paramount+</a></h3><p><strong></strong>Paramount+ is <a href="/entertainment/where-to-watch-avatar-aang-the-last-airbender">the best place to catch the Avatar franchise</a>, including “The Last Airbender,” “The Legend of Korra,” and “Seven Havens.”</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><h2>Who we are</h2><p>At CableTV.com, we’re not just entertainment experts — we’re also fans just like you. So while our first priority is reporting the best and most accurate information about TV providers and streaming services, we also love talking about our favorite shows, movies, and sporting events. You can count on us to share our honest opinions and unbridled enthusiasm. For more on our process, check out our <a href="/how-we-rank">Editorial Policy</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12"><p class="h3">More industry news for TV fans</p><ul>
+<li><a href="/news/optimum-prepares-for-bankruptcy">Optimum Prepares to File for Bankruptcy</a></li>
+<li><a href="/news/what-is-smart-tv-vibes-coding">Why People Are Rejecting Smart TVs</a></li>
+<li><a href="/news/glee-reboot-disney-hulu">‘Glee’ is Returning with a Disney Reboot</a></li>
+</ul></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/10/SevenHavensC1200x630.webp"/>
+    </item>
+    <item>
+      <title>The 8 Spiciest Episodes of ‘House of the Dragon’: From the Cursed Wedding to That Impromptu Kiss</title>
+      <link>https://www.cabletv.com/entertainment/spiciest-house-of-the-dragon-episodes</link>
+      <pubDate>Fri, 30 Oct 2026 10:17:24 +0000</pubDate>
+      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
+      <guid isPermaLink="false">https://www.cabletv.com/entertainment/spiciest-house-of-the-dragon-episodes</guid>
+      <description><![CDATA[<p>Relive the fire, blood, and betrayals! Dive into our ranking of the eight spiciest ‘House of the Dragon’ episodes after the Season 3 finale this past summer.</p>]]></description>
+      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/06/Spiciest-House-of-the-Dragons-Episodes.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-6"><strong>Status:</strong> Updated on (10/30/26)</div></div><div class="row"><div class="columns small-12 medium-12 large-12">The “<a href="/entertainment/shows-like-game-of-thrones">Game of Thrones</a>” prequel, “House of the Dragon,” has earned its reputation as an unhinged family drama, serving up incest, political betrayal, eye gouging, and orgiastic excess in nearly equal measure.
+
+Of course, the dragons are fiery (or spicy, if you will) and, reportedly, quite pungent. But the real heat comes from the Targaryens themselves, who treat every wedding, war council, and whispered hallway encounter as an opportunity for maximum chaos.
+
+After the Season 3 finale this past summer, here is our revised list of the spiciest episodes from all three seasons of “House of the Dragon,” guaranteed to make you gasp, wince, and even cringe.
+
+<strong>Caution:</strong> spoilers ahead.</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<p class="h3"><b>Level up your internet for streaming!</b></p><p>
+Enter your zip code below to see the top internet and TV providers in your neighborhood.
+
+<span style="font-weight: 400;">
+<form class="zip-finder zip-finder--inline" data-abide="" data-filter-hash="internet" data-form-location="Body" data-zip-finder="" novalidate="">
+<div class="zip-finder__wrapper"><div class="zip-finder__fields">
+
+<div class="zip-finder__button">
+<button class="button button--has-icon-on-right button--hide-spinner" type="submit">
+<p class="h4 zip-finder__button__header">Find</p>
+
+
+</button>
+</div>
+</div>
+</div>
+</form>
+</span></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>“The Heirs of the Dragon” (Season 1, Episode 1)</h2><p>
+The series premiere goes balls out, literally. Prince Daemon Targaryen, Captain of the City Watch and professional chaos agent, leads a nocturnal sweep of King’s Landing that results in dismemberments across the board — limbs, heads, and, most memorably, an on-screen shart followed by what appear to be a pair of severed testicles.
+
+The carnage is only interrupted by Daemon’s failed after-hours rendezvous with Mysaria, a madam he’s been seeing on the side. But the scene in question ends in sad-boy sulking rather than sexual satisfaction.
+
+And if that weren’t spicy enough, tourney violence adds another layer of grime, with skulls crushed on camera and blood spurting everywhere. Then the episode delivers its gut-punch finale: an emergency C-section performed without anesthesia, blood soaking the king’s robes, followed by the deaths of both the queen and the male heir to The Realm.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>“King of the Narrow Sea” (Season 1, Episode 4)</h2><p>
+<strong>Caution:</strong> Grooming is always disgusting and upsetting, so you might want to skip this one.
+
+After three episodes of familial flirting, Prince Daemon lures his niece Rhaenyra through a secret passage via handwritten note, takes her on a hand-holding stroll through King’s Landing, and gets her thoroughly drunk before steering her into a house of prostitution packed with tattooed dancers and lots of group sex.
+
+In the middle of all this commotion, Daemon whispers to Rhaenyra something to the effect of, “Hey, girl, hey — follow your heart.” Then he proceeds to kiss her passionately and undo her tunic before reconsidering the entire enterprise and fleeing into the night, resulting in incestum interruptus.
+
+Back at the castle, Rhaenyra redirects her energy toward Ser Criston Cole, her sworn protector, in a fully nude encounter that runs the whole gamut of sexual positions. Disturbing yet erotic, “King of the Narrow Sea” is <em>the</em> definitive tour through the seediest corners of King’s Landing, IMO.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>“We Light the Way” (Season 1, Episode 5)</h2><p>
+Not all spice happens in the bedroom. Episode 5 earns its place on this list because the royal wedding of Rhaenyra and her cousin Prince Laenor Velaryon becomes a pressure cooker of suppressed fury and bruised egos.
+
+The rage boils over when Criston and Ser Joffrey Lonmouth come to blows in a face-smashing, fatal brawl after Joffrey divulges to Criston that he knows Rhaenyra — his lover’s beard — slept with Criston.
+
+Meanwhile, Daemon and Rhaenyra embrace in yet another simmering, tension-filled confrontation, but this time in public, on the dance floor, which is bold even by their standards. And to top it all off, King Viserys collapses, stricken with an unknown malady.
+
+Not nearly as bloody as the infamous Red Wedding from “Game of Thrones” Season 3, what some critics are calling <a href="https://www.motionpictures.org/2022/09/inside-the-cursed-wedding-in-house-of-the-dragon-episode-5/" rel="false noopener" target="_blank">the Cursed Wedding</a>, adds layers of drama and courtly complications to a classic GoT plot send-up.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>“Driftmark” (Season 1, Episode 7)</h2><p>
+Episode 7 finally breaks the tension that’s been building between Daemon and Rhaenyra since Episode 1. The scene itself is as underwhelming as it is gross: Scored to a celestial melody — an interesting creative choice — Rhaenyra stares into the middle distance and strokes her uncle’s back. Incestum completum.
+
+Elsewhere in the episode, a young Prince Aemond Targaryen finally finds his dragon, Vhagar, fully grown and lying on the beach like a very large, fire-breathing Labrador retriever. That heartwarming moment is immediately countered by a violent scuffle among cousins that results in the loss of Aemond’s eye and Queen Alicent Hightower slashing Rhaenyra in retaliation.
+
+In the wake of Joffrey’s death, Laenor’s death is staged by his new lover and sworn guard, Ser Qarl Correy, allowing Daemon and Rhaenyra to marry in a hasty ceremony sealed in “pure” Targaryen blood while Laenor and Qarl flee Westeros as lovers.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>“Rhaenyra the Cruel” (Season 2, Episode 2)</h2><p>
+Season 2 of “House of the Dragon” tones down the spice a bit, but it still brings the heat in “Rhaenyra the Cruel,” in which simmering family tensions finally erupt into something genuinely ugly and intimate.
+
+The episode’s most shocking sequence involves twin brothers, Ser Arryk and Ser Erryk Cargyll (the most confusing of all the confusing names, LOL), fighting each other, with Erryk slaying his beloved brother and then falling on his own sword out of guilt.
+
+On the other end of the tonal spectrum, Queen Alicent and Criston’s secret, loathing-fueled physical relationship gets slappy, taking the series into kink territory.
+
+Even Mysaria, the madam from Season 1, resurfaces as a pressure point, solidifying her political power in the Targaryen court that eventually leads to some more spicy shenanigans later in the season. (Don’t worry, we’ll get into it.)
+
+The episode is proof that the Dance of the Dragons isn’t just about battlefield maneuvers. It’s about how war corrodes everyone it touches, including the people who thought they were safely on the sidelines.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>“Smallfolk” (Season 2, Episode 6)</h2><p>
+The episode “Smallfolk” delivers on its implied premise that common folk (i.e., non-royalty or landed gentry) can have a massive impact on The Realm. In a nutshell, Rhaenyra starts recruiting the descendants of Targaryen bastards as dragon riders, theorizing that some of these distant relatives will have strong enough Targaryen blood to handle the dragons.
+
+But perhaps the most notable instance of smallfolk spice comes in the form of an impromptu kiss between Rhaenyra and Mysaria. <a href="https://variety.com/2024/tv/news/house-of-the-dragon-rhaenyra-mysaria-kiss-emma-darcy-sonoya-mizuno-1236078234/" rel="false noopener" target="_blank">As reported in Variety</a>, Sonia Mizuno (aka Mysaria) explained that the kiss embodied the following romantic realization: “Oh yeah, of course. I’ve fancied that person for six months, and I didn’t realize.”
+
+The core emotions behind the kiss seem to be curiosity and longing, which arguably feel more spicy than classic GoT mainstays like salacious incest or full frontal.
+
+In either case, the actors have implied that this kiss will definitely affect the twists and turns of Season 3.
+
+</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>“The Queen Who Ever Was” (Season 2, Episode 8)</h2><p>
+Season 2’s final episode brings in one of the most entertainingly outrageous characters the show has ever introduced: Admiral Sharako Lohar. In a move that is simultaneously practical and jaw-dropping, the polygamous lesbian tasks Lord Tyland Lannister with the job of impregnating her wives after mud wrestling him to a draw.
+
+The logistics are left tastefully ambiguous. The audacity is not. Needless to say, I hope to see a lot more of Lohar in Season 3.Elsewhere, the episode upends the established social order as bastard Targaryens — previously sidelined by their birth status — emerge as dragon masters, reshuffling the war’s power dynamics entirely. (What’s spicier than upended social hierarchies?)
+
+Aemond, never one for restraint, goes rogue and begins torching entire castles. This decision sidelines a hideously disfigured Aegon and signals that the endgame of the Dance of the Dragons is going to be very, very messy.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>“The Dragon in the Winter” (Season 3, Episode 7)</h2><p>
+Season 3 isn’t as obviously spicy as the first two seasons, but it still has its fair share of twisted, sexy moments. Near the beginning of Season 3, Episode 7, a hobbled, shirtless Aemond Targaryen trains, swashbuckling through his quarters, when his mother, Alicent Hightower, unexpectedly shows up at the haunted Castle Harrenhal.
+
+The two embrace, and Alicent tenderly declares: “How could I forsake my best and truest son?” Then she delivers a series of overly warm kisses to her son’s cheek and neck. After a pause, she stares at his lips, and they kiss passionately.
+
+Next thing you know, still fully clothed, Alicent flips Aemond onto his back and mounts him for several uncomfortable seconds, moaning with pleasure. Suddenly, Aemond comes to. The Witch of Harrenhal, Alys Rivers, in gauzy lingerie, has seduced him. The real Alicent arrives soon thereafter, unaware of the Oedipal enchantment.
+
+Messed up, indeed, but still quite spicy!Meanwhile, throughout the episode, Rhynaera continues to struggle to secure the crown. Sir Ormund Hightower holds court in Tumbleton, baiting her into battle, while Prince Daemon continues tracking down his daughter, Rhaena, despite her wishes.
+
+Amid the chaos, the episode ends with Mysaria counseling Rhaena in her quarters. As she gives the queen a pep talk, she gently strokes her hair and affirms that she is worthy of the crown, then stares into her eyes and kisses her.
+
+Mysaria then guides her to her back and lies on her, and the two kiss passionately. Needless to say, the seductive, slow touches and intense tension need no classic GoT nudity to bring the heat.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<h2>Spiciest “House of the Dragon” episodes FAQ</h2><p>
+<section class="section">
+<div class="row align-left">
+<div class="margin--bottom-15">
+<div class="toggle-option__container">
+<a class="link--is-flex link--inherits-color" data-toggle="faq-opt0-minus faq-opt0-plus faq-opt0-text" href="javascript:void(0);" id="faq-opt0">
+<div class="toggle-option">
+
+
+<div class="toggle-label">
+<h3>How many episodes does "House of the Dragon" have?</h3>
+</div>
+</div>
+</a>
+<div class="toggle-option__section toggle--has-border-bottom-grayscale-color3" data-toggler="toggle--is-hidden" id="faq-opt0-text">
+<p>"House of the Dragon" has three completed seasons as of fall 2026: 10 episodes in Season 1, 8 in Season 2, and 8 in Season 3, for a total of 26 episodes.</p>
+</div>
+</div>
+<div class="toggle-option__container">
+<a class="link--is-flex link--inherits-color" data-toggle="faq-opt1-minus faq-opt1-plus faq-opt1-text" href="javascript:void(0);" id="faq-opt1">
+<div class="toggle-option">
+
+
+<div class="toggle-label">
+<h3>Where can I watch "House of the Dragon"?</h3>
+</div>
+</div>
+</a>
+<div class="toggle-option__section toggle--has-border-bottom-grayscale-color3" data-toggler="toggle--is-hidden" id="faq-opt1-text">
+<p>"House of the Dragon" streams exclusively on <a href="/hbo-max">HBO Max</a>, and an HBO Max subscription is required to watch both seasons on demand.</p>
+</div>
+</div>
+<div class="toggle-option__container">
+<a class="link--is-flex link--inherits-color" data-toggle="faq-opt2-minus faq-opt2-plus faq-opt2-text" href="javascript:void(0);" id="faq-opt2">
+<div class="toggle-option">
+
+
+<div class="toggle-label">
+<h3>Is "House of the Dragon" as graphic as "Game of Thrones"?</h3>
+</div>
+</div>
+</a>
+<div class="toggle-option__section toggle--has-border-bottom-grayscale-color3" data-toggler="toggle--is-hidden" id="faq-opt2-text">
+<p>"House of the Dragon" has the same mature content rating as its predecessor, featuring graphic violence, sexual content, and strong language. Fans of the original series will find the tone and intensity immediately familiar.</p>
+</div>
+</div>
+<div class="toggle-option__container">
+<a class="link--is-flex link--inherits-color" data-toggle="faq-opt3-minus faq-opt3-plus faq-opt3-text" href="javascript:void(0);" id="faq-opt3">
+<div class="toggle-option">
+
+
+<div class="toggle-label">
+<h3>Do I need to watch "Game of Thrones" before "House of the Dragon"?</h3>
+</div>
+</div>
+</a>
+<div class="toggle-option__section toggle--has-border-bottom-grayscale-color3" data-toggler="toggle--is-hidden" id="faq-opt3-text">
+<p>No prior viewing of "Game of Thrones" is required to follow "House of the Dragon," though familiarity with the world of Westeros and Targaryen lore adds useful context, particularly around the significance of dragons and the Iron Throne.</p>
+</div>
+</div>
+<div class="toggle-option__container">
+<a class="link--is-flex link--inherits-color" data-toggle="faq-opt4-minus faq-opt4-plus faq-opt4-text" href="javascript:void(0);" id="faq-opt4">
+<div class="toggle-option">
+
+
+<div class="toggle-label">
+<h3>Who are the main characters in "House of the Dragon"?</h3>
+</div>
+</div>
+</a>
+<div class="toggle-option__section" data-toggler="toggle--is-hidden" id="faq-opt4-text">
+<p>The series centers on Princess — later Queen — Rhaenyra Targaryen and her rivalry with Queen Alicent Hightower over succession to the Iron Throne, with Prince Daemon Targaryen serving as the show's most combustible wild card throughout both seasons.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many episodes does &quot;House of the Dragon&quot; have?","acceptedAnswer":{"@type":"Answer","text":"&quot;House of the Dragon&quot; has three completed seasons as of fall 2026: 10 episodes in Season 1, 8 in Season 2, and 8 in Season 3, for a total of 26 episodes."}},{"@type":"Question","name":"Where can I watch &quot;House of the Dragon&quot;?","acceptedAnswer":{"@type":"Answer","text":"&quot;House of the Dragon&quot; streams exclusively on HBO Max, and an HBO Max subscription is required to watch both seasons on demand."}},{"@type":"Question","name":"Is &quot;House of the Dragon&quot; as graphic as &quot;Game of Thrones&quot;?","acceptedAnswer":{"@type":"Answer","text":"&quot;House of the Dragon&quot; has the same mature content rating as its predecessor, featuring graphic violence, sexual content, and strong language. Fans of the original series will find the tone and intensity immediately familiar."}},{"@type":"Question","name":"Do I need to watch &quot;Game of Thrones&quot; before &quot;House of the Dragon&quot;?","acceptedAnswer":{"@type":"Answer","text":"No prior viewing of &quot;Game of Thrones&quot; is required to follow &quot;House of the Dragon,&quot; though familiarity with the world of Westeros and Targaryen lore adds useful context, particularly around the significance of dragons and the Iron Throne."}},{"@type":"Question","name":"Who are the main characters in &quot;House of the Dragon&quot;?","acceptedAnswer":{"@type":"Answer","text":"The series centers on Princess \u2014 later Queen \u2014 Rhaenyra Targaryen and her rivalry with Queen Alicent Hightower over succession to the Iron Throne, with Prince Daemon Targaryen serving as the show&#039;s most combustible wild card throughout both seasons."}}]}</script></p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
+<p class="h3">What to binge next</p><ul>
+<li><a href="/entertainment/shows-like-game-of-thrones">Shows Like “Game of Thrones”</a></li>
+<li><a href="/hbo-max/what-to-watch">What To Watch on HBO Max</a></li>
+<li><a href="/starz/how-to-watch-outlander">How To Watch “Outlander”</a></li>
+<li><a href="/entertainment/game-of-thrones-cast">Royal Resumes: Game of Thrones Cast—Where Are They Now?</a></li>
+<li><a href="/entertainment/spiciest-game-of-thrones-episodes">The 15 Spiciest ‘Game of Thrones’ Episodes: Golden Crown, Red Wedding, and More</a></li>
+</ul></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/06/Spiciest-House-of-the-Dragons-Episodes.webp"/>
+    </item>
     <item>
       <title>Apple’s $2,000 iPhone Duo Is Out: Here Are the Deals That Cut the Price in Half</title>
       <link>https://www.cabletv.com/news/best-iphone-duo-deals</link>
@@ -4250,1429 +4965,6 @@ At CableTV.com, we’re not just entertainment experts — we’re also fans jus
 </ul></div></div>
 ]]></content:encoded>
       <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/10/Glee1200x630.webp"/>
-    </item>
-    <item>
-      <title>Amazon Prime Video and DIRECTV Offer the Best Cheap NBA Deals This Season</title>
-      <link>https://www.cabletv.com/news/watch-nba-games-cheap</link>
-      <pubDate>Wed, 21 Oct 2026 14:04:52 +0000</pubDate>
-      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
-      <guid isPermaLink="false">https://www.cabletv.com/news/watch-nba-games-cheap</guid>
-      <description><![CDATA[<p>Don’t pay full price for live hoops. Learn how Prime Video and DIRECTV free trials give you the cheapest way to stream NBA games all season.</p>]]></description>
-      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/10/NBA-deals.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>You don’t need expensive cable to keep up with the NBA</h2><p>
-As <a href="https://www.forbes.com/sites/bradadgate/2024/07/29/nba-new-media-rights-agreement-reflect-the-growth-of-streaming/" rel="noopener" target="_blank">NBA media rights have fragmented</a> across an expanding list of networks and streaming services, piecing together a setup to watch a full season of games gets expensive (and confusing) fast.
-
-Still, savvy fans can stack free trial offers and low-cost plans to build a solid lineup without breaking the bank.
-
-In our eyes, <a href="/amazon-prime-video">Amazon Prime Video</a> offers one of the cheapest entry points for essential NBA streaming (and has a super-long free trial!), and when paired with other free trials like <a href="/directv/stream">DIRECTV</a>‘s, you can stream live hoops for a fraction of the cost.
-
-Keep reading for our picks for the best ways to stream the NBA on the cheap this season.</p></div></div><div class="row section--padding-bottom-30"><div class="columns small-12 medium-12 large-12">
-<div class="row align-center vc-email-subscribe__wrapper">
-<div class="columns small-12 large-6">
-<div class="callout-area">
-
-<div class="callout-text">
-<h3>Hook it up with the hottest in TV and internet</h3> <p>Stay tuned for the latest deals, show premieres, and more by signing up for our newsletter.</p> </div>
-</div>
-</div>
-<div class="columns small-12 large-6">
-<div class="vc-email-subscribe">
-<div class="vc-email-subscribe__inline-form">
-<form action="https://cabletv.activehosted.com/proc.php" class="_form _form_19 _inline-form" id="_form_19_" method="POST">
-<input name="u" type="hidden" value="19"/>
-<input name="f" type="hidden" value="19"/>
-<input name="s" type="hidden"/>
-<input name="c" type="hidden" value="0"/>
-<input name="m" type="hidden" value="0"/>
-<input name="act" type="hidden" value="sub"/>
-<input name="v" type="hidden" value="2"/>
-<input name="or" type="hidden" value="8b2db1a6b150094e4ac73dc0ec08c9b4"/>
-<input id="ls" name="ls" type="hidden" value="1"/>
-<input id="nlbox_2" name="nlbox[]" type="hidden" value="2"/><input id="nlbox_3" name="nlbox[]" type="hidden" value="3"/><input id="nlbox_5" name="nlbox[]" type="hidden" value="5"/><input id="nlbox_16" name="nlbox[]" type="hidden" value="16"/><input id="nlbox_17" name="nlbox[]" type="hidden" value="17"/> <div class="_form-content">
-<div class="_field-wrapper">
-<input class="field-email" id="email" name="email" placeholder="Email Address" required="" type="text"/>
-<label class="show-for-sr" for="email">Email*</label>
-</div>
-<div class="_field-wrapper">
-<input class="field-zip" id="field[1]" maxlength="5" minlength="5" name="field[1]" pattern="[0-9]{5}" placeholder="Zip Code" required="" type="text"/>
-<label class="show-for-sr" for="field[1]">Zip code*</label>
-</div>
-<div class="_button-wrapper _inline-style">
-<button class="button button--generic" id="_form_19_submit" type="submit">
-        Sign Up
-      </button>
-</div>
-
-</div>
-
-</form>
-<script type="text/javascript">
-window.cfields = {"1":"zip_code"};
-window._show_thank_you = function(id, message, trackcmp_url, email) {
-  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
-  form.querySelector('._form-content').style.display = 'none';
-  thank_you.innerHTML = message;
-  thank_you.style.display = 'block';
-  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
-  var visitorObject = window;
-  if (email && typeof visitorObject !== 'undefined') {
-    visitorObject('setEmail', email);
-    visitorObject('update');
-  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
-    // Site tracking URL to use after inline form submission.
-    _load_script(trackcmp_url);
-  }
-  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
-};
-window._show_error = function(id, message, html) {
-  var form = document.getElementById('_form_' + id + '_'),
-    err = document.createElement('div'),
-    button = form.querySelector('button'),
-    old_error = form.querySelector('._form_error');
-  if (old_error) old_error.parentNode.removeChild(old_error);
-  err.innerHTML = message;
-  err.className = '_error-inner _form_error _no_arrow';
-  var wrapper = document.createElement('div');
-  wrapper.className = '_form-inner';
-  wrapper.appendChild(err);
-  button.parentNode.insertBefore(wrapper, button);
-  var submitButton = form.querySelector('');
-  submitButton.disabled = false;
-  submitButton.classList.remove('processing');
-  if (html) {
-    var div = document.createElement('div');
-    div.className = '_error-html';
-    div.innerHTML = html;
-    err.appendChild(div);
-  }
-};
-window._load_script = function(url, callback, isSubmit) {
-  var head = document.querySelector('head'), script = document.createElement('script'), r = false;
-  var submitButton = document.querySelector('#_form_19_submit');
-  script.type = 'text/javascript';
-  script.charset = 'utf-8';
-  script.src = url;
-  if (callback) {
-    script.onload = script.onreadystatechange = function() {
-      if (!r && (!this.readyState || this.readyState == 'complete')) {
-        r = true;
-        callback();
-      }
-    };
-  }
-  script.onerror = function() {
-    if (isSubmit) {
-      if (script.src.length > 10000) {
-        _show_error("19", "Sorry, your submission failed. Please shorten your responses and try again.");
-      } else {
-        _show_error("19", "Sorry, your submission failed. Please try again.");
-      }
-      submitButton.disabled = false;
-      submitButton.classList.remove('processing');
-    }
-  }
-  head.appendChild(script);
-};
-(function() {
-  if (window.location.search.search("excludeform") !== -1) return false;
-  var getCookie = function(name) {
-    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
-    return match ? match[2] : null;
-  }
-  var setCookie = function(name, value) {
-    var now = new Date();
-    var time = now.getTime();
-    var expireTime = time + 1000 * 60 * 60 * 24 * 365;
-    now.setTime(expireTime);
-    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';
-  }
-      var addEvent = function(element, event, func) {
-    if (element.addEventListener) {
-      element.addEventListener(event, func);
-    } else {
-      var oldFunc = element['on' + event];
-      element['on' + event] = function() {
-        oldFunc.apply(this, arguments);
-        func.apply(this, arguments);
-      };
-    }
-  }
-  var _removed = false;
-    var form_to_submit = document.getElementById('_form_19_');
-  var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
-  var getUrlParam = function(name) {
-    var params = new URLSearchParams(window.location.search);
-    return params.get(name) || false;
-  };
-  var acctDateFormat = "%m/%d/%Y";
-  var getNormalizedDate = function(date, acctFormat) {
-    var decodedDate = decodeURIComponent(date);
-    if (acctFormat && acctFormat.match(/(%d|%e).*%m/gi) !== null) {
-      return decodedDate.replace(/(\d{2}).*(\d{2}).*(\d{4})/g, '$3-$2-$1');
-    } else if (Date.parse(decodedDate)) {
-      var dateObj = new Date(decodedDate);
-      var year = dateObj.getFullYear();
-      var month = dateObj.getMonth() + 1;
-      var day = dateObj.getDate();
-      return `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
-    }
-    return false;
-  };
-  var getNormalizedTime = function(time) {
-    var hour, minutes;
-    var decodedTime = decodeURIComponent(time);
-    var timeParts = Array.from(decodedTime.matchAll(/(\d{1,2}):(\d{1,2})\W*()?/gm))[0];
-    if (timeParts[3]) { // 12 hour format
-      var isPM = timeParts[3].toLowerCase() === 'pm';
-      if (isPM) {
-        hour = parseInt(timeParts[1]) === 12 ? '12' : `${parseInt(timeParts[1]) + 12}`;
-      } else {
-        hour = parseInt(timeParts[1]) === 12 ? '0' : timeParts[1];
-      }
-    } else { // 24 hour format
-      hour = timeParts[1];
-    }
-    var normalizedHour = parseInt(hour) < 10 ? `0${parseInt(hour)}` : hour;
-    var minutes = timeParts[2];
-    return `${normalizedHour}:${minutes}`;
-  };
-  for (var i = 0; i < allInputs.length; i++) {
-    var regexStr = "field\\[(\\d+)\\]";
-    var results = new RegExp(regexStr).exec(allInputs.name);
-    if (results != undefined) {
-      allInputs.dataset.name = allInputs.name.match(/\$/)
-        ? `${window.cfields]}_time`
-        : window.cfields];
-    } else {
-      allInputs.dataset.name = allInputs.name;
-    }
-    var fieldVal = getUrlParam(allInputs.dataset.name);
-    if (fieldVal) {
-      if (allInputs.dataset.autofill === "false") {
-        continue;
-      }
-      if (allInputs.type == "radio" || allInputs.type == "checkbox") {
-        if (allInputs.value == fieldVal) {
-          allInputs.checked = true;
-        }
-      } else if (allInputs.type == "date") {
-        allInputs.value = getNormalizedDate(fieldVal, acctDateFormat);
-      } else if (allInputs.type == "time") {
-        allInputs.value = getNormalizedTime(fieldVal);
-      } else {
-        allInputs.value = fieldVal;
-      }
-    }
-  }
-  var remove_tooltips = function() {
-    for (var i = 0; i < tooltips.length; i++) {
-      tooltips.tip.parentNode.removeChild(tooltips.tip);
-    }
-    tooltips = [];
-  };
-  var remove_tooltip = function(elem) {
-    for (var i = 0; i < tooltips.length; i++) {
-      if (tooltips.elem === elem) {
-        tooltips.tip.parentNode.removeChild(tooltips.tip);
-        tooltips.splice(i, 1);
-        return;
-      }
-    }
-  };
-  var create_tooltip = function(elem, text) {
-    var tooltip = document.createElement('div'),
-      arrow = document.createElement('div'),
-      inner = document.createElement('div'), new_tooltip = {};
-    if (elem.type != 'radio' && elem.type != 'checkbox') {
-      tooltip.className = '_error';
-      arrow.className = '_error-arrow';
-      inner.className = '_error-inner';
-      inner.innerHTML = text;
-      tooltip.appendChild(arrow);
-      tooltip.appendChild(inner);
-      elem.parentNode.appendChild(tooltip);
-    } else {
-      tooltip.className = '_error-inner _no_arrow';
-      tooltip.innerHTML = text;
-      elem.parentNode.insertBefore(tooltip, elem);
-      new_tooltip.no_arrow = true;
-    }
-    new_tooltip.tip = tooltip;
-    new_tooltip.elem = elem;
-    tooltips.push(new_tooltip);
-    return new_tooltip;
-  };
-  var resize_tooltip = function(tooltip) {
-    var rect = tooltip.elem.getBoundingClientRect();
-    var doc = document.documentElement,
-      scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
-    if (scrollPosition < 40) {
-      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
-    } else {
-      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
-    }
-  };
-  var resize_tooltips = function() {
-    if (_removed) return;
-    for (var i = 0; i < tooltips.length; i++) {
-      if (!tooltips.no_arrow) resize_tooltip(tooltips);
-    }
-  };
-  var validate_field = function(elem, remove) {
-    var tooltip = null, value = elem.value, no_error = true;
-    remove ? remove_tooltip(elem) : false;
-    if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
-    if (elem.getAttribute('required') !== null) {
-      if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
-        var elems = form_to_submit.elements;
-        if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
-          no_error = elem.checked;
-        }
-        else {
-          no_error = false;
-          for (var i = 0; i < elems.length; i++) {
-            if (elems.checked) no_error = true;
-          }
-        }
-        if (!no_error) {
-          tooltip = create_tooltip(elem, "Please select an option.");
-        }
-      } else if (elem.type =='checkbox') {
-        var elems = form_to_submit.elements, found = false, err = [];
-        no_error = true;
-        for (var i = 0; i < elems.length; i++) {
-          if (elems.getAttribute('required') === null) continue;
-          if (!found && elems !== elem) return true;
-          found = true;
-          elems.className = elems.className.replace(/ ?_has_error ?/g, '');
-          if (!elems.checked) {
-            no_error = false;
-            elems.className = elems.className + ' _has_error';
-            err.push("Checking %s is required".replace("%s", elems.value));
-          }
-        }
-        if (!no_error) {
-          tooltip = create_tooltip(elem, err.join('<br/>'));
-        }
-      } else if (elem.tagName == 'SELECT') {
-        var selected = true;
-        if (elem.multiple) {
-          selected = false;
-          for (var i = 0; i < elem.options.length; i++) {
-            if (elem.options.selected) {
-              selected = true;
-              break;
-            }
-          }
-        } else {
-          for (var i = 0; i < elem.options.length; i++) {
-            if (elem.options.selected
-              && (!elem.options.value
-              || (elem.options.value.match(/\n/g)))
-            ) {
-              selected = false;
-            }
-          }
-        }
-        if (!selected) {
-          elem.className = elem.className + ' _has_error';
-          no_error = false;
-          tooltip = create_tooltip(elem, "Please select an option.");
-        }
-      } else if (value === undefined || value === null || value === '') {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "This field is required.");
-      }
-    }
-    if (no_error && (elem.id == 'field[]' || elem.id == 'ca[11]')) {
-      if (elem.className.includes('phone-input-error')) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-      }
-    }
-    if (no_error && elem.name == 'email') {
-      if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@+(\.+)*(\.{2,})$/i)) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "Enter a valid email address.");
-      }
-    }
-    if (no_error && /date_field/.test(elem.className)) {
-      if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "Enter a valid date.");
-      }
-    }
-    tooltip ? resize_tooltip(tooltip) : false;
-    return no_error;
-  };
-  var needs_validate = function(el) {
-    if(el.getAttribute('required') !== null){
-      return true
-    }
-    if(el.name === 'email' && el.value !== ""){
-      return true
-    }
-    if((el.id == 'field[]' || el.id == 'ca[11]') && el.className.includes('phone-input-error')){
-      return true
-    }
-    return false
-  };
-  var validate_form = function(e) {
-    var err = form_to_submit.querySelector('._form_error'), no_error = true;
-    if (!submitted) {
-      submitted = true;
-      for (var i = 0, len = allInputs.length; i < len; i++) {
-        var input = allInputs;
-        if (needs_validate(input)) {
-          if (input.type == 'tel') {
-            addEvent(input, 'blur', function() {
-              this.value = this.value.trim();
-              validate_field(this, true);
-            });
-          }
-          if (input.type == 'text' || input.type == 'number' || input.type == 'time') {
-            addEvent(input, 'blur', function() {
-              this.value = this.value.trim();
-              validate_field(this, true);
-            });
-            addEvent(input, 'input', function() {
-              validate_field(this, true);
-            });
-          } else if (input.type == 'radio' || input.type == 'checkbox') {
-            (function(el) {
-              var radios = form_to_submit.elements;
-              for (var i = 0; i < radios.length; i++) {
-                addEvent(radios, 'click', function() {
-                  validate_field(el, true);
-                });
-              }
-            })(input);
-          } else if (input.tagName == 'SELECT') {
-            addEvent(input, 'change', function() {
-              validate_field(this, true);
-            });
-          } else if (input.type == 'textarea'){
-            addEvent(input, 'input', function() {
-              validate_field(this, true);
-            });
-          }
-        }
-      }
-    }
-    remove_tooltips();
-    for (var i = 0, len = allInputs.length; i < len; i++) {
-      var elem = allInputs;
-      if (needs_validate(elem)) {
-        if (elem.tagName.toLowerCase() !== "select") {
-          elem.value = elem.value.trim();
-        }
-        validate_field(elem) ? true : no_error = false;
-      }
-    }
-    if (!no_error && e) {
-      e.preventDefault();
-    }
-    resize_tooltips();
-    return no_error;
-  };
-  addEvent(window, 'resize', resize_tooltips);
-  addEvent(window, 'scroll', resize_tooltips);
-  var hidePhoneInputError = function(inputId) {
-    var errorMessage = document.getElementById("error-msg-" + inputId);
-    var input = document.getElementById(inputId);
-    errorMessage.classList.remove("phone-error");
-    errorMessage.classList.add("phone-error-hidden");
-    input.classList.remove("phone-input-error");
-  };
-  var initializePhoneInput = function(input, defaultCountry) {
-    return window.intlTelInput(input, {
-      utilsScript: "https://unpkg.com/intl-tel-input@17.0.18/build/js/utils.js",
-      autoHideDialCode: false,
-      separateDialCode: true,
-      initialCountry: defaultCountry,
-      preferredCountries: []
-    });
-  }
-  var setPhoneInputEventListeners = function(inputId, input, iti) {
-    input.addEventListener('blur', function() {
-      var errorMessage = document.getElementById("error-msg-" + inputId);
-      if (input.value.trim()) {
-        if (iti.isValidNumber()) {
-          iti.setNumber(iti.getNumber());
-          if (errorMessage.classList.contains("phone-error")){
-            hidePhoneInputError(inputId);
-          }
-        } else {
-          showPhoneInputError(inputId)
-        }
-      } else {
-        if (errorMessage.classList.contains("phone-error")){
-          hidePhoneInputError(inputId);
-        }
-      }
-    });
-    input.addEventListener("countrychange", function() {
-      iti.setNumber('');
-    });
-    input.addEventListener("keydown", function(e) {
-      var charCode = (e.which) ? e.which : e.keyCode;
-      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 8) {
-        e.preventDefault();
-      }
-    });
-  };
-  var showPhoneInputError = function(inputId) {
-    var errorMessage = document.getElementById("error-msg-" + inputId);
-    var input = document.getElementById(inputId);
-    errorMessage.classList.add("phone-error");
-    errorMessage.classList.remove("phone-error-hidden");
-    input.classList.add("phone-input-error");
-  };
-  var _form_serialize = function(form){if(!form||form.nodeName!=="FORM"){return }var i,j,q=[];for(i=0;i<form.elements.length;i++){if(form.elements.name===""){continue}switch(form.elements.nodeName){case"INPUT":switch(form.elements.type){case"tel":q.push(form.elements.name+"="+encodeURIComponent(form.elements.previousSibling.querySelector('div.iti__selected-dial-code').innerText)+encodeURIComponent(" ")+encodeURIComponent(form.elements.value));break;case"text":case"number":case"date":case"time":case"hidden":case"password":case"button":case"reset":case"submit":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"checkbox":case"radio":if(form.elements.checked){q.push(form.elements.name+"="+encodeURIComponent(form.elements.value))}break;case"file":break}break;case"TEXTAREA":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"SELECT":switch(form.elements.type){case"select-one":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"select-multiple":for(j=0;j<form.elements.options.length;j++){if(form.elements.options.selected){q.push(form.elements.name+"="+encodeURIComponent(form.elements.options.value))}}break}break;case"BUTTON":switch(form.elements.type){case"reset":case"submit":case"button":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break}break}}return q.join("&")};
-  const formSupportsPost = false;
-  var form_submit = function(e) {
-    e.preventDefault();
-    if (validate_form()) {
-      // use this trick to get the submit button & disable it using plain javascript
-      var submitButton = e.target.querySelector('#_form_19_submit');
-      submitButton.disabled = true;
-      submitButton.classList.add('processing');
-            var serialized = _form_serialize(
-        document.getElementById('_form_19_')
-      ).replace(/%0A/g, '\\n');
-      var err = form_to_submit.querySelector('._form_error');
-      err ? err.parentNode.removeChild(err) : false;
-      async function submitForm() {
-       var formData = new FormData();
-       const searchParams = new URLSearchParams(serialized);
-       searchParams.forEach((value, key) => {
-        formData.append(key, value);
-       });
-       const response = await fetch('https://cabletv.activehosted.com/proc.php?jsonp=true', {
-        headers: {
-         "Accept": "application/json"
-        },
-        body: formData,
-        method: "POST"
-       });
-       return response.json();
-      }
-      if (formSupportsPost) {
-       submitForm().then((data) => {
-        eval(data.js);
-       });
-      } else {
-       _load_script('https://cabletv.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
-      }
-    }
-    return false;
-  };
-  addEvent(form_to_submit, 'submit', form_submit);
-})();
-</script>
-<p class="vc-email-subscribe__disclaimer">
-          By signing up, you agree to our <a href="/privacy-policy-terms-and-conditions">Privacy Policy &amp; Terms and Conditions</a>.
-        </p>
-</div>
-</div>
-</div>
-</div>
-</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>CableTV.com’s take: Stack free trials for the best savings</h2><p>
-For budget-conscious bball fans, <a href="/amazon-prime-video/nba">Amazon Prime Video</a> is the streaming MVP this NBA season. Prime Video holds exclusive rights to Thursday and Friday night doubleheaders, the entire NBA Cup knockout stage, and the Play-In Tournament.
-
-If you don’t need a full Amazon Prime shopping membership (which <em>is</em> <a href="/amazon-prime-video/deals">the best deal IMO</a>), a standalone Prime Video plan costs just $8.99/mo.—or you can test-drive it with a <a href="/amazon-prime-video/free-trial">30-day free trial</a>. Prime Video also acts as a hub where you can add a 7-day free trial of <a href="/sports/nba-league-pass-review">NBA League Pass</a> to watch out-of-market games without juggling extra logins.
-
-To cover local regional sports networks (RSNs) and national channels like <a href="/entertainment/what-channel-is-abc">ABC</a>, <a href="/entertainment/what-channel-is-nbc">NBC</a>, and <a href="/sports/what-channel-is-espn">ESPN</a>, I say stack on a <a href="/directv/stream/free-trial">five-day free trial of DIRECTV</a>. While DIRECTV’s CHOICE plan ($99.99/mo. after trial) is a high-tier investment—one we think is <a href="/ranking/best-streaming-service-sports">worth it for big sports fans</a>—timing its trial during key rivalry weeks or Play-In games lets you watch complete live coverage across every core network at no cost.<strong>Need <em>every</em> NBA game out there? </strong>While combining Amazon Prime Video and DIRECTV covers a lot, you’ll need a few other services for total NBA coverage. Check out our <a href="/sports/watch-nba-games">guide to watching NBA games</a> to find out how to complete your basketball setup.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-6">
-<div class="vc_btn3-container text-center margin-bottom"><a class="button button--is-big button--generic button--is-short-unlimited button--is-bold width--standard" data-element="Button" href="https://www.amazon.com/Prime-Video/b?node=2676882011&amp;linkCode=ll2&amp;tag=cabcom03-20&amp;linkId=cb89c7dee3967510815fd77f9aba9847&amp;language=en_US&amp;ref_=as_li_ss_tl" rel="nofollow" target="_blank">Try Amazon Prime For Free</a></div>
-</div><div class="columns small-12 medium-12 large-6">
-<div class="vc_btn3-container text-center margin-bottom"><a class="button button--is-big button--generic width--standard" data-name="directv" data-slug="directv" href="https://go.cabletv.com/aff_c?offer_id=1441&amp;aff_id=1003" rel="nofollow noopener" target="_blank">Try DIRECTV For Free</a></div>
-</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>Who we are</h2><p>
-At CableTV.com, we’re not just entertainment experts — we’re also fans just like you. So while our first priority is reporting the best and most accurate information about TV providers and streaming services, we also love talking about our favorite shows and movies. So you can count on us to share our honest opinions and unbridled enthusiasm. For more on our process, check out our <a href="/how-we-rank">Editorial Policy</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<p class="h3">More industry news for sports fans</p><ul>
-<li><a href="/news/directv-adds-customizable-multiview-for-sports">DIRECTV Adds Customizable Multiview for Live Sports Fans</a></li>
-<li><a href="/news/fanduel-sports-network-replacements">Where NBA and NHL Teams Went After FanDuel Sports Network Closed</a></li>
-<li><a href="/news/fubo-adds-four-new-nhl-regional-sports-networks">Fubo Adds New NHL Regional Sports Networks</a></li>
-</ul></div></div>
-]]></content:encoded>
-      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/10/NBA-deals.webp"/>
-    </item>
-    <item>
-      <title>Where NBA and NHL Teams Went After FanDuel Sports Network Closed</title>
-      <link>https://www.cabletv.com/news/fanduel-sports-network-replacements</link>
-      <pubDate>Wed, 21 Oct 2026 09:19:32 +0000</pubDate>
-      <dc:creator><![CDATA[CableTV.com]]></dc:creator>
-      <guid isPermaLink="false">https://www.cabletv.com/news/fanduel-sports-network-replacements</guid>
-      <description><![CDATA[<p>FanDuel Sports Network is gone. Learn where affected NBA and NHL teams moved for local games, from DAZN and Prime Video to free over-the-air TV.</p>]]></description>
-      <content:encoded><![CDATA[<div style="margin:20px 0;text-align:center;"><img src="https://www.cabletv.com/app/uploads/2026/10/FanDuel-Sports-Network-Replacements.webp" alt="" style="max-width:100%;height:auto;border-radius:8px;"/></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>NBA and NHL teams went to a mix of streaming services and free options</h2><p>
-Financial problems led to the demise of both <a href="/news/fanduel-sports-network-closure">FanDuel Sports Network</a> (FDSN) and <a href="https://www.dallasnews.com/high-school-sports/football/article/victory-no-longer-broadcast-texas-high-school-22412811.php" rel="noopener" target="_blank">Victory+</a> — two regional viewing options that allowed local fans to watch a bevy of NBA and NHL teams. With those platforms now gone, the affected teams had to quickly figure out where their games would air, and quickly.
-
-A total of 20 teams — 13 NBA, seven NHL — were affected by FDSN shutting down.
-
-In advance of the NBA and NHL regular seasons, CableTV.com reviewed every team that previously had media deals with FDSN and Victory+ and researched where they ended up. With so many channels and services out there, fans should know exactly where they can watch their favorite teams on TV.
-
-The NBA and NHL landed on a mix of streaming and over-the-air (OTA) solutions. Some made deals with <a href="/dazn">DAZN</a>, others went with <a href="/amazon-prime-video">Amazon Prime Video</a>, and many went the free route.</p></div></div><div class="row section--padding-bottom-30"><div class="columns small-12 medium-12 large-12">
-<div class="row align-center vc-email-subscribe__wrapper">
-<div class="columns small-12 large-6">
-<div class="callout-area">
-
-<div class="callout-text">
-<h3>Keep up with all the latest in entertainment news</h3> <p>Subscribe to CableTV.com's email newsletter for the latest TV event viewing guides, entertaining takes, and money-saving promotions.</p> </div>
-</div>
-</div>
-<div class="columns small-12 large-6">
-<div class="vc-email-subscribe">
-<div class="vc-email-subscribe__inline-form">
-<form action="https://cabletv.activehosted.com/proc.php" class="_form _form_19 _inline-form" id="_form_19_" method="POST">
-<input name="u" type="hidden" value="19"/>
-<input name="f" type="hidden" value="19"/>
-<input name="s" type="hidden"/>
-<input name="c" type="hidden" value="0"/>
-<input name="m" type="hidden" value="0"/>
-<input name="act" type="hidden" value="sub"/>
-<input name="v" type="hidden" value="2"/>
-<input name="or" type="hidden" value="8b2db1a6b150094e4ac73dc0ec08c9b4"/>
-<input id="ls" name="ls" type="hidden" value="1"/>
-<input id="nlbox_2" name="nlbox[]" type="hidden" value="2"/><input id="nlbox_3" name="nlbox[]" type="hidden" value="3"/><input id="nlbox_5" name="nlbox[]" type="hidden" value="5"/><input id="nlbox_16" name="nlbox[]" type="hidden" value="16"/><input id="nlbox_17" name="nlbox[]" type="hidden" value="17"/> <div class="_form-content">
-<div class="_field-wrapper">
-<input class="field-email" id="email" name="email" placeholder="Email Address" required="" type="text"/>
-<label class="show-for-sr" for="email">Email*</label>
-</div>
-<div class="_field-wrapper">
-<input class="field-zip" id="field[1]" maxlength="5" minlength="5" name="field[1]" pattern="[0-9]{5}" placeholder="Zip Code" required="" type="text"/>
-<label class="show-for-sr" for="field[1]">Zip code*</label>
-</div>
-<div class="_button-wrapper _inline-style">
-<button class="button button--generic" id="_form_19_submit" type="submit">
-        Sign Up
-      </button>
-</div>
-
-</div>
-
-</form>
-<script type="text/javascript">
-window.cfields = {"1":"zip_code"};
-window._show_thank_you = function(id, message, trackcmp_url, email) {
-  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
-  form.querySelector('._form-content').style.display = 'none';
-  thank_you.innerHTML = message;
-  thank_you.style.display = 'block';
-  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
-  var visitorObject = window;
-  if (email && typeof visitorObject !== 'undefined') {
-    visitorObject('setEmail', email);
-    visitorObject('update');
-  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
-    // Site tracking URL to use after inline form submission.
-    _load_script(trackcmp_url);
-  }
-  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
-};
-window._show_error = function(id, message, html) {
-  var form = document.getElementById('_form_' + id + '_'),
-    err = document.createElement('div'),
-    button = form.querySelector('button'),
-    old_error = form.querySelector('._form_error');
-  if (old_error) old_error.parentNode.removeChild(old_error);
-  err.innerHTML = message;
-  err.className = '_error-inner _form_error _no_arrow';
-  var wrapper = document.createElement('div');
-  wrapper.className = '_form-inner';
-  wrapper.appendChild(err);
-  button.parentNode.insertBefore(wrapper, button);
-  var submitButton = form.querySelector('');
-  submitButton.disabled = false;
-  submitButton.classList.remove('processing');
-  if (html) {
-    var div = document.createElement('div');
-    div.className = '_error-html';
-    div.innerHTML = html;
-    err.appendChild(div);
-  }
-};
-window._load_script = function(url, callback, isSubmit) {
-  var head = document.querySelector('head'), script = document.createElement('script'), r = false;
-  var submitButton = document.querySelector('#_form_19_submit');
-  script.type = 'text/javascript';
-  script.charset = 'utf-8';
-  script.src = url;
-  if (callback) {
-    script.onload = script.onreadystatechange = function() {
-      if (!r && (!this.readyState || this.readyState == 'complete')) {
-        r = true;
-        callback();
-      }
-    };
-  }
-  script.onerror = function() {
-    if (isSubmit) {
-      if (script.src.length > 10000) {
-        _show_error("19", "Sorry, your submission failed. Please shorten your responses and try again.");
-      } else {
-        _show_error("19", "Sorry, your submission failed. Please try again.");
-      }
-      submitButton.disabled = false;
-      submitButton.classList.remove('processing');
-    }
-  }
-  head.appendChild(script);
-};
-(function() {
-  if (window.location.search.search("excludeform") !== -1) return false;
-  var getCookie = function(name) {
-    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]+)'));
-    return match ? match[2] : null;
-  }
-  var setCookie = function(name, value) {
-    var now = new Date();
-    var time = now.getTime();
-    var expireTime = time + 1000 * 60 * 60 * 24 * 365;
-    now.setTime(expireTime);
-    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';
-  }
-      var addEvent = function(element, event, func) {
-    if (element.addEventListener) {
-      element.addEventListener(event, func);
-    } else {
-      var oldFunc = element['on' + event];
-      element['on' + event] = function() {
-        oldFunc.apply(this, arguments);
-        func.apply(this, arguments);
-      };
-    }
-  }
-  var _removed = false;
-    var form_to_submit = document.getElementById('_form_19_');
-  var allInputs = form_to_submit.querySelectorAll('input, select, textarea'), tooltips = [], submitted = false;
-  var getUrlParam = function(name) {
-    var params = new URLSearchParams(window.location.search);
-    return params.get(name) || false;
-  };
-  var acctDateFormat = "%m/%d/%Y";
-  var getNormalizedDate = function(date, acctFormat) {
-    var decodedDate = decodeURIComponent(date);
-    if (acctFormat && acctFormat.match(/(%d|%e).*%m/gi) !== null) {
-      return decodedDate.replace(/(\d{2}).*(\d{2}).*(\d{4})/g, '$3-$2-$1');
-    } else if (Date.parse(decodedDate)) {
-      var dateObj = new Date(decodedDate);
-      var year = dateObj.getFullYear();
-      var month = dateObj.getMonth() + 1;
-      var day = dateObj.getDate();
-      return `${year}-${month < 10 ? `0${month}` : month}-${day < 10 ? `0${day}` : day}`;
-    }
-    return false;
-  };
-  var getNormalizedTime = function(time) {
-    var hour, minutes;
-    var decodedTime = decodeURIComponent(time);
-    var timeParts = Array.from(decodedTime.matchAll(/(\d{1,2}):(\d{1,2})\W*()?/gm))[0];
-    if (timeParts[3]) { // 12 hour format
-      var isPM = timeParts[3].toLowerCase() === 'pm';
-      if (isPM) {
-        hour = parseInt(timeParts[1]) === 12 ? '12' : `${parseInt(timeParts[1]) + 12}`;
-      } else {
-        hour = parseInt(timeParts[1]) === 12 ? '0' : timeParts[1];
-      }
-    } else { // 24 hour format
-      hour = timeParts[1];
-    }
-    var normalizedHour = parseInt(hour) < 10 ? `0${parseInt(hour)}` : hour;
-    var minutes = timeParts[2];
-    return `${normalizedHour}:${minutes}`;
-  };
-  for (var i = 0; i < allInputs.length; i++) {
-    var regexStr = "field\\[(\\d+)\\]";
-    var results = new RegExp(regexStr).exec(allInputs.name);
-    if (results != undefined) {
-      allInputs.dataset.name = allInputs.name.match(/\$/)
-        ? `${window.cfields]}_time`
-        : window.cfields];
-    } else {
-      allInputs.dataset.name = allInputs.name;
-    }
-    var fieldVal = getUrlParam(allInputs.dataset.name);
-    if (fieldVal) {
-      if (allInputs.dataset.autofill === "false") {
-        continue;
-      }
-      if (allInputs.type == "radio" || allInputs.type == "checkbox") {
-        if (allInputs.value == fieldVal) {
-          allInputs.checked = true;
-        }
-      } else if (allInputs.type == "date") {
-        allInputs.value = getNormalizedDate(fieldVal, acctDateFormat);
-      } else if (allInputs.type == "time") {
-        allInputs.value = getNormalizedTime(fieldVal);
-      } else {
-        allInputs.value = fieldVal;
-      }
-    }
-  }
-  var remove_tooltips = function() {
-    for (var i = 0; i < tooltips.length; i++) {
-      tooltips.tip.parentNode.removeChild(tooltips.tip);
-    }
-    tooltips = [];
-  };
-  var remove_tooltip = function(elem) {
-    for (var i = 0; i < tooltips.length; i++) {
-      if (tooltips.elem === elem) {
-        tooltips.tip.parentNode.removeChild(tooltips.tip);
-        tooltips.splice(i, 1);
-        return;
-      }
-    }
-  };
-  var create_tooltip = function(elem, text) {
-    var tooltip = document.createElement('div'),
-      arrow = document.createElement('div'),
-      inner = document.createElement('div'), new_tooltip = {};
-    if (elem.type != 'radio' && elem.type != 'checkbox') {
-      tooltip.className = '_error';
-      arrow.className = '_error-arrow';
-      inner.className = '_error-inner';
-      inner.innerHTML = text;
-      tooltip.appendChild(arrow);
-      tooltip.appendChild(inner);
-      elem.parentNode.appendChild(tooltip);
-    } else {
-      tooltip.className = '_error-inner _no_arrow';
-      tooltip.innerHTML = text;
-      elem.parentNode.insertBefore(tooltip, elem);
-      new_tooltip.no_arrow = true;
-    }
-    new_tooltip.tip = tooltip;
-    new_tooltip.elem = elem;
-    tooltips.push(new_tooltip);
-    return new_tooltip;
-  };
-  var resize_tooltip = function(tooltip) {
-    var rect = tooltip.elem.getBoundingClientRect();
-    var doc = document.documentElement,
-      scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0));
-    if (scrollPosition < 40) {
-      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
-    } else {
-      tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
-    }
-  };
-  var resize_tooltips = function() {
-    if (_removed) return;
-    for (var i = 0; i < tooltips.length; i++) {
-      if (!tooltips.no_arrow) resize_tooltip(tooltips);
-    }
-  };
-  var validate_field = function(elem, remove) {
-    var tooltip = null, value = elem.value, no_error = true;
-    remove ? remove_tooltip(elem) : false;
-    if (elem.type != 'checkbox') elem.className = elem.className.replace(/ ?_has_error ?/g, '');
-    if (elem.getAttribute('required') !== null) {
-      if (elem.type == 'radio' || (elem.type == 'checkbox' && /any/.test(elem.className))) {
-        var elems = form_to_submit.elements;
-        if (!(elems instanceof NodeList || elems instanceof HTMLCollection) || elems.length <= 1) {
-          no_error = elem.checked;
-        }
-        else {
-          no_error = false;
-          for (var i = 0; i < elems.length; i++) {
-            if (elems.checked) no_error = true;
-          }
-        }
-        if (!no_error) {
-          tooltip = create_tooltip(elem, "Please select an option.");
-        }
-      } else if (elem.type =='checkbox') {
-        var elems = form_to_submit.elements, found = false, err = [];
-        no_error = true;
-        for (var i = 0; i < elems.length; i++) {
-          if (elems.getAttribute('required') === null) continue;
-          if (!found && elems !== elem) return true;
-          found = true;
-          elems.className = elems.className.replace(/ ?_has_error ?/g, '');
-          if (!elems.checked) {
-            no_error = false;
-            elems.className = elems.className + ' _has_error';
-            err.push("Checking %s is required".replace("%s", elems.value));
-          }
-        }
-        if (!no_error) {
-          tooltip = create_tooltip(elem, err.join('<br/>'));
-        }
-      } else if (elem.tagName == 'SELECT') {
-        var selected = true;
-        if (elem.multiple) {
-          selected = false;
-          for (var i = 0; i < elem.options.length; i++) {
-            if (elem.options.selected) {
-              selected = true;
-              break;
-            }
-          }
-        } else {
-          for (var i = 0; i < elem.options.length; i++) {
-            if (elem.options.selected
-              && (!elem.options.value
-              || (elem.options.value.match(/\n/g)))
-            ) {
-              selected = false;
-            }
-          }
-        }
-        if (!selected) {
-          elem.className = elem.className + ' _has_error';
-          no_error = false;
-          tooltip = create_tooltip(elem, "Please select an option.");
-        }
-      } else if (value === undefined || value === null || value === '') {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "This field is required.");
-      }
-    }
-    if (no_error && (elem.id == 'field[]' || elem.id == 'ca[11]')) {
-      if (elem.className.includes('phone-input-error')) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-      }
-    }
-    if (no_error && elem.name == 'email') {
-      if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@+(\.+)*(\.{2,})$/i)) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "Enter a valid email address.");
-      }
-    }
-    if (no_error && /date_field/.test(elem.className)) {
-      if (!value.match(/^\d\d\d\d-\d\d-\d\d$/)) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "Enter a valid date.");
-      }
-    }
-    tooltip ? resize_tooltip(tooltip) : false;
-    return no_error;
-  };
-  var needs_validate = function(el) {
-    if(el.getAttribute('required') !== null){
-      return true
-    }
-    if(el.name === 'email' && el.value !== ""){
-      return true
-    }
-    if((el.id == 'field[]' || el.id == 'ca[11]') && el.className.includes('phone-input-error')){
-      return true
-    }
-    return false
-  };
-  var validate_form = function(e) {
-    var err = form_to_submit.querySelector('._form_error'), no_error = true;
-    if (!submitted) {
-      submitted = true;
-      for (var i = 0, len = allInputs.length; i < len; i++) {
-        var input = allInputs;
-        if (needs_validate(input)) {
-          if (input.type == 'tel') {
-            addEvent(input, 'blur', function() {
-              this.value = this.value.trim();
-              validate_field(this, true);
-            });
-          }
-          if (input.type == 'text' || input.type == 'number' || input.type == 'time') {
-            addEvent(input, 'blur', function() {
-              this.value = this.value.trim();
-              validate_field(this, true);
-            });
-            addEvent(input, 'input', function() {
-              validate_field(this, true);
-            });
-          } else if (input.type == 'radio' || input.type == 'checkbox') {
-            (function(el) {
-              var radios = form_to_submit.elements;
-              for (var i = 0; i < radios.length; i++) {
-                addEvent(radios, 'click', function() {
-                  validate_field(el, true);
-                });
-              }
-            })(input);
-          } else if (input.tagName == 'SELECT') {
-            addEvent(input, 'change', function() {
-              validate_field(this, true);
-            });
-          } else if (input.type == 'textarea'){
-            addEvent(input, 'input', function() {
-              validate_field(this, true);
-            });
-          }
-        }
-      }
-    }
-    remove_tooltips();
-    for (var i = 0, len = allInputs.length; i < len; i++) {
-      var elem = allInputs;
-      if (needs_validate(elem)) {
-        if (elem.tagName.toLowerCase() !== "select") {
-          elem.value = elem.value.trim();
-        }
-        validate_field(elem) ? true : no_error = false;
-      }
-    }
-    if (!no_error && e) {
-      e.preventDefault();
-    }
-    resize_tooltips();
-    return no_error;
-  };
-  addEvent(window, 'resize', resize_tooltips);
-  addEvent(window, 'scroll', resize_tooltips);
-  var hidePhoneInputError = function(inputId) {
-    var errorMessage = document.getElementById("error-msg-" + inputId);
-    var input = document.getElementById(inputId);
-    errorMessage.classList.remove("phone-error");
-    errorMessage.classList.add("phone-error-hidden");
-    input.classList.remove("phone-input-error");
-  };
-  var initializePhoneInput = function(input, defaultCountry) {
-    return window.intlTelInput(input, {
-      utilsScript: "https://unpkg.com/intl-tel-input@17.0.18/build/js/utils.js",
-      autoHideDialCode: false,
-      separateDialCode: true,
-      initialCountry: defaultCountry,
-      preferredCountries: []
-    });
-  }
-  var setPhoneInputEventListeners = function(inputId, input, iti) {
-    input.addEventListener('blur', function() {
-      var errorMessage = document.getElementById("error-msg-" + inputId);
-      if (input.value.trim()) {
-        if (iti.isValidNumber()) {
-          iti.setNumber(iti.getNumber());
-          if (errorMessage.classList.contains("phone-error")){
-            hidePhoneInputError(inputId);
-          }
-        } else {
-          showPhoneInputError(inputId)
-        }
-      } else {
-        if (errorMessage.classList.contains("phone-error")){
-          hidePhoneInputError(inputId);
-        }
-      }
-    });
-    input.addEventListener("countrychange", function() {
-      iti.setNumber('');
-    });
-    input.addEventListener("keydown", function(e) {
-      var charCode = (e.which) ? e.which : e.keyCode;
-      if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode !== 8) {
-        e.preventDefault();
-      }
-    });
-  };
-  var showPhoneInputError = function(inputId) {
-    var errorMessage = document.getElementById("error-msg-" + inputId);
-    var input = document.getElementById(inputId);
-    errorMessage.classList.add("phone-error");
-    errorMessage.classList.remove("phone-error-hidden");
-    input.classList.add("phone-input-error");
-  };
-  var _form_serialize = function(form){if(!form||form.nodeName!=="FORM"){return }var i,j,q=[];for(i=0;i<form.elements.length;i++){if(form.elements.name===""){continue}switch(form.elements.nodeName){case"INPUT":switch(form.elements.type){case"tel":q.push(form.elements.name+"="+encodeURIComponent(form.elements.previousSibling.querySelector('div.iti__selected-dial-code').innerText)+encodeURIComponent(" ")+encodeURIComponent(form.elements.value));break;case"text":case"number":case"date":case"time":case"hidden":case"password":case"button":case"reset":case"submit":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"checkbox":case"radio":if(form.elements.checked){q.push(form.elements.name+"="+encodeURIComponent(form.elements.value))}break;case"file":break}break;case"TEXTAREA":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"SELECT":switch(form.elements.type){case"select-one":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break;case"select-multiple":for(j=0;j<form.elements.options.length;j++){if(form.elements.options.selected){q.push(form.elements.name+"="+encodeURIComponent(form.elements.options.value))}}break}break;case"BUTTON":switch(form.elements.type){case"reset":case"submit":case"button":q.push(form.elements.name+"="+encodeURIComponent(form.elements.value));break}break}}return q.join("&")};
-  const formSupportsPost = false;
-  var form_submit = function(e) {
-    e.preventDefault();
-    if (validate_form()) {
-      // use this trick to get the submit button & disable it using plain javascript
-      var submitButton = e.target.querySelector('#_form_19_submit');
-      submitButton.disabled = true;
-      submitButton.classList.add('processing');
-            var serialized = _form_serialize(
-        document.getElementById('_form_19_')
-      ).replace(/%0A/g, '\\n');
-      var err = form_to_submit.querySelector('._form_error');
-      err ? err.parentNode.removeChild(err) : false;
-      async function submitForm() {
-       var formData = new FormData();
-       const searchParams = new URLSearchParams(serialized);
-       searchParams.forEach((value, key) => {
-        formData.append(key, value);
-       });
-       const response = await fetch('https://cabletv.activehosted.com/proc.php?jsonp=true', {
-        headers: {
-         "Accept": "application/json"
-        },
-        body: formData,
-        method: "POST"
-       });
-       return response.json();
-      }
-      if (formSupportsPost) {
-       submitForm().then((data) => {
-        eval(data.js);
-       });
-      } else {
-       _load_script('https://cabletv.activehosted.com/proc.php?' + serialized + '&jsonp=true', null, true);
-      }
-    }
-    return false;
-  };
-  addEvent(form_to_submit, 'submit', form_submit);
-})();
-</script>
-<p class="vc-email-subscribe__disclaimer">
-          By signing up, you agree to our <a href="/privacy-policy-terms-and-conditions">Privacy Policy &amp; Terms and Conditions</a>.
-        </p>
-</div>
-</div>
-</div>
-</div>
-</div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>Where former FanDuel Sports Network NBA teams went</h2><h3>NBA teams that moved to DAZN</h3><p>
-Eight NBA teams signed deals with <a href="/dazn">DAZN</a> for their local broadcast streaming rights. That signals the strength DAZN has in the market as the London-based streaming company <a href="https://www.sportsmediawatch.com/2026/10/dazn-national-rights-regional-footprint/" rel="noopener" target="_blank">continues to explore widening its reach</a>.
-
-Each team subscription starts at $19.99 per month, with higher-tier options available that include multiview features and additional streams.
-
-Several DAZN teams are also offering a limited number of games for free through local broadcast partners, even though DAZN remains their primary streaming home. The table below shows where fans can stream most local games for each affected team.  <div class="vc-table-scrolling scrolling-table">
-<div class="grid-x">
-<div class="cell vc-table-scrolling__table-container">
-<table class="vc-table-scrolling__table scrolling-table__table no-margin-bottom">
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<th class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<strong>Team</strong> </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-<strong>New streaming home</strong> </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-<strong>Previous in-market home</strong> </th>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-charlotte-hornets">Charlotte Hornets</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  DAZN                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network Southeast                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-cleveland-cavaliers">Cleveland Cavaliers</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  DAZN                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network Ohio                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-detroit-pistons">Detroit Pistons</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  DAZN                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network Detroit                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-indiana-pacers">Indiana Pacers</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  DAZN                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network Indiana                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-memphis-grizzlies">Memphis Grizzlies</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  DAZN                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network South, FanDuel Sports Network Southeast                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-minnesota-timberwolves">Minnesota Timberwolves</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  DAZN                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network North                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-orlando-magic">Orlando Magic</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  DAZN                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network Florida                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-san-antonio-spurs">San Antonio Spurs</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  DAZN                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network Southwest                </td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</p><p style="font-size: 10px"><em>Data effective as of post date.</em></p><h3>NBA teams that moved most local games to free over-the-air TV</h3><p>
-Six teams made free over-the-air television their primary local broadcast home after FanDuel Sports Network closed. In one really fun case, a local station in Orlando <a href="https://www.nba.com/magic/news/wrdq-tv-27-to-become-magictv-27-20260917" rel="noopener" target="_blank">rebranded to include the “Magic” name</a>.
-
-This many NBA teams giving free access to games shows that it’s always been possible to create an inclusive, fan-centric viewing experience. But many franchises went the paid route, which has caused fans <a href="https://www.fox5dc.com/news/sports-fans-streaming-cable-poll" rel="noopener" target="_blank">varying levels of frustration</a> in recent years.
-
-In-market fans of the teams below can watch most games with a <a href="/equipment/best-antennas-for-cord-cutters">digital antenna</a> or whichever TV provider they already have that carries those networks.  <div class="vc-table-scrolling scrolling-table">
-<div class="grid-x">
-<div class="cell vc-table-scrolling__table-container">
-<table class="vc-table-scrolling__table scrolling-table__table no-margin-bottom">
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<th class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<strong>Team</strong> </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-<strong>New OTA home</strong> </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-<strong>Previous in-market home</strong> </th>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-atlanta-hawks">Atlanta Hawks</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  WANF (46)                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network South, FanDuel Sports Network Southeast                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-detroit-pistons">Detroit Pistons</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  WMYD TV20 (The Spot)                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network Detroit                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-charlotte-hornets">Charlotte Hornets</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  WSOC-TV (ABC 9), WAXN-TV (64)                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network Southeast                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-miami-heat">Miami Heat</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  WPLG (10)                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network Sun                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-milwaukee-bucks">Milwaukee Bucks</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  WVTV-DT2 (My24)                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network Wisconsin                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-orlando-magic">Orlando Magic</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  WRDQ-TV (27), WFTV (ABC 9)                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network Florida                </td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-  A note on the Hawks: On the day the regular season officially started, the team <a href="https://www.nba.com/hawks/news/atlanta-hawks-to-become-the-first-nba-team-to-stream-games-exclusively-on-prime-video" rel="false noopener" target="_blank">announced</a> that its local streaming home will be Amazon Prime Video. Prime members in Atlanta’s broadcast market don’t need to pay for any additional subscription to access games.
-</p><p style="font-size: 10px"><em>Data effective as of post date.</em></p><h3>The Oklahoma City Thunder did something a little different</h3><p>
-The Thunder didn’t move to an OTA solution or DAZN. Instead, they essentially created their own regional sports network.
-
-The <a href="https://www.nba.com/thunder/watch" rel="noopener" target="_blank">Thunder Gameday Network</a> is anchored by the new Thunder+ standalone streaming service and two Griffin Media channels. Fans can stream any non-nationally televised game on Thunder+, while pay-TV customers can watch on KSBI (52) and KQCW (The CW 19) in Oklahoma City and Tulsa, respectively.
-
-An important note: KSBI and KQCW won’t carry every Thunder game free over the air. Ten regular-season games will be available OTA in Oklahoma City and Tulsa: six on KSBI and KQCW, plus four others on KWTV (9) and KOTV (6). That means local Thunder fans need Thunder+ or a participating TV provider to watch most in-market broadcasts.
-</p><h3>What’s going on with the Los Angeles Clippers?</h3><p>
-Good question. After weeks of wondering, we finally have an answer.
-
-The team <a href="https://www.nba.com/clippers/news/la-clippers-announce-2026-27-television-broadcast-plan">unveiled the return of ClipperVision</a>, a direct-to-consumer streaming service that folded into FanDuel Sports Network before last season. Fans can subscribe to that directly through the NBA app or watch it as a channel on DIRECTV, Fubo, and Spectrum.
-
-The team will also have 11 games air on KTLA.
-
-With the <a href="https://www.espn.com/nba/story/_/id/49806683/nba-punishes-la-clippers-kawhi-leonard-investigation-30-million-fine-steve-ballmer-suspensions-top-questions" rel="noopener" target="_blank">cap circumvention scandal and subsequent punishment</a>, so many aspects of the franchise are still up in the air. But at least fans know where their team’s games will air in 2026–2027.
-
-</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>Where affected NHL teams went</h2><h3>NHL teams that chose Amazon Prime Video</h3><p>
-Depending on the market, fans will need either a free Amazon account and a paid team-network subscription or an Amazon Prime membership that includes local games at no extra cost. We break down the differences in the table below.
-
-Keep in mind: Prime Video isn’t necessarily the only way to get these local broadcasts. Some team-branded networks are also available through participating TV providers like <a href="/fubotv">Fubo</a> and <a href="/spectrum/cable-tv">Spectrum</a>, while select games may air free over the air depending on the market.  <div class="vc-table-scrolling scrolling-table">
-<div class="grid-x">
-<div class="cell vc-table-scrolling__table-container">
-<table class="vc-table-scrolling__table scrolling-table__table no-margin-bottom">
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<th class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<strong>Team</strong> </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-<strong>New streaming home</strong> </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-<strong>Previous in-market home</strong> </th>
-<th class="vc-table-scrolling__cell scrolling-table__cell">
-<strong>Access</strong> </th>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-anaheim-ducks">Anaheim Ducks</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Amazon Prime Video                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Victory+                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Prime membership; no additional team subscription                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-carolina-hurricanes">Carolina Hurricanes</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Amazon Prime Video                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network South                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Free Amazon account; paid team-network subscription                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-columbus-blue-jackets">Columbus Blue Jackets</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Amazon Prime Video                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network Ohio                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Free Amazon account; paid team-network subscription                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-dallas-stars">Dallas Stars</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Amazon Prime Video                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Victory+                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Prime membership; no additional team subscription                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-minnesota-wild">Minnesota Wild</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Amazon Prime Video                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network North                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Free Amazon account; paid team-network subscription                </td>
-</tr>
-<tr class="vc-table-scrolling__row scrolling-table__row">
-<td class="vc-table-scrolling__cell scrolling-table__cell sticky-label">
-<a href="/sports/watch-st-louis-blues">St. Louis Blues</a> </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Amazon Prime Video                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  FanDuel Sports Network Midwest                </td>
-<td class="vc-table-scrolling__cell scrolling-table__cell">
-                  Free Amazon account; paid team-network subscription                </td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</p><p style="font-size: 10px"><em>Data effective as of post date.</em></p><p>
-Amazon already has rights to <a href="/amazon-prime-video/thursday-night-football">Thursday Night Football</a> and several other sports, including the NBA and WNBA. The company’s move into regional broadcasting is an interesting development to watch, especially given what DAZN is currently trying to do in that space.
-</p><h3>The Ducks also have a robust OTA offering</h3><p>
-Anaheim is the only team of the six that will offer the majority of its 84-game schedule on OTA channels in tandem with Amazon. A total of 65 games will air on those channels: 61 on KCOP-TV (FOX Los Angeles+ 13) and four on KTTV (FOX 11).
-
-Fans can access OTA channels with a digital antenna or through a cable, satellite, or live TV streaming provider.
-</p><h3>Kings, Predators, and Red Wings did it their own way</h3><p>
-Three NHL teams found unique ways to address local broadcasting rights.
-
-The <a href="/sports/watch-los-angeles-kings">Los Angeles Kings</a> went with DAZN for streaming, but still share the rebranded Angels Broadcast Television (ABTV) with the MLB’s Angels. The <a href="/sports/watch-nashville-predators">Nashville Predators</a> expanded their partnership with Scripps Sports and went full OTA with WNPX-TV (The Spot – Nashville 28) and other channels.
-
-The <a href="/sports/watch-detroit-red-wings">Detroit Red Wings</a> joined the MLB’s Tigers on a new RSN: Detroit SportsNet.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>MLB teams also had to move broadcast providers</h2><p>
-Earlier in the year, nearly one-third of Major League Baseball teams entered into new broadcast agreements after FanDuel Sports Network closed.
-
-Five teams partnered directly with MLB for local broadcast and distribution rights. Those teams were the Cincinnati Reds, Kansas City Royals, Miami Marlins, Milwaukee Brewers, and St. Louis Cardinals. The Tampa Bay Rays partnered with MLB, but also had their games distributed on other cable, satellite, and live TV streaming providers.
-
-The three other teams — Atlanta Braves, Detroit Tigers, and Los Angeles Angels — either created their own networks or joined newly formed ones.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>What does this shift say about the future of sports broadcast rights?</h2><p>
-FanDuel Sports Network’s collapse and the shakeup at Victory+ were significant developments in the sports-rights landscape. Regional sports networks have long been a fixture of local fandom, and these changes add even more complexity to a world that already has <a href="https://www.consumerreports.org/electronics-computers/telecom-services/why-its-so-hard-to-find-teams-games-on-tv-a3005603803/" rel="noopener" target="_blank">too many ways to watch sports</a> and not enough clarity.
-
-RSN fees have been rising as more and more people cut the cord. FDSN’s collapse feels like another sign that the traditional RSN model is <a href="https://entertainmentstrategyguy.com/2026/03/20/the-death-of-rsns-will-hurt-traditional-tv-but-sports-teams-leagues-even-more/" rel="noopener" target="_blank">under serious pressure</a>.
-
-In some ways, that’s good for fans. More free OTA access can mean fewer extra fees. But RSNs provided convenience and peace of mind, particularly for pay-TV customers whose plans already carried them.
-
-DAZN and Prime Video could be part of the solution. Then there’s newcomer <a href="https://bzzr.com/" rel="noopener" target="_blank">BZZR</a>. And of course, many teams have expanded partnerships with local over-the-air channels.
-
-All this to say that we’re living through a huge inflection point in local sports viewing where it seems like fans want fewer options, not more. That could be partly why the <a href="https://www.sportsbusinessjournal.com/Articles/2026/08/17/who-could-get-the-nbas-streaming-hub-and-how-much-it-may-cost/" rel="noopener" target="_blank">NBA is working toward a central streaming hub</a> for in-market games.
-
-Whatever happens, it needs to happen relatively fast. Sports fans are getting fed up with all the changes and confusion. Just look at <a href="https://x.com/tpc619/status/2106885659659293009" rel="noopener" target="_blank">what’s happening with the Clippers</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>Who we are</h2><p>
-At CableTV.com, we’re not just entertainment experts — we’re also fans just like you. So while our first priority is reporting the best and most accurate information about TV providers and streaming services, we also love talking about our favorite shows and movies. So you can count on us to share our honest opinions and unbridled enthusiasm. For more on our process, check out our <a href="/how-we-rank">Editorial Policy</a>.</p></div></div><div class="row"><div class="columns small-12 medium-12 large-12">
-<h2>More industry news for sports fans</h2><p>
-<div class="row margin--top-15"><div class="columns small-12 medium-24 large-4">
-<div class="post-block">
-<div class="post-block--featured-image">
-<a href="https://www.cabletv.com/news/nhl-on-cbc-ends-after-74-years"><img alt='The CBC logo with text that reads "Hockey Night in Canada leaves CBC" on a black, white, and gray background.' class="attachment-post-thumbnail size-post-thumbnail wp-post-image" decoding="async" loading="lazy" sizes="auto, (max-width: 1200px) 100vw, 1200px" src="https://www.cabletv.com/app/uploads/2020/01/Hockey-Night-in-Canada-CBC.webp" srcset="https://www.cabletv.com/app/uploads/2020/01/Hockey-Night-in-Canada-CBC.webp 1200w, https://www.cabletv.com/app/uploads/2020/01/Hockey-Night-in-Canada-CBC-600x315.webp 600w, https://www.cabletv.com/app/uploads/2020/01/Hockey-Night-in-Canada-CBC-900x473.webp 900w, https://www.cabletv.com/app/uploads/2020/01/Hockey-Night-in-Canada-CBC-300x158.webp 300w"/></a> </div>
-<div class="post-block--title">
-<h4><a href="https://www.cabletv.com/news/nhl-on-cbc-ends-after-74-years">A New Era of NHL Broadcasting in Canada Is Around the Corner, And Fans Hate It</a></h4>
-</div>
-<div class="post-block--author-area">
-<div class="author-area--image-link">
-<a href="https://www.cabletv.com/author/alex-vejar">
-<img alt="Alex Vejar's Author Page" class="avatar avatar-28 photo" data-src="https://secure.gravatar.com/avatar/b432778d069147cbdcc5bcecb80d3da397048b550726d07ec810cb4698249f06?s=28&amp;d=mm&amp;r=g" height="28" loading="lazy" srcset="https://secure.gravatar.com/avatar/b432778d069147cbdcc5bcecb80d3da397048b550726d07ec810cb4698249f06?s=56&amp;d=mm&amp;r=g 2x" width="28"/> </a>
-</div>
-<div class="author-area--name">By <a class="author url fn" href="https://www.cabletv.com/author/alex-vejar" rel="author" title="Posts by Alex Vejar">Alex Vejar</a></div>
-<div class="author-area--date">Sep 25, 2026</div>
-</div>
-<p class="post-block--excerpt">
-          The NHL on CBC has ended. Here's what it means for Canadian and American fans and where they can watch Saturday games during the 2026-2027 season.        </p>
-</div>
-</div><div class="columns small-12 medium-24 large-4">
-<div class="post-block">
-<div class="post-block--featured-image">
-<a href="https://www.cabletv.com/news/ppv-sports-vs-day-passes"><img alt='The text "3 Hacks to Avoid More Sports Subsciptions" with a CableTV.com logo in the corner.' class="attachment-post-thumbnail size-post-thumbnail wp-post-image" decoding="async" loading="lazy" sizes="auto, (max-width: 1200px) 100vw, 1200px" src="https://www.cabletv.com/app/uploads/2026/09/PPV-Streaming-Sports-vs-Day-Passes-1.webp" srcset="https://www.cabletv.com/app/uploads/2026/09/PPV-Streaming-Sports-vs-Day-Passes-1.webp 1200w, https://www.cabletv.com/app/uploads/2026/09/PPV-Streaming-Sports-vs-Day-Passes-1-600x315.webp 600w, https://www.cabletv.com/app/uploads/2026/09/PPV-Streaming-Sports-vs-Day-Passes-1-900x473.webp 900w, https://www.cabletv.com/app/uploads/2026/09/PPV-Streaming-Sports-vs-Day-Passes-1-300x158.webp 300w"/></a> </div>
-<div class="post-block--title">
-<h4><a href="https://www.cabletv.com/news/ppv-sports-vs-day-passes">2 in 5 Sports Fans Skipped Subscriptions in Favor of These Hacks</a></h4>
-</div>
-<div class="post-block--author-area">
-<div class="author-area--image-link">
-<a href="https://www.cabletv.com/author/mike-strayer">
-<img alt="Mike Strayer's Author Page" class="avatar avatar-28 photo" data-src="https://secure.gravatar.com/avatar/033e7dc1935db2a0499ae6eba2b23c47e54b903cb90c2e2f9aa42c1b01f5b200?s=28&amp;d=mm&amp;r=g" height="28" loading="lazy" srcset="https://secure.gravatar.com/avatar/033e7dc1935db2a0499ae6eba2b23c47e54b903cb90c2e2f9aa42c1b01f5b200?s=56&amp;d=mm&amp;r=g 2x" width="28"/> </a>
-</div>
-<div class="author-area--name">By <a class="author url fn" href="https://www.cabletv.com/author/mike-strayer" rel="author" title="Posts by Mike Strayer">Mike Strayer</a></div>
-<div class="author-area--date">Sep 24, 2026</div>
-</div>
-<p class="post-block--excerpt">
-          New survey data reveals that fans are turning more and more to pay-per-view sports streaming, but is there an even cheaper alternative? Find out more.        </p>
-</div>
-</div><div class="columns small-12 medium-24 large-4">
-<div class="post-block">
-<div class="post-block--featured-image">
-<a href="https://www.cabletv.com/news/best-tv-multiview-sports"><img alt='A man watches a live sporting event on TV while also following other events on a laptop and phone. Text on the graphic says "Best sports multiviews for second-screeners."' class="attachment-post-thumbnail size-post-thumbnail wp-post-image" decoding="async" loading="lazy" sizes="auto, (max-width: 1200px) 100vw, 1200px" src="https://www.cabletv.com/app/uploads/2026/09/Sports-Mulitiviews-Second-Screen.webp" srcset="https://www.cabletv.com/app/uploads/2026/09/Sports-Mulitiviews-Second-Screen.webp 1200w, https://www.cabletv.com/app/uploads/2026/09/Sports-Mulitiviews-Second-Screen-600x315.webp 600w, https://www.cabletv.com/app/uploads/2026/09/Sports-Mulitiviews-Second-Screen-900x473.webp 900w, https://www.cabletv.com/app/uploads/2026/09/Sports-Mulitiviews-Second-Screen-300x158.webp 300w"/></a> </div>
-<div class="post-block--title">
-<h4><a href="https://www.cabletv.com/news/best-tv-multiview-sports">44% of Sports Fans Follow a Second Game on Their Phones. Here Are the Best Multiview Options.</a></h4>
-</div>
-<div class="post-block--author-area">
-<div class="author-area--image-link">
-<a href="https://www.cabletv.com/author/alex-vejar">
-<img alt="Alex Vejar's Author Page" class="avatar avatar-28 photo" data-src="https://secure.gravatar.com/avatar/b432778d069147cbdcc5bcecb80d3da397048b550726d07ec810cb4698249f06?s=28&amp;d=mm&amp;r=g" height="28" loading="lazy" srcset="https://secure.gravatar.com/avatar/b432778d069147cbdcc5bcecb80d3da397048b550726d07ec810cb4698249f06?s=56&amp;d=mm&amp;r=g 2x" width="28"/> </a>
-</div>
-<div class="author-area--name">By <a class="author url fn" href="https://www.cabletv.com/author/alex-vejar" rel="author" title="Posts by Alex Vejar">Alex Vejar</a></div>
-<div class="author-area--date">Sep 11, 2026</div>
-</div>
-<p class="post-block--excerpt">
-          More than 40% of people watch a second sports game on their phones. We've mapped out the best TV multiview features to make things easier for fans.        </p>
-</div>
-</div></div></p></div></div>
-]]></content:encoded>
-      <media:thumbnail url="https://www.cabletv.com/app/uploads/2026/10/FanDuel-Sports-Network-Replacements.webp"/>
     </item>
   </channel>
 </rss>
